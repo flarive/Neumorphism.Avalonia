@@ -1,0 +1,87 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Neumorphism.Styles.MaterialToolKit">
+    <Styles.Resources>
+        <SolidColorBrush x:Key="MaterialDesignLightBackground" Color="#FFFAFAFA"/>
+        <SolidColorBrush x:Key="MaterialDesignLightForeground" Color="#DD000000"/>
+        <SolidColorBrush x:Key="MaterialDesignDarkBackground" Color="#FF303030"/>
+        <SolidColorBrush x:Key="MaterialDesignDarkForeground" Color="#FFFAFAFA"/>
+        <SolidColorBrush x:Key="MaterialDesignDarkSeparatorBackground" Color="#1F000000" />
+        <SolidColorBrush x:Key="MaterialDesignLightSeparatorBackground" Color="#1FFFFFFF" />
+    </Styles.Resources>
+    
+    <!--custom controls-->
+    
+    <StyleInclude Source="avares://Neumorphism.Styles/FloatingButton.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Card.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Styles/ColorZone.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Styles/NavigationDrawer.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Styles/MaterialUnderline.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Styles/SnackbarHost.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Styles/MaterialInternalIcon.axaml"/>
+    
+    <!-- dialog host -->
+    
+    <StyleInclude Source="avares://DialogHost.Avalonia/Styles.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/DialogHost.axaml" />
+    
+    <!-- Basic controls -->
+    
+    <StyleInclude Source="avares://Neumorphism.Styles/AutoCompleteBox.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Button.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ButtonSpinner.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Calendar.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/CalendarButton.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/CalendarDayButton.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/CalendarItem.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Carousel.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/CheckBox.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ComboBox.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ComboBoxItem.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ContentControl.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ContextMenu.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/DataValidationErrors.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/DatePicker.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/EmbeddableControlRoot.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Expander.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/FlyoutPresenter.axaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/FocusAdorner.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/GridSplitter.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ItemsControl.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Label.axaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ListBox.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ListBoxItem.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Menu.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/MenuItem.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/NativeMenuBar.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/NotificationCard.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/NumericUpDown.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/OverlayPopupHost.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/PopupRoot.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ProgressBar.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/RadioButton.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/RepeatButton.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ScrollBar.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ScrollViewer.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Scroller.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Separator.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Slider.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/SplitView.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TabControl.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TabStrip.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TabStripItem.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TextBox.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TextBlock.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ToggleButton.xaml" /> 
+    <StyleInclude Source="avares://Neumorphism.Styles/ToggleSwitch.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/ToolTip.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/TreeView.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/UserControl.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Window.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/WindowNotificationManager.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Ripple/RippleEffect.xaml" />
+
+    <!-- Custom controls (High-priority) -->
+    <StyleInclude Source="avares://Neumorphism.Styles/SideSheet.xaml"/>
+    
+</Styles>

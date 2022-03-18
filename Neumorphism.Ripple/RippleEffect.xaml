@@ -1,0 +1,34 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:Neumorphism.Ripple">
+    <Style Selector="cc|RippleEffect">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel ClipToBounds="True">
+                    <Rectangle Fill="Transparent" Opacity="0" ClipToBounds="True"/> 
+                    <ContentPresenter Name="Content"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    <Canvas Name="PART_RippleCanvasRoot"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            IsHitTestVisible="False"
+                            Opacity="{TemplateBinding RippleOpacity}"/>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </Style> 
+    
+    <!-- Transitions -->
+    
+    <Style Selector="cc|RippleEffect:not(.notransitions) /template/ Canvas#PART_RippleCanvasRoot > cc|Ripple">
+        <Setter Property="Transitions">
+            <Transitions>
+                <ThicknessTransition Property="Margin" Duration="{x:Static cc:Ripple.Duration}" Easing="{x:Static cc:Ripple.Easing}"/>
+                <DoubleTransition Property="Width" Duration="{x:Static cc:Ripple.Duration}" Easing="{x:Static cc:Ripple.Easing}"/>
+                <DoubleTransition Property="Height" Duration="{x:Static cc:Ripple.Duration}" Easing="{x:Static cc:Ripple.Easing}"/>
+                <DoubleTransition Property="Opacity" Duration="{x:Static cc:Ripple.Duration}" Easing="{x:Static cc:Ripple.Easing}"/>
+            </Transitions>
+        </Setter>
+    </Style>
+</Styles>

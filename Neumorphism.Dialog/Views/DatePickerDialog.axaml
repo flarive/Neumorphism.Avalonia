@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:main="clr-namespace:Neumorphism.Dialog"
+        xmlns:material="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
+        xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+        xmlns:viewModels="clr-namespace:Neumorphism.Dialog.ViewModels"
+        xmlns:converters="clr-namespace:Neumorphism.Dialog.Converters"
+        x:Class="Neumorphism.Dialog.Views.DatePickerDialog"
+        SizeToContent="WidthAndHeight" CanResize="False"
+        HorizontalContentAlignment="Stretch"
+        Title="{CompiledBinding WindowTitle}"
+        WindowStartupLocation="{CompiledBinding WindowStartupLocation}"
+        x:DataType="viewModels:DatePickerDialogViewModel">
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:DateStringConverter x:Key="DateStringConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Styles>
+        <StyleInclude Source="avares://Neumorphism.Dialog/Icons/DialogIconStyle.axaml" />
+        <Style Selector="Window[SystemDecorations=None]">
+            <Setter Property="Padding" Value="32" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="TransparencyLevelHint" Value="Transparent" />
+        </Style>
+    </Window.Styles>
+
+    
+</Window>

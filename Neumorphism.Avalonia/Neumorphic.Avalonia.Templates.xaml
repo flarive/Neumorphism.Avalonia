@@ -1,0 +1,5 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Neumorphism.Avalonia.MaterialAvaloniaTemplates">
+    <StyleInclude Source="avares://Neumorphism.Styles/MaterialToolKit.xaml" />
+</Styles>
