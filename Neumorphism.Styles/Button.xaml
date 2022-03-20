@@ -28,8 +28,7 @@
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Padding" Value="16 8" />
-    <Setter Property="assists:ButtonAssist.HoverColor" Value="{Binding Foreground, Converter={StaticResource BrushRoundConverter}, RelativeSource={RelativeSource Self}}"/>
-    <Setter Property="assists:ButtonAssist.ClickFeedbackColor" Value="#000000"/>
+    <Setter Property="TextBlock.Foreground" Value="Black" />
     <Setter Property="TextBlock.FontWeight" Value="Medium" />
     <Setter Property="TextBlock.FontSize" Value="14" />
     <Setter Property="BorderThickness" Value="0" />
@@ -117,7 +116,7 @@
 
 
         <Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
-                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Cursor="Hand"
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
                 VerticalAlignment="Center" HorizontalAlignment="Center"
                 Background="{TemplateBinding Background}" 
                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -331,7 +330,7 @@
 
   <!--Pressed-->
   <Style
-    Selector="Button:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+   Selector="Button:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
   ToggleButton:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
 
     <Setter Property="Background" Value="Gray"/>
@@ -503,8 +502,24 @@
     <Setter Property="Opacity" Value="0.8"/>
     <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
   </Style>
-  
-  
+
+  <Style
+  Selector="Button.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+  ToggleButton.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+
+    <Setter Property="Opacity" Value="1.0"/>
+  </Style>
+
+  <Style
+    Selector="Button.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+  ToggleButton.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+
+    <Setter Property="Opacity" Value="0"/>
+  </Style>
+
+
+
+
 
   <!--Class Gradient-->
   <Style Selector="Button.Gradient:not(.Outline), ToggleButton.Gradient:not(.Outline)">
@@ -517,7 +532,14 @@
     <Setter Property="Opacity" Value="0.2" />
     <Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
   </Style>
-  
+
+  <!--Class Custom-->
+  <Style Selector="Button.Custom:not(.Outline), ToggleButton.Custom:not(.Outline)">
+    <Setter Property="Background" Value="{TemplateBinding Background}"/>
+    <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+  </Style>
+
+
   
   <!--Class Outline-->
   <Style Selector="Button.Accent.Flat:not(.Outline), ToggleButton.Accent.Flat:not(.Outline)">

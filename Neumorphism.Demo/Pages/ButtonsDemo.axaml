@@ -28,9 +28,16 @@
             <showMeTheXaml:XamlDisplay UniqueId="Buttons5">
               <Button Classes="Gradient" Content="Gradient" ToolTip.Tip='Button with classes "Gradient"' />
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="Buttons7">
-                <Button Content="Custom width" Width="200"
-                        ToolTip.Tip='Button with custom width.'/>
+            <showMeTheXaml:XamlDisplay UniqueId="Buttons6">
+              <Button Classes="Custom" Width="200" Foreground="Gray" Cursor="SizeAll" Content="Custom"
+                      ToolTip.Tip='Button with classes "Custom" and custom attributes.'>
+                <Button.Background>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="Transparent" />
+                    <GradientStop Offset="1" Color="LightGray" />
+                  </LinearGradientBrush>
+                </Button.Background>
+              </Button>
             </showMeTheXaml:XamlDisplay>
         </StackPanel>
 
