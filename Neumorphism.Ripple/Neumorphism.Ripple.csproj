@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Larymar,SKProCH,Appleneko2001</Authors>
-    <Company>Larymar,SKProCH,Appleneko2001</Company>
-    <Description>Ripple component library of Material.Avalonia.</Description>
+    <Authors>Eviral</Authors>
+    <Company>Eviral</Company>
+    <Description>Ripple component library of Neumorphism.Avalonia.</Description>
     <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

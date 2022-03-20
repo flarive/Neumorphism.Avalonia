@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <LangVersion>10</LangVersion>
-        <Authors>Larymar,SKProCH,Appleneko2001</Authors>
-        <Company>Larymar,SKProCH,Appleneko2001</Company>
+        <Authors>Eviral</Authors>
+        <Company>Eviral</Company>
         <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
         <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <Description>Main styles library of Material.Avalonia.</Description>
+        <Description>Main styles library of Neumorphism.Avalonia.</Description>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
@@ -50,8 +50,8 @@
     </ItemGroup>
     
     <ItemGroup>
-      <ProjectReference Include="..\Material.Colors\Neumorphism.Colors.csproj" />
-      <ProjectReference Include="..\Material.Ripple\Neumorphism.Ripple.csproj" />
+      <ProjectReference Include="..\Neumorphism.Colors\Neumorphism.Colors.csproj" />
+      <ProjectReference Include="..\Neumorphism.Ripple\Neumorphism.Ripple.csproj" />
     </ItemGroup>
 
     <ItemGroup>

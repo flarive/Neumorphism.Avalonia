@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -14,8 +14,8 @@
     <PackageReference Include="ShowMeTheXaml.Avalonia.Generator" Version="0.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Material.Avalonia\Neumorphism.Avalonia.csproj" />
-    <ProjectReference Include="..\Material.Dialog\Neumorphism.Dialog.csproj" />
+    <ProjectReference Include="..\Neumorphism.Avalonia\Neumorphism.Avalonia.csproj" />
+    <ProjectReference Include="..\Neumorphism.Dialog\Neumorphism.Dialog.csproj" />
   </ItemGroup>
 
   <ItemGroup>

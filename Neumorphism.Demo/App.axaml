@@ -3,6 +3,7 @@
              xmlns:themes="clr-namespace:Neumorphism.Styles.Themes;assembly=Neumorphism.Styles"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              x:Class="Neumorphism.Demo.App">
+  
   <Application.Styles>
     <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml" />
     <themes:MaterialTheme BaseTheme="Light" PrimaryColor="Purple" SecondaryColor="Lime" />
