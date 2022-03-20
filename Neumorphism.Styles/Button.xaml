@@ -13,6 +13,10 @@
 		<system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
 		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
 		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+    <LinearGradientBrush x:Key="BackgroundGradient">
+      <GradientStop Offset="0" Color="#FF00FF00" />
+      <GradientStop Offset="1" Color="#FFFF0000" />
+    </LinearGradientBrush>
 	</Styles.Resources>
 
 	
@@ -21,7 +25,6 @@
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Background" Value="#E0E5EC" />
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Padding" Value="16 8" />
@@ -119,11 +122,13 @@
                 Background="{TemplateBinding Background}" 
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}}" BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
+                CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
+                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 
               <Panel>
                 <!--Outline-->
-                <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                       Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
                       CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}}"/>
 
@@ -313,42 +318,32 @@
     <Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />
   </Style>
   
-  <!-- Feedbacks -->
-  <!--MouseOver-->
-  <!--<Style Selector="Button:not(.disabled):pointerover /template/ Border#PART_HoverIndicator, 
-                   ToggleButton:not(.disabled):pointerover /template/ Border#PART_HoverIndicator">
-    <Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
-  </Style>-->
+
 
   <!--Mouseover-->
   <Style
       Selector="Button:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder,
       ToggleButton:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
 
-    <Setter Property="BoxShadow" Value="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
-
-
-
+    <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
+    <Setter Property="Opacity" Value="1"/>
   </Style>
 
+  <!--Pressed-->
   <Style
-  Selector="Button:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
-  ToggleButton:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+    Selector="Button:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+  ToggleButton:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
 
-    <Setter Property="Background" Value="Yellow"/>
-
-
-
+    <Setter Property="Background" Value="Gray"/>
+    <Setter Property="Opacity" Value="0.1"/>
   </Style>
 
+  <!--Selected-->
   <Style
   Selector="Button:selected:not(.no-material) /template/ Border#PART_ButtonRootBorder,
   ToggleButton:selected:not(.no-material) /template/ Border#PART_ButtonRootBorder">
 
     <Setter Property="Background" Value="Green"/>
-
-
-
   </Style>
 
   
@@ -452,24 +447,78 @@
   
   <!--Class Light-->
   <Style Selector="Button.Light:not(.Outline), ToggleButton.Light:not(.Outline)">
-    <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
   </Style>
+
+  <Style Selector="Button.Light /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Light /template/ Border#PART_HoverIndicator">
+    <Setter Property="Opacity" Value="0.2" />
+    <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+  </Style>
+
+  <Style Selector="Button.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator,
+      ToggleButton.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+
+    <Setter Property="Opacity" Value="0.3"/>
+  </Style>
   
+
   <!--Class Dark-->
   <Style Selector="Button.Dark:not(.Outline), ToggleButton.Dark:not(.Outline)">
-    <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+    <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+  </Style>
+
+  <Style Selector="Button.Dark /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Dark /template/ Border#PART_HoverIndicator">
+    <Setter Property="Opacity" Value="0.2" />
+    <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+  </Style>
+
+  <Style
+  Selector="Button.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator,
+      ToggleButton.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+
+    <Setter Property="Opacity" Value="0.3"/>
   </Style>
 
   <!--Class Accent-->
   <Style Selector="Button.Accent:not(.Outline), ToggleButton.Accent:not(.Outline)">
-    <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
   </Style>
+
+
+  <Style Selector="Button.Accent /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Accent /template/ Border#PART_HoverIndicator">
+    <Setter Property="Opacity" Value="0.2" />
+    <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+  </Style>
+
+  <Style
+    Selector="Button.Accent:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+      ToggleButton.Accent:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+
+    <Setter Property="Opacity" Value="0.8"/>
+    <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+  </Style>
+  
+  
+
+  <!--Class Gradient-->
+  <Style Selector="Button.Gradient:not(.Outline), ToggleButton.Gradient:not(.Outline)">
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
+  </Style>
+
+  <Style Selector="Button.Gradient /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Gradient /template/ Border#PART_HoverIndicator">
+    <Setter Property="Opacity" Value="0.2" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
+  </Style>
+  
+  
   <!--Class Outline-->
   <Style Selector="Button.Accent.Flat:not(.Outline), ToggleButton.Accent.Flat:not(.Outline)">
     <Setter Property="Background" Value="Transparent"/>
@@ -491,10 +540,11 @@
 
   <Style Selector="Button.Outline /template/ Border#PART_HoverIndicator,
                    ToggleButton.Outline /template/ Border#PART_HoverIndicator">
-    <Setter Property="BorderBrush" Value="#E0E5EC" />
-    <Setter Property="BorderThickness" Value="6" />
-    <Setter Property="Background" Value="#FFc7ccd3" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="8" />
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="Opacity" Value="1" />
+    <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
   </Style>
 
   <Style Selector="Button.Outline.Accent, ToggleButton.Outline.Accent">
@@ -506,6 +556,9 @@
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
   </Style>
+
+
+  
   <Style Selector="Button.Outline.Dark, ToggleButton.Outline.Dark">
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}"/>

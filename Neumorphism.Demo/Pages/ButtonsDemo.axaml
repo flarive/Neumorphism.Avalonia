@@ -13,11 +13,11 @@
         <TextBlock Classes="Headline4 Subheadline" Text="Buttons" />
         <TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" />
         <StackPanel Orientation="Horizontal">
-            <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
-                <Button Classes="Light" Content="Light" Width="300" Height="300" ToolTip.Tip='Button with classes "Light"' />
+          <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
+            <Button Content="Default" ToolTip.Tip='Regular button without any classes.' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons2">
-                <Button Content="Mid (Default)" ToolTip.Tip='Regular button without any classes.' />
+                <Button Classes="Light" Content="Light" ToolTip.Tip='Button with classes "Light"' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons3">
                 <Button Classes="Dark" Content="Dark" ToolTip.Tip='Button with classes "Dark"' />
@@ -26,9 +26,11 @@
                 <Button Classes="Accent" Content="Accent" ToolTip.Tip='Button with classes "Accent"' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons5">
-                <Button Content="Custom corner radius"
-                        ToolTip.Tip='Regular button with customized corner radius (16dp).'
-                        assist:ButtonAssist.CornerRadius="16" />
+              <Button Classes="Gradient" Content="Gradient" ToolTip.Tip='Button with classes "Gradient"' />
+            </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="Buttons7">
+                <Button Content="Custom width" Width="200"
+                        ToolTip.Tip='Button with custom width.'/>
             </showMeTheXaml:XamlDisplay>
         </StackPanel>
 

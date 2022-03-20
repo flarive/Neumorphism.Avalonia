@@ -60,13 +60,11 @@ namespace Neumorphism.Styles.Converters
                     List<BoxShadow> rest = new List<BoxShadow>() { rest1 };
 
                     b = new BoxShadows(main, rest.ToArray());
-                    
                 }
             }
 
             return b;
         }
-
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
