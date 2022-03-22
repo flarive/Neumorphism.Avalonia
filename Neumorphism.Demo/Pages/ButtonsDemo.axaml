@@ -11,63 +11,120 @@
 	
     <StackPanel Margin="16, 0">
         <TextBlock Classes="Headline4 Subheadline" Text="Buttons" />
-        <TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" />
+        
+		
+		<!--Regular buttons-->
+		<TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" />
         <StackPanel Orientation="Horizontal">
-          <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
-            <Button Content="Default" ToolTip.Tip='Regular button without any classes.' />
+            <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
+                <Button Content="Default" ToolTip.Tip='Regular button without any class.' />
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="Buttons2">
-                <Button Classes="Light" Content="Light" ToolTip.Tip='Button with classes "Light"' />
-            </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="Buttons2">
+				<Button ToolTip.Tip='Regular button without any class.'>
+					<avalonia:MaterialIcon Kind="Heart" Width="38" Height="38" Foreground="Red" />
+				</Button>
+			</showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons3">
-                <Button Classes="Dark" Content="Dark" ToolTip.Tip='Button with classes "Dark"' />
+                <Button Classes="Light" Content="Light" ToolTip.Tip='Button with class "Light"' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons4">
-                <Button Classes="Accent" Content="Accent" ToolTip.Tip='Button with classes "Accent"' />
+                <Button Classes="Dark" Content="Dark" ToolTip.Tip='Button with class "Dark"' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons5">
-              <Button Classes="Gradient" Content="Gradient" ToolTip.Tip='Button with classes "Gradient"' />
+                <Button Classes="Accent" Content="Accent" ToolTip.Tip='Button with class "Accent"' />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Buttons6">
-              <Button Classes="Custom" Width="200" Foreground="Gray" Cursor="SizeAll" Content="Custom"
-                      ToolTip.Tip='Button with classes "Custom" and custom attributes.'>
+              <Button Classes="Gradient" Content="Gradient" ToolTip.Tip='Button with class "Gradient"' />
+            </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="Buttons7">
+              <Button Classes="Custom" Width="200" Foreground="Gray" Cursor="SizeAll" Content="Custom" BorderThickness="1" BorderBrush="#CCFFFFFF" ToolTip.Tip='Button with classes "Custom" and custom attributes.'>
                 <Button.Background>
                   <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
                     <GradientStop Offset="0" Color="Transparent" />
-                    <GradientStop Offset="1" Color="LightGray" />
+                    <GradientStop Offset="1" Color="#AAbec2c7" />
                   </LinearGradientBrush>
                 </Button.Background>
               </Button>
             </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="Buttons8">
+				<Button Content="Disabled" IsEnabled="False" ToolTip.Tip='Regular disabled button without any class.' />
+			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" />
+        <!--Outline buttons-->
+		<TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
                     <Setter Property="Margin" Value="8" />
                 </Style>
             </StackPanel.Styles>
-            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons0">
-                <Button Classes="Outline Light" Content="Light" ToolTip.Tip='Button with classes "Light" and "Outline"' />
+
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineButtons1">
+				<Button Classes="Outline" Content="Default" ToolTip.Tip='Button with class "Outline"'/>
+			</showMeTheXaml:XamlDisplay>
+			
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineButtons2">
+				<Button Classes="Outline" ToolTip.Tip='Button with class "Outline"'>
+					<Button.Content>
+						<avalonia:MaterialIcon Kind="Heart" Width="38" Height="38" Foreground="Red" />
+					</Button.Content>
+				</Button>
+			</showMeTheXaml:XamlDisplay>
+			
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineButtons3">
+                <Button Classes="Outline Light" Content="Light" ToolTip.Tip='Button with class "Light" and "Outline"' />
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons1">
-                <Button Classes="Outline" Content="Mid (Default)" ToolTip.Tip='Button with classes "Outline"' />
+			
+            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons4">
+                <Button Classes="Outline Dark" Content="Dark" ToolTip.Tip='Button with class "Dark" and "Outline"' />
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons2">
-                <Button Classes="Outline Dark" Content="Dark" ToolTip.Tip='Button with classes "Dark" and "Outline"' />
-            </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons3">
-                <Button Classes="Outline Accent" Content="Accent"
-                        ToolTip.Tip='Button with classes "Accent" and "Outline"' />
+            
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineButtons5">
+                <Button Classes="Outline Accent" Content="Accent" ToolTip.Tip='Button with class "Accent" and "Outline"' />
             </showMeTheXaml:XamlDisplay>
 
-            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons4">
-                <Button Classes="Outline" Content="Custom corner radius"
-                        ToolTip.Tip='Outline button with customized corner radius (16dp).'
-                        assist:ButtonAssist.CornerRadius="16" />
+            <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons6">
+				<Button Classes="Outline" Width="200" Foreground="Gray" Cursor="SizeAll" Content="Custom" BorderThickness="1" BorderBrush="#CCDDDDDD" ToolTip.Tip='Button with class "Custom" and custom attributes.'>
+					<Button.Background>
+						<LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+							<GradientStop Offset="0" Color="Transparent" />
+							<GradientStop Offset="1" Color="#AAbec2c7" />
+						</LinearGradientBrush>
+					</Button.Background>
+				</Button>
             </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineButtons7">
+				<Button Classes="Outline" IsEnabled="False" Content="Disabled" ToolTip.Tip='Disabled button with class "Outline"'/>
+			</showMeTheXaml:XamlDisplay>
         </StackPanel>
+
+		<!--Icon buttons-->
+		<TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" />
+		<StackPanel Orientation="Horizontal">
+			<StackPanel.Styles>
+				<Style Selector="showMeTheXaml|XamlDisplay">
+					<Setter Property="Margin" Value="8" />
+				</Style>
+			</StackPanel.Styles>
+			<showMeTheXaml:XamlDisplay UniqueId="IconButtons0">
+				<Button Classes="Icon" Content="Light" ToolTip.Tip='Button with classes "Light" and "Outline"'>
+					<Button.Content>
+						<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" />
+					</Button.Content>
+				</Button>
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="IconButtons1">
+				<Button Classes="Icon Light" Content="Mid (Default)" ToolTip.Tip='Button with classes "Outline"' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="IconButtons2">
+				<Button Classes="Icon Dark" Content="Dark" ToolTip.Tip='Button with classes "Dark" and "Outline"' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="IconButtons3">
+				<Button Classes="Icon Accent" Content="Accent"
+                        ToolTip.Tip='Button with classes "Accent" and "Outline"' />
+			</showMeTheXaml:XamlDisplay>
+		</StackPanel>
 
         <TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" />
         <StackPanel Orientation="Horizontal">

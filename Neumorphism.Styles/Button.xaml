@@ -33,88 +33,13 @@
     <Setter Property="TextBlock.FontSize" Value="14" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="ClipToBounds" Value="False" />
-	  <Setter Property="Width" Value="90" />
-	  <Setter Property="Height" Value="90" />
+	<Setter Property="Width" Value="90" />
+	<Setter Property="Height" Value="90" />
     <Setter Property="BorderBrush" Value="Transparent"/>
     <Setter Property="BorderThickness" Value="0"/>
 
     <Setter Property="Template">
       <ControlTemplate>
-        <!--<Border Name="PART_ButtonRootBorder"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding assists:ButtonAssist.CornerRadius}"
-                assists:ShadowAssist.ShadowDepth="{TemplateBinding assists:ShadowAssist.ShadowDepth}">
-          <Panel>
-            <Border Name="PART_HoverIndicator" BorderThickness="0"
-                    Background="{TemplateBinding assists:ButtonAssist.HoverColor}"
-                    CornerRadius="{TemplateBinding assists:ButtonAssist.CornerRadius}"/>
-            <Border CornerRadius="{TemplateBinding assists:ButtonAssist.CornerRadius}"
-                    ClipToBounds="True">
-              <ripple:RippleEffect RippleFill="{TemplateBinding assists:ButtonAssist.ClickFeedbackColor}"
-                                   RippleOpacity="{StaticResource ButtonPressedOpacity}">
-                <ContentPresenter Name="PART_ContentPresenter"
-                                  Content="{TemplateBinding Content}"
-                                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                                  Padding="{TemplateBinding Padding}"
-                                  TextBlock.Foreground="{TemplateBinding Foreground}"
-                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-              </ripple:RippleEffect>
-            </Border>
-          </Panel>
-        </Border>-->
-
-		  <!--https://stackoverflow.com/questions/11285961/how-to-make-a-background-20-transparent-on-android-->
-
-		  <!--<Grid x:Name="MainGrid" Background="#E0E5EC">-->
-			  <!--<Border  x:Name="SurroundingBorder"
-							   Height="100" Width="100" Cursor="Hand"
-							   VerticalAlignment="Center" HorizontalAlignment="Center"
-							   Background="Transparent" BorderBrush="#E0E5EC"
-							   BorderThickness="5" CornerRadius="12">
-				  <Grid x:Name="InnerGrid" Background="#E0E5EC">
-					  <Border x:Name="InnerLowerBorder"
-									  Height="100" Width="100" Cursor="Hand"
-									  VerticalAlignment="Center" HorizontalAlignment="Center"
-									  Background="Transparent" BorderBrush="#E0E5EC"
-									  BorderThickness="5" CornerRadius="12" BoxShadow="inset 5 5 12 -1 #33000000">
-
-						  
-
-
-
-
-
-
-
-
-						  --><!--<Border.Effect>
-							  <DropShadowEffect x:Name="InnerDarkShadow" BlurRadius="12"
-														ShadowDepth="5" Direction="315"
-														Color="#000000" Opacity="0.2"/>
-						  </Border.Effect>--><!--
-					  </Border>
-					  <Border x:Name="InnerUpperBorder"
-									  Height="100" Width="100" Cursor="Hand"
-									  VerticalAlignment="Center" HorizontalAlignment="Center"
-									  Background="Transparent" BorderBrush="#E0E5EC"
-									  BorderThickness="5" CornerRadius="12" BoxShadow="inset -5 -5 12 -1 #CCFFFFFF">
-						  --><!--<Border.Effect>
-							  <DropShadowEffect x:Name="InnerLightShadow" BlurRadius="12"
-														ShadowDepth="5" Direction="135"
-														Color="#FFFFFF" Opacity="0.8"/>
-						  </Border.Effect>--><!--
-					  </Border>
-				  </Grid>
-			  </Border>-->
-
-		  <!---20 -20 60 #CCFFFFFF,20 20 60 #33000000-->
-
-		  <!--<Grid Name="OuterGrid" Opacity="1">-->
-
-
         <Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
                 Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
                 VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -137,159 +62,14 @@
                                       Padding="{TemplateBinding Padding}"
                                       TextBlock.Foreground="{TemplateBinding Foreground}"
                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
               </Panel>
-
-
-						  
-					  </Border>
-								  
-					
-				  
-				  <!--<Border x:Name="OuterLowerBorder"
-								  Height="90" Width="90" Cursor="Hand"
-								  VerticalAlignment="Center" HorizontalAlignment="Center"
-								  Background="#E0E5EC" BorderBrush="#E0E5EC"
-								  BorderThickness="5" CornerRadius="7" BoxShadow="5 5 12 2 #33000000">
-					  -->
-				  <!--<Border.Effect>
-						  <DropShadowEffect x:Name="OuterDarkShadow" BlurRadius="12"
-													ShadowDepth="5" Direction="315"
-													Color="#000000" Opacity="0.2"/>
-					  </Border.Effect>--><!--
-				  </Border>
-				  <Border x:Name="OuterUpperBorder"
-								  Height="90" Width="90" Cursor="Hand"
-								  VerticalAlignment="Center" HorizontalAlignment="Center"
-								  Background="#E0E5EC" BorderBrush="#E0E5EC"
-								  BorderThickness="5" CornerRadius="7" BoxShadow="-5 -5 12 2 #CCFFFFFF">
-					  --><!--<Border.Effect>
-						  <DropShadowEffect x:Name="OuterLightShadow" BlurRadius="12"
-													ShadowDepth="5" Direction="135"
-													Color="#FFFFFF" Opacity="0.8"/>
-					  </Border.Effect>--><!--
-					  --><!--<Border.Triggers>
-						  <EventTrigger RoutedEvent="MouseDown">
-							  <BeginStoryboard>
-								  <Storyboard>
-									  <DoubleAnimation Storyboard.TargetName="OuterGrid"
-															   Storyboard.TargetProperty="Opacity"
-															   From="1" To="0" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterUpperBorder"
-															   Storyboard.TargetProperty="Width"
-															   From="90" To="80" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterUpperBorder"
-															   Storyboard.TargetProperty="Height"
-															   From="90" To="80" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLowerBorder"
-															   Storyboard.TargetProperty="Width"
-															   From="90" To="80" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLowerBorder"
-															   Storyboard.TargetProperty="Height"
-															   From="90" To="80" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterDarkShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLightShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="InnerDarkShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="InnerLightShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <ColorAnimation Storyboard.TargetName="LoveIcon"
-															  Storyboard.TargetProperty="(materialDesign:PackIcon.Foreground).(SolidColorBrush.Color)"
-															  To="LightGray" Duration="0:0:0:0.2">
-									  </ColorAnimation>
-									  <DoubleAnimation Storyboard.TargetName="LoveIcon"
-															   Storyboard.TargetProperty="Width"
-															   From="60" To="50" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="LoveIcon"
-															   Storyboard.TargetProperty="Height"
-															   From="60" To="50" Duration="0:0:0:0.2" >
-									  </DoubleAnimation>
-								  </Storyboard>
-							  </BeginStoryboard>
-						  </EventTrigger>
-						  <EventTrigger RoutedEvent="MouseUp" >
-							  <BeginStoryboard>
-								  <Storyboard>
-									  <DoubleAnimation Storyboard.TargetName="OuterGrid"
-												  Storyboard.TargetProperty="Opacity"
-												  From="0" To="1" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterUpperBorder"
-															   Storyboard.TargetProperty="Width"
-															   From="90" To="100" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterUpperBorder"
-															   Storyboard.TargetProperty="Height"
-															   From="90" To="100" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLowerBorder"
-															   Storyboard.TargetProperty="Width"
-															   From="90" To="100" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLowerBorder"
-															   Storyboard.TargetProperty="Height"
-															   From="90" To="100" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterDarkShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="OuterLightShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="0" To="5" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="InnerDarkShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="5" To="0" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="InnerLightShadow"
-															   Storyboard.TargetProperty="ShadowDepth"
-															   From="5" To="0" Duration="0:0:0:0.2">
-									  </DoubleAnimation>
-									  <ColorAnimation Storyboard.TargetName="LoveIcon"
-															  Storyboard.TargetProperty="(materialDesign:PackIcon.Foreground).(SolidColorBrush.Color)"
-															  From="LightGray" To="Red" Duration="0:0:0:0.2">
-									  </ColorAnimation>
-									  <DoubleAnimation Storyboard.TargetName="LoveIcon"
-															   Storyboard.TargetProperty="Width"
-															   From="60" To="70" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-									  <DoubleAnimation Storyboard.TargetName="LoveIcon"
-															   Storyboard.TargetProperty="Height"
-															   From="60" To="70" Duration="0:0:0:0.2" AutoReverse="True">
-									  </DoubleAnimation>
-								  </Storyboard>
-							  </BeginStoryboard>
-						  </EventTrigger>
-					  </Border.Triggers>--><!--
-				  </Border>-->
-			  <!--</Grid>-->
-			  
-			  <!--<controls:MaterialInternalIcon Name="LoveIcon" Kind="Heart" Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"/>-->
-		  <!--</Grid>-->
+        </Border>
       </ControlTemplate>
     </Setter>
   </Style>
   
-  <!-- Transitions -->
-  
+  <!-- Default Transitions -->
   <Style Selector="Button:not(.notransitions) /template/ Border#PART_HoverIndicator">
     <Setter Property="Transitions">
       <Transitions>
@@ -307,32 +87,27 @@
   </Style>
   
   <!-- Default state -->
-  
   <Style Selector="Button /template/ Border#PART_HoverIndicator, ToggleButton /template/ Border#PART_HoverIndicator">
     <Setter Property="Opacity" Value="0" />
   </Style>
    
-  <!--Disabled-->
+  <!-- Disabled state -->
   <Style Selector="Button:disabled:not(.no-material),ToggleButton:disabled:not(.no-material)">
     <Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />
   </Style>
   
-
-
-  <!--Mouseover-->
+  <!--Pointer enter state -->
   <Style
       Selector="Button:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder,
       ToggleButton:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-
     <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
     <Setter Property="Opacity" Value="1"/>
   </Style>
 
-  <!--Pressed-->
+  <!-- Pressed state -->
   <Style
    Selector="Button:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
   ToggleButton:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-
     <Setter Property="Background" Value="Gray"/>
     <Setter Property="Opacity" Value="0.1"/>
   </Style>
@@ -341,7 +116,6 @@
   <Style
   Selector="Button:selected:not(.no-material) /template/ Border#PART_ButtonRootBorder,
   ToggleButton:selected:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-
     <Setter Property="Background" Value="Green"/>
   </Style>
 
@@ -354,9 +128,6 @@
     <Setter Property="BorderBrush" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
     <Setter Property="Padding" Value="16 6" />
-    <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth0"/>
-    <Setter Property="assists:ButtonAssist.HoverColor" Value="{DynamicResource MaterialDesignBody}"/>
-    <Setter Property="assists:ButtonAssist.ClickFeedbackColor" Value="{Binding $self.Foreground}"/>
   </Style>
 
   <Style Selector="Button.Icon, ToggleButton.Icon">
@@ -401,8 +172,7 @@
     </Setter>
   </Style>
   
-  <!-- Transitions -->
-  
+  <!-- Icon Transitions -->
   <Style Selector="Button.Icon:not(.notransitions) /template/ Ellipse#PART_HoverIndicator">
     <Setter Property="Transitions">
       <Transitions>
@@ -420,7 +190,6 @@
   </Style>  
   
   <!-- Default state -->
-  
   <Style Selector="Button.DrawerItem, ToggleButton.DrawerItem">
     <Setter Property="Height" Value="48"/>
   </Style>
@@ -437,6 +206,7 @@
                    ToggleButton.Flat:not(.disabled):pointerover /template/ Border#PART_HoverIndicator">
     <Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
   </Style>
+
   
   <!--Class Icon-->
   <Style Selector="Button.Icon:not(:disabled):pointerover /template/ Ellipse#PART_HoverIndicator,
@@ -456,14 +226,23 @@
     <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
   </Style>
 
-  <Style Selector="Button.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator,
+	<!---Class Light pointer enter state -->
+	<Style Selector="Button.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator,
       ToggleButton.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
-
-    <Setter Property="Opacity" Value="0.3"/>
+    <Setter Property="Opacity" Value="0.2"/>
   </Style>
-  
 
-  <!--Class Dark-->
+	<!---Class Light pressed state -->
+	<Style
+		Selector="Button.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+      ToggleButton.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+		<Setter Property="Opacity" Value="0.3"/>
+	</Style>
+
+
+
+	<!--Class Dark-->
   <Style Selector="Button.Dark:not(.Outline), ToggleButton.Dark:not(.Outline)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
@@ -475,19 +254,27 @@
     <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
   </Style>
 
+	<!---Class Dark pointer enter state -->
   <Style
   Selector="Button.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator,
       ToggleButton.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
-
-    <Setter Property="Opacity" Value="0.3"/>
+    <Setter Property="Opacity" Value="0.2"/>
   </Style>
+
+	<!---Class Dark pressed state -->
+	<Style
+		Selector="Button.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+      ToggleButton.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+		<Setter Property="Opacity" Value="0.3"/>
+	</Style>
+
 
   <!--Class Accent-->
   <Style Selector="Button.Accent:not(.Outline), ToggleButton.Accent:not(.Outline)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
   </Style>
-
 
   <Style Selector="Button.Accent /template/ Border#PART_HoverIndicator,
                    ToggleButton.Accent /template/ Border#PART_HoverIndicator">
@@ -498,7 +285,6 @@
   <Style
     Selector="Button.Accent:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder,
       ToggleButton.Accent:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-
     <Setter Property="Opacity" Value="0.8"/>
     <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
   </Style>
@@ -506,19 +292,20 @@
   <Style
   Selector="Button.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
   ToggleButton.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-
     <Setter Property="Opacity" Value="1.0"/>
   </Style>
 
   <Style
     Selector="Button.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
   ToggleButton.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-
     <Setter Property="Opacity" Value="0"/>
   </Style>
 
-
-
+    <Style Selector="Button.Accent.Flat:not(.Outline), ToggleButton.Accent.Flat:not(.Outline)">
+	    <Setter Property="Background" Value="Transparent"/>
+	    <Setter Property="BorderBrush" Value="Transparent"/>
+	    <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    </Style>
 
 
   <!--Class Gradient-->
@@ -532,6 +319,7 @@
     <Setter Property="Opacity" Value="0.2" />
     <Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
   </Style>
+	
 
   <!--Class Custom-->
   <Style Selector="Button.Custom:not(.Outline), ToggleButton.Custom:not(.Outline)">
@@ -541,22 +329,17 @@
 
 
   
-  <!--Class Outline-->
-  <Style Selector="Button.Accent.Flat:not(.Outline), ToggleButton.Accent.Flat:not(.Outline)">
-    <Setter Property="Background" Value="Transparent"/>
-    <Setter Property="BorderBrush" Value="Transparent"/>
-    <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
-  </Style>
+  
+  
   
   <!-- Outlined buttons -->
-
   <Style Selector="Button.Outline, ToggleButton.Outline">
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="BorderBrush" Value="Transparent"/>
-    <Setter Property="Foreground" Value="Transparent"/>
+    <Setter Property="Foreground" Value="Black"/>
   </Style>
 
 
@@ -569,21 +352,58 @@
     <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
   </Style>
 
-  <Style Selector="Button.Outline.Accent, ToggleButton.Outline.Accent">
-    <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
-    <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
-  </Style>
+
+	<!--Outline pressed state-->
+	<Style Selector="Button.Outline:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_HoverIndicator,
+					 ToggleButton.Outline:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+		<Setter Property="Background" Value="LightGray"/>
+		<Setter Property="Opacity" Value="0.1"/>
+	</Style>
   
+  
+  <!--Outline Light-->
   <Style Selector="Button.Outline.Light, ToggleButton.Outline.Light">
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
   </Style>
 
+	<Style Selector="Button.Outline.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+					 ToggleButton.Outline.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="BorderThickness" Value="8"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+	</Style>
 
-  
+
+   <!--Outline Dark-->  
   <Style Selector="Button.Outline.Dark, ToggleButton.Outline.Dark">
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}"/>
   </Style>
+
+	<Style Selector="Button.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+					 ToggleButton.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="BorderThickness" Value="8"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+	</Style>
+
+
+	<!--Outline Accent-->
+	<Style Selector="Button.Outline.Accent, ToggleButton.Outline.Accent">
+		<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+		<Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
+	</Style>
+
+	<Style Selector="Button.Outline.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+					 ToggleButton.Outline.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="BorderThickness" Value="8"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+	</Style>
+	
+	
+	
+
+	
+
+	
 </Styles>
 
