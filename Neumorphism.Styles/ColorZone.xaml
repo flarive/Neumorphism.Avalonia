@@ -18,8 +18,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}"
-                            assists:ShadowAssist.ShadowDepth="{Binding RelativeSource={RelativeSource TemplatedParent}, 
-                                Path=(assists:ShadowAssist.ShadowDepth)}">
+                            assists:ShadowAssist.ShadowDepth="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ShadowAssist.ShadowDepth)}">
                         <Border Name="PART_ColorZoneInnerBorder"
                                 CornerRadius="{TemplateBinding CornerRadius}"
                                 Margin="{TemplateBinding Padding}">

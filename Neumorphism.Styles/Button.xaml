@@ -367,10 +367,12 @@
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
   </Style>
 
-	<Style Selector="Button.Outline.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
-					 ToggleButton.Outline.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-		<Setter Property="BorderThickness" Value="8"/>
+	<!-- Outline Light pressed state -->
+	<Style Selector="Button.Outline.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+					 ToggleButton.Outline.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+		<Setter Property="BorderThickness" Value="5"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+		<Setter Property="Opacity" Value="0.5"/>
 	</Style>
 
 
@@ -380,10 +382,12 @@
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}"/>
   </Style>
 
-	<Style Selector="Button.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
-					 ToggleButton.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-		<Setter Property="BorderThickness" Value="8"/>
+	<!-- Outline Dark pressed state -->
+	<Style Selector="Button.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
+					 ToggleButton.Outline.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+		<Setter Property="BorderThickness" Value="5"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+		<Setter Property="Opacity" Value="0.5"/>
 	</Style>
 
 

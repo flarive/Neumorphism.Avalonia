@@ -7,9 +7,11 @@
         xmlns:pages="clr-namespace:Neumorphism.Demo.Pages"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+		xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Width="1280" Height="720" MinWidth="720"
         Title="Neumorphism.Demo">
+	
     <Window.Styles>
         <Style Selector="showMeTheXaml|XamlDisplay">
             <Setter Property="Margin" Value="8" />
@@ -39,7 +41,7 @@
                             <StackPanel>
                                 <Image Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top"
                                        Source="avares://Neumorphism.Demo/Assets/FavIcon_200x.png" Margin="0,0,0,-8" />
-                                <TextBlock Classes="Headline6" Text="Material Design" HorizontalAlignment="Center" />
+                                <TextBlock Classes="Headline6" Text="Neumorphism Design" HorizontalAlignment="Center" />
                                 <TextBlock Classes="Subtitle1" Text="with AvaloniaUI" HorizontalAlignment="Center" />
                             </StackPanel>
                         </styles:ColorZone>
@@ -79,8 +81,8 @@
             </styles:NavigationDrawer.LeftDrawerContent>
             <DockPanel LastChildFill="true">
                 <styles:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                                  DockPanel.Dock="Top"
-                                  Height="56" Mode="Custom" Background="Transparent" ZIndex="1">
+                                  DockPanel.Dock="Top" assists:ShadowAssist.ShadowDepth="Depth0"
+                                  Height="56" Mode="Standard" Background="Transparent" ZIndex="1">
                     <Grid Margin="16">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="24" />
