@@ -15,6 +15,7 @@ namespace Neumorphism.Styles.Converters
         {
             var b = new BoxShadows();
             bool inset = parameter != null && parameter.Equals("1");
+            bool isFixedInset = parameter != null && parameter.Equals("2");
 
 
 
@@ -34,8 +35,27 @@ namespace Neumorphism.Styles.Converters
 
             //bool gen = Gen();
 
+            BoxShadow main = new BoxShadow();
+            BoxShadow rest1 = new BoxShadow();
 
-            if (value is double)
+            if (isFixedInset)
+            {
+                //-20 -20 60 #CCFFFFFF,20 20 60 #33000000
+                main.IsInset = true;
+                main.OffsetX = -3.3;
+                main.OffsetY = -3.3;
+                main.Blur = 10;
+                main.Color = theme.CurrentTheme.ShadowLightColor;
+
+                rest1.IsInset = true;
+                rest1.OffsetX = 3.3;
+                rest1.OffsetY = 3.3;
+                rest1.Blur = 10;
+                rest1.Color = theme.CurrentTheme.ShadowDarkColor;
+            }
+
+
+            else if (value is double)
             {
                 double height = (double)value;
                 if (height > 0)
@@ -53,7 +73,6 @@ namespace Neumorphism.Styles.Converters
 
 
                     //-20 -20 60 #CCFFFFFF,20 20 60 #33000000
-                    BoxShadow main = new BoxShadow();
                     main.OffsetX = -offset;
                     main.OffsetY = -offset;
                     main.Blur = radius;
@@ -61,7 +80,7 @@ namespace Neumorphism.Styles.Converters
                     main.Color = theme.CurrentTheme.ShadowLightColor;
 
 
-                    BoxShadow rest1 = new BoxShadow();
+                    
                     rest1.OffsetX = offset;
                     rest1.OffsetY = offset;
                     rest1.Blur = radius;
@@ -96,10 +115,12 @@ namespace Neumorphism.Styles.Converters
                     }
 
 
-                    List<BoxShadow> rest = new List<BoxShadow>() { rest1 };
-                    b = new BoxShadows(main, rest.ToArray());
+                    
                 }
             }
+
+            List<BoxShadow> rest = new List<BoxShadow>() { rest1 };
+            b = new BoxShadows(main, rest.ToArray());
 
             return b;
         }

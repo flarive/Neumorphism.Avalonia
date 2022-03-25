@@ -10,8 +10,10 @@
         <converters:GetPlatformHotkeyConfigServiceConverter x:Key="GetPlatformHotkeyConfig" />
 		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
 		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+		<converters:WidthMinusBorderConverter x:Key="WidthMinusBorderConverter" />
+		
 
-        <StreamGeometry x:Key="TextBoxClearButtonData">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</StreamGeometry>
+		<StreamGeometry x:Key="TextBoxClearButtonData">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</StreamGeometry>
         <StreamGeometry x:Key="PasswordBoxRevealButtonData">M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z</StreamGeometry>
         <StreamGeometry x:Key="PasswordBoxHideButtonData">M2,5.27L3.28,4L20,20.72L18.73,22L15.65,18.92C14.5,19.3 13.28,19.5 12,19.5C7,19.5 2.73,16.39 1,12C1.69,10.24 2.79,8.69 4.19,7.46L2,5.27M12,9A3,3 0 0,1 15,12C15,12.35 14.94,12.69 14.83,13L11,9.17C11.31,9.06 11.65,9 12,9M12,4.5C17,4.5 21.27,7.61 23,12C22.18,14.08 20.79,15.88 19,17.19L17.58,15.76C18.94,14.82 20.06,13.54 20.82,12C19.17,8.64 15.76,6.5 12,6.5C10.91,6.5 9.84,6.68 8.84,7L7.3,5.47C8.74,4.85 10.33,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C12.69,17.5 13.37,17.43 14,17.29L11.72,15C10.29,14.85 9.15,13.71 9,12.28L5.6,8.87C4.61,9.72 3.78,10.78 3.18,12Z</StreamGeometry>
 
@@ -64,7 +66,7 @@
         <Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
 		<Setter Property="Padding" Value="0" />
-		<Setter Property="Margin" Value="10" />
+		<Setter Property="Margin" Value="20" />
         <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
         <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
         <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Noto Sans TC, Noto Sans SC, Noto Sans JP, Noto Sans KR, Noto Sans, Arial" />
@@ -78,6 +80,9 @@
 		<Setter Property="Cursor" Value="Ibeam"/>
 		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="TextAlignment" Value="Left"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+		<Setter Property="AcceptsReturn" Value="True"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid RowDefinitions="*, Auto">
@@ -87,15 +92,15 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-							BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
-				            CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}}">
+							BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
+				            CornerRadius="10">
 						<Border.Styles>
                             <!-- Floating watermark anim -->
                             <Style
                                 Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
                                           TextBox:focus-within /template/ TextBlock#floatingWatermark,
                                           TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
-                                <Setter Property="Margin" Value="1,-20,1,1" />
+                                <Setter Property="Margin" Value="1,-16,1,1" />
                                 <Setter Property="RenderTransform" Value="scale(0.75)" />
                             </Style>
 
@@ -107,34 +112,36 @@
                         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
                                        Classes="Subtitle1" IsVisible="{TemplateBinding UseFloatingWatermark}"
-                                       FontFamily="{TemplateBinding FontFamily}"
+									   FontFamily="{TemplateBinding FontFamily}"
                                        FontSize="{DynamicResource FontSizeSmall}"
-                                       Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="#AA000000"
+                                       Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="#77000000"
                                        RenderTransformOrigin="0, 0" />
 
                             <DataValidationErrors Name="DataValidation">
-                                <Grid ColumnDefinitions="Auto,*,Auto">
+                                <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,15" VerticalAlignment="Stretch">
                                     <ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}" />
-                                    <Panel Grid.Column="1" Name="PART_TextRoot">
-                                        <ScrollViewer Name="PART_Scroller"
+                                    <Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch"
                                                       HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                                       VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                                            <Panel VerticalAlignment="Stretch">
+                                            <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                                                 <TextBlock Name="watermark"
                                                            Margin="15,0,15,0"
                                                            Classes="Subtitle1"
-														   VerticalAlignment="Center"
+														   VerticalAlignment="Bottom"
                                                            Opacity="0.5"
                                                            Text="{TemplateBinding Watermark}"
                                                            FontFamily="{TemplateBinding FontFamily}"
                                                            TextAlignment="{TemplateBinding TextAlignment}"
                                                            TextWrapping="{TemplateBinding TextWrapping}">
                                                 </TextBlock>
-                                                <TextPresenter Name="PART_TextPresenter"
-															   VerticalAlignment="Center"
+												<TextPresenter Name="PART_TextPresenter"
+															   VerticalAlignment="Top"
+															   HorizontalAlignment="Stretch"
                                                                Margin="15,0,15,0"
                                                                Text="{TemplateBinding Text, Mode=TwoWay}"
-                                                               CaretIndex="{TemplateBinding CaretIndex}"
+                                                               MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusBorderConverter}}"
+															   CaretIndex="{TemplateBinding CaretIndex}"
                                                                SelectionStart="{TemplateBinding SelectionStart}"
                                                                SelectionEnd="{TemplateBinding SelectionEnd}"
                                                                TextAlignment="{TemplateBinding TextAlignment}"
@@ -143,8 +150,9 @@
                                                                RevealPassword="{TemplateBinding RevealPassword}"
                                                                SelectionBrush="{TemplateBinding SelectionBrush}"
                                                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                                                               CaretBrush="{TemplateBinding CaretBrush}" />
-                                            </Panel>
+                                                               CaretBrush="{TemplateBinding CaretBrush}">
+												</TextPresenter>
+	                                            </Panel>
                                         </ScrollViewer>
                                     </Panel>
                                     <StackPanel Grid.Column="2" Orientation="Horizontal">
