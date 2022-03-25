@@ -48,5 +48,8 @@ namespace Neumorphism.Styles.Themes {
         Color TextAreaInactiveBorder { get; set; }
 
         Color DataGridRowHoverBackground { get; set; }
+
+        Color ShadowLightColor { get; set; }
+        Color ShadowDarkColor { get; set; }
     }
 }

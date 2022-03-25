@@ -1,4 +1,5 @@
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists"
         xmlns:styles="clr-namespace:Neumorphism.Styles"
         xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
@@ -7,6 +8,8 @@
 
     <Styles.Resources>
         <converters:GetPlatformHotkeyConfigServiceConverter x:Key="GetPlatformHotkeyConfig" />
+		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
 
         <StreamGeometry x:Key="TextBoxClearButtonData">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</StreamGeometry>
         <StreamGeometry x:Key="PasswordBoxRevealButtonData">M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z</StreamGeometry>
@@ -60,34 +63,44 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
-        <Setter Property="Margin" Value="0,8" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="10" />
         <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
         <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
-        <Setter Property="FontFamily"
-                Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto,
-            Noto Sans TC, Noto Sans SC, Noto Sans JP, Noto Sans KR, Noto Sans, Arial" />
-        <Setter Property="FontSize" Value="16.0"/>
+        <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Noto Sans TC, Noto Sans SC, Noto Sans JP, Noto Sans KR, Noto Sans, Arial" />
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Width" Value="200"/>
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Cursor" Value="Ibeam"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid RowDefinitions="*, Auto">
-                    <Border Name="PART_RootBorder" Cursor="Ibeam"
-                            Grid.Row="0"
+                    <Border Name="PART_RootBorder" Grid.Row="0"
+							Margin="{TemplateBinding Margin}"
+							Cursor="{TemplateBinding Cursor}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <Border.Styles>
-                            <!-- Feedbacks -->
+                            BorderThickness="{TemplateBinding BorderThickness}"
+							BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+				            CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}}">
+						<Border.Styles>
+                            <!-- Floating watermark anim -->
                             <Style
                                 Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
                                           TextBox:focus-within /template/ TextBlock#floatingWatermark,
                                           TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
-                                <Setter Property="Margin" Value="1,0.75,1,1" />
+                                <Setter Property="Margin" Value="1,-20,1,1" />
                                 <Setter Property="RenderTransform" Value="scale(0.75)" />
                             </Style>
 
                             <Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
-                                <Setter Property="Margin" Value="1,24,1,1" />
+                                <Setter Property="Margin" Value="10 15 10 0" />
                                 <Setter Property="RenderTransform" Value="scale(1)" />
                             </Style>
                         </Border.Styles>
@@ -96,7 +109,7 @@
                                        Classes="Subtitle1" IsVisible="{TemplateBinding UseFloatingWatermark}"
                                        FontFamily="{TemplateBinding FontFamily}"
                                        FontSize="{DynamicResource FontSizeSmall}"
-                                       Text="{TemplateBinding (wpf:TextFieldAssist.Label)}"
+                                       Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="#AA000000"
                                        RenderTransformOrigin="0, 0" />
 
                             <DataValidationErrors Name="DataValidation">
@@ -106,10 +119,11 @@
                                         <ScrollViewer Name="PART_Scroller"
                                                       HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                                       VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                                            <Panel>
+                                            <Panel VerticalAlignment="Stretch">
                                                 <TextBlock Name="watermark"
-                                                           Margin="0,6,0,7"
+                                                           Margin="15,0,15,0"
                                                            Classes="Subtitle1"
+														   VerticalAlignment="Center"
                                                            Opacity="0.5"
                                                            Text="{TemplateBinding Watermark}"
                                                            FontFamily="{TemplateBinding FontFamily}"
@@ -117,7 +131,8 @@
                                                            TextWrapping="{TemplateBinding TextWrapping}">
                                                 </TextBlock>
                                                 <TextPresenter Name="PART_TextPresenter"
-                                                               Margin="0,6,0,7"
+															   VerticalAlignment="Center"
+                                                               Margin="15,0,15,0"
                                                                Text="{TemplateBinding Text, Mode=TwoWay}"
                                                                CaretIndex="{TemplateBinding CaretIndex}"
                                                                SelectionStart="{TemplateBinding SelectionStart}"
@@ -136,9 +151,9 @@
                                         <ContentPresenter Content="{TemplateBinding InnerRightContent}" />
                                         <Border Name="PART_AssistButtonsContainer" />
                                     </StackPanel>
-                                    <styles:MaterialUnderline Grid.ColumnSpan="3" Classes="MirrorY"
+                                    <!--<styles:MaterialUnderline Grid.ColumnSpan="3" Classes="MirrorY"
                                                               VerticalAlignment="Bottom"
-                                                              Name="PART_Underline" />
+                                                              Name="PART_Underline" />-->
                                 </Grid>
                             </DataValidationErrors>
                         </Grid>

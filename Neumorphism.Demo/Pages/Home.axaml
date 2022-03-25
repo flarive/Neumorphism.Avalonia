@@ -7,11 +7,14 @@
              xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
              xmlns:models="clr-namespace:Neumorphism.Demo.Models"
              xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
-             x:Class="Neumorphism.Demo.Pages.Home" >
+			 xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+             x:Class="Neumorphism.Demo.Pages.Home">
+	
   <UserControl.Resources>
     <conv:EnumDescriptionConverter x:Key="GetDescription"/>
   </UserControl.Resources>
-    <StackPanel Margin="16, 0" MaxWidth="600">
+    
+	<StackPanel Margin="16, 0" MaxWidth="800">
       <StackPanel.Styles>
         <Style Selector="TextBlock.Content, TextBlock.Subheadline">
           <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -30,17 +33,18 @@
       <StackPanel Margin="16">
         <StackPanel.Styles>
           <Style Selector="Button">
-            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Margin" Value="15"/>
           </Style>
         </StackPanel.Styles>
-        <WrapPanel HorizontalAlignment="Center" MaxWidth="600" >
-          <Button Classes="Flat" Content="PROJECT LINK" Command="{Binding Path=OpenProjectRepoLink}"/>
-          <Button Classes="Flat" Width="200" Height="90" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
-          <Button Classes="Flat" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>
+		  <TextBox UseFloatingWatermark="True" wpf:TextFieldAssist.Label="Classic TextBox" />
+		  <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
+          <Button Name="btn1" Content="PROJECT LINK" Command="{Binding Path=OpenProjectRepoLink}"/>
+          <Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
+          <Button Name="btn3" Width="200" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center" MaxWidth="600" >
-          <Button Classes="Flat" Content="SWITCH TRANSITIONS" Command="{Binding Path=SwitchTransition}"/>
-          <Button Classes="Flat" Content="ABOUT AVALONIAUI" Command="{Binding Path=ShowAboutAvaloniaUI}"/>
+        <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
+          <Button Name="btn4" Width="200" Content="SWITCH TRANSITIONS" Command="{Binding Path=SwitchTransition}"/>
+          <Button Name="btn5" Width="200" Content="ABOUT AVALONIAUI" Command="{Binding Path=ShowAboutAvaloniaUI}"/>
         </WrapPanel>
       </StackPanel>
       <StackPanel Margin="0,24">

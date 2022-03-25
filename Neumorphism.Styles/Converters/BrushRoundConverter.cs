@@ -9,6 +9,7 @@ namespace Neumorphism.Styles.Converters
     public class BrushRoundConverter : IValueConverter
     {
         public static readonly IValueConverter Instance = new BrushRoundConverter();
+
         public Brush HighValue { get; set; } = new SolidColorBrush(Brushes.White.Color);
 
         public Brush LowValue { get; set; } = new SolidColorBrush(Brushes.Black.Color);

@@ -29,13 +29,16 @@
                     </Style>
                 </StackPanel.Styles>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" />
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes0">
-                        <TextBox UseFloatingWatermark="True" wpf:TextFieldAssist.Label="Classic TextBox" />
+                    <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="0,10,0,10" />
+
+					<showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes0">
+						<TextBox UseFloatingWatermark="False" Watermark="Regular watermarked textbox" ToolTip.Tip="Regular watermarked textbox without any class." />
+					</showMeTheXaml:XamlDisplay>
+					
+					<showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes1">
+                        <TextBox UseFloatingWatermark="True" wpf:TextFieldAssist.Label="Floating watermark TextBox" ToolTip.Tip="Floating label watermarked textbox without any class." />
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes1">
-                        <TextBox UseFloatingWatermark="False" Watermark="No floating label" />
-                    </showMeTheXaml:XamlDisplay>
+                    
                     <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes2">
                         <TextBox UseFloatingWatermark="True" Classes="revealPasswordButton"
                                  wpf:TextFieldAssist.Label="Password" PasswordChar="*" />
@@ -57,7 +60,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel>
-                <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" />
+                <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields"  Margin="0,10,0,10" />
                 <StackPanel Orientation="Horizontal">
                     <StackPanel.Styles>
                         <Style Selector="TextBox.Floating">

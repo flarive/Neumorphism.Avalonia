@@ -4,7 +4,8 @@ namespace Neumorphism.Styles.Themes.Base {
     public class MaterialDesignDarkTheme : IBaseTheme {
         public Color ValidationErrorColor { get; } = Color.Parse("#f44336");
         public Color MaterialDesignBackground { get; } = Color.Parse("#FF000000");
-        public Color MaterialDesignPaper { get; } = Color.Parse("#FF26282B");
+        public Color MaterialDesignForeground { get; } = Color.Parse("#FFFFFFFF");
+        public Color MaterialDesignPaper { get; } = Color.Parse("#FF2c3135");
         public Color MaterialDesignCardBackground { get; } = Color.Parse("#FF424242");
         public Color MaterialDesignToolBarBackground { get; } = Color.Parse("#FF212121");
         public Color MaterialDesignBody { get; } = Color.Parse("#DDFFFFFF");
@@ -30,5 +31,11 @@ namespace Neumorphism.Styles.Themes.Base {
         public Color MaterialDesignTextAreaBorder { get; } = Color.Parse("#BCFFFFFF");
         public Color MaterialDesignTextAreaInactiveBorder { get; } = Color.Parse("#1AFFFFFF");
         public Color MaterialDesignDataGridRowHoverBackground { get; } = Color.Parse("#14FFFFFF");
+
+        public Color MaterialDesignShadowLightColor { get; } = Color.Parse("#22FFFFFF");
+        public Color MaterialDesignShadowDarkColor { get; } = Color.Parse("#33000000");
+
+        //public Color MaterialDesignShadowLightColor { get; } = Color.Parse("#FF00FF00");
+        //public Color MaterialDesignShadowDarkColor { get; } = Color.Parse("#FFFF0000");
     }
 }

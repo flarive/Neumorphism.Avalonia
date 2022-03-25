@@ -30,5 +30,7 @@ namespace Neumorphism.Styles.Themes.Base {
         Color MaterialDesignTextAreaBorder { get; }
         Color MaterialDesignTextAreaInactiveBorder { get; }
         Color MaterialDesignDataGridRowHoverBackground { get; }
+        Color MaterialDesignShadowLightColor { get; }
+        Color MaterialDesignShadowDarkColor { get; }
     }
 }

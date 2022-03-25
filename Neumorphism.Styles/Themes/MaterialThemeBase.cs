@@ -125,7 +125,8 @@ namespace Neumorphism.Styles.Themes {
             _currentCancellationTokenSource = currentToken;
 
             if (_currentThemeUpdateTask != null) await _currentThemeUpdateTask;
-            if (!currentToken.IsCancellationRequested) {
+            if (!currentToken.IsCancellationRequested)
+            {
                 _currentThemeUpdateTask = UpdateThemeAsync(oldTheme, newTheme);
             }
         });
@@ -174,23 +175,53 @@ namespace Neumorphism.Styles.Themes {
                 UpdateSolidColorBrush("MaterialDesignTextFieldBoxDisabledBackground", oldTheme?.TextFieldBoxDisabledBackground, newTheme.TextFieldBoxDisabledBackground),
                 UpdateSolidColorBrush("MaterialDesignTextAreaBorder", oldTheme?.TextAreaBorder, newTheme.TextAreaBorder),
                 UpdateSolidColorBrush("MaterialDesignTextAreaInactiveBorder", oldTheme?.TextAreaInactiveBorder, newTheme.TextAreaInactiveBorder),
-                UpdateSolidColorBrush("MaterialDesignDataGridRowHoverBackground", oldTheme?.DataGridRowHoverBackground, newTheme.DataGridRowHoverBackground)
+                UpdateSolidColorBrush("MaterialDesignDataGridRowHoverBackground", oldTheme?.DataGridRowHoverBackground, newTheme.DataGridRowHoverBackground),
+                UpdateSolidColorBrush("MaterialDesignShadowLightColor", oldTheme?.ShadowLightColor, newTheme.ShadowLightColor),
+                UpdateSolidColorBrush("MaterialDesignShadowDarkColor", oldTheme?.ShadowDarkColor, newTheme.ShadowDarkColor)
             );
         }
 
         private Task UpdateSolidColorBrush(string brushName, Color? oldColor, Color newColor) {
+            
+            if (brushName.ToLower().Contains("shadowdark"))
+            {
+                string aaa = null;
+                var mmm = LoadedResourceDictionary.TryGetValue(brushName, out var b2);
+            }
+            
+            
             if (oldColor == newColor) return Task.CompletedTask;
-            return LoadedResourceDictionary.TryGetValue(brushName, out var b) && b is SolidColorBrush brush
-                ? UpdateBrushAsync()
-                : CreateBrushAsync();
 
-            Task UpdateBrushAsync()
+
+            
+
+
+            return LoadedResourceDictionary.TryGetValue(brushName, out var b) && b is SolidColorBrush brush
+                ? UpdateBrushAsync(brushName)
+                : CreateBrushAsync(brushName);
+
+
+            
+
+            Task UpdateBrushAsync(string brushName)
                 => Dispatcher.UIThread.InvokeAsync(() => {
+
+                    if (brushName.ToLower().Contains("shadow"))
+                    {
+                        string aaa = null;
+                    }
+
                     brush.Color = newColor;
                 });
 
-            Task CreateBrushAsync()
+            Task CreateBrushAsync(string brushName)
                 => Dispatcher.UIThread.InvokeAsync(() => {
+
+                    if (brushName.ToLower().Contains("shadow"))
+                    {
+                        string aaa = null;
+                    }
+
                     LoadedResourceDictionary[brushName] = new SolidColorBrush(newColor) {
                         Transitions = new Transitions {
                             new ColorTransition {

@@ -5,13 +5,18 @@ using Avalonia.Media;
 using Neumorphism.Colors.ColorManipulation;
 using Neumorphism.Styles.Themes.Base;
 
-namespace Neumorphism.Styles.Themes {
-    public static class ThemeExtensions {
-        public static T LocateMaterialTheme<T>(this Application application) where T : MaterialThemeBase {
+namespace Neumorphism.Styles.Themes
+{
+    public static class ThemeExtensions
+    {
+        public static T LocateMaterialTheme<T>(this Application application) where T : MaterialThemeBase
+        {
             var materialTheme = application.Styles.FirstOrDefault(style => style is T);
-            if (materialTheme == null) {
+            if (materialTheme == null)
+            {
                 throw new InvalidOperationException($"Cannot locate {nameof(T)} in Avalonia application styles. Be sure that you include MaterialTheme in your App.xaml in Application.Styles section");
             }
+            
             return (T)materialTheme;
         }
 
@@ -65,6 +70,8 @@ namespace Neumorphism.Styles.Themes {
             theme.TextAreaBorder = baseTheme.MaterialDesignTextAreaBorder;
             theme.TextAreaInactiveBorder = baseTheme.MaterialDesignTextAreaInactiveBorder;
             theme.DataGridRowHoverBackground = baseTheme.MaterialDesignDataGridRowHoverBackground;
+            theme.ShadowLightColor = baseTheme.MaterialDesignShadowLightColor;
+            theme.ShadowDarkColor = baseTheme.MaterialDesignShadowDarkColor;
 
             return theme;
         }

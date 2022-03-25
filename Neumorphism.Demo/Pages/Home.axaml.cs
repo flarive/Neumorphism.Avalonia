@@ -6,6 +6,8 @@ using Neumorphism.Styles.Assists;
 using System.Collections.ObjectModel;
 using Neumorphism.Dialog;
 using static Neumorphism.Demo.Models.StatusEnum;
+using Avalonia.Threading;
+using System.Diagnostics;
 
 namespace Neumorphism.Demo.Pages
 {
@@ -44,17 +46,45 @@ namespace Neumorphism.Demo.Pages
             new FeatureStatusModels{ FeatureName = "Icons (Excluded, via Material.Icons.Avalonia)", IsReady = Yes, IsAnimated = NA},
             new FeatureStatusModels{ FeatureName = "Appbar (Top)", IsReady = No, IsAnimated = NA},
             new FeatureStatusModels{ FeatureName = "Appbar (Bottom)", IsReady = No, IsAnimated = NA},
-        };
+            };
 
             InitializeComponent();
             DataContext = this;
         }
 
+        
+        
+        
         public ObservableCollection<FeatureStatusModels> Features { get; private set; }
 
-        public void UseMaterialUIDarkTheme() => GlobalCommand.UseMaterialUIDarkTheme();
 
-        public void UseMaterialUILightTheme() => GlobalCommand.UseMaterialUILightTheme();
+        public void UseMaterialUIDarkTheme()
+        {
+            GlobalCommand.UseMaterialUIDarkTheme();
+
+            DirtyControlRedrawFix("btn1");
+            DirtyControlRedrawFix("btn2");
+            DirtyControlRedrawFix("btn3");
+            DirtyControlRedrawFix("btn4");
+            DirtyControlRedrawFix("btn5");
+            DirtyControlRedrawFix("NavDrawerSwitch");
+        }
+
+        public void UseMaterialUILightTheme()
+        {
+            GlobalCommand.UseMaterialUILightTheme();
+
+            DirtyControlRedrawFix("btn1");
+            DirtyControlRedrawFix("btn2");
+            DirtyControlRedrawFix("btn3");
+            DirtyControlRedrawFix("btn4");
+            DirtyControlRedrawFix("btn5");
+            DirtyControlRedrawFix("NavDrawerSwitch");
+        }
+
+        //public void UseMaterialUIDarkTheme() => GlobalCommand.UseMaterialUIDarkTheme();
+
+        //public void UseMaterialUILightTheme() => GlobalCommand.UseMaterialUILightTheme();
 
         public void OpenProjectRepoLink() => GlobalCommand.OpenProjectRepoLink();
 
@@ -70,6 +100,16 @@ namespace Neumorphism.Demo.Pages
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        private void DirtyControlRedrawFix(string name)
+        {
+            var ctrl = this.FindControl<ContentControl>(name);
+            if (ctrl != null)
+            {
+                ctrl.Height = ctrl.Height - 1;
+                ctrl.Height = ctrl.Height + 1;
+            }
         }
     }
 }

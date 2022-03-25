@@ -38,6 +38,8 @@ namespace Neumorphism.Styles.Themes {
             TextAreaBorder = baseTheme.TextAreaBorder;
             TextAreaInactiveBorder = baseTheme.TextAreaInactiveBorder;
             DataGridRowHoverBackground = baseTheme.DataGridRowHoverBackground;
+            ShadowLightColor = baseTheme.ShadowLightColor;
+            ShadowDarkColor = baseTheme.ShadowDarkColor;
         }
         public ColorPair PrimaryLight { get; set; }
         public ColorPair PrimaryMid { get; set; }
@@ -73,5 +75,7 @@ namespace Neumorphism.Styles.Themes {
         public Color TextAreaBorder { get; set; }
         public Color TextAreaInactiveBorder { get; set; }
         public Color DataGridRowHoverBackground { get; set; }
+        public Color ShadowLightColor { get; set; }
+        public Color ShadowDarkColor { get; set; }
     }
 }

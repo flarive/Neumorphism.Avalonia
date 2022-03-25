@@ -11,10 +11,10 @@ namespace Neumorphism.Styles.Converters
         {
             if (value is double)
             {
-                double width = (double)value;
-                if (width > 0)
+                double height = (double)value;
+                if (height > 0)
                 {
-                    double radius = (double)(width / 5);
+                    double radius = (double)(height / 5);
                     return new CornerRadius(radius);
                 }
             }
