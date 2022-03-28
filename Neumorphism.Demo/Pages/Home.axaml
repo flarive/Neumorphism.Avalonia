@@ -36,7 +36,7 @@
             <Setter Property="Margin" Value="15"/>
           </Style>
         </StackPanel.Styles>
-		  <TextBox UseFloatingWatermark="True" wpf:TextFieldAssist.Label="Classic TextBox" />
+		  <TextBox Name="xxx" UseFloatingWatermark="True" wpf:TextFieldAssist.Label="Classic TextBox" />
 		  <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
           <Button Name="btn1" Content="PROJECT LINK" Command="{Binding Path=OpenProjectRepoLink}"/>
           <Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>

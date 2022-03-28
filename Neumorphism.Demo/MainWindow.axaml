@@ -7,7 +7,7 @@
         xmlns:pages="clr-namespace:Neumorphism.Demo.Pages"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-		xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+		    xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Width="1280" Height="720" MinWidth="720"
         Title="Neumorphism.Demo">
@@ -32,8 +32,7 @@
     </Window.Styles>
 
     <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied">
-        <styles:NavigationDrawer Name="LeftDrawer"
-                                 LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
+        <styles:NavigationDrawer Name="LeftDrawer" LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
             <styles:NavigationDrawer.LeftDrawerContent>
                 <ScrollViewer>
                     <StackPanel>
@@ -96,8 +95,8 @@
                                       Width="38" Height="38" CornerRadius="6" Padding="4">
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />
                         </ToggleButton>
-                        <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo"
-                                   VerticalAlignment="Center" />
+                        <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
+                        <ToggleSwitch Grid.Column="3" Name="toggleSwitchTheme" Content="Switch me!" IsChecked="False" Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
                         <Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
                                 <MenuItem Header="Hello!" Click="HelloButtonMenuItem_OnClick">

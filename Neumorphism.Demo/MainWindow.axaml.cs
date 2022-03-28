@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls; 
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.VisualTree;
 using Neumorphism.Styles;
 using Neumorphism.Styles.Models;
 
-namespace Neumorphism.Demo {
-    public class MainWindow : Window {
+namespace Neumorphism.Demo
+{
+    public class MainWindow : Window
+    {
          
         #region Control fields
         private ToggleButton NavDrawerSwitch;
@@ -19,12 +23,17 @@ namespace Neumorphism.Demo {
         private ScrollViewer mainScroller;
         #endregion
 
-        public MainWindow() {
+        public MainWindow()
+        {
             InitializeComponent();
+
+            DataContext = this;
+
             this.AttachDevTools(KeyGesture.Parse("Shift+F12"));
         }
 
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             AvaloniaXamlLoader.Load(this);
 
             #region Control getter and event binding
@@ -87,6 +96,48 @@ namespace Neumorphism.Demo {
             }
             
             SnackbarHost.Post("See ya next time, user!");
+        }
+
+        public void SwitchUITheme(object sender)
+        {
+            var toggleButton = sender as ToggleButton;
+            if (toggleButton != null)
+            {
+                if (toggleButton.IsChecked.HasValue && toggleButton.IsChecked.Value)
+                {
+                    GlobalCommand.UseMaterialUIDarkTheme();
+                }
+                else
+                {
+                    GlobalCommand.UseMaterialUILightTheme();
+                }
+            }
+
+            DirtyControlsRedrawFix();
+        }
+
+        /// <summary>
+        /// Dirty hack !!!!
+        /// </summary>
+        private void DirtyControlsRedrawFix()
+        {
+            foreach (InputElement ctrl in this.GetVisualDescendants().OfType<InputElement>())
+            {
+                // Code here
+                if (ctrl != null)
+                {
+                    if (ctrl.Height > 0)
+                    {
+                        ctrl.Height = ctrl.Height - 1;
+                        ctrl.Height = ctrl.Height + 1;
+                    }
+                    else if (ctrl.Height is double.NaN)
+                    {
+                        ctrl.Height = 0;
+                        ctrl.Height = double.NaN;
+                    }
+                }
+            }
         }
     }
 }

@@ -5,13 +5,21 @@ using Avalonia.Data.Converters;
 
 namespace Neumorphism.Styles.Converters
 {
-    public class WidthMinusBorderConverter : IValueConverter
+    public class WidthMinusValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+
+            int minus = 0;
+            
+            if (parameter != null)
+            {
+                int.TryParse(parameter.ToString(), out minus);
+            }
+            
             if (value is double)
             {
-                return ((double)value) - 40;
+                return ((double)value) - minus;
             }
 
             return 0;

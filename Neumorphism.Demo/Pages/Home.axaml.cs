@@ -6,8 +6,9 @@ using Neumorphism.Styles.Assists;
 using System.Collections.ObjectModel;
 using Neumorphism.Dialog;
 using static Neumorphism.Demo.Models.StatusEnum;
-using Avalonia.Threading;
-using System.Diagnostics;
+using Avalonia.Input;
+using Avalonia.VisualTree;
+using System.Linq;
 
 namespace Neumorphism.Demo.Pages
 {
@@ -68,6 +69,8 @@ namespace Neumorphism.Demo.Pages
             DirtyControlRedrawFix("btn4");
             DirtyControlRedrawFix("btn5");
             DirtyControlRedrawFix("NavDrawerSwitch");
+            DirtyControlRedrawFix("toggleSwitchTheme");
+            DirtyControlRedrawFix("xxx");
         }
 
         public void UseMaterialUILightTheme()
@@ -80,6 +83,8 @@ namespace Neumorphism.Demo.Pages
             DirtyControlRedrawFix("btn4");
             DirtyControlRedrawFix("btn5");
             DirtyControlRedrawFix("NavDrawerSwitch");
+            DirtyControlRedrawFix("toggleSwitchTheme");
+            DirtyControlRedrawFix("xxx");
         }
 
         //public void UseMaterialUIDarkTheme() => GlobalCommand.UseMaterialUIDarkTheme();
@@ -104,11 +109,22 @@ namespace Neumorphism.Demo.Pages
 
         private void DirtyControlRedrawFix(string name)
         {
-            var ctrl = this.FindControl<ContentControl>(name);
-            if (ctrl != null)
+            foreach (InputElement ctrl in this.GetVisualDescendants().OfType<InputElement>())
             {
-                ctrl.Height = ctrl.Height - 1;
-                ctrl.Height = ctrl.Height + 1;
+                // Code here
+                if (ctrl != null)
+                {
+                    if (ctrl.Height > 0)
+                    {
+                        ctrl.Height = ctrl.Height - 1;
+                        ctrl.Height = ctrl.Height + 1;
+                    }
+                    else if (ctrl.Height is double.NaN)
+                    {
+                        ctrl.Height = 0;
+                        ctrl.Height = double.NaN;
+                    }
+                }
             }
         }
     }
