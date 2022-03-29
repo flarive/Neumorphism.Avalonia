@@ -2,24 +2,35 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
+    xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
     xmlns:animations="clr-namespace:Neumorphism.Styles.Additional.Animations">
+
+
+    <Styles.Resources>
+      <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+      <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+      <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+    </Styles.Resources>
+    
+    
     <Style Selector="ToggleSwitch">
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="{DynamicResource PrimaryHueLightBrush}" />
-        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Black" />
-        <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth1" />
-        <Setter Property="assists:SelectionControlAssist.Size" Value="36" />
+        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
+        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
+        <Setter Property="assists:SelectionControlAssist.Size" Value="0" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="8 0 0 0" />
         <Setter Property="OffContent" Value="" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="Width" Value="160" />
+        <Setter Property="Height" Value="28" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Grid ColumnDefinitions="Auto, *" ClipToBounds="False">
+                <Grid ColumnDefinitions="Auto, *" ClipToBounds="False" Background="Red">
                     <!-- Unused. Left for compability with stupid avalonia control code behind -->
                     <Canvas Name="SwitchKnob"
                             HorizontalAlignment="Left"
@@ -33,16 +44,17 @@
                     <Viewbox Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
                              Stretch="Uniform"
                              ClipToBounds="False" Grid.Column="0" VerticalAlignment="Center">
-                        <Grid ClipToBounds="False">
+                        <Grid ClipToBounds="False" Background="Green">
                             <!--Background-->
-							<Border Name="Track"
-                                    Opacity="0.26"
+							              <Border Name="Track" 
+                                    Opacity="1"
                                     HorizontalAlignment="Left"
-                                    Height="14"
+                                    Height="{TemplateBinding Height}"
                                     VerticalAlignment="Center"
-                                    Width="36"
-                                    CornerRadius="7" />
-                            <Grid Name="ThumbHolder" ClipToBounds="False" Height="20" Width="20"
+                                    BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
+                                    Width="{TemplateBinding Width}"
+                                    CornerRadius="100" />
+                            <Grid Name="ThumbHolder" ClipToBounds="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
                                   HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Ellipse Name="RippleThumb"
                                          Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
@@ -56,12 +68,12 @@
                                 </Ellipse>
                                 <AdornerLayer>
                                     <!--Circle-->
-									<Border Name="Thumb"
+									                  <Border Name="Thumb"
                                             HorizontalAlignment="Center" VerticalAlignment="Center"
-                                            CornerRadius="20"
-                                            Width="20" Height="20"
-                                            ClipToBounds="False"
-                                            assists:ShadowAssist.ShadowDepth="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ShadowAssist.ShadowDepth), Mode=TwoWay}" />
+                                            CornerRadius="100"
+                                            Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=4}"
+                                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=4}"
+                                            ClipToBounds="False" />
                                 </AdornerLayer>
                                 <ContentPresenter Name="OnContentPresenter"
                                                   Content="{TemplateBinding OnContent}"
@@ -86,20 +98,24 @@
             </ControlTemplate>
         </Setter>
     </Style>
+  
+  
+  
   <Style Selector="ToggleSwitch.LeftHeader">
     <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="{DynamicResource PrimaryHueLightBrush}" />
-    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Black" />
-    <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth1" />
-    <Setter Property="assists:SelectionControlAssist.Size" Value="36" />
+    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
+    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
+    <Setter Property="assists:SelectionControlAssist.Size" Value="72" />
     <Setter Property="BorderThickness" Value="1" />
     <Setter Property="Padding" Value="0 0 8 0" />
     <Setter Property="OffContent" Value="" />
     <Setter Property="VerticalAlignment" Value="Top" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Width" Value="150" />
+    <Setter Property="Height" Value="28" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="*, Auto" ClipToBounds="False"> 
@@ -124,14 +140,16 @@
                    Stretch="Uniform"
                    ClipToBounds="False" Grid.Column="1" VerticalAlignment="Center">
             <Grid ClipToBounds="False">
+              <!--Background-->
               <Border Name="Track"
-                      Opacity="0.26"
+                      Opacity="1"
                       HorizontalAlignment="Left"
-                      Height="14"
+                      BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
+                      Height="{TemplateBinding Height}"
                       VerticalAlignment="Center"
-                      Width="36"
-                      CornerRadius="7" />
-              <Grid Name="ThumbHolder" ClipToBounds="False" Height="20" Width="20"
+                      Width="{TemplateBinding Width}"
+                      CornerRadius="100" />
+              <Grid Name="ThumbHolder" ClipToBounds="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
                     HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Ellipse Name="RippleThumb"
                          Fill="{Binding RelativeSource={RelativeSource TemplatedParent},
@@ -141,12 +159,13 @@
                          Margin="-100"
                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <AdornerLayer>
+                  <!--Circle-->
                   <Border Name="Thumb"
                           HorizontalAlignment="Center" VerticalAlignment="Center"
-                          CornerRadius="20"
-                          Width="20" Height="20"
-                          ClipToBounds="False"
-                          assists:ShadowAssist.ShadowDepth="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ShadowAssist.ShadowDepth), Mode=TwoWay}" />
+                          CornerRadius="100"
+                          Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=4}"
+                          Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=4}"
+                          ClipToBounds="False" />
                 </AdornerLayer>
                 <ContentPresenter Name="OnContentPresenter"
                                   Content="{TemplateBinding OnContent}"
