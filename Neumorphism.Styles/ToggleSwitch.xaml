@@ -7,8 +7,7 @@
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground"
-                Value="{DynamicResource PrimaryHueLightBrush}" />
+        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="{DynamicResource PrimaryHueLightBrush}" />
         <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Black" />
         <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth1" />
         <Setter Property="assists:SelectionControlAssist.Size" Value="36" />
@@ -35,7 +34,8 @@
                              Stretch="Uniform"
                              ClipToBounds="False" Grid.Column="0" VerticalAlignment="Center">
                         <Grid ClipToBounds="False">
-                            <Border Name="Track"
+                            <!--Background-->
+							<Border Name="Track"
                                     Opacity="0.26"
                                     HorizontalAlignment="Left"
                                     Height="14"
@@ -45,8 +45,7 @@
                             <Grid Name="ThumbHolder" ClipToBounds="False" Height="20" Width="20"
                                   HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Ellipse Name="RippleThumb"
-                                         Fill="{Binding RelativeSource={RelativeSource TemplatedParent},
-                Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
+                                         Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
                                          Height="18" Width="18"
                                          IsHitTestVisible="False"
                                          Margin="-100"
@@ -56,7 +55,8 @@
                                     </Ellipse.RenderTransform>
                                 </Ellipse>
                                 <AdornerLayer>
-                                    <Border Name="Thumb"
+                                    <!--Circle-->
+									<Border Name="Thumb"
                                             HorizontalAlignment="Center" VerticalAlignment="Center"
                                             CornerRadius="20"
                                             Width="20" Height="20"
@@ -90,8 +90,7 @@
     <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground"
-            Value="{DynamicResource PrimaryHueLightBrush}" />
+    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="{DynamicResource PrimaryHueLightBrush}" />
     <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Black" />
     <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth1" />
     <Setter Property="assists:SelectionControlAssist.Size" Value="36" />
@@ -251,9 +250,6 @@
     <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground"
             Value="{DynamicResource SecondaryHueLightBrush}" />
   </Style>
-    
-    <!-- Override Avalonia.Themes.Default parameter -->
-    <!-- Issue: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/issues/132 -->
     
     <Style Selector="ToggleSwitch:disabled">
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />

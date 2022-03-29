@@ -88,6 +88,7 @@
                             <ColumnDefinition Width="32" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="32" />
+							<ColumnDefinition Width="200" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <ToggleButton Name="NavDrawerSwitch"
@@ -96,8 +97,8 @@
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />
                         </ToggleButton>
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
-                        <ToggleSwitch Grid.Column="3" Name="toggleSwitchTheme" Content="Switch me!" IsChecked="False" Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
-                        <Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
+                        <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Content="Dark theme" IsChecked="False" Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
+                        <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
                                 <MenuItem Header="Hello!" Click="HelloButtonMenuItem_OnClick">
                                     <MenuItem.Icon>
