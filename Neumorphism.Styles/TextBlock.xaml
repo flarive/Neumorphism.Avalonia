@@ -4,8 +4,7 @@
     <Setter Property="Padding" Value="0" />
     <Setter Property="FontSize" Value="13" />
     <Setter Property="FontWeight" Value="Regular" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto,
-            Noto Sans TC, Noto Sans SC, Noto Sans JP, Noto Sans KR, Noto Sans, Arial"/>
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
   </Style> 
 
   <Style Selector="TextBlock.Caption"> 

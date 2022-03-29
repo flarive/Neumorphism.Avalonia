@@ -144,7 +144,7 @@
   <Style Selector="ComboBox.Filled">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto"/>
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
     <Setter Property="Padding" Value="16,8" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -267,7 +267,7 @@
     <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBody }"/>
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto"/>
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
     <Setter Property="Padding" Value="16,8" />
     <Setter Property="Template">
       <ControlTemplate>

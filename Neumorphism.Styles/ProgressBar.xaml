@@ -377,7 +377,6 @@
     </Style>
 
     <!-- Override Avalonia.Themes.Default parameter -->
-    <!-- Issue: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/issues/125 -->
 
     <Style Selector="ProgressBar:horizontal">
         <Setter Property="MinWidth" Value="0" />
