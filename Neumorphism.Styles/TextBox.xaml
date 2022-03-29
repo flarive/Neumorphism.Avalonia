@@ -630,4 +630,49 @@
       </StackPanel>
     </Border>
   </Design.PreviewWith>-->
+
+
+  <!-- no-material class -->
+  <Style Selector="TextBox.no-material">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
+    <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Margin" Value="0,10,0,10" />
+    <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
+    <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial" />
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Normal"/>
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Width" Value="200"/>
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="Cursor" Value="Ibeam"/>
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+    <Setter Property="TextAlignment" Value="Left"/>
+    <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <TextPresenter Name="PART_TextPresenter"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Left"
+                          Margin="0"
+                          Text="{TemplateBinding Text, Mode=TwoWay}"
+                          CaretIndex="{TemplateBinding CaretIndex}"
+                          SelectionStart="{TemplateBinding SelectionStart}"
+                          SelectionEnd="{TemplateBinding SelectionEnd}"
+                          TextAlignment="{TemplateBinding TextAlignment}"
+                          TextWrapping="{TemplateBinding TextWrapping}"
+                          PasswordChar="{TemplateBinding PasswordChar}"
+                          RevealPassword="{TemplateBinding RevealPassword}"
+                          SelectionBrush="{TemplateBinding SelectionBrush}"
+                          SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                          CaretBrush="{TemplateBinding CaretBrush}"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
 </Styles>

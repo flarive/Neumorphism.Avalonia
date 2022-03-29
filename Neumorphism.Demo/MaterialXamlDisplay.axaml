@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
         xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles">
+  
     <Style Selector="showMeTheXaml|XamlDisplay">
         <Setter Property="Template">
             <ControlTemplate>
@@ -25,9 +26,8 @@
                              Height="16" Width="16"
                              VerticalAlignment="{TemplateBinding XamlButtonAlignment, Converter={x:Static showMeTheXaml:AlignmentYConverter.Instance}}">
 						<Viewbox.Styles>
-							<Style Selector="Viewbox:pointerover Grid#PART_XamlDisplayIcon">
-								<Setter Property="Opacity" Value="0.8"/>
-								<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+							<Style Selector="Viewbox:pointerover Grid#PART_XamlDisplayIcon > Path">
+								<Setter Property="Fill" Value="Red"/>
 							</Style>
 						</Viewbox.Styles>
 						<Grid Name="PART_XamlDisplayIcon" Background="Transparent">
@@ -36,17 +36,11 @@
 						</Grid>
                     </Viewbox>
                     <Popup Name="XamlPopup" Grid.Column="1" IsLightDismissEnabled="True" Width="800" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
-						<Border BorderBrush="Gray" BorderThickness="1" Background="LightGray">
-                            <styles:Card>
-                                <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                              Background="{TemplateBinding Background}"
-                                              HorizontalScrollBarVisibility="Disabled">
-                                    <TextBox ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                             IsReadOnly="True" TextWrapping="Wrap"
-                                             Text="{TemplateBinding XamlText}" />
-                                </ScrollViewer>
-                            </styles:Card>
-						</Border>
+						          <Border BorderBrush="Gray" BorderThickness="1" Background="LightGray" Padding="0">
+                          <TextBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="780" Height="180" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                    IsReadOnly="True" TextWrapping="Wrap" Classes="no-material"
+                                    Text="{TemplateBinding XamlText}" />
+						          </Border>
                     </Popup>
                 </Grid>
             </ControlTemplate>
