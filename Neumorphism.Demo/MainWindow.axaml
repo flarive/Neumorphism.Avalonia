@@ -7,7 +7,7 @@
         xmlns:pages="clr-namespace:Neumorphism.Demo.Pages"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-		    xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+        xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Width="1280" Height="720" MinWidth="720"
         Title="Neumorphism.Demo">
@@ -97,9 +97,7 @@
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />
                         </ToggleButton>
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
-                        <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Content="Dark theme" IsChecked="False" OnContent="ON" OffContent="OFF"
-                                      assists:SelectionControlAssist.Size="72"
-                                      assists:SelectionControlAssist.Foreground="Yellow"
+                        <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
                                       Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
                         <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
