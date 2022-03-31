@@ -90,13 +90,13 @@
 			</showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles4">
 				<ToggleSwitch Content="SWITCH"
-                IsChecked="True" Classes="Outline" assists:SelectionControlAssist.Size="90"
-							  assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red"
-							  assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green"
-							  OnContent="ON" OffContent="OFF" Background="Lime"
-                BorderBrush="Gray"
-                BorderThickness="8"
-							  ToolTip.Tip='Custom toggle switch.' />
+                                IsChecked="True" Classes="Outline"
+                                assist:ToggleSwitchAssist.SwitchTrackOnBackground="Lime"
+                                assist:ToggleSwitchAssist.SwitchTrackOffBackground="Yellow"
+                                OnContent="ON" OffContent="OFF"
+                                BorderBrush="Lime"
+                                BorderThickness="8"
+                                ToolTip.Tip='Custom toggle switch.' />
 			</showMeTheXaml:XamlDisplay>
 		</StackPanel>
 
@@ -124,7 +124,7 @@
                   assists:SelectionControlAssist.Size="60"
                   assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red"
                   assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green"
-                  OnContent="ON" OffContent="OFF" Background="Lime"
+                  OnContent="ON" OffContent="OFF" Background="LightGray"
                   ToolTip.Tip='Custom toggle switch.' />
         </showMeTheXaml:XamlDisplay>
       </StackPanel>
