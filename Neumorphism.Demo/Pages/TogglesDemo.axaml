@@ -56,8 +56,35 @@
             <showMeTheXaml:XamlDisplay UniqueId="RegularTogglesLeft2">
                 <ToggleSwitch Classes="LeftHeader" Content="You can't switch me!" IsEnabled="False" />
             </showMeTheXaml:XamlDisplay>
-
         </StackPanel>
+
+		<TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles" />
+		<StackPanel Orientation="Horizontal">
+			<StackPanel.Styles>
+				<Style Selector="showMeTheXaml|XamlDisplay">
+					<Setter Property="Margin" Value="8" />
+				</Style>
+			</StackPanel.Styles>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles0">
+				<ToggleSwitch Content="Switch me !" Classes="Outline" OnContent="" OffContent="" ToolTip.Tip='Regular toggle switch without any classes.' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles1">
+				<ToggleSwitch Content="Switch me too !" Classes="Outline" IsChecked="True" OnContent="I'm on !" OffContent="I'm off !" ToolTip.Tip='Regular toggle switch with customized on/off label.' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles2">
+				<ToggleSwitch Content="You can't switch me !" Classes="Outline" IsEnabled="False" ToolTip.Tip='Regular disabled toggle switch.' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles3">
+				<ToggleSwitch Content="Accent color" IsChecked="True" Classes="Outline Accent" ToolTip.Tip='Regular toggle switch with class Accent.' />
+			</showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles4">
+				<ToggleSwitch Content="SWITCH" IsChecked="True" Classes="Outline" assists:SelectionControlAssist.Size="60"
+							  assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red"
+							  assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green"
+							  OnContent="ON" OffContent="OFF" Background="Lime"
+							  ToolTip.Tip='Custom toggle switch.' />
+			</showMeTheXaml:XamlDisplay>
+		</StackPanel>
 
         <TextBlock Classes="Headline6 Subheadline2" Text="Checkboxes" />
         <StackPanel Orientation="Horizontal">
