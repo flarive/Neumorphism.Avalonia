@@ -19,8 +19,8 @@
     </LinearGradientBrush>
 	</Styles.Resources>
 
-	
 
+  <!--Regular (no class)-->
   <Style Selector="Button, ToggleButton">
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />

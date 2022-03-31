@@ -60,7 +60,7 @@
   </Style>
 
 
-
+  <!--Regular (no class)-->
   <Style Selector="TextBox">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>

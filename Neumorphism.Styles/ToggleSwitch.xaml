@@ -15,6 +15,7 @@
 	</Styles.Resources>
     
     
+    <!--Regular (no class)-->
     <Style Selector="ToggleSwitch">
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
@@ -23,8 +24,8 @@
         <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
         <Setter Property="assists:SelectionControlAssist.Size" Value="72" />
         <Setter Property="BorderThickness" Value="0" />
-		<Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Padding" Value="8 0 0 0" />
+		    <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Padding" Value="8 0 8 0" />
         <Setter Property="OffContent" Value="" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -32,7 +33,7 @@
         <Setter Property="Height" Value="28" />
         <Setter Property="Template">
             <ControlTemplate>
-				<Grid ColumnDefinitions="Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+				      <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
                     <!-- Unused. Left for compability with stupid avalonia control code behind -->
                     <Canvas Name="SwitchKnob"
                             HorizontalAlignment="Left"
@@ -43,16 +44,23 @@
                               IsVisible="False" IsHitTestVisible="False"
                               Width="0" Height="0" />
                     </Canvas>
-                    <Grid Grid.Column="0" ClipToBounds="False">
-						<!--Background-->
+                    <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
+                                      TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      Margin="{TemplateBinding Padding}"
+									                    HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Center" />
+                    <Grid Grid.Column="1" ClipToBounds="False">
+						        <!--Background-->
                         <Border Name="Track" 
                                 Opacity="1"
                                 HorizontalAlignment="Left"
                                 Height="{TemplateBinding Height}"
                                 VerticalAlignment="Center"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-								BorderThickness="{TemplateBinding BorderThickness}"
-								BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
+								                BorderThickness="{TemplateBinding BorderThickness}"
+								                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
                                 Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
                                 CornerRadius="100" />
                         <Grid Name="ThumbHolder" ClipToBounds="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Height}"
@@ -78,117 +86,26 @@
                                         Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
                                         ClipToBounds="False" />
                             </AdornerLayer>
-                            <!--<ContentPresenter Name="OnContentPresenter"
-                                                Content="{TemplateBinding OnContent}"
-                                                ContentTemplate="{TemplateBinding OnContentTemplate}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            <ContentPresenter Name="OffContentPresenter"
-                                                Content="{TemplateBinding OffContent}"
-                                                ContentTemplate="{TemplateBinding OffContentTemplate}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />-->
                         </Grid>
                     </Grid>
-						<ContentPresenter Grid.Column="1" Name="PART_ContentPresenter"
+						        <ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
                                       TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
                                       Content="{TemplateBinding Content}"
                                       ContentTemplate="{TemplateBinding ContentTemplate}"
                                       Margin="{TemplateBinding Padding}"
-									  HorizontalAlignment="Stretch"
+									                    HorizontalAlignment="Stretch"
                                       VerticalAlignment="Center" />
                 </Grid>
             </ControlTemplate>
         </Setter>
     </Style>
-  
-  
-  
+
+  <!--Class LeftHeader-->
   <Style Selector="ToggleSwitch.LeftHeader">
-    <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
-    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
-    <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
-    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
-    <Setter Property="assists:SelectionControlAssist.Size" Value="72" />
-    <Setter Property="BorderThickness" Value="1" />
-    <Setter Property="Padding" Value="0 0 8 0" />
-    <Setter Property="OffContent" Value="" />
-    <Setter Property="VerticalAlignment" Value="Top" />
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="ClipToBounds" Value="False" />
-    <Setter Property="Height" Value="28" />
-    <Setter Property="Template">
-      <ControlTemplate>
-		  <Grid ColumnDefinitions="Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
-			<!-- Unused. Left for compability with stupid avalonia control code behind -->
-			<Canvas Name="SwitchKnob"
-                  HorizontalAlignment="Left"
-                  IsVisible="False" IsHitTestVisible="False"
-                  Width="0" Height="0"
-                  Background="Yellow"
-                  Grid.Column="1">
-            <Grid Name="MovingKnobs"
-                  IsVisible="False" IsHitTestVisible="False"
-                  Width="0" Height="0"
-                  Grid.Column="1"/>
-          </Canvas>
-          <ContentPresenter Grid.Column="0" Name="PART_ContentPresenter"
-                  TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
-                  Content="{TemplateBinding Content}"
-                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                  Margin="{TemplateBinding Padding}"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Center" />
-            <Grid Grid.Column="1" ClipToBounds="False">
-              <!--Background-->
-              <Border Name="Track"
-                      Opacity="1"
-                      HorizontalAlignment="Left"
-                      BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
-                      Height="{TemplateBinding Height}"
-                      VerticalAlignment="Center"
-                      Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-                      CornerRadius="100" />
-              <Grid Name="ThumbHolder" ClipToBounds="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Height}"
-                    HorizontalAlignment="Left" VerticalAlignment="Top">
-                <!--Ripple effect-->
-				  <Ellipse Name="RippleThumb"
-                         Fill="{Binding RelativeSource={RelativeSource TemplatedParent},
-                Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
-                         Height="18" Width="18"
-                         IsHitTestVisible="False"
-                         Margin="-100"
-                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <AdornerLayer>
-                  <!--Circle-->
-                  <Border Name="Thumb"
-                          HorizontalAlignment="Center" VerticalAlignment="Center"
-                          CornerRadius="100"
-                          BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
-						  Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
-                          Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
-                          ClipToBounds="False" />
-                </AdornerLayer>
-                <!--<ContentPresenter Name="OnContentPresenter"
-                                  Content="{TemplateBinding OnContent}"
-                                  ContentTemplate="{TemplateBinding OnContentTemplate}"
-                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                <ContentPresenter Name="OffContentPresenter"
-                                  Content="{TemplateBinding OffContent}"
-                                  ContentTemplate="{TemplateBinding OffContentTemplate}"
-                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />-->
-              </Grid>
-            </Grid>
-        </Grid>
-      </ControlTemplate>
-    </Setter>
   </Style>
+  
 
-
-
+  <!--Class Outline-->
 	<Style Selector="ToggleSwitch.Outline">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
@@ -196,9 +113,9 @@
 		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
 		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
 		<Setter Property="assists:SelectionControlAssist.Size" Value="82" />
-		<Setter Property="BorderThickness" Value="6" />
-		<Setter Property="BorderBrush" Value="Orange" />
-		<Setter Property="Padding" Value="8 0 0 0" />
+		<Setter Property="BorderThickness" Value="8" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="Padding" Value="8 0 8 0" />
 		<Setter Property="OffContent" Value="" />
 		<Setter Property="VerticalAlignment" Value="Top" />
 		<Setter Property="HorizontalAlignment" Value="Left" />
@@ -206,7 +123,7 @@
 		<Setter Property="Height" Value="28" />
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid ColumnDefinitions="Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+				<Grid ColumnDefinitions="Auto,Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
 					<!-- Unused. Left for compability with stupid avalonia control code behind -->
 					<Canvas Name="SwitchKnob"
                             HorizontalAlignment="Left"
@@ -217,29 +134,37 @@
                               IsVisible="False" IsHitTestVisible="False"
                               Width="0" Height="0" />
 					</Canvas>
-					<Grid Grid.Column="0" ClipToBounds="False">
+          <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
+								  TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+								  Content="{TemplateBinding Content}"
+								  ContentTemplate="{TemplateBinding ContentTemplate}"
+								  Margin="{TemplateBinding Padding}"
+								  HorizontalAlignment="Stretch"
+								  VerticalAlignment="Center" />
+					<Grid Grid.Column="1" ClipToBounds="False">
 						
-						<!--Background-->
+						
 						
 
 						<!--Outline-->
 						<Border Name="Ouline"
                                 Opacity="1"
                                 HorizontalAlignment="Left"
-                                Height="{TemplateBinding Height}"
+                                Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=-12}"
                                 VerticalAlignment="Center"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-								BorderThickness="{TemplateBinding BorderThickness}"
-								Background="Transparent"
-								BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
+								                BorderThickness="{TemplateBinding BorderThickness}"
+								                Background="Transparent"
+								                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                                 Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
                                 CornerRadius="100">
-							<Border Name="Track"
+              <!--Background-->
+							                  <Border Name="Track"
                                 Opacity="1"
-								HorizontalAlignment="Stretch"
-								Background="Red"
+								                HorizontalAlignment="Stretch"
+								                Background="Transparent"
                                 VerticalAlignment="Stretch"
-								BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
+								                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
                                 CornerRadius="100" />
 						</Border>
 							
@@ -247,11 +172,11 @@
                                 HorizontalAlignment="Left" VerticalAlignment="Top">
 							<!--Ripple effect-->
 							<Ellipse Name="RippleThumb"
-                                        Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
-                                        Height="18" Width="18"
-                                        IsHitTestVisible="False"
-                                        Margin="-100"
-                                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                      Fill="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:ToggleSwitchAssist.SwitchTrackOnBackground)}"
+                      Height="18" Width="18"
+                      IsHitTestVisible="False"
+                      Margin="-100"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
 								<Ellipse.RenderTransform>
 									<ScaleTransform ScaleX="1" ScaleY="1" />
 								</Ellipse.RenderTransform>
@@ -259,26 +184,16 @@
 							<AdornerLayer>
 								<!--Circle-->
 								<Border Name="Thumb"
-                                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                                        CornerRadius="100"
-                                        BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
-										Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
-                                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
-                                        ClipToBounds="False" />
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        CornerRadius="100"
+                        BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
+										    Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
+                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
+                        ClipToBounds="False" />
 							</AdornerLayer>
-							<!--<ContentPresenter Name="OnContentPresenter"
-                                                Content="{TemplateBinding OnContent}"
-                                                ContentTemplate="{TemplateBinding OnContentTemplate}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            <ContentPresenter Name="OffContentPresenter"
-                                                Content="{TemplateBinding OffContent}"
-                                                ContentTemplate="{TemplateBinding OffContentTemplate}"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />-->
 						</Grid>
 					</Grid>
-					<ContentPresenter Grid.Column="1" Name="PART_ContentPresenter"
+					<ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
 								  TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
 								  Content="{TemplateBinding Content}"
 								  ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -326,11 +241,11 @@
         </Setter>
     </Style>
     
-    <Style Selector="ToggleSwitch:not(:checked) /template/ Grid#ThumbHolder">
+    <Style Selector="ToggleSwitch:not(:checked,.Outline) /template/ Grid#ThumbHolder">
         <Setter Property="RenderTransform" Value="translate(0px,0px)" />
     </Style>
     
-	<Style Selector="ToggleSwitch:checked /template/ Grid#ThumbHolder">
+	<Style Selector="ToggleSwitch:checked:not(.Outline) /template/ Grid#ThumbHolder">
 		<Setter Property="RenderTransform">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource WidthToRenderTransformConverter}">
@@ -340,9 +255,24 @@
         </Setter.Value>
       </Setter>
     </Style>
-    
 
-	<Style Selector="ToggleSwitch:not(:checked) /template/ ContentPresenter#PART_ContentPresenter">
+  <Style Selector="ToggleSwitch.Outline:not(:checked) /template/ Grid#ThumbHolder">
+    <Setter Property="RenderTransform" Value="translate(7px,0px)" />
+  </Style>
+
+  <Style Selector="ToggleSwitch.Outline:checked /template/ Grid#ThumbHolder">
+    <Setter Property="RenderTransform">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource WidthToRenderTransformConverter}">
+          <Binding Path="(assists:SelectionControlAssist.Size)" Converter="{StaticResource WidthMinusValueConverter}" ConverterParameter="7" RelativeSource="{RelativeSource TemplatedParent}"/>
+          <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+  </Style>
+    
+  <!--Right header content label-->
+	<Style Selector="ToggleSwitch:not(:checked,.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterRight">
 		<Setter Property="Content">
 			<Setter.Value>
 				<MultiBinding Converter="{StaticResource StringReplaceConverter}">
@@ -353,8 +283,12 @@
 		</Setter>
 	</Style>
 
-	<Style Selector="ToggleSwitch:checked /template/ ContentPresenter#PART_ContentPresenter">
-		<Setter Property="Content">
+  <Style Selector="ToggleSwitch:not(:checked,.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterLeft">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+
+	<Style Selector="ToggleSwitch:checked:not(.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterRight">
+    <Setter Property="Content">
 			<Setter.Value>
 				<MultiBinding Converter="{StaticResource StringReplaceConverter}">
 					<Binding Path="OnContent" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -364,6 +298,45 @@
 		</Setter>
 	</Style>
 
+  <Style Selector="ToggleSwitch:checked:not(.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterLeft">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+  
+  
+  <!--LeftHeader content label-->
+
+  <Style Selector="ToggleSwitch.LeftHeader:not(:checked) /template/ ContentPresenter#PART_ContentPresenterLeft">
+    <Setter Property="Content">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource StringReplaceConverter}">
+          <Binding Path="OffContent" RelativeSource="{RelativeSource TemplatedParent}"/>
+          <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style Selector="ToggleSwitch.LeftHeader:not(:checked) /template/ ContentPresenter#PART_ContentPresenterRight">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+
+  <Style Selector="ToggleSwitch.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterLeft">
+    <Setter Property="Content">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource StringReplaceConverter}">
+          <Binding Path="OnContent" RelativeSource="{RelativeSource TemplatedParent}"/>
+          <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style Selector="ToggleSwitch.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterRight">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+
+  
+  
 	<Style Selector="ToggleSwitch:not(.notransitions) /template/ Border#Thumb">
 		<Setter Property="Transitions">
 			<Transitions>
