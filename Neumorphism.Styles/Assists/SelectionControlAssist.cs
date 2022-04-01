@@ -19,6 +19,23 @@ namespace Neumorphism.Styles.Assists {
 
         #endregion
 
+        #region InnerSize of selection widget
+
+        public static readonly AvaloniaProperty<double> InnerSizeProperty
+            = AvaloniaProperty.RegisterAttached<Button, double>("InnerSize", typeof(SelectionControlAssist));
+
+        public static double GetInnerSize(Button element)
+        {
+            return (double)element.GetValue(InnerSizeProperty);
+        }
+
+        public static void SetInnerSize(Button element, double checkBoxInnerSize)
+        {
+            element.SetValue(InnerSizeProperty, checkBoxInnerSize);
+        }
+
+        #endregion
+
         #region Main selection widget foreground
 
         public static readonly AvaloniaProperty<IBrush> ForegroundProperty

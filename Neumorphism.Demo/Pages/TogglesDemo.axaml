@@ -146,7 +146,10 @@
                 <CheckBox Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with no class.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes3">
-				<CheckBox IsChecked="True" assist:SelectionControlAssist.Size="18" Background="Orange" ToolTip.Tip='Regular customized checkbox with no class.'/>
+				<CheckBox Background="Orange"
+						  assist:SelectionControlAssist.Size="48"
+						  assists:SelectionControlAssist.InnerSize="22"
+						  BorderBrush="White" BorderThickness="1" ToolTip.Tip='Customized checkbox with no class.'/>
 			</showMeTheXaml:XamlDisplay>
 		</StackPanel>
         <StackPanel Orientation="Horizontal">
@@ -165,11 +168,14 @@
                 <CheckBox Content="Uncheckable" IsChecked="True" Classes="Accent" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes7">
-				<CheckBox Content="Custom checkbox" IsChecked="True" Classes="Accent" assist:SelectionControlAssist.Size="18" Foreground="Gray" ToolTip.Tip='Regular customized checkbox with class Accent.'/>
+				<CheckBox Content="Custom checkbox" IsChecked="True" Classes="Accent" 
+						    assist:SelectionControlAssist.Size="18"
+					        assists:SelectionControlAssist.InnerSize="12"
+					        Foreground="Gray" ToolTip.Tip='Customized checkbox with class Accent.'/>
 			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButton" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButtons" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -177,14 +183,24 @@
                 </Style>
             </StackPanel.Styles>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons0">
-                <RadioButton GroupName="1" Content="This is radiobutton!" />
+                <RadioButton GroupName="1" Content="Value 1" ToolTip.Tip='Regular unchecked radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons1">
-                <RadioButton GroupName="1" Content="This is radiobutton!" IsChecked="True" />
+                <RadioButton GroupName="1" Content="Value 2" IsChecked="True" ToolTip.Tip='Regular checked radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons2">
-                <RadioButton GroupName="1" Content="Uncheckable" IsChecked="False" IsEnabled="False" />
+                <RadioButton GroupName="1" Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="RadioButtons3">
+				<RadioButton GroupName="1" Content="Value 4" IsChecked="True"
+							 assists:SelectionControlAssist.Size="48"
+							 assists:SelectionControlAssist.InnerSize="32"
+							 assists:SelectionControlAssist.Foreground="Red"
+							 assists:SelectionControlAssist.InnerForeground="Green"
+							 BorderBrush="White" BorderThickness="1"
+							 Foreground="Gray"
+							 ToolTip.Tip='Customized checked radio button with no class.'/>
+			</showMeTheXaml:XamlDisplay>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
@@ -192,15 +208,24 @@
                     <Setter Property="Margin" Value="8" />
                 </Style>
             </StackPanel.Styles>
-            <showMeTheXaml:XamlDisplay UniqueId="RadioButtons3">
-                <RadioButton Classes="Accent" GroupName="2" Content="This is radiobutton!" />
-            </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons4">
-                <RadioButton Classes="Accent" GroupName="2" Content="This is radiobutton!" IsChecked="True" />
+                <RadioButton Classes="Accent" GroupName="2" Content="Value 1" ToolTip.Tip='Regular unchecked radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons5">
-                <RadioButton Classes="Accent" GroupName="2" Content="Uncheckable" IsChecked="False" IsEnabled="False" />
+                <RadioButton Classes="Accent" GroupName="2" Content="Value 2" IsChecked="True" ToolTip.Tip='Regular checked radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="RadioButtons6">
+                <RadioButton Classes="Accent" GroupName="2" Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with class Accent.'/>
+            </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="RadioButtons7">
+				<RadioButton GroupName="1" Content="Value 4" IsChecked="True" Classes="Accent"
+							 assists:SelectionControlAssist.Size="18"
+							 assists:SelectionControlAssist.InnerSize="12"
+							 assists:SelectionControlAssist.Foreground="Red"
+							 assists:SelectionControlAssist.InnerForeground="Green"
+							 Foreground="Gray"
+							 ToolTip.Tip='Customized checked radio button with class Accent.'/>
+			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
 

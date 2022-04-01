@@ -15,13 +15,14 @@
 
 	<!--Regular (no class)-->
 	<Style Selector="CheckBox">
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
+		<Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="assists:SelectionControlAssist.Size" Value="24" />
+		<Setter Property="assists:SelectionControlAssist.InnerSize" Value="14" />
         <Setter Property="Padding" Value="10,0,0,0" />
 		<Setter Property="Margin" Value="10" />
         <Setter Property="Template">
@@ -38,14 +39,16 @@
 									Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
-									Padding="0" BorderThickness="0"
+									BorderThickness="{TemplateBinding BorderThickness}"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									Padding="0"
 									BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 								<Border Name="InnerGraphicBorder"
 										CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
 										HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1">
 									<Viewbox
-									  Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
-									  Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
+									  Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
+									  Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
 									  VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0" Margin="0"
 									  ClipToBounds="False">
 										<Path Name="Graphic" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
@@ -72,7 +75,7 @@
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           Content="{TemplateBinding Content}"
                                           VerticalAlignment="Center" />
-                    </Grid>
+                        </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -103,7 +106,7 @@
 
 
 
-
+    <!--Check/uncheck animation-->
 	<Style Selector="CheckBox:not(.notransitions) /template/ Border#InnerGraphicBorder">
 		<Setter Property="Transitions">
 			<Transitions>
