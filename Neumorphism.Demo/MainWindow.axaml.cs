@@ -9,6 +9,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
 using Neumorphism.Styles;
+using Neumorphism.Styles.Assists;
 using Neumorphism.Styles.Models;
 
 namespace Neumorphism.Demo
@@ -117,15 +118,22 @@ namespace Neumorphism.Demo
         }
 
         /// <summary>
-        /// Dirty hack !!!!
+        /// Dirty hack to force redraw box shadow when theme is changed !!!!
         /// </summary>
         private void DirtyControlsRedrawFix()
         {
-            foreach (InputElement ctrl in this.GetVisualDescendants().OfType<InputElement>())
+            var controls = this.GetVisualDescendants().OfType<InputElement>();
+            foreach (InputElement ctrl in controls)
             {
-                // Code here
                 if (ctrl != null)
                 {
+                    if (ctrl is CheckBox || ctrl is RadioButton)
+                    {
+                        double h = ctrl.GetValue<double>(SelectionControlAssist.SizeProperty);
+                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h - 1);
+                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h + 1);
+                    }
+                    
                     if (ctrl.Height > 0)
                     {
                         ctrl.Height = ctrl.Height - 1;

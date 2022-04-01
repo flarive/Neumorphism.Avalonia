@@ -24,6 +24,7 @@
 		<Setter Property="assists:SelectionControlAssist.InnerSize" Value="14" />
         <Setter Property="Padding" Value="10,0,0,0" />
 		<Setter Property="Margin" Value="10" />
+		<Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -56,7 +57,7 @@
                             </Grid>
                         </Viewbox>-->
 						<Grid Grid.Column="0">
-							<Border Name="OuterGraphicBorder" Opacity="1"
+							<Border Name="OuterGraphicBorder" Opacity="1" Cursor="{TemplateBinding Cursor}"
 									Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									CornerRadius="100"

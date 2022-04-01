@@ -9,6 +9,7 @@ using static Neumorphism.Demo.Models.StatusEnum;
 using Avalonia.Input;
 using Avalonia.VisualTree;
 using System.Linq;
+using Avalonia;
 
 namespace Neumorphism.Demo.Pages
 {
@@ -63,28 +64,14 @@ namespace Neumorphism.Demo.Pages
         {
             GlobalCommand.UseMaterialUIDarkTheme();
 
-            DirtyControlRedrawFix("btn1");
-            DirtyControlRedrawFix("btn2");
-            DirtyControlRedrawFix("btn3");
-            DirtyControlRedrawFix("btn4");
-            DirtyControlRedrawFix("btn5");
-            DirtyControlRedrawFix("NavDrawerSwitch");
-            DirtyControlRedrawFix("toggleSwitchTheme");
-            DirtyControlRedrawFix("xxx");
+            DirtyControlsRedrawFix();
         }
 
         public void UseMaterialUILightTheme()
         {
             GlobalCommand.UseMaterialUILightTheme();
 
-            DirtyControlRedrawFix("btn1");
-            DirtyControlRedrawFix("btn2");
-            DirtyControlRedrawFix("btn3");
-            DirtyControlRedrawFix("btn4");
-            DirtyControlRedrawFix("btn5");
-            DirtyControlRedrawFix("NavDrawerSwitch");
-            DirtyControlRedrawFix("toggleSwitchTheme");
-            DirtyControlRedrawFix("xxx");
+            DirtyControlsRedrawFix();
         }
 
         //public void UseMaterialUIDarkTheme() => GlobalCommand.UseMaterialUIDarkTheme();
@@ -107,13 +94,25 @@ namespace Neumorphism.Demo.Pages
             AvaloniaXamlLoader.Load(this);
         }
 
-        private void DirtyControlRedrawFix(string name)
+        /// <summary>
+        /// Dirty hack to force redraw box shadow when theme is changed !!!!
+        /// </summary>
+        private void DirtyControlsRedrawFix()
         {
-            foreach (InputElement ctrl in this.GetVisualDescendants().OfType<InputElement>())
+            var zz = this.Parent;
+            
+            var controls = this.GetVisualDescendants().OfType<InputElement>();
+            foreach (InputElement ctrl in controls)
             {
-                // Code here
                 if (ctrl != null)
                 {
+                    if (ctrl is CheckBox || ctrl is RadioButton)
+                    {
+                        double h = ctrl.GetValue<double>(SelectionControlAssist.SizeProperty);
+                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h - 1);
+                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h + 1);
+                    }
+
                     if (ctrl.Height > 0)
                     {
                         ctrl.Height = ctrl.Height - 1;

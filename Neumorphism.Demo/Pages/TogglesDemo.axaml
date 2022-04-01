@@ -218,7 +218,7 @@
                 <RadioButton Classes="Accent" GroupName="2" Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="RadioButtons7">
-				<RadioButton GroupName="1" Content="Value 4" IsChecked="True" Classes="Accent"
+				<RadioButton GroupName="2" Content="Value 4" IsChecked="True" Classes="Accent"
 							 assists:SelectionControlAssist.Size="18"
 							 assists:SelectionControlAssist.InnerSize="12"
 							 assists:SelectionControlAssist.Foreground="Red"

@@ -31,6 +31,7 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Height" Value="28" />
+		<Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
@@ -78,7 +79,7 @@
                             <AdornerLayer>
                                 <!--Circle-->
                                 <Border Name="Thumb"
-                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="{TemplateBinding Cursor}"
                                         CornerRadius="100"
                                         BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
 										Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
