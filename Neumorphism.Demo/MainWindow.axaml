@@ -97,7 +97,7 @@
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />
                         </ToggleButton>
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
-                        <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Classes="Outline" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
+                        <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
                                       Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
                         <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
                             <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">

@@ -137,31 +137,36 @@
                 </Style>
             </StackPanel.Styles>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes0">
-                <CheckBox Content="This is checkbox!" />
+				<CheckBox Content="Check me !" ToolTip.Tip='Regular unchecked checkbox with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes1">
-                <CheckBox Content="This is checkbox!" IsChecked="True" />
+                <CheckBox Content="Uncheck me !" IsChecked="True" ToolTip.Tip='Regular checked checkbox with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes2">
-                <CheckBox Content="Uncheckable" IsChecked="False" IsEnabled="False" />
+                <CheckBox Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with no class.'/>
             </showMeTheXaml:XamlDisplay>
-        </StackPanel>
+			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes3">
+				<CheckBox IsChecked="True" assist:SelectionControlAssist.Size="18" Background="Orange" ToolTip.Tip='Regular customized checkbox with no class.'/>
+			</showMeTheXaml:XamlDisplay>
+		</StackPanel>
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
                     <Setter Property="Margin" Value="8" />
                 </Style>
             </StackPanel.Styles>
-            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes3">
-                <CheckBox Content="This is checkbox!" Classes="Accent" />
-            </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes4">
-                <CheckBox Content="This is checkbox!" Classes="Accent" IsChecked="True"
-                          assist:SelectionControlAssist.Size="24" />
+                <CheckBox Content="Check me !" Classes="Accent" ToolTip.Tip='Regular unchecked checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes5">
-                <CheckBox Content="Uncheckable" IsChecked="False" IsEnabled="False" />
+                <CheckBox Content="Uncheck me !" Classes="Accent" IsChecked="True" ToolTip.Tip='Regular checked checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes6">
+                <CheckBox Content="Uncheckable" IsChecked="False" Classes="Accent" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with class Accent.'/>
+            </showMeTheXaml:XamlDisplay>
+			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes7">
+				<CheckBox Content="Custom checkbox" IsChecked="True" Classes="Accent" assist:SelectionControlAssist.Size="18" Foreground="Gray" ToolTip.Tip='Regular customized checkbox with class Accent.'/>
+			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
         <TextBlock Classes="Headline6 Subheadline2" Text="RadioButton" />

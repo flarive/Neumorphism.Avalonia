@@ -33,7 +33,7 @@
         <Setter Property="Height" Value="28" />
         <Setter Property="Template">
             <ControlTemplate>
-				      <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+                <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
                     <!-- Unused. Left for compability with stupid avalonia control code behind -->
                     <Canvas Name="SwitchKnob"
                             HorizontalAlignment="Left"
