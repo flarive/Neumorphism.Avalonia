@@ -162,7 +162,7 @@
                 <CheckBox Content="Uncheck me !" Classes="Accent" IsChecked="True" ToolTip.Tip='Regular checked checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="Checkboxes6">
-                <CheckBox Content="Uncheckable" IsChecked="False" Classes="Accent" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with class Accent.'/>
+                <CheckBox Content="Uncheckable" IsChecked="True" Classes="Accent" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes7">
 				<CheckBox Content="Custom checkbox" IsChecked="True" Classes="Accent" assist:SelectionControlAssist.Size="18" Foreground="Gray" ToolTip.Tip='Regular customized checkbox with class Accent.'/>

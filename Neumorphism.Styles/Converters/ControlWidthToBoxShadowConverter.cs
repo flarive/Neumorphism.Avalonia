@@ -16,27 +16,14 @@ namespace Neumorphism.Styles.Converters
             var b = new BoxShadows();
             bool inset = parameter != null && parameter.Equals("1");
             bool isFixedInset = parameter != null && parameter.Equals("2");
-
-
+            bool insetAndOutset = parameter != null && parameter.Equals("3");
 
             var theme = Application.Current!.LocateMaterialTheme<MaterialTheme>();
 
-            //if (theme.CurrentTheme.Paper.R == 44)
-            //{
-            //    Debug.WriteLine("dark");
-            //}
-            //else
-            //{
-            //    Debug.WriteLine("light");
-            //}
-
-
-
-
-            //bool gen = Gen();
-
             BoxShadow main = new BoxShadow();
             BoxShadow rest1 = new BoxShadow();
+
+            List<BoxShadow> rests = new List<BoxShadow>();
 
             if (isFixedInset)
             {
@@ -52,9 +39,8 @@ namespace Neumorphism.Styles.Converters
                 rest1.OffsetY = 3.3;
                 rest1.Blur = 10;
                 rest1.Color = theme.CurrentTheme.ShadowDarkColor;
+                rests.Add(rest1);
             }
-
-
             else if (value is double)
             {
                 double height = (double)value;
@@ -66,71 +52,79 @@ namespace Neumorphism.Styles.Converters
                     // for a 300x300 button shadow offset must be 20 (300/15);
                     double offset = (double)(height / 15);
 
-
-                    
-
-                    
-
-
                     //-20 -20 60 #CCFFFFFF,20 20 60 #33000000
-                    main.OffsetX = -offset;
-                    main.OffsetY = -offset;
-                    main.Blur = radius;
-                    //main.Color = gen ? Color.Parse("#22FFFFFF") : Color.Parse("#CCFFFFFF");
-                    main.Color = theme.CurrentTheme.ShadowLightColor;
-
-
-                    
-                    rest1.OffsetX = offset;
-                    rest1.OffsetY = offset;
-                    rest1.Blur = radius;
-                    //rest1.Color = gen ? Color.Parse("#33000000") : Color.Parse("#33000000");
-                    rest1.Color = theme.CurrentTheme.ShadowDarkColor;
-
-
-                    //Debug.WriteLine(theme.CurrentTheme.Paper.ToString());
-
-
-                    if (inset)
+                    if (!insetAndOutset)
                     {
-                        main.IsInset = true;
-                        rest1.IsInset = true;
+                        // outset
+                        main.OffsetX = -offset;
+                        main.OffsetY = -offset;
+                        main.Blur = radius;
+                        main.Color = theme.CurrentTheme.ShadowLightColor;
 
-                        main.OffsetX = offset / 2;
-                        main.OffsetY = offset / 2;
-
-                        rest1.OffsetX = -offset / 2;
-                        rest1.OffsetY = -offset / 2;
-
+                        rest1.OffsetX = offset;
+                        rest1.OffsetY = offset;
+                        rest1.Blur = radius;
+                        rest1.Color = theme.CurrentTheme.ShadowDarkColor;
                         
 
-                        // invert shadow colors
-                        //rest1.Color = (theme.BaseTheme == Themes.Base.BaseThemeMode.Dark) ? Color.Parse("#22FFFFFF") : Color.Parse("#CCFFFFFF");
-                        rest1.Color = theme.CurrentTheme.ShadowLightColor;
+                        if (inset)
+                        {
+                            // inset
+                            main.IsInset = true;
+                            rest1.IsInset = true;
 
-                        //main.Color = (theme.BaseTheme == Themes.Base.BaseThemeMode.Dark) ? Color.Parse("#33000000") : Color.Parse("#33000000");
-                        main.Color = theme.CurrentTheme.ShadowDarkColor;
+                            main.OffsetX = offset / 2;
+                            main.OffsetY = offset / 2;
 
-                        
+                            rest1.OffsetX = -offset / 2;
+                            rest1.OffsetY = -offset / 2;
+
+                            // invert shadow colors
+                            rest1.Color = theme.CurrentTheme.ShadowLightColor;
+                            main.Color = theme.CurrentTheme.ShadowDarkColor;
+                        }
+
+                        rests.Add(rest1);
                     }
+                    else
+                    {
+                        // inset + outset
+                        main.IsInset = false;
+                        main.OffsetX = -offset;
+                        main.OffsetY = -offset;
+                        main.Blur = radius;
+                        main.Color = theme.CurrentTheme.ShadowLightColor;
 
+                        rest1.IsInset = false;
+                        rest1.OffsetX = offset;
+                        rest1.OffsetY = offset;
+                        rest1.Blur = radius;
+                        rest1.Color = theme.CurrentTheme.ShadowDarkColor;
+                        rests.Add(rest1);
 
-                    
+                        BoxShadow rest2 = new BoxShadow();
+                        rest2.IsInset = true;
+                        rest2.OffsetX = offset;
+                        rest2.OffsetY = offset;
+                        rest2.Blur = radius;
+                        rest2.Color = new Color(1, 1, 0, 1);
+                        rests.Add(rest2);
+
+                        //BoxShadow rest3 = new BoxShadow();
+                        //rest3.IsInset = true;
+                        //rest3.OffsetX = -offset;
+                        //rest3.OffsetY = -offset;
+                        //rest3.Blur = radius;
+                        //rest3.Color = new Color(1, 1, 0, 0);
+                        //rests.Add(rest3);
+                    }
                 }
             }
 
-            List<BoxShadow> rest = new List<BoxShadow>() { rest1 };
-            b = new BoxShadows(main, rest.ToArray());
+            b = new BoxShadows(main, rests.ToArray());
 
             return b;
         }
-
-        //private bool Gen()
-        //{
-        //    Random gen = new Random(Guid.NewGuid().GetHashCode());
-        //    int prob = gen.Next(100);
-        //    return prob <= 20;
-        //}
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

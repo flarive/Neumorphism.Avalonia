@@ -2,12 +2,14 @@
         xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
         xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple"
         xmlns:system="clr-namespace:System;assembly=netstandard">
+	
     <Styles.Resources>
         <system:Double x:Key="RadioButtonHoveredOpacity">0.12</system:Double>
         <system:Double x:Key="RadioButtonPressedOpacity">0.26</system:Double>
     </Styles.Resources>
-    
-    <Style Selector="RadioButton">
+
+	<!--Regular (no class)-->
+	<Style Selector="RadioButton">
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />

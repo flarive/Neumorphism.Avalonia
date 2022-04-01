@@ -200,12 +200,14 @@
 
 	
   
-    <Style Selector="ToggleSwitch /template/ Border#Thumb">
+    <!--<Style Selector="ToggleSwitch /template/ Border#Thumb">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-    </Style>
+    </Style>-->
 
 
-    <Style Selector="ToggleSwitch:disabled">
+
+
+	<Style Selector="ToggleSwitch:disabled">
         <Setter Property="Opacity" Value="0.23" />
     </Style>
 
@@ -339,9 +341,23 @@
 		<Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
 	</Style>
 
-    <Style Selector="ToggleSwitch:checked /template/ Border#Thumb">
+	
+	
+
+
+	<Style Selector="ToggleSwitch:checked /template/ Border#Thumb">
         <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
     </Style>
+
+
+	<Style Selector="ToggleSwitch:not(:checked):pointerover /template/ Border#Thumb">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+	</Style>
+
+
+	<Style Selector="ToggleSwitch:checked:pointerover /template/ Border#Thumb">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+	</Style>
   
 
 	<Style Selector="ToggleSwitch.Accent:checked /template/ Border#Thumb">
@@ -372,8 +388,7 @@
 	
 
 	<Style Selector="ToggleSwitch.Accent">
-        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground"
-                Value="{DynamicResource SecondaryHueLightBrush}" />
+        <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="{DynamicResource SecondaryHueLightBrush}" />
     </Style>
     
     <Style Selector="ToggleSwitch:disabled">

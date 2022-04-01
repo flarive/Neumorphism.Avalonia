@@ -9,10 +9,12 @@
         <system:Double x:Key="CheckBoxHoveredOpacity">0.12</system:Double>
         <system:Double x:Key="CheckBoxPressedOpacity">0.26</system:Double>
     	<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
 		<converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
     </Styles.Resources>
-  
-    <Style Selector="CheckBox">
+
+	<!--Regular (no class)-->
+	<Style Selector="CheckBox">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
@@ -35,8 +37,12 @@
 							<Border Name="OuterGraphicBorder" Opacity="1"
 									Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-									CornerRadius="4" Padding="0" BorderThickness="0" BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
-								<Border Name="InnerGraphicBorder" CornerRadius="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1">
+									CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
+									Padding="0" BorderThickness="0"
+									BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
+								<Border Name="InnerGraphicBorder"
+										CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
+										HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1">
 									<Viewbox
 									  Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
 									  Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
@@ -105,17 +111,29 @@
 			</Transitions>
 		</Setter>
 	</Style>
+
+	<Style Selector="CheckBox:not(:checked):pointerover  /template/ Border#InnerGraphicBorder">
+		<Setter Property="Background" Value="#44CCCCCC"/>
+	</Style>
+
+	
 	
 
+	<Style Selector="CheckBox:disabled">
+		<Setter Property="Opacity" Value="0.4"/>
+	</Style>
 
-    <Style Selector="CheckBox:disabled /template/ Path#Graphic">
+    <!--<Style Selector="CheckBox:disabled /template/ Path#Graphic">
         <Setter Property="Fill" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
-    </Style>
+    </Style>-->
 
     <Style Selector="CheckBox:indeterminate /template/ Path#Graphic">
         <Setter Property="Data" Value="M6,13L6,11L18,11L18,13M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
         <Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
-    </Style> 
+    </Style>
+
+
+	
 
     <!--<Style Selector="CheckBox /template/ Ellipse#PART_HoverIndicator">
         <Setter Property="Opacity" Value="0" />
