@@ -9,13 +9,29 @@ namespace Neumorphism.Styles.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            bool isLeft = parameter != null && parameter.Equals("1");
+            bool isRight = parameter != null && parameter.Equals("2");
+            
+
             if (value is double)
             {
                 double height = (double)value;
                 if (height > 0)
                 {
                     double radius = (double)(height / 5);
-                    return new CornerRadius(radius);
+
+                    if (isLeft)
+                    {
+                        return new CornerRadius(radius, 0, 0, radius);
+                    }
+                    else if (isRight)
+                    {
+                        return new CornerRadius(0, radius, radius, 0);
+                    }
+                    else
+                    {
+                        return new CornerRadius(radius);
+                    }
                 }
             }
 

@@ -10,6 +10,7 @@
         xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Width="1280" Height="720" MinWidth="720"
+        Icon="resm:Neumorphism.Demo.Resources.Icons.app.ico"
         Title="Neumorphism.Demo">
 	
     <Window.Styles>
@@ -36,12 +37,10 @@
             <styles:NavigationDrawer.LeftDrawerContent>
                 <ScrollViewer>
                     <StackPanel>
-                        <styles:ColorZone Mode="Accent" Height="180">
+                        <styles:ColorZone Mode="Custom" Background="{DynamicResource MaterialDesignPaper}" Height="180">
                             <StackPanel>
-                                <Image Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top"
-                                       Source="avares://Neumorphism.Demo/Assets/FavIcon_200x.png" Margin="0,0,0,-8" />
-                                <TextBlock Classes="Headline6" Text="Neumorphism Design" HorizontalAlignment="Center" />
-                                <TextBlock Classes="Subtitle1" Text="with AvaloniaUI" HorizontalAlignment="Center" />
+                                <Image HorizontalAlignment="Center" VerticalAlignment="Top"
+                                       Source="avares://Neumorphism.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" />
                             </StackPanel>
                         </styles:ColorZone>
                         <ListBox Classes="Drawer" Name="DrawerList" Background="{DynamicResource MaterialDesignPaper}"
@@ -91,7 +90,8 @@
 							              <ColumnDefinition Width="400" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <ToggleButton Name="NavDrawerSwitch"
+                      <!--Background="#FF8d41b0" Foreground="White"-->
+                      <ToggleButton Name="NavDrawerSwitch"
                                       Classes="Flat TransparentBack"
                                       Width="38" Height="38" CornerRadius="6" Padding="4">
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />

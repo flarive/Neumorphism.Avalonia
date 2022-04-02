@@ -4,6 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
+    <StartupObject>Neumorphism.Demo.Program</StartupObject>
+    <ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.13" />
@@ -30,6 +32,9 @@
     <AvaloniaResource Include="**\*.axaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
+    <None Remove="Resources\Icons\app.ico" />
+    <EmbeddedResource Include="Resources\Icons\app.ico" />
+    <Content Include="Resources\Icons\app.ico" />
     <Compile Update="Pages\SideSheetDemo.axaml.cs">
       <DependentUpon>SideSheetDemo.axaml</DependentUpon>
       <SubType>Code</SubType>

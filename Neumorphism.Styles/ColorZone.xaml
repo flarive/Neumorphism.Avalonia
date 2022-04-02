@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
     xmlns:cc="clr-namespace:Neumorphism.Styles">
+  
     <Style Selector="cc|ColorZone">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />

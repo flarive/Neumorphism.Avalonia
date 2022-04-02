@@ -39,36 +39,33 @@
 							<Border Name="OuterGraphicBorder" Opacity="1" Cursor="{TemplateBinding Cursor}"
 									Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
 									Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-									CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
+									CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
 									BorderThickness="{TemplateBinding BorderThickness}"
 									BorderBrush="{TemplateBinding BorderBrush}"
 									Padding="0"
 									BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 								<Border Name="InnerGraphicBorder"
-										CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}}"
+										CornerRadius="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
 										HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1">
-									<Viewbox
-									  Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
-									  Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
-									  VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0" Margin="0"
-									  ClipToBounds="False">
-										<Path Name="Graphic" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
-									</Viewbox>
+                  <Panel>
+                    <Viewbox
+                      Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
+                      Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0" Margin="0"
+                      ClipToBounds="False">
+                      <!--Check symbol-->
+                      <Path Name="Graphic" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+                    </Viewbox>
+                    <!--Ripple effect-->
+                    <Border ClipToBounds="True" CornerRadius="100" Width="42" Height="42"
+                        Margin="-100" VerticalAlignment="Center" HorizontalAlignment="Center">
+                      <ripple:RippleEffect RaiseRippleCenter="True"
+                                           RippleFill="Gray"
+                                           RippleOpacity="{StaticResource CheckBoxPressedOpacity}"/>
+                    </Border>
+                  </Panel>
 								</Border>
 							</Border>
-
-							<!--<Ellipse Name="PART_HoverIndicator"
-                                         Fill="{TemplateBinding Background}"
-                                         VerticalAlignment="Center" HorizontalAlignment="Center"
-                                         Width="42" Height="42" Margin="-100"
-                                         ClipToBounds="False"
-                                         IsHitTestVisible="False"/>
-                                <Border ClipToBounds="True" CornerRadius="100" Width="42" Height="42"
-                                        Margin="-100" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <ripple:RippleEffect RaiseRippleCenter="True"
-                                                         RippleFill="{TemplateBinding Background}"
-                                                         RippleOpacity="{StaticResource CheckBoxPressedOpacity}"/>
-                                </Border>-->
 						</Grid>
                             <ContentPresenter Grid.Column="1" Name="contentPresenter" Focusable="False"
                                           HorizontalAlignment="Stretch"

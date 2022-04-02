@@ -1,30 +1,30 @@
 <Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
         xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple"
-		xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
+        xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
         xmlns:system="clr-namespace:System;assembly=netstandard">
 	
     <Styles.Resources>
         <system:Double x:Key="RadioButtonHoveredOpacity">0.12</system:Double>
         <system:Double x:Key="RadioButtonPressedOpacity">0.26</system:Double>
-		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
-		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
-		<converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+        <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+        <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+        <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
     </Styles.Resources>
 
 	<!--Regular (no class)-->
 	<Style Selector="RadioButton">
         <Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="assists:SelectionControlAssist.Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
         <Setter Property="assists:SelectionControlAssist.InnerForeground" Value="{DynamicResource PrimaryHueMidBrush}"/>
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="assists:SelectionControlAssist.Size" Value="24" />
-		<Setter Property="assists:SelectionControlAssist.InnerSize" Value="14" />
+        <Setter Property="assists:SelectionControlAssist.InnerSize" Value="14" />
         <Setter Property="Padding" Value="10,0,0,0" />
-		<Setter Property="Margin" Value="10" />
-		<Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -33,45 +33,34 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <!--<Viewbox Grid.Column="0" 
-								Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-                                Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-                                Stretch="Uniform" VerticalAlignment="Center" ClipToBounds="False">
-                            <Grid>
-                                <Path Name="Graphic" Height="24" Width="24" Fill="{TemplateBinding assists:SelectionControlAssist.Foreground}"
-                                        Data="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
-                                <Path Name="InnerGraphic" Height="24" Width="24" Fill="{TemplateBinding assists:SelectionControlAssist.InnerForeground}"
-                                        Data="M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7Z"/>
-                                    
-                                --><!--<Ellipse Name="PART_HoverIndicator"
-                                            Fill="{TemplateBinding assists:SelectionControlAssist.Foreground}"
-                                            VerticalAlignment="Center" HorizontalAlignment="Center"
-                                            Width="42" Height="42" Margin="-100" ClipToBounds="False"
-                                            IsHitTestVisible="False"/>
-                                <Border ClipToBounds="True" CornerRadius="100" Width="42" Height="42"
-                                        Margin="-100" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <ripple:RippleEffect RaiseRippleCenter="True"
-                                                            RippleFill="{TemplateBinding assists:SelectionControlAssist.Foreground}"
-                                                            RippleOpacity="{StaticResource RadioButtonPressedOpacity}"/>
-                                </Border>--><!--
-                            </Grid>
-                        </Viewbox>-->
-						<Grid Grid.Column="0">
-							<Border Name="OuterGraphicBorder" Opacity="1" Cursor="{TemplateBinding Cursor}"
-									Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-									Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
-									CornerRadius="100"
-									Padding="0" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
-									BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
-								<Border Name="InnerGraphicBorder"
-										CornerRadius="100"
-										HorizontalAlignment="Center" VerticalAlignment="Center"
-										Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
-									    Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
-										Opacity="1">
-								</Border>
-							</Border>
-						</Grid>
+                    
+						            <Grid Grid.Column="0">
+                          <!--Background circle-->
+							            <Border Name="OuterGraphicBorder" Opacity="1" Cursor="{TemplateBinding Cursor}"
+									            Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
+									            Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size)}"
+									            CornerRadius="100"
+									            Padding="0" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+									            BoxShadow="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.Size), Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
+                            <Panel>
+                                <!--Checked circle-->
+                                <Border Name="InnerGraphicBorder"
+                                      CornerRadius="100"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                                      Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
+                                        Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(assists:SelectionControlAssist.InnerSize)}"
+                                      Opacity="1">
+                                </Border>
+                                <!--Ripple effect-->
+                                <Border ClipToBounds="True" CornerRadius="100" Width="42" Height="42" Margin="-100" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                  <ripple:RippleEffect RaiseRippleCenter="True"
+                                                       RippleFill="Gray"
+                                                       RippleOpacity="{StaticResource RadioButtonPressedOpacity}"/>
+                                </Border>
+                            </Panel>
+							            </Border>
+                          
+						            </Grid>
                         <Border Grid.Column="1" Name="PATH_ContentContainer">
                             <ContentPresenter Name="contentPresenter" Focusable="False"
                                                 HorizontalAlignment="Stretch"
@@ -133,52 +122,89 @@
     <!-- Accent -->
 
     <Style Selector="RadioButton.Accent:not(:disabled)">
-        <Setter Property="assists:SelectionControlAssist.Foreground"
-                Value="{DynamicResource SecondaryHueMidBrush}" />
-        <Setter Property="assists:SelectionControlAssist.InnerForeground"
-                Value="{DynamicResource SecondaryHueMidBrush}" />
+        <Setter Property="assists:SelectionControlAssist.Foreground" Value="{DynamicResource SecondaryHueMidBrush}" />
+        <Setter Property="assists:SelectionControlAssist.InnerForeground" Value="{DynamicResource SecondaryHueMidBrush}" />
     </Style>
 
 
     
-    <!-- RadioButton but looks like buttons -->
-    
+    <!--Class Button (RadioButton but looks like buttons)-->  
     <Style Selector="RadioButton.Button">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+        <Setter Property="assists:ToggleButtonAssist.CheckedBackground" Value="{DynamicResource MaterialDesignTextFieldBoxDisabledBackground}"/>
+        <Setter Property="assists:ToggleButtonAssist.CheckedForeground" Value="{DynamicResource PrimaryHueMidBrush}"/>
         <Setter Property="ClipToBounds" Value="False" />
-        <Setter Property="Padding" Value="16 4" />
+        <Setter Property="Padding" Value="16 0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Grid Name="templateRoot">
+                    <Grid Name="templateRoot" Background="Transparent">
+                      <Border Name="PART_SelectedIndicator" Margin="0" Padding="0" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
                         <ripple:RippleEffect RippleFill="{DynamicResource MaterialDesignFlatButtonRipple}">
                             <ContentPresenter Name="PART_ContentPresenter"
                                               BorderBrush="{TemplateBinding BorderBrush}"
                                               BorderThickness="{TemplateBinding BorderThickness}"
+                                              Background="Transparent"
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                               Content="{TemplateBinding Content}"
                                               Padding="{TemplateBinding Padding}"
                                               TextBlock.Foreground="{TemplateBinding Foreground}"
+                                              TextBlock.FontWeight="{TemplateBinding FontWeight}"
                                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </ripple:RippleEffect>
-                        <Border Name="PART_SelectedIndicator" Background="{DynamicResource MaterialDesignFlatButtonRipple}"
-                                BorderThickness="0" IsHitTestVisible="False"/>
+                      </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <!--Class Left-->
+    <Style Selector="RadioButton.Left">
+    </Style>
+
+    <Style Selector="RadioButton.Left /template/ Border#PART_SelectedIndicator">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=1}"/>
+    </Style>
+
+
+    <!--Class Right-->
+    <Style Selector="RadioButton.Right">
+    </Style>
+
+    <Style Selector="RadioButton.Right /template/ Border#PART_SelectedIndicator">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=2}"/>
+    </Style>
+
+  
+  
+    <!--Selected state-->
     <Style Selector="RadioButton.Button /template/ Border#PART_SelectedIndicator">
-        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Background" Value="{TemplateBinding Background}"/>
     </Style>
     <Style Selector="RadioButton.Button:checked /template/ Border#PART_SelectedIndicator">
-        <Setter Property="Opacity" Value="0.45"/>
+        <Setter Property="Background" Value="{TemplateBinding assists:ToggleButtonAssist.CheckedBackground}"/>
     </Style>
+
+    <Style Selector="RadioButton.Button:checked:not(.Accent) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="{TemplateBinding assists:ToggleButtonAssist.CheckedForeground}"/>
+    </Style>
+
+  <Style Selector="RadioButton.Button.Accent:checked /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="TextBlock.Foreground" Value="{DynamicResource SecondaryHueDarkBrush}"/>
+  </Style>
+  
+  
+  
     <Style Selector="RadioButton.Button.Accent">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}" />

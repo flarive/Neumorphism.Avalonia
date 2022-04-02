@@ -1,15 +1,15 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"  
-             xmlns:demo="clr-namespace:Neumorphism.Demo;assembly=Neumorphism.Demo"
-             xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
-			 xmlns:Test="clr-namespace:RenderDemo.Pages"
-             xmlns:models="clr-namespace:Neumorphism.Demo.Models"
-             xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
-			 xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
-             x:Class="Neumorphism.Demo.Pages.Home">
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              mc:Ignorable="d"  
+              xmlns:demo="clr-namespace:Neumorphism.Demo;assembly=Neumorphism.Demo"
+              xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
+              xmlns:Test="clr-namespace:RenderDemo.Pages"
+              xmlns:models="clr-namespace:Neumorphism.Demo.Models"
+              xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
+              xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+              x:Class="Neumorphism.Demo.Pages.Home">
 	
   <UserControl.Resources>
     <conv:EnumDescriptionConverter x:Key="GetDescription"/>
@@ -23,12 +23,12 @@
           <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
       </StackPanel.Styles>
-      <Image Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Source="avares://Neumorphism.Demo/Assets/FavIcon_200x.png" Margin="0,0,0,-8"/>
-      <TextBlock Classes="Headline4 Subheadline" Text="👋 Welcome to Neumorphism.Avalonia Demo!"/>
+      <Image Width="1004" Height="301" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,40" Source="avares://Neumorphism.Demo/Assets/Neumorphism.png"/>
+      <!--<TextBlock Classes="Headline4 Subheadline" Text="👋 Welcome to Neumorphism.Avalonia Demo!"/>
       <TextBlock Classes="Content" Text="Neumorphism.Avalonia is a library that could beauty and turning your Avalonia Application from regular design to Material Design like Material Design in XAML! It easy for use to your project! Just install NuGet package, slightly change your App.xaml / App.axaml and your application are ready to go with Material Design!"/>
       <TextBlock Classes="Content" Text="This project is still in development. Not all controls are ready for use, and could be buggy. Don't worry! some basic controls (Buttons, Switch, TextBox and etc.) are ready for use for now! and other controls will be ready later!"/>
       <TextBlock Classes="Content" Text="Press drawer button to start widgets tours!"/>
-      <TextBlock Classes="Content" Text="For attaching AvaloniaUI DevTools - Press Shift + F12."/>
+      <TextBlock Classes="Content" Text="For attaching AvaloniaUI DevTools - Press Shift + F12."/>-->
 		
 		
 		

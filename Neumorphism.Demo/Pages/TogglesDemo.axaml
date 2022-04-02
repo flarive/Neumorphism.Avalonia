@@ -232,14 +232,6 @@
         <TextBlock Classes="Headline6 Subheadline2" Text="RadioButton (button-like)" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
-                <Style Selector="RadioButton.Button">
-                    <Setter Property="ToolTip.Tip"
-                            Value='RadioButton with "Button" classes in StackPanel container with Card widget' />
-                </Style>
-                <Style Selector="RadioButton.Button.Accent">
-                    <Setter Property="ToolTip.Tip"
-                            Value='RadioButton with "Button" and "Accent" classes in StackPanel container with Card widget' />
-                </Style>
                 <Style Selector="avalonia|MaterialIcon">
                     <Setter Property="Width" Value="24" />
                     <Setter Property="Height" Value="24" />
@@ -247,36 +239,43 @@
             </StackPanel.Styles>
             <StackPanel Orientation="Vertical">
                 <showMeTheXaml:XamlDisplay UniqueId="RadioButtonsCard0">
-                    <styles:Card Padding="0" InsideClipping="True">
+                    <styles:Card Padding="0" InsideClipping="True" Height="52" ToolTip.Tip="Regular RadioButton with class Button.">
                         <StackPanel Orientation="Horizontal">
-                            <RadioButton Classes="Button" GroupName="3"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
-                            <RadioButton Classes="Button" GroupName="3"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}"
-                                         IsChecked="True" />
-                            <RadioButton Classes="Button" GroupName="3"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}"
-                                         IsEnabled="False" />
-                            <RadioButton Classes="Button" GroupName="3"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" />
+                            <RadioButton Classes="Button Left" GroupName="3" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
+                            <RadioButton Classes="Button" GroupName="3" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
+                            <RadioButton Classes="Button" GroupName="3" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" IsEnabled="False" />
+                            <RadioButton Classes="Button Right" GroupName="3" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
                         </StackPanel>
                     </styles:Card>
                 </showMeTheXaml:XamlDisplay>
 
                 <showMeTheXaml:XamlDisplay UniqueId="RadioButtonsCard1">
-                    <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0">
+                    <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="38" ToolTip.Tip="Regular RadioButton with classes Button and Accent.">
                         <StackPanel Orientation="Horizontal">
-                            <RadioButton Classes="Button Accent" GroupName="4"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
-                            <RadioButton Classes="Button Accent" GroupName="4"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
-                            <RadioButton Classes="Button Accent" GroupName="4"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" IsEnabled="False" />
-                            <RadioButton Classes="Button Accent" GroupName="4"
-                                         Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" />
+                            <RadioButton Classes="Button Accent Left" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchMinus}" />
+                            <RadioButton Classes="Button Accent" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchPlus}" />
+                            <RadioButton Classes="Button Accent" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchRefresh}" />
+                            <RadioButton Classes="Button Accent Right" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchSync}" />
                         </StackPanel>
                     </styles:Card>
                 </showMeTheXaml:XamlDisplay>
+
+              <showMeTheXaml:XamlDisplay UniqueId="RadioButtonsCard2">
+                <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="28" BorderThickness="1" BorderBrush="White" ToolTip.Tip="Customized RadioButton with class Button.">
+                  <Grid>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="0" Classes="Button Left" GroupName="5" Height="26" Content="1" Foreground="Gray" Margin="1,0,0,0" assists:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assists:ToggleButtonAssist.CheckedForeground="White" />
+                    <RadioButton Grid.Column="1" Classes="Button" GroupName="5" Height="26" Content="2" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assists:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assists:ToggleButtonAssist.CheckedForeground="White" />
+                    <RadioButton Grid.Column="2" Classes="Button" GroupName="5" Height="26" Content="3" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assists:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assists:ToggleButtonAssist.CheckedForeground="White" />
+                    <RadioButton Grid.Column="3" Classes="Button Right" GroupName="5" Height="26" Content="4" Foreground="Gray" Margin="0,0,1,0" BorderBrush="White" BorderThickness="1,0,0,0" assists:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assists:ToggleButtonAssist.CheckedForeground="White" />
+                  </Grid>
+                </styles:Card>
+              </showMeTheXaml:XamlDisplay>
             </StackPanel>
         </StackPanel>
         

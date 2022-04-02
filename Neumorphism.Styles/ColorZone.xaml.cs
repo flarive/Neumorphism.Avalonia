@@ -1,7 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 
-namespace Neumorphism.Styles {
+namespace Neumorphism.Styles
+{
     public enum ColorZoneMode
     {
         Standard,

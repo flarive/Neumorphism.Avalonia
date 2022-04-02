@@ -1,23 +1,34 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
+        xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
         xmlns:cc="clr-namespace:Neumorphism.Styles">
+
+
+  <Styles.Resources>
+    <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+    <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+    <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+  </Styles.Resources>
+  
     <Style Selector="cc|Card">
-        <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth2"/>
-        <Setter Property="CornerRadius" Value="4"/>
-        <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Padding" Value="8" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Panel>
-                    <Border Name="PART_BackgroundBorder"
+                <Panel VerticalAlignment="Stretch">
+                    <Border Name="PART_BackgroundBorder" Margin="0" VerticalAlignment="Stretch"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            assists:ShadowAssist.ShadowDepth="{TemplateBinding assists:ShadowAssist.ShadowDepth}">
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
+                            CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}">
                     </Border>
-                    <Border Name="PART_ContentBorder"
+                    <Border Name="PART_ContentBorder" Margin="0"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             ClipToBounds="{TemplateBinding InsideClipping}"
                             UseLayoutRounding="True">
