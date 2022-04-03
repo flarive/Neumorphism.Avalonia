@@ -80,6 +80,8 @@ namespace Neumorphism.Demo.Pages
 
         public void OpenProjectRepoLink() => GlobalCommand.OpenProjectRepoLink();
 
+        public void OpenAvaloniaWebsiteLink() => GlobalCommand.OpenAvaloniaWebsiteLink();
+
         public void SwitchTransition()
         {
             var state = !TransitionAssist.GetDisableTransitions(Program.MainWindow);

@@ -30,7 +30,13 @@
             <Setter Property="Margin" Value="0, 4" />
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
+
+
+
+      
     </Window.Styles>
+  
+
 
     <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied">
         <styles:NavigationDrawer Name="LeftDrawer" LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">

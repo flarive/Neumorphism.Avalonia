@@ -25,6 +25,11 @@
         <Setter Property="Padding" Value="10,0,0,0" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
+        <Setter Property="TextBlock.FontSize" Value="15"/>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"/>
+        <Setter Property="TextBlock.FontStyle" Value="Normal"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -63,10 +68,15 @@
 						            </Grid>
                         <Border Grid.Column="1" Name="PATH_ContentContainer">
                             <ContentPresenter Name="contentPresenter" Focusable="False"
-                                                HorizontalAlignment="Stretch"
-                                                Margin="{TemplateBinding Padding}"
-                                                VerticalAlignment="Center"
-                                                Content="{TemplateBinding Content}" />
+                                              TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                              HorizontalAlignment="Stretch"
+                                              Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="Center"
+                                              Content="{TemplateBinding Content}" />
                         </Border>
                     </Grid>
                 </ControlTemplate>
@@ -143,6 +153,11 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="CornerRadius" Value="0" />
         <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
+        <Setter Property="TextBlock.FontSize" Value="15"/>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"/>
+        <Setter Property="TextBlock.FontStyle" Value="Normal"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -156,8 +171,11 @@
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                               Content="{TemplateBinding Content}"
                                               Padding="{TemplateBinding Padding}"
-                                              TextBlock.Foreground="{TemplateBinding Foreground}"
-                                              TextBlock.FontWeight="{TemplateBinding FontWeight}"
+                                              TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
                                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </ripple:RippleEffect>

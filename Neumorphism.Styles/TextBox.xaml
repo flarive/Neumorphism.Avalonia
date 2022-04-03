@@ -119,11 +119,13 @@
 
 
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                         Classes="Subtitle1" IsVisible="{TemplateBinding UseFloatingWatermark}"
-                         FontFamily="{TemplateBinding FontFamily}"
-                         FontSize="{DynamicResource FontSizeSmall}"
-                         Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
-                         RenderTransformOrigin="0, 0" />
+                              IsVisible="{TemplateBinding UseFloatingWatermark}"
+                              FontFamily="{TemplateBinding FontFamily}"
+                              FontSize="{TemplateBinding FontSize}"
+                              FontWeight="{TemplateBinding FontWeight}"
+                              FontStyle="{TemplateBinding FontStyle}"
+                              Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+                              RenderTransformOrigin="0, 0" />
 
               <DataValidationErrors Name="DataValidation">
                 <Grid Name="PART_Grid" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
@@ -134,19 +136,26 @@
                                   VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                       <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                         <TextBlock Name="watermark" Padding="0"
-                                   Margin="0"
-                                   Classes="Subtitle1"
-                                   VerticalAlignment="Stretch"
-                                   Foreground="{TemplateBinding Foreground}"
-                                   Opacity="0.5"
-                                   Text="{TemplateBinding Watermark}"
-                                   FontFamily="{TemplateBinding FontFamily}"
-                                   TextAlignment="{TemplateBinding TextAlignment}"
-                                   TextWrapping="{TemplateBinding TextWrapping}"/>
+                                    Margin="0"
+                                    VerticalAlignment="Stretch"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Opacity="0.5"
+                                    Text="{TemplateBinding Watermark}"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontWeight="{TemplateBinding FontWeight}"
+                                    FontStyle="{TemplateBinding FontStyle}"
+                                    TextAlignment="{TemplateBinding TextAlignment}"
+                                    TextWrapping="{TemplateBinding TextWrapping}"/>
                         <TextPresenter Name="PART_TextPresenter"
                           VerticalAlignment="Stretch"
                           HorizontalAlignment="Left"
                           Margin="0"
+                          TextBox.Foreground="{TemplateBinding Foreground}"
+                          TextBox.FontFamily="{TemplateBinding FontFamily}"
+                          TextBox.FontSize="{TemplateBinding FontSize}"
+                          TextBox.FontWeight="{TemplateBinding FontWeight}"
+                          TextBox.FontStyle="{TemplateBinding FontStyle}"
                           Text="{TemplateBinding Text, Mode=TwoWay}"
                           CaretIndex="{TemplateBinding CaretIndex}"
                           SelectionStart="{TemplateBinding SelectionStart}"

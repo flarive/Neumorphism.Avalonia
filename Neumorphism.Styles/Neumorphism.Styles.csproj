@@ -20,6 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Fonts\BalooThambi2\BalooThambi2-Regular.ttf" />
+      <None Remove="Fonts\NunitoSans\NunitoSans-Regular.ttf" />
       <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
       <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
       <None Remove="Fonts\Roboto\Roboto-Regular.ttf" />
@@ -27,10 +29,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AvaloniaResource Include="Fonts\Roboto\Roboto-Light.ttf" />
-      <AvaloniaResource Include="Fonts\Roboto\Roboto-Medium.ttf" />
+      <EmbeddedResource Include="Fonts\Roboto\Roboto-Light.ttf" />
+      <EmbeddedResource Include="Fonts\Roboto\Roboto-Medium.ttf" />
       <AvaloniaResource Include="Fonts\Roboto\Roboto-Regular.ttf" />
-      <AvaloniaResource Include="Fonts\Roboto\Roboto-Thin.ttf" />
+      <EmbeddedResource Include="Fonts\Roboto\Roboto-Thin.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Fonts\BalooThambi2\BalooThambi2-Regular.ttf" />
+      <EmbeddedResource Include="Fonts\NunitoSans\NunitoSans-Regular.ttf" />
     </ItemGroup>
     
     <ItemGroup>

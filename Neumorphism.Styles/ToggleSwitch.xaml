@@ -17,7 +17,6 @@
     
     <!--Regular (no class)-->
     <Style Selector="ToggleSwitch">
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
@@ -31,6 +30,11 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Height" Value="28" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
+        <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
+        <Setter Property="TextBlock.FontSize" Value="15"/>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"/>
+        <Setter Property="TextBlock.FontStyle" Value="Normal"/>
 		<Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -46,6 +50,10 @@
                     </Canvas>
                     <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
                             TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Margin="{TemplateBinding Padding}"
@@ -82,7 +90,7 @@
                                         HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="{TemplateBinding Cursor}"
                                         CornerRadius="100"
                                         BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
-										Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
+										                    Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
                                         Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
                                         ClipToBounds="False" />
                             </AdornerLayer>
@@ -90,6 +98,10 @@
                     </Grid>
 						        <ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
                                     TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
                                     Content="{TemplateBinding Content}"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
                                     Margin="{TemplateBinding Padding}"
@@ -107,7 +119,6 @@
 
   <!--Class Outline-->
 	<Style Selector="ToggleSwitch.Outline">
-		<Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
 		<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
 		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
@@ -121,6 +132,11 @@
 		<Setter Property="HorizontalAlignment" Value="Left" />
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Height" Value="28" />
+    <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
+    <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
+    <Setter Property="TextBlock.FontSize" Value="15"/>
+    <Setter Property="TextBlock.FontWeight" Value="Normal"/>
+    <Setter Property="TextBlock.FontStyle" Value="Normal"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid ColumnDefinitions="Auto,Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
@@ -134,12 +150,16 @@
                               Width="0" Height="0" />
 					</Canvas>
                     <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
-							TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
-							Content="{TemplateBinding Content}"
-							ContentTemplate="{TemplateBinding ContentTemplate}"
-							Margin="{TemplateBinding Padding}"
-							HorizontalAlignment="Stretch"
-							VerticalAlignment="Center" />
+                                    TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                    TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
+						                        Content="{TemplateBinding Content}"
+						                        ContentTemplate="{TemplateBinding ContentTemplate}"
+						                        Margin="{TemplateBinding Padding}"
+						                        HorizontalAlignment="Stretch"
+						                        VerticalAlignment="Center" />
 					<Grid Grid.Column="1" ClipToBounds="False">
 						<!--Outline-->
 						<Border Name="Outline"
@@ -189,6 +209,10 @@
 					</Grid>
 					<ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
                             TextBlock.Foreground="{Binding TextBlock.Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontFamily="{Binding TextBlock.FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontSize="{Binding TextBlock.FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontWeight="{Binding TextBlock.FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                            TextBlock.FontStyle="{Binding TextBlock.FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
                             Margin="{TemplateBinding Padding}"

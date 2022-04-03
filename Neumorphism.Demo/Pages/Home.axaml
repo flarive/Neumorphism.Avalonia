@@ -8,14 +8,47 @@
               xmlns:Test="clr-namespace:RenderDemo.Pages"
               xmlns:models="clr-namespace:Neumorphism.Demo.Models"
               xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
+              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
               xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
               x:Class="Neumorphism.Demo.Pages.Home">
 	
   <UserControl.Resources>
     <conv:EnumDescriptionConverter x:Key="GetDescription"/>
   </UserControl.Resources>
-    
-	<StackPanel Margin="16, 0" MaxWidth="800">
+
+
+  <UserControl.Styles>
+    <Style>
+      <Style.Resources>
+        <DrawingGroup x:Key="AvaloniaLogo">
+          <GeometryDrawing Geometry="m 150.66581 0.66454769 c -54.77764 0 -101.0652 38.86360031 -112.62109 90.33008031 a 26.1 26.1 0 0 1 18.92187 25.070312 26.1 26.1 0 0 1 -18.91992 25.08202 c 11.56024 51.46073 57.8456 90.31837 112.61914 90.31837 63.37832 0 115.40039 -52.02207 115.40039 -115.40039 0 -63.378322 -52.02207 -115.40039231 -115.40039 -115.40039231 z m 0 60.00000031 c 30.95192 0 55.40039 24.44847 55.40039 55.400392 0 30.9519 -24.44847 55.40039 -55.40039 55.40039 -30.95191 0 -55.40039 -24.44848 -55.40039 -55.40039 0 -30.951922 24.44848 -55.400392 55.40039 -55.400392 z">
+            <GeometryDrawing.Brush>
+              <LinearGradientBrush StartPoint="272,411" EndPoint="435,248">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="DarkGray" Offset="0" />
+                  <GradientStop Color="DarkGray" Offset="0.6784" />
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="DarkGray">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry Rect="9.6,95.8,40.6,40.6" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="DarkGray">
+            <GeometryDrawing.Geometry>
+              <RectangleGeometry Rect="206.06355, 114.56503,60,116.2" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+        </DrawingGroup>
+      </Style.Resources>
+    </Style>
+    </UserControl.Styles>
+
+
+
+  <StackPanel Margin="16, 0" MaxWidth="800">
       <StackPanel.Styles>
         <Style Selector="TextBlock.Content, TextBlock.Subheadline">
           <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -29,9 +62,9 @@
       <TextBlock Classes="Content" Text="This project is still in development. Not all controls are ready for use, and could be buggy. Don't worry! some basic controls (Buttons, Switch, TextBox and etc.) are ready for use for now! and other controls will be ready later!"/>
       <TextBlock Classes="Content" Text="Press drawer button to start widgets tours!"/>
       <TextBlock Classes="Content" Text="For attaching AvaloniaUI DevTools - Press Shift + F12."/>-->
-		
-		
-		
+
+
+
 
       <StackPanel Margin="16">
         <StackPanel.Styles>
@@ -39,20 +72,24 @@
             <Setter Property="Margin" Value="15"/>
           </Style>
         </StackPanel.Styles>
-		  <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
-          <Button Name="btn1" Content="PROJECT LINK" Command="{Binding Path=OpenProjectRepoLink}"/>
+        <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
+          <Button Name="btn1" Command="{Binding Path=OpenProjectRepoLink}">
+            <avalonia:MaterialIcon Kind="Github" Width="40" Height="40" Foreground="DarkGray" />
+          </Button>
           <Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
           <Button Name="btn3" Width="200" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>
-        </WrapPanel>
-        <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
-          <Button Name="btn4" Width="200" Content="SWITCH TRANSITIONS" Command="{Binding Path=SwitchTransition}"/>
-          <Button Name="btn5" Width="200" Content="ABOUT AVALONIAUI" Command="{Binding Path=ShowAboutAvaloniaUI}"/>
+          <Button Name="btn4" Command="{Binding Path=OpenAvaloniaWebsiteLink}">
+              <Viewbox Width="40" Height="40">
+                <DrawingPresenter Drawing="{DynamicResource AvaloniaLogo}" />
+              </Viewbox>
+          </Button>
         </WrapPanel>
       </StackPanel>
       <StackPanel Margin="0,24">
+        
         <DataGrid Height="620"
                   IsReadOnly="True"
-                  Items="{Binding Path=DataContext.Features}" 
+                  Items="{Binding Path=DataContext.Features}"
                   VerticalAlignment="Stretch"
                   VerticalScrollBarVisibility="Disabled">
           <DataGrid.Columns>
@@ -61,8 +98,8 @@
                                 Width="20*" />
             <DataGridTemplateColumn>
               <DataGridTemplateColumn.Header>
-                <TextBlock TextAlignment="Right" 
-                           Text="Is Ready" 
+                <TextBlock TextAlignment="Right"
+                           Text="Is Ready"
                            HorizontalAlignment="Stretch"/>
               </DataGridTemplateColumn.Header>
               <DataGridTemplateColumn.CellTemplate>
@@ -70,11 +107,11 @@
                   <TextBlock TextAlignment="Right" Text="{Binding Converter={StaticResource GetDescription}, Path=IsReady}"/>
                 </DataTemplate>
               </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn> 
+            </DataGridTemplateColumn>
             <DataGridTemplateColumn>
               <DataGridTemplateColumn.Header>
-                <TextBlock TextAlignment="Right" 
-                           Text="Is Animated" 
+                <TextBlock TextAlignment="Right"
+                           Text="Is Animated"
                            HorizontalAlignment="Stretch"/>
               </DataGridTemplateColumn.Header>
               <DataGridTemplateColumn.CellTemplate>
@@ -87,4 +124,4 @@
         </DataGrid>
       </StackPanel>
     </StackPanel>
-</UserControl>
+  </UserControl>
