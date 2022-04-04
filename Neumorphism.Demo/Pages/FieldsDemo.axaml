@@ -9,6 +9,7 @@
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:Class="Neumorphism.Demo.Pages.FieldsDemo">
+  
     <UserControl.Resources>
         <system:String x:Key="TextFieldTip1">Only numerics in this field</system:String>
     </UserControl.Resources>

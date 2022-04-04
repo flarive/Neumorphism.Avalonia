@@ -5,54 +5,139 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:assist="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
              x:Class="Neumorphism.Demo.Pages.ComboBoxesDemo">
+  
+  
     <StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
         <TextBlock Classes="Headline4 Subheadline" Text="ComboBoxes" />
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel>
-                <TextBlock Classes="Headline6 Subheadline2" Text="Standard comboboxes" />
+                <TextBlock Classes="Headline6 Subheadline2" Text="Classic comboboxes" />
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel.Styles>
+                    <!--<StackPanel.Styles>
                         <Style Selector="ComboBox">
                             <Setter Property="Width" Value="180" />
                         </Style>
-                    </StackPanel.Styles>
-                    <showMeTheXaml:XamlDisplay UniqueId="ComboBoxes0">
-                        <ComboBox PlaceholderText="Select a Item">
+                    </StackPanel.Styles>-->
+                    <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes0">
+                        <ComboBox PlaceholderText="Select an item">
                             <TextBlock Text="Item 1" />
                             <TextBlock Text="Item 2" />
                             <TextBlock Text="Item 3" />
-                            <TextBlock Text="Item 4" />
+                            <TextBlock Text="Item with long long text" />
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="ComboBoxes1">
-                        <ComboBox PlaceholderText="Select a Item">
-                            <TextBlock Text="Item 1" />
-                            <TextBlock Text="Item 2" />
-                            <TextBlock Text="Item 3" />
-                            <TextBlock Text="Item 4" />
+                    <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
+                        <ComboBox Width="500" PlaceholderText="Please select a user">
+                            <TextBlock Text="John" />
+                            <TextBlock Text="Paul" />
+                            <TextBlock Text="Ringo" />
+                            <TextBlock Text="Georges" />
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="ComboBoxes2">
-                        <ComboBox Classes="Filled">
-                            <TextBlock Text="Item 1" />
-                            <TextBlock Text="Item 2" />
-                            <TextBlock Text="Item 3" />
-                            <TextBlock Text="Item 4" />
-                        </ComboBox>
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="ComboBoxes3">
-                        <ComboBox Classes="Outline" assist:ComboBoxAssist.Label="ComboBox">
-                            <TextBlock Text="Item 1" />
-                            <TextBlock Text="Item 2" />
-                            <TextBlock Text="Item 3" />
-                            <TextBlock Text="Item 4" />
+                    <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes2">
+                        <ComboBox>
+                          <ComboBoxItem>
+                              <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
+                                <TextBlock Text="Red" VerticalAlignment="Center" />
+                              </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                              <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
+                                <TextBlock Text="Blue" VerticalAlignment="Center" />
+                              </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                              <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
+                                <TextBlock Text="Green" VerticalAlignment="Center" />
+                              </StackPanel>
+                            </ComboBoxItem>
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
                 </StackPanel>
             </StackPanel>
         </WrapPanel>
-    </StackPanel>
+
+
+
+        <WrapPanel HorizontalAlignment="Stretch">
+          <StackPanel>
+            <TextBlock Classes="Headline6 Subheadline2" Text="Filled comboboxes" />
+            <StackPanel Orientation="Horizontal">
+              <!--<StackPanel.Styles>
+                <Style Selector="ComboBox">
+                  <Setter Property="Width" Value="180" />
+                </Style>
+              </StackPanel.Styles>-->
+              <showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes0">
+                <ComboBox Classes="Filled" PlaceholderText="Select an item">
+                  <TextBlock Text="Item 1" />
+                  <TextBlock Text="Item 2" />
+                  <TextBlock Text="Item 3" />
+                  <TextBlock Text="Item 4" />
+                </ComboBox>
+              </showMeTheXaml:XamlDisplay>
+              <showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes1">
+                <ComboBox Classes="Filled" PlaceholderText="Please select a user">
+                  <TextBlock Text="John" />
+                  <TextBlock Text="Paul" />
+                  <TextBlock Text="Ringo" />
+                  <TextBlock Text="Georges" />
+                </ComboBox>
+              </showMeTheXaml:XamlDisplay>
+              <showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes2">
+                <ComboBox Classes="Filled" assist:ComboBoxAssist.Label="ComboBox">
+                  <TextBlock Text="Item 1" />
+                  <TextBlock Text="Item 2" />
+                  <TextBlock Text="Item 3" />
+                  <TextBlock Text="Item 4" />
+                </ComboBox>
+              </showMeTheXaml:XamlDisplay>
+            </StackPanel>
+          </StackPanel>
+        </WrapPanel>
+
+      <WrapPanel HorizontalAlignment="Stretch">
+        <StackPanel>
+          <TextBlock Classes="Headline6 Subheadline2" Text="Outline comboboxes" />
+          <StackPanel Orientation="Horizontal">
+            <!--<StackPanel.Styles>
+              <Style Selector="ComboBox">
+                <Setter Property="Width" Value="180" />
+              </Style>
+            </StackPanel.Styles>-->
+            <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes0">
+              <ComboBox Classes="Outline" PlaceholderText="Select an item">
+                <TextBlock Text="Item 1" />
+                <TextBlock Text="Item 2" />
+                <TextBlock Text="Item 3" />
+                <TextBlock Text="Item 4" />
+              </ComboBox>
+            </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes1">
+              <ComboBox Classes="Outline" PlaceholderText="Please select a user">
+                <TextBlock Text="John" />
+                <TextBlock Text="Paul" />
+                <TextBlock Text="Ringo" />
+                <TextBlock Text="Georges" />
+              </ComboBox>
+            </showMeTheXaml:XamlDisplay>
+            <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes2">
+              <ComboBox Classes="Outline" assist:ComboBoxAssist.Label="ComboBox">
+                <TextBlock Text="Item 1" />
+                <TextBlock Text="Item 2" />
+                <TextBlock Text="Item 3" />
+                <TextBlock Text="Item 4" />
+              </ComboBox>
+            </showMeTheXaml:XamlDisplay>
+          </StackPanel>
+        </StackPanel>
+      </WrapPanel>
+  </StackPanel>
 </UserControl>

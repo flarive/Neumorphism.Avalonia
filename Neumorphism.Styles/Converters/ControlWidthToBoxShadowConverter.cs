@@ -16,7 +16,8 @@ namespace Neumorphism.Styles.Converters
             var b = new BoxShadows();
             bool inset = parameter != null && parameter.Equals("1");
             bool isFixedInset = parameter != null && parameter.Equals("2");
-            bool insetAndOutset = parameter != null && parameter.Equals("3");
+            bool isFixedOutset = parameter != null && parameter.Equals("3");
+            bool insetAndOutset = parameter != null && parameter.Equals("4");
 
             var theme = Application.Current!.LocateMaterialTheme<MaterialTheme>();
 
@@ -41,9 +42,31 @@ namespace Neumorphism.Styles.Converters
                 rest1.Color = theme.CurrentTheme.ShadowDarkColor;
                 rests.Add(rest1);
             }
+            else if (isFixedOutset)
+            {
+                //-20 -20 60 #CCFFFFFF,20 20 60 #33000000
+                main.IsInset = false;
+                main.OffsetX = -3.3;
+                main.OffsetY = -3.3;
+                main.Blur = 10;
+                main.Color = theme.CurrentTheme.ShadowLightColor;
+
+                rest1.IsInset = false;
+                rest1.OffsetX = 3.3;
+                rest1.OffsetY = 3.3;
+                rest1.Blur = 10;
+                rest1.Color = theme.CurrentTheme.ShadowDarkColor;
+                rests.Add(rest1);
+            }
             else if (value is double)
             {
                 double height = (double)value;
+
+                if (height is double.NaN)
+                {
+                    height = 50;
+                }
+
                 if (height > 0)
                 {
                     // for a 300x300 button shadow radius must be 60 (300/5);

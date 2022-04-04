@@ -38,7 +38,7 @@
   
 
 
-    <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied">
+    <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center">
         <styles:NavigationDrawer Name="LeftDrawer" LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
             <styles:NavigationDrawer.LeftDrawerContent>
                 <ScrollViewer>

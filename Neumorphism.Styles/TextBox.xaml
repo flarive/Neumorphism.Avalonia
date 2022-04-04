@@ -124,7 +124,8 @@
                               FontSize="{TemplateBinding FontSize}"
                               FontWeight="{TemplateBinding FontWeight}"
                               FontStyle="{TemplateBinding FontStyle}"
-                              Text="{TemplateBinding (wpf:TextFieldAssist.Label)}" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+                              Text="{TemplateBinding (wpf:TextFieldAssist.Label)}"
+                              Foreground="{TemplateBinding Foreground}" Opacity="0.5"
                               RenderTransformOrigin="0, 0" />
 
               <DataValidationErrors Name="DataValidation">

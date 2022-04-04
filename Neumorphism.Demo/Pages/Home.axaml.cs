@@ -10,6 +10,9 @@ using Avalonia.Input;
 using Avalonia.VisualTree;
 using System.Linq;
 using Avalonia;
+using Neumorphism.Styles;
+using Avalonia.Controls.Primitives;
+using Avalonia.Controls.ApplicationLifetimes;
 
 namespace Neumorphism.Demo.Pages
 {
@@ -60,23 +63,32 @@ namespace Neumorphism.Demo.Pages
         public ObservableCollection<FeatureStatusModels> Features { get; private set; }
 
 
-        public void UseMaterialUIDarkTheme()
+        //public void UseMaterialUIDarkTheme()
+        //{
+        //    GlobalCommand.UseMaterialUIDarkTheme();
+
+        //    DirtyControlsRedrawFix();
+        //}
+
+        //public void UseMaterialUILightTheme()
+        //{
+        //    GlobalCommand.UseMaterialUILightTheme();
+
+        //    DirtyControlsRedrawFix();
+        //}
+
+        public void OpenLeftDrawer()
         {
-            GlobalCommand.UseMaterialUIDarkTheme();
-
-            DirtyControlsRedrawFix();
+            var ancestors = this.GetVisualAncestors();
+            if (ancestors != null)
+            {
+                var navDrawer = ancestors.SingleOrDefault(p => p.GetType() == typeof(NavigationDrawer));
+                if (navDrawer != null)
+                {
+                    ((NavigationDrawer)navDrawer).LeftDrawerOpened = true;
+                }
+            }
         }
-
-        public void UseMaterialUILightTheme()
-        {
-            GlobalCommand.UseMaterialUILightTheme();
-
-            DirtyControlsRedrawFix();
-        }
-
-        //public void UseMaterialUIDarkTheme() => GlobalCommand.UseMaterialUIDarkTheme();
-
-        //public void UseMaterialUILightTheme() => GlobalCommand.UseMaterialUILightTheme();
 
         public void OpenProjectRepoLink() => GlobalCommand.OpenProjectRepoLink();
 
@@ -99,34 +111,34 @@ namespace Neumorphism.Demo.Pages
         /// <summary>
         /// Dirty hack to force redraw box shadow when theme is changed !!!!
         /// </summary>
-        private void DirtyControlsRedrawFix()
-        {
-            var zz = this.Parent;
+        //private void DirtyControlsRedrawFix()
+        //{
+        //    var zz = this.Parent;
             
-            var controls = this.GetVisualDescendants().OfType<InputElement>();
-            foreach (InputElement ctrl in controls)
-            {
-                if (ctrl != null)
-                {
-                    if (ctrl is CheckBox || ctrl is RadioButton)
-                    {
-                        double h = ctrl.GetValue<double>(SelectionControlAssist.SizeProperty);
-                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h - 1);
-                        ctrl.SetValue(SelectionControlAssist.SizeProperty, h + 1);
-                    }
+        //    var controls = this.GetVisualDescendants().OfType<InputElement>();
+        //    foreach (InputElement ctrl in controls)
+        //    {
+        //        if (ctrl != null)
+        //        {
+        //            if (ctrl is CheckBox || ctrl is RadioButton)
+        //            {
+        //                double h = ctrl.GetValue<double>(SelectionControlAssist.SizeProperty);
+        //                ctrl.SetValue(SelectionControlAssist.SizeProperty, h - 1);
+        //                ctrl.SetValue(SelectionControlAssist.SizeProperty, h + 1);
+        //            }
 
-                    if (ctrl.Height > 0)
-                    {
-                        ctrl.Height = ctrl.Height - 1;
-                        ctrl.Height = ctrl.Height + 1;
-                    }
-                    else if (ctrl.Height is double.NaN)
-                    {
-                        ctrl.Height = 0;
-                        ctrl.Height = double.NaN;
-                    }
-                }
-            }
-        }
+        //            if (ctrl.Height > 0)
+        //            {
+        //                ctrl.Height = ctrl.Height - 1;
+        //                ctrl.Height = ctrl.Height + 1;
+        //            }
+        //            else if (ctrl.Height is double.NaN)
+        //            {
+        //                ctrl.Height = 0;
+        //                ctrl.Height = double.NaN;
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

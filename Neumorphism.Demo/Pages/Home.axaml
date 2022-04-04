@@ -23,12 +23,7 @@
         <DrawingGroup x:Key="AvaloniaLogo">
           <GeometryDrawing Geometry="m 150.66581 0.66454769 c -54.77764 0 -101.0652 38.86360031 -112.62109 90.33008031 a 26.1 26.1 0 0 1 18.92187 25.070312 26.1 26.1 0 0 1 -18.91992 25.08202 c 11.56024 51.46073 57.8456 90.31837 112.61914 90.31837 63.37832 0 115.40039 -52.02207 115.40039 -115.40039 0 -63.378322 -52.02207 -115.40039231 -115.40039 -115.40039231 z m 0 60.00000031 c 30.95192 0 55.40039 24.44847 55.40039 55.400392 0 30.9519 -24.44847 55.40039 -55.40039 55.40039 -30.95191 0 -55.40039 -24.44848 -55.40039 -55.40039 0 -30.951922 24.44848 -55.400392 55.40039 -55.400392 z">
             <GeometryDrawing.Brush>
-              <LinearGradientBrush StartPoint="272,411" EndPoint="435,248">
-                <LinearGradientBrush.GradientStops>
-                  <GradientStop Color="DarkGray" Offset="0" />
-                  <GradientStop Color="DarkGray" Offset="0.6784" />
-                </LinearGradientBrush.GradientStops>
-              </LinearGradientBrush>
+              <SolidColorBrush Color="DarkGray"/>
             </GeometryDrawing.Brush>
           </GeometryDrawing>
           <GeometryDrawing Brush="DarkGray">
@@ -76,8 +71,9 @@
           <Button Name="btn1" Command="{Binding Path=OpenProjectRepoLink}">
             <avalonia:MaterialIcon Kind="Github" Width="40" Height="40" Foreground="DarkGray" />
           </Button>
-          <Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
-          <Button Name="btn3" Width="200" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>
+          <!--<Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
+          <Button Name="btn3" Width="200" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>-->
+          <Button Name="btn2" Width="200" Content="OPEN CONTROLS" Command="{Binding Path=OpenLeftDrawer}"/>
           <Button Name="btn4" Command="{Binding Path=OpenAvaloniaWebsiteLink}">
               <Viewbox Width="40" Height="40">
                 <DrawingPresenter Drawing="{DynamicResource AvaloniaLogo}" />
