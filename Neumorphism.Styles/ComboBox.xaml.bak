@@ -6,7 +6,6 @@
         xmlns:styles="clr-namespace:Neumorphism.Styles">
 
   <Styles.Resources>
-    <converters:BooleanValueToDoubleConverter x:Key="BooleanValueToDoubleConverter" />
     <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
     <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
   </Styles.Resources>
@@ -236,7 +235,7 @@
 					Margin="15,10,80,10"
                     Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
           
-          <Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
+          <Border Name="border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
                     BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
                     Background="{TemplateBinding Background}"
@@ -344,12 +343,6 @@
     <Setter Property="Margin" Value="15,10,80,10"/>
     <Setter Property="RenderTransform" Value="scale(1)"/>
   </Style>
-	
-
-   <!--classic watermark-->
-    <Style Selector="ComboBox.Filled:not(ComboBox.Filled[SelectedIndex=-1]) /template/ TextBlock#watermark">
-	    <Setter Property="Opacity" Value="0"/>
-    </Style>
 
 
   <!--Class outline-->

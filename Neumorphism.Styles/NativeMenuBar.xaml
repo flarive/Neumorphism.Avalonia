@@ -1,11 +1,13 @@
 <Style xmlns="https://github.com/avaloniaui"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        xmlns:styles="clr-namespace:Neumorphism.Styles"
+	   xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
        Selector="NativeMenuBar">
+	
     <Style.Resources>
-        <styles:InverseBooleanValueConverter x:Key="AvaloniaThemesDefaultNativeMenuBarInverseBooleanValueConverter"
-                                             Default="True" />
+		<converters:InverseBooleanValueConverter x:Key="AvaloniaThemesDefaultNativeMenuBarInverseBooleanValueConverter" Default="True" />
     </Style.Resources>
+	
     <Setter Property="Template">
         <ControlTemplate>
             <Menu
