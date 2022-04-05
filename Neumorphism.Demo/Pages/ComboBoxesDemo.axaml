@@ -23,7 +23,7 @@
                         </Style>
                     </StackPanel.Styles>-->
                     <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes0">
-                        <ComboBox PlaceholderText="Select an item">
+                        <ComboBox PlaceholderText="Select an item" assist:ComboBoxAssist.UseFloatingWatermark="True">
                             <TextBlock Text="Item 1" />
                             <TextBlock Text="Item 2" />
                             <TextBlock Text="Item 3" />
@@ -31,7 +31,7 @@
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
-                        <ComboBox Width="500" PlaceholderText="Please select a user">
+                        <ComboBox Width="500" PlaceholderText="Please select a user" assist:ComboBoxAssist.UseFloatingWatermark="True">>
                             <TextBlock Text="John" />
                             <TextBlock Text="Paul" />
                             <TextBlock Text="Ringo" />

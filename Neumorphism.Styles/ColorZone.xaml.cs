@@ -15,6 +15,7 @@ namespace Neumorphism.Styles
         Dark,
         Custom
     }
+
     public class ColorZone : ContentControl {
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<ColorZone, CornerRadius>(nameof(CornerRadius));

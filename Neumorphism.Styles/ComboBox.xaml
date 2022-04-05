@@ -74,6 +74,7 @@
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontStyle" Value="Normal"/>
         <Setter Property="Cursor" Value="Hand"/>
+	    <Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="True"/>
         <Setter Property="Template">
             <ControlTemplate>
               <Grid Name="templateRoot" Height="{TemplateBinding Height}"

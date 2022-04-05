@@ -110,14 +110,7 @@
               </Style>
             </Border.Styles>
             
-            
-            
-            
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-
-              
-
-
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
                               IsVisible="{TemplateBinding UseFloatingWatermark}"
                               FontFamily="{TemplateBinding FontFamily}"
@@ -378,7 +371,8 @@
                                     HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                     VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                         <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                          <TextBlock Name="watermark" Padding="0"
+                          <TextBlock Name="watermark"
+									 Padding="0"
                                      Margin="0"
                                      Classes="Subtitle1"
                                      VerticalAlignment="Stretch"
