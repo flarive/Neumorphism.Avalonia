@@ -53,16 +53,15 @@
       </Setter.Value>
     </Setter>
   </Style>
-  
+	
 
-
-  <!--Regular (no class)-->
-  <Style Selector="ComboBox">
-        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="BorderThickness" Value="0" /> <!-- FixBorderThickness -->
+	<!--Regular (no class)-->
+	<Style Selector="ComboBox">
+		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="8,4" />
         <Setter Property="ClipToBounds" Value="False"/>
         <Setter Property="Width" Value="NaN"/>
@@ -75,96 +74,154 @@
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontStyle" Value="Normal"/>
         <Setter Property="Cursor" Value="Hand"/>
-	    <Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="True"/>
-        <Setter Property="Template">
-            <ControlTemplate>
-              <Grid Name="templateRoot" Height="{TemplateBinding Height}"
-                    Background="{TemplateBinding Background}"
-                    ClipToBounds="False" >
-                <Border Name="PART_Border"
-                  HorizontalAlignment="Stretch"
-                  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
-                  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
-                  <Grid ColumnDefinitions="*,Auto" ClipToBounds="False" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch">
-                    <ToggleButton Name="toggle"
-                                  Classes="ComboBoxToggleButton"
-                                  Width="{TemplateBinding Width}"
-                                  Height="{TemplateBinding Height}"
-                                  Cursor="{TemplateBinding Cursor}"
-                                  HorizontalAlignment="Stretch"
-                                  HorizontalContentAlignment="Stretch"
-                                  BorderThickness="0"
-                                  Background="Transparent"
-                                  Focusable="False"
-                                  BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
-                                  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-                                  Grid.ColumnSpan="2"/>
-                    
-                    <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                          Margin="{TemplateBinding Padding}"
-                          UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
-                      <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                      </Grid.ColumnDefinitions>
-                      <Grid Name="InputRoot" HorizontalAlignment="Stretch">
-                        <!--Placeholder text-->
-                        <TextBlock Name="placeholderText" Text="{TemplateBinding PlaceholderText}"
-                                   TextAlignment="Left" FontFamily="{TemplateBinding FontFamily}" Foreground="{TemplateBinding Foreground}" Margin="8,4,32,4"/>
-                      
-                        <!--Selected item-->
-                        <ContentPresenter Name="contentPresenter"
-                                          Content="{TemplateBinding SelectionBoxItem}"
-                                          ContentTemplate="{TemplateBinding ItemTemplate}"
-                                          HorizontalContentAlignment="Left"
-                                          HorizontalAlignment="Left"
-                                          Margin="8,4,32,4"/>
-                      </Grid>
-                    </Grid>
+	    <Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="False"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
-                    <Popup Name="PART_Popup"
-                           IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-                           MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=-20}"
-                           VerticalOffset="-5"
-                           HorizontalOffset="-10"
-                           Margin="-8"
-                           WindowManagerAddShadowHint="False"
-                           PlacementTarget="{Binding ElementName=templateRoot}"
-                           IsLightDismissEnabled="True"
-                           UseLayoutRounding="True" 
-                           ClipToBounds="False" >
-                          <Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                  Margin="10"
-                                  Background="{DynamicResource MaterialDesignPaper}"
-                                  CornerRadius="5"
-                                  BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
-                              <ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
-                                            MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                            MinHeight="1" >
-                                <ItemsPresenter Name="PART_ItemsPresenter"
-                                        Items="{TemplateBinding Items}"
-                                        ItemsPanel="{TemplateBinding ItemsPanel}"
-                                        Margin="2,0,0,0"
-                                        ItemTemplate="{TemplateBinding ItemTemplate}"
-                                        VirtualizationMode="{TemplateBinding VirtualizationMode}" />
-                              </ScrollViewer>
-                          </Border>
-                    </Popup>
-                  </Grid>
-                </Border>
-              </Grid>
-            </ControlTemplate>
-        </Setter>
-    </Style>
+					<TextBlock Name="floatingWatermark"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Stretch"
+								Foreground="{TemplateBinding Foreground}"
+								FontFamily="{TemplateBinding FontFamily}"
+								FontSize="{TemplateBinding FontSize}"
+								FontWeight="{TemplateBinding FontWeight}"
+								FontStyle="{TemplateBinding FontStyle}"
+								Text="{TemplateBinding PlaceholderText}"
+								Opacity="0.5"
+								IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
+								RenderTransformOrigin="0, 0" >
 
-  <Style Selector="ComboBox /template/ TextBlock#placeholderText">
-    <Setter Property="Opacity" Value="0"/>
-  </Style>
+						<TextBlock.Styles>
+							<Style Selector="TextBlock#floatingWatermark:not(.notransitions)">
+								<Setter Property="Transitions">
+									<Transitions>
+										<ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut"/>
+										<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+									</Transitions>
+								</Setter>
+							</Style>
+						</TextBlock.Styles>
+					</TextBlock>
 
-  <Style Selector="ComboBox[SelectedIndex=-1] /template/ TextBlock#placeholderText">
-    <Setter Property="Opacity" Value="0.5"/>
-  </Style>
+					<TextBlock Name="watermark"
+							  HorizontalAlignment="Stretch"
+							  VerticalAlignment="Top"
+							  Foreground="{TemplateBinding Foreground}"
+							  FontFamily="{TemplateBinding FontFamily}"
+							  FontSize="{TemplateBinding FontSize}"
+							  FontWeight="{TemplateBinding FontWeight}"
+							  FontStyle="{TemplateBinding FontStyle}"
+							  Text="{TemplateBinding PlaceholderText}"
+							  Margin="15,10,80,10"
+							  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+
+					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
+							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+							  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+							  Background="{TemplateBinding Background}"
+							  BorderBrush="{TemplateBinding BorderBrush}"
+							  BorderThickness="{TemplateBinding BorderThickness}">
+						<Border.Styles>
+							<Style Selector="Border:disabled, TextBlock:disabled">
+								<Setter Property="Opacity" Value="0.5" />
+							</Style>
+						</Border.Styles>
+
+
+
+						<ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
+									  BorderThickness="0" Background="Transparent"
+									  HorizontalContentAlignment="Stretch"
+									  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+									  Margin="0"
+									  CornerRadius="0"
+									  Padding="0">
+
+
+
+							<Grid ColumnDefinitions="*,Auto" HorizontalAlignment="Stretch" Width="{Binding ElementName=watermark, Path=Width}">
+								<!--Selected item-->
+								<ContentPresenter Name="contentPresenter"
+												  BorderThickness="0" BorderBrush="Transparent"
+												  HorizontalAlignment="Left"
+												  VerticalAlignment="Center"
+												  Content="{TemplateBinding SelectionBoxItem}"
+												  ContentTemplate="{TemplateBinding ItemTemplate}"
+												  Margin="{TemplateBinding Padding}"/>
+								<Border Name="splitBorder"
+										Grid.Column="1"
+										Margin="16 16 16 16"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Center"
+										BorderBrush="Transparent"
+										BorderThickness="0">
+									<Path Name="arrow"
+										  Width="8" Height="8"
+										  Stretch="Uniform"
+										  HorizontalAlignment="Right"
+										  VerticalAlignment="Center"
+										  Data="M7,10L12,15L17,10H7Z"
+										  Fill="{DynamicResource MaterialDesignTextBoxBorder}" />
+								</Border>
+							</Grid>
+
+						</ToggleButton>
+					</Border>
+
+					<Popup Name="PART_Popup"
+						   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+						   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+						   VerticalOffset="-5"
+						   HorizontalOffset="-10"
+						   Margin="-8"
+						   WindowManagerAddShadowHint="False"
+						   PlacementTarget="{Binding ElementName=templateRoot}"
+						   IsLightDismissEnabled="True"
+						   UseLayoutRounding="True"
+						   ClipToBounds="False" >
+						<Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+														  Margin="10"
+														  Background="{DynamicResource MaterialDesignPaper}"
+														  CornerRadius="5"
+														  BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
+							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
+										  MaxHeight="{TemplateBinding MaxDropDownHeight}"
+										  MinHeight="1" >
+								<ItemsPresenter Name="PART_ItemsPresenter"
+										Items="{TemplateBinding Items}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"
+										ItemTemplate="{TemplateBinding ItemTemplate}"
+										VirtualizationMode="{TemplateBinding VirtualizationMode}" />
+							</ScrollViewer>
+						</Border>
+					</Popup>
+
+
+
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+  
+
+	<!--floating wartermark-->
+	<Style Selector="ComboBox:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+		<Setter Property="Margin" Value="1,-16,30,10"/>
+		<Setter Property="RenderTransform" Value="scale(0.75)"/>
+	</Style>
+
+	<Style Selector="ComboBox[SelectedIndex=-1] /template/ TextBlock#floatingWatermark">
+		<Setter Property="Margin" Value="15,10,80,10"/>
+		<Setter Property="RenderTransform" Value="scale(1)"/>
+	</Style>
+
+
+	<!--classic watermark-->
+	<Style Selector="ComboBox:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#watermark">
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+		
 
 
   <Style Selector="ComboBox[IsDropDownOpen=true] /template/ Border#PART_Border">
@@ -174,182 +231,13 @@
   <Style Selector="ComboBox:pointerover /template/ Border#PART_Border">
     <Setter Property="Background" Value="#44CCCCCC"/>
   </Style>
-  
-  
-  
-  <!--Class filled-->
-  <Style Selector="ComboBox.Filled">
-    <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-    <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
-    <Setter Property="Padding" Value="16,8" />
-    <Setter Property="Margin" Value="0" />
-    <Setter Property="Width" Value="NaN"/>
-    <Setter Property="Height" Value="38"/>
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Styles/Fonts/Roboto#Roboto, Arial"/>
-    <Setter Property="FontSize" Value="16" />
-    <Setter Property="FontWeight" Value="Normal"/>
-    <Setter Property="FontStyle" Value="Normal"/>
-    <Setter Property="Cursor" Value="Hand"/>
-    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-    <Setter Property="VerticalAlignment" Value="Center"/>
-	<Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="False"/>
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
-          <TextBlock Name="floatingWatermark"
-                      VerticalAlignment="Top"
-                      HorizontalAlignment="Stretch"
-                      Foreground="{TemplateBinding Foreground}"
-                      FontFamily="{TemplateBinding FontFamily}"
-                      FontSize="{TemplateBinding FontSize}"
-                      FontWeight="{TemplateBinding FontWeight}"
-                      FontStyle="{TemplateBinding FontStyle}"
-                      Text="{TemplateBinding PlaceholderText}"
-                      Opacity="0.5"
-					  IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
-                      RenderTransformOrigin="0, 0" >
-             
-            <TextBlock.Styles>
-              <Style Selector="TextBlock#floatingWatermark:not(.notransitions)">
-                <Setter Property="Transitions">
-                  <Transitions>
-                    <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut"/>
-                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
-                  </Transitions>
-                </Setter>
-              </Style>
-            </TextBlock.Styles>
-          </TextBlock>
-
-          <TextBlock Name="watermark"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Top"
-                    Foreground="{TemplateBinding Foreground}"
-                    FontFamily="{TemplateBinding FontFamily}"
-                    FontSize="{TemplateBinding FontSize}"
-                    FontWeight="{TemplateBinding FontWeight}"
-                    FontStyle="{TemplateBinding FontStyle}"
-                    Text="{TemplateBinding PlaceholderText}"
-					Margin="15,10,80,10"
-                    Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
-          
-          <Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
-                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
-                    BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}">
-            <Border.Styles>
-              <Style Selector="Border:disabled, TextBlock:disabled">
-                <Setter Property="Opacity" Value="0.5" />
-              </Style>
-            </Border.Styles>
-
-            
-            
-          <ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
-                        BorderThickness="0" Background="Transparent"                 
-                        HorizontalContentAlignment="Stretch"
-                        IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-                        Margin="0"
-                        CornerRadius="0"
-                        Padding="0">
-
-
-
-            <Grid ColumnDefinitions="*,Auto" HorizontalAlignment="Stretch" Width="{Binding ElementName=watermark, Path=Width}">
-              <!--Selected item-->
-              <ContentPresenter Name="contentPresenter"
-                                BorderThickness="0" BorderBrush="Transparent"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                Content="{TemplateBinding SelectionBoxItem}"
-                                ContentTemplate="{TemplateBinding ItemTemplate}"
-                                Margin="{TemplateBinding Padding}"/>
-              <Border Name="splitBorder"
-                      Grid.Column="1"
-                      Margin="16 16 16 16"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Center"
-                      BorderBrush="Transparent"
-                      BorderThickness="0">
-                <Path Name="arrow"
-                      Width="8" Height="8"
-                      Stretch="Uniform"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Center"
-                      Data="M7,10L12,15L17,10H7Z"
-                      Fill="{DynamicResource MaterialDesignTextBoxBorder}" />
-              </Border>
-            </Grid>
-           
-          </ToggleButton>
-          </Border>
-          
-          <Popup Name="PART_Popup"
-                 IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-                 MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
-                 VerticalOffset="-5"
-                 HorizontalOffset="-10"
-                 Margin="-8"
-                 WindowManagerAddShadowHint="False"
-                 PlacementTarget="{Binding ElementName=templateRoot}"
-                 IsLightDismissEnabled="True"
-                 UseLayoutRounding="True"
-                 ClipToBounds="False" >
-            <Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-                                              Margin="10"
-                                              Background="{DynamicResource MaterialDesignPaper}"
-                                              CornerRadius="5"
-                                              BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
-              <ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
-                            MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                            MinHeight="1" >
-                <ItemsPresenter Name="PART_ItemsPresenter"
-                        Items="{TemplateBinding Items}"
-                        ItemsPanel="{TemplateBinding ItemsPanel}"
-                        ItemTemplate="{TemplateBinding ItemTemplate}"
-                        VirtualizationMode="{TemplateBinding VirtualizationMode}" />
-              </ScrollViewer>
-            </Border>
-          </Popup>
-
-          
-          
-        </Grid>
-      </ControlTemplate>
-    </Setter>
-  </Style>
-
-  <!--<Style Selector="ComboBox.Filled[IsDropDownOpen=true] /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="10,-25,30,10"/>
-    <Setter Property="RenderTransform" Value="scale(0.75)"/>
-  </Style> 
-  
-  <Style Selector="ComboBox.Filled[IsDropDownOpen=false] /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="10,10,30,10"/>
-  </Style>-->
-
-
-  <!--floating wartermark-->
-  <Style Selector="ComboBox.Filled:not(ComboBox.Filled[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="1,-16,30,10"/>
-    <Setter Property="RenderTransform" Value="scale(0.75)"/>
-  </Style>
-
-  <Style Selector="ComboBox.Filled[SelectedIndex=-1] /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="15,10,80,10"/>
-    <Setter Property="RenderTransform" Value="scale(1)"/>
-  </Style>
+	<!--Class filled-->
+	<Style Selector="ComboBox.Filled">
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+	</Style>
 	
-
-   <!--classic watermark-->
-    <Style Selector="ComboBox.Filled:not(ComboBox.Filled[SelectedIndex=-1]) /template/ TextBlock#watermark">
-	    <Setter Property="Opacity" Value="0"/>
-    </Style>
+  
 
 
   <!--Class outline-->
