@@ -267,7 +267,6 @@
 
 
   <!-- Invalid state -->
-
   <Style Selector="TextBox:error /template/ styles|MaterialUnderline#PART_Underline">
     <Setter Property="BackgroundColor" Value="{DynamicResource ValidationErrorBrush}" />
     <Setter Property="ActiveColor" Value="{DynamicResource ValidationErrorBrush}" />
@@ -284,8 +283,7 @@
 
 
 
-  <!-- Filled textfield -->
-
+  <!-- Class Filled -->
   <Style Selector="TextBox.Filled">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
   </Style>
@@ -294,7 +292,7 @@
 
 
 
-  <!-- Outline textfield -->
+  <!-- Class Outline -->
   <Style Selector="TextBox.Outline">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>

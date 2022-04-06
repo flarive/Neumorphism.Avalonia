@@ -52,7 +52,8 @@
   </Style>
 
   <Style Selector="ToggleButton.NoFeedback">
-    <Setter Property="Template">
+	  <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth0"/>
+	  <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_ButtonRootBorder"
                 Background="{TemplateBinding Background}"
@@ -107,4 +108,6 @@
       </ControlTemplate>
     </Setter>
   </Style>
+
+	
 </Styles>

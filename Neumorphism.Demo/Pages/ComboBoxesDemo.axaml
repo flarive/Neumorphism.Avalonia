@@ -144,13 +144,27 @@
               </ComboBox>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes2">
-              <ComboBox Classes="Outline" assist:ComboBoxAssist.Label="ComboBox">
-                <TextBlock Text="Item 1" />
-                <TextBlock Text="Item 2" />
-                <TextBlock Text="Item 3" />
-                <TextBlock Text="Item 4" />
-              </ComboBox>
-            </showMeTheXaml:XamlDisplay>
+                <ComboBox Classes="Outline">
+					<ComboBoxItem>
+						<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+							<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
+							<TextBlock Text="Red" VerticalAlignment="Center" />
+						</StackPanel>
+					</ComboBoxItem>
+					<ComboBoxItem>
+						<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+							<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
+							<TextBlock Text="Blue" VerticalAlignment="Center" />
+						</StackPanel>
+					</ComboBoxItem>
+					<ComboBoxItem>
+						<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+							<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
+							<TextBlock Text="Green" VerticalAlignment="Center" />
+						</StackPanel>
+					</ComboBoxItem>
+				</ComboBox>
+                </showMeTheXaml:XamlDisplay>
 			  <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes3">
 				  <ComboBox Classes="Outline" IsEnabled="False" PlaceholderText="Disabled">
 					  <TextBlock Text="John" />

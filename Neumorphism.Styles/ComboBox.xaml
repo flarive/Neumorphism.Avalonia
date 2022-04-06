@@ -12,49 +12,6 @@
   </Styles.Resources>
 
 
-
-  <!--<Style Selector="ToggleButton.ComboBoxToggleButton">
-    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
-    <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-    <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="{DynamicResource MaterialDesignPaper}"></Setter>
-    <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}"></Setter>
-    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-    <Setter Property="VerticalContentAlignment" Value="Stretch" />
-    <Setter Property="HorizontalAlignment" Value="Stretch" />
-    <Setter Property="Padding" Value="22 8 12 4" />
-    <Setter Property="Cursor" Value="Hand" />
-    <Setter Property="ClickMode" Value="Press"/>
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate>
-          <Grid Margin="4,0" HorizontalAlignment="Stretch">
-            <Border Name="ToggleTemplateRoot"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    Padding="{TemplateBinding Padding}">
-              <Border Name="splitBorder"
-                      Margin="0"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Center"
-                      BorderBrush="Transparent"
-                      BorderThickness="0">
-                <Path Name="arrow"
-                      Width="8" Height="8"
-                      Margin="0"
-                      Stretch="Uniform"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Center"
-                      Data="M7,10L12,15L17,10H7Z"
-                      Fill="{TemplateBinding BorderBrush}" />
-              </Border>
-            </Border>
-          </Grid>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>-->
-	
-
 	<!--Regular (no class)-->
 	<Style Selector="ComboBox">
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -114,7 +71,8 @@
 
 
 
-						<ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
+						<ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack"
+									  Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
 									  BorderThickness="0" Background="Transparent"
 									  HorizontalContentAlignment="Stretch"
 									  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
@@ -153,6 +111,7 @@
 						</ToggleButton>
 					</Border>
 
+					<!--Combobox items container-->
 					<Popup Name="PART_Popup"
 						   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
 						   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
@@ -166,7 +125,7 @@
 						   ClipToBounds="False" >
 						<Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
 														  Margin="10"
-														  Background="{DynamicResource MaterialDesignPaper}"
+														  Background="{TemplateBinding Background}" Opacity="1"
 														  CornerRadius="5"
 														  BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
@@ -180,9 +139,6 @@
 							</ScrollViewer>
 						</Border>
 					</Popup>
-
-
-
 				</Grid>
 			</ControlTemplate>
 		</Setter>
@@ -221,7 +177,7 @@
 		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
 	  </Style>
 
-	  <Style Selector="ComboBox:pointerover:not(.Filled,.Outline) /template/ Border#PART_Border">
+	  <Style Selector="ComboBox:pointerover:not(.Filled) /template/ Border#PART_Border">
 		<Setter Property="Background" Value="#44CCCCCC"/>
 	  </Style>
 
@@ -229,13 +185,25 @@
 		<Setter Property="Opacity" Value="0.5" />
 	</Style>
 
-	<!--Class filled-->
+	<Style Selector="ComboBox[IsDropDownOpen=true]:not(.Filled,.Outline) /template/ Border#PART_PopupBorder">
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+	</Style>
+	
+
+	<!--Class Filled-->
 	<Style Selector="ComboBox.Filled">
 		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
 	</Style>
 
 
-	<!--Class outline-->
+	<Style Selector="ComboBox.Filled[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}"/>
+	</Style>
+
+	
+
+
+	<!--Class Outline-->
 	<Style Selector="ComboBox.Outline">
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -294,19 +262,20 @@
 
 							<Border Name="PART_InnerBorder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
 								  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
-								  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+								  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
 								  Background="Transparent"
 								  BorderBrush="Transparent"
-								  BorderThickness="6">
+								  BorderThickness="8">
 
 
 
-							<ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
-										  BorderThickness="0" Background="Transparent"
+							<ToggleButton Name="PART_Toggle" Classes="no-material"
+										  Width="{TemplateBinding Width}"
+										  Height="{TemplateBinding Height}"
+										  BorderThickness="0"
 										  HorizontalContentAlignment="Stretch"
 										  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-										  Margin="0"
-										  CornerRadius="0"
+										  Margin="0" assists:ButtonAssist.CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
 										  Padding="0">
 
 
@@ -341,6 +310,7 @@
 						</Border>
 					</Border>
 
+					<!--Combobox items container-->
 					<Popup Name="PART_Popup"
 						   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
 						   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
@@ -354,7 +324,7 @@
 						   ClipToBounds="False" >
 						<Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
 														  Margin="10"
-														  Background="{DynamicResource MaterialDesignPaper}"
+														  Background="{TemplateBinding Background}" Opacity="1"
 														  CornerRadius="5"
 														  BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
@@ -368,49 +338,15 @@
 							</ScrollViewer>
 						</Border>
 					</Popup>
-
-
-
 				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 
+	<Style Selector="ComboBox.Outline[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
+		<Setter Property="Background" Value="Orange"/>
+	</Style>
 
-  <!-- Transitions -->
-  <!--<Style Selector="ComboBox.Outline:not(.notransitions) /template/ TextBlock#floatingWatermark,
-                     ComboBox.Outline:not(.notransitions) /template/ Border#watermarkRoot">
-    <Setter Property="Transitions">
-      <Transitions>
-        <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut"/>
-        <TransformOperationsTransition Property="RenderTransform"  Duration="0:0:0.25" Easing="CubicEaseOut"/>
-      </Transitions>
-    </Setter>
-  </Style>-->
-  
-  <!--<Style Selector="ComboBox.Outline /template/ Grid#PART_RootBorder">
-    <Setter Property="MinHeight" Value="52"/>
-  </Style>-->
-  
-  <!--<Style Selector="ComboBox.Outline:focus-within:not(ComboBox.Outline[SelectedIndex=-1]) /template/ Border#watermarkRoot,
-                     ComboBox.Outline:focus-within /template/ Border#watermarkRoot,
-                     ComboBox.Outline:not(ComboBox.Outline[SelectedIndex=-1]) /template/ Border#watermarkRoot">
-    <Setter Property="Margin" Value="14,-8,1,1"/>
-    <Setter Property="RenderTransform" Value="scale(0.75)"/>
-  </Style>
-    
-  <Style Selector="ComboBox.Outline[SelectedIndex=-1]:not(:focus-within) /template/ Border#watermarkRoot">
-    <Setter Property="Margin" Value="10,14,1,1"/>
-    <Setter Property="RenderTransform" Value="scale(1)"/>
-  </Style>-->
-    
-  <!--<Style Selector="ComboBox.Outline">
-    <Setter Property="BorderThickness" Value="1"/>
-  </Style>-->
-    
-  <Style Selector="ComboBox.Outline:focus-within">
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
-  </Style> 
   
 
   <Design.PreviewWith>

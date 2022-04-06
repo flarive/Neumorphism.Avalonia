@@ -11,7 +11,7 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Width="1280" Height="720" MinWidth="720"
         Icon="resm:Neumorphism.Demo.Resources.Icons.app.ico"
-        Title="Neumorphism.Demo">
+        Title="Avalonia.Neumorphism.Demo">
 	
     <Window.Styles>
         <Style Selector="showMeTheXaml|XamlDisplay">
