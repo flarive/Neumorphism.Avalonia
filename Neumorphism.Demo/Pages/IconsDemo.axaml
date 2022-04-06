@@ -12,21 +12,24 @@
              xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Neumorphism.Demo.Pages.IconsDemo">
+  
     <UserControl.Resources>
         <converters:StringJoinConverter x:Key="StringJoinConverter" Separator="{x:Static system:Environment.NewLine}" />
     </UserControl.Resources>
+  
     <Design.DataContext>
         <viewModels:IconsDemoViewModel />
     </Design.DataContext>
+  
     <Grid RowDefinitions="Auto,*,Auto">
         <Panel Grid.Row="1">
             <ScrollViewer VerticalAlignment="Stretch"
+                          HorizontalAlignment="Center"
                           VerticalContentAlignment="Top"
                           VerticalScrollBarVisibility="Visible"
                           HorizontalScrollBarVisibility="Disabled">
                  <StackPanel VerticalAlignment="Top">
-                    <ItemsRepeater Items="{Binding Kinds}"
-                               HorizontalAlignment="Stretch">
+                    <ItemsRepeater Items="{Binding Kinds}" HorizontalAlignment="Stretch">
                         <ItemsRepeater.Layout>
                             <UniformGridLayout />
                         </ItemsRepeater.Layout>
@@ -37,23 +40,26 @@
                                                        ToolTip.Tip="{Binding Aliases, Converter={StaticResource StringJoinConverter}}"
                                                        Background="Transparent">
                                     <Grid>
-                                        <Border Name="pointerOverBorder"
-                                                Background="{DynamicResource MaterialDesignBody}" />
+                                        <!--<Border Name="pointerOverBorder"
+                                                Background="Transparent" />
                                         <Border Name="selectedBorder"
-                                                Background="{DynamicResource MaterialDesignBody}" />
-                                        <Grid RowDefinitions="*, Auto" Margin="8" Height="64" Width="64">
-                                            <avalonia:MaterialIcon Grid.Row="0"
-                                                                   Kind="{Binding Kind}"
-                                                                   VerticalAlignment="Center"
-                                                                   HorizontalAlignment="Center"
-                                                                   Width="32"
-                                                                   Height="32" />
-                                            <TextBlock Grid.Row="1" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" MaxWidth="64"
+                                                Background="Transparent" />-->
+                                        <Grid RowDefinitions="*, Auto" Margin="12" Height="68" Width="64">
+                                          <Button Grid.Row="0" Classes="Icon"> 
+                                            <avalonia:MaterialIcon 
+                                                                     Kind="{Binding Kind}"
+                                                                     VerticalAlignment="Center"
+                                                                     HorizontalAlignment="Center"
+                                                                     Foreground="DarkGray"
+                                                                     Width="32"
+                                                                     Height="32" />
+                                          </Button>
+                                          <TextBlock Grid.Row="1" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" FontSize="12" FontWeight="Regular" MaxWidth="64"
                                                        Text="{Binding Kind}"
                                                        HorizontalAlignment="Center" />
                                         </Grid>
                                     </Grid>
-                                    <demo:SelectionWrapper.Styles>
+                                    <!--<demo:SelectionWrapper.Styles>
                                         <Style Selector="demo|SelectionWrapper Border#pointerOverBorder">
                                             <Setter Property="Opacity" Value="0" />
                                         </Style>
@@ -66,7 +72,7 @@
                                         <Style Selector="demo|SelectionWrapper:selectednow Border#selectedBorder">
                                             <Setter Property="Opacity" Value="0.12" />
                                         </Style>
-                                    </demo:SelectionWrapper.Styles>
+                                    </demo:SelectionWrapper.Styles>-->
                                 </demo:SelectionWrapper>
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>
@@ -78,7 +84,7 @@
         <styles:ColorZone Mode="Standard" Padding="8" assists:ShadowAssist.ShadowDepth="Depth2">
             <StackPanel Margin="16,8,16,0"> 
                 <TextBlock Classes="Headline4" Text="Material Icons" />
-                <TextBlock Classes="Subtitle1 Subheadline" TextWrapping="Wrap" Text="Neumorphism.Avalonia using Material.Icons.Avalonia and Neumorphism.Icons packages to provide icons for Material design. You can always use them freely in your application with Neumorphism.Avalonia!" />
+                <TextBlock Classes="Subtitle1 Subheadline" TextWrapping="Wrap" Text="Neumorphism.Avalonia.Demo using Material.Icons.Avalonia packages to provide icons for Neumorphic design. You can always use them freely in your application with Neumorphism.Avalonia !" />
             </StackPanel>
         </styles:ColorZone>
         
@@ -99,8 +105,7 @@
                     </TextBox>
                 </styles:ColorZone>
 
-                <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1"
-                           VerticalAlignment="Center" Text="Usage:"/>
+                <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
                 
                 <styles:ColorZone Grid.Column="2" Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" >
                     <TextBox GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
