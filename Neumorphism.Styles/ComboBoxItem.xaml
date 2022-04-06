@@ -1,6 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple">
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple">
   
   <Style Selector="ComboBoxItem">
     <Setter Property="Padding" Value="16, 8" />

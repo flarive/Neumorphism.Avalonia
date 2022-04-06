@@ -1,6 +1,6 @@
 ﻿using System;
 using Avalonia.Media;
-using Neumorphism.Colors;
+using Neumorphism.Styles.Colors;
 using Neumorphism.Styles.Themes.Base;
 
 namespace Neumorphism.Styles.Themes {

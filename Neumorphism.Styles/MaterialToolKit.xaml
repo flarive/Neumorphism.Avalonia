@@ -79,7 +79,7 @@
     <StyleInclude Source="avares://Neumorphism.Styles/UserControl.xaml" />
     <StyleInclude Source="avares://Neumorphism.Styles/Window.xaml" />
     <StyleInclude Source="avares://Neumorphism.Styles/WindowNotificationManager.xaml" />
-    <StyleInclude Source="avares://Neumorphism.Ripple/RippleEffect.xaml" />
+    <StyleInclude Source="avares://Neumorphism.Styles/Ripple/RippleEffect.xaml" />
 
     <!-- Custom controls (High-priority) -->
     <StyleInclude Source="avares://Neumorphism.Styles/SideSheet.xaml"/>

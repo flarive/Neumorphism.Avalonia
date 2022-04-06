@@ -2,8 +2,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:conv="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
         xmlns:sys="clr-namespace:System;assembly=netstandard"
-        xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple">
+        xmlns:styles="clr-namespace:Neumorphism.Styles"
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple">
     <Styles.Resources>
         <conv:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
     </Styles.Resources>

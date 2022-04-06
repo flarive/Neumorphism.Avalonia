@@ -12,10 +12,12 @@ using Avalonia.Media;
 using Avalonia.Styling;
 using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
-using Neumorphism.Colors.ColorManipulation;
+using Neumorphism.Styles.Colors.ColorManipulation;
 
-namespace Neumorphism.Styles.Themes {
-    public class MaterialThemeBase : AvaloniaObject, IStyle, IResourceProvider {
+namespace Neumorphism.Styles.Themes
+{
+    public class MaterialThemeBase : AvaloniaObject, IStyle, IResourceProvider
+    {
         private readonly IStyle _controlsStyles;
         private bool _isLoading;
         private IStyle? _loaded;
@@ -104,14 +106,17 @@ namespace Neumorphism.Styles.Themes {
         }
 
         public SelectorMatchResult TryAttach(IStyleable target, IStyleHost? host) => Loaded.TryAttach(target, host);
-        public bool TryGetResource(object key, out object? value) {
-            if (!_isLoading && Loaded is IResourceProvider p) {
+        public bool TryGetResource(object key, out object? value)
+        {
+            if (!_isLoading && Loaded is IResourceProvider p)
+            {
                 return p.TryGetResource(key, out value);
             }
 
             value = null;
             return false;
         }
+
         void IResourceProvider.AddOwner(IResourceHost owner) => (Loaded as IResourceProvider)?.AddOwner(owner);
         void IResourceProvider.RemoveOwner(IResourceHost owner) => (Loaded as IResourceProvider)?.RemoveOwner(owner);
 
@@ -131,7 +136,8 @@ namespace Neumorphism.Styles.Themes {
             }
         });
 
-        private Task UpdateThemeAsync(ITheme? oldTheme, ITheme newTheme) {
+        private Task UpdateThemeAsync(ITheme? oldTheme, ITheme newTheme)
+        {
             return Task.WhenAll(
                 // Primary
                 UpdateSolidColorBrush("PrimaryHueLightForegroundBrush", oldTheme?.PrimaryLight.ForegroundColor ?? oldTheme?.PrimaryLight.Color.ContrastingForegroundColor(), newTheme.PrimaryLight.ForegroundColor ?? newTheme.PrimaryLight.Color.ContrastingForegroundColor()),
@@ -181,47 +187,22 @@ namespace Neumorphism.Styles.Themes {
             );
         }
 
-        private Task UpdateSolidColorBrush(string brushName, Color? oldColor, Color newColor) {
-            
-            if (brushName.ToLower().Contains("shadowdark"))
-            {
-                string aaa = null;
-                var mmm = LoadedResourceDictionary.TryGetValue(brushName, out var b2);
-            }
-            
-            
+        private Task UpdateSolidColorBrush(string brushName, Color? oldColor, Color newColor)
+        {
             if (oldColor == newColor) return Task.CompletedTask;
-
-
-            
-
 
             return LoadedResourceDictionary.TryGetValue(brushName, out var b) && b is SolidColorBrush brush
                 ? UpdateBrushAsync(brushName)
                 : CreateBrushAsync(brushName);
 
 
-            
-
             Task UpdateBrushAsync(string brushName)
                 => Dispatcher.UIThread.InvokeAsync(() => {
-
-                    if (brushName.ToLower().Contains("shadow"))
-                    {
-                        string aaa = null;
-                    }
-
                     brush.Color = newColor;
                 });
 
             Task CreateBrushAsync(string brushName)
                 => Dispatcher.UIThread.InvokeAsync(() => {
-
-                    if (brushName.ToLower().Contains("shadow"))
-                    {
-                        string aaa = null;
-                    }
-
                     LoadedResourceDictionary[brushName] = new SolidColorBrush(newColor) {
                         Transitions = new Transitions {
                             new ColorTransition {

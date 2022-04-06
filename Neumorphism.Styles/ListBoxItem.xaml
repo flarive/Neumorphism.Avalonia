@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
         xmlns:animations="clr-namespace:Neumorphism.Styles.Additional.Animations"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple">
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple">
 
   <Style Selector="ListBoxItem">
     <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />

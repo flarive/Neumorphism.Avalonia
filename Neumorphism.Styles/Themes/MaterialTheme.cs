@@ -1,7 +1,7 @@
 using System;
 using Avalonia;
 using Avalonia.Themes.Fluent;
-using Neumorphism.Colors;
+using Neumorphism.Styles.Colors;
 using Neumorphism.Styles.Themes.Base;
 
 namespace Neumorphism.Styles.Themes {

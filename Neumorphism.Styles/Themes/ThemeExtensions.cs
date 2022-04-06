@@ -2,7 +2,7 @@
 using System.Linq;
 using Avalonia;
 using Avalonia.Media;
-using Neumorphism.Colors.ColorManipulation;
+using Neumorphism.Styles.Colors.ColorManipulation;
 using Neumorphism.Styles.Themes.Base;
 
 namespace Neumorphism.Styles.Themes

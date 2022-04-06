@@ -1,8 +1,9 @@
 <Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:assists="clr-namespace:Neumorphism.Styles.Assists"
         xmlns:animations="clr-namespace:Neumorphism.Styles.Additional.Animations"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple"
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple"
         xmlns:controls="clr-namespace:Neumorphism.Styles.Controls">
+	
     <Style Selector="TabControl">
         <Setter Property="assists:TabControlAssist.TabHeaderHorizontalAlignment" Value="Stretch" />
         <Setter Property="assists:TabControlAssist.TabHeaderHighlightBrush"

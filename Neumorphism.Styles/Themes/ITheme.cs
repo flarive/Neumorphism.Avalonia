@@ -1,5 +1,5 @@
 ﻿using Avalonia.Media;
-using Neumorphism.Colors;
+using Neumorphism.Styles.Colors;
 
 namespace Neumorphism.Styles.Themes {
     public interface ITheme {

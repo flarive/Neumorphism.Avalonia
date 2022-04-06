@@ -4,9 +4,7 @@ using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Threading;
-using JetBrains.Annotations;
-using Neumorphism.Colors;
-using Neumorphism.Colors.ColorManipulation;
+using Neumorphism.Styles.Colors.ColorManipulation;
 
 namespace Neumorphism.Styles.Themes {
     public static class ResourceDictionaryExtensions {

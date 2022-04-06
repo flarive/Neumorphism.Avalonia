@@ -39,11 +39,6 @@
       <EmbeddedResource Include="Fonts\BalooThambi2\BalooThambi2-Regular.ttf" />
       <EmbeddedResource Include="Fonts\NunitoSans\NunitoSans-Regular.ttf" />
     </ItemGroup>
-    
-    <ItemGroup>
-      <ProjectReference Include="..\Neumorphism.Colors\Neumorphism.Colors.csproj" />
-      <ProjectReference Include="..\Neumorphism.Ripple\Neumorphism.Ripple.csproj" />
-    </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="0.10.13" />

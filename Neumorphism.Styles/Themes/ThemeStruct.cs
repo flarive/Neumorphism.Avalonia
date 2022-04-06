@@ -1,9 +1,12 @@
 using Avalonia.Media;
-using Neumorphism.Colors;
+using Neumorphism.Styles.Colors;
 
-namespace Neumorphism.Styles.Themes {
-    internal struct ThemeStruct : ITheme {
-        public ThemeStruct(ITheme baseTheme) {
+namespace Neumorphism.Styles.Themes
+{
+    internal struct ThemeStruct : ITheme
+    {
+        public ThemeStruct(ITheme baseTheme)
+        {
             PrimaryLight = baseTheme.PrimaryLight;
             PrimaryMid = baseTheme.PrimaryMid;
             PrimaryDark = baseTheme.PrimaryDark;

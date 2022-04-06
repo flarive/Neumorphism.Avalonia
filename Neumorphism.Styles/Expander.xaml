@@ -1,6 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:styles="clr-namespace:Neumorphism.Styles"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple">
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple">
 
     <Style Selector="Expander">
         <Setter Property="ClipToBounds" Value="False"/>

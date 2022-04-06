@@ -3,7 +3,7 @@
         xmlns:animations="clr-namespace:Neumorphism.Styles.Additional.Animations"
         xmlns:system="clr-namespace:System;assembly=netstandard"
 		xmlns:converters="clr-namespace:Neumorphism.Styles.Converters"
-        xmlns:ripple="clr-namespace:Neumorphism.Ripple;assembly=Neumorphism.Ripple">
+        xmlns:ripple="clr-namespace:Neumorphism.Styles.Ripple">
   
     <Styles.Resources>
         <system:Double x:Key="CheckBoxHoveredOpacity">0.12</system:Double>
