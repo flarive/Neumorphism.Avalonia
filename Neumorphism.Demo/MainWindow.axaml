@@ -42,7 +42,7 @@
                         <styles:ColorZone Mode="Custom" Background="{DynamicResource MaterialDesignPaper}" Height="180">
                             <StackPanel>
                                 <Image HorizontalAlignment="Center" VerticalAlignment="Top"
-                                       Source="avares://Neumorphism.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="0" />
+                                       Source="avares://Neumorphism.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="1" />
                             </StackPanel>
                         </styles:ColorZone>
                         <ListBox Classes="Drawer" Name="DrawerList" Background="{DynamicResource MaterialDesignPaper}"

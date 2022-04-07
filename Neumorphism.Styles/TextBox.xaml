@@ -566,7 +566,11 @@
 
   <!-- Class Solo -->
   <Style Selector="TextBox.Solo">
-    <Setter Property="Background" Value="#22444444" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="assists:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
+    <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
+    <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
+    <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
     <Setter Property="Height" Value="38"/>
     <Setter Property="Width" Value="NaN"/>
     <Setter Property="BorderThickness" Value="0" />
@@ -585,8 +589,8 @@
 			<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
             <DataValidationErrors Name="DataValidation">
               <Grid ColumnDefinitions="Auto,*,Auto">
-                <Border Grid.Column="0" Background="{TemplateBinding Background}" CornerRadius="10 0 0 10" VerticalAlignment="Stretch">
-                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" />
+                <Border Grid.Column="0" Background="{TemplateBinding assists:TextFieldAssist.InnerLeftBackground}" CornerRadius="10 0 0 10" VerticalAlignment="Stretch">
+                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
                 </Border>
                 <Grid Grid.Column="1" Name="PART_InnerRoot" Margin="8">
                   <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0"
@@ -614,8 +618,8 @@
                     </Panel>
                   </ScrollViewer>
                 </Grid>
-				        <Border Grid.Column="2" Background="{TemplateBinding Background}" CornerRadius="0 10 10 0" VerticalAlignment="Stretch">
-				            <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" />
+				        <Border Grid.Column="2" Background="{TemplateBinding assists:TextFieldAssist.InnerRightBackground}" CornerRadius="0 10 10 0" VerticalAlignment="Stretch">
+				            <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerRightPadding}" HorizontalContentAlignment="Right" />
 				        </Border>
               </Grid>
             </DataValidationErrors>

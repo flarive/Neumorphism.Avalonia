@@ -147,7 +147,7 @@ namespace Neumorphism.Styles.Themes
                 UpdateSolidColorBrush("PrimaryHueMidBrush", oldTheme?.PrimaryMid.Color, newTheme.PrimaryMid.Color),
                 UpdateSolidColorBrush("PrimaryHueDarkBrush", oldTheme?.PrimaryDark.Color, newTheme.PrimaryDark.Color),
                 // Secondary
-                UpdateSolidColorBrush("SecondaryHueLightForegroundBrush?", oldTheme?.SecondaryLight.ForegroundColor ?? oldTheme?.SecondaryLight.Color.ContrastingForegroundColor(), newTheme.SecondaryLight.ForegroundColor ?? newTheme.SecondaryLight.Color.ContrastingForegroundColor()),
+                UpdateSolidColorBrush("SecondaryHueLightForegroundBrush", oldTheme?.SecondaryLight.ForegroundColor ?? oldTheme?.SecondaryLight.Color.ContrastingForegroundColor(), newTheme.SecondaryLight.ForegroundColor ?? newTheme.SecondaryLight.Color.ContrastingForegroundColor()),
                 UpdateSolidColorBrush("SecondaryHueMidForegroundBrush", oldTheme?.SecondaryMid.ForegroundColor ?? oldTheme?.SecondaryMid.Color.ContrastingForegroundColor(), newTheme.SecondaryMid.ForegroundColor ?? newTheme.SecondaryMid.Color.ContrastingForegroundColor()),
                 UpdateSolidColorBrush("SecondaryHueDarkForegroundBrush", oldTheme?.SecondaryDark.ForegroundColor ?? oldTheme?.SecondaryDark.Color.ContrastingForegroundColor(), newTheme.SecondaryDark.ForegroundColor ?? newTheme.SecondaryDark.Color.ContrastingForegroundColor()),
                 UpdateSolidColorBrush("SecondaryHueLightBrush", oldTheme?.SecondaryLight.Color, newTheme.SecondaryLight.Color),

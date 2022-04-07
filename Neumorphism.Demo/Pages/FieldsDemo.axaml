@@ -273,15 +273,39 @@
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SoloFields2">
-                        <TextBox Watermark="Search field" Classes="Solo" Margin="0" Width="300" Background="Yellow">
+                        <TextBox Watermark="Search field" Classes="Solo" Margin="0" Width="300">
+                          <TextBox.Styles>
+                            <Style Selector="TextBox.Solo">
+                              <Setter Property="assists:TextFieldAssist.InnerLeftBackground">
+                                <Setter.Value>
+                                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                    <GradientStop Offset="0" Color="#CC888888" />
+                                    <GradientStop Offset="1" Color="Transparent" />
+                                  </LinearGradientBrush>
+                                </Setter.Value>
+                              </Setter>
+                              <Setter Property="assists:TextFieldAssist.InnerRightBackground">
+                                <Setter.Value>
+                                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                    <GradientStop Offset="0" Color="Transparent" />
+                                    <GradientStop Offset="1" Color="#22444444" />
+                                  </LinearGradientBrush>
+                                </Setter.Value>
+                              </Setter>
+                              <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="-10,0,0,0"/>
+                              <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0,0,-18,0"/>
+                            </Style>
+                          </TextBox.Styles>
+
+ 
                           <TextBox.InnerLeftContent>
-                            <Button Classes="no-material" Height="38" Width="{Binding $self.Bounds.Height}"
-                                    Content="{avalonia:MaterialIconExt Search, Size=24}" Foreground="Red" />
+                            <Button Classes="no-material" Height="38" Width="60"
+                                    Content="{avalonia:MaterialIconExt Search, Size=24}" Foreground="White" />
                           </TextBox.InnerLeftContent>
-                            <TextBox.InnerRightContent>
-                              <Button Classes="no-material" Height="38" Width="100"
-                                  Content="{avalonia:MaterialIconExt Search, Size=24}" Foreground="Green" />
-                            </TextBox.InnerRightContent>
+                          <TextBox.InnerRightContent>
+                            <Button Classes="no-material" Height="38" Width="80"
+                                Content="{avalonia:MaterialIconExt Settings, Size=24}" Foreground="{DynamicResource PrimaryHueMidBrush}" />
+                          </TextBox.InnerRightContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SoloFields3">
