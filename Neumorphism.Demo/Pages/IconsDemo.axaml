@@ -40,10 +40,6 @@
                                                        ToolTip.Tip="{Binding Aliases, Converter={StaticResource StringJoinConverter}}"
                                                        Background="Transparent">
                                     <Grid>
-                                        <!--<Border Name="pointerOverBorder"
-                                                Background="Transparent" />
-                                        <Border Name="selectedBorder"
-                                                Background="Transparent" />-->
                                         <Grid RowDefinitions="*, Auto" Margin="12" Height="68" Width="64">
                                           <Button Grid.Row="0" Classes="Icon"> 
                                             <avalonia:MaterialIcon 
@@ -51,28 +47,14 @@
                                                                      VerticalAlignment="Center"
                                                                      HorizontalAlignment="Center"
                                                                      Foreground="DarkGray"
-                                                                     Width="32"
-                                                                     Height="32" />
+                                                                     Width="28"
+                                                                     Height="28" />
                                           </Button>
                                           <TextBlock Grid.Row="1" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" FontSize="12" FontWeight="Regular" MaxWidth="64"
                                                        Text="{Binding Kind}"
                                                        HorizontalAlignment="Center" />
                                         </Grid>
                                     </Grid>
-                                    <!--<demo:SelectionWrapper.Styles>
-                                        <Style Selector="demo|SelectionWrapper Border#pointerOverBorder">
-                                            <Setter Property="Opacity" Value="0" />
-                                        </Style>
-                                        <Style Selector="demo|SelectionWrapper Border#selectedBorder">
-                                            <Setter Property="Opacity" Value="0" />
-                                        </Style>
-                                        <Style Selector="demo|SelectionWrapper:pointerover Border#pointerOverBorder">
-                                            <Setter Property="Opacity" Value="0.06" />
-                                        </Style>
-                                        <Style Selector="demo|SelectionWrapper:selectednow Border#selectedBorder">
-                                            <Setter Property="Opacity" Value="0.12" />
-                                        </Style>
-                                    </demo:SelectionWrapper.Styles>-->
                                 </demo:SelectionWrapper>
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>
@@ -90,10 +72,8 @@
         
         <styles:ColorZone Grid.Row="2" Padding="8"  Mode="Standard" assists:ShadowAssist.ShadowDepth="Depth2">
             <Grid Margin="8" ColumnDefinitions="*,Auto,*,16,Auto">
-                <styles:ColorZone Mode="Inverted" CornerRadius="32" BorderBrush="Transparent"
-                                  ToolTip.Tip="Enter to search, ignore case">
-                    <TextBox KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" Classes="Solo"
-                             Text="{Binding SearchText}" Margin="0">
+                <!--<styles:ColorZone Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" Background="Transparent" ToolTip.Tip="Enter to search, ignore case">-->
+                    <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" Width="300" Classes="Solo" Text="{Binding SearchText}" Margin="0">
                         <TextBox.InnerRightContent>
                             <Button Width="{Binding $self.Bounds.Height}"
                                     Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
@@ -103,12 +83,12 @@
                             </Button>
                         </TextBox.InnerRightContent>
                     </TextBox>
-                </styles:ColorZone>
+                <!--</styles:ColorZone>-->
 
                 <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
                 
-                <styles:ColorZone Grid.Column="2" Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" >
-                    <TextBox GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
+                <!--<styles:ColorZone Grid.Column="2" Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" >-->
+                    <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
                              Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;avalonia:MaterialIcon Kind=&quot;&quot; \/>'}">
                         <TextBox.InnerRightContent>
                             <Button Width="{Binding $self.Bounds.Height}" Foreground="{DynamicResource MaterialDesignCardBackground}"
@@ -118,7 +98,7 @@
                             </Button>
                         </TextBox.InnerRightContent>
                     </TextBox>
-                </styles:ColorZone> 
+                <!--</styles:ColorZone>--> 
                 
                 <Grid Grid.Column="4" ColumnDefinitions="Auto,8,Auto" IsVisible="{Binding SelectedGroup, Converter={x:Static ObjectConverters.IsNotNull}}">
                     <TextBlock Classes="Subtitle1"
