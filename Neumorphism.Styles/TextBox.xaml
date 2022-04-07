@@ -562,41 +562,44 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Center" />
   </Style>-->
+  
 
-  <!-- Solo field -->
-
+  <!-- Class Solo -->
   <Style Selector="TextBox.Solo">
-    <Setter Property="Background" Value="Transparent" />
-	<Setter Property="Height" Value="38"/>
-	<Setter Property="Width" Value="NaN"/>
+    <Setter Property="Background" Value="#22444444" />
+    <Setter Property="Height" Value="38"/>
+    <Setter Property="Width" Value="NaN"/>
     <Setter Property="BorderThickness" Value="0" />
-	<Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+	  <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_RootBorder" Cursor="Ibeam"
-                Background="{TemplateBinding Background}"
-				Width="{TemplateBinding Width}"
-				Height="{TemplateBinding Height}"
+                Background="Transparent"
+                Width="{TemplateBinding Width}"
+                Height="{TemplateBinding Height}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
-				BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
+                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
                 BorderThickness="{TemplateBinding BorderThickness}">
           
-			<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="{TemplateBinding Padding}">
+			<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
             <DataValidationErrors Name="DataValidation">
               <Grid ColumnDefinitions="Auto,*,Auto">
-                <ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}" />
-                <Grid Name="PART_InnerRoot" Grid.Column="1">
-                  <ScrollViewer Name="PART_Scroller"
+                <Border Grid.Column="0" Background="{TemplateBinding Background}" CornerRadius="10 0 0 10" VerticalAlignment="Stretch">
+                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" />
+                </Border>
+                <Grid Grid.Column="1" Name="PART_InnerRoot" Margin="8">
+                  <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0"
                                 HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                 VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                    <Panel Name="PART_TextRoot" VerticalAlignment="Center">
-                      <TextBlock Name="watermark" Classes="Subtitle1" Opacity="0.5"
+                    <Panel Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="8 0 8 0">
+                      <TextBlock Name="watermark" Classes="Subtitle1" Opacity="0.5" VerticalAlignment="Center"
                                  Text="{TemplateBinding Watermark}"
                                  FontFamily="{TemplateBinding FontFamily}"
                                  TextAlignment="{TemplateBinding TextAlignment}"
                                  TextWrapping="{TemplateBinding TextWrapping}" />
                       <TextPresenter Name="PART_TextPresenter"
+                                     VerticalAlignment="Center"
                                      Text="{TemplateBinding Text, Mode=TwoWay}"
                                      CaretIndex="{TemplateBinding CaretIndex}"
                                      SelectionStart="{TemplateBinding SelectionStart}"
@@ -611,19 +614,15 @@
                     </Panel>
                   </ScrollViewer>
                 </Grid>
-				<Border Grid.Column="2" Background="Yellow" CornerRadius="10 0 0 0" VerticalAlignment="Stretch">
-				    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" />
-				</Border>
+				        <Border Grid.Column="2" Background="{TemplateBinding Background}" CornerRadius="0 10 10 0" VerticalAlignment="Stretch">
+				            <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" />
+				        </Border>
               </Grid>
             </DataValidationErrors>
           </Grid>
         </Border>
       </ControlTemplate>
     </Setter>
-  </Style>
-
-  <Style Selector="TextBox.Solo /template/ Grid#PART_InnerRoot">
-    <Setter Property="Margin" Value="8" />
   </Style>
 
   <!-- ReSharper restore InconsistentNaming -->

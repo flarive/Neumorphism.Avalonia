@@ -72,33 +72,34 @@
         
         <styles:ColorZone Grid.Row="2" Padding="8"  Mode="Standard" assists:ShadowAssist.ShadowDepth="Depth2">
             <Grid Margin="8" ColumnDefinitions="*,Auto,*,16,Auto">
-                <!--<styles:ColorZone Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" Background="Transparent" ToolTip.Tip="Enter to search, ignore case">-->
-                    <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" Width="300" Classes="Solo" Text="{Binding SearchText}" Margin="0">
-                        <TextBox.InnerRightContent>
-                            <Button Width="{Binding $self.Bounds.Height}"
-                                    Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
-                                    Classes="Flat" Command="{Binding SearchCommand}"
-                                    CommandParameter="{Binding ElementName=SearchBox, Path=Text}" assists:ButtonAssist.CornerRadius="0">
-                                <avalonia:MaterialIcon Kind="Magnify" Width="20" Height="20"/>
-                            </Button>
-                        </TextBox.InnerRightContent>
-                    </TextBox>
-                <!--</styles:ColorZone>-->
 
-                <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
+                  <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" 
+                            Width="300" Classes="Solo" Text="{Binding SearchText}" Margin="0">
+                      <TextBox.InnerRightContent>
+                          <Button Width="{Binding $self.Bounds.Height}"
+                                  Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
+                                  Classes="no-material" Command="{Binding SearchCommand}"
+                                  CommandParameter="{Binding ElementName=SearchBox, Path=Text}">
+                              <avalonia:MaterialIcon Kind="Magnify" Width="20" Height="20"/>
+                          </Button>
+                      </TextBox.InnerRightContent>
+                  </TextBox>
+
+
+                  <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
                 
-                <!--<styles:ColorZone Grid.Column="2" Mode="Inverted" CornerRadius="32" BorderBrush="Transparent" >-->
-                    <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
-                             Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;avalonia:MaterialIcon Kind=&quot;&quot; \/>'}">
-                        <TextBox.InnerRightContent>
-                            <Button Width="{Binding $self.Bounds.Height}" Foreground="{DynamicResource MaterialDesignCardBackground}"
-                                    Classes="Flat" Command="{Binding CopyToClipboardCommand, Mode=OneTime}"
-                                    CommandParameter="{Binding SelectedGroup.Kind}" assists:ButtonAssist.CornerRadius="0">
-                                <avalonia:MaterialIcon Kind="ContentCopy" Width="20" Height="20"/>
-                            </Button>
-                        </TextBox.InnerRightContent>
-                    </TextBox>
-                <!--</styles:ColorZone>--> 
+
+                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
+                            Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;avalonia:MaterialIcon Kind=&quot;&quot; \/>'}">
+                      <TextBox.InnerRightContent>
+                          <Button Width="{Binding $self.Bounds.Height}" Foreground="{DynamicResource MaterialDesignCardBackground}"
+                                  Classes="no-material" Command="{Binding CopyToClipboardCommand, Mode=OneTime}"
+                                  CommandParameter="{Binding SelectedGroup.Kind}">
+                              <avalonia:MaterialIcon Kind="ContentCopy" Width="20" Height="20"/>
+                          </Button>
+                      </TextBox.InnerRightContent>
+                  </TextBox>
+    
                 
                 <Grid Grid.Column="4" ColumnDefinitions="Auto,8,Auto" IsVisible="{Binding SelectedGroup, Converter={x:Static ObjectConverters.IsNotNull}}">
                     <TextBlock Classes="Subtitle1"
