@@ -248,32 +248,27 @@
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
-                <!--<StackPanel.Styles>
-                    <Style Selector="TextBox">
-                        <Setter Property="Margin" Value="0" />
-                        <Setter Property="Width" Value="300" />
-                    </Style>
-                </StackPanel.Styles>-->
-                <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" Background="Blue">
                     <TextBlock Classes="Headline6 Subheadline2" Text="Solo fields" />
-                    <showMeTheXaml:XamlDisplay UniqueId="SoloFields0">
+                    <showMeTheXaml:XamlDisplay UniqueId="SoloFields0" Background="Yellow">
                         <TextBox Classes="Solo" Watermark="Solo field with left icon" Width="300">
                             <TextBox.InnerLeftContent>
-                                <Button Classes="no-material" Margin="10,0,10,0" Height="38" Width="{Binding $self.Bounds.Height}"
-                                        Content="{avalonia:MaterialIconExt Search, Size=24}" />
+								<Border Width="{Binding $self.Bounds.Height}" Height="38">
+								    <avalonia:MaterialIcon Kind="Search" Width="24" Height="24" Foreground="Black" />
+								</Border>
                             </TextBox.InnerLeftContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SoloFields1">
                         <TextBox Classes="Solo" Watermark="Solo field with right icon" Width="300">
                             <TextBox.InnerRightContent>
-                                <Button Classes="no-material" Margin="10,0,10,0" Height="38" Width="{Binding $self.Bounds.Height}"
+                                <Button Classes="no-material" Margin="10,0,10,0" Height="38" Width="{Binding $self.Bounds.Height}" Cursor="Arrow"
                                         Content="{avalonia:MaterialIconExt Search, Size=24}" />
                             </TextBox.InnerRightContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SoloFields2">
-                        <TextBox Watermark="Search field" Classes="Solo" Margin="0" Width="300">
+                        <TextBox Watermark="Search field" Classes="Solo" Margin="0" Width="220">
                           <TextBox.Styles>
                             <Style Selector="TextBox.Solo">
                               <Setter Property="assists:TextFieldAssist.InnerLeftBackground">
@@ -296,33 +291,27 @@
                               <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0,0,-18,0"/>
                             </Style>
                           </TextBox.Styles>
-
- 
                           <TextBox.InnerLeftContent>
-                            <Button Classes="no-material" Height="38" Width="60"
+                            <Button Classes="no-material" Height="38" Width="60" Cursor="Arrow"
                                     Content="{avalonia:MaterialIconExt Search, Size=24}" Foreground="White" />
                           </TextBox.InnerLeftContent>
                           <TextBox.InnerRightContent>
-                            <Button Classes="no-material" Height="38" Width="80"
+                            <Button Classes="no-material" Height="38" Width="80" Cursor="Hand"
                                 Content="{avalonia:MaterialIconExt Settings, Size=24}" Foreground="{DynamicResource PrimaryHueMidBrush}" />
                           </TextBox.InnerRightContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SoloFields3">
-                        <TextBox BorderBrush="{Binding $self.Foreground}" BorderThickness="1" Classes="Solo" Width="300"
-                                 Watermark="Search field"
+                        <TextBox BorderBrush="#FFc4c7cb" BorderThickness="1" Classes="Solo" Width="350"
+                                 Watermark="Enter your email"
                                  assists:TextFieldAssist.CornerRadius="32" Margin="8">
                             <TextBox.InnerLeftContent>
                                 <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
                                     <avalonia:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center"
-                                                           Kind="Magnify" Width="20" Height="20" />
+                                                           Kind="Email" Width="20" Height="20" />
                                 </Border>
                             </TextBox.InnerLeftContent>
                         </TextBox>
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SoloFields4">
-                        <TextBox BorderBrush="Black" Margin="8" BorderThickness="1" Classes="Solo"
-                                 Watermark="No container but use border instead" />
                     </showMeTheXaml:XamlDisplay>
                 </StackPanel>
             </StackPanel>
