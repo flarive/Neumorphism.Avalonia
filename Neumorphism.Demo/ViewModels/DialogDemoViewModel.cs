@@ -1,11 +1,11 @@
-﻿using Neumorphism.Styles.Dialog;
+﻿using Neumorphism.Avalonia.Styles.Dialog;
 using Avalonia.Controls;
 using System;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using Neumorphism.Styles.Dialog.Enums;
+using Neumorphism.Avalonia.Styles.Dialog.Enums;
 
 namespace Neumorphism.Demo.ViewModels
 {
@@ -62,7 +62,7 @@ namespace Neumorphism.Demo.ViewModels
                 SupportingText = "Are you sure to DELETE 20 FILES?",
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
-                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = Neumorphism.Avalonia.Styles.Dialog.Icons.DialogIconKind.Help,
                 DialogButtons = new [] 
                 {
                     new DialogButton
@@ -86,7 +86,7 @@ namespace Neumorphism.Demo.ViewModels
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure to DELETE 20 FILES?",
-                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = Neumorphism.Avalonia.Styles.Dialog.Icons.DialogIconKind.Help,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
                 Borderless = true,
@@ -114,7 +114,7 @@ namespace Neumorphism.Demo.ViewModels
                     ContentHeader = "Result",
                     SupportingText = "20 files has deleted.",
                     StartupLocation = WindowStartupLocation.CenterOwner,
-                    DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Success,
+                    DialogHeaderIcon = Neumorphism.Avalonia.Styles.Dialog.Icons.DialogIconKind.Success,
                     Borderless = true,
                 }).ShowDialog(Program.MainWindow);
             }
@@ -157,7 +157,7 @@ namespace Neumorphism.Demo.ViewModels
                 ContentHeader = "Authentication required.",
                 SupportingText = "Please login before any action.",
                 StartupLocation = WindowStartupLocation.CenterOwner,
-                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Blocked,
+                DialogHeaderIcon = Neumorphism.Avalonia.Styles.Dialog.Icons.DialogIconKind.Blocked,
                 Borderless = true,
                 Width = 400,
                 TextFields = new[]

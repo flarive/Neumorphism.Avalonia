@@ -8,8 +8,8 @@
              xmlns:demo="clr-namespace:Neumorphism.Demo"
              xmlns:converters="clr-namespace:Neumorphism.Demo.Converters"
              xmlns:system="clr-namespace:System;assembly=System.Runtime.Extensions"
-             xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
-             xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+             xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+             xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Neumorphism.Demo.Pages.IconsDemo">
   

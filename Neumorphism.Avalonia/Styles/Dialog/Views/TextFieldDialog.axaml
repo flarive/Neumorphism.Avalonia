@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpf="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Styles.Dialog.ViewModels"
+        xmlns:textField="clr-namespace:Neumorphism.Avalonia.Styles.Dialog.ViewModels.Elements.TextField"
+
+        x:Class="Neumorphism.Avalonia.Styles.Dialog.Views.TextFieldDialog"
+        x:DataType="viewModels:TextFieldDialogViewModel">
+    <Window.Styles>
+        <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/Dialog/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/Dialog/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/Dialog/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+
+    <ScrollViewer Name="PART_ScrollView">
+        <StackPanel Name="PART_ContentPanel">
+            <TextBlock Name="PART_SupportingText"
+                       Classes="Body1"
+                       IsVisible="{CompiledBinding !!ContentMessage.Length}"
+                       Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}" />
+
+            <ItemsControl Name="PART_Fields"
+                          Items="{CompiledBinding TextFields}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="textField:TextFieldViewModel">
+                        <TextBox Name="PART_Field"
+                                 PasswordChar="{CompiledBinding MaskChar}"
+                                 HorizontalAlignment="Stretch"
+                                 MaxLength="{CompiledBinding MaxCountChars}"
+                                 Text="{CompiledBinding Text, Mode=TwoWay}"
+                                 Watermark="{CompiledBinding PlaceholderText}"
+                                 UseFloatingWatermark="True"
+                                 wpf:TextFieldAssist.Hints="{CompiledBinding AssistiveText}"
+                                 wpf:TextFieldAssist.Label="{CompiledBinding Label}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

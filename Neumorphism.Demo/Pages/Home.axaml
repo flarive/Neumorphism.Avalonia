@@ -4,12 +4,12 @@
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               mc:Ignorable="d"  
               xmlns:demo="clr-namespace:Neumorphism.Demo;assembly=Neumorphism.Demo"
-              xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
+              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
               xmlns:Test="clr-namespace:RenderDemo.Pages"
               xmlns:models="clr-namespace:Neumorphism.Demo.Models"
               xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-              xmlns:wpf="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+              xmlns:wpf="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               x:Class="Neumorphism.Demo.Pages.Home">
 	
   <UserControl.Resources>

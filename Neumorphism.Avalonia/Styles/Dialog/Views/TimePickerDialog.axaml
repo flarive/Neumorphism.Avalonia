@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:main="clr-namespace:Neumorphism.Avalonia.Styles.Dialog"
+        xmlns:material="clr-namespace:Neumorphism.Avalonia.Styles"
+        xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Styles.Dialog.ViewModels"
+        xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Dialog.Converters"
+        x:Class="Neumorphism.Avalonia.Styles.Dialog.Views.TimePickerDialog"
+        SizeToContent="WidthAndHeight"
+        Title="{CompiledBinding WindowTitle}"
+        CanResize="False"
+        WindowStartupLocation="{CompiledBinding WindowStartupLocation}"
+        HorizontalContentAlignment="Stretch"
+        x:DataType="viewModels:TimePickerDialogViewModel">
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:PadNumbersConverter x:Key="PadNumbersConverter"/>
+            <converters:StringToTransformConverter x:Key="StringToTransformConverter"/>
+            <converters:HourStringConverter x:Key="HourString"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Window.Styles>
+        <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/Dialog/Icons/DialogIconStyle.axaml"/>
+        <Style Selector="Window[SystemDecorations=None]">
+            <Setter Property="Padding" Value="32"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="TransparencyLevelHint" Value="Transparent"/>
+        </Style>
+    </Window.Styles>
+    
+</Window>

@@ -8,9 +8,9 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
-using Neumorphism.Styles;
-using Neumorphism.Styles.Assists;
-using Neumorphism.Styles.Models;
+using Neumorphism.Avalonia.Styles;
+using Neumorphism.Avalonia.Styles.Assists;
+using Neumorphism.Avalonia.Styles.Models;
 
 namespace Neumorphism.Demo
 {
@@ -75,21 +75,21 @@ namespace Neumorphism.Demo
             NavDrawerSwitch.IsChecked = false;
         }
 
-        private void TemplatedControl_OnTemplateApplied(object? sender, TemplateAppliedEventArgs e)
+        private void TemplatedControl_OnTemplateApplied(object sender, TemplateAppliedEventArgs e)
         {
             SnackbarHost.Post("Welcome to demo of Neumorphism.Avalonia!");
         }
 
         private List<SnackbarModel> helloSnackBars = new List<SnackbarModel>();
 
-        private void HelloButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        private void HelloButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             var helloSnackBar = new SnackbarModel("Hello, user!", TimeSpan.Zero);
             SnackbarHost.Post(helloSnackBar);
             helloSnackBars.Add(helloSnackBar);
         }
 
-        private void GoodbyeButtonMenuItem_OnClick(object? sender, RoutedEventArgs e)
+        private void GoodbyeButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             foreach (var snackbarModel in helloSnackBars)
             {

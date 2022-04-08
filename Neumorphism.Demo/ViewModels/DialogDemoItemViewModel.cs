@@ -41,9 +41,9 @@ namespace Neumorphism.Demo.ViewModels
             }
         }
         
-        private string? _result;
+        private string _result;
         
-        public string? Result
+        public string Result
         {
             get => _result;
             set

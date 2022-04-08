@@ -18,7 +18,7 @@ namespace Neumorphism.Demo.Pages
             AvaloniaXamlLoader.Load(this);
         }
 
-        private void CloseSideInfoButton_OnClick(object? sender, RoutedEventArgs e)
+        private void CloseSideInfoButton_OnClick(object sender, RoutedEventArgs e)
         {
             var vm = DataContext as SideSheetDemoViewModel;
             if (vm == null)
@@ -27,7 +27,7 @@ namespace Neumorphism.Demo.Pages
             vm.SideInfoOpened = false;
         }
 
-        private void OpenSideInfoButton_OnClick(object? sender, RoutedEventArgs e)
+        private void OpenSideInfoButton_OnClick(object sender, RoutedEventArgs e)
         {
             var vm = DataContext as SideSheetDemoViewModel;
             if (vm == null)

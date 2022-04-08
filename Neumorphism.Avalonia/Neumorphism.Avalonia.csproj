@@ -10,7 +10,7 @@
         <PackageLicenseUrl>https://github.com/flarive/Neumorphism.Avalonia/master/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/flarive/Neumorphism.Avalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <LangVersion>8</LangVersion>
+        <LangVersion>9</LangVersion>
         <PackageReleaseNotes>
         </PackageReleaseNotes>
     </PropertyGroup>
@@ -25,12 +25,31 @@
             <SubType>Designer</SubType>
         </AvaloniaResource>
     </ItemGroup>
-
+    
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.13" />
+      <None Remove="Styles\Fonts\Roboto\Roboto-Light.ttf" />
+      <None Remove="Styles\Fonts\Roboto\Roboto-Medium.ttf" />
+      <None Remove="Styles\Fonts\Roboto\Roboto-Regular.ttf" />
+      <None Remove="Styles\Fonts\Roboto\Roboto-Thin.ttf" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Light.ttf">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Medium.ttf">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Regular.ttf">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Thin.ttf">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </AvaloniaResource>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Neumorphism.Styles\Neumorphism.Styles.csproj" />
+      <PackageReference Include="Avalonia" Version="0.10.13" />
+      <PackageReference Include="DialogHost.Avalonia" Version="0.4.0" />
     </ItemGroup>
 </Project>

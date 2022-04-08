@@ -3,10 +3,10 @@
             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
-            xmlns:styles="clr-namespace:Neumorphism.Styles;assembly=Neumorphism.Styles"
-            xmlns:assist="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+            xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+            xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-            xmlns:assists="clr-namespace:Neumorphism.Styles.Assists;assembly=Neumorphism.Styles"
+            xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
             xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
             x:Class="Neumorphism.Demo.Pages.TogglesDemo">
     <StackPanel Margin="16, 0">

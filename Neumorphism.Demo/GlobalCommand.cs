@@ -1,5 +1,5 @@
-﻿using Neumorphism.Styles.Themes;
-using Neumorphism.Styles.Themes.Base;
+﻿using Neumorphism.Avalonia.Styles.Themes;
+using Neumorphism.Avalonia.Styles.Themes.Base;
 using System.Diagnostics;
 using Avalonia;
 
