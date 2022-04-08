@@ -74,7 +74,7 @@
             <Grid Margin="8" ColumnDefinitions="*,Auto,*,16,Auto">
 
                   <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" 
-                            Width="300" Classes="Solo" Text="{Binding SearchText}" Margin="0">
+                            Width="300" Classes="Header" Text="{Binding SearchText}" Margin="0">
                       <TextBox.InnerRightContent>
                           <Button Width="{Binding $self.Bounds.Height}"
                                   Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
@@ -89,7 +89,7 @@
                   <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
                 
 
-                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Solo" Margin="0"
+                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Header" Margin="0"
                             Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;avalonia:MaterialIcon Kind=&quot;&quot; \/>'}">
                       <TextBox.InnerRightContent>
                           <Button Width="{Binding $self.Bounds.Height}" Foreground="{DynamicResource MaterialDesignCardBackground}"

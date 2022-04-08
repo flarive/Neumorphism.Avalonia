@@ -37,7 +37,7 @@ namespace Neumorphism.Demo.Pages
             new FeatureStatusModels{ FeatureName = "Standard Fields (TextBox)", IsReady = Yes, IsAnimated = Yes},
             new FeatureStatusModels{ FeatureName = "Filled Fields (TextBox)", IsReady = Yes, IsAnimated = Yes},
             new FeatureStatusModels{ FeatureName = "Outline Fields (TextBox)", IsReady = Yes, IsAnimated = Yes},
-            new FeatureStatusModels{ FeatureName = "Solo Fields (TextBox)", IsReady = Yes, IsAnimated = Yes},
+            new FeatureStatusModels{ FeatureName = "Header Fields (TextBox)", IsReady = Yes, IsAnimated = Yes},
             new FeatureStatusModels{ FeatureName = "Standard ComboBox", IsReady = NotFully, IsAnimated = No},
             new FeatureStatusModels{ FeatureName = "Filled ComboBox", IsReady = NotFully, IsAnimated = No},
             new FeatureStatusModels{ FeatureName = "Outline ComboBox", IsReady = NotFully, IsAnimated = No},
