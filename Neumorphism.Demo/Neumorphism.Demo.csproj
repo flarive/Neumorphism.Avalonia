@@ -17,7 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Neumorphism.Avalonia\Neumorphism.Avalonia.csproj" />
-    <ProjectReference Include="..\Neumorphism.Dialog\Neumorphism.Dialog.csproj" />
   </ItemGroup>
 
   <ItemGroup>

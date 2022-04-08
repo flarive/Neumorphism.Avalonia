@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 using Neumorphism.Demo.Models;
 using Neumorphism.Styles.Assists;
 using System.Collections.ObjectModel;
-using Neumorphism.Dialog;
+using Neumorphism.Styles.Dialog;
 using static Neumorphism.Demo.Models.StatusEnum;
 using Avalonia.Input;
 using Avalonia.VisualTree;

@@ -1,11 +1,11 @@
-﻿using Neumorphism.Dialog;
+﻿using Neumorphism.Styles.Dialog;
 using Avalonia.Controls;
 using System;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using Neumorphism.Dialog.Enums;
+using Neumorphism.Styles.Dialog.Enums;
 
 namespace Neumorphism.Demo.ViewModels
 {
@@ -34,9 +34,11 @@ namespace Neumorphism.Demo.ViewModels
                 new DialogDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
                 new DialogDemoItemViewModel("Dialog with bitmap icon", Dialog4),
                 new DialogDemoItemViewModel("Login dialog", LoginDialog),
-                new DialogDemoItemViewModel("Folder rename dialog", FolderNameDialog),
-                new DialogDemoItemViewModel("Time picker", TimePickerDialog),
-                new DialogDemoItemViewModel("Date picker", DatePickerDialog)
+                new DialogDemoItemViewModel("Folder rename dialog", FolderNameDialog)
+                
+                // FL !!!!
+                //new DialogDemoItemViewModel("Time picker", TimePickerDialog),
+                //new DialogDemoItemViewModel("Date picker", DatePickerDialog)
             };
         }
 
@@ -60,7 +62,7 @@ namespace Neumorphism.Demo.ViewModels
                 SupportingText = "Are you sure to DELETE 20 FILES?",
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
-                DialogHeaderIcon = Dialog.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Help,
                 DialogButtons = new [] 
                 {
                     new DialogButton
@@ -84,7 +86,7 @@ namespace Neumorphism.Demo.ViewModels
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure to DELETE 20 FILES?",
-                DialogHeaderIcon = Dialog.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Help,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
                 Borderless = true,
@@ -112,7 +114,7 @@ namespace Neumorphism.Demo.ViewModels
                     ContentHeader = "Result",
                     SupportingText = "20 files has deleted.",
                     StartupLocation = WindowStartupLocation.CenterOwner,
-                    DialogHeaderIcon = Dialog.Icons.DialogIconKind.Success,
+                    DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Success,
                     Borderless = true,
                 }).ShowDialog(Program.MainWindow);
             }
@@ -155,7 +157,7 @@ namespace Neumorphism.Demo.ViewModels
                 ContentHeader = "Authentication required.",
                 SupportingText = "Please login before any action.",
                 StartupLocation = WindowStartupLocation.CenterOwner,
-                DialogHeaderIcon = Dialog.Icons.DialogIconKind.Blocked,
+                DialogHeaderIcon = Neumorphism.Styles.Dialog.Icons.DialogIconKind.Blocked,
                 Borderless = true,
                 Width = 400,
                 TextFields = new[]
@@ -209,12 +211,12 @@ namespace Neumorphism.Demo.ViewModels
             var result = text?.Length > 5;
             return new Tuple<bool, string>(result, result ? "" : "Too few account name.");
         }
+
         private Tuple<bool, string> ValidatePassword(string text) 
         {
             var result = text?.Length >= 1;
             return new Tuple<bool, string>(result, result ? "" : "Field should be filled.");
         }
-
 
         private async IAsyncEnumerable<string> FolderNameDialog()
         {

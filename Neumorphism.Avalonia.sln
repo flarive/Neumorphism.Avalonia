@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Styles", "Neumo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Avalonia", "Neumorphism.Avalonia\Neumorphism.Avalonia.csproj", "{AE7993F6-BC21-4E09-833E-49E79200A139}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Dialog", "Neumorphism.Dialog\Neumorphism.Dialog.csproj", "{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{AE7993F6-BC21-4E09-833E-49E79200A139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE7993F6-BC21-4E09-833E-49E79200A139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE7993F6-BC21-4E09-833E-49E79200A139}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
