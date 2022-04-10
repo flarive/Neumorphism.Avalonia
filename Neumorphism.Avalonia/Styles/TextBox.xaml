@@ -569,17 +569,19 @@
 
   <!-- Class Header -->
   <Style Selector="TextBox.Header">
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="assists:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
-    <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
-    <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
-    <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
-    <Setter Property="Height" Value="38"/>
-    <Setter Property="Width" Value="NaN"/>
-    <Setter Property="BorderThickness" Value="0" />
-	<Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
-	<Setter Property="Cursor" Value="Arrow"/>
-    <Setter Property="Template">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="assists:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
+      <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
+      <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
+      <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
+      <Setter Property="Height" Value="38"/>
+      <Setter Property="Width" Value="NaN"/>
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+      <Setter Property="Cursor" Value="Arrow"/>
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_RootBorder"
                 Background="Transparent"
@@ -671,7 +673,7 @@
     <Setter Property="FontSize" Value="16"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Height" Value="50"/>
-    <Setter Property="Width" Value="200"/>
+    <Setter Property="Width" Value="NaN"/>
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="BorderThickness" Value="0"/>
     <Setter Property="BorderBrush" Value="Transparent"/>
@@ -680,17 +682,19 @@
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
     <Setter Property="TextAlignment" Value="Left"/>
     <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
-	<Setter Property="HorizontalAlignment" Value="Left"/>
-	<Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
     <Setter Property="Template">
       <ControlTemplate>
-		  <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-			  <TextBlock Name="PART_Watermark" Padding="0"
+		  <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+			  <TextBlock Name="PART_Watermark"
+              Padding="0"
 						  Margin="{TemplateBinding Margin}"
 						  VerticalAlignment="Center"
 						  Foreground="{TemplateBinding Foreground}"
-						  Background="Transparent"
+						  Background="{TemplateBinding Background}"
 						  Opacity="0.5"
+              IsVisible="{TemplateBinding IsVisible}"
 						  Text="{TemplateBinding Watermark}"
 						  FontFamily="{TemplateBinding FontFamily}"
 						  FontSize="{TemplateBinding FontSize}"
@@ -700,11 +704,12 @@
 						  TextWrapping="{TemplateBinding TextWrapping}"/>
 			  <TextPresenter Name="PART_TextPresenter"
                         Background="{TemplateBinding Background}"
+                        IsEnabled="{TemplateBinding IsEnabled}"
                         VerticalAlignment="{TemplateBinding VerticalAlignment}"
                         HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                         Margin="{TemplateBinding Margin}"
                         Text="{TemplateBinding Text, Mode=TwoWay}"
-					    CaretIndex="{TemplateBinding CaretIndex}"
+                        CaretIndex="{TemplateBinding CaretIndex}"
                         SelectionStart="{TemplateBinding SelectionStart}"
                         SelectionEnd="{TemplateBinding SelectionEnd}"
                         TextAlignment="{TemplateBinding TextAlignment}"
@@ -719,20 +724,28 @@
     </Setter>
   </Style>
 
-	<Style Selector="TextBox.no-material:focus-within:empty /template/ TextBlock#PART_Watermark,
+	<!--<Style Selector="TextBox.no-material:focus-within:empty /template/ TextBlock#PART_Watermark,
                      TextBox.no-material:empty /template/ TextBlock#PART_Watermark">
 		<Setter Property="IsVisible" Value="True" />
+    <Setter Property="Background" Value="Yellow" />
 	</Style>
 
 	<Style Selector="TextBox.no-material:focus-within:not(:empty) /template/ TextBlock#PART_Watermark,
                      TextBox.no-material:not(:empty) /template/ TextBlock#PART_Watermark">
-		<Setter Property="IsVisible" Value="False" />
-	</Style>
+		--><!--<Setter Property="IsVisible" Value="False" />--><!--
+    <Setter Property="IsVisible" Value="True" />
+    <Setter Property="Background" Value="Red" />
+	</Style>-->
 
-	<!--<Style Selector="TextBox.no-material[Watermark=aaa] /template/ TextBlock#PART_Watermark">
+	<!--<Style Selector="TextBox.no-material[Watermark=Age] /template/ TextBlock#PART_Watermark">
 		<Setter Property="IsVisible" Value="True" />
 		<Setter Property="Background" Value="Yellow" />
 	</Style>-->
+
+
+  <Style Selector="TextBox.no-material[IsEnabled=False] /template/ TextPresenter#PART_TextPresenter">
+		<Setter Property="Opacity" Value="0.3" />
+	</Style>
 	
 	
 </Styles>

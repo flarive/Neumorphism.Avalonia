@@ -1,5 +1,7 @@
-<Style xmlns="https://github.com/avaloniaui" Selector="Menu">
-    <Setter Property="Template">
+<Style xmlns="https://github.com/avaloniaui"
+       Selector="Menu">
+
+    <Setter Property="Template">   
         <ControlTemplate>
             <Border Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"

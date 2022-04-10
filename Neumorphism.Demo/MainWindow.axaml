@@ -16,8 +16,6 @@
     <Window.Styles>
         <Style Selector="showMeTheXaml|XamlDisplay">
             <Setter Property="Margin" Value="8" />
-            
-            <!-- Stretch XamlDisplay horizontally -->
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="TextBlock.Subheadline">
@@ -34,7 +32,7 @@
   
 
 
-    <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center">
+    <styles:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center" HorizontalContentAlignment="Center">
         <styles:NavigationDrawer Name="LeftDrawer" LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
             <styles:NavigationDrawer.LeftDrawerContent>
                 <ScrollViewer>
@@ -50,6 +48,7 @@
                             <ListBox.Styles>
                                 <Style Selector="ListBoxItem">
                                     <Setter Property="Height" Value="48" />
+                                    <Setter Property="Cursor" Value="Hand" />
                                     <Setter Property="Padding" Value="16,0" />
                                     <Setter Property="VerticalContentAlignment" Value="Center" />
                                     <Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
@@ -66,7 +65,7 @@
                             <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
-                            <TextBlock Classes="Body2" Text="Dialogs" IsEnabled="True" />
+                            <TextBlock Classes="Body2" Text="Dialogs" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ScrollViewer" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="SideSheet" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="TabControls" IsEnabled="False" />
@@ -81,8 +80,8 @@
             </styles:NavigationDrawer.LeftDrawerContent>
             <DockPanel LastChildFill="true">
                 <styles:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                                  DockPanel.Dock="Top" assists:ShadowAssist.ShadowDepth="Depth0"
-                                  Height="56" Mode="Standard" Background="Transparent" ZIndex="1">
+                                  DockPanel.Dock="Top" assists:ShadowAssist.ShadowDepth="Depth3"
+                                  Height="60" Mode="Standard" Background="Transparent" ZIndex="1">
                     <Grid Margin="16">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="24" />
@@ -92,21 +91,27 @@
 							              <ColumnDefinition Width="400" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                      <!--Background="#FF8d41b0" Foreground="White"-->
-                      <ToggleButton Name="NavDrawerSwitch"
+                        <!--Left side menu-->
+                        <ToggleButton Name="NavDrawerSwitch"
                                       Classes="Flat TransparentBack"
                                       Width="38" Height="38" CornerRadius="6" Padding="4">
                             <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28" />
                         </ToggleButton>
+                        <!--App title-->
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
+                        <!--Theme toggle switch-->
                         <ToggleSwitch Grid.Column="4" Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
                                       Command="{Binding Path=SwitchUITheme}" CommandParameter="{Binding ElementName=toggleSwitchTheme}" />
+                        <!--<Right side menu-->
                         <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
-                            <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
+                            <MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}"
+                                      assists:MenuAssist.PopupAnchor="TopRight"
+                                      assists:MenuAssist.HorizontalOffset="-140"
+                                      assists:MenuAssist.VerticalOffset="10">
                                 <MenuItem Header="Hello!" Click="HelloButtonMenuItem_OnClick">
-                                    <MenuItem.Icon>
-                                        <avalonia:MaterialIcon Kind="Hand" Width="24" Height="24" />
-                                    </MenuItem.Icon>
+                                  <MenuItem.Icon>
+                                    <avalonia:MaterialIcon Kind="Hand" Width="24" Height="24" />
+                                  </MenuItem.Icon>
                                 </MenuItem>
                                 <Separator />
                                 <MenuItem Header="Action 1" />

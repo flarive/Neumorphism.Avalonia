@@ -32,5 +32,6 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
         Color MaterialDesignDataGridRowHoverBackground { get; }
         Color MaterialDesignShadowLightColor { get; }
         Color MaterialDesignShadowDarkColor { get; }
+        Color MaterialDesignBorderShadowColor { get; }
     }
 }

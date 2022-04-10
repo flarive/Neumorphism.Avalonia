@@ -72,6 +72,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
             theme.DataGridRowHoverBackground = baseTheme.MaterialDesignDataGridRowHoverBackground;
             theme.ShadowLightColor = baseTheme.MaterialDesignShadowLightColor;
             theme.ShadowDarkColor = baseTheme.MaterialDesignShadowDarkColor;
+            theme.BorderShadowColor = baseTheme.MaterialDesignBorderShadowColor;
 
             return theme;
         }

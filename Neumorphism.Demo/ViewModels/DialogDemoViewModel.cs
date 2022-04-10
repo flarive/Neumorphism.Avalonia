@@ -267,12 +267,12 @@ namespace Neumorphism.Demo.ViewModels
             {
                 Borderless = true,
                 StartupLocation = WindowStartupLocation.CenterOwner,
-                ImplicitValue = _previousTimePickerResult,
+                ImplicitValue = _previousTimePickerResult, 
                 PositiveButton = new DialogButton
                 {
                     Content = "CONFIRM",
                     Result = "confirm"
-                },
+                }
             }).ShowDialog(Program.MainWindow);
             
             yield return $"Result: {result.GetResult}";

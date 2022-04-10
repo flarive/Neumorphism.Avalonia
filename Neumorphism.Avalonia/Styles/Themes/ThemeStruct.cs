@@ -43,7 +43,9 @@ namespace Neumorphism.Avalonia.Styles.Themes
             DataGridRowHoverBackground = baseTheme.DataGridRowHoverBackground;
             ShadowLightColor = baseTheme.ShadowLightColor;
             ShadowDarkColor = baseTheme.ShadowDarkColor;
+            BorderShadowColor = baseTheme.BorderShadowColor;
         }
+
         public ColorPair PrimaryLight { get; set; }
         public ColorPair PrimaryMid { get; set; }
         public ColorPair PrimaryDark { get; set; }
@@ -80,5 +82,6 @@ namespace Neumorphism.Avalonia.Styles.Themes
         public Color DataGridRowHoverBackground { get; set; }
         public Color ShadowLightColor { get; set; }
         public Color ShadowDarkColor { get; set; }
+        public Color BorderShadowColor { get; set; }
     }
 }

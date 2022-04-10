@@ -1,8 +1,10 @@
 ﻿using Avalonia.Media;
 using Neumorphism.Avalonia.Styles.Colors;
 
-namespace Neumorphism.Avalonia.Styles.Themes {
-    public interface ITheme {
+namespace Neumorphism.Avalonia.Styles.Themes
+{
+    public interface ITheme
+    {
         ColorPair PrimaryLight { get; set; }
         ColorPair PrimaryMid { get; set; }
         ColorPair PrimaryDark { get; set; }
@@ -51,5 +53,6 @@ namespace Neumorphism.Avalonia.Styles.Themes {
 
         Color ShadowLightColor { get; set; }
         Color ShadowDarkColor { get; set; }
+        Color BorderShadowColor { get; set; }
     }
 }

@@ -35,7 +35,6 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
         public Color MaterialDesignShadowLightColor { get; } = Color.Parse("#CCFFFFFF");
         public Color MaterialDesignShadowDarkColor { get; } = Color.Parse("#33000000");
 
-        //public Color MaterialDesignShadowLightColor { get; } = Color.Parse("#CCFFBBFF");
-        //public Color MaterialDesignShadowDarkColor { get; } = Color.Parse("#330000AA");
+        public Color MaterialDesignBorderShadowColor { get; } = Color.Parse("#FFC4C7CB");
     }
 }

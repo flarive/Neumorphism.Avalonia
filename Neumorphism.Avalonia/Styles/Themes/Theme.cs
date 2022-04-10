@@ -3,8 +3,10 @@ using Avalonia.Media;
 using Neumorphism.Avalonia.Styles.Colors;
 using Neumorphism.Avalonia.Styles.Themes.Base;
 
-namespace Neumorphism.Avalonia.Styles.Themes {
-    public class Theme : ITheme {
+namespace Neumorphism.Avalonia.Styles.Themes
+{
+    public class Theme : ITheme
+    {
         public static IBaseTheme Light { get; } = new MaterialDesignLightTheme();
         public static IBaseTheme Dark { get; } = new MaterialDesignDarkTheme();
 
@@ -46,6 +48,7 @@ namespace Neumorphism.Avalonia.Styles.Themes {
         public Color DataGridRowHoverBackground { get; set; }
         public Color ShadowLightColor { get; set; }
         public Color ShadowDarkColor { get; set; }
+        public Color BorderShadowColor { get; set; }
 
         public static BaseThemeMode? GetSystemTheme() {
             // TODO Implement getting system themes

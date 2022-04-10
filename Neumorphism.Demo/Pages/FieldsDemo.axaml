@@ -250,16 +250,16 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
                     <TextBlock Classes="Headline6 Subheadline2" Text="Header fields" />
-                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields0" HorizontalAlignment="Left">
+                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields0">
                         <TextBox Classes="Header" Watermark="Header field with left icon" Width="300">
                             <TextBox.InnerLeftContent>
-								<Border Width="{Binding $self.Bounds.Height}" Height="38">
-								    <avalonia:MaterialIcon Kind="Search" Width="24" Height="24" Foreground="Black" />
-								</Border>
+								              <Border Width="{Binding $self.Bounds.Height}" Height="38">
+								                  <avalonia:MaterialIcon Kind="Search" Width="24" Height="24" />
+								              </Border>
                             </TextBox.InnerLeftContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields1" HorizontalAlignment="Left">
+                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields1">
                         <TextBox Classes="Header" Watermark="Header field with right icon" Width="300" Height="48">
                             <TextBox.InnerRightContent>
                                 <Button Classes="no-material" Margin="10,0,10,0" Height="38" Width="{Binding $self.Bounds.Height}" Cursor="Arrow"
@@ -267,7 +267,7 @@
                             </TextBox.InnerRightContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields2" HorizontalAlignment="Left">
+                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields2">
                         <TextBox Watermark="Search field" Classes="Header" Margin="0" Width="220">
                           <TextBox.Styles>
                             <Style Selector="TextBox.Header">
@@ -301,8 +301,8 @@
                           </TextBox.InnerRightContent>
                         </TextBox>
                     </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields3" HorizontalAlignment="Left">
-                        <TextBox BorderBrush="#FFC4C7CB" BorderThickness="1" Classes="Header" Width="350"
+                    <showMeTheXaml:XamlDisplay UniqueId="HeaderFields3">
+                        <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Classes="Header" Width="350"
                                  Watermark="Enter your email"
                                  assists:TextFieldAssist.CornerRadius="32" assists:TextFieldAssist.InnerLeftBackground="#22666666" assists:TextFieldAssist.InnerLeftPadding="10,0,0,0">
                             <TextBox.InnerLeftContent>
@@ -321,11 +321,14 @@
                 <StackPanel Orientation="Vertical">
                     <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" />
                     <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown0">
-                        <NumericUpDown Watermark="Age" assists:TextFieldAssist.Label="aaa" Minimum="0" Maximum="10" Increment="1"/>
+                        <NumericUpDown Minimum="0" Maximum="1000" Increment="1" Value="0" Foreground="#FF555555" />
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown1">
-                        <NumericUpDown ButtonSpinnerLocation="Left" Minimum="-100" Maximum="100" Increment="10"/>
+                        <NumericUpDown Classes="Filled" ButtonSpinnerLocation="Left" Minimum="-10000" Maximum="10000" Increment="10" Width="140" Height="42"/>
                     </showMeTheXaml:XamlDisplay>
+                  <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown2">
+                    <NumericUpDown ButtonSpinnerLocation="Left" Minimum="-100" Maximum="100" Increment="10" IsEnabled="False"/>
+                  </showMeTheXaml:XamlDisplay>
                 </StackPanel>
             </StackPanel>
         </WrapPanel>

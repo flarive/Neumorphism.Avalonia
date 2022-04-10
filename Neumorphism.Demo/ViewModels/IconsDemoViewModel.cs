@@ -62,6 +62,6 @@ namespace Neumorphism.Demo.ViewModels {
         public RelayCommand SearchCommand { get; set; }
 
         public RelayCommand CopyToClipboardCommand { get; set; } =
-            new RelayCommand(o => Application.Current.Clipboard.SetTextAsync($"<avalonia:MaterialIcon Kind=\"{o}\" />"));
+            new RelayCommand(o => Application.Current?.Clipboard?.SetTextAsync($"<avalonia:MaterialIcon Kind=\"{o}\" />"));
     }
 }

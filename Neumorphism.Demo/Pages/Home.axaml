@@ -71,8 +71,6 @@
           <Button Name="btn1" Command="{Binding Path=OpenProjectRepoLink}">
             <avalonia:MaterialIcon Kind="Github" Width="40" Height="40" Foreground="DarkGray" />
           </Button>
-          <!--<Button Name="btn2" Width="200" Content="USE DARK THEME" Command="{Binding Path=UseMaterialUIDarkTheme}"/>
-          <Button Name="btn3" Width="200" Content="USE LIGHT THEME" Command="{Binding Path=UseMaterialUILightTheme}"/>-->
           <Button Name="btn2" Width="200" Content="OPEN CONTROLS" Command="{Binding Path=OpenLeftDrawer}"/>
           <Button Name="btn4" Command="{Binding Path=OpenAvaloniaWebsiteLink}">
               <Viewbox Width="40" Height="40">
@@ -80,44 +78,6 @@
               </Viewbox>
           </Button>
         </WrapPanel>
-      </StackPanel>
-      <StackPanel Margin="0,24">
-        
-        <DataGrid Height="620"
-                  IsReadOnly="True"
-                  Items="{Binding Path=DataContext.Features}"
-                  VerticalAlignment="Stretch"
-                  VerticalScrollBarVisibility="Disabled">
-          <DataGrid.Columns>
-            <DataGridTextColumn Header="Features"
-                                Binding="{Binding FeatureName}"
-                                Width="20*" />
-            <DataGridTemplateColumn>
-              <DataGridTemplateColumn.Header>
-                <TextBlock TextAlignment="Right"
-                           Text="Is Ready"
-                           HorizontalAlignment="Stretch"/>
-              </DataGridTemplateColumn.Header>
-              <DataGridTemplateColumn.CellTemplate>
-                <DataTemplate>
-                  <TextBlock TextAlignment="Right" Text="{Binding Converter={StaticResource GetDescription}, Path=IsReady}"/>
-                </DataTemplate>
-              </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-            <DataGridTemplateColumn>
-              <DataGridTemplateColumn.Header>
-                <TextBlock TextAlignment="Right"
-                           Text="Is Animated"
-                           HorizontalAlignment="Stretch"/>
-              </DataGridTemplateColumn.Header>
-              <DataGridTemplateColumn.CellTemplate>
-                <DataTemplate>
-                  <TextBlock TextAlignment="Right" Text="{Binding Converter={StaticResource GetDescription}, Path=IsAnimated}"/>
-                </DataTemplate>
-              </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-          </DataGrid.Columns>
-        </DataGrid>
       </StackPanel>
     </StackPanel>
   </UserControl>

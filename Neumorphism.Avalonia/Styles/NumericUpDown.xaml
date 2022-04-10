@@ -7,7 +7,8 @@
 
 	<Styles.Resources>
 		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
-    </Styles.Resources>
+    <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+   </Styles.Resources>
 
 
 
@@ -16,47 +17,55 @@
     <Style Selector="NumericUpDown">
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Height" Value="48"/>
-		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="MinWidth" Value="150"/>
-		<Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+        <Setter Property="Width" Value="NaN"/>
+        <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Name="PART_RootBorder"
-                        Margin="{TemplateBinding Padding}"
-                        ClipToBounds="True"
-                        Background="Transparent"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-						CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
-                        BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}">
-                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                          Margin="{TemplateBinding Margin}"
+                          Width="{TemplateBinding Width}"
+                          ClipToBounds="True" IsEnabled="{TemplateBinding IsEnabled}"
+                          Background="Transparent"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
+                          BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <Border Name="focusBorder"
-                                Background="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}" />
+                                Background="{TemplateBinding Background}" Margin="0" />
                         <ButtonSpinner Name="PART_Spinner"
-                                       BorderThickness="0"
-                                       BorderBrush="Transparent"
-                                       HorizontalContentAlignment="Stretch"
-                                       VerticalContentAlignment="Stretch"
-									   VerticalAlignment="Center"
-                                       AllowSpin="{TemplateBinding AllowSpin}"
-                                       ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
-                                       ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
+                                      BorderThickness="0"
+                                      BorderBrush="Transparent"
+                                      IsEnabled="{TemplateBinding IsEnabled}"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch"
+                                      VerticalAlignment="Center"
+                                      Foreground="{DynamicResource MaterialDesignForeground}"
+                                      AllowSpin="{TemplateBinding AllowSpin}"
+                                      ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                                      ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
                             <TextBox Name="PART_TextBox"
-									 Classes="no-material"
-									 Margin="8 0"
-                                     BorderThickness="0"
-                                     VerticalAlignment="Center"
-									 HorizontalAlignment="Stretch"
-									 assists:TextFieldAssist.Label="{TemplateBinding assists:TextFieldAssist.Label}"
-                                     Watermark="{TemplateBinding Watermark}"
-                                     DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
-                                     IsReadOnly="{TemplateBinding IsReadOnly}"
-                                     Text="{TemplateBinding Text}"
-                                     AcceptsReturn="False"
-									 TextWrapping="NoWrap" />
+                                    Classes="no-material"
+                                    IsEnabled="{TemplateBinding IsEnabled}"
+                                    Background="Transparent"
+                                    Margin="0"
+                                    BorderThickness="0"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Stretch"
+                                    Watermark="{TemplateBinding Watermark}"
+                                    DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+                                    IsReadOnly="{TemplateBinding IsReadOnly}"
+                                    Text="{TemplateBinding Text}"
+                                    AcceptsReturn="False"
+                                    TextWrapping="NoWrap" />
                         </ButtonSpinner>
                     </Grid>
                 </Border>
@@ -66,10 +75,14 @@
     
     
     
-    <Style Selector="TextBox /template/ Border#PART_RootBorder">
+    <!--<Style Selector="TextBox /template/ Border#PART_RootBorder">
         <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
-    </Style>
+    </Style>-->
 
+
+  <Style Selector="NumericUpDown.Filled">
+    <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+  </Style>
 	
 	
 </Styles>

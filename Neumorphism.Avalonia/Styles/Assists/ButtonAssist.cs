@@ -1,10 +1,11 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 
-namespace Neumorphism.Avalonia.Styles.Assists {
-    public static class ButtonAssist {
+namespace Neumorphism.Avalonia.Styles.Assists
+{
+    public static class ButtonAssist
+    {
         private static readonly CornerRadius DefaultCornerRadius = new CornerRadius(4.0);
 
         #region AttachedProperty : CornerRadiusProperty

@@ -77,7 +77,7 @@ namespace Neumorphism.Demo
 
         private void TemplatedControl_OnTemplateApplied(object sender, TemplateAppliedEventArgs e)
         {
-            SnackbarHost.Post("Welcome to demo of Neumorphism.Avalonia!");
+            SnackbarHost.Post("Welcome to Neumorphism.Avalonia demo !");
         }
 
         private List<SnackbarModel> helloSnackBars = new List<SnackbarModel>();
@@ -107,10 +107,12 @@ namespace Neumorphism.Demo
                 if (toggleButton.IsChecked.HasValue && toggleButton.IsChecked.Value)
                 {
                     GlobalCommand.UseMaterialUIDarkTheme();
+                    SnackbarHost.Post("Neumorphism dark theme applied !");
                 }
                 else
                 {
                     GlobalCommand.UseMaterialUILightTheme();
+                    SnackbarHost.Post("Neumorphism light theme applied !");
                 }
             }
 

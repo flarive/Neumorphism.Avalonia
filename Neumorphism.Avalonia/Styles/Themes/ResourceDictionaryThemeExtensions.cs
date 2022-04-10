@@ -11,43 +11,23 @@ namespace Neumorphism.Avalonia.Styles.Themes {
         private static Guid CurrentThemeKey { get; } = Guid.NewGuid();
         private static Guid ThemeManagerKey { get; } = Guid.NewGuid();
 
-        //[Obsolete($"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/wiki/Advanced-Theming")]
-        //public static void SetTheme(this IResourceDictionary resourceDictionary, ITheme theme)
-        //{
-        //    SetThemeInternal(resourceDictionary, theme);
-
-        //    if (!(resourceDictionary.GetThemeManager() is ThemeManager themeManager))
-        //        resourceDictionary[ThemeManagerKey] = themeManager = new ThemeManager(resourceDictionary);
-
-        //    var oldTheme = resourceDictionary.TryGetResource(CurrentThemeKey, out var oldThemeTemp) ? oldThemeTemp as ITheme : null;
-        //    resourceDictionary[CurrentThemeKey] = theme;
-
-        //    themeManager.OnThemeChange(oldTheme, theme);
-        //}
-
         internal static void SetThemeInternal(this IResourceDictionary resourceDictionary, ITheme theme)
         {
             if (resourceDictionary == null) throw new ArgumentNullException(nameof(resourceDictionary));
 
             SetSolidColorBrush(resourceDictionary, "PrimaryHueLightBrush", theme.PrimaryLight.Color);
-            SetSolidColorBrush(resourceDictionary, "PrimaryHueLightForegroundBrush",
-                theme.PrimaryLight.ForegroundColor ?? theme.PrimaryLight.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "PrimaryHueLightForegroundBrush", theme.PrimaryLight.ForegroundColor ?? theme.PrimaryLight.Color.ContrastingForegroundColor());
             SetSolidColorBrush(resourceDictionary, "PrimaryHueMidBrush", theme.PrimaryMid.Color);
-            SetSolidColorBrush(resourceDictionary, "PrimaryHueMidForegroundBrush",
-                theme.PrimaryMid.ForegroundColor ?? theme.PrimaryMid.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "PrimaryHueMidForegroundBrush", theme.PrimaryMid.ForegroundColor ?? theme.PrimaryMid.Color.ContrastingForegroundColor());
             SetSolidColorBrush(resourceDictionary, "PrimaryHueDarkBrush", theme.PrimaryDark.Color);
-            SetSolidColorBrush(resourceDictionary, "PrimaryHueDarkForegroundBrush",
-                theme.PrimaryDark.ForegroundColor ?? theme.PrimaryDark.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "PrimaryHueDarkForegroundBrush", theme.PrimaryDark.ForegroundColor ?? theme.PrimaryDark.Color.ContrastingForegroundColor());
 
             SetSolidColorBrush(resourceDictionary, "SecondaryHueLightBrush", theme.SecondaryLight.Color);
-            SetSolidColorBrush(resourceDictionary, "SecondaryHueLightForegroundBrush",
-                theme.SecondaryLight.ForegroundColor ?? theme.SecondaryLight.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "SecondaryHueLightForegroundBrush", theme.SecondaryLight.ForegroundColor ?? theme.SecondaryLight.Color.ContrastingForegroundColor());
             SetSolidColorBrush(resourceDictionary, "SecondaryHueMidBrush", theme.SecondaryMid.Color);
-            SetSolidColorBrush(resourceDictionary, "SecondaryHueMidForegroundBrush",
-                theme.SecondaryMid.ForegroundColor ?? theme.SecondaryMid.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "SecondaryHueMidForegroundBrush", theme.SecondaryMid.ForegroundColor ?? theme.SecondaryMid.Color.ContrastingForegroundColor());
             SetSolidColorBrush(resourceDictionary, "SecondaryHueDarkBrush", theme.SecondaryDark.Color);
-            SetSolidColorBrush(resourceDictionary, "SecondaryHueDarkForegroundBrush",
-                theme.SecondaryDark.ForegroundColor ?? theme.SecondaryDark.Color.ContrastingForegroundColor());
+            SetSolidColorBrush(resourceDictionary, "SecondaryHueDarkForegroundBrush", theme.SecondaryDark.ForegroundColor ?? theme.SecondaryDark.Color.ContrastingForegroundColor());
 
             SetSolidColorBrush(resourceDictionary, "ValidationErrorBrush", theme.ValidationError);
 
@@ -80,96 +60,10 @@ namespace Neumorphism.Avalonia.Styles.Themes {
             SetSolidColorBrush(resourceDictionary, "MaterialDesignDataGridRowHoverBackground", theme.DataGridRowHoverBackground);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignShadowLightColor", theme.ShadowLightColor);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignShadowDarkColor", theme.ShadowDarkColor);
+            SetSolidColorBrush(resourceDictionary, "MaterialDesignBorderShadowColor", theme.BorderShadowColor);
         }
 
-        //[Obsolete($"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/wiki/Advanced-Theming")]
-        //public static ITheme GetTheme(this IResourceDictionary resourceDictionary)
-        //{
-        //    if (resourceDictionary == null) throw new ArgumentNullException(nameof(resourceDictionary));
-        //    if (resourceDictionary.TryGetResource(CurrentThemeKey, out var theme) && theme is ITheme) return (ITheme) theme;
-
-        //    var secondaryMid = GetColor("SecondaryHueMidBrush");
-        //    var secondaryMidForeground = GetColor("SecondaryHueMidForegroundBrush");
-
-        //    if (!TryGetColor("SecondaryHueLightBrush", out var secondaryLight)) 
-        //        secondaryLight = secondaryMid.Lighten();
-
-        //    if (!TryGetColor("SecondaryHueLightForegroundBrush", out var secondaryLightForeground))
-        //        secondaryLightForeground = secondaryLight.ContrastingForegroundColor();
-
-        //    if (!TryGetColor("SecondaryHueDarkBrush", out var secondaryDark)) 
-        //        secondaryDark = secondaryMid.Darken();
-
-        //    if (!TryGetColor("SecondaryHueDarkForegroundBrush", out var secondaryDarkForeground))
-        //        secondaryDarkForeground = secondaryDark.ContrastingForegroundColor();
-
-        //    //Attempt to simply look up the appropriate resources
-        //    return new Theme {
-        //        PrimaryLight = new ColorPair(GetColor("PrimaryHueLightBrush"), GetColor("PrimaryHueLightForegroundBrush")),
-        //        PrimaryMid = new ColorPair(GetColor("PrimaryHueMidBrush"), GetColor("PrimaryHueMidForegroundBrush")),
-        //        PrimaryDark = new ColorPair(GetColor("PrimaryHueDarkBrush"), GetColor("PrimaryHueDarkForegroundBrush")),
-
-        //        SecondaryLight = new ColorPair(secondaryLight, secondaryLightForeground),
-        //        SecondaryMid = new ColorPair(secondaryMid, secondaryMidForeground),
-        //        SecondaryDark = new ColorPair(secondaryDark, secondaryDarkForeground),
-
-        //        Background = GetColor("MaterialDesignBackground"),
-        //        Body = GetColor("MaterialDesignBody"),
-        //        BodyLight = GetColor("MaterialDesignBodyLight"),
-        //        CardBackground = GetColor("MaterialDesignCardBackground"),
-        //        CheckBoxDisabled = GetColor("MaterialDesignCheckBoxDisabled"),
-        //        CheckBoxOff = GetColor("MaterialDesignCheckBoxOff"),
-        //        ChipBackground = GetColor("MaterialDesignChipBackground"),
-        //        ColumnHeader = GetColor("MaterialDesignColumnHeader"),
-        //        DataGridRowHoverBackground = GetColor("MaterialDesignDataGridRowHoverBackground"),
-        //        Divider = GetColor("MaterialDesignDivider"),
-        //        FlatButtonClick = GetColor("MaterialDesignFlatButtonClick"),
-        //        FlatButtonRipple = GetColor("MaterialDesignFlatButtonRipple"),
-        //        Selection = GetColor("MaterialDesignSelection"),
-        //        SnackbarBackground = GetColor("MaterialDesignSnackbarBackground"),
-        //        SnackbarMouseOver = GetColor("MaterialDesignSnackbarMouseOver"),
-        //        SnackbarRipple = GetColor("MaterialDesignSnackbarRipple"),
-        //        TextAreaBorder = GetColor("MaterialDesignTextAreaBorder"),
-        //        TextAreaInactiveBorder = GetColor("MaterialDesignTextAreaInactiveBorder"),
-        //        TextBoxBorder = GetColor("MaterialDesignTextBoxBorder"),
-        //        TextFieldBoxBackground = GetColor("MaterialDesignTextFieldBoxBackground"),
-        //        TextFieldBoxDisabledBackground = GetColor("MaterialDesignTextFieldBoxDisabledBackground"),
-        //        TextFieldBoxHoverBackground = GetColor("MaterialDesignTextFieldBoxHoverBackground"),
-        //        ToolBackground = GetColor("MaterialDesignToolBackground"),
-        //        ToolBarBackground = GetColor("MaterialDesignToolBarBackground"),
-        //        ToolForeground = GetColor("MaterialDesignToolForeground"),
-        //        ToolTipBackground = GetColor("MaterialDesignToolTipBackground"),
-        //        Paper = GetColor("MaterialDesignPaper"),
-        //        ValidationError = GetColor("ValidationErrorBrush"),
-        //        ShadowLightColor = GetColor("MaterialDesignShadowLightColor"),
-        //        ShadowDarkColor = GetColor("MaterialDesignShadowDarkColor")
-        //    };
-
-        //    Color GetColor(string key) {
-        //        if (TryGetColor(key, out var color))
-        //            return color;
-
-        //        throw new InvalidOperationException($"Could not locate required resource with key '{key}'");
-        //    }
-
-        //    bool TryGetColor(string key, out Color color) {
-        //        if (resourceDictionary[key] is SolidColorBrush brush) {
-        //            color = brush.Color;
-        //            return true;
-        //        }
-
-        //        color = default;
-        //        return false;
-        //    }
-        //}
-
-        //[Obsolete($"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/wiki/Advanced-Theming")]
-        //public static IThemeManager? GetThemeManager(this IResourceDictionary resourceDictionary) {
-        //    if (resourceDictionary == null) throw new ArgumentNullException(nameof(resourceDictionary));
-
-        //    return resourceDictionary.TryGetResource(ThemeManagerKey, out var manager) ? manager as IThemeManager : null;
-        //}
-
+  
         internal static void SetSolidColorBrush(this IResourceDictionary sourceDictionary, string name, Color value)
         {
             if (sourceDictionary == null) throw new ArgumentNullException(nameof(sourceDictionary));
@@ -208,21 +102,5 @@ namespace Neumorphism.Avalonia.Styles.Themes {
                 sourceDictionary[name] = newBrush;
             });
         }
-
-        //[Obsolete($"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Neumorphism.Avalonia/wiki/Advanced-Theming")]
-        //private class ThemeManager : IThemeManager
-        //{
-        //    private readonly IResourceDictionary _resourceDictionary;
-
-        //    public ThemeManager(IResourceDictionary resourceDictionary) {
-        //        _resourceDictionary = resourceDictionary ?? throw new ArgumentNullException(nameof(resourceDictionary));
-        //    }
-
-        //    public event EventHandler<ThemeChangedEventArgs>? ThemeChanged;
-
-        //    public void OnThemeChange(ITheme? oldTheme, ITheme newTheme) {
-        //        ThemeChanged?.Invoke(this, new ThemeChangedEventArgs(_resourceDictionary, oldTheme, newTheme));
-        //    }
-        //}
     }
 }
