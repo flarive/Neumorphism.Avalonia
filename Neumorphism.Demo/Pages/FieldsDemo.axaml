@@ -24,11 +24,6 @@
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
-                <StackPanel.Styles>
-                    <Style Selector="TextBox">
-                        <Setter Property="Width" Value="240" />
-                    </Style>
-                </StackPanel.Styles>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="0,10,0,10" />
 
@@ -78,12 +73,6 @@
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
-                <StackPanel.Styles>
-                    <Style Selector="TextBox">
-                        <Setter Property="Width" Value="240" />
-                        <Setter Property="UseFloatingWatermark" Value="True" />
-                    </Style>
-                </StackPanel.Styles>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" />
                     <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields0">
@@ -114,41 +103,10 @@
                                  Text="Hello World!" />
                     </showMeTheXaml:XamlDisplay>
                 </StackPanel>
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields (dense)" />
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineDenseFields0">
-                        <TextBox Classes="Filled Dense" UseFloatingWatermark="False" Watermark="No floating label" />
-
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineDenseFields1">
-                        <TextBox UseFloatingWatermark="True" Classes="Filled Dense"
-                                 assists:TextFieldAssist.Label="Filled dense TextBox" />
-
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineDenseFields2">
-                        <TextBox UseFloatingWatermark="True" Classes="Filled Dense clearButton"
-                                 assists:TextFieldAssist.Label="Dense field with clear button" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineDenseFields3">
-                        <TextBox UseFloatingWatermark="True" Classes="Filled Dense revealPasswordButton"
-                                 assists:TextFieldAssist.Label="Password"
-                                 PasswordChar="*" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="SingleLineDenseFields4">
-                        <TextBox UseFloatingWatermark="True" Classes="Filled Dense" IsEnabled="False"
-                                 assists:TextFieldAssist.Label="Disabled Field"
-                                 Text="Hello World!" />
-                    </showMeTheXaml:XamlDisplay>
-                </StackPanel>
             </StackPanel>
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" />
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel.Styles>
-                        <Style Selector="TextBox">
-                            <Setter Property="Width" Value="240" />
-                        </Style>
-                    </StackPanel.Styles>
                     <showMeTheXaml:XamlDisplay UniqueId="MultilineFields2" VerticalAlignment="Top">
                         <TextBox UseFloatingWatermark="True"
                                  assists:TextFieldAssist.Label="Multiline textfield"
@@ -200,45 +158,17 @@
                                  assists:TextFieldAssist.Label="Disabled Field" Text="Hello World!" />
                     </showMeTheXaml:XamlDisplay>
                 </StackPanel>
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields (dense)" />
-                    <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineDenseFields0">
-                        <TextBox UseFloatingWatermark="False" Classes="Outline Dense" Watermark="No floating label" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineDenseFields1">
-                        <TextBox UseFloatingWatermark="True" Classes="Outline Dense"
-                                 assists:TextFieldAssist.Label="Outline dense TextBox" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineDenseFields2">
-                        <TextBox UseFloatingWatermark="True" Classes="Outline Dense clearButton"
-                                 assists:TextFieldAssist.Label="Dense field with clear button" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineDenseFields3">
-                        <TextBox UseFloatingWatermark="True" Classes="Outline Dense revealPasswordButton"
-                                 assists:TextFieldAssist.Label="Password" PasswordChar="*" />
-                    </showMeTheXaml:XamlDisplay>
-                    <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineDenseFields4">
-                        <TextBox UseFloatingWatermark="True" Classes="Outline Dense" IsEnabled="False"
-                                 assists:TextFieldAssist.Label="Disabled Field" Text="Hello World!" />
-                    </showMeTheXaml:XamlDisplay>
-                </StackPanel>
             </StackPanel>
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" />
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel.Styles>
-                        <Style Selector="TextBox">
-                            <Setter Property="Margin" Value="8" />
-                            <Setter Property="Width" Value="380" />
-                        </Style>
-                    </StackPanel.Styles>
                     <showMeTheXaml:XamlDisplay UniqueId="OutlineMultilineFields0" VerticalAlignment="Top">
                         <TextBox UseFloatingWatermark="True"
                                  assists:TextFieldAssist.Label="Multiline textfield"
                                  Classes="Outline"
-                                 MaxHeight="100"
                                  Width="360"
-                                 Height="100"
+                                 Height="360"
+                                 MaxHeight="360"
                                  AcceptsReturn="True"
                                  TextWrapping="Wrap" />
                     </showMeTheXaml:XamlDisplay>

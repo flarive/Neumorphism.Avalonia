@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <VersionPrefix>3.0.0-rc0</VersionPrefix>
+        <VersionPrefix>0.1.0.0</VersionPrefix>
         <Title>Neumorphism.Avalonia</Title>
         <Authors>Eviral</Authors>
         <Description>This repository is a set of styles that will help you customize your application in an appropriate neumorphic design.</Description>

@@ -76,7 +76,7 @@
     <Setter Property="FontSize" Value="16"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Height" Value="50"/>
-    <Setter Property="Width" Value="200"/>
+    <Setter Property="Width" Value="240"/>
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="BorderThickness" Value="0"/>
     <Setter Property="BorderBrush" Value="Transparent"/>
@@ -85,6 +85,8 @@
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
     <Setter Property="TextAlignment" Value="Left"/>
     <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
@@ -327,7 +329,7 @@
                 Background="{TemplateBinding Background}"
                 BorderBrush="Transparent"
                 BorderThickness="0"
-                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
+                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=3}"
                 CornerRadius="10">
             <Border.Styles>
               <!--Floating watermark anim-->
@@ -430,9 +432,9 @@
     <Setter Property="Margin" Value="10,14,1,1" />
     <Setter Property="RenderTransform" Value="scale(1)" />
   </Style>
-  <Style Selector="TextBox.Outline.Dense:empty:not(:focus-within) /template/ Border#watermarkRoot">
+  <!--<Style Selector="TextBox.Outline.Dense:empty:not(:focus-within) /template/ Border#watermarkRoot">
     <Setter Property="Margin" Value="10,12,1,1" />
-  </Style>
+  </Style>-->
 
   <Style Selector="TextBox.Outline:focus-within /template/ Border#PART_HoverIndicator">
     <Setter Property="BorderBrush" Value="#22000000" />
@@ -454,18 +456,18 @@
   </Style>
 
   <!-- Filled dense text field -->
-  <Style Selector="TextBox.Outline.Dense /template/ Grid#PART_RootBorder">
+  <!--<Style Selector="TextBox.Outline.Dense /template/ Grid#PART_RootBorder">
     <Setter Property="MinHeight" Value="44" />
-  </Style>
+  </Style>-->
 
-  <Style Selector="TextBox.Outline.Dense[UseFloatingWatermark=False] /template/ Grid#PART_RootBorder">
+  <!--<Style Selector="TextBox.Outline.Dense[UseFloatingWatermark=False] /template/ Grid#PART_RootBorder">
     <Setter Property="MinHeight" Value="40" />
-  </Style>
+  </Style>-->
 
-  <Style Selector="TextBox.Outline.Dense[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
+  <!--<Style Selector="TextBox.Outline.Dense[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
     <Setter Property="Margin" Value="0, 8" />
     <Setter Property="VerticalAlignment" Value="Center" />
-  </Style>
+  </Style>-->
 
   <!-- Invalid state -->
   <Style Selector="TextBox.Outline:error">
@@ -532,10 +534,11 @@
     <Setter Property="Height" Value="52" />
     <Setter Property="VerticalAlignment" Value="Top" />
   </Style>
-  <Style Selector="TextBox.Dense Border#PART_AssistButtonsContainer">
+  
+  <!--<Style Selector="TextBox.Dense Border#PART_AssistButtonsContainer">
     <Setter Property="Height" Value="48" />
     <Setter Property="VerticalAlignment" Value="Top" />
-  </Style>
+  </Style>-->
 
   <Style Selector="TextBox.clearButton Button#PART_ClearButton">
     <Setter Property="Height" Value="24" />
