@@ -19,7 +19,7 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
         public Color MaterialDesignDivider { get; } = Color.Parse("#1FFFFFFF");
         public Color MaterialDesignSelection { get; } = Color.Parse("#757575");
         public Color MaterialDesignToolForeground { get; } = Color.Parse("#FF616161");
-        public Color MaterialDesignToolBackground { get; } = Color.Parse("#FFe0e0e0");
+        public Color MaterialDesignToolBackground { get; } = Color.Parse("#FFE0E0E0");
         public Color MaterialDesignFlatButtonClick { get; } = Color.Parse("#19757575");
         public Color MaterialDesignFlatButtonRipple { get; } = Color.Parse("#FFB6B6B6");
         public Color MaterialDesignToolTipBackground { get; } = Color.Parse("#eeeeee");
@@ -38,5 +38,7 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
         public Color MaterialDesignShadowDarkColor { get; } = Color.Parse("#33000000");
 
         public Color MaterialDesignBorderShadowColor { get; } = Color.Parse("#FF404548");
+
+        public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FFd3d8de");
     }
 }

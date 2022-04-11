@@ -54,5 +54,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
         Color ShadowLightColor { get; set; }
         Color ShadowDarkColor { get; set; }
         Color BorderShadowColor { get; set; }
+
+        Color DisabledNoTransparencyColor { get; set; }
     }
 }

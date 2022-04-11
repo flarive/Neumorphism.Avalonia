@@ -44,6 +44,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
             ShadowLightColor = baseTheme.ShadowLightColor;
             ShadowDarkColor = baseTheme.ShadowDarkColor;
             BorderShadowColor = baseTheme.BorderShadowColor;
+            DisabledNoTransparencyColor = baseTheme.DisabledNoTransparencyColor;
         }
 
         public ColorPair PrimaryLight { get; set; }
@@ -83,5 +84,6 @@ namespace Neumorphism.Avalonia.Styles.Themes
         public Color ShadowLightColor { get; set; }
         public Color ShadowDarkColor { get; set; }
         public Color BorderShadowColor { get; set; }
+        public Color DisabledNoTransparencyColor { get; set; }
     }
 }

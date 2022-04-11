@@ -185,7 +185,10 @@ namespace Neumorphism.Avalonia.Styles.Themes
                 UpdateSolidColorBrush("MaterialDesignDataGridRowHoverBackground", oldTheme?.DataGridRowHoverBackground, newTheme.DataGridRowHoverBackground),
                 UpdateSolidColorBrush("MaterialDesignShadowLightColor", oldTheme?.ShadowLightColor, newTheme.ShadowLightColor),
                 UpdateSolidColorBrush("MaterialDesignShadowDarkColor", oldTheme?.ShadowDarkColor, newTheme.ShadowDarkColor),
-                UpdateSolidColorBrush("MaterialDesignBorderShadowColor", oldTheme?.BorderShadowColor, newTheme.BorderShadowColor)
+                UpdateSolidColorBrush("MaterialDesignBorderShadowColor", oldTheme?.BorderShadowColor, newTheme.BorderShadowColor),
+                UpdateSolidColorBrush("MaterialDesignDisabledNoTransparencyColor", oldTheme?.DisabledNoTransparencyColor, newTheme.DisabledNoTransparencyColor)
+
+                
             );
         }
 

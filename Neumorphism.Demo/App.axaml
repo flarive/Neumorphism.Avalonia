@@ -14,6 +14,7 @@
 
     <Style Selector="showMeTheXaml|XamlDisplay">
       <Setter Property="ClipToBounds" Value="False"></Setter>
+      <Setter Property="VerticalAlignment" Value="Top"></Setter>
     </Style>
   </Application.Styles>
 </Application>

@@ -1,9 +1,10 @@
 <Style xmlns="https://github.com/avaloniaui"
        Selector="DataValidationErrors">
+  
     <Setter Property="Template">
         <ControlTemplate>
             <DockPanel LastChildFill="True">
-                <ContentControl DockPanel.Dock="Bottom"
+                <ContentControl DockPanel.Dock="Bottom" Margin="0,0,0,0"
                                 ContentTemplate="{TemplateBinding ErrorTemplate}"
                                 DataContext="{TemplateBinding Owner}"
                                 Content="{Binding (DataValidationErrors.Errors)}"
@@ -20,12 +21,12 @@
     </Setter>
     <Setter Property="ErrorTemplate">
         <DataTemplate>
-            <ItemsControl Items="{Binding }">
+            <ItemsControl Items="{Binding}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Classes="Caption" Margin="0,3,0,0"  TextWrapping="Wrap"
+                        <TextBlock Classes="Caption" Margin="0,0,0,0" Padding="10,0,10,0" TextWrapping="Wrap" Height="20" MinHeight="20" MaxHeight="20"
                                    Foreground="{DynamicResource ValidationErrorBrush}"
-                                   Text="{Binding }"/>
+                                   Text="{Binding}"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

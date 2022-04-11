@@ -9,36 +9,37 @@
     <converters:BooleanValueToDoubleConverter x:Key="BooleanValueToDoubleConverter" />
     <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
     <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+    <converters:ComboboxHeightToFloatingWatermarkMarginConverter x:Key="ComboboxHeightToFloatingWatermarkMarginConverter" />
   </Styles.Resources>
 
 
 	<!--Regular (no class)-->
 	<Style Selector="ComboBox">
-		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="BorderBrush" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="8,4" />
-        <Setter Property="ClipToBounds" Value="False"/>
-        <Setter Property="Width" Value="NaN"/>
-        <Setter Property="Height" Value="38"/>
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
-        <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
-        <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontWeight" Value="Normal"/>
-        <Setter Property="FontStyle" Value="Normal"/>
-        <Setter Property="Cursor" Value="Hand"/>
-	    <Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="False"/>
-		<Setter Property="Template">
+			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="BorderBrush" Value="Transparent" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Padding" Value="8,4" />
+			<Setter Property="ClipToBounds" Value="False"/>
+			<Setter Property="Width" Value="NaN"/>
+			<Setter Property="Height" Value="38"/>
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+			<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
+			<Setter Property="FontWeight" Value="Medium" />
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="FontWeight" Value="Normal"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="Cursor" Value="Hand"/>
+			<Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="False"/>
+			<Setter Property="Template">
 			<ControlTemplate>
 				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
 					<TextBlock Name="floatingWatermark"
-								VerticalAlignment="Top"
-								HorizontalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+								VerticalAlignment="Center"
 								Foreground="{TemplateBinding Foreground}"
 								FontFamily="{TemplateBinding FontFamily}"
 								FontSize="{TemplateBinding FontSize}"
@@ -90,7 +91,7 @@
 												  VerticalAlignment="Center"
 												  Content="{TemplateBinding SelectionBoxItem}"
 												  ContentTemplate="{TemplateBinding ItemTemplate}"
-												  Margin="{TemplateBinding Padding}"/>
+												  Margin="{TemplateBinding Padding}" Padding="7,0,7,0"/>
 								<Border Name="splitBorder"
 										Grid.Column="1"
 										Margin="16 16 16 16"
@@ -125,7 +126,7 @@
 						   ClipToBounds="False" >
 						<Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
 														  Margin="10"
-														  Background="{TemplateBinding Background}" Opacity="1"
+														  Background="{TemplateBinding Background}"
 														  CornerRadius="5"
 														  BoxShadow="{Binding ElementName=PART_Popup, Path=Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}">
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
@@ -155,10 +156,16 @@
   
 
 	<!--floating wartermark-->
-	<Style Selector="ComboBox:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
-		<Setter Property="Margin" Value="1,-16,30,10"/>
+	<Style Selector="ComboBox:not(.Outline):not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-2}"/>
 		<Setter Property="RenderTransform" Value="scale(0.75)"/>
 	</Style>
+
+  <!--floating wartermark-->
+  <Style Selector="ComboBox.Outline:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
+    <Setter Property="RenderTransform" Value="scale(0.75)"/>
+  </Style>
 
 	<Style Selector="ComboBox[SelectedIndex=-1] /template/ TextBlock#floatingWatermark">
 		<Setter Property="Margin" Value="15,10,80,10"/>
@@ -197,7 +204,7 @@
 
 
 	<Style Selector="ComboBox.Filled[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
-		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}"/>
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignDisabledNoTransparencyColor}"/>
 	</Style>
 
 	
@@ -207,13 +214,13 @@
 	<Style Selector="ComboBox.Outline">
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Top"/>
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="Padding" Value="8,4" />
 		<Setter Property="ClipToBounds" Value="False"/>
 		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="38"/>
+		<Setter Property="Height" Value="48"/>
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
@@ -228,14 +235,15 @@
 				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
 					<TextBlock Name="floatingWatermark"
-								VerticalAlignment="Top"
 								HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
 								Foreground="{TemplateBinding Foreground}"
 								FontFamily="{TemplateBinding FontFamily}"
 								FontSize="{TemplateBinding FontSize}"
 								FontWeight="{TemplateBinding FontWeight}"
 								FontStyle="{TemplateBinding FontStyle}"
 								Text="{TemplateBinding PlaceholderText}"
+                Padding="5,0,5,0"
 								Opacity="0.5"
 								IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
 								RenderTransformOrigin="0, 0" />
@@ -243,7 +251,7 @@
 
 					<TextBlock Name="watermark"
 							  HorizontalAlignment="Stretch"
-							  VerticalAlignment="Top"
+							  VerticalAlignment="Center"
 							  Foreground="{TemplateBinding Foreground}"
 							  FontFamily="{TemplateBinding FontFamily}"
 							  FontSize="{TemplateBinding FontSize}"
@@ -251,6 +259,7 @@
 							  FontStyle="{TemplateBinding FontStyle}"
 							  Text="{TemplateBinding PlaceholderText}"
 							  Margin="15,10,80,10"
+                Padding="5,0,5,0"
 							  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
@@ -288,7 +297,7 @@
 													  VerticalAlignment="Center"
 													  Content="{TemplateBinding SelectionBoxItem}"
 													  ContentTemplate="{TemplateBinding ItemTemplate}"
-													  Margin="{TemplateBinding Padding}"/>
+													  Margin="{TemplateBinding Padding}" Padding="5,0,5,0"/>
 									<Border Name="splitBorder"
 											Grid.Column="1"
 											Margin="16 16 16 16"
@@ -344,7 +353,7 @@
 	</Style>
 
 	<Style Selector="ComboBox.Outline[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
-		<Setter Property="Background" Value="Orange"/>
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
 	</Style>
 
   

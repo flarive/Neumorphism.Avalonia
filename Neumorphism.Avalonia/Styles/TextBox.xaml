@@ -69,7 +69,7 @@
     <Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
     <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="0,10,0,10" />
+    <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
     <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
     <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial" />
@@ -90,7 +90,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
-          <Border Name="PART_RootBorder" Grid.Row="0" Height="{TemplateBinding Height}"
+          <Border Name="PART_RootBorder" Grid.Row="0" Height="{TemplateBinding Height}" VerticalAlignment="Top"
                 Margin="0"
                 Cursor="{TemplateBinding Cursor}"
                 Background="{TemplateBinding Background}"
@@ -177,8 +177,8 @@
 
             </Grid>
           </Border>
-          <TextBlock Grid.Row="1" Name="HintsTextBlock" Classes="Caption" Margin="0,3,0,0"
-                     Text="{TemplateBinding (assists:TextFieldAssist.Hints)}" TextTrimming="CharacterEllipsis" />
+          <!--<TextBlock Grid.Row="1" Name="HintsTextBlock" Classes="Caption" Margin="0,40,0,0" Background="Yellow" VerticalAlignment="Bottom" Height="20" MinHeight="20" MaxHeight="20" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+                     Text="{TemplateBinding (assists:TextFieldAssist.Hints)}" TextTrimming="CharacterEllipsis" />-->
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -281,9 +281,9 @@
     <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
   </Style>
 
-  <Style Selector="TextBox:error /template/ TextBlock#HintsTextBlock">
+  <!--<Style Selector="TextBox:error /template/ TextBlock#HintsTextBlock">
     <Setter Property="IsVisible" Value="False" />
-  </Style>
+  </Style>-->
 
 
 
@@ -304,7 +304,7 @@
     <Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
     <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="0,10,0,10" />
+    <Setter Property="Margin" Value="0,0,0,5" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
     <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
     <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial" />
@@ -375,16 +375,16 @@
                                     VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
                         <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                           <TextBlock Name="watermark"
-									 Padding="0"
-                                     Margin="0"
-                                     Classes="Subtitle1"
-                                     VerticalAlignment="Stretch"
-                                     Foreground="{TemplateBinding Foreground}"
-                                     Opacity="0.5"
-                                     Text="{TemplateBinding Watermark}"
-                                     FontFamily="{TemplateBinding FontFamily}"
-                                     TextAlignment="{TemplateBinding TextAlignment}"
-                                     TextWrapping="{TemplateBinding TextWrapping}"/>
+                                      Padding="0"
+                                      Margin="0"
+                                      Classes="Subtitle1"
+                                      VerticalAlignment="Stretch"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      Opacity="0.5"
+                                      Text="{TemplateBinding Watermark}"
+                                      FontFamily="{TemplateBinding FontFamily}"
+                                      TextAlignment="{TemplateBinding TextAlignment}"
+                                      TextWrapping="{TemplateBinding TextWrapping}"/>
                           <TextPresenter Name="PART_TextPresenter"
                             VerticalAlignment="Stretch"
                             HorizontalAlignment="Left"
@@ -413,8 +413,8 @@
               </Grid>
             </Panel>
           </Border>
-          <TextBlock Grid.Row="1" Name="HintsTextBlock" Classes="Caption" Margin="0,3,0,0"
-                     Text="{TemplateBinding (assists:TextFieldAssist.Hints)}" TextTrimming="CharacterEllipsis" />
+          <!--<TextBlock Grid.Row="1" Name="HintsTextBlock" Classes="Caption" Margin="0,3,0,0"
+                     Text="{TemplateBinding (assists:TextFieldAssist.Hints)}" TextTrimming="CharacterEllipsis" />-->
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -577,7 +577,7 @@
       <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
       <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
       <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
-      <Setter Property="Height" Value="38"/>
+      <Setter Property="Height" Value="48"/>
       <Setter Property="Width" Value="NaN"/>
       <Setter Property="BorderThickness" Value="0" />
       <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
@@ -747,7 +747,7 @@
 
 
   <Style Selector="TextBox.no-material[IsEnabled=False] /template/ TextPresenter#PART_TextPresenter">
-		<Setter Property="Opacity" Value="0.3" />
+		<Setter Property="Opacity" Value="0.2" />
 	</Style>
 	
 	

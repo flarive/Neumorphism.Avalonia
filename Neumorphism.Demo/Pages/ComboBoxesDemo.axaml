@@ -136,7 +136,7 @@
               </ComboBox>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes1">
-              <ComboBox Classes="Outline" PlaceholderText="Please select a user" assist:ComboBoxAssist.UseFloatingWatermark="True">
+              <ComboBox Classes="Outline" PlaceholderText="Please select a user" Height="80" assist:ComboBoxAssist.UseFloatingWatermark="True">
                 <TextBlock Text="John" />
                 <TextBlock Text="Paul" />
                 <TextBlock Text="Ringo" />

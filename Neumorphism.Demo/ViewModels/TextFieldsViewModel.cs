@@ -11,7 +11,7 @@ namespace Neumorphism.Demo.ViewModels
             get => _numerics;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || !Regex.IsMatch(value, @"^\d+([A-Za-z-+.']\d+)*$"))
+                if (!string.IsNullOrWhiteSpace(value) && !Regex.IsMatch(value, @"^\d+([A-Za-z-+.']\d+)*$"))
                 {
                     throw new DataValidationException("Invalid numerics");
                 }

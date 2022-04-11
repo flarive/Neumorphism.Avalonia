@@ -33,5 +33,6 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
         Color MaterialDesignShadowLightColor { get; }
         Color MaterialDesignShadowDarkColor { get; }
         Color MaterialDesignBorderShadowColor { get; }
+        Color MaterialDesignDisabledNoTransparencyColor { get; }
     }
 }
