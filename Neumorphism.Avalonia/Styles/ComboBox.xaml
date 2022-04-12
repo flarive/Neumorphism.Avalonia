@@ -23,7 +23,7 @@
 			<Setter Property="Padding" Value="8,4" />
 			<Setter Property="ClipToBounds" Value="False"/>
 			<Setter Property="Width" Value="NaN"/>
-			<Setter Property="Height" Value="38"/>
+			<Setter Property="Height" Value="50"/>
 			<Setter Property="Background" Value="Transparent" />
 			<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 			<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
@@ -53,7 +53,7 @@
 
 					<TextBlock Name="watermark"
 							  HorizontalAlignment="Stretch"
-							  VerticalAlignment="Top"
+							  VerticalAlignment="Center"
 							  Foreground="{TemplateBinding Foreground}"
 							  FontFamily="{TemplateBinding FontFamily}"
 							  FontSize="{TemplateBinding FontSize}"
@@ -94,7 +94,7 @@
 												  Margin="{TemplateBinding Padding}" Padding="7,0,7,0"/>
 								<Border Name="splitBorder"
 										Grid.Column="1"
-										Margin="16 16 16 16"
+										Margin="16 20 16 16"
 										HorizontalAlignment="Right"
 										VerticalAlignment="Center"
 										BorderBrush="Transparent"
@@ -156,10 +156,15 @@
   
 
 	<!--floating wartermark-->
-	<Style Selector="ComboBox:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+	<Style Selector="ComboBox:not(.Outline):not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
     <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
 		<Setter Property="RenderTransform" Value="scale(0.75)"/>
 	</Style>
+
+  <Style Selector="ComboBox.Outline:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-18}"/>
+    <Setter Property="RenderTransform" Value="scale(0.75)"/>
+  </Style>
 
 
 	<Style Selector="ComboBox[SelectedIndex=-1] /template/ TextBlock#floatingWatermark">
@@ -215,7 +220,7 @@
 		<Setter Property="Padding" Value="8,4" />
 		<Setter Property="ClipToBounds" Value="False"/>
 		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="48"/>
+		<Setter Property="Height" Value="50"/>
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
@@ -295,7 +300,7 @@
 													  Margin="{TemplateBinding Padding}" Padding="5,0,5,0"/>
 									<Border Name="splitBorder"
 											Grid.Column="1"
-											Margin="16 16 16 16"
+											Margin="16 20 16 16"
 											HorizontalAlignment="Right"
 											VerticalAlignment="Center"
 											BorderBrush="Transparent"
@@ -351,7 +356,14 @@
 		<Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
 	</Style>
 
+  <Style Selector="ComboBox[IsEnabled=false] /template/ TextBlock#watermark">
+    <Setter Property="Opacity" Value="0.2"/>
+  </Style>
+
+
   
+
+
 
   <Design.PreviewWith>
     <Border Padding="20" Width="360" Height="400">

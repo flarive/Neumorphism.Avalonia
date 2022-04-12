@@ -27,6 +27,8 @@
     </ItemGroup>
     
     <ItemGroup>
+      <None Remove="Styles\Fonts\Elephant\Elephant.ttf" />
+      <None Remove="Styles\Fonts\Elephant\ELEPHNT.TTF" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Light.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Medium.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Regular.ttf" />
@@ -34,6 +36,7 @@
     </ItemGroup>
     
     <ItemGroup>
+      <AvaloniaResource Include="Styles\Fonts\Elephant\Elephant.ttf" />
       <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Light.ttf">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </AvaloniaResource>
