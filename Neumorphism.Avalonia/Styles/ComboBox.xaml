@@ -26,7 +26,7 @@
 			<Setter Property="Height" Value="38"/>
 			<Setter Property="Background" Value="Transparent" />
 			<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
-			<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
+			<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
 			<Setter Property="FontWeight" Value="Medium" />
 			<Setter Property="FontSize" Value="16" />
 			<Setter Property="FontWeight" Value="Normal"/>
@@ -156,16 +156,11 @@
   
 
 	<!--floating wartermark-->
-	<Style Selector="ComboBox:not(.Outline):not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-2}"/>
+	<Style Selector="ComboBox:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
+    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
 		<Setter Property="RenderTransform" Value="scale(0.75)"/>
 	</Style>
 
-  <!--floating wartermark-->
-  <Style Selector="ComboBox.Outline:not(ComboBox[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
-    <Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
-    <Setter Property="RenderTransform" Value="scale(0.75)"/>
-  </Style>
 
 	<Style Selector="ComboBox[SelectedIndex=-1] /template/ TextBlock#floatingWatermark">
 		<Setter Property="Margin" Value="15,10,80,10"/>
@@ -223,7 +218,7 @@
 		<Setter Property="Height" Value="48"/>
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
-		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
+		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
 		<Setter Property="FontWeight" Value="Medium" />
 		<Setter Property="FontSize" Value="16" />
 		<Setter Property="FontWeight" Value="Normal"/>
@@ -236,14 +231,14 @@
 
 					<TextBlock Name="floatingWatermark"
 								HorizontalAlignment="Stretch"
-                VerticalAlignment="Center"
+								VerticalAlignment="Center"
 								Foreground="{TemplateBinding Foreground}"
 								FontFamily="{TemplateBinding FontFamily}"
 								FontSize="{TemplateBinding FontSize}"
 								FontWeight="{TemplateBinding FontWeight}"
 								FontStyle="{TemplateBinding FontStyle}"
 								Text="{TemplateBinding PlaceholderText}"
-                Padding="5,0,5,0"
+								Padding="5,0,5,0"
 								Opacity="0.5"
 								IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
 								RenderTransformOrigin="0, 0" />
@@ -259,7 +254,7 @@
 							  FontStyle="{TemplateBinding FontStyle}"
 							  Text="{TemplateBinding PlaceholderText}"
 							  Margin="15,10,80,10"
-                Padding="5,0,5,0"
+							  Padding="5,0,5,0"
 							  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"

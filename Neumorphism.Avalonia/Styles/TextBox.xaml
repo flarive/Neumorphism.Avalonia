@@ -72,7 +72,7 @@
     <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
     <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial" />
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial" />
     <Setter Property="FontSize" Value="16"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Height" Value="50"/>
@@ -307,7 +307,7 @@
     <Setter Property="Margin" Value="0,0,0,5" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
     <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial" />
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial" />
     <Setter Property="FontSize" Value="16"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Height" Value="50"/>
@@ -672,7 +672,7 @@
     <Setter Property="Margin" Value="0" />
     <Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
     <Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
-    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial" />
+    <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial" />
     <Setter Property="FontSize" Value="16"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="Height" Value="50"/>

@@ -31,7 +31,7 @@
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Height" Value="28" />
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
-        <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
+        <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
         <Setter Property="TextBlock.FontSize" Value="15"/>
         <Setter Property="TextBlock.FontWeight" Value="Normal"/>
         <Setter Property="TextBlock.FontStyle" Value="Normal"/>
@@ -133,7 +133,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="Height" Value="28" />
     <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBody}" />
-    <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto#Roboto, Arial"/>
+    <Setter Property="TextBlock.FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
     <Setter Property="TextBlock.FontSize" Value="15"/>
     <Setter Property="TextBlock.FontWeight" Value="Normal"/>
     <Setter Property="TextBlock.FontStyle" Value="Normal"/>

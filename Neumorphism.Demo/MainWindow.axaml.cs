@@ -96,7 +96,7 @@ namespace Neumorphism.Demo
                 SnackbarHost.Remove(snackbarModel);
             }
             
-            SnackbarHost.Post("See ya next time, user!");
+            SnackbarHost.Post("See ya next time, user !");
         }
 
         public void SwitchUITheme(object sender)
