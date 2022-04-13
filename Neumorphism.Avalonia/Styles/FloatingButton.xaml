@@ -8,11 +8,13 @@
 	
   <Styles.Resources>
     <ResourceDictionary>
-      <converters:BrushRoundConverter x:Key="BrushRoundConverter" />
-      <system:Double x:Key="ButtonHoveredOpacity">0.12</system:Double>
-      <system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
-      <system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
-      <CornerRadius x:Key="FloatingButtonRoundCorner">32</CornerRadius>
+        <converters:BrushRoundConverter x:Key="BrushRoundConverter" />
+        <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+        <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+        <system:Double x:Key="ButtonHoveredOpacity">0.12</system:Double>
+        <system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
+        <system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
+        <CornerRadius x:Key="FloatingButtonRoundCorner">32</CornerRadius>
     </ResourceDictionary>
   </Styles.Resources>
   
@@ -24,9 +26,8 @@
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Padding" Value="16" />
-    <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth1" />
     <Setter Property="assists:ButtonAssist.HoverColor" Value="{Binding Foreground, Converter={StaticResource BrushRoundConverter}, RelativeSource={RelativeSource Self}}"/>
-    <Setter Property="assists:ButtonAssist.ClickFeedbackColor" Value="#000000"/>
+    <Setter Property="assists:ButtonAssist.ClickFeedbackColor" Value="#FFFFFFFF"/>
     <Setter Property="TextBlock.FontWeight" Value="Medium" />
     <Setter Property="TextBlock.FontSize" Value="14" />
     <Setter Property="BorderThickness" Value="0" />
@@ -38,14 +39,14 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{StaticResource FloatingButtonRoundCorner}"
-                assists:ShadowAssist.ShadowDepth="{TemplateBinding assists:ShadowAssist.ShadowDepth}">
+                BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=3}">
           <Border CornerRadius="{StaticResource FloatingButtonRoundCorner}"
                   ClipToBounds="True">
             <Grid MinHeight="{TemplateBinding MinHeight}"
-                  MinWidth="{TemplateBinding MinWidth}">
-              <Border Name="PART_HoverIndicator"
+                  MinWidth="{TemplateBinding MinWidth}" Background="Transparent">
+              <Border Name="PART_HoverIndicator" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                       Background="{TemplateBinding assists:ButtonAssist.HoverColor}" />
-              <ripple:RippleEffect RippleFill="{TemplateBinding assists:ButtonAssist.ClickFeedbackColor}"
+              <ripple:RippleEffect RippleFill="{TemplateBinding assists:ButtonAssist.ClickFeedbackColor}" RaiseRippleCenter="True"
                                    RippleOpacity="{StaticResource ButtonPressedOpacity}">
                 <ContentPresenter Name="PART_ContentPresenter"
                                   ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -107,7 +108,6 @@
   </Style> 
 
   <!-- Default state and appeared state -->
-
   <Style Selector="cc|FloatingButton"> 
     <Setter Property="Opacity" Value="0"/>
     <Setter Property="ScaleTransform.ScaleX" Value="0" />
@@ -124,19 +124,63 @@
     <Setter Property="Opacity" Value="0" />
   </Style>
 
-  <!-- Feedbacks -->
- 
-  <Style Selector="cc|FloatingButton:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-      <Setter Property="assists:ShadowAssist.Darken" Value="True" />
+
+	<!-- Feedbacks -->
+   <Style Selector="cc|FloatingButton:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
   </Style>
   
   <Style Selector="cc|FloatingButton:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
     <Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
   </Style>
 
+	<Style Selector="cc|FloatingButton:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{TemplateBinding TextBlock.Foreground}" />
+		<Setter Property="RenderTransform" Value="scale(1.0)"/>
+	</Style>
 
-  <!-- Mini and extended style -->
+	<Style Selector="cc|FloatingButton:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White" />
+		<Setter Property="RenderTransform" Value="scale(1.5)"/>
+	</Style>
 
+
+	<Style Selector="cc|FloatingButton.Mini:not(.Dark, .no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{TemplateBinding TextBlock.Foreground}" />
+		<Setter Property="RenderTransform" Value="scale(1.0)"/>
+	</Style>
+
+	<Style Selector="cc|FloatingButton.Mini:pointerover:not(.Dark, .no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White" />
+		<Setter Property="RenderTransform" Value="scale(1.25)"/>
+	</Style>
+
+	<Style Selector="cc|FloatingButton.Mini.Dark:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{TemplateBinding TextBlock.Foreground}" />
+		<Setter Property="Opacity" Value="0.5" />
+		<Setter Property="RenderTransform" Value="scale(1.0)"/>
+	</Style>
+
+	<Style Selector="cc|FloatingButton.Mini.Dark:pointerover:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White" />
+		<Setter Property="Opacity" Value="1" />
+		<Setter Property="RenderTransform" Value="scale(1.25)"/>
+	</Style>
+
+
+
+	<Style Selector="cc|FloatingButton:not(.notransitions) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.85" Easing="CubicEaseOut" />
+			</Transitions>
+		</Setter>
+	</Style>
+
+	
+
+
+    <!-- Mini and extended style -->
   <Style Selector="cc|FloatingButton">
     <Setter Property="MinHeight" Value="56" />
     <Setter Property="MinWidth" Value="56" />
@@ -178,7 +222,6 @@
 
 
   <!-- Color definitions -->
-
   <Style Selector="cc|FloatingButton.Light">
     <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
@@ -197,7 +240,7 @@
     <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/> 
   </Style>
 
-  <Style Selector="cc|FloatingButton.Light Path">
+  <!--<Style Selector="cc|FloatingButton.Light Path">
     <Setter Property="Fill" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
   </Style>
   <Style Selector="cc|FloatingButton.Dark Path">
@@ -208,7 +251,7 @@
   </Style> 
   <Style Selector="cc|FloatingButton Path">
     <Setter Property="Fill" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
-  </Style>
+  </Style>-->
   
   <Style Selector="cc|FloatingButton:disabled:not(.no-material)">
     <Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />

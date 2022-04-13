@@ -19,11 +19,6 @@ namespace Neumorphism.Demo
             MaterialThemeStyles.BaseTheme = BaseThemeMode.Light;
         }
 
-        public static void OpenLeftDrawer()
-        {
-            //LeftDrawer
-        }
-
         public static void OpenProjectRepoLink() => OpenBrowserForVisitSite("https://github.com/flarive/Neumorphism.Avalonia");
 
         public static void OpenAvaloniaWebsiteLink() => OpenBrowserForVisitSite("https://avaloniaui.net");

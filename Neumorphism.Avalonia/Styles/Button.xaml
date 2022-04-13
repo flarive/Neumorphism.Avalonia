@@ -67,8 +67,8 @@
                                   Padding="{TemplateBinding Padding}"
                                   TextBlock.Foreground="{TemplateBinding Foreground}"
                                   TextBlock.FontFamily="{TemplateBinding FontFamily}"
-                                  TextBlock.FontSize="{TemplateBinding FontFamily}"
-                                  TextBlock.FontWeight="{TemplateBinding FontSize}"
+                                  TextBlock.FontSize="{TemplateBinding FontSize}"
+                                  TextBlock.FontWeight="{TemplateBinding FontWeight}"
                                   TextBlock.FontStyle="{TemplateBinding FontStyle}"
                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -248,7 +248,7 @@
 	
   
   <!--Class Light-->
-  <Style Selector="Button.Light:not(.Outline), ToggleButton.Light:not(.Outline)">
+  <Style Selector="Button.Light:not(.Outline,.Icon), ToggleButton.Light:not(.Outline,.Icon)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
   </Style>
@@ -258,6 +258,19 @@
     <Setter Property="Opacity" Value="0.2" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
   </Style>
+
+    <!--Class Icon Light default state-->
+	<Style Selector="Button.Icon.Light, ToggleButton.Icon.Light">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+	</Style>
+
+	<!--????-->
+	<Style Selector="Button.Icon.Light /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.Icon.Light /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White"/>
+	</Style>
+
+
+	
 
 	<!---Class Light pointer enter state -->
 	<Style Selector="Button.Light:pointerover:not(.no-material,.Icon) /template/ Border#PART_HoverIndicator,
@@ -284,13 +297,26 @@
 
 
 	<!--Class Dark-->
-  <Style Selector="Button.Dark:not(.Outline), ToggleButton.Dark:not(.Outline)">
+  <Style Selector="Button.Dark:not(.Outline,.Icon), ToggleButton.Dark:not(.Outline,.Icon)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
   </Style>
 
-  <Style Selector="Button.Dark:not(.Icon) /template/ Border#PART_HoverIndicator,
-                   ToggleButton.Dark /template/ Border#PART_HoverIndicator">
+	<!--Class Icon Dark default state-->
+	<Style Selector="Button.Icon.Dark, ToggleButton.Icon.Dark">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+	</Style>
+
+	   <!--????-->
+	<Style Selector="Button.Icon.Dark /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.Icon.Dark /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White"/>
+	</Style>
+
+	
+
+
+	<Style Selector="Button.Dark:not(.Icon) /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Dark:not(.Icon) /template/ Border#PART_HoverIndicator">
     <Setter Property="Opacity" Value="0.2" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
   </Style>
@@ -320,18 +346,28 @@
 
 
   <!--Class Accent-->
-  <Style Selector="Button.Accent:not(.Outline), ToggleButton.Accent:not(.Outline)">
+  <Style Selector="Button.Accent:not(.Outline,.Icon), ToggleButton.Accent:not(.Outline,.Icon)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
   </Style>
 
-  <Style Selector="Button.Accent /template/ Border#PART_HoverIndicator,
-                   ToggleButton.Accent /template/ Border#PART_HoverIndicator">
+	<!--Class Icon Accent default state-->
+	<Style Selector="Button.Icon.Accent, ToggleButton.Icon.Accent">
+		<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+	</Style>
+
+	<!--????-->
+	<Style Selector="Button.Icon.Accent /template/ ContentPresenter#PART_ContentPresenter, ToggleButton.Icon.Accent /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White"/>
+	</Style>
+
+  <Style Selector="Button.Accent:not(.Icon) /template/ Border#PART_HoverIndicator,
+                   ToggleButton.Accent:not(.Icon) /template/ Border#PART_HoverIndicator">
     <Setter Property="Opacity" Value="0.2" />
     <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
   </Style>
 
-	<Style Selector="Button.Accent:not(.Outline), ToggleButton.Accent:not(.Outline)">
+	<Style Selector="Button.Accent:not(.Outline,.Icon), ToggleButton.Accent:not(.Outline,.Icon)">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="BorderBrush" Value="Transparent"/>
 		<Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>

@@ -62,21 +62,6 @@ namespace Neumorphism.Demo.Pages
         
         public ObservableCollection<FeatureStatusModels> Features { get; private set; }
 
-
-        //public void UseMaterialUIDarkTheme()
-        //{
-        //    GlobalCommand.UseMaterialUIDarkTheme();
-
-        //    DirtyControlsRedrawFix();
-        //}
-
-        //public void UseMaterialUILightTheme()
-        //{
-        //    GlobalCommand.UseMaterialUILightTheme();
-
-        //    DirtyControlsRedrawFix();
-        //}
-
         public void OpenLeftDrawer()
         {
             var ancestors = this.GetVisualAncestors();
