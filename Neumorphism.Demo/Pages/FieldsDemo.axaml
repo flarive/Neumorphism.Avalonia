@@ -20,7 +20,7 @@
                 <Setter Property="Margin" Value="0"></Setter>
             </Style>
         </StackPanel.Styles>
-        <TextBlock Classes="Headline4 Subheadline" Text="Classic fields" />
+        <TextBlock Classes="Headline4 Subheadline" Text="Classic fields" Margin="0,30,0,0" />
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
@@ -69,7 +69,7 @@
             </StackPanel>
         </WrapPanel>
 
-        <TextBlock Classes="Headline4 Subheadline" Text="Filled fields" />
+        <TextBlock Classes="Headline4 Subheadline" Text="Filled fields" Margin="0,30,0,0" />
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
@@ -121,7 +121,7 @@
             </StackPanel>
         </WrapPanel>
 
-        <TextBlock Classes="Headline4 Subheadline" Text="Outline fields" />
+        <TextBlock Classes="Headline4 Subheadline" Text="Outline fields" Margin="0,30,0,0" />
 
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
@@ -174,7 +174,7 @@
         <WrapPanel HorizontalAlignment="Stretch">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Classes="Headline6 Subheadline2" Text="Header fields" />
+                    <TextBlock Classes="Headline6 Subheadline2" Text="Header fields" Margin="0,30,0,0" />
                     <showMeTheXaml:XamlDisplay UniqueId="HeaderFields0">
                         <TextBox Classes="Header" Watermark="Header field with left icon" Width="300">
                             <TextBox.InnerLeftContent>
@@ -241,10 +241,10 @@
             </StackPanel>
         </WrapPanel>
         
-        <WrapPanel HorizontalAlignment="Stretch">
+        <WrapPanel HorizontalAlignment="Stretch" Margin="0,0,0,50">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" />
+                    <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" Margin="0,30,0,0" />
                     <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown0">
                         <NumericUpDown Minimum="0" Maximum="1000" Increment="1" Value="0" Foreground="#FF555555" />
                     </showMeTheXaml:XamlDisplay>

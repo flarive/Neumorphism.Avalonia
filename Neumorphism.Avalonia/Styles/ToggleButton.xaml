@@ -54,6 +54,16 @@
     <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="Transparent" />
   </Style>
 
+
+	<Style Selector="ToggleButton:not(:checked):pointerover:not(.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Opacity" Value="0.8" />
+	</Style>
+
+	<Style Selector="ToggleButton:checked:pointerover:not(.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Opacity" Value="0.5" />
+	</Style>
+	
+
   <Style Selector="ToggleButton:not(:checked)">
     <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedBackground)}" />
     <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedForeground)}" />

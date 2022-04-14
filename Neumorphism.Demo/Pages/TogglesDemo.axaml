@@ -282,7 +282,7 @@
         <TextBlock Classes="Headline6 Subheadline2" Text="ToggleButtons" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal"  Margin="0,0,0,50">
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons0">
-                <ToggleButton>
+                <ToggleButton Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}">
 					<StackPanel Orientation="Vertical">
 						<avalonia:MaterialIcon Kind="Speaker"/>
 					    <TextBlock Text="Toggle"/>
@@ -293,7 +293,8 @@
 
 			<showMeTheXaml:XamlDisplay UniqueId="ToggleButtons1">
 				<ToggleButton assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueMidBrush}" assist:ToggleButtonAssist.CheckedForeground="White"
-							  assist:ToggleButtonAssist.UncheckedBackground="Transparent" assist:ToggleButtonAssist.UncheckedForeground="DarkGray">
+							  assist:ToggleButtonAssist.UncheckedBackground="Transparent" assist:ToggleButtonAssist.UncheckedForeground="DarkGray"
+							  Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}">
 					<ToggleButton.Styles>
 						<Style Selector="ToggleButton:not(:checked) avalonia|MaterialIcon#ToggleButtons1Icon">
 							<Setter Property="Kind" Value="SpeakerOff" />
@@ -318,28 +319,29 @@
 			</showMeTheXaml:XamlDisplay>
 
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons2">
-                <ToggleButton Classes="NoFeedback">NoFeedback</ToggleButton>
+                <ToggleButton Classes="NoFeedback" Width="150" Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}">NoFeedback</ToggleButton>
             </showMeTheXaml:XamlDisplay>
             
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons3">
                 <ToggleButton IsEnabled="False">Disabled</ToggleButton>
             </showMeTheXaml:XamlDisplay>
             
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons4">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Margin="0 0 8 0">Icon:</TextBlock>
-                    <ToggleButton Classes="Icon">
-                        <avalonia:MaterialIcon Kind="Globe"></avalonia:MaterialIcon>
+            <showMeTheXaml:XamlDisplay Width="100" UniqueId="ToggleButtons4">
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton Classes="Icon" Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}">
+                        <avalonia:MaterialIcon Kind="Globe" Width="28" Height="28"/>
                     </ToggleButton>
+					<TextBlock VerticalAlignment="Center" TextAlignment="Center" Margin="0 15 0 0">Icon</TextBlock>
                 </StackPanel>
             </showMeTheXaml:XamlDisplay>
             
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons5">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Margin="0 0 8 0">Icon NoFeedback:</TextBlock>
-                    <ToggleButton Classes="Icon NoFeedback">
-                        <avalonia:MaterialIcon Kind="Globe"></avalonia:MaterialIcon>
+            <showMeTheXaml:XamlDisplay Width="150" UniqueId="ToggleButtons5">
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton Classes="Icon NoFeedback" Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}">
+                        <avalonia:MaterialIcon Kind="Globe" Width="28" Height="28"/>
                     </ToggleButton>
+					<TextBlock VerticalAlignment="Center" TextAlignment="Center" Margin="0 5 0 0">Icon</TextBlock>
+					<TextBlock VerticalAlignment="Center" TextAlignment="Center" Margin="0 0 0 0">NoFeedback</TextBlock>
                 </StackPanel>
             </showMeTheXaml:XamlDisplay>
 

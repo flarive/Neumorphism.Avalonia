@@ -7,17 +7,17 @@
   xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
   xmlns:system="clr-namespace:System;assembly=netstandard">
 
-	<Styles.Resources>
-		<system:Double x:Key="ButtonHoveredOpacity">0.12</system:Double>
-		<system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
-		<system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
-		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
-		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
-    <LinearGradientBrush x:Key="BackgroundGradient">
-      <GradientStop Offset="0" Color="#FF00FF00" />
-      <GradientStop Offset="1" Color="#FFFF0000" />
-    </LinearGradientBrush>
-	</Styles.Resources>
+    <Styles.Resources>
+        <system:Double x:Key="ButtonHoveredOpacity">0.12</system:Double>
+        <system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
+        <system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
+        <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+        <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+        <LinearGradientBrush x:Key="BackgroundGradient">
+            <GradientStop Offset="0" Color="#FF00FF00" />
+            <GradientStop Offset="1" Color="#FFFF0000" />
+        </LinearGradientBrush>
+    </Styles.Resources>
 
 
 
@@ -107,8 +107,8 @@
 
   <!--Pointer enter state -->
   <Style
-      Selector="Button:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder,
-      ToggleButton:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      Selector="Button:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder,
+      ToggleButton:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
     <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
     <Setter Property="Opacity" Value="1"/>
   </Style>
@@ -484,12 +484,5 @@
 		<Setter Property="BorderThickness" Value="8"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
 	</Style>
-	
-	
-	
-
-	
-
-	
 </Styles>
 
