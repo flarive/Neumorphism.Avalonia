@@ -240,14 +240,18 @@
   </Style>
 
 	<!-- Class Icon pressed state -->
-	<Style Selector="Button.Icon:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_HoverIndicator,
-                     ToggleButton.Icon:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="Gray"/>
-		<Setter Property="Opacity" Value="1"/>
+	<Style Selector="Button.Icon:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_ButtonRootBorder,
+                     ToggleButton.Icon:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
 	</Style>
-	
-  
-  <!--Class Light-->
+
+
+
+
+
+
+
+	<!--Class Light-->
   <Style Selector="Button.Light:not(.Outline,.Icon), ToggleButton.Light:not(.Outline,.Icon)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
@@ -279,20 +283,11 @@
   </Style>
 
 	<!---Class Light pressed state -->
-	<Style
-		Selector="Button.Light:pressed:not(.no-material,.Icon) /template/ Border#PART_HoverIndicator,
-      ToggleButton.Light:pressed:not(.no-material,.Icon) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		<Setter Property="Opacity" Value="0.3"/>
+	<Style Selector="Button.Icon.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+                     ToggleButton.Icon.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
 	</Style>
 
-	<!---Class Icon Light pressed state -->
-	<Style
-		Selector="Button.Icon.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
-      ToggleButton.Icon.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		<Setter Property="Opacity" Value="0.3"/>
-	</Style>
 
 
 
@@ -329,23 +324,14 @@
   </Style>
 
 	<!---Class Dark pressed state -->
-	<Style
-		Selector="Button.Dark:pressed:not(.no-material,.Icon) /template/ Border#PART_HoverIndicator,
-      ToggleButton.Dark:pressed:not(.no-material,.Icon) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-		<Setter Property="Opacity" Value="0.3"/>
-	</Style>
-
-	<!---Class Icon Dark pressed state -->
-	<Style
-		Selector="Button.Icon.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
-      ToggleButton.Icon.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-		<Setter Property="Opacity" Value="0.3"/>
+	<Style Selector="Button.Icon.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+                     ToggleButton.Icon.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
 	</Style>
 
 
-  <!--Class Accent-->
+
+	<!--Class Accent-->
   <Style Selector="Button.Accent:not(.Outline,.Icon), ToggleButton.Accent:not(.Outline,.Icon)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
@@ -380,10 +366,12 @@
     <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
   </Style>
 
+	
+
 	<!---Class Accent pressed state -->
 	<Style Selector="Button.Accent:pressed:not(.no-material,.Icon) /template/ Border#PART_ButtonRootBorder,
                      ToggleButton.Accent:pressed:not(.no-material,.Icon) /template/ Border#PART_ButtonRootBorder">
-    <Setter Property="Opacity" Value="1.0"/>
+    <Setter Property="Opacity" Value="1"/>
   </Style>
 
 	<!---Class Accent pressed state -->
@@ -393,17 +381,16 @@
   </Style>
 
 	<!---Class Icon Accent pressed state -->
-	<Style
-		Selector="Button.Icon.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator,
-      ToggleButton.Icon.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-		<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
-		<Setter Property="Opacity" Value="0.5"/>
+	<Style Selector="Button.Icon.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder,
+                     ToggleButton.Icon.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="Background" Value="{DynamicResource SecondaryHueDarkBrush}"/>
 	</Style>
 
-    
 
 
-  <!--Class Gradient-->
+
+
+	<!--Class Gradient-->
   <Style Selector="Button.Gradient:not(.Outline), ToggleButton.Gradient:not(.Outline)">
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>

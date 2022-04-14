@@ -21,7 +21,7 @@
   <Style Selector="cc|FloatingButton">
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Stretch" />
-    <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Cursor" Value="Hand" />
@@ -64,7 +64,6 @@
   </Style>
 
   <!-- Transitions -->
-  
   <Style Selector="cc|FloatingButton[IsVisible=true].notransitions /template/ Border#PART_ButtonRootBorder">
     <Style.Animations>
       <Animation Duration="0:0:0.001" FillMode="Both" Easing="QuarticEaseInOut">
@@ -139,10 +138,16 @@
 		<Setter Property="RenderTransform" Value="scale(1.0)"/>
 	</Style>
 
-	<Style Selector="cc|FloatingButton:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="cc|FloatingButton[IsExtended=false]:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="White" />
 		<Setter Property="RenderTransform" Value="scale(1.5)"/>
 	</Style>
+
+	<Style Selector="cc|FloatingButton[IsExtended=true]:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="White" />
+		<Setter Property="RenderTransform" Value="scale(1.1)"/>
+	</Style>
+
 
 
 	<Style Selector="cc|FloatingButton.Mini:not(.Dark, .no-material) /template/ ContentPresenter#PART_ContentPresenter">

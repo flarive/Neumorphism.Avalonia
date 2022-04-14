@@ -13,7 +13,7 @@
     <StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
         <TextBlock Classes="Headline4 Subheadline" Text="ComboBoxes" />
 
-        <WrapPanel HorizontalAlignment="Stretch">
+        <WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Classic comboboxes" />
                 <StackPanel Orientation="Horizontal">
@@ -69,7 +69,7 @@
 
 
 
-        <WrapPanel HorizontalAlignment="Stretch" Margin="0,15,0,0">
+        <WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
           <StackPanel>
             <TextBlock Classes="Headline6 Subheadline2" Text="Filled comboboxes" />
             <StackPanel Orientation="Horizontal">
@@ -123,8 +123,8 @@
           </StackPanel>
         </WrapPanel>
 
-      <WrapPanel HorizontalAlignment="Stretch" Margin="0,15,0,0">
-        <StackPanel>
+      <WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+        <StackPanel Margin="0,0,0,50">
           <TextBlock Classes="Headline6 Subheadline2" Text="Outline comboboxes" />
           <StackPanel Orientation="Horizontal">
             <showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes0">

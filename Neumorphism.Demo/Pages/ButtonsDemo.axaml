@@ -15,7 +15,7 @@
 
 		
 		<!--Regular buttons-->
-		<TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
                 <Button Content="Default" ToolTip.Tip='Regular button without any class.' />
@@ -53,7 +53,7 @@
         </StackPanel>
 
         <!--Outline buttons-->
-		<TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -101,7 +101,7 @@
         </StackPanel>
 
 		<!--Icon buttons-->
-		<TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" Margin="0,30,0,0" />
 		<StackPanel Orientation="Horizontal">
 			<StackPanel.Styles>
 				<Style Selector="showMeTheXaml|XamlDisplay">
@@ -139,7 +139,7 @@
 		</StackPanel>
 
 		<!--Floating buttons-->
-		<TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -156,14 +156,14 @@
 			<showMeTheXaml:XamlDisplay UniqueId="FloatingButtons1">
 				<styles:FloatingButton Classes="Mini" ToolTip.Tip="Regular floating button with class Mini." Command="{Binding ButtonClick}">
 					<styles:FloatingButton.Content>
-						<avalonia:MaterialIcon Kind="Clock" Width="20" Height="20" Foreground="White" />
+						<avalonia:MaterialIcon Kind="Settings" Width="22" Height="22" Foreground="{DynamicResource PrimaryHueLightBrush}" />
 					</styles:FloatingButton.Content>
 				</styles:FloatingButton>
 			</showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons2">
                 <styles:FloatingButton Classes="Light Mini" ToolTip.Tip="Regular floating button with classes Light Mini." Command="{Binding ButtonClick}">
 					<styles:FloatingButton.Content>
-						<avalonia:MaterialIcon Kind="BellAlert" Width="20" Height="20" Foreground="White" />
+						<avalonia:MaterialIcon Kind="Bell" Width="20" Height="20" Foreground="White" />
 					</styles:FloatingButton.Content>
 				</styles:FloatingButton>
             </showMeTheXaml:XamlDisplay>
@@ -218,8 +218,8 @@
 			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Extended floating buttons" />
-        <StackPanel Orientation="Horizontal">
+        <TextBlock Classes="Headline6 Subheadline2" Text="Extended floating buttons" Margin="0,30,0,0" />
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
                     <Setter Property="Margin" Value="8" />
@@ -255,18 +255,18 @@
                     </Setter>
                 </Style>
             </StackPanel.Styles>
-			
-            <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton0">
-                <styles:FloatingButton Classes="Light" IsExtended="True" />
-            </showMeTheXaml:XamlDisplay>
+
+			<showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton0">
+				<styles:FloatingButton IsExtended="True" />
+			</showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton1">
-                <styles:FloatingButton IsExtended="True" />
+                <styles:FloatingButton Classes="Light" IsExtended="True" ToolTip.Tip="Regular expanded floating button with no class." />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton2">
-                <styles:FloatingButton Classes="Dark" IsExtended="True" />
+                <styles:FloatingButton Classes="Dark" IsExtended="True" ToolTip.Tip="Regular expanded floating button with class Dark." />
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton3">
-                <styles:FloatingButton Classes="Accent" IsExtended="{Binding ElementName=CheckBox1, Path=IsChecked}" />
+                <styles:FloatingButton Classes="Accent" IsExtended="{Binding ElementName=CheckBox1, Path=IsChecked}" ToolTip.Tip="Regular expanded floating button with class Light." />
             </showMeTheXaml:XamlDisplay>
             <CheckBox Name="CheckBox1" Content="IsExtended" Margin="16,8" />
         </StackPanel>

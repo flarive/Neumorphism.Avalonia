@@ -12,7 +12,7 @@
     <StackPanel Margin="16, 0">
         <TextBlock Classes="Headline4 Subheadline" Text="Toggles" />
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label right)" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label right)" Margin="0,30,0,0"/>
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -40,7 +40,7 @@
 			      </showMeTheXaml:XamlDisplay>
 		</StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label left)" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label left)" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="ToggleSwitch">
@@ -69,7 +69,7 @@
           </showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-		<TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label right)" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label right)" Margin="0,30,0,0" />
 		<StackPanel Orientation="Horizontal">
 			<StackPanel.Styles>
 				<Style Selector="showMeTheXaml|XamlDisplay">
@@ -100,7 +100,7 @@
 			</showMeTheXaml:XamlDisplay>
 		</StackPanel>
 
-      <TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label left)" />
+      <TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label left)" Margin="0,30,0,0" />
       <StackPanel Orientation="Horizontal">
         <StackPanel.Styles>
           <Style Selector="showMeTheXaml|XamlDisplay">
@@ -129,7 +129,7 @@
         </showMeTheXaml:XamlDisplay>
       </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Checkboxes" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Checkboxes" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -175,7 +175,7 @@
 			</showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButtons" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButtons" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -229,7 +229,7 @@
         </StackPanel>
 
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButton (button-like)" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="RadioButton (button-like)" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="avalonia|MaterialIcon">
@@ -279,10 +279,15 @@
             </StackPanel>
         </StackPanel>
         
-        <TextBlock Classes="Headline6 Subheadline2" Text="ToggleButtons" />
-        <StackPanel Orientation="Horizontal">
+        <TextBlock Classes="Headline6 Subheadline2" Text="ToggleButtons" Margin="0,30,0,0" />
+        <StackPanel Orientation="Horizontal"  Margin="0,0,0,50">
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons0">
-                <ToggleButton>ToggleButton</ToggleButton>
+                <ToggleButton>
+					<StackPanel Orientation="Vertical">
+					    <TextBlock Text="Toggle"/>
+					    <TextBlock Text="Button"/>
+					</StackPanel>
+				</ToggleButton>
             </showMeTheXaml:XamlDisplay>
 
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons1">
