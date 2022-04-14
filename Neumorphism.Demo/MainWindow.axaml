@@ -95,7 +95,7 @@
                         <ToggleButton Name="NavDrawerSwitch"
                                       Classes="Flat TransparentBack"
                                       Width="38" Height="38" CornerRadius="6" Padding="4">
-                            <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28"  UseLayoutRounding="False" Foreground="#FF444444" />
+                            <avalonia:MaterialIcon Kind="Menu" Width="28" Height="28"  UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
                         </ToggleButton>
                         <!--App title-->
                         <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
@@ -108,7 +108,7 @@
                                       assists:MenuAssist.PopupAnchor="TopRight"
                                       assists:MenuAssist.HorizontalOffset="-140"
                                       assists:MenuAssist.VerticalOffset="10">
-                                <MenuItem Header="Hello!" Click="HelloButtonMenuItem_OnClick">
+                                <MenuItem Header="Hello !" Click="HelloButtonMenuItem_OnClick">
                                   <MenuItem.Icon>
                                     <avalonia:MaterialIcon Kind="Hand" Width="24" Height="24" />
                                   </MenuItem.Icon>

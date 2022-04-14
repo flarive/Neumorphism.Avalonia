@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Avalonia;
-using Avalonia.Controls; 
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
@@ -77,26 +78,20 @@ namespace Neumorphism.Demo
 
         private void TemplatedControl_OnTemplateApplied(object sender, TemplateAppliedEventArgs e)
         {
-            SnackbarHost.Post("Welcome to Neumorphism.Avalonia demo !");
+            SnackbarHost.Post("Welcome to\r\nNeumorphism.Avalonia demo !");
         }
-
-        private List<SnackbarModel> helloSnackBars = new List<SnackbarModel>();
 
         private void HelloButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            var helloSnackBar = new SnackbarModel("Hello, user!", TimeSpan.Zero);
-            SnackbarHost.Post(helloSnackBar);
-            helloSnackBars.Add(helloSnackBar);
+            SnackbarHost.Post("Hello user !");
         }
 
         private void GoodbyeButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            foreach (var snackbarModel in helloSnackBars)
+            if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                SnackbarHost.Remove(snackbarModel);
+                desktop.Shutdown(0);
             }
-            
-            SnackbarHost.Post("See ya next time, user !");
         }
 
         public void SwitchUITheme(object sender)

@@ -45,7 +45,7 @@
     <Design.PreviewWith>
         <Border Padding="40">
             <cc:Card>
-                <TextBlock Text="Hello World!" />
+                <TextBlock Text="Hello World !" />
             </cc:Card>
         </Border>
     </Design.PreviewWith>

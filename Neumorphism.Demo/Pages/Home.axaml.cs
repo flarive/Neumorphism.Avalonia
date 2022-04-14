@@ -6,13 +6,9 @@ using Neumorphism.Avalonia.Styles.Assists;
 using System.Collections.ObjectModel;
 using Neumorphism.Avalonia.Styles.Dialog;
 using static Neumorphism.Demo.Models.StatusEnum;
-using Avalonia.Input;
 using Avalonia.VisualTree;
 using System.Linq;
-using Avalonia;
 using Neumorphism.Avalonia.Styles;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.ApplicationLifetimes;
 
 namespace Neumorphism.Demo.Pages
 {

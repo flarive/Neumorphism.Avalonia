@@ -29,14 +29,13 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="models:SnackbarModel">
                                 <cc:Card Padding="0" Margin="8" Height="58" Width="344">
-                                    <Grid ColumnDefinitions="16,*,8,Auto,8" RowDefinitions="6,Auto,6" Margin="0, 8">
-                                        <ContentPresenter Grid.Column="1" Grid.Row="1"
+                                    <Grid ColumnDefinitions="16,*,8,Auto,8" RowDefinitions="6,Auto,6" Margin="0" VerticalAlignment="Stretch">
+                                        <ContentPresenter Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Height="46" Margin="0"
                                                           Content="{CompiledBinding Content,
                                         Converter={x:Static converters:WrapContentIntoContentPresenterConverter.Instance}}">
                                             <ContentPresenter.DataTemplates>
                                                 <DataTemplate DataType="system:String">
-                                                    <TextBlock Name="PART_SnackbarSupportingText" TextAlignment="Center"
-                                                               Text="{CompiledBinding}" />
+                                                    <TextBlock Name="PART_SnackbarSupportingText" TextAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0" Text="{CompiledBinding}" />
                                                 </DataTemplate>
                                             </ContentPresenter.DataTemplates>
                                         </ContentPresenter>

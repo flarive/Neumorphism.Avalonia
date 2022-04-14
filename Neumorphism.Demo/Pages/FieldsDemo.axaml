@@ -51,7 +51,7 @@
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes5">
                         <TextBox UseFloatingWatermark="True" IsEnabled="False"
-                                 assists:TextFieldAssist.Label="Disabled Field" Text="Hello World!" />
+                                 assists:TextFieldAssist.Label="Disabled Field" Text="Hello World !" />
                     </showMeTheXaml:XamlDisplay>
                 </StackPanel>
             </StackPanel>

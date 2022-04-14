@@ -131,7 +131,7 @@ namespace Neumorphism.Demo.ViewModels
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
                 ContentHeader = "Welcome to use Neumorphism.Avalonia",
-                SupportingText = "Enjoy Material Design in AvaloniaUI!",
+                SupportingText = "Enjoy Neumorphism Design in AvaloniaUI!",
                 StartupLocation = WindowStartupLocation.CenterOwner, 
                 Borderless = true,
                 // Create Image control
