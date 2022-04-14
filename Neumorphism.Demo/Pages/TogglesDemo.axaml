@@ -284,21 +284,48 @@
             <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons0">
                 <ToggleButton>
 					<StackPanel Orientation="Vertical">
+						<avalonia:MaterialIcon Kind="Speaker"/>
 					    <TextBlock Text="Toggle"/>
 					    <TextBlock Text="Button"/>
 					</StackPanel>
 				</ToggleButton>
             </showMeTheXaml:XamlDisplay>
 
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons1">
+			<showMeTheXaml:XamlDisplay UniqueId="ToggleButtons1">
+				<ToggleButton assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueMidBrush}" assist:ToggleButtonAssist.CheckedForeground="White"
+							  assist:ToggleButtonAssist.UncheckedBackground="Transparent" assist:ToggleButtonAssist.UncheckedForeground="DarkGray">
+					<ToggleButton.Styles>
+						<Style Selector="ToggleButton:not(:checked) avalonia|MaterialIcon#ToggleButtons1Icon">
+							<Setter Property="Kind" Value="SpeakerOff" />
+						</Style>
+						<Style Selector="ToggleButton:checked avalonia|MaterialIcon#ToggleButtons1Icon">
+							<Setter Property="Kind" Value="Speaker" />
+						</Style>
+	
+						<Style Selector="ToggleButton:checked TextBlock#ToggleButtons1Text1">
+							<Setter Property="Text" Value="ON" />
+						</Style>
+						<Style Selector="ToggleButton:not(:checked) TextBlock#ToggleButtons1Text2">
+							<Setter Property="Text" Value="OFF" />
+						</Style>
+					</ToggleButton.Styles>
+					<StackPanel Orientation="Vertical">
+						<TextBlock Name="ToggleButtons1Text1" TextAlignment="Center"/>
+						 <avalonia:MaterialIcon Name="ToggleButtons1Icon" Margin="10" Width="34" Height="34"/>
+						<TextBlock Name="ToggleButtons1Text2" TextAlignment="Center"/>
+					</StackPanel>
+				</ToggleButton>
+			</showMeTheXaml:XamlDisplay>
+
+            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons2">
                 <ToggleButton Classes="NoFeedback">NoFeedback</ToggleButton>
             </showMeTheXaml:XamlDisplay>
             
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons2">
+            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons3">
                 <ToggleButton IsEnabled="False">Disabled</ToggleButton>
             </showMeTheXaml:XamlDisplay>
             
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons3">
+            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons4">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Margin="0 0 8 0">Icon:</TextBlock>
                     <ToggleButton Classes="Icon">
@@ -307,7 +334,7 @@
                 </StackPanel>
             </showMeTheXaml:XamlDisplay>
             
-            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons4">
+            <showMeTheXaml:XamlDisplay UniqueId="ToggleButtons5">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Margin="0 0 8 0">Icon NoFeedback:</TextBlock>
                     <ToggleButton Classes="Icon NoFeedback">
@@ -315,6 +342,8 @@
                     </ToggleButton>
                 </StackPanel>
             </showMeTheXaml:XamlDisplay>
+
+			
         </StackPanel>
     </StackPanel>
 </UserControl>

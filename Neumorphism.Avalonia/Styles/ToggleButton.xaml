@@ -2,7 +2,14 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
+  xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
   xmlns:controls="clr-namespace:Neumorphism.Avalonia.Styles.Controls">
+
+
+	<Styles.Resources>
+		<converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+		<converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+	</Styles.Resources>
 
   <Design.PreviewWith>
     <StackPanel Margin="20">
@@ -16,12 +23,15 @@
       </ToggleButton>
     </StackPanel>
   </Design.PreviewWith>
-  
+    
+  <!--Regular (no class)-->
   <Style Selector="ToggleButton">
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}" />
+	<Setter Property="assists:ToggleButtonAssist.CheckedBackground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+	<Setter Property="assists:ToggleButtonAssist.CheckedForeground" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -45,11 +55,23 @@
   </Style>
 
   <Style Selector="ToggleButton:not(:checked)">
-    <Setter Property="Background"
-            Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedBackground)}" />
-    <Setter Property="Foreground"
-            Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedForeground)}" />
+    <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedBackground)}" />
+    <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.UncheckedForeground)}" />
   </Style>
+
+	<Style Selector="ToggleButton:checked">
+		<Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.CheckedBackground)}" />
+		<Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource Self}, Path=(assists:ToggleButtonAssist.CheckedForeground)}" />
+	</Style>
+
+
+	<Style Selector="ToggleButton:checked:not(.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
+	</Style>
+	
+	<Style Selector="ToggleButton:not(:checked):not(.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}" />
+	</Style>
 
   <Style Selector="ToggleButton.NoFeedback">
 	  <Setter Property="assists:ShadowAssist.ShadowDepth" Value="Depth0"/>
