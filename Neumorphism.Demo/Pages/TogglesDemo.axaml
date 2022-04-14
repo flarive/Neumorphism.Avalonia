@@ -94,7 +94,7 @@
                                 assist:ToggleSwitchAssist.SwitchTrackOnBackground="Lime"
                                 assist:ToggleSwitchAssist.SwitchTrackOffBackground="Yellow"
                                 OnContent="ON" OffContent="OFF"
-                                BorderBrush="Lime"
+                                BorderBrush="Red"
                                 BorderThickness="8"
                                 ToolTip.Tip='Custom toggle switch.' />
 			</showMeTheXaml:XamlDisplay>

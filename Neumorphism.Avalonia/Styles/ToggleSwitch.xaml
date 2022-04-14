@@ -176,6 +176,8 @@
                                 <!--Background-->
                                 <Border Name="Track"
                                     Opacity="1"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
                                     HorizontalAlignment="Stretch"
                                     Background="Transparent"
                                     VerticalAlignment="Stretch"

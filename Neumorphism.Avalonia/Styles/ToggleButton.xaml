@@ -30,8 +30,8 @@
     <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}" />
-	<Setter Property="assists:ToggleButtonAssist.CheckedBackground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
-	<Setter Property="assists:ToggleButtonAssist.CheckedForeground" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="assists:ToggleButtonAssist.CheckedBackground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+    <Setter Property="assists:ToggleButtonAssist.CheckedForeground" Value="{DynamicResource PrimaryHueMidBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
