@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -11,7 +9,6 @@ using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
 using Neumorphism.Avalonia.Styles;
 using Neumorphism.Avalonia.Styles.Assists;
-using Neumorphism.Avalonia.Styles.Models;
 
 namespace Neumorphism.Demo
 {

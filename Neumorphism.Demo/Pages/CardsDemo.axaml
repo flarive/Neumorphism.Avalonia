@@ -50,7 +50,7 @@
             <showMeTheXaml:XamlDisplay UniqueId="Cards3">
                 <styles:Card Width="240" Padding="0" VerticalAlignment="Top">
                     <StackPanel>
-                        <Image Source="avares://Neumorphism.Demo/Assets/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" />
+                        <Image Source="avares://Neumorphism.Demo/Assets/avalonia-logo.png" />
                         <StackPanel Margin="16">
                             <TextBlock Classes="Headline6" Text="Autumn is come!" />
                             <TextBlock Margin="0,12,0,0" TextWrapping="Wrap">

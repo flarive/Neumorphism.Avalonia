@@ -22,7 +22,7 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
         public Color MaterialDesignToolBackground { get; } = Color.Parse("#FFE0E0E0");
         public Color MaterialDesignFlatButtonClick { get; } = Color.Parse("#19757575");
         public Color MaterialDesignFlatButtonRipple { get; } = Color.Parse("#FFB6B6B6");
-        public Color MaterialDesignToolTipBackground { get; } = Color.Parse("#eeeeee");
+        public Color MaterialDesignToolTipBackground { get; } = Color.Parse("#EEEEEE");
         public Color MaterialDesignChipBackground { get; } = Color.Parse("#FF2E3C43");
         public Color MaterialDesignSnackbarBackground { get; } = Color.Parse("#FFCDCDCD");
         public Color MaterialDesignSnackbarMouseOver { get; } = Color.Parse("#FFB9B9BD");
@@ -39,6 +39,6 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
 
         public Color MaterialDesignBorderShadowColor { get; } = Color.Parse("#FF404548");
 
-        public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FFD3D8DE");
+        public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FF42464A");
     }
 }

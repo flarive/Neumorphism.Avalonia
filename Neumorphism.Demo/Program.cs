@@ -14,7 +14,6 @@ namespace Neumorphism.Demo
         // yet and stuff might break.
         public static void Main(string[] args)
         {
-            //BuildAvaloniaApp().Start(AppMain, args);
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
 
@@ -26,12 +25,5 @@ namespace Neumorphism.Demo
                              .UseXamlDisplay()
                              .LogToTrace();
         }
-
-        // Your application's entry point. Here you can initialize your MVVM framework, DI
-        // container, etc.
-        //private static void AppMain(Application app, string[] args) {
-        //    MainWindow = new MainWindow();
-        //    app.Run(MainWindow);
-        //}
     }
 }

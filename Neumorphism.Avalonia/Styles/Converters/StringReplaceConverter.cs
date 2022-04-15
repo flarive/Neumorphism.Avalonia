@@ -11,8 +11,8 @@ namespace Neumorphism.Avalonia.Styles.Converters
         public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values != null && values.Count == 2
-                && values[0] != AvaloniaProperty.UnsetValue
-                && values[1] != AvaloniaProperty.UnsetValue)
+                && values[0] != AvaloniaProperty.UnsetValue && values[0] is string
+                && values[1] != AvaloniaProperty.UnsetValue && values[1] is string)
             {
                 string primaryString = (string)values[0];
                 string secondaryString = (string)values[1];

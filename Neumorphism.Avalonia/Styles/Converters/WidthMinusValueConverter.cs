@@ -9,20 +9,42 @@ namespace Neumorphism.Avalonia.Styles.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
             int minus = 0;
-            
-            if (parameter != null)
-            {
-                int.TryParse(parameter.ToString(), out minus);
-            }
-            
+            double val = 0;
+
             if (value is double)
             {
-                return ((double)value) - minus;
+                val = ((double)value);
             }
 
-            return 0;
+
+            if (parameter != null)
+            {
+                string param = parameter.ToString();
+                if (!string.IsNullOrEmpty(param))
+                {
+                    if (!int.TryParse(param, out minus))
+                    {
+                        // percent
+                        if (param.EndsWith("%"))
+                        {
+                            int percent = 0;
+                            param = param.Replace("%", string.Empty);
+                            if (int.TryParse(param, out percent))
+                            {
+                                double nn = (val * percent) / 100;
+                                return val - nn;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return val - minus;
+                    }
+                }
+            }
+
+            return val;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

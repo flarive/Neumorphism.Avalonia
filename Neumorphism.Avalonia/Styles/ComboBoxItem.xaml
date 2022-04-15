@@ -7,7 +7,7 @@
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
-    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Opacity" Value="1" />
     <Setter Property="Height" Value="38" />

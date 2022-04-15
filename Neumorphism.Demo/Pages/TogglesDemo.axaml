@@ -9,10 +9,32 @@
             xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
             xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
             x:Class="Neumorphism.Demo.Pages.TogglesDemo">
+
+
+	<UserControl.Resources>
+		<LinearGradientBrush x:Key="OffGradient">
+			<GradientStop Offset="0" Color="Transparent" />
+			<GradientStop Offset="1" Color="#6600FF00" />
+		</LinearGradientBrush>
+		<LinearGradientBrush x:Key="OnGradient">
+			<GradientStop Offset="0" Color="#66FF0000" />
+			<GradientStop Offset="1" Color="Transparent" />
+		</LinearGradientBrush>
+	    <LinearGradientBrush x:Key="OnGrayGradient">
+			<GradientStop Offset="0" Color="#44666666" />
+			<GradientStop Offset="1" Color="Transparent" />
+		</LinearGradientBrush>
+	    <LinearGradientBrush x:Key="OffGrayGradient">
+			<GradientStop Offset="0" Color="Transparent" />
+			<GradientStop Offset="1" Color="#44666666" />
+		</LinearGradientBrush>
+	</UserControl.Resources>
+
+	
     <StackPanel Margin="16, 0">
         <TextBlock Classes="Headline4 Subheadline" Text="Toggles" />
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label right)" Margin="0,30,0,0"/>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles" Margin="0,30,0,0"/>
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="showMeTheXaml|XamlDisplay">
@@ -32,15 +54,19 @@
                 <ToggleSwitch Content="Accent color" OnContent="" OffContent="" IsChecked="True" Classes="Accent" ToolTip.Tip='Regular toggle switch with class Accent.' />
             </showMeTheXaml:XamlDisplay>
 			      <showMeTheXaml:XamlDisplay UniqueId="RegularToggles4">
-				      <ToggleSwitch Content="SWITCH" IsChecked="True" assists:SelectionControlAssist.Size="60" 
-							        assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red" 
-							        assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green" 
-							        OnContent="ON" OffContent="OFF" Background="Lime"
-							        ToolTip.Tip='Custom toggle switch.' />
+					  <ToggleSwitch Content="Custom" IsChecked="True" assists:SelectionControlAssist.Size="160"
+									OnContent="Custom (ON)" OffContent="Custom (OFF)"
+									BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignBackground}"
+									assist:ToggleSwitchAssist.SwitchTrackOffBackground="{StaticResource OffGradient}"
+									assist:ToggleSwitchAssist.SwitchTrackOnBackground="{StaticResource OnGradient}"
+				                    assist:ToggleSwitchAssist.SwitchTrackOnForeground="Crimson"
+		                            assist:ToggleSwitchAssist.SwitchTrackOffForeground="LimeGreen"
+									assist:ToggleSwitchAssist.SwitchTrackOverForeground="White"
+							        ToolTip.Tip='Custom toggle switch.'/>
 			      </showMeTheXaml:XamlDisplay>
 		</StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (label left)" Margin="0,30,0,0" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Regular toggles (left)" Margin="0,30,0,0" />
         <StackPanel Orientation="Horizontal">
             <StackPanel.Styles>
                 <Style Selector="ToggleSwitch">
@@ -60,16 +86,20 @@
             <ToggleSwitch Content="Accent color" OnContent="" OffContent="" IsChecked="True" Classes="Accent LeftHeader" ToolTip.Tip='Regular toggle switch with class Accent.' />
           </showMeTheXaml:XamlDisplay>
           <showMeTheXaml:XamlDisplay UniqueId="RegularTogglesLeft4">
-            <ToggleSwitch Content="SWITCH" IsChecked="True" assists:SelectionControlAssist.Size="60"
-                    assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red"
-                    assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green"
-                    OnContent="ON" OffContent="OFF" Background="Lime"
+            <ToggleSwitch Content="Custom" IsChecked="True" assists:SelectionControlAssist.Size="60"
+                    assist:ToggleSwitchAssist.SwitchTrackOnBackground="{StaticResource OnGrayGradient}"
+                    assist:ToggleSwitchAssist.SwitchTrackOffBackground="{StaticResource OffGrayGradient}"
+                    OnContent="Custom" OffContent="Custom"
+                    assist:ToggleSwitchAssist.SwitchTrackOnForeground="#CCFF0000"
+                    assist:ToggleSwitchAssist.SwitchTrackOffForeground="#CC00FF00"
+                    assist:ToggleSwitchAssist.SwitchTrackOverForeground="Transparent"
+				    BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}"
                     Classes="LeftHeader"
                     ToolTip.Tip='Custom toggle switch.' />
           </showMeTheXaml:XamlDisplay>
         </StackPanel>
 
-		<TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label right)" Margin="0,30,0,0" />
+		<TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles" Margin="0,30,0,0" />
 		<StackPanel Orientation="Horizontal">
 			<StackPanel.Styles>
 				<Style Selector="showMeTheXaml|XamlDisplay">
@@ -89,18 +119,21 @@
 				<ToggleSwitch Content="Accent color" OnContent="" OffContent="" IsChecked="True" Classes="Outline Accent" ToolTip.Tip='Regular toggle switch with class Accent.' />
 			</showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="OutlineToggles4">
-				<ToggleSwitch Content="SWITCH"
+				<ToggleSwitch Content="SOUND"
                                 IsChecked="True" Classes="Outline"
-                                assist:ToggleSwitchAssist.SwitchTrackOnBackground="Lime"
-                                assist:ToggleSwitchAssist.SwitchTrackOffBackground="Yellow"
-                                OnContent="ON" OffContent="OFF"
-                                BorderBrush="Red"
-                                BorderThickness="8"
+							    assist:SelectionControlAssist.Size="144" Height="38"
+                                assist:ToggleSwitchAssist.SwitchTrackOnBackground="#FFced2d9"
+                                assist:ToggleSwitchAssist.SwitchTrackOffBackground="#FFced2d9"
+                                assist:ToggleSwitchAssist.SwitchTrackOnForeground="Blue"
+                                assist:ToggleSwitchAssist.SwitchTrackOffForeground="Blue"
+                                assist:ToggleSwitchAssist.SwitchTrackOverForeground="#AAAAAAAA"
+                                OnContent="SOUND IS ON" OffContent="SOUND IS OFF"
+                                BorderBrush="#66666666"
                                 ToolTip.Tip='Custom toggle switch.' />
 			</showMeTheXaml:XamlDisplay>
 		</StackPanel>
 
-      <TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (label left)" Margin="0,30,0,0" />
+      <TextBlock Classes="Headline6 Subheadline2" Text="Outlined toggles (left)" Margin="0,30,0,0" />
       <StackPanel Orientation="Horizontal">
         <StackPanel.Styles>
           <Style Selector="showMeTheXaml|XamlDisplay">
@@ -120,12 +153,16 @@
           <ToggleSwitch Content="Accent color" OnContent="" OffContent="" IsChecked="True" Classes="Outline Accent LeftHeader" ToolTip.Tip='Regular toggle switch with class Accent.' />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="OutlineTogglesLeft4">
-          <ToggleSwitch Content="SWITCH" IsChecked="True" Classes="Outline LeftHeader"
-                  assists:SelectionControlAssist.Size="60"
-                  assist:ToggleSwitchAssist.SwitchTrackOnBackground="Red"
-                  assist:ToggleSwitchAssist.SwitchTrackOffBackground="Green"
-                  OnContent="ON" OffContent="OFF" Background="LightGray"
-                  ToolTip.Tip='Custom toggle switch.' />
+          <ToggleSwitch Content="Custom" OnContent="Custom" OffContent="Custom" IsChecked="True" Classes="Outline LeftHeader"
+                        assists:SelectionControlAssist.Size="60"
+                        assist:ToggleSwitchAssist.SwitchTrackOnBackground="{DynamicResource MaterialDesignTextAreaInactiveBorder}"
+                        assist:ToggleSwitchAssist.SwitchTrackOffBackground="{DynamicResource MaterialDesignBackground}"
+                        assist:ToggleSwitchAssist.SwitchTrackOnForeground="Orange"
+                        assist:ToggleSwitchAssist.SwitchTrackOffForeground="Orange"
+                        assist:ToggleSwitchAssist.SwitchTrackOverForeground="OrangeRed"
+                        Foreground="Gray"
+                        BorderBrush="Transparent"
+                        ToolTip.Tip='Custom toggle switch.' />
         </showMeTheXaml:XamlDisplay>
       </StackPanel>
 
@@ -158,16 +195,16 @@
                     <Setter Property="Margin" Value="8" />
                 </Style>
             </StackPanel.Styles>
-            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes4">
+            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes5">
                 <CheckBox Content="Check me !" Classes="Accent" ToolTip.Tip='Regular unchecked checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes5">
+            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes6">
                 <CheckBox Content="Uncheck me !" Classes="Accent" IsChecked="True" ToolTip.Tip='Regular checked checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
-            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes6">
+            <showMeTheXaml:XamlDisplay UniqueId="Checkboxes7">
                 <CheckBox Content="Uncheckable" IsChecked="True" Classes="Accent" IsEnabled="False" ToolTip.Tip='Regular disabled checkbox with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
-			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes7">
+			<showMeTheXaml:XamlDisplay UniqueId="Checkboxes8">
 				<CheckBox Content="Custom checkbox" IsChecked="True" Classes="Accent" 
 						    assist:SelectionControlAssist.Size="18"
 					        assists:SelectionControlAssist.InnerSize="12"
@@ -183,19 +220,19 @@
                 </Style>
             </StackPanel.Styles>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons0">
-                <RadioButton GroupName="1" Content="Value 1" ToolTip.Tip='Regular unchecked radio button with no class.'/>
+                <RadioButton GroupName="1" Content="Value 1" IsChecked="True" ToolTip.Tip='Regular unchecked radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons1">
-                <RadioButton GroupName="1" Content="Value 2" IsChecked="True" ToolTip.Tip='Regular checked radio button with no class.'/>
+                <RadioButton GroupName="1" Content="Value 2" ToolTip.Tip='Regular checked radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons2">
                 <RadioButton GroupName="1" Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with no class.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="RadioButtons3">
-				<RadioButton GroupName="1" Content="Value 4" IsChecked="True"
+				<RadioButton GroupName="1" Content="Custom radio"
 							 assists:SelectionControlAssist.Size="48"
 							 assists:SelectionControlAssist.InnerSize="32"
-							 assists:SelectionControlAssist.Foreground="Red"
+							 assists:SelectionControlAssist.Foreground="Orange"
 							 assists:SelectionControlAssist.InnerForeground="Green"
 							 BorderBrush="White" BorderThickness="1"
 							 Foreground="Gray"
@@ -209,19 +246,19 @@
                 </Style>
             </StackPanel.Styles>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons4">
-                <RadioButton Classes="Accent" GroupName="2" Content="Value 1" ToolTip.Tip='Regular unchecked radio button with class Accent.'/>
+                <RadioButton Classes="Accent" GroupName="2" Content="Value 1" IsChecked="True" ToolTip.Tip='Regular unchecked radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons5">
-                <RadioButton Classes="Accent" GroupName="2" Content="Value 2" IsChecked="True" ToolTip.Tip='Regular checked radio button with class Accent.'/>
+                <RadioButton Classes="Accent" GroupName="2" Content="Value 2" ToolTip.Tip='Regular checked radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
             <showMeTheXaml:XamlDisplay UniqueId="RadioButtons6">
-                <RadioButton Classes="Accent" GroupName="2" Content="Uncheckable" IsChecked="False" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with class Accent.'/>
+                <RadioButton Classes="Accent" GroupName="2" Content="Uncheckable" IsEnabled="False" ToolTip.Tip='Regular disabled radio button with class Accent.'/>
             </showMeTheXaml:XamlDisplay>
 			<showMeTheXaml:XamlDisplay UniqueId="RadioButtons7">
-				<RadioButton GroupName="2" Content="Value 4" IsChecked="True" Classes="Accent"
+				<RadioButton GroupName="2" Content="Custom radio" Classes="Accent"
 							 assists:SelectionControlAssist.Size="18"
 							 assists:SelectionControlAssist.InnerSize="12"
-							 assists:SelectionControlAssist.Foreground="Red"
+							 assists:SelectionControlAssist.Foreground="Orange"
 							 assists:SelectionControlAssist.InnerForeground="Green"
 							 Foreground="Gray"
 							 ToolTip.Tip='Customized checked radio button with class Accent.'/>

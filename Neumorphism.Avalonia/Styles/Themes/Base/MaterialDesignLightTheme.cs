@@ -1,7 +1,9 @@
 ﻿using Avalonia.Media;
 
-namespace Neumorphism.Avalonia.Styles.Themes.Base {
-    public class MaterialDesignLightTheme : IBaseTheme {
+namespace Neumorphism.Avalonia.Styles.Themes.Base
+{
+    public class MaterialDesignLightTheme : IBaseTheme
+    {
         public Color ValidationErrorColor { get; } = Color.Parse("#F44336");
         public Color MaterialDesignBackground { get; } = Color.Parse("#FFFFFFFF");
         public Color MaterialDesignForeground { get; } = Color.Parse("#FF000000");
@@ -37,6 +39,6 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
 
         public Color MaterialDesignBorderShadowColor { get; } = Color.Parse("#FFC4C7CB");
 
-        public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FFd3d8de");
+        public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FFD3D8DE");
     }
 }
