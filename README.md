@@ -46,7 +46,7 @@ More controls should be themed soon.
 
 # <img src="/favicon.png" width="32" height="32"> Getting started
 
-1. Add [Neumorphism.Avalonia][nuget] nuget package to your project: (available soon !)
+1. Add [Neumorphism.Avalonia][nuget] nuget package to your project (should be available soon !) :
 
        dotnet add package Neumorphism.Avalonia
 
