@@ -1,7 +1,8 @@
 
+
 # <img src="/favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia
 
-Customizable Neumorphism Design implementation for [AvaloniaUI](http://avaloniaui.net/) framework.
+Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](http://avaloniaui.net/) framework.
 
 
 
@@ -30,25 +31,34 @@ For the moment only the following controls are fully themed :
 - Comboboxes
 
 More controls should be themed soon.
-Every controls have some variants (no class, class Filled, Outline, Light, Dark, Accent...)
 
 
 
-# <img src="/favicon.png" width="32" height="32"> Technical specs
+# <img src="/favicon.png" width="32" height="32"> How to start ?
 
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Should be used with .net Core 3.x, .net5, .net6...
-- Lightweight (DLL is only 1.5 Mo in compiled in release mode)
-- Build upon the latest Avalonia UI version (0.10.13)
-- .Net 6 demo application project with ready to use XAML snippets
+- .Net 6 demo application project
 
 
 # <img src="/favicon.png" width="32" height="32"> How to start ?
 
 
-This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
-- Material Design styles for almost all Avalonia controls
-- Additional controls to support the Snackbars, side sheets, floating buttons, cards, dialogs and more
-- Easy configuration of palette (at design and runtime), according to Material Guidelines guidelines
-- Full [Material Design Icons](https://materialdesignicons.com/) icon pack support (must be [installed separately](https://github.com/AvaloniaUtils/Material.Icons.Avalonia), in favor of small library size)
-- Demo applications included in the source project
+# <img src="/FavIcon.svg" width="32" height="32"> Getting started
+
+1. Add [Material.Avalonia][nuget] nuget package to your project:
+
+       dotnet add package Material.Avalonia
+
+2. Edit `App.xaml` file:
+
+      ```xaml
+      <Application ...
+          xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
+          ...>
+          <Application.Styles>
+              <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
+          </Application.Styles>
+      </Application>
+      ```
+
