@@ -12,10 +12,11 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 # <img src="/favicon.png" width="32" height="32"> Overview
 
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
+https://github.com/flarive/Neumorphism.Avalonia
 
-This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia] (https://github.com/AvaloniaCommunity/Material.Avalonia)
+This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
 
-As neumorphism has no official specifications, this is my own personal interpretation of Neumorphism general guidelines i found on the web (mainly on Dribble).
+As neumorphism has no official specifications, this is my own personal interpretation of Neumorphism general guidelines i found on the web (mainly on [Dribble](https://dribbble.com/tags/neumorphism)).
 
 It also uses some elements of Material Design such as :
 - Primary and Secondary (Accent) color with light and dark variants
@@ -43,23 +44,20 @@ More controls should be themed soon.
 - .Net 6 demo application project
 
 
-# <img src="/favicon.png" width="32" height="32"> How to start ?
-
-
 # <img src="/favicon.png" width="32" height="32"> Getting started
 
-1. Add [Material.Avalonia][nuget] nuget package to your project:
+1. Add [Neumorphism.Avalonia][nuget] nuget package to your project: (available soon !)
 
-       dotnet add package Material.Avalonia
+       dotnet add package Neumorphism.Avalonia
 
-2. Edit `App.xaml` file:
+2. Edit your Avalonia project `App.xaml` file:
 
       ```xaml
       <Application ...
           xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
           ...>
           <Application.Styles>
-              <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
+              <themes:NeumorphismTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
           </Application.Styles>
       </Application>
       ```
