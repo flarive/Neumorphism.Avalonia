@@ -44,23 +44,20 @@ More controls should be themed soon.
 - .Net 6 demo application project
 
 
-# <img src="/favicon.png" width="32" height="32"> How to start ?
-
-
 # <img src="/favicon.png" width="32" height="32"> Getting started
 
-1. Add [Material.Avalonia][nuget] nuget package to your project:
+1. Add [Neumorphism.Avalonia][nuget] nuget package to your project: (available soon !)
 
-       dotnet add package Material.Avalonia
+       dotnet add package Neumorphism.Avalonia
 
-2. Edit `App.xaml` file:
+2. Edit your Avalonia project `App.xaml` file:
 
       ```xaml
       <Application ...
           xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
           ...>
           <Application.Styles>
-              <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
+              <themes:NeumorphismTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
           </Application.Styles>
       </Application>
       ```
