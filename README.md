@@ -41,7 +41,7 @@ More controls should be themed soon.
 - Should be used with .net Core 3.x, .net5, .net6...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
 - Built upon the latest version of Avalonia UI (0.10.13)
-- .Net 6 demo application project
+- .Net 5 demo application project
 
 
 # <img src="/favicon.png" width="32" height="32"> How to start ?
