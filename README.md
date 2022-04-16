@@ -30,14 +30,17 @@ For the moment only the following controls are fully themed :
 - Comboboxes
 
 More controls should be themed soon.
+Every controls have some variants (no class, class Filled, Outline, Light, Dark, Accent...)
 
 
 
-# <img src="/favicon.png" width="32" height="32"> How to start ?
+# <img src="/favicon.png" width="32" height="32"> Technical specs
 
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Should be used with .net Core 3.x, .net5, .net6...
-- .Net 6 demo application project
+- Lightweight (DLL is only 1.5 Mo in compiled in release mode)
+- Build upon the latest Avalonia UI version (0.10.13)
+- .Net 6 demo application project with ready to use XAML snippets
 
 
 # <img src="/favicon.png" width="32" height="32"> How to start ?
