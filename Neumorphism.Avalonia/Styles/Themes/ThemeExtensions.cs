@@ -9,15 +9,15 @@ namespace Neumorphism.Avalonia.Styles.Themes
 {
     public static class ThemeExtensions
     {
-        public static T LocateMaterialTheme<T>(this Application application) where T : MaterialThemeBase
+        public static T LocateNeumorphismTheme<T>(this Application application) where T : NeumorphismThemeBase
         {
-            var materialTheme = application.Styles.FirstOrDefault(style => style is T);
-            if (materialTheme == null)
+            var theme = application.Styles.FirstOrDefault(style => style is T);
+            if (theme == null)
             {
-                throw new InvalidOperationException($"Cannot locate {nameof(T)} in Avalonia application styles. Be sure that you include MaterialTheme in your App.xaml in Application.Styles section");
+                throw new InvalidOperationException($"Cannot locate {nameof(T)} in Avalonia application styles. Be sure that you include NeumorphismTheme in your App.xaml in Application.Styles section");
             }
             
-            return (T)materialTheme;
+            return (T)theme;
         }
 
         public static IBaseTheme GetBaseTheme(this BaseThemeMode baseThemeMode) {

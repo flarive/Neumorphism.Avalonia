@@ -4,28 +4,30 @@ using Avalonia.Themes.Fluent;
 using Neumorphism.Avalonia.Styles.Colors;
 using Neumorphism.Avalonia.Styles.Themes.Base;
 
-namespace Neumorphism.Avalonia.Styles.Themes {
+namespace Neumorphism.Avalonia.Styles.Themes
+{
     /// <summary>
     /// Applies the material theme styles and resources
     /// </summary>
     /// <remarks>
     /// You need to setup all these properties: <see cref="BaseTheme"/>, <see cref="PrimaryColor"/>, <see cref="SecondaryColor"/>
     /// </remarks>
-    public class MaterialTheme : MaterialThemeBase {
+    public class NeumorphismTheme : NeumorphismThemeBase
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="FluentTheme"/> class.
         /// </summary>
         /// <param name="baseUri">The base URL for the XAML context.</param>
-        public MaterialTheme(Uri baseUri) : base(baseUri) { }
+        public NeumorphismTheme(Uri baseUri) : base(baseUri) { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FluentTheme"/> class.
         /// </summary>
         /// <param name="serviceProvider">The XAML service provider.</param>
-        public MaterialTheme(IServiceProvider serviceProvider) : base(serviceProvider) { }
+        public NeumorphismTheme(IServiceProvider serviceProvider) : base(serviceProvider) { }
 
         public static readonly StyledProperty<BaseThemeMode> BaseThemeProperty
-            = AvaloniaProperty.Register<MaterialTheme, BaseThemeMode>(nameof(BaseTheme));
+            = AvaloniaProperty.Register<NeumorphismTheme, BaseThemeMode>(nameof(BaseTheme));
 
         public BaseThemeMode BaseTheme {
             get => GetValue(BaseThemeProperty);
@@ -33,7 +35,7 @@ namespace Neumorphism.Avalonia.Styles.Themes {
         }
 
         public static readonly StyledProperty<PrimaryColor> PrimaryColorProperty
-            = AvaloniaProperty.Register<MaterialTheme, PrimaryColor>(nameof(PrimaryColor));
+            = AvaloniaProperty.Register<NeumorphismTheme, PrimaryColor>(nameof(PrimaryColor));
 
         public PrimaryColor PrimaryColor {
             get => GetValue(PrimaryColorProperty);
@@ -41,7 +43,7 @@ namespace Neumorphism.Avalonia.Styles.Themes {
         }
 
         public static readonly StyledProperty<SecondaryColor> SecondaryColorProperty
-            = AvaloniaProperty.Register<MaterialTheme, SecondaryColor>(nameof(SecondaryColor));
+            = AvaloniaProperty.Register<NeumorphismTheme, SecondaryColor>(nameof(SecondaryColor));
 
         public SecondaryColor SecondaryColor {
             get => GetValue(SecondaryColorProperty);

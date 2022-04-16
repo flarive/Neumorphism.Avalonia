@@ -17,7 +17,7 @@ using Avalonia;
 
 namespace Neumorphism.Avalonia.Styles.Themes
 {
-    public class MaterialThemeBase : aaa.AvaloniaObject, IStyle, IResourceProvider
+    public class NeumorphismThemeBase : aaa.AvaloniaObject, IStyle, IResourceProvider
     {
         private readonly IStyle _controlsStyles;
         private bool _isLoading;
@@ -27,7 +27,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
         /// Initializes a new instance of the <see cref="FluentTheme"/> class.
         /// </summary>
         /// <param name="baseUri">The base URL for the XAML context.</param>
-        public MaterialThemeBase(Uri baseUri) {
+        public NeumorphismThemeBase(Uri baseUri) {
             _controlsStyles = new StyleInclude(baseUri) {
                 Source = new Uri("avares://Neumorphism.Avalonia/Neumorphism.Avalonia.Templates.xaml")
             };
@@ -37,13 +37,13 @@ namespace Neumorphism.Avalonia.Styles.Themes
         /// Initializes a new instance of the <see cref="FluentTheme"/> class.
         /// </summary>
         /// <param name="serviceProvider">The XAML service provider.</param>
-        public MaterialThemeBase(IServiceProvider serviceProvider)
+        public NeumorphismThemeBase(IServiceProvider serviceProvider)
             : this(((IUriContext)serviceProvider.GetService(typeof(IUriContext))).BaseUri) { }
 
         private IResourceDictionary LoadedResourceDictionary => (Loaded as aaa.Styling.Styles)!.Resources;
 
-        public static readonly aaa.DirectProperty<MaterialThemeBase, ITheme> CurrentThemeProperty =
-            aaa.AvaloniaProperty.RegisterDirect<MaterialThemeBase, ITheme>(
+        public static readonly aaa.DirectProperty<NeumorphismThemeBase, ITheme> CurrentThemeProperty =
+            aaa.AvaloniaProperty.RegisterDirect<NeumorphismThemeBase, ITheme>(
                 nameof(CurrentTheme),
                 o => o.CurrentTheme,
                 (o, v) => o.CurrentTheme = v);

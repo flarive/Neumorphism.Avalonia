@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
@@ -19,7 +18,7 @@ namespace Neumorphism.Avalonia.Styles.Converters
             bool isFixedOutset = parameter != null && parameter.Equals("3");
             bool insetAndOutset = parameter != null && parameter.Equals("4");
 
-            var theme = Application.Current!.LocateMaterialTheme<MaterialTheme>();
+            var theme = Application.Current!.LocateNeumorphismTheme<NeumorphismTheme>();
 
             BoxShadow main = new BoxShadow();
             BoxShadow rest1 = new BoxShadow();

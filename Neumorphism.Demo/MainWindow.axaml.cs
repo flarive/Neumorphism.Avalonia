@@ -98,12 +98,12 @@ namespace Neumorphism.Demo
             {
                 if (toggleButton.IsChecked.HasValue && toggleButton.IsChecked.Value)
                 {
-                    GlobalCommand.UseMaterialUIDarkTheme();
+                    GlobalCommand.UseNeumorphismUIDarkTheme();
                     SnackbarHost.Post("Neumorphism dark theme applied !");
                 }
                 else
                 {
-                    GlobalCommand.UseMaterialUILightTheme();
+                    GlobalCommand.UseNeumorphismUILightTheme();
                     SnackbarHost.Post("Neumorphism light theme applied !");
                 }
             }

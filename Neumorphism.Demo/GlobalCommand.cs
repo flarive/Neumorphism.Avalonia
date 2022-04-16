@@ -7,16 +7,16 @@ namespace Neumorphism.Demo
 {
     public static class GlobalCommand
     {
-        private static readonly MaterialTheme MaterialThemeStyles = Application.Current!.LocateMaterialTheme<MaterialTheme>();
+        private static readonly NeumorphismTheme themeStyles = Application.Current!.LocateNeumorphismTheme<NeumorphismTheme>();
 
-        public static void UseMaterialUIDarkTheme()
+        public static void UseNeumorphismUIDarkTheme()
         {
-            MaterialThemeStyles.BaseTheme = BaseThemeMode.Dark;
+            themeStyles.BaseTheme = BaseThemeMode.Dark;
         }
         
-        public static void UseMaterialUILightTheme()
+        public static void UseNeumorphismUILightTheme()
         {
-            MaterialThemeStyles.BaseTheme = BaseThemeMode.Light;
+            themeStyles.BaseTheme = BaseThemeMode.Light;
         }
 
         public static void OpenProjectRepoLink() => OpenBrowserForVisitSite("https://github.com/flarive/Neumorphism.Avalonia");
