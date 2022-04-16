@@ -22,9 +22,9 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}" />
         <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnBackground" Value="Transparent" />
         <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffBackground" Value="Transparent" />
-		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnForeground" Value="{DynamicResource PrimaryHueLightBrush}" />
-		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffForeground" Value="Transparent" />
-		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOverForeground" Value="{DynamicResource PrimaryHueMidBrush}" />
+		    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnForeground" Value="{DynamicResource PrimaryHueLightBrush}" />
+		    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffForeground" Value="Transparent" />
+		    <Setter Property="assists:ToggleSwitchAssist.SwitchTrackOverForeground" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="assists:SelectionControlAssist.Size" Value="72" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -39,7 +39,7 @@
         <Setter Property="TextBlock.FontSize" Value="15"/>
         <Setter Property="TextBlock.FontWeight" Value="Normal"/>
         <Setter Property="TextBlock.FontStyle" Value="Normal"/>
-		<Setter Property="Cursor" Value="Hand" />
+		    <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
@@ -393,7 +393,7 @@
 	</Style>
 
 
-    <!--Default-->
+  <!--Default-->
 	<Style Selector="ToggleSwitch:not(:checked):not(.Accent) /template/ Border#Thumb">
 		<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssist.SwitchTrackOffForeground}" />
 	</Style>
@@ -414,7 +414,7 @@
 	<!--Accent-->
 	<Style Selector="ToggleSwitch.Accent">
 		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOnForeground" Value="{DynamicResource SecondaryHueMidBrush}" />
-		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffForeground" Value="{DynamicResource SecondaryHueDarkBrush}" />
+		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOffForeground" Value="Transparent" />
 		<Setter Property="assists:ToggleSwitchAssist.SwitchTrackOverForeground" Value="{DynamicResource SecondaryHueDarkBrush}" />
 	</Style>
 
@@ -423,8 +423,8 @@
 	</Style>
 	
 	<Style Selector="ToggleSwitch.Accent:checked /template/ Border#Thumb">
-        <Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssist.SwitchTrackOnForeground}" />
-    </Style>
+      <Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssist.SwitchTrackOnForeground}" />
+  </Style>
 
 	<Style Selector="ToggleSwitch.Accent:not(:checked):pointerover /template/ Border#Thumb">
 		<Setter Property="Background" Value="{TemplateBinding assists:ToggleSwitchAssist.SwitchTrackOverForeground}"/>
