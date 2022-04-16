@@ -6,3 +6,10 @@ Customizable Neumorphism Design implementation for [AvaloniaUI](http://avaloniau
 
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
+
+
+# <img src="/favicon.png" width="32" height="32"> Overview
+
+This Avalonia UI Neumorphic theme was inspired by another famous Avalonia UI theme : Material.Avalonia (https://github.com/AvaloniaCommunity/Material.Avalonia)
+
+
