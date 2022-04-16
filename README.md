@@ -44,7 +44,7 @@ More controls should be themed soon.
 # <img src="/favicon.png" width="32" height="32"> How to start ?
 
 
-# <img src="/FavIcon.svg" width="32" height="32"> Getting started
+# <img src="/favicon.png" width="32" height="32"> Getting started
 
 1. Add [Material.Avalonia][nuget] nuget package to your project:
 
