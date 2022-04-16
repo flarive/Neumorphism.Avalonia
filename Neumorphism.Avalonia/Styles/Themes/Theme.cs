@@ -7,8 +7,8 @@ namespace Neumorphism.Avalonia.Styles.Themes
 {
     public class Theme : ITheme
     {
-        public static IBaseTheme Light { get; } = new MaterialDesignLightTheme();
-        public static IBaseTheme Dark { get; } = new MaterialDesignDarkTheme();
+        public static IBaseTheme Light { get; } = new NeumorphismLightTheme();
+        public static IBaseTheme Dark { get; } = new NeumorphismDarkTheme();
 
         public ColorPair SecondaryLight { get; set; }
         public ColorPair SecondaryMid { get; set; }

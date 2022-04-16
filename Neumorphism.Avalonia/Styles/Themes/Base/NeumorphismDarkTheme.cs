@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Styles.Themes.Base
 {
-    public class MaterialDesignDarkTheme : IBaseTheme
+    public class NeumorphismDarkTheme : IBaseTheme
     {
         public Color ValidationErrorColor { get; } = Color.Parse("#f44336");
         public Color MaterialDesignBackground { get; } = Color.Parse("#FF000000");
