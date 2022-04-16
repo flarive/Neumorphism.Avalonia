@@ -16,7 +16,7 @@ https://github.com/flarive/Neumorphism.Avalonia
 
 This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
 
-As neumorphism has no official specifications, this is my own personal interpretation of Neumorphism general guidelines i found on the web (mainly on Dribble).
+As neumorphism has no official specifications, this is my own personal interpretation of Neumorphism general guidelines i found on the web (mainly on [Dribble](https://dribbble.com/tags/neumorphism)).
 
 It also uses some elements of Material Design such as :
 - Primary and Secondary (Accent) color with light and dark variants
