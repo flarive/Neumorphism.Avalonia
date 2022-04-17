@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using Avalonia.Controls;
 using Avalonia.Data;
+using Neumorphism.Avalonia.Styles;
 
 namespace Neumorphism.Demo.ViewModels
 {
@@ -18,6 +20,44 @@ namespace Neumorphism.Demo.ViewModels
 
                 _numerics = value;
                 OnPropertyChanged();
+            }
+        }
+
+        private string _email;
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                    Match match = regex.Match(value);
+                    if (!match.Success)
+                    {
+                        throw new DataValidationException("Invalid email");
+                    }
+                }
+
+                _email = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public void ButtonSearchClick(object sender)
+        {
+            var searchBox = sender as TextBox;
+            if (searchBox != null)
+            {
+                if (!string.IsNullOrEmpty(searchBox.Text))
+                {
+                    SnackbarHost.Post("You are searching for '" + searchBox.Text + "' !");
+                }
+                else
+                {
+                    SnackbarHost.Post("Please enter something to search !");
+                }
+                
             }
         }
     }

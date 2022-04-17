@@ -1,5 +1,5 @@
 <Styles xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
         xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles"
         xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
@@ -11,11 +11,11 @@
     <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
     <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
     <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
-	<converters:DoubleToLeftRightCornerRadiusConverter x:Key="DoubleToLeftRightCornerRadiusConverter" />
-	  
+    <converters:DoubleToLeftRightCornerRadiusConverter x:Key="DoubleToLeftRightCornerRadiusConverter" />
 
 
-	<StreamGeometry x:Key="TextBoxClearButtonData">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</StreamGeometry>
+
+    <StreamGeometry x:Key="TextBoxClearButtonData">M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z</StreamGeometry>
     <StreamGeometry x:Key="PasswordBoxRevealButtonData">M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z</StreamGeometry>
     <StreamGeometry x:Key="PasswordBoxHideButtonData">M2,5.27L3.28,4L20,20.72L18.73,22L15.65,18.92C14.5,19.3 13.28,19.5 12,19.5C7,19.5 2.73,16.39 1,12C1.69,10.24 2.79,8.69 4.19,7.46L2,5.27M12,9A3,3 0 0,1 15,12C15,12.35 14.94,12.69 14.83,13L11,9.17C11.31,9.06 11.65,9 12,9M12,4.5C17,4.5 21.27,7.61 23,12C22.18,14.08 20.79,15.88 19,17.19L17.58,15.76C18.94,14.82 20.06,13.54 20.82,12C19.17,8.64 15.76,6.5 12,6.5C10.91,6.5 9.84,6.68 8.84,7L7.3,5.47C8.74,4.85 10.33,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C12.69,17.5 13.37,17.43 14,17.29L11.72,15C10.29,14.85 9.15,13.71 9,12.28L5.6,8.87C4.61,9.72 3.78,10.78 3.18,12Z</StreamGeometry>
 
@@ -113,7 +113,7 @@
                 <Setter Property="RenderTransform" Value="scale(1)" />
               </Style>
             </Border.Styles>
-            
+
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
                               IsVisible="{TemplateBinding UseFloatingWatermark}"
@@ -168,13 +168,9 @@
                       </Panel>
                     </ScrollViewer>
                   </Panel>
-                  <StackPanel Grid.Column="2" Orientation="Horizontal">
-                    <ContentPresenter Content="{TemplateBinding InnerRightContent}"/>
-                    <!--<Border Name="PART_AssistButtonsContainer"/>-->
-                  </StackPanel>
+                  <ContentPresenter Grid.Column="2" Content="{TemplateBinding InnerRightContent}"/>
                 </Grid>
               </DataValidationErrors>
-
             </Grid>
           </Border>
           <!--<TextBlock Grid.Row="1" Name="HintsTextBlock" Classes="Caption" Margin="0,40,0,0" Background="Yellow" VerticalAlignment="Bottom" Height="20" MinHeight="20" MaxHeight="20" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
@@ -194,7 +190,7 @@
                      TextBox:empty /template/ TextBlock#watermark">
     <Setter Property="IsVisible" Value="True" />
   </Style>
-	
+
   <Style
       Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#watermark,
                      TextBox:not(:empty) /template/ TextBlock#watermark">
@@ -272,10 +268,10 @@
 
 
   <!-- Invalid state -->
-  <Style Selector="TextBox:error /template/ styles|MaterialUnderline#PART_Underline">
+  <!--<Style Selector="TextBox:error /template/ styles|MaterialUnderline#PART_Underline">
     <Setter Property="BackgroundColor" Value="{DynamicResource ValidationErrorBrush}" />
     <Setter Property="ActiveColor" Value="{DynamicResource ValidationErrorBrush}" />
-  </Style>
+  </Style>-->
 
   <Style Selector="TextBox:error /template/ TextBlock#floatingWatermark">
     <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
@@ -284,6 +280,7 @@
   <!--<Style Selector="TextBox:error /template/ TextBlock#HintsTextBlock">
     <Setter Property="IsVisible" Value="False" />
   </Style>-->
+
 
 
 
@@ -352,7 +349,7 @@
               <!--Outline-->
               <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"
-                    Background="Transparent" Padding="0" 
+                    Background="Transparent" Padding="0"
                     BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
                     CornerRadius="10"/>
 
@@ -470,9 +467,9 @@
   </Style>-->
 
   <!-- Invalid state -->
-  <Style Selector="TextBox.Outline:error">
+  <!--<Style Selector="TextBox.Outline:error">
     <Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}" />
-  </Style>
+  </Style>-->
 
   <!-- Additional decorations for TextFields -->
   <!-- ReSharper disable InconsistentNaming -->
@@ -534,7 +531,7 @@
     <Setter Property="Height" Value="52" />
     <Setter Property="VerticalAlignment" Value="Top" />
   </Style>
-  
+
   <!--<Style Selector="TextBox.Dense Border#PART_AssistButtonsContainer">
     <Setter Property="Height" Value="48" />
     <Setter Property="VerticalAlignment" Value="Top" />
@@ -568,23 +565,23 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Center" />
   </Style>-->
-  
+
 
   <!-- Class Header -->
   <Style Selector="TextBox.Header">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="assists:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
-      <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
-      <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
-      <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
-      <Setter Property="Height" Value="48"/>
-      <Setter Property="Width" Value="NaN"/>
-      <Setter Property="BorderThickness" Value="0" />
-      <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
-      <Setter Property="Cursor" Value="Arrow"/>
-      <Setter Property="HorizontalAlignment" Value="Left"/>
-      <Setter Property="VerticalAlignment" Value="Center"/>
-      <Setter Property="Template">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="assists:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
+    <Setter Property="assists:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
+    <Setter Property="assists:TextFieldAssist.InnerLeftPadding" Value="0"/>
+    <Setter Property="assists:TextFieldAssist.InnerRightPadding" Value="0"/>
+    <Setter Property="Height" Value="48"/>
+    <Setter Property="Width" Value="NaN"/>
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+    <Setter Property="Cursor" Value="Arrow"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_RootBorder"
                 Background="Transparent"
@@ -592,29 +589,31 @@
                 Height="{TemplateBinding Height}"
                 CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
                 BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
-				BorderThickness="{TemplateBinding BorderThickness}"
-				BorderBrush="{TemplateBinding BorderBrush}">
-          
-			<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
-            <DataValidationErrors Name="DataValidation">
-              <Grid ColumnDefinitions="Auto,*,Auto">
-                <!--Left container-->
-				<Border Grid.Column="0" Background="{TemplateBinding assists:TextFieldAssist.InnerLeftBackground}"
-					CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
-					VerticalAlignment="Stretch">
-                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
-                </Border>
-                <!--Main container-->
-				<Grid Grid.Column="1" Name="PART_InnerRoot" Margin="8">
+                BorderThickness="{TemplateBinding BorderThickness}"
+                BorderBrush="{TemplateBinding BorderBrush}">
+
+          <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+              <!--Left container-->
+              <Border Grid.Column="0" Background="{TemplateBinding assists:TextFieldAssist.InnerLeftBackground}"
+                CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
+                VerticalAlignment="Stretch">
+                <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
+              </Border>
+              <!--Main container-->
+              <DataValidationErrors Grid.Column="1" Name="DataValidation">
+                <Grid Name="PART_InnerRoot" Margin="8">
                   <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Padding="0" Cursor="Ibeam"
                                 HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                 VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+
                     <Panel Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="8 0 8 0">
+
                       <TextBlock Name="watermark" Classes="Subtitle1" Opacity="0.5" VerticalAlignment="Center"
-                                 Text="{TemplateBinding Watermark}"
-								 FontFamily="{TemplateBinding FontFamily}"
-                                 TextAlignment="{TemplateBinding TextAlignment}"
-                                 TextWrapping="{TemplateBinding TextWrapping}" />
+                                  Text="{TemplateBinding Watermark}"
+                                  FontFamily="{TemplateBinding FontFamily}"
+                                  TextAlignment="{TemplateBinding TextAlignment}"
+                                  TextWrapping="{TemplateBinding TextWrapping}" />
                       <TextPresenter Name="PART_TextPresenter"
                                      VerticalAlignment="Center"
                                      Text="{TemplateBinding Text, Mode=TwoWay}"
@@ -631,35 +630,23 @@
                     </Panel>
                   </ScrollViewer>
                 </Grid>
-				<!--Right container-->
-				<Border Grid.Column="2" Background="{TemplateBinding assists:TextFieldAssist.InnerRightBackground}"
-						CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
-						VerticalAlignment="Stretch">
-				    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerRightPadding}" HorizontalContentAlignment="Right" />
-				</Border>
-              </Grid>
-            </DataValidationErrors>
+              </DataValidationErrors>
+              <!--Right container-->
+              <Border Grid.Column="2" Background="{TemplateBinding assists:TextFieldAssist.InnerRightBackground}"
+                  CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
+                  VerticalAlignment="Stretch">
+                <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerRightPadding}" HorizontalContentAlignment="Right" />
+              </Border>
+            </Grid>
           </Grid>
         </Border>
       </ControlTemplate>
     </Setter>
   </Style>
 
-  <!-- ReSharper restore InconsistentNaming -->
-
-  <!--<Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel>
-        <TextBox Classes="" Margin="8" Width="200" UseFloatingWatermark="True"
-                 assists:TextFieldAssist.Label="TextBox" />
-        <TextBox Classes="Filled" Width="200" UseFloatingWatermark="True" Watermark="TextBox" />
-        <TextBox Classes="Filled" IsEnabled="False" Width="200" UseFloatingWatermark="True" Watermark="TextBox" />
-        <TextBox Classes="Outline" IsEnabled="True" Width="200" UseFloatingWatermark="True"
-                 Watermark="TextBox3248239" />
-
-      </StackPanel>
-    </Border>
-  </Design.PreviewWith>-->
+  <Style Selector="TextBox.Header:error /template/ ScrollViewer#PART_Scroller">
+    <Setter Property="Margin" Value="0,-8,0,-14" />
+  </Style>
 
 
   <!-- no-material class -->
@@ -689,45 +676,45 @@
     <Setter Property="VerticalAlignment" Value="Stretch"/>
     <Setter Property="Template">
       <ControlTemplate>
-		  <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
-			  <TextBlock Name="PART_Watermark"
-              Padding="0"
-						  Margin="{TemplateBinding Margin}"
-						  VerticalAlignment="Center"
-						  Foreground="{TemplateBinding Foreground}"
-						  Background="{TemplateBinding Background}"
-						  Opacity="0.5"
-              IsVisible="{TemplateBinding IsVisible}"
-						  Text="{TemplateBinding Watermark}"
-						  FontFamily="{TemplateBinding FontFamily}"
-						  FontSize="{TemplateBinding FontSize}"
-						  FontWeight="{TemplateBinding FontWeight}"
-						  FontStyle="{TemplateBinding FontStyle}"
-						  TextAlignment="{TemplateBinding TextAlignment}"
-						  TextWrapping="{TemplateBinding TextWrapping}"/>
-			  <TextPresenter Name="PART_TextPresenter"
-                        Background="{TemplateBinding Background}"
-                        IsEnabled="{TemplateBinding IsEnabled}"
-                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                        Margin="{TemplateBinding Margin}"
-                        Text="{TemplateBinding Text, Mode=TwoWay}"
-                        CaretIndex="{TemplateBinding CaretIndex}"
-                        SelectionStart="{TemplateBinding SelectionStart}"
-                        SelectionEnd="{TemplateBinding SelectionEnd}"
-                        TextAlignment="{TemplateBinding TextAlignment}"
-                        TextWrapping="{TemplateBinding TextWrapping}"
-                        PasswordChar="{TemplateBinding PasswordChar}"
-                        RevealPassword="{TemplateBinding RevealPassword}"
-                        SelectionBrush="{TemplateBinding SelectionBrush}"
-                        SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                        CaretBrush="{TemplateBinding CaretBrush}"/>
-		  </Grid>
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+          <TextBlock Name="PART_Watermark"
+                Padding="0"
+                Margin="{TemplateBinding Margin}"
+                VerticalAlignment="Center"
+                Foreground="{TemplateBinding Foreground}"
+                Background="{TemplateBinding Background}"
+                Opacity="0.5"
+                IsVisible="{TemplateBinding IsVisible}"
+                Text="{TemplateBinding Watermark}"
+                FontFamily="{TemplateBinding FontFamily}"
+                FontSize="{TemplateBinding FontSize}"
+                FontWeight="{TemplateBinding FontWeight}"
+                FontStyle="{TemplateBinding FontStyle}"
+                TextAlignment="{TemplateBinding TextAlignment}"
+                TextWrapping="{TemplateBinding TextWrapping}"/>
+          <TextPresenter Name="PART_TextPresenter"
+                          Background="{TemplateBinding Background}"
+                          IsEnabled="{TemplateBinding IsEnabled}"
+                          VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                          HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                          Margin="{TemplateBinding Margin}"
+                          Text="{TemplateBinding Text, Mode=TwoWay}"
+                          CaretIndex="{TemplateBinding CaretIndex}"
+                          SelectionStart="{TemplateBinding SelectionStart}"
+                          SelectionEnd="{TemplateBinding SelectionEnd}"
+                          TextAlignment="{TemplateBinding TextAlignment}"
+                          TextWrapping="{TemplateBinding TextWrapping}"
+                          PasswordChar="{TemplateBinding PasswordChar}"
+                          RevealPassword="{TemplateBinding RevealPassword}"
+                          SelectionBrush="{TemplateBinding SelectionBrush}"
+                          SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                          CaretBrush="{TemplateBinding CaretBrush}"/>
+        </Grid>
       </ControlTemplate>
     </Setter>
   </Style>
 
-	<!--<Style Selector="TextBox.no-material:focus-within:empty /template/ TextBlock#PART_Watermark,
+  <!--<Style Selector="TextBox.no-material:focus-within:empty /template/ TextBlock#PART_Watermark,
                      TextBox.no-material:empty /template/ TextBlock#PART_Watermark">
 		<Setter Property="IsVisible" Value="True" />
     <Setter Property="Background" Value="Yellow" />
@@ -735,20 +722,22 @@
 
 	<Style Selector="TextBox.no-material:focus-within:not(:empty) /template/ TextBlock#PART_Watermark,
                      TextBox.no-material:not(:empty) /template/ TextBlock#PART_Watermark">
-		--><!--<Setter Property="IsVisible" Value="False" />--><!--
+		-->
+  <!--<Setter Property="IsVisible" Value="False" />-->
+  <!--
     <Setter Property="IsVisible" Value="True" />
     <Setter Property="Background" Value="Red" />
 	</Style>-->
 
-	<!--<Style Selector="TextBox.no-material[Watermark=Age] /template/ TextBlock#PART_Watermark">
+  <!--<Style Selector="TextBox.no-material[Watermark=Age] /template/ TextBlock#PART_Watermark">
 		<Setter Property="IsVisible" Value="True" />
 		<Setter Property="Background" Value="Yellow" />
 	</Style>-->
 
 
   <Style Selector="TextBox.no-material[IsEnabled=False] /template/ TextPresenter#PART_TextPresenter">
-		<Setter Property="Opacity" Value="0.2" />
-	</Style>
-	
-	
+    <Setter Property="Opacity" Value="0.2" />
+  </Style>
+
+
 </Styles>

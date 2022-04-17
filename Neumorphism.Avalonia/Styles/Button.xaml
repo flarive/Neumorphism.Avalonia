@@ -427,15 +427,7 @@
   </Style>
 	
 
-  <!--Class Custom-->
-  <Style Selector="Button.Custom:not(.Outline), ToggleButton.Custom:not(.Outline)">
-    <Setter Property="Background" Value="{TemplateBinding Background}"/>
-    <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
-  </Style>
 
-
-  
-  
   
   
   <!-- Outlined buttons -->
