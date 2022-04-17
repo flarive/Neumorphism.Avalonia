@@ -57,7 +57,7 @@ More controls should be themed soon.
           xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
           ...>
           <Application.Styles>
-              <themes:NeumorphismTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
+              <themes:NeumorphismTheme BaseTheme="Light" PrimaryColor="Purple" SecondaryColor="Lime" />
           </Application.Styles>
       </Application>
       ```
