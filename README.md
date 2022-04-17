@@ -12,7 +12,7 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 # <img src="/favicon.png" width="32" height="32"> Overview
 
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
-https://github.com/flarive/Neumorphism.Avalonia
+(https://github.com/flarive/Neumorphism.Avalonia)
 
 This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
 
