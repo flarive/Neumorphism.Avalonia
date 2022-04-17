@@ -64,5 +64,5 @@ More controls should be themed soon.
 
 # <img src="/favicon.png" width="32" height="32"> Licence
 
-Neumorphism.Avalonia is free to use in any non commercial project, please contact me for commercial use.
+Neumorphism.Avalonia is free to use in any non commercial project.
 
