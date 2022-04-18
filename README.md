@@ -15,6 +15,9 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
 (https://github.com/flarive/Neumorphism.Avalonia)
 
+[![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
+[![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
+
 This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
 
 As neumorphism has no official specifications, this is my own personal interpretation of Neumorphism general guidelines i found on the web (mainly on [Dribble](https://dribbble.com/tags/neumorphism)).
@@ -34,9 +37,7 @@ For the moment only the following controls are fully themed :
 
 More controls should be themed soon.
 
-[![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
-[![nuget](https://img.shields.io/nuget/vpre/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
-[![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
+
 
 
 
