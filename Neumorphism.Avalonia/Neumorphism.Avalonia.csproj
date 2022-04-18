@@ -2,16 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <VersionPrefix>0.1.0.0</VersionPrefix>
+        <VersionPrefix>0.1.2.0</VersionPrefix>
         <Title>Neumorphism.Avalonia</Title>
         <Authors>Eviral</Authors>
-        <Description>This repository is a set of styles that will help you customize your application in an appropriate neumorphic design.</Description>
+        <Description>Easy to use and customizable Neumorphism Design implementation for Avalonia UI framework.</Description>
         <PackageProjectUrl>https://github.com/flarive/Neumorphism.Avalonia</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/flarive/Neumorphism.Avalonia/master/LICENSE</PackageLicenseUrl>
+        <PackageLicenseUrl></PackageLicenseUrl>
         <RepositoryUrl>https://github.com/flarive/Neumorphism.Avalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <LangVersion>9</LangVersion>
         <PackageReleaseNotes>
+          Easy to use and customizable Neumorphism Design implementation for AvaloniaUI framework.
         </PackageReleaseNotes>
     </PropertyGroup>
 
