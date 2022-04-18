@@ -52,7 +52,7 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
-				CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}">
+				        CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}">
 
               <Panel>
                 <!--Outline-->

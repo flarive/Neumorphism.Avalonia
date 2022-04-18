@@ -17,6 +17,7 @@ namespace Neumorphism.Avalonia.Styles.Converters
             bool isFixedInset = parameter != null && parameter.Equals("2");
             bool isFixedOutset = parameter != null && parameter.Equals("3");
             bool insetAndOutset = parameter != null && parameter.Equals("4");
+            bool smallerOutset = parameter != null && parameter.Equals("5");
 
             var theme = Application.Current!.LocateNeumorphismTheme<NeumorphismTheme>();
 
@@ -66,13 +67,22 @@ namespace Neumorphism.Avalonia.Styles.Converters
                     height = 50;
                 }
 
+                double radiusRatio = 5;
+                double offsetRatio = 15;
+
+                if (smallerOutset)
+                {
+                    radiusRatio = 10;
+                    offsetRatio = 30;
+                }
+
                 if (height > 0)
                 {
                     // for a 300x300 button shadow radius must be 60 (300/5);
-                    double radius = (double)(height / 5);
+                    double radius = (double)(height / radiusRatio);
 
                     // for a 300x300 button shadow offset must be 20 (300/15);
-                    double offset = (double)(height / 15);
+                    double offset = (double)(height / offsetRatio);
 
                     //-20 -20 60 #CCFFFFFF,20 20 60 #33000000
                     if (!insetAndOutset)

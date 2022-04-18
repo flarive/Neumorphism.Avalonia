@@ -28,6 +28,10 @@
     </ItemGroup>
     
     <ItemGroup>
+      <AvaloniaXaml Remove="Styles\MagicButton.axaml" />
+    </ItemGroup>
+    
+    <ItemGroup>
       <None Remove="Styles\Fonts\Roboto\Roboto-Light.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Medium.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Regular.ttf" />
@@ -47,6 +51,7 @@
       <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Thin.ttf">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </AvaloniaResource>
+      <AvaloniaResource Include="Styles\MagicButton.axaml" />
     </ItemGroup>
 
     <ItemGroup>

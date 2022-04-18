@@ -27,6 +27,18 @@ namespace Neumorphism.Avalonia.Styles.Controls
         public readonly static StyledProperty<AvaloniaMedia.IBrush> ArcBrushProperty =
             AvaloniaProperty.Register<Arc, AvaloniaMedia.IBrush>(nameof(ArcBrush), new AvaloniaMedia.SolidColorBrush(AvaloniaMedia.Colors.White));
 
+
+
+        //public double Stroke
+        //{
+        //    get => GetValue(StrokeProperty);
+        //    set => SetValue(StrokeProperty, value);
+        //}
+
+        //public readonly static StyledProperty<double> StrokeProperty =
+        //    AvaloniaProperty.Register<Arc, double>(nameof(Stroke));
+
+
         public double Stroke
         {
             get => GetValue(StrokeProperty);
@@ -34,7 +46,25 @@ namespace Neumorphism.Avalonia.Styles.Controls
         }
 
         public readonly static StyledProperty<double> StrokeProperty =
-            AvaloniaProperty.Register<Arc, double>(nameof(Stroke));
+            AvaloniaProperty.Register<Arc, double>(nameof(Stroke), 2.0);
+
+
+
+
+        //public static AvaloniaProperty<double> StrokeProperty2 = AvaloniaProperty.RegisterAttached<Arc, double>(
+        //    "Stroke2", typeof(Arc));
+
+        //public static void SetStroke2(AvaloniaObject element, double value)
+        //{
+        //    element.SetValue(StrokeProperty2, value);
+        //}
+
+        //public static double GetStroke2(AvaloniaObject element)
+        //{
+        //    return (double)element.GetValue(StrokeProperty2);
+        //}
+
+
 
         public double StartAngle
         {
@@ -54,10 +84,20 @@ namespace Neumorphism.Avalonia.Styles.Controls
         public static readonly StyledProperty<double> SweepAngleProperty =
             AvaloniaProperty.Register<Arc, double>(nameof(SweepAngle), 90);
 
+
+
         public override void Render(AvaloniaMedia.DrawingContext context)
         {
             var offsetStroke = 0.5;
             var o = Stroke + offsetStroke;
+
+            if (Stroke > 4)
+            {
+                string aaa = null;
+            }
+            //double pp = GetStroke2(this);
+
+
             
             // Create main circle for draw circle
             var mainCircle =

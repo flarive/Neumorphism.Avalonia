@@ -81,5 +81,6 @@
 
     <!-- Custom controls (High-priority) -->
     <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/SideSheet.xaml"/>
+    <StyleInclude Source="avares://Neumorphism.Avalonia/Styles/MagicButton.axaml" />
     
 </Styles>

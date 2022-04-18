@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:Neumorphism.Avalonia.Styles">
+  
+  <Style Selector="cc|MagicButton">
+    <Style.Animations>
+      <Animation Duration="0:0:2" IterationCount="INFINITE">
+        <KeyFrame Cue="0%">
+          <Setter Property="RotateTransform.Angle" Value="0" />
+        </KeyFrame>
+        <KeyFrame Cue="100%">
+          <Setter Property="RotateTransform.Angle" Value="360" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Background="{TemplateBinding Background}">
+          <Path Stroke="{TemplateBinding StrokeBrush}"
+                Margin="{TemplateBinding PathFigureMargin}"
+                Width="{TemplateBinding PathFigureWidth}"
+                Height="{TemplateBinding PathFigureHeight}"
+                StrokeThickness="{TemplateBinding StrokeThickness}"
+                StrokeLineCap="Round"
+                StrokeJoin="Round"
+                RenderTransformOrigin="25,25">
+            <Path.Data>
+              <PathGeometry>
+                <PathFigure IsClosed="False"
+                            StartPoint="{Binding PathFigureStartPoint, RelativeSource={RelativeSource TemplatedParent}}">
+                  <ArcSegment Size="{Binding ArcSegmentSize, RelativeSource={RelativeSource TemplatedParent}}"
+                              IsLargeArc="{Binding ArcSegmentIsLargeArc, RelativeSource={RelativeSource TemplatedParent}}"
+                              SweepDirection="Clockwise"
+                              Point="{Binding ArcSegmentPoint, RelativeSource={RelativeSource TemplatedParent}}"/>
+                </PathFigure>
+              </PathGeometry>
+            </Path.Data>
+          </Path>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
