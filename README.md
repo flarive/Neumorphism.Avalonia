@@ -1,4 +1,5 @@
 
+[nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
 
 # <img src="/favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia
 
@@ -13,6 +14,9 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
 (https://github.com/flarive/Neumorphism.Avalonia)
+
+[![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
+[![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
 
 This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
 
@@ -35,6 +39,8 @@ More controls should be themed soon.
 
 
 
+
+
 # <img src="/favicon.png" width="32" height="32"> Technical info
 
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
@@ -46,9 +52,11 @@ More controls should be themed soon.
 
 # <img src="/favicon.png" width="32" height="32"> How to start ?
 
-1. Add [Neumorphism.Avalonia][nuget] nuget package to your project (should be available soon !) :
+1. Add [Neumorphism.Avalonia][nuget] nuget package to your project :
 
        dotnet add package Neumorphism.Avalonia
+
+
 
 2. Edit your Avalonia project `App.xaml` file:
 
@@ -57,7 +65,7 @@ More controls should be themed soon.
           xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
           ...>
           <Application.Styles>
-              <themes:NeumorphismTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
+              <themes:NeumorphismTheme BaseTheme="Light" PrimaryColor="Purple" SecondaryColor="Lime" />
           </Application.Styles>
       </Application>
       ```
