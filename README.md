@@ -1,4 +1,5 @@
 
+[nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
 
 # <img src="/favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia
 
@@ -33,6 +34,10 @@ For the moment only the following controls are fully themed :
 
 More controls should be themed soon.
 
+[![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
+[![nuget](https://img.shields.io/nuget/vpre/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
+[![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
+
 
 
 # <img src="/favicon.png" width="32" height="32"> Technical info
@@ -50,7 +55,7 @@ More controls should be themed soon.
 
        dotnet add package Neumorphism.Avalonia
 
-[nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
+
 
 2. Edit your Avalonia project `App.xaml` file:
 
