@@ -50,6 +50,8 @@ More controls should be themed soon.
 
        dotnet add package Neumorphism.Avalonia
 
+[nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
+
 2. Edit your Avalonia project `App.xaml` file:
 
       ```xaml
