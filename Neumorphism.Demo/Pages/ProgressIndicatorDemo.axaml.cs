@@ -1,12 +1,11 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using System.Collections.Specialized;
+using Neumorphism.Avalonia.Demo.ViewModels;
 using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Timers;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class ProgressIndicatorDemo : UserControl
     { 
@@ -34,7 +33,7 @@ namespace Neumorphism.Demo.Pages
         public ProgressIndicatorDemo()
         {
             this.InitializeComponent();
-             
+
             timer = new Timer(1000);
             timer.Elapsed += Timer_Elapsed;
 

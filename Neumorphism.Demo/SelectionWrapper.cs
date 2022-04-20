@@ -3,10 +3,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 
-namespace Neumorphism.Demo {
+namespace Neumorphism.Avalonia.Demo
+{
     [PseudoClasses("selectednow")]
-    public class SelectionWrapper : UserControl {
-        static SelectionWrapper() {
+    public class SelectionWrapper : UserControl
+    {
+        static SelectionWrapper()
+        {
             PointerPressedEvent.Raised.Subscribe(tuple => {
                 if (tuple.Item1 is SelectionWrapper selectionWrapper) {
                     selectionWrapper.CurrentSelected = selectionWrapper.DataSource;

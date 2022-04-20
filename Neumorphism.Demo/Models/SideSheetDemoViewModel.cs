@@ -1,4 +1,4 @@
-﻿namespace Neumorphism.Demo.Models
+﻿namespace Neumorphism.Avalonia.Demo.Models
 {
     // Data context for sidesheet
     public class SideSheetData : ViewModelBase

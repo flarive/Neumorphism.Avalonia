@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+			 xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+			 xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-             x:Class="Neumorphism.Demo.Pages.ProgressIndicatorDemo">
+             x:Class="Neumorphism.Avalonia.Demo.Pages.ProgressIndicatorDemo">
   
     <StackPanel Margin="16, 0">
         <TextBlock Classes="Headline4 Subheadline" Text="Progress Indicator" />
@@ -54,7 +56,22 @@
                     <ProgressBar Classes="Circle" Width="48" Height="48" Value="30" BorderThickness="10" />
                 </showMeTheXaml:XamlDisplay>
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar1">
-                    <ProgressBar Classes="Circle" Width="96" Height="96" Value="60" BorderThickness="8" />
+					<ProgressBar Classes="Circle" Width="296" Height="296" Value="{Binding Progress}" BorderThickness="8" ShowProgressText="True">
+						<ProgressBar.Styles>
+							<Style Selector="ProgressBar.Circle">
+								<Setter Property="assists:ProgressBarAssist.CircularInnerContent">
+									<Setter.Value>
+										<Template>
+											<StackPanel Orientation="Vertical">
+											    <TextBlock Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0} %}" FontSize="30"/>
+												<avalonia:MaterialIcon Kind="Search" Width="60" Height="60" />
+											</StackPanel>
+										</Template>
+									</Setter.Value>
+								</Setter>
+							</Style>
+						</ProgressBar.Styles>
+					</ProgressBar>
                 </showMeTheXaml:XamlDisplay>
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar2">
                     <ProgressBar Classes="Circle" IsIndeterminate="True" />

@@ -8,7 +8,7 @@
             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
             xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
             xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-            x:Class="Neumorphism.Demo.Pages.TogglesDemo">
+            x:Class="Neumorphism.Avalonia.Demo.Pages.TogglesDemo">
 
 
   <UserControl.Resources>

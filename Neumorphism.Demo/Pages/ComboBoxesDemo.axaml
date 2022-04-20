@@ -7,7 +7,7 @@
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
-             x:Class="Neumorphism.Demo.Pages.ComboBoxesDemo">
+             x:Class="Neumorphism.Avalonia.Demo.Pages.ComboBoxesDemo">
   
   
     <StackPanel Margin="16, 0" HorizontalAlignment="Stretch">

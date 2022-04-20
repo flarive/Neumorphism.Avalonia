@@ -2,9 +2,9 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Demo.Models;
+using Neumorphism.Avalonia.Demo.Models;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class SideSheetDemo : UserControl
     {

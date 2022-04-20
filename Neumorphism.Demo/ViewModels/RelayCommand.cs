@@ -2,10 +2,10 @@
 using System.Windows.Input;
 using Avalonia.Threading;
 
-namespace Neumorphism.Demo.ViewModels
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     /// <summary>
-    /// Do not use it in your project! It should be used only inside of Neumorphism.Demo.<br/>
+    /// Do not use it in your project! It should be used only inside of Neumorphism.Avalonia.Demo.<br/>
     /// If you want to use this, you should copy all whole code and paste them to your new RelayCommand.cs source file.
     /// </summary>
     public class RelayCommand : ICommand

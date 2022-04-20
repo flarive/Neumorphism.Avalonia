@@ -3,7 +3,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <StartupObject>Neumorphism.Demo.Program</StartupObject>
+    <StartupObject>Neumorphism.Avalonia.Demo.Program</StartupObject>
     <ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>

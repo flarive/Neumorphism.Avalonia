@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace Neumorphism.Demo.ViewModels
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public class DialogDemoItemViewModel : ViewModelBase
     {

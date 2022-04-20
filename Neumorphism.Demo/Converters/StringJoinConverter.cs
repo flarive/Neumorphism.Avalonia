@@ -5,8 +5,10 @@ using System.Globalization;
 using System.Linq;
 using Avalonia.Data.Converters;
 
-namespace Neumorphism.Demo.Converters {
-    public class StringJoinConverter : IValueConverter {
+namespace Neumorphism.Avalonia.Demo.Converters
+{
+    public class StringJoinConverter : IValueConverter
+    {
         public string? Separator { get; set; }
 
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture) {

@@ -7,7 +7,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Neumorphism.Avalonia.Styles.Dialog.Enums;
 
-namespace Neumorphism.Demo.ViewModels
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public class DialogDemoViewModel : ViewModelBase
     {
@@ -126,7 +126,7 @@ namespace Neumorphism.Demo.ViewModels
             var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
             
             // Open asset stream using assets.Open method.
-            await using var icon = assets?.Open(new Uri("avares://Neumorphism.Demo/Assets/avalonia-logo.png"));
+            await using var icon = assets?.Open(new Uri("avares://Neumorphism.Avalonia.Demo/Assets/avalonia-logo.png"));
             
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {

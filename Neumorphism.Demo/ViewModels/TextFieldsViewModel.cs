@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Data;
 using Neumorphism.Avalonia.Styles;
 
-namespace Neumorphism.Demo.ViewModels
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public class TextFieldsViewModel : ViewModelBase
     {

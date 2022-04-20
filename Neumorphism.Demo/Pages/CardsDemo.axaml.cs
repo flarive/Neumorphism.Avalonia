@@ -1,8 +1,7 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class CardsDemo : UserControl
     {

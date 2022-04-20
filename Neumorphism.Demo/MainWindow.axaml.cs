@@ -10,7 +10,7 @@ using Avalonia.VisualTree;
 using Neumorphism.Avalonia.Styles;
 using Neumorphism.Avalonia.Styles.Assists;
 
-namespace Neumorphism.Demo
+namespace Neumorphism.Avalonia.Demo
 {
     public class MainWindow : Window
     {

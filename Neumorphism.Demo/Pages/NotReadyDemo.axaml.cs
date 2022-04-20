@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class NotReadyDemo : UserControl
     {

@@ -7,11 +7,12 @@
     xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters">
   
     <Styles.Resources>
-      <converters:RangeToSweepConverter x:Key="RangeToSweep" />
-      <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
-      <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
-      <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
-    </Styles.Resources>
+        <converters:RangeToSweepConverter x:Key="RangeToSweep" />
+        <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+        <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
+        <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+        <converters:HeightToCornerRadiusConverter x:Key="HeightToCornerRadiusConverter" />
+	</Styles.Resources>
 
     <!--Regular (no class)-->
     <Style Selector="ProgressBar, ProgressBar.Inset">
@@ -314,7 +315,6 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="assists:SliderAssist.ThicknessTick" Value="8" />
         <Setter Property="Width" Value="64" />
         <Setter Property="Height" Value="64" />
         <Setter Property="Margin" Value="0" />
@@ -322,13 +322,12 @@
             <Setter.Value>
                 <ControlTemplate>
                   <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="Transparent" Margin="{TemplateBinding Margin}">
-                    <!--BoxShadow="-3 -3 10 #CCFFFFFF,3 3 10 #33000000"-->
                     <Border Name="PART_RootBorder"
                             Background="Transparent"
                             BorderBrush="Transparent"
-                            CornerRadius="100"
-                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=22}"
-                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=22}"
+                            CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
+                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
+                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
                             BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                             BorderThickness="0">
                         <Panel Name="PART_RootPanel"
@@ -339,22 +338,18 @@
                             </Panel.RenderTransform>
 
                             <!--<controls:Rotator Name="PART_Rotator">
-                                --><!--<controls:Arc Name="PART_Animation" ArcBrush="{TemplateBinding Foreground}"/>--><!--
-                                <styles:MagicButton Name="PART_Animation" StrokeThickness="10" Width="64" Height="64" Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" Percentage="0.5"/>
+                                --><!--<controls:Arc Name="PART_Animation" ArcBrush="{TemplateBinding Foreground}"/>-->
+									<!--
+                                <styles:CircularProgress Name="PART_Animation" StrokeThickness="10" Width="64" Height="64" Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" Percentage="0.5"/>
                             </controls:Rotator>-->
 
-                            <styles:MagicButton Name="PART_Arc" StrokeThickness="{TemplateBinding BorderThickness}" 
-                                                Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=16}" 
-                                                Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=16}" 
-                                                Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" Percentage="0.5"/>
-                                <!--<controls:Arc.SweepAngle>
-                                    <MultiBinding Converter="{StaticResource RangeToSweep}">
-                                        <TemplateBinding Property="Value" />
-                                        <TemplateBinding Property="Minimum" />
-                                        <TemplateBinding Property="Maximum" />
-                                    </MultiBinding>
-                                </controls:Arc.SweepAngle>-->
-                            
+							<styles:CircularProgress Name="PART_Arc" StrokeThickness="{TemplateBinding BorderThickness}"
+                                                Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
+                                                Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
+                                                Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" ProgressValue="{Binding $parent[ProgressBar].Value}">
+								<ContentPresenter Background="Transparent" Content="{TemplateBinding assists:ProgressBarAssist.CircularInnerContent}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+							</styles:CircularProgress>
+							
                             <Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False"
                                     Background="{TemplateBinding Foreground}" />
                         </Panel>

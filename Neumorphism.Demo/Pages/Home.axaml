@@ -3,14 +3,14 @@
               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               mc:Ignorable="d"  
-              xmlns:demo="clr-namespace:Neumorphism.Demo;assembly=Neumorphism.Demo"
+              xmlns:demo="clr-namespace:Neumorphism.Avalonia.Demo;assembly=Neumorphism.Avalonia.Demo"
               xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
               xmlns:Test="clr-namespace:RenderDemo.Pages"
-              xmlns:models="clr-namespace:Neumorphism.Demo.Models"
-              xmlns:conv="clr-namespace:Neumorphism.Demo.Converters"
+              xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
+              xmlns:conv="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
               xmlns:wpf="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
-              x:Class="Neumorphism.Demo.Pages.Home">
+              x:Class="Neumorphism.Avalonia.Demo.Pages.Home">
 	
   <UserControl.Resources>
     <conv:EnumDescriptionConverter x:Key="GetDescription"/>
@@ -51,7 +51,7 @@
           <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
       </StackPanel.Styles>
-      <Image Width="1004" Height="301" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,40" Source="avares://Neumorphism.Demo/Assets/Neumorphism.png" Opacity="1"/>
+      <Image Width="1004" Height="301" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,40" Source="avares://Neumorphism.Avalonia.Demo/Assets/Neumorphism.png" Opacity="1"/>
 
 
 

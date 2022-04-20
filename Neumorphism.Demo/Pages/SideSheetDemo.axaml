@@ -3,11 +3,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
-             xmlns:pages="clr-namespace:Neumorphism.Demo.Pages"
-             xmlns:models="clr-namespace:Neumorphism.Demo.Models"
+             xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
+             xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
-             x:Class="Neumorphism.Demo.Pages.SideSheetDemo"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.SideSheetDemo"
              x:DataType="models:SideSheetDemoViewModel">
     <UserControl.DataContext>
         <models:SideSheetDemoViewModel />

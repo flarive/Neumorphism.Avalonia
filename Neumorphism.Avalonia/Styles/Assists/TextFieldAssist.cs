@@ -20,7 +20,7 @@ namespace Neumorphism.Avalonia.Styles.Assists {
         public static string GetLabel(AvaloniaObject element) => (string)element.GetValue(LabelProperty);
 
         // Use throw DataValidationException in property of view model instead of those things
-        // Example can be found in dev-branch -> /Neumorphism.Demo/ViewModels/TextFieldsViewModel.cs
+        // Example can be found in dev-branch -> /Neumorphism.Avalonia.Demo/ViewModels/TextFieldsViewModel.cs
         
         /*
         

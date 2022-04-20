@@ -1,13 +1,11 @@
 ﻿using Avalonia.Data.Converters;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
-namespace Neumorphism.Demo.Converters
+namespace Neumorphism.Avalonia.Demo.Converters
 {
     public class EnumDescriptionConverter : IValueConverter
     {

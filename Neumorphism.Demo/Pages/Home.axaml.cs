@@ -1,16 +1,16 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Dialogs;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Demo.Models;
+using Neumorphism.Avalonia.Demo.Models;
 using Neumorphism.Avalonia.Styles.Assists;
 using System.Collections.ObjectModel;
 using Neumorphism.Avalonia.Styles.Dialog;
-using static Neumorphism.Demo.Models.StatusEnum;
+using static Neumorphism.Avalonia.Demo.Models.StatusEnum;
 using Avalonia.VisualTree;
 using System.Linq;
 using Neumorphism.Avalonia.Styles;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class Home : UserControl
     { 

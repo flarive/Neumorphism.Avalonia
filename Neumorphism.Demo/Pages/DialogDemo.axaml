@@ -2,10 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
-             xmlns:viewModels="clr-namespace:Neumorphism.Demo.ViewModels"
+             xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
              xmlns:dialogHost="clr-namespace:DialogHost;assembly=DialogHost.Avalonia"
-             xmlns:models="clr-namespace:Neumorphism.Demo.Models"
-             x:Class="Neumorphism.Demo.Pages.DialogDemo"
+             xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.DialogDemo"
              x:DataType="viewModels:DialogDemoViewModel">
     <UserControl.Resources>
         <StackPanel x:Key="Sample2View">

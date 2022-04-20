@@ -1,11 +1,11 @@
 using System;
 using Avalonia;
 using Avalonia.Media;
-using Avalonia.Controls.Primitives;
+using Avalonia.Controls;
 
 namespace Neumorphism.Avalonia.Styles
 {
-	public class MagicButton : TemplatedControl
+	public class CircularProgress : ContentControl
 	{
 		private int _pathFigureWidth;
 		private int _pathFigureHeight;
@@ -17,53 +17,53 @@ namespace Neumorphism.Avalonia.Styles
 		private double _radius;
 
 		public static readonly StyledProperty<IBrush> StrokeBrushProperty =
-			AvaloniaProperty.Register<MagicButton, IBrush>(nameof(StrokeBrush));
+			AvaloniaProperty.Register<CircularProgress, IBrush>(nameof(StrokeBrush));
 
 		public static readonly StyledProperty<int> StrokeThicknessProperty =
-			AvaloniaProperty.Register<MagicButton, int>(nameof(StrokeThickness), 5);
+			AvaloniaProperty.Register<CircularProgress, int>(nameof(StrokeThickness), 5);
 
-		public static readonly StyledProperty<double> PercentageProperty =
-			AvaloniaProperty.Register<MagicButton, double>(
-				nameof(Percentage), 1);
+		public static readonly StyledProperty<double> ProgressValueProperty =
+			AvaloniaProperty.Register<CircularProgress, double>(
+				nameof(ProgressValue), 1);
 
-		public static readonly DirectProperty<MagicButton, int> PathFigureWidthProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, int>(
+		public static readonly DirectProperty<CircularProgress, int> PathFigureWidthProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, int>(
 				nameof(PathFigureWidth),
 				o => o.PathFigureWidth,
 				(o, v) => o.PathFigureWidth = v);
 
-		public static readonly DirectProperty<MagicButton, int> PathFigureHeightProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, int>(
+		public static readonly DirectProperty<CircularProgress, int> PathFigureHeightProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, int>(
 				nameof(PathFigureHeight),
 				o => o.PathFigureHeight,
 				(o, v) => o.PathFigureHeight = v);
 
-		public static readonly DirectProperty<MagicButton, Thickness> PathFigureMarginProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, Thickness>(
+		public static readonly DirectProperty<CircularProgress, Thickness> PathFigureMarginProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, Thickness>(
 				nameof(PathFigureMargin),
 				o => o.PathFigureMargin,
 				(o, v) => o.PathFigureMargin = v);
 
-		public static readonly DirectProperty<MagicButton, Point> PathFigureStartPointProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, Point>(
+		public static readonly DirectProperty<CircularProgress, Point> PathFigureStartPointProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, Point>(
 				nameof(PathFigureStartPoint),
 				o => o.PathFigureStartPoint,
 				(o, v) => o.PathFigureStartPoint = v);
 
-		public static readonly DirectProperty<MagicButton, Point> ArcSegmentPointProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, Point>(
+		public static readonly DirectProperty<CircularProgress, Point> ArcSegmentPointProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, Point>(
 				nameof(ArcSegmentPoint),
 				o => o.ArcSegmentPoint,
 				(o, v) => o.ArcSegmentPoint = v);
 
-		public static readonly DirectProperty<MagicButton, Size> ArcSegmentSizeProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, Size>(
+		public static readonly DirectProperty<CircularProgress, Size> ArcSegmentSizeProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, Size>(
 				nameof(ArcSegmentSize),
 				o => o.ArcSegmentSize,
 				(o, v) => o.ArcSegmentSize = v);
 
-		public static readonly DirectProperty<MagicButton, bool> ArcSegmentIsLargeArcProperty =
-			AvaloniaProperty.RegisterDirect<MagicButton, bool>(
+		public static readonly DirectProperty<CircularProgress, bool> ArcSegmentIsLargeArcProperty =
+			AvaloniaProperty.RegisterDirect<CircularProgress, bool>(
 				nameof(ArcSegmentIsLargeArc),
 				o => o.ArcSegmentIsLargeArc,
 				(o, v) => o.ArcSegmentIsLargeArc = v);
@@ -80,10 +80,10 @@ namespace Neumorphism.Avalonia.Styles
 			set => SetValue(StrokeThicknessProperty, value);
 		}
 
-		public double Percentage
+		public double ProgressValue
 		{
-			get => GetValue(PercentageProperty);
-			set => SetValue(PercentageProperty, value);
+			get => GetValue(ProgressValueProperty);
+			set => SetValue(ProgressValueProperty, value);
 		}
 
 		public int PathFigureWidth
@@ -134,7 +134,7 @@ namespace Neumorphism.Avalonia.Styles
 
 			if (e.Property == StrokeBrushProperty ||
 				e.Property == StrokeThicknessProperty ||
-				e.Property == PercentageProperty)
+				e.Property == ProgressValueProperty)
 			{
 				RenderArc();
 			}
@@ -150,7 +150,9 @@ namespace Neumorphism.Avalonia.Styles
 
 		private void RenderArc()
 		{
-			var angle = Percentage * 360;
+			double percentage = ProgressValue / 100;
+
+			var angle = percentage * 360;
 
 			var startPoint = new Point(_radius, 0);
 			var endPoint = ComputeCartesianCoordinate(angle, _radius);

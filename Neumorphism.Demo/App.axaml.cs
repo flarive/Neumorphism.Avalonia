@@ -2,7 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace Neumorphism.Demo
+namespace Neumorphism.Avalonia.Demo
 {
     public class App : Application
     {

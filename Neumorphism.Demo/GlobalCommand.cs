@@ -3,7 +3,7 @@ using Neumorphism.Avalonia.Styles.Themes.Base;
 using System.Diagnostics;
 using Avalonia;
 
-namespace Neumorphism.Demo
+namespace Neumorphism.Avalonia.Demo
 {
     public static class GlobalCommand
     {

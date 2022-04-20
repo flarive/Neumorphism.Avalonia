@@ -3,10 +3,10 @@ using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Demo.Models;
-using Neumorphism.Demo.ViewModels;
+using Neumorphism.Avalonia.Demo.Models;
+using Neumorphism.Avalonia.Demo.ViewModels;
 
-namespace Neumorphism.Demo.Pages
+namespace Neumorphism.Avalonia.Demo.Pages
 {
     public class DialogDemo : UserControl
     {

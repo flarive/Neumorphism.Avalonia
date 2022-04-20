@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Material.Icons;
-using Material.Icons.Avalonia;
 
-namespace Neumorphism.Demo.Models {
-    public class MaterialIconKindGroup {
+namespace Neumorphism.Avalonia.Demo.Models
+{
+    public class MaterialIconKindGroup
+    {
         public MaterialIconKindGroup(IEnumerable<string> kinds) {
             if (kinds is null) throw new ArgumentNullException(nameof(kinds));
             var allValues = kinds.ToList();

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Demo", "Neumorphism.Demo\Neumorphism.Demo.csproj", "{ECB440AE-658B-4602-87CD-BE7FE8285362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Avalonia.Demo", "Neumorphism.Demo\Neumorphism.Avalonia.Demo.csproj", "{ECB440AE-658B-4602-87CD-BE7FE8285362}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Avalonia", "Neumorphism.Avalonia\Neumorphism.Avalonia.csproj", "{AE7993F6-BC21-4E09-833E-49E79200A139}"
 EndProject

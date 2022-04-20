@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using ShowMeTheXaml;
 
-namespace Neumorphism.Demo
+namespace Neumorphism.Avalonia.Demo
 {
     internal class Program
     {

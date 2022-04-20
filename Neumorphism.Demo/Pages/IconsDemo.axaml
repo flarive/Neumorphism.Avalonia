@@ -2,16 +2,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:Neumorphism.Demo.ViewModels"
+             xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             xmlns:models="clr-namespace:Neumorphism.Demo.Models"
-             xmlns:demo="clr-namespace:Neumorphism.Demo"
-             xmlns:converters="clr-namespace:Neumorphism.Demo.Converters"
+             xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
+             xmlns:demo="clr-namespace:Neumorphism.Avalonia.Demo"
+             xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
              xmlns:system="clr-namespace:System;assembly=System.Runtime.Extensions"
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Neumorphism.Demo.Pages.IconsDemo">
+             x:Class="Neumorphism.Avalonia.Demo.Pages.IconsDemo">
   
     <UserControl.Resources>
         <converters:StringJoinConverter x:Key="StringJoinConverter" Separator="{x:Static system:Environment.NewLine}" />
@@ -76,7 +76,7 @@
                   <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" 
                             Width="300" Classes="Header" Text="{Binding SearchText}" Margin="0">
                       <TextBox.InnerRightContent>
-                          <Button Width="{Binding $self.Bounds.Height}"
+                          <Button Width="60"
                                   Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
                                   Classes="no-material" Command="{Binding SearchCommand}"
                                   CommandParameter="{Binding ElementName=SearchBox, Path=Text}">
@@ -89,10 +89,10 @@
                   <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
                 
 
-                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Header" Margin="0"
+                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Header" Margin="0" Width="400"
                             Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;avalonia:MaterialIcon Kind=&quot;&quot; \/>'}">
                       <TextBox.InnerRightContent>
-                          <Button Width="{Binding $self.Bounds.Height}" Foreground="{DynamicResource MaterialDesignCardBackground}"
+                          <Button Width="60" Foreground="{DynamicResource MaterialDesignCardBackground}"
                                   Classes="no-material" Command="{Binding CopyToClipboardCommand, Mode=OneTime}"
                                   CommandParameter="{Binding SelectedGroup.Kind}">
                               <avalonia:MaterialIcon Kind="ContentCopy" Width="20" Height="20"/>
@@ -102,12 +102,8 @@
     
                 
                 <Grid Grid.Column="4" ColumnDefinitions="Auto,8,Auto" IsVisible="{Binding SelectedGroup, Converter={x:Static ObjectConverters.IsNotNull}}">
-                    <TextBlock Classes="Subtitle1"
-                               VerticalAlignment="Center"
-                               Text="Preview:"/>
-                    
-                    <avalonia:MaterialIcon Grid.Column="2" Width="32" Height="32"
-                                           Kind="{Binding SelectedGroup.KindValue}" VerticalAlignment="Center" />
+                    <TextBlock Classes="Subtitle1" VerticalAlignment="Center" Text="Preview:"/>
+                    <avalonia:MaterialIcon Grid.Column="2" Width="32" Height="32" Kind="{Binding SelectedGroup.KindValue}" Foreground="Gray" VerticalAlignment="Center" />
                 </Grid>
             </Grid>
         </styles:ColorZone>

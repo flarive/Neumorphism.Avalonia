@@ -4,9 +4,9 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
-using Neumorphism.Demo.ViewModels;
+using Neumorphism.Avalonia.Demo.ViewModels;
 
-namespace Neumorphism.Demo.Pages {
+namespace Neumorphism.Avalonia.Demo.Pages {
     public class IconsDemo : UserControl {
         public IconsDemo() {
             InitializeComponent();

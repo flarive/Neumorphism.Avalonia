@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls.Primitives;
 using Neumorphism.Avalonia.Styles;
 
-namespace Neumorphism.Demo.ViewModels
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public class ButtonFieldsViewModel : ViewModelBase
     {

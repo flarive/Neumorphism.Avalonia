@@ -9,6 +9,7 @@
         <PackageProjectUrl>https://github.com/flarive/Neumorphism.Avalonia</PackageProjectUrl>
         <PackageLicenseUrl></PackageLicenseUrl>
         <RepositoryUrl>https://github.com/flarive/Neumorphism.Avalonia</RepositoryUrl>
+		<PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>git</RepositoryType>
         <LangVersion>9</LangVersion>
         <PackageReleaseNotes>
@@ -28,10 +29,11 @@
     </ItemGroup>
     
     <ItemGroup>
-      <AvaloniaXaml Remove="Styles\MagicButton.axaml" />
+      <AvaloniaXaml Remove="Styles\CircularProgress.axaml" />
     </ItemGroup>
     
     <ItemGroup>
+      <None Include="Icon.png" Pack="true" PackagePath="" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Light.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Medium.ttf" />
       <None Remove="Styles\Fonts\Roboto\Roboto-Regular.ttf" />
@@ -51,11 +53,19 @@
       <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Thin.ttf">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </AvaloniaResource>
-      <AvaloniaResource Include="Styles\MagicButton.axaml" />
+      <AvaloniaResource Include="Styles\CircularProgress.axaml" />
     </ItemGroup>
+
 
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="0.10.13" />
       <PackageReference Include="DialogHost.Avalonia" Version="0.4.0" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Styles\CircularProgress.axaml.cs">
+        <DependentUpon>CircularProgress.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>
