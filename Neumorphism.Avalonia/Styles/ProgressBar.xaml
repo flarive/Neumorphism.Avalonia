@@ -12,6 +12,7 @@
         <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
         <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
         <converters:HeightToCornerRadiusConverter x:Key="HeightToCornerRadiusConverter" />
+		<converters:ThicknessToIntConverter x:Key="ThicknessToIntConverter" />
 	</Styles.Resources>
 
     <!--Regular (no class)-->
@@ -315,6 +316,7 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="3" />
         <Setter Property="Width" Value="64" />
         <Setter Property="Height" Value="64" />
         <Setter Property="Margin" Value="0" />
@@ -343,7 +345,7 @@
                                 <styles:CircularProgress Name="PART_Animation" StrokeThickness="10" Width="64" Height="64" Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" Percentage="0.5"/>
                             </controls:Rotator>-->
 
-							<styles:CircularProgress Name="PART_Arc" StrokeThickness="{TemplateBinding BorderThickness}"
+							<styles:CircularProgress Name="PART_Arc" StrokeThickness="{TemplateBinding BorderThickness, Converter={StaticResource ThicknessToIntConverter}}"
                                                 Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
                                                 Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
                                                 Background="Transparent" StrokeBrush="{TemplateBinding Foreground}" ProgressValue="{Binding $parent[ProgressBar].Value}">

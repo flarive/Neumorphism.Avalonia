@@ -54,30 +54,42 @@ namespace Neumorphism.Avalonia.Demo.Pages
 
         private double SwitchProgress()
         {
-            switch(caseProgress)
+            //switch(caseProgress)
+            //{
+            //    case 0:
+            //        caseProgress++;
+            //        return 30;
+            //    case 1:
+            //        caseProgress++;
+            //        return 45;
+            //    case 2:
+            //        caseProgress++;
+            //        return 50;
+            //    case 3:
+            //        caseProgress++;
+            //        return 80;
+            //    case 4:
+            //        caseProgress++;
+            //        return 100;
+            //    case 5:
+            //        caseProgress = 0;
+            //        return 0;
+            //    default:
+            //        caseProgress = 0;
+            //        return 0;
+            //}
+
+            
+            if (caseProgress < 100)
             {
-                case 0:
-                    caseProgress++;
-                    return 30;
-                case 1:
-                    caseProgress++;
-                    return 45;
-                case 2:
-                    caseProgress++;
-                    return 50;
-                case 3:
-                    caseProgress++;
-                    return 80;
-                case 4:
-                    caseProgress++;
-                    return 100;
-                case 5:
-                    caseProgress = 0;
-                    return 0;
-                default:
-                    caseProgress = 0;
-                    return 0;
+                caseProgress++;
             }
+            else
+            {
+                caseProgress = 0;
+            }
+
+            return caseProgress;
         }
 
         private void InitializeComponent()

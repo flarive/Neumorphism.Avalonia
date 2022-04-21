@@ -53,7 +53,7 @@
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Circular progress bars" />
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar0">
-                    <ProgressBar Classes="Circle" Width="48" Height="48" Value="30" BorderThickness="10" />
+                    <ProgressBar Classes="Circle" Width="96" Height="96" Value="30" BorderThickness="4" />
                 </showMeTheXaml:XamlDisplay>
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar1">
 					<ProgressBar Classes="Circle" Width="296" Height="296" Value="{Binding Progress}" BorderThickness="8" ShowProgressText="True">
@@ -74,7 +74,7 @@
 					</ProgressBar>
                 </showMeTheXaml:XamlDisplay>
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar2">
-                    <ProgressBar Classes="Circle" IsIndeterminate="True" />
+                    <ProgressBar Classes="Circle" Width="48" Height="48" IsIndeterminate="True" />
                 </showMeTheXaml:XamlDisplay>
                 <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar3">
                       <ProgressBar Classes="Circle" Value="{Binding Progress}" />

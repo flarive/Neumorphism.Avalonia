@@ -13,7 +13,8 @@
         </KeyFrame>
       </Animation>
     </Style.Animations>-->
-    <Setter Property="Template">
+	  <Setter Property="StrokeThickness" Value="{TemplateBinding StrokeThickness}"/>
+	  <Setter Property="Template">
       <ControlTemplate>
         <Grid Background="{TemplateBinding Background}">
 	      <ContentPresenter Background="Transparent" Content="{TemplateBinding ContentControl.Content}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
