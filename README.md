@@ -41,7 +41,7 @@ More controls should be themed soon.
 
 
 
-# <img src="/favicon.png" width="32" height="32"> Technical info
+# <img src="favicon.png" width="32" height="32"> Technical info
 
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Can be used with .net Core 3.x, .net5, .net6...
@@ -50,7 +50,7 @@ More controls should be themed soon.
 - .Net 5 demo application project
 
 
-# <img src="/favicon.png" width="32" height="32"> How to start ?
+# <img src="favicon.png" width="32" height="32"> How to start ?
 
 1. Add [Neumorphism.Avalonia][nuget] nuget package to your project :
 
@@ -70,7 +70,7 @@ More controls should be themed soon.
       </Application>
       ```
 
-# <img src="/favicon.png" width="32" height="32"> Licence
+# <img src="favicon.png" width="32" height="32"> Licence
 
-Neumorphism.Avalonia is free to use in any non commercial project.
+Neumorphism.Avalonia is free to use in any non commercial project...
 
