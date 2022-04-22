@@ -26,6 +26,12 @@ namespace Neumorphism.Avalonia.Styles
 			AvaloniaProperty.Register<CircularProgress, double>(
 				nameof(ProgressValue), 1);
 
+
+		public static readonly StyledProperty<bool> IsIndeterminateProperty =
+			AvaloniaProperty.Register<CircularProgress, bool>(
+				nameof(IsIndeterminate), false);
+
+
 		public static readonly DirectProperty<CircularProgress, int> PathFigureWidthProperty =
 			AvaloniaProperty.RegisterDirect<CircularProgress, int>(
 				nameof(PathFigureWidth),
@@ -85,6 +91,13 @@ namespace Neumorphism.Avalonia.Styles
 			get => GetValue(ProgressValueProperty);
 			set => SetValue(ProgressValueProperty, value);
 		}
+
+		public bool IsIndeterminate
+		{
+			get => GetValue(IsIndeterminateProperty);
+			set => SetValue(IsIndeterminateProperty, value);
+		}
+
 
 		public int PathFigureWidth
 		{

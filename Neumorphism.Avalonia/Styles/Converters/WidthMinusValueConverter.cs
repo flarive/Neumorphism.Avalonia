@@ -17,7 +17,6 @@ namespace Neumorphism.Avalonia.Styles.Converters
                 val = ((double)value);
             }
 
-
             if (parameter != null)
             {
                 string param = parameter.ToString();

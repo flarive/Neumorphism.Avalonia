@@ -3,16 +3,6 @@
         xmlns:cc="clr-namespace:Neumorphism.Avalonia.Styles">
   
   <Style Selector="cc|CircularProgress">
-    <!--<Style.Animations>
-      <Animation Duration="0:0:2" IterationCount="INFINITE">
-        <KeyFrame Cue="0%">
-          <Setter Property="RotateTransform.Angle" Value="0" />
-        </KeyFrame>
-        <KeyFrame Cue="100%">
-          <Setter Property="RotateTransform.Angle" Value="360" />
-        </KeyFrame>
-      </Animation>
-    </Style.Animations>-->
 	  <Setter Property="StrokeThickness" Value="{TemplateBinding StrokeThickness}"/>
 	  <Setter Property="Template">
       <ControlTemplate>
@@ -23,8 +13,8 @@
                 Width="{TemplateBinding PathFigureWidth}"
                 Height="{TemplateBinding PathFigureHeight}"
                 StrokeThickness="{TemplateBinding StrokeThickness}"
-                StrokeLineCap="Round"
-                StrokeJoin="Round"
+                StrokeLineCap="Flat"
+                StrokeJoin="Bevel"
                 RenderTransformOrigin="25,25">
             <Path.Data>
               <PathGeometry>
@@ -42,4 +32,17 @@
       </ControlTemplate>
     </Setter>
   </Style>
+
+	<Style Selector="cc|CircularProgress[IsIndeterminate=True]">
+		<Style.Animations>
+			<Animation Duration="0:0:2" IterationCount="INFINITE">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0" />
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="360" />
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
 </Styles>
