@@ -1,6 +1,14 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:cc="clr-namespace:Neumorphism.Avalonia.Styles">
+        xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
+        xmlns:cc="clr-namespace:Neumorphism.Avalonia.Styles"
+        xmlns:avalonia="clr-namespace:Avalonia;assembly=Avalonia"
+        xmlns:system="clr-namespace:System;assembly=netstandard">
+
+
+  <Styles.Resources>
+    <converters:TestConverter x:Key="TestConverter" />
+  </Styles.Resources>
   
   <Style Selector="cc|CircularProgress">
 	  <Setter Property="StrokeThickness" Value="{TemplateBinding StrokeThickness}"/>

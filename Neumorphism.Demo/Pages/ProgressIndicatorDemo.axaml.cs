@@ -70,6 +70,8 @@ namespace Neumorphism.Avalonia.Demo.Pages
             _timer3 = new Timer(500);
             _timer3.Elapsed += Timer3_Elapsed;
 
+
+
             this.DataContext = context = new Context();
 
             this.AttachedToVisualTree += ProgressIndicatorDemo_AttachedToVisualTree;

@@ -5,7 +5,7 @@ using Avalonia.Data.Converters;
 
 namespace Neumorphism.Avalonia.Styles.Converters
 {
-    public class WidthMinusValueConverter : IValueConverter
+    public class WidthToCustomValueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -40,11 +40,10 @@ namespace Neumorphism.Avalonia.Styles.Converters
 
                                 if (!negative)
                                 {
-                                    res = val - nn;
+                                    res = nn;
                                 }
                                 else
                                 {
-                                    // ???????????
                                     res = -nn;
                                 }
 
@@ -54,7 +53,7 @@ namespace Neumorphism.Avalonia.Styles.Converters
                     }
                     else
                     {
-                        return val - minus;
+                        return -minus;
                     }
                 }
             }

@@ -141,6 +141,14 @@ namespace Neumorphism.Avalonia.Styles
 			private set => SetAndRaise(ArcSegmentIsLargeArcProperty, ref _arcSegmentIsLargeArc, value);
 		}
 
+		public CircularProgress()
+		{
+			_pathFigureMargin = new Thickness();
+			_pathFigureStartPoint = new Point();
+			_arcSegmentPoint = new Point();
+			_arcSegmentSize = new Size();
+		}
+
 		protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> e)
 		{
 			base.OnPropertyChanged(e);
@@ -178,6 +186,7 @@ namespace Neumorphism.Avalonia.Styles
 			var largeArc = angle > 180.0;
 
 			var outerArcSize = new Size(_radius, _radius);
+
 
 			PathFigureStartPoint = startPoint;
 
