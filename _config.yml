@@ -13,7 +13,9 @@ social:
     - https://github.com/flarive/Neumorphism.Avalonia
 
 
-google_site_verification: "gFeL2UM3oqUu8vSx0mmJd0WQM-i-iA0G9w_RHnoLT2k"
+google_site_verification: gFeL2UM3oqUu8vSx0mmJd0WQM-i-iA0G9w_RHnoLT2k
+
+
 
 plugins:
   - jekyll-feed
