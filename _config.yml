@@ -7,6 +7,10 @@ description: "Easy to use and customizable Neumorphism Design implementation for
 url: "https://github.com/flarive/Neumorphism.Avalonia"
 logo: "favicon.png"
 
+github_username: flarive
+languages: en
+keywords: "avalonia, neumorphism, xaml"
+
 social:
   name: Eviral
   links:
