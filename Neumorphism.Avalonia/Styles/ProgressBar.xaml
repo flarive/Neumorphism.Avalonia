@@ -100,9 +100,43 @@
         </Setter>
   </Style>
 
+  <!--Class Vertical-->
   <!--<Style Selector="ProgressBar.Vertical">
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="Width" Value="16" />
     <Setter Property="Height" Value="400" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Border Name="PART_RootBorder"
+                  Background="Transparent"
+                  Width="{TemplateBinding Width}"
+                  Height="{TemplateBinding Height}"
+                  CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
+                  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+            <Panel Name="PART_RootPanel" ClipToBounds="True" HorizontalAlignment="Stretch">
+              <Panel.RenderTransform>
+                <ScaleTransform />
+              </Panel.RenderTransform>
+
+              <Canvas Name="PART_Container" HorizontalAlignment="Left" VerticalAlignment="Top" Height="{TemplateBinding Height}">
+                <Border Name="PART_First" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
+                <Border Name="PART_Second" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
+              </Canvas>
+
+              <Border Name="PART_Indicator" ClipToBounds="False" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" Background="{TemplateBinding Foreground}" />
+            </Panel>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
   </Style>-->
 
 
@@ -124,14 +158,14 @@
         </Setter>
     </Style>
 
-    <Style Selector="ProgressBar[IsVisible=true]:not(.Circle):not(.notransitions) /template/ Panel#PART_RootPanel">
+    <Style Selector="ProgressBar[IsVisible=true]:horizontal:not(.Circle):not(.notransitions) /template/ Panel#PART_RootPanel">
         <Style.Animations>
             <animations:BeginAnimation>
                 <Animation Duration="0:0:1" FillMode="Both" Easing="CubicEaseOut">
                     <KeyFrame Cue="0%">
                         <Setter Property="Opacity" Value="0" />
                         <Setter Property="ScaleTransform.ScaleX" Value="0" />
-                        <Setter Property="ScaleTransform.ScaleY" Value="0" />
+                        <Setter Property="ScaleTransform.ScaleY" Value="1" />
                     </KeyFrame>
                     <KeyFrame Cue="100%">
                         <Setter Property="Opacity" Value="1" />
@@ -141,6 +175,27 @@
                 </Animation>
             </animations:BeginAnimation>
         </Style.Animations>
+    </Style>
+  
+  
+
+    <Style Selector="ProgressBar[IsVisible=true]:vertical:not(.Circle):not(.notransitions) /template/ Panel#PART_RootPanel">
+      <Style.Animations>
+        <animations:BeginAnimation>
+          <Animation Duration="0:0:1" FillMode="Both" Easing="CubicEaseOut">
+            <KeyFrame Cue="0%">
+              <Setter Property="Opacity" Value="0" />
+              <Setter Property="ScaleTransform.ScaleX" Value="1" />
+              <Setter Property="ScaleTransform.ScaleY" Value="0" />
+            </KeyFrame>
+            <KeyFrame Cue="100%">
+              <Setter Property="Opacity" Value="1" />
+              <Setter Property="ScaleTransform.ScaleX" Value="1" />
+              <Setter Property="ScaleTransform.ScaleY" Value="1" />
+            </KeyFrame>
+          </Animation>
+        </animations:BeginAnimation>
+      </Style.Animations>
     </Style>
 
     <!-- Setters for default statement of progress bar and its parts -->
@@ -341,7 +396,7 @@
     </Style>
     <Style Selector="ProgressBar:vertical /template/ Border#PART_Indicator">
         <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
 
     <!--Class Light-->

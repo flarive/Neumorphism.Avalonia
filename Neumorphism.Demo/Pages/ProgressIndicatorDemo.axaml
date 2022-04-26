@@ -201,8 +201,8 @@
           <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators0" Width="50">
             <ProgressBar Orientation="Vertical" Height="300" Value="0" ToolTip.Tip="Regular horizontal ProgressBar with no class and value 0" />
           </showMeTheXaml:XamlDisplay>
-          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators1" Width="50">
-            <ProgressBar Orientation="Vertical" Classes="Vertical Light" Height="300" Width="50" Value="30" ToolTip.Tip="Regular horizontal ProgressBar with class Light and value 30" />
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators1" Width="80">
+            <ProgressBar Orientation="Vertical" Classes="Light" Height="300" Width="50" Value="30" ToolTip.Tip="Regular horizontal ProgressBar with class Light and value 30" />
           </showMeTheXaml:XamlDisplay>
           <!--<showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators2" Width="50">
             <ProgressBar Classes="Vertical Dark" Height="300" IsIndeterminate="True" ToolTip.Tip="Regular horizontal indeterminate ProgressBar with class Dark" />
