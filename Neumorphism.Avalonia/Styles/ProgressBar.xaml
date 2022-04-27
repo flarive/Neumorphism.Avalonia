@@ -36,6 +36,7 @@
                             Height="{TemplateBinding Height}"
                             CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
                             BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+                            ClipToBounds="True"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <Panel Name="PART_RootPanel" ClipToBounds="True" HorizontalAlignment="Stretch">
@@ -81,64 +82,33 @@
                         BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">
-                  <Panel Name="PART_RootPanel" ClipToBounds="True" HorizontalAlignment="Stretch">
-                    <Panel.RenderTransform>
-                      <ScaleTransform />
-                    </Panel.RenderTransform>
+                  <Border Name="PART_InnerBorder"
+                        Background="Transparent"
+                        Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}"
+                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}"
+                        CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
+                        ClipToBounds="True"
+                        BorderBrush="Transparent"
+                        BorderThickness="0">
+                    <Panel Name="PART_RootPanel" ClipToBounds="True" HorizontalAlignment="Stretch">
+                      <Panel.RenderTransform>
+                        <ScaleTransform />
+                      </Panel.RenderTransform>
 
-                    <Canvas Name="PART_Container" HorizontalAlignment="Left" VerticalAlignment="Top" Height="{TemplateBinding Height}">
-                      <Border Name="PART_First" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
-                      <Border Name="PART_Second" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
-                    </Canvas>
+                      <Canvas Name="PART_Container" HorizontalAlignment="Left" VerticalAlignment="Top" Height="{TemplateBinding Height}">
+                        <Border Name="PART_First" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
+                        <Border Name="PART_Second" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
+                      </Canvas>
 
-                    <Border Name="PART_Indicator" ClipToBounds="False" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" Background="{TemplateBinding Foreground}" />
-                  </Panel>
+                      <Border Name="PART_Indicator" ClipToBounds="False" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" Background="{TemplateBinding Foreground}" />
+                    </Panel>
+                  </Border>
                 </Border>
               </Border>
             </ControlTemplate>
           </Setter.Value>
         </Setter>
   </Style>
-
-  <!--Class Vertical-->
-  <!--<Style Selector="ProgressBar.Vertical">
-    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}" />
-    <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="Width" Value="16" />
-    <Setter Property="Height" Value="400" />
-    <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate>
-          <Border Name="PART_RootBorder"
-                  Background="Transparent"
-                  Width="{TemplateBinding Width}"
-                  Height="{TemplateBinding Height}"
-                  CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-                  BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
-                  BorderBrush="{TemplateBinding BorderBrush}"
-                  BorderThickness="{TemplateBinding BorderThickness}">
-            <Panel Name="PART_RootPanel" ClipToBounds="True" HorizontalAlignment="Stretch">
-              <Panel.RenderTransform>
-                <ScaleTransform />
-              </Panel.RenderTransform>
-
-              <Canvas Name="PART_Container" HorizontalAlignment="Left" VerticalAlignment="Top" Height="{TemplateBinding Height}">
-                <Border Name="PART_First" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
-                <Border Name="PART_Second" Background="{TemplateBinding Foreground}" Height="{TemplateBinding Height}" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" />
-              </Canvas>
-
-              <Border Name="PART_Indicator" ClipToBounds="False" CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}" Background="{TemplateBinding Foreground}" />
-            </Panel>
-          </Border>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>-->
-
 
  
   <!-- Transitions -->
@@ -325,34 +295,36 @@
 
     <Style Selector="ProgressBar:indeterminate:vertical /template/ Border#PART_First">
         <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Width" Value="{TemplateBinding Width}" />
+        <Setter Property="Height" Value="{TemplateBinding Height}" />
         <Style.Animations>
             <Animation Duration="0:0:2" IterationCount="INFINITE">
                 <KeyFrame Cue="0%">
                     <!--<Setter Property="Canvas.Bottom" Value="-10" />-->
-                    <Setter Property="Canvas.Bottom" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=-10%}" />
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=-10%}" />
                     <!--<Setter Property="Height" Value="10" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=10%}" />
                 </KeyFrame>
                 <KeyFrame Cue="35%">
                     <!--Setter Property="Canvas.Bottom" Value="45" />-->
-                    <Setter Property="Canvas.Bottom" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=45%}" />
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=45%}" />
                     <!--<Setter Property="Height" Value="60" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=60%}" />
                 </KeyFrame>
                 <KeyFrame Cue="60%">
                     <!--<Setter Property="Canvas.Bottom" Value="100" />-->
-                    <Setter Property="Canvas.Bottom" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <!--Setter Property="Height" Value="100" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
                     <!--<Setter Property="Canvas.Bottom" Value="100" />-->
-                    <Setter Property="Canvas.Bottom" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
                     <!--<Setter Property="Canvas.Bottom" Value="100" />-->
-                    <Setter Property="Canvas.Bottom" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
             </Animation>
@@ -360,6 +332,8 @@
     </Style>
     <Style Selector="ProgressBar:indeterminate:vertical /template/ Border#PART_Second">
         <Setter Property="IsVisible" Value="True" />
+        <Setter Property="Width" Value="{TemplateBinding Width}" />
+        <Setter Property="Height" Value="{TemplateBinding Height}" />
         <Style.Animations>
             <Animation Duration="0:0:2" IterationCount="INFINITE">
                 <KeyFrame Cue="0%">
@@ -372,18 +346,23 @@
                 </KeyFrame>
                 <KeyFrame Cue="70%">
                     <Setter Property="Canvas.Bottom" Value="0" />
-                    <Setter Property="Height" Value="70" />
+                    <!--<Setter Property="Height" Value="70" />-->
+                    <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=70%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
-                    <Setter Property="Canvas.Bottom" Value="95" />
-                    <Setter Property="Height" Value="20" />
+                    <!--<Setter Property="Canvas.Bottom" Value="95" />-->
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=95%}" />
+                    <!--<Setter Property="Height" Value="20" />-->
+                    <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=20%}" />
                 </KeyFrame>
                 <KeyFrame Cue="95%">
-                    <Setter Property="Canvas.Bottom" Value="100" />
+                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-                    <Setter Property="Canvas.Bottom" Value="100" />
+                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
+                    <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
             </Animation>
@@ -431,8 +410,8 @@
                             Background="Transparent"
                             BorderBrush="Transparent"
                             CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
-                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
+                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
                             BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                             BorderThickness="0">
                         <Panel Name="PART_RootPanel"
@@ -477,8 +456,8 @@
 								Background="Transparent"
 								BorderBrush="Transparent"
 								CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
-								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
+								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
 								BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
 								BorderThickness="0">
 							<Grid>
@@ -541,8 +520,8 @@
 								Background="Transparent"
 								BorderBrush="Transparent"
 								CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
-								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=25%}"
+								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
 								BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
 								BorderThickness="0">
 							<Grid>

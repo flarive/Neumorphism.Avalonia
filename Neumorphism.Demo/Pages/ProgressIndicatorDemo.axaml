@@ -15,23 +15,23 @@
       <StackPanel>
         <TextBlock Classes="Headline6 Subheadline2" Text="Linear progress bars" />
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators0">
-          <ProgressBar Width="300" Value="0" ToolTip.Tip="Regular horizontal ProgressBar with no class and value 0" />
+          <ProgressBar Width="260" Value="0" ToolTip.Tip="Regular horizontal ProgressBar with no class and value 0" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators1">
-          <ProgressBar Classes="Light" Width="300" Height="50" Value="30" ToolTip.Tip="Regular horizontal ProgressBar with class Light and value 30" />
+          <ProgressBar Classes="Light" Width="260" Height="50" Value="30" ToolTip.Tip="Regular horizontal ProgressBar with class Light and value 30" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators2">
-          <ProgressBar Classes="Dark" Width="300" IsIndeterminate="True" ToolTip.Tip="Regular horizontal indeterminate ProgressBar with class Dark" />
+          <ProgressBar Classes="Dark" Width="260" IsIndeterminate="True" ToolTip.Tip="Regular horizontal indeterminate ProgressBar with class Dark" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators3">
           <StackPanel Orientation="Horizontal">
-            <ProgressBar Name="InsetProgressCountDown" Classes="Accent" Width="270" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+            <TextBlock Margin="0,0,10,0" Text="{Binding ElementName=InsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
+            <ProgressBar Name="InsetProgressCountDown" Classes="Accent" Width="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
                          ToolTip.Tip="Regular horizontal ProgressBar decreasing seconds countdown with class Accent" />
-            <TextBlock Margin="5,0,0,0" Text="{Binding ElementName=InsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators4">
-          <ProgressBar Classes="notransitions" Value="{Binding Progress1}" Width="300" ToolTip.Tip="Customized horizontal ProgressBar with custom gradient color">
+          <ProgressBar Classes="notransitions" Value="{Binding Progress1}" Width="260" ToolTip.Tip="Customized horizontal ProgressBar with custom gradient color">
             <ProgressBar.Styles>
               <Style Selector="ProgressBar">
                 <Setter Property="Foreground">
@@ -49,23 +49,23 @@
 
         <TextBlock Classes="Headline6 Subheadline2" Text="Outset Linear progress bars" Margin="0,30,0,0" />
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators0">
-          <ProgressBar Classes="Outset" Width="300" Value="0" ToolTip.Tip="Outset horizontal ProgressBar with no class and value 0" />
+          <ProgressBar Classes="Outset" Width="260" Value="0" ToolTip.Tip="Outset horizontal ProgressBar with no class and value 0" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators1">
-          <ProgressBar Classes="Outset Light" Width="300" Height="50" Value="30" ToolTip.Tip="Outset horizontal ProgressBar with class Light and value 30" />
+          <ProgressBar Classes="Outset Light" Width="260" Height="50" Value="30" ToolTip.Tip="Outset horizontal ProgressBar with class Light and value 30" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators2">
-          <ProgressBar Classes="Outset Dark" Width="300" IsIndeterminate="True" ToolTip.Tip="Outset horizontal indeterminate ProgressBar with class Dark" />
+          <ProgressBar Classes="Outset Dark" Width="260" IsIndeterminate="True" ToolTip.Tip="Outset horizontal indeterminate ProgressBar with class Dark" />
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators3">
           <StackPanel Orientation="Horizontal">
-            <ProgressBar Name="OutsetProgressCountDown" Classes="Outset Accent" Width="270" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+            <TextBlock Margin="0,0,10,0" Text="{Binding ElementName=OutsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
+            <ProgressBar Name="OutsetProgressCountDown" Classes="Outset Accent" Width="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
                          ToolTip.Tip="Outset horizontal ProgressBar decreasing seconds countdown with class Accent" />
-            <TextBlock Margin="5,0,0,0" Text="{Binding ElementName=OutsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators4">
-          <ProgressBar Classes="Outset notransitions" Width="300" Value="{Binding Progress1}" ToolTip.Tip="Outset customized horizontal ProgressBar with custom gradient color">
+          <ProgressBar Classes="Outset notransitions" Width="260" Value="{Binding Progress1}" ToolTip.Tip="Outset customized horizontal ProgressBar with custom gradient color">
             <ProgressBar.Styles>
               <Style Selector="ProgressBar.Outset">
                 <Setter Property="Foreground">
@@ -198,24 +198,24 @@
 
         <StackPanel Orientation="Horizontal">
 
-          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators0" Width="50">
-            <ProgressBar Orientation="Vertical" Height="300" Value="0" ToolTip.Tip="Regular horizontal ProgressBar with no class and value 0" />
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators0" Width="40">
+            <ProgressBar Orientation="Vertical" Height="260" Value="0" ToolTip.Tip="Regular vertical ProgressBar with no class and value 0" />
           </showMeTheXaml:XamlDisplay>
-          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators1" Width="80">
-            <ProgressBar Orientation="Vertical" Classes="Light" Height="300" Width="50" Value="30" ToolTip.Tip="Regular horizontal ProgressBar with class Light and value 30" />
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators1" Width="60">
+            <ProgressBar Orientation="Vertical" Classes="Light" Height="260" Width="30" Value="30" ToolTip.Tip="Regular vertical ProgressBar with class Light and value 30" />
           </showMeTheXaml:XamlDisplay>
-          <!--<showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators2" Width="50">
-            <ProgressBar Classes="Vertical Dark" Height="300" IsIndeterminate="True" ToolTip.Tip="Regular horizontal indeterminate ProgressBar with class Dark" />
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators2" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="Dark" Height="260" IsIndeterminate="True" ToolTip.Tip="Regular vertical indeterminate ProgressBar with class Dark" />
           </showMeTheXaml:XamlDisplay>
           <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators3" Width="50">
-            <StackPanel Orientation="Vertical">
-              <ProgressBar Name="VerticalProgressCountDown" Classes="Vertical Accent" Height="270" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
-                           ToolTip.Tip="Regular horizontal ProgressBar decreasing seconds countdown with class Accent" />
-              <TextBlock Margin="5,0,0,0" Text="{Binding ElementName=InsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+              <TextBlock Margin="0,0,0,10" Text="{Binding ElementName=VerticalProgressCountDown, Path=Value, StringFormat={}{0}s}" HorizontalAlignment="Center" TextAlignment="Center"/>
+              <ProgressBar Name="VerticalProgressCountDown" Orientation="Vertical" HorizontalAlignment="Center" Classes="Accent" Width="16" Height="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                           ToolTip.Tip="Regular vertical ProgressBar decreasing seconds countdown with class Accent" />
             </StackPanel>
           </showMeTheXaml:XamlDisplay>
-          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators4" Width="50">
-            <ProgressBar Classes="Vertical notransitions" Value="{Binding Progress1}" Height="300" ToolTip.Tip="Customized horizontal ProgressBar with custom gradient color">
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators4" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="notransitions" Value="{Binding Progress1}" Height="260" ToolTip.Tip="Customized horizontal ProgressBar with custom gradient color">
               <ProgressBar.Styles>
                 <Style Selector="ProgressBar">
                   <Setter Property="Foreground">
@@ -229,7 +229,45 @@
                 </Style>
               </ProgressBar.Styles>
             </ProgressBar>
-          </showMeTheXaml:XamlDisplay>-->
+          </showMeTheXaml:XamlDisplay>
+        </StackPanel>
+
+        <TextBlock Classes="Headline6 Subheadline2" Text="Outset vertical progress bars" Margin="0,30,0,0" />
+
+        <StackPanel Orientation="Horizontal">
+
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators0" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="Outset" Height="260" Value="0" ToolTip.Tip="Regular vertical ProgressBar with no class and value 0" />
+          </showMeTheXaml:XamlDisplay>
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators1" Width="60">
+            <ProgressBar Orientation="Vertical" Classes="Outset Light" Height="260" Width="30" Value="30" ToolTip.Tip="Regular vertical ProgressBar with class Light and value 30" />
+          </showMeTheXaml:XamlDisplay>
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators2" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="Outset Dark" Height="260" IsIndeterminate="True" ToolTip.Tip="Regular vertical indeterminate ProgressBar with class Dark" />
+          </showMeTheXaml:XamlDisplay>
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators3" Width="50">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+              <TextBlock Margin="0,0,0,10" Text="{Binding ElementName=OutlineVerticalProgressCountDown, Path=Value, StringFormat={}{0}s}" HorizontalAlignment="Center" TextAlignment="Center"/>
+              <ProgressBar Name="OutlineVerticalProgressCountDown" Orientation="Vertical" HorizontalAlignment="Center" Classes="Outset Accent" Width="16" Height="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                           ToolTip.Tip="Regular vertical ProgressBar decreasing seconds countdown with class Accent" />
+            </StackPanel>
+          </showMeTheXaml:XamlDisplay>
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators4" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="Outset notransitions" Value="{Binding Progress1}" Height="260" ToolTip.Tip="Customized horizontal ProgressBar with custom gradient color">
+              <ProgressBar.Styles>
+                <Style Selector="ProgressBar">
+                  <Setter Property="Foreground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#FF5cbcd6" />
+                        <GradientStop Offset="1" Color="#FF77dbf0" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ProgressBar.Styles>
+            </ProgressBar>
+          </showMeTheXaml:XamlDisplay>
         </StackPanel>
       </StackPanel>
       
