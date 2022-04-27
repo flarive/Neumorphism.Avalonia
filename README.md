@@ -1,6 +1,4 @@
 
-<meta name="google-site-verification" content="gFeL2UM3oqUu8vSx0mmJd0WQM-i-iA0G9w_RHnoLT2k" />
-
 [nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
 
 # <img src="favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia
