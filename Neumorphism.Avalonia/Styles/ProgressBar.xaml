@@ -13,8 +13,8 @@
         <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
         <converters:WidthToCustomValueConverter x:Key="WidthToCustomValueConverter" />
         <converters:HeightToCornerRadiusConverter x:Key="HeightToCornerRadiusConverter" />
-		    <converters:ThicknessToIntConverter x:Key="ThicknessToIntConverter" />
-		    <converters:HeightToThicknessConverter x:Key="HeightToThicknessConverter" />
+        <converters:ThicknessToIntConverter x:Key="ThicknessToIntConverter" />
+        <converters:HeightToThicknessConverter x:Key="HeightToThicknessConverter" />
     </Styles.Resources>
 
     <!--Regular (no class) or Inset class-->
@@ -56,6 +56,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+	<!--Class DeepInset-->
+	<Style Selector="ProgressBar.DeepInset">
+		
+	</Style>
 
 
     <!--Class Outset (horizontal)-->
@@ -185,8 +190,11 @@
 
     <Style Selector="ProgressBar:not(.Circle):vertical /template/ Border#PART_RootBorder">
       <Setter Property="CornerRadius" Value="{TemplateBinding Width, Converter={StaticResource HeightToCornerRadiusConverter}}" />
-      <Setter Property="BoxShadow" Value="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
     </Style>
+
+	<Style Selector="ProgressBar:not(.Circle):not(.DeepInset):vertical /template/ Border#PART_RootBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
+	</Style>
 
     <Style Selector="ProgressBar:not(.Circle):vertical /template/ Border#PART_Indicator">
       <Setter Property="CornerRadius" Value="{TemplateBinding Width, Converter={StaticResource HeightToCornerRadiusConverter}}" />
@@ -237,16 +245,13 @@
                 <KeyFrame Cue="90%">
                     <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
-                    <!--<Setter Property="Width" Value="0" />-->
-                    <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=0%}" />
+                    <Setter Property="Width" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
                     <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
-                    <!--<Setter Property="Width" Value="0" />-->
-                    <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=0%}" />
+                    <Setter Property="Width" Value="0" />
                 </KeyFrame>
-          
             </Animation>
         </Style.Animations>
     </Style>
@@ -300,30 +305,22 @@
         <Style.Animations>
             <Animation Duration="0:0:2" IterationCount="INFINITE">
                 <KeyFrame Cue="0%">
-                    <!--<Setter Property="Canvas.Bottom" Value="-10" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=-10%}" />
-                    <!--<Setter Property="Height" Value="10" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=10%}" />
                 </KeyFrame>
                 <KeyFrame Cue="35%">
-                    <!--Setter Property="Canvas.Bottom" Value="45" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=45%}" />
-                    <!--<Setter Property="Height" Value="60" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=60%}" />
                 </KeyFrame>
                 <KeyFrame Cue="60%">
-                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
-                    <!--Setter Property="Height" Value="100" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
-                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
@@ -346,22 +343,17 @@
                 </KeyFrame>
                 <KeyFrame Cue="70%">
                     <Setter Property="Canvas.Bottom" Value="0" />
-                    <!--<Setter Property="Height" Value="70" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=70%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
-                    <!--<Setter Property="Canvas.Bottom" Value="95" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=95%}" />
-                    <!--<Setter Property="Height" Value="20" />-->
                     <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=20%}" />
                 </KeyFrame>
                 <KeyFrame Cue="95%">
-                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-                    <!--<Setter Property="Canvas.Bottom" Value="100" />-->
                     <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Height" Value="0" />
                 </KeyFrame>
@@ -375,7 +367,7 @@
     </Style>
     <Style Selector="ProgressBar:vertical /template/ Border#PART_Indicator">
         <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
     </Style>
 
     <!--Class Light-->
