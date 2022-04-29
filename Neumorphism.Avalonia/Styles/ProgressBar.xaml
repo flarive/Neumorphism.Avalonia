@@ -56,14 +56,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+  
 
-	<!--Class DeepInset-->
-	<Style Selector="ProgressBar.DeepInset">
-		
-	</Style>
+	  <!--Class DeepInset-->
+	  <Style Selector="ProgressBar.DeepInset">
+	  </Style>
 
 
-    <!--Class Outset (horizontal)-->
+    <!--Class Outset-->
     <Style Selector="ProgressBar.Outset">
           <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
           <Setter Property="Background" Value="Transparent" />
@@ -81,8 +81,8 @@
               <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="Transparent" Margin="{TemplateBinding Margin}">
                 <Border Name="PART_RootBorder"
                         Background="Transparent"
-                        Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}"
-                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}"
+                        Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=20%}"
+                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=20%}"
                         CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
                         BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -113,10 +113,10 @@
             </ControlTemplate>
           </Setter.Value>
         </Setter>
-  </Style>
+    </Style>
 
  
-  <!-- Transitions -->
+    <!-- Transitions -->
     <Style Selector="ProgressBar:horizontal:not(.notransitions) /template/ Border#PART_Indicator">
         <Setter Property="Transitions">
             <Transitions>
@@ -184,8 +184,12 @@
         <Setter Property="RenderTransformOrigin" Value="0.0, 0.5" />
     </Style>
 
-    <Style Selector="ProgressBar:not(.Circle):vertical">
+    <Style Selector="ProgressBar:not(.Circle, .Outset):vertical">
         <Setter Property="Width" Value="16" />
+    </Style>
+
+    <Style Selector="ProgressBar.Outset:not(.Circle):vertical">
+      <Setter Property="Width" Value="24" />
     </Style>
 
     <Style Selector="ProgressBar:not(.Circle):vertical /template/ Border#PART_RootBorder">
@@ -225,30 +229,22 @@
         <Style.Animations>
             <Animation Duration="0:0:2" IterationCount="INFINITE">
                 <KeyFrame Cue="0%">
-                    <!--<Setter Property="Canvas.Left" Value="-10" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=-10%}" />
-                    <!--<Setter Property="Width" Value="10" />-->
                     <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=10%}" />
                 </KeyFrame>
                 <KeyFrame Cue="35%">
-                    <!--<Setter Property="Canvas.Left" Value="45" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=45%}" />
-                    <!--<Setter Property="Width" Value="60" />-->
                     <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=60%}" />
                 </KeyFrame>
                 <KeyFrame Cue="60%">
-                    <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
-                    <!--<Setter Property="Width" Value="100" />-->
                     <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
-                    <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Width" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-                    <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Width" Value="0" />
                 </KeyFrame>
@@ -269,22 +265,17 @@
                 </KeyFrame>
                 <KeyFrame Cue="70%">
                     <Setter Property="Canvas.Left" Value="0" />
-                    <!--<Setter Property="Width" Value="70" />-->
                     <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=70%}" />
                 </KeyFrame>
                 <KeyFrame Cue="90%">
-                    <!--<Setter Property="Canvas.Left" Value="95" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=95%}" />
-                    <!--<Setter Property="Width" Value="20" />-->
                     <Setter Property="Width" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=20%}" />
                 </KeyFrame>
                 <KeyFrame Cue="95%">
-                    <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Width" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-                    <!--<Setter Property="Canvas.Left" Value="100" />-->
                     <Setter Property="Canvas.Left" Value="{Binding Width, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
                     <Setter Property="Width" Value="0" />
                 </KeyFrame>
@@ -298,7 +289,8 @@
         <Setter Property="Height" Value="{TemplateBinding Height}" />
     </Style>
 
-    <Style Selector="ProgressBar:indeterminate:vertical /template/ Border#PART_First">
+
+    <Style Selector="ProgressBar:indeterminate:vertical:not(.Outset) /template/ Border#PART_First">
         <Setter Property="IsVisible" Value="True" />
         <Setter Property="Width" Value="{TemplateBinding Width}" />
         <Setter Property="Height" Value="{TemplateBinding Height}" />
@@ -327,7 +319,40 @@
             </Animation>
         </Style.Animations>
     </Style>
-    <Style Selector="ProgressBar:indeterminate:vertical /template/ Border#PART_Second">
+
+  <Style Selector="ProgressBar.Outset:indeterminate:vertical /template/ Border#PART_First">
+    <Setter Property="IsVisible" Value="True" />
+    <Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" />
+    <Setter Property="Height" Value="{TemplateBinding Height}" />
+    <Style.Animations>
+      <Animation Duration="0:0:2" IterationCount="INFINITE">
+        <KeyFrame Cue="0%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=-10%}" />
+          <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=10%}" />
+        </KeyFrame>
+        <KeyFrame Cue="35%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=45%}" />
+          <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=60%}" />
+        </KeyFrame>
+        <KeyFrame Cue="60%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+          <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+        </KeyFrame>
+        <KeyFrame Cue="90%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+        <KeyFrame Cue="100%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+
+  
+    <Style Selector="ProgressBar:indeterminate:vertical:not(.Outset) /template/ Border#PART_Second">
         <Setter Property="IsVisible" Value="True" />
         <Setter Property="Width" Value="{TemplateBinding Width}" />
         <Setter Property="Height" Value="{TemplateBinding Height}" />
@@ -360,6 +385,40 @@
             </Animation>
         </Style.Animations>
     </Style>
+
+  <Style Selector="ProgressBar.Outset:indeterminate:vertical /template/ Border#PART_Second">
+    <Setter Property="IsVisible" Value="True" />
+    <Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=8}" />
+    <Setter Property="Height" Value="{TemplateBinding Height}" />
+    <Style.Animations>
+      <Animation Duration="0:0:2" IterationCount="INFINITE">
+        <KeyFrame Cue="0%">
+          <Setter Property="Canvas.Bottom" Value="0" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+        <KeyFrame Cue="50%">
+          <Setter Property="Canvas.Bottom" Value="0" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+        <KeyFrame Cue="70%">
+          <Setter Property="Canvas.Bottom" Value="0" />
+          <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=70%}" />
+        </KeyFrame>
+        <KeyFrame Cue="90%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=95%}" />
+          <Setter Property="Height" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=20%}" />
+        </KeyFrame>
+        <KeyFrame Cue="95%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+        <KeyFrame Cue="100%">
+          <Setter Property="Canvas.Bottom" Value="{Binding Height, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthToCustomValueConverter}, ConverterParameter=100%}" />
+          <Setter Property="Height" Value="0" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
 
     <Style Selector="ProgressBar:horizontal /template/ Border#PART_Indicator">
         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -402,8 +461,8 @@
                             Background="Transparent"
                             BorderBrush="Transparent"
                             CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
-                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
+                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
                             BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
                             BorderThickness="0">
                         <Panel Name="PART_RootPanel"
@@ -422,7 +481,7 @@
 								              <ContentPresenter Background="Transparent" Content="{TemplateBinding assists:ProgressBarAssist.CircularInnerContent}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
 							              </styles:CircularProgress>
 							
-                            <Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" Background="{TemplateBinding Foreground}" />
+                            <Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" />
                         </Panel>
                     </Border>
                   </Border>
@@ -440,6 +499,7 @@
 		<Setter Property="Width" Value="64" />
 		<Setter Property="Height" Value="64" />
 		<Setter Property="Margin" Value="0" />
+    <Setter Property="Padding" Value="0" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -448,8 +508,8 @@
 								Background="Transparent"
 								BorderBrush="Transparent"
 								CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
-								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
+								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
 								BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
 								BorderThickness="0">
 							<Grid>
@@ -485,7 +545,7 @@
 										<ContentPresenter Background="Transparent" Content="{TemplateBinding assists:ProgressBarAssist.CircularInnerContent}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
 									</styles:CircularProgress>
 
-									<Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" Background="{TemplateBinding Foreground}" />
+									<Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" />
 								</Panel>
 						    </Grid>
 						</Border>
@@ -504,6 +564,7 @@
 		<Setter Property="Width" Value="64" />
 		<Setter Property="Height" Value="64" />
 		<Setter Property="Margin" Value="0" />
+    <Setter Property="Padding" Value="0" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -512,8 +573,8 @@
 								Background="Transparent"
 								BorderBrush="Transparent"
 								CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
-								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
-								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=23%}"
+								Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
+								Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
 								BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
 								BorderThickness="0">
 							<Grid>
@@ -549,7 +610,7 @@
 										<ContentPresenter Background="Transparent" Content="{TemplateBinding assists:ProgressBarAssist.CircularInnerContent}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
 									</styles:CircularProgress>
 
-									<Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" Background="{TemplateBinding Foreground}" />
+									<Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" />
 								</Panel>
 							</Grid>
 						</Border>
@@ -558,6 +619,57 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
+
+  <!-- Class CircleInset -->
+  <Style Selector="ProgressBar.Circle.Inset">
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="Background" Value="Red" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="BorderThickness" Value="3" />
+    <Setter Property="Width" Value="64" />
+    <Setter Property="Height" Value="64" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="Transparent" Margin="{TemplateBinding Margin}">
+            <Border Name="PART_RootBorder"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
+                    Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
+                    Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24%}"
+                    BoxShadow="{Binding $self.Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
+                    BorderThickness="0">
+              
+              
+              
+              
+              <Panel Name="PART_RootPanel"
+                     ClipToBounds="True"
+                     Height="{Binding $self.Bounds.Width}">
+                <Panel.RenderTransform>
+                  <ScaleTransform />
+                </Panel.RenderTransform>
+
+                <styles:CircularProgress Name="PART_Arc" StrokeThickness="{TemplateBinding BorderThickness, Converter={StaticResource ThicknessToIntConverter}}"
+                                                  IsIndeterminate="{TemplateBinding IsIndeterminate}"
+                                                  Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
+                                                  Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30%}"
+                                                  Background="Transparent" StrokeBrush="{TemplateBinding BorderBrush}"
+                            ProgressValue="{Binding $parent[ProgressBar].Value}">
+                  <ContentPresenter Background="Transparent" Content="{TemplateBinding assists:ProgressBarAssist.CircularInnerContent}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </styles:CircularProgress>
+
+                <Border Name="PART_Indicator" ClipToBounds="False" IsVisible="False" IsEnabled="False" />
+              </Panel>
+            </Border>
+          </Border>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+
+  </Style>
     
 
 
