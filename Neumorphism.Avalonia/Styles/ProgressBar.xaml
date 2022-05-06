@@ -241,8 +241,16 @@
     <Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
   </Style>
 
+	<Style Selector="ProgressBar.DeepInset:not(.Circle):horizontal /template/ Border#PART_RootBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
+	</Style>
+
 	<Style Selector="ProgressBar:not(.Circle):not(.DeepInset, .Outset):vertical /template/ Border#PART_RootBorder">
 		<Setter Property="BoxShadow" Value="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
+	</Style>
+
+	<Style Selector="ProgressBar.DeepInset:not(.Circle):vertical /template/ Border#PART_RootBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}" />
 	</Style>
 
   <Style Selector="ProgressBar.Outset:not(.Circle):vertical /template/ Border#PART_RootBorder">
