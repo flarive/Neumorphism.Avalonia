@@ -10,6 +10,10 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
 
+# <img src="favicon.png" width="32" height="32"> New in lastest release (0.2.1) !
+![Screenshot](Screenshots/progressbar.png)
+
+
 # <img src="favicon.png" width="32" height="32"> Overview
 
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
