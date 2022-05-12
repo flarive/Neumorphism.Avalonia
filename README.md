@@ -38,6 +38,7 @@ For the moment only the following controls are fully themed :
 - Checkboxes
 - Textboxes
 - Comboboxes
+- ProgressBars
 
 More controls should be themed soon.
 
