@@ -23,7 +23,7 @@ This library is a collection of styles to help you build your Avalonia app with 
 [![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
 
 
-[![Github All Releases](https://img.shields.io/github/downloads/flarive/Neumorphism.Avalonia/total.svg?style=flat)]() 
+
 
 
 This Avalonia UI Neumorphic theme was inspired by another great Avalonia UI theme : [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia)
