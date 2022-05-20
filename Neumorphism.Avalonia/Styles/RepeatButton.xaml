@@ -12,7 +12,7 @@
     <Style Selector="RepeatButton">
         <Setter Property="BorderThickness" Value="1" /> <!-- FixBorderThickness -->
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="4" />
         <Setter Property="Template">

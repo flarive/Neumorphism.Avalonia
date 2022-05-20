@@ -27,9 +27,6 @@
 
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Regular sliders" />
-
-                <!-- lol this one are not enabled snap to tick, 
-             when dragging thumb could contains a long numerics with decimal point. -->
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider0">
                         <Slider />
@@ -38,8 +35,7 @@
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider1">
-                        <Slider IsSnapToTickEnabled="True"
-                                TickFrequency="1" />
+                        <Slider IsSnapToTickEnabled="True" TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
                     <TextBlock />
                 </StackPanel>
