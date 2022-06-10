@@ -6,6 +6,7 @@
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              x:Class="Neumorphism.Avalonia.Demo.Pages.SlidersDemo">
+	
     <StackPanel Margin="16, 0">
         <StackPanel.Styles>
             <Style Selector="StackPanel.Content Slider">
@@ -16,7 +17,7 @@
             <Style Selector="StackPanel.Content TextBlock">
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Margin" Value="16,0" />
-                <Setter Property="Text" Value="{Binding $parent.Children[0].Content.Value}" />
+                <Setter Property="Text" Value="{Binding $parent.Children[0].Content.Value, StringFormat=\{0:N0\}}" />
             </Style>
             <Style Selector="StackPanel.Content">
                 <Setter Property="Margin" Value="4 2" />
@@ -24,35 +25,40 @@
         </StackPanel.Styles>
         <TextBlock Classes="Headline4 Subheadline" Text="Sliders" />
         <WrapPanel>
-
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Regular sliders" />
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider0">
-                        <Slider />
+					    <Slider />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock MinWidth="120" />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider1">
-                        <Slider IsSnapToTickEnabled="True" TickFrequency="1" />
+                        <Slider IsSnapToTickEnabled="True" Height="30" TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider2">
-                        <Slider IsSnapToTickEnabled="True" Classes="Accent"
-                                TickFrequency="1" />
+                        <Slider IsSnapToTickEnabled="True" Classes="Accent" Height="40" TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
+				<StackPanel Classes="Content" Orientation="Horizontal">
+					<showMeTheXaml:XamlDisplay UniqueId="RegularSlider3">
+						<Slider Height="80" TickFrequency="1" />
+					</showMeTheXaml:XamlDisplay>
+					<TextBlock Width="60" />
+				</StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
-                    <showMeTheXaml:XamlDisplay UniqueId="RegularSlider3">
+                    <showMeTheXaml:XamlDisplay UniqueId="RegularSlider4">
                         <Slider IsEnabled="False" Value="20" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
             </StackPanel>
+			
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Modern slider" />
                 <StackPanel Classes="Content" Orientation="Horizontal">
@@ -61,7 +67,7 @@
                                 Classes="Modern"
                                 TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="ModernSlider1">
@@ -69,7 +75,7 @@
                                 Classes="Modern Accent"
                                 TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="ModernSlider2">
@@ -77,7 +83,7 @@
                                 Classes="Modern Ticks"
                                 TickFrequency="10" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="ModernSlider3">
@@ -86,42 +92,42 @@
                                 Classes="Modern Ticks"
                                 TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
             </StackPanel>
             <StackPanel>
-                <TextBlock Classes="Headline6 Subheadline2" Text="Sliders with bubble (Discrete)" />
+                <TextBlock Classes="Headline6 Subheadline2" Text="Outset" />
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="BubbleSlider0">
                         <Slider IsSnapToTickEnabled="True"
-                                Classes="Discrete"
+                                Classes="Outset Discrete"
                                 TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="BubbleSlider1">
                         <Slider IsSnapToTickEnabled="True"
-                                Classes="Modern Discrete"
+                                Classes="Outset Discrete"
                                 TickFrequency="10" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="BubbleSlider2">
                         <Slider IsSnapToTickEnabled="True"
-                                Classes="Modern Discrete Accent"
+                                Classes="Outset Discrete Accent"
                                 TickFrequency="10" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="BubbleSlider3">
                         <Slider IsSnapToTickEnabled="True"
-                                Classes="Modern Discrete Accent Ticks"
+                                Classes="Outset Discrete Accent Ticks"
                                 TickFrequency="10" />
                     </showMeTheXaml:XamlDisplay>
-                    <TextBlock />
+                    <TextBlock Width="60" />
                 </StackPanel>
             </StackPanel>
         </WrapPanel>

@@ -61,7 +61,7 @@
                             <TextBlock Classes="Body2" Text="ComboBoxes" />
                             <TextBlock Classes="Body2" Text="Material Icons" />
                             <TextBlock Classes="Body2" Text="Sliders" IsEnabled="False" />
-                            <TextBlock Classes="Body2" Text="Progress indicators" IsEnabled="True" />
+                            <TextBlock Classes="Body2" Text="Progress indicators" />
                             <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
