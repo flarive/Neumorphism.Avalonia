@@ -12,6 +12,8 @@ namespace Neumorphism.Avalonia.Styles.Converters
             bool isAll = parameter == null || parameter.Equals("0");
             bool isLeftTopBottom = parameter == null || parameter.Equals("1");
             bool isRightTopBottom = parameter == null || parameter.Equals("2");
+            bool isTopLeftRight = parameter == null || parameter.Equals("3");
+            bool isBottomLeftRight = parameter == null || parameter.Equals("4");
 
             if (value is double)
             {
@@ -28,6 +30,14 @@ namespace Neumorphism.Avalonia.Styles.Converters
                 else if (isRightTopBottom)
                 {
                     return new CornerRadius(height, 0, 0, height);
+                }
+                else if (isTopLeftRight)
+                {
+                    return new CornerRadius(height, height, 0, 0);
+                }
+                else if (isBottomLeftRight)
+                {
+                    return new CornerRadius(0, 0, height, height);
                 }
             }
 

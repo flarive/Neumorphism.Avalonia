@@ -82,7 +82,6 @@
         </showMeTheXaml:XamlDisplay>
       </StackPanel>
 
-
       <StackPanel>
         <TextBlock Classes="Headline6 Subheadline2" Text="Circular progress bars" />
         <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar1" Margin="0" Padding="0">
