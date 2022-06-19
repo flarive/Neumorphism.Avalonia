@@ -41,16 +41,29 @@
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider2">
-                        <Slider IsSnapToTickEnabled="True" Classes="Accent" Height="40" TickFrequency="1" />
+                        <Slider IsSnapToTickEnabled="True" Classes="Accent" Width="120" Height="40" TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
                     <TextBlock Width="60" />
                 </StackPanel>
-				<StackPanel Classes="Content" Orientation="Horizontal">
-					<showMeTheXaml:XamlDisplay UniqueId="RegularSlider3">
-						<Slider Height="80" Value="30" TickFrequency="25" />
-					</showMeTheXaml:XamlDisplay>
-					<TextBlock Width="60" />
-				</StackPanel>
+				        <StackPanel Classes="Content" Orientation="Horizontal">
+					        <showMeTheXaml:XamlDisplay UniqueId="RegularSlider3">
+                    <Slider Height="80" Value="30" TickFrequency="25" Background="Red">
+                      <Slider.Styles>
+                        <Style Selector="Slider:horizontal">
+                          <Setter Property="Foreground">
+                            <Setter.Value>
+                              <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Offset="0" Color="#FF5cbcd6" />
+                                <GradientStop Offset="1" Color="#FF77dbf0" />
+                              </LinearGradientBrush>
+                            </Setter.Value>
+                          </Setter>
+                        </Style>
+                      </Slider.Styles>
+                    </Slider>
+					        </showMeTheXaml:XamlDisplay>
+					        <TextBlock Width="60" />
+				        </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="RegularSlider4">
                         <Slider IsEnabled="False" Value="20" />
@@ -137,30 +150,25 @@
 				<StackPanel Orientation="Horizontal">
 				    <StackPanel Classes="Content" Orientation="Vertical">
 					    <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider1" Width="40">
-						    <Slider IsSnapToTickEnabled="True" Height="260" Width="16" Orientation="Vertical"
-                                    TickFrequency="1" />
+						    <Slider IsSnapToTickEnabled="True" Height="260" Width="16" Orientation="Vertical" TickFrequency="1" />
 					    </showMeTheXaml:XamlDisplay>
 					    <TextBlock Width="60" />
 				    </StackPanel>
 				    <StackPanel Classes="Content" Orientation="Vertical">
 					    <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider2" Width="40">
-						    <Slider IsSnapToTickEnabled="True" Height="260" Width="30" Orientation="Vertical"
-                                    TickFrequency="10" />
+						    <Slider IsSnapToTickEnabled="True" Height="260" Width="30" Orientation="Vertical" TickFrequency="10" />
 					    </showMeTheXaml:XamlDisplay>
 					    <TextBlock Width="60" />
 				    </StackPanel>
 				    <StackPanel Classes="Content" Orientation="Vertical">
 					    <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider3" Width="40">
-						    <Slider IsSnapToTickEnabled="True" Height="260" Width="40" Orientation="Vertical"
-                                    Classes="Accent"
-                                    TickFrequency="10" />
+						    <Slider IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Classes="Accent" TickFrequency="10" />
 					    </showMeTheXaml:XamlDisplay>
 					    <TextBlock Width="60" />
 				    </StackPanel>
 				    <StackPanel Classes="Content" Orientation="Vertical">
 					    <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider4" Width="80">
-						    <Slider IsSnapToTickEnabled="True" Height="260" Width="80" Value="30" Orientation="Vertical"
-                                    TickFrequency="10" />
+						    <Slider IsSnapToTickEnabled="True" Height="260" Width="80" Value="30" Orientation="Vertical" TickFrequency="10" />
 					    </showMeTheXaml:XamlDisplay>
 					    <TextBlock Width="60" />
 				    </StackPanel>

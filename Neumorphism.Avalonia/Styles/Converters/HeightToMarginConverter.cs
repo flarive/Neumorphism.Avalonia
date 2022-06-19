@@ -34,6 +34,12 @@ namespace Neumorphism.Avalonia.Styles.Converters
                 string param = parameter.ToString();
                 if (!string.IsNullOrEmpty(param))
                 {
+                    //if (param == "0%|-51%|0%|-51%")
+                    //{
+                    //    string aaa = null;
+                    //}
+                    
+                    
                     string[] parts = param.Split("|");
                     if (parts.Length == 4)
                     {
