@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+             xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              x:Class="Neumorphism.Avalonia.Demo.Pages.SlidersDemo">
 	
@@ -28,7 +29,7 @@
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="Regular sliders" />
                 <StackPanel Classes="Content" Orientation="Horizontal">
-                    <showMeTheXaml:XamlDisplay UniqueId="RegularSlider0">
+                    <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider1">
 					    <Slider/>
                     </showMeTheXaml:XamlDisplay>
                     <TextBlock Width="60" />
@@ -40,21 +41,21 @@
                     <TextBlock Width="60" />
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
-                    <showMeTheXaml:XamlDisplay UniqueId="RegularSlider2">
+                    <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider2">
                         <Slider IsSnapToTickEnabled="True" Classes="Accent" Width="120" Height="40" TickFrequency="1" />
                     </showMeTheXaml:XamlDisplay>
                     <TextBlock Width="60" />
                 </StackPanel>
 				        <StackPanel Classes="Content" Orientation="Horizontal">
-					        <showMeTheXaml:XamlDisplay UniqueId="RegularSlider3">
-                    <Slider Height="80" Value="30" TickFrequency="25" Background="Red">
+					        <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider3">
+                    <Slider Height="80" Value="30" TickFrequency="25">
                       <Slider.Styles>
                         <Style Selector="Slider:horizontal">
                           <Setter Property="Foreground">
                             <Setter.Value>
                               <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
-                                <GradientStop Offset="0" Color="#FF5cbcd6" />
-                                <GradientStop Offset="1" Color="#FF77dbf0" />
+                                <GradientStop Offset="0" Color="#FF77dbf0" />
+                                <GradientStop Offset="1" Color="#FF5cbcd6" />
                               </LinearGradientBrush>
                             </Setter.Value>
                           </Setter>
@@ -65,7 +66,7 @@
 					        <TextBlock Width="60" />
 				        </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
-                    <showMeTheXaml:XamlDisplay UniqueId="RegularSlider4">
+                    <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider4">
                         <Slider IsEnabled="False" Value="20" />
                     </showMeTheXaml:XamlDisplay>
                     <TextBlock Width="60" />

@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
 
 namespace Neumorphism.Avalonia.Styles.Assists
 {
@@ -32,6 +33,21 @@ namespace Neumorphism.Avalonia.Styles.Assists
         public static void SetSizeTick(AvaloniaObject element, double value) {
             element.SetValue(SizeTickProperty, value);
         }
+
+
+        public static AvaloniaProperty<IBrush> ThumbForegroundProperty = AvaloniaProperty.RegisterAttached<Slider, IBrush>(
+           "ThumbForeground", typeof(SliderAssist));
+
+        public static void SetCheckedForeground(AvaloniaObject element, IBrush value)
+        {
+            element.SetValue(ThumbForegroundProperty, value);
+        }
+
+        public static IBrush GetCheckedForeground(AvaloniaObject element)
+        {
+            return (IBrush)element.GetValue(ThumbForegroundProperty);
+        }
+
 
 
         #endregion
