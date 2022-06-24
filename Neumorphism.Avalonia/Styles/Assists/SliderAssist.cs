@@ -35,19 +35,32 @@ namespace Neumorphism.Avalonia.Styles.Assists
         }
 
 
-        public static AvaloniaProperty<IBrush> ThumbForegroundProperty = AvaloniaProperty.RegisterAttached<Slider, IBrush>(
-           "ThumbForeground", typeof(SliderAssist));
+        public static readonly AvaloniaProperty<IBrush> ThumbForegroundProperty = AvaloniaProperty.RegisterAttached<Slider, IBrush>(
+           "ThumbForeground", typeof(SliderAssist), null, true);
 
-        public static void SetCheckedForeground(AvaloniaObject element, IBrush value)
+        public static void SetThumbForeground(AvaloniaObject element, IBrush value)
         {
             element.SetValue(ThumbForegroundProperty, value);
         }
 
-        public static IBrush GetCheckedForeground(AvaloniaObject element)
+        public static IBrush GetThumbForeground(AvaloniaObject element)
         {
             return (IBrush)element.GetValue(ThumbForegroundProperty);
         }
 
+
+        public static readonly AvaloniaProperty<object> ThumbContentProperty = AvaloniaProperty.RegisterAttached<Slider, object>(
+            "ThumbContent", typeof(SliderAssist), null, true);
+
+        public static object GetThumbContent(AvaloniaObject element)
+        {
+            return (object)element.GetValue(ThumbContentProperty);
+        }
+
+        public static void SetThumbContent(AvaloniaObject element, object value)
+        {
+            element.SetValue(ThumbContentProperty, value);
+        }
 
 
         #endregion
