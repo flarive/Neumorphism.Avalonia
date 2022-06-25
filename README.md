@@ -19,6 +19,8 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 This library is a collection of styles to help you build your Avalonia app with a ready to go Neumorphism Design theme.
 (https://github.com/flarive/Neumorphism.Avalonia)
 
+[![Github All Releases](https://img.shields.io/github/downloads/flarive/Neumorphism.Avalonia/total.svg)]()
+
 [![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
 [![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
 
