@@ -9,6 +9,7 @@
               xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
               xmlns:conv="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			  xmlns:fullpanels="clr-namespace:Neumorphism.Avalonia.Demo.Pages.Panels"
               xmlns:wpf="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               x:Class="Neumorphism.Avalonia.Demo.Pages.Home">
 	
@@ -73,5 +74,15 @@
           </Button>
         </WrapPanel>
       </StackPanel>
+
+
+	  <!--Full UI panel samples-->
+	  <StackPanel Orientation="Vertical" IsVisible="False">
+	    <fullpanels:PanelLargeUIDemo/>
+	    <fullpanels:PanelMediumUIDemo/>
+	    <fullpanels:PanelSmallUIDemo/>
+	  </StackPanel>
+	  
+	  
     </StackPanel>
   </UserControl>

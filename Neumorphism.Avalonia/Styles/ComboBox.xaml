@@ -10,11 +10,12 @@
     <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
     <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
     <converters:ComboboxHeightToFloatingWatermarkMarginConverter x:Key="ComboboxHeightToFloatingWatermarkMarginConverter" />
+	<converters:HeightToMarginConverter x:Key="HeightToMarginConverter" />
   </Styles.Resources>
 
 
-	<!--Regular (no class)-->
-	<Style Selector="ComboBox">
+	<!--Regular (no class) or Inset class-->
+	<Style Selector="ComboBox, ComboBox.Inset">
 			<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 			<Setter Property="HorizontalAlignment" Value="Stretch"/>
 			<Setter Property="VerticalAlignment" Value="Center"/>
@@ -33,14 +34,19 @@
 			<Setter Property="FontStyle" Value="Normal"/>
 			<Setter Property="Cursor" Value="Hand"/>
 			<Setter Property="assists:ComboBoxAssist.UseFloatingWatermark" Value="False"/>
+			<Setter Property="assists:ComboBoxAssist.InnerLeftBackground" Value="#22444444"/>
+			<Setter Property="assists:ComboBoxAssist.InnerRightBackground" Value="#22444444"/>
+			<Setter Property="assists:ComboBoxAssist.InnerLeftPadding" Value="0"/>
+			<Setter Property="assists:ComboBoxAssist.InnerRightPadding" Value="0"/>
 			<Setter Property="Template">
 			<ControlTemplate>
 				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
-					<TextBlock Name="floatingWatermark"
-                HorizontalAlignment="Stretch"
+					<!--<TextBlock Name="floatingWatermark"
+								HorizontalAlignment="Stretch"
 								VerticalAlignment="Center"
-								Foreground="{TemplateBinding Foreground}"
+								Background="Orange"
+							   Foreground="{TemplateBinding Foreground}"
 								FontFamily="{TemplateBinding FontFamily}"
 								FontSize="{TemplateBinding FontSize}"
 								FontWeight="{TemplateBinding FontWeight}"
@@ -48,20 +54,21 @@
 								Text="{TemplateBinding PlaceholderText}"
 								Opacity="0.5"
 								IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
-								RenderTransformOrigin="0, 0" />
+								RenderTransformOrigin="0, 0" />-->
 
 
-					<TextBlock Name="watermark"
+					<!--<TextBlock Name="watermark"
 							  HorizontalAlignment="Stretch"
 							  VerticalAlignment="Center"
 							  Foreground="{TemplateBinding Foreground}"
+							  Background="Yellow"
 							  FontFamily="{TemplateBinding FontFamily}"
 							  FontSize="{TemplateBinding FontSize}"
 							  FontWeight="{TemplateBinding FontWeight}"
 							  FontStyle="{TemplateBinding FontStyle}"
 							  Text="{TemplateBinding PlaceholderText}"
-							  Margin="15,10,80,10"
-							  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+							  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
+							  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />-->
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
 							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
@@ -70,11 +77,44 @@
 							  BorderBrush="{TemplateBinding BorderBrush}"
 							  BorderThickness="{TemplateBinding BorderThickness}">
 
+						<Grid ColumnDefinitions="Auto, *, Auto" HorizontalAlignment="Stretch">
 
+							<TextBlock Name="floatingWatermark" Grid.Column="1"
+									HorizontalAlignment="Stretch"
+									VerticalAlignment="Center"
+								    Foreground="{TemplateBinding Foreground}"
+									FontFamily="{TemplateBinding FontFamily}"
+									FontSize="{TemplateBinding FontSize}"
+									FontWeight="{TemplateBinding FontWeight}"
+									FontStyle="{TemplateBinding FontStyle}"
+									Text="{TemplateBinding PlaceholderText}"
+									Opacity="0.5"
+									IsVisible="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark}"
+									RenderTransformOrigin="0, 0" />
 
-						<ToggleButton Name="PART_Toggle" Classes="NoFeedback TransparentBack"
-									  Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"
-									  BorderThickness="0" Background="Transparent"
+							<TextBlock Name="watermark" Grid.Column="1"
+									  HorizontalAlignment="Stretch"
+									  VerticalAlignment="Center"
+									  Foreground="{TemplateBinding Foreground}"
+									  FontFamily="{TemplateBinding FontFamily}"
+									  FontSize="{TemplateBinding FontSize}"
+									  FontWeight="{TemplateBinding FontWeight}"
+									  FontStyle="{TemplateBinding FontStyle}"
+									  Text="{TemplateBinding PlaceholderText}"
+									  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
+									  Opacity="{TemplateBinding assists:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+
+							<!--Left container-->
+							<Border Grid.Column="0" Background="{TemplateBinding assists:ComboBoxAssist.InnerLeftBackground}" Width="{Binding ElementName=PART_InnerLeft, Path=Width}"
+						   	  CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
+							  VerticalAlignment="Stretch">
+								<ContentPresenter Name="PART_InnerLeft" Background="Transparent" Content="{TemplateBinding assists:ComboBoxAssist.InnerLeftContent}" Padding="{TemplateBinding assists:ComboBoxAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
+							</Border>
+
+							<ToggleButton Name="PART_Toggle" Grid.Column="1" Classes="NoFeedback TransparentBack"
+									  Height="{TemplateBinding Height}" Width="{Binding ElementName=watermark, Path=Width}"
+									  BorderThickness="0" 
+								      Background="Transparent"
 									  HorizontalContentAlignment="Stretch"
 									  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
 									  Margin="0"
@@ -89,18 +129,22 @@
 												  BorderThickness="0" BorderBrush="Transparent"
 												  HorizontalAlignment="Left"
 												  VerticalAlignment="Center"
+												  Height="{TemplateBinding Height}"
 												  Content="{TemplateBinding SelectionBoxItem}"
 												  ContentTemplate="{TemplateBinding ItemTemplate}"
-												  Margin="{TemplateBinding Padding}" Padding="7,0,7,0"/>
+												  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=0%|0%|0%|0%}"
+												  Padding="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=35%|0%|35%|0%}"/>
 								<Border Name="splitBorder"
 										Grid.Column="1"
-										Margin="16 20 16 16"
+										Width="10" Height="10"
+										Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=0%|0%|35%|0%}"
 										HorizontalAlignment="Right"
 										VerticalAlignment="Center"
 										BorderBrush="Transparent"
 										BorderThickness="0">
 									<Path Name="arrow"
 										  Width="8" Height="8"
+										  Margin="0,4,0,0"
 										  Stretch="Uniform"
 										  HorizontalAlignment="Right"
 										  VerticalAlignment="Center"
@@ -110,6 +154,15 @@
 							</Grid>
 
 						</ToggleButton>
+
+
+							<!--Right container-->
+							<Border Grid.Column="2" Background="{TemplateBinding assists:ComboBoxAssist.InnerRightBackground}" Width="{Binding ElementName=PART_InnerRight, Path=Width}"
+							  CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
+							  VerticalAlignment="Stretch">
+								<ContentPresenter Name="PART_InnerRight" Background="Transparent" Content="{TemplateBinding assists:ComboBoxAssist.InnerRightContent}" Padding="{TemplateBinding assists:ComboBoxAssist.InnerRightPadding}" HorizontalContentAlignment="Left" />
+							</Border>
+						</Grid>
 					</Border>
 
 					<!--Combobox items container-->
@@ -144,6 +197,16 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+
+
+	<!--Outset class-->
+	<Style Selector="ComboBox.Outset /template/ Border#PART_Border">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"/>
+	</Style>
+	
+	
+	
+	
 
 	<Style Selector="TextBlock#floatingWatermark:not(.notransitions)">
 		<Setter Property="Transitions">

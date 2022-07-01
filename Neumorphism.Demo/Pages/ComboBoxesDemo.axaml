@@ -26,11 +26,35 @@
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
-                        <ComboBox Width="500" PlaceholderText="Please select a user" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True">
-                            <TextBlock Text="John" />
-                            <TextBlock Text="Paul" />
-                            <TextBlock Text="Ringo" />
-                            <TextBlock Text="Georges" />
+                        <ComboBox Width="500" PlaceholderText="Please select a user" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True" SelectionChanged="ClassicComboBoxes1SelectionChanged">
+							<ComboBox.Styles>
+								<Style Selector="ComboBox">
+									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
+										<Setter.Value>
+											<Template>
+												<Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Cursor="Arrow">
+													<avalonia:MaterialIcon Kind="UserBox" Width="24" Height="24" />
+												</Button>
+											</Template>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</ComboBox.Styles>
+							<ComboBoxItem Tag="0">
+								<TextBlock Text="John" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="1">
+								<TextBlock Text="Paul" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="2">
+								<TextBlock Text="Ringo" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="3">
+								<TextBlock Text="Georges" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="-1">
+								<TextBlock Text="None" />
+							</ComboBoxItem>
                         </ComboBox>
                     </showMeTheXaml:XamlDisplay>
                     <showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes2">
@@ -66,6 +90,82 @@
                 </StackPanel>
             </StackPanel>
         </WrapPanel>
+
+		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+			<StackPanel>
+				<TextBlock Classes="Headline6 Subheadline2" Text="Outset comboboxes" />
+				<StackPanel Orientation="Horizontal">
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes0">
+						<ComboBox Classes="Outset" PlaceholderText="Select an item">
+							<TextBlock Text="Item 1" />
+							<TextBlock Text="Item 2" />
+							<TextBlock Text="Item 3" />
+							<TextBlock Text="Item with long long text" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes1">
+						<ComboBox Classes="Outset" Width="500" PlaceholderText="Please select a user" Height="42" 
+								  assist:ComboBoxAssist.UseFloatingWatermark="True">
+							<ComboBox.Styles>
+								<Style Selector="ComboBox">
+									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
+										<Setter.Value>
+											<Template>
+												<Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Cursor="Arrow">
+													<avalonia:MaterialIcon Kind="UserBox" Width="24" Height="24" />
+												</Button>
+											</Template>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</ComboBox.Styles>
+							<ComboBoxItem>
+								<TextBlock Text="John" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Paul" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Ringo" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Georges" />
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes2">
+						<ComboBox Classes="Outset" Height="38">
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
+									<TextBlock Text="Red" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
+									<TextBlock Text="Blue" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
+									<TextBlock Text="Green" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes3">
+						<ComboBox Classes="Outset" IsEnabled="False" Height="32" PlaceholderText="Disabled">
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+				</StackPanel>
+			</StackPanel>
+		</WrapPanel>
 
 
 

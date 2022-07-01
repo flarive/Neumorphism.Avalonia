@@ -47,7 +47,7 @@
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider3">
-						<Slider IsSnapToTickEnabled="True" Classes="Accent" Width="120" Height="40" Value="50" TickFrequency="1" assists:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}">
+						<Slider IsSnapToTickEnabled="True" Classes="Accent Discrete" Width="120" Height="40" Value="50" TickFrequency="1" assists:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}">
 							<Slider.Styles>
 							 <Style Selector="Slider:horizontal">
 								<Setter Property="assists:SliderAssist.ThumbContent">
@@ -116,7 +116,7 @@
 					</StackPanel>
 					<StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
 						<showMeTheXaml:XamlDisplay UniqueId="VerticalSlider3" Width="40" Padding="0,0,0,20">
-							<Slider IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Classes="Accent" Value="50" TickFrequency="10" assists:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}">
+							<Slider IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Classes="Accent Discrete" Value="50" TickFrequency="10" assists:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}">
 								<Slider.Styles>
 									<Style Selector="Slider:vertical">
 										<Setter Property="assists:SliderAssist.ThumbContent">
@@ -202,7 +202,7 @@
                 </StackPanel>
                 <StackPanel Classes="Content" Orientation="Horizontal">
                     <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider4">
-						<Slider Height="80" Value="30" TickFrequency="25" Classes="Outset Ticks" assists:SliderAssist.ThumbForeground="#FF5cbcd6"
+						<Slider Height="80" Value="30" TickFrequency="25" Classes="Outset" assists:SliderAssist.ThumbForeground="#FF5cbcd6"
 								ToolTip.Tip="Horizontal outset slider with custom gradient color and custom size">
 							<Slider.Styles>
 								<Style Selector="Slider:horizontal.Outset">
@@ -255,7 +255,7 @@
 					</StackPanel>
 					<StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
 						<showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider3" Width="40" Padding="0,0,0,20">
-							<Slider Classes="Outset Accent" IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Value="50" TickFrequency="10">
+							<Slider Classes="Outset Accent Discrete" IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Value="50" TickFrequency="10">
 								<Slider.Styles>
 									<Style Selector="Slider:vertical">
 										<Setter Property="assists:SliderAssist.ThumbContent">

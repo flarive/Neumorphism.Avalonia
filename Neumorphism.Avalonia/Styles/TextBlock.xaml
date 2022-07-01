@@ -101,4 +101,26 @@
     <Setter Property="FontWeight" Value="Medium" />
     <Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
   </Style>
+
+	<Style Selector="TextBlock.PanelSubtitleSmall">
+		<Setter Property="FontSize" Value="11" />
+		<Setter Property="FontWeight" Value="Regular" />
+		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
+		<Setter Property="Margin" Value="0,10,0,10"/>
+	</Style>
+
+	<Style Selector="TextBlock.PanelSubtitleMedium">
+		<Setter Property="FontSize" Value="14" />
+		<Setter Property="FontWeight" Value="Regular" />
+		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
+		<Setter Property="Margin" Value="0,13,0,13"/>
+	</Style>
+
+	<Style Selector="TextBlock.PanelSubtitleLarge">
+		<Setter Property="FontSize" Value="18" />
+		<Setter Property="FontWeight" Value="Regular" />
+		<Setter Property="FontFamily" Value="avares://Neumorphism.Avalonia/Styles/Fonts/Roboto/Roboto-Regular.ttf#Roboto, Arial"/>
+		<Setter Property="Margin" Value="0,16,0,16"/>
+	</Style>
+	
 </Styles>

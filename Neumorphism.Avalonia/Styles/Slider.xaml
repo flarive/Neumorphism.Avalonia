@@ -105,7 +105,7 @@
 							 Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10%}"
 							 Placement="Left" TickFrequency="{Binding $parent[Slider].TickFrequency}"
 							 Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}" />
-					
+
 					<Border Name="border" Grid.Column="1" BorderBrush="{TemplateBinding BorderBrush}" Width="{TemplateBinding Width}"
 					   CornerRadius="{TemplateBinding Width, Converter={StaticResource HeightToCornerRadiusConverter}}"
 					   BoxShadow="{TemplateBinding Width, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
@@ -293,7 +293,9 @@
 	    <Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="assists:SliderAssist.ThumbForeground" Value="{DynamicResource SecondaryHueMidBrush}"/>
     </Style>
-
+	
+	
+	<!--Shared styles-->
     <Style Selector="Slider:disabled">
 	    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
     </Style>
