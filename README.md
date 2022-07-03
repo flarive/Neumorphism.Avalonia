@@ -48,6 +48,7 @@ For the moment only the following controls are fully themed :
 - Textboxes
 - Comboboxes
 - ProgressBars
+- Sliders
 
 More controls should be themed soon.
 
