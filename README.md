@@ -61,7 +61,7 @@ More controls should be themed soon.
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Can be used with .net Core 3.x, .net5, .net6...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
-- Built upon the latest version of Avalonia UI (0.10.13)
+- Built upon the latest version of Avalonia UI (0.10.15)
 - .Net 5 demo application project
 
 
