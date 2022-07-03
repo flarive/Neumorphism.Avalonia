@@ -9,7 +9,7 @@
 							xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
 							x:Class="Neumorphism.Avalonia.Demo.Pages.ProgressIndicatorDemo">
 
-  <StackPanel Margin="16, 0">
+  <StackPanel Margin="16,0,16,50">
     <TextBlock Classes="Headline4 Subheadline" Text="Progress Indicator" />
     <WrapPanel>
       <StackPanel>
@@ -309,7 +309,6 @@
           </showMeTheXaml:XamlDisplay>
         </StackPanel>
       </StackPanel>
-      
     </WrapPanel>
   </StackPanel>
 </UserControl>
