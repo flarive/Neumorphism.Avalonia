@@ -26,7 +26,7 @@ This library is a collection of styles to help you build your Avalonia app with 
 
 [![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
 [![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
-
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE)
 
 
 
@@ -87,9 +87,10 @@ More controls should be themed soon.
 # <img src="favicon.png" width="32" height="32"> Licence
 
 Neumorphism.Avalonia is free to use in any non commercial project...
+Please donate if you like this projects !
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE)
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](flarive@hotmail.com)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](LUHJBYFUMEJFE)
 
 
