@@ -26,7 +26,7 @@ This library is a collection of styles to help you build your Avalonia app with 
 
 [![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
 [![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
-
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE)
 
 
 
@@ -48,6 +48,7 @@ For the moment only the following controls are fully themed :
 - Textboxes
 - Comboboxes
 - ProgressBars
+- Sliders
 
 More controls should be themed soon.
 
@@ -60,7 +61,7 @@ More controls should be themed soon.
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Can be used with .net Core 3.x, .net5, .net6...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
-- Built upon the latest version of Avalonia UI (0.10.13)
+- Built upon the latest version of Avalonia UI (0.10.15)
 - .Net 5 demo application project
 
 
@@ -86,5 +87,18 @@ More controls should be themed soon.
 
 # <img src="favicon.png" width="32" height="32"> Licence
 
-Neumorphism.Avalonia is free to use in any non commercial project...
+Neumorphism.Avalonia is free to use in any non commercial project.
+
+Please donate if you like this project and if you want to support it !
+
+
+
+
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE" 
+target="_blank">
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" 
+title="PayPal – The safer, easier way to pay online!" border="0" />
+</a>
+
 
