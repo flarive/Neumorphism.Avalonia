@@ -157,6 +157,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
                 // Other
                 UpdateSolidColorBrush("ValidationErrorBrush", oldTheme?.ValidationError, newTheme.ValidationError),
                 UpdateSolidColorBrush("MaterialDesignBackground", oldTheme?.Background, newTheme.Background),
+                UpdateSolidColorBrush("MaterialDesignForeground", oldTheme?.Foreground, newTheme.Foreground),
                 UpdateSolidColorBrush("MaterialDesignPaper", oldTheme?.Paper, newTheme.Paper),
                 UpdateSolidColorBrush("MaterialDesignCardBackground", oldTheme?.CardBackground, newTheme.CardBackground),
                 UpdateSolidColorBrush("MaterialDesignToolBarBackground", oldTheme?.ToolBarBackground, newTheme.ToolBarBackground),

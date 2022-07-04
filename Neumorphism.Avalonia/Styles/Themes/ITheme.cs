@@ -15,6 +15,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
 
         Color ValidationError { get; set; }
         Color Background { get; set; }
+        Color Foreground { get; set; }
         Color Paper { get; set; }
         Color CardBackground { get; set; }
         Color ToolBarBackground { get; set; }

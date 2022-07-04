@@ -4,6 +4,7 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
     public interface IBaseTheme {
         Color ValidationErrorColor { get; }
         Color MaterialDesignBackground { get; }
+        Color MaterialDesignForeground { get; }
         Color MaterialDesignPaper { get; }
         Color MaterialDesignCardBackground { get; }
         Color MaterialDesignToolBarBackground { get; }

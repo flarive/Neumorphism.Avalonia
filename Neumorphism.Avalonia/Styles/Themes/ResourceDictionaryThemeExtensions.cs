@@ -32,6 +32,7 @@ namespace Neumorphism.Avalonia.Styles.Themes {
             SetSolidColorBrush(resourceDictionary, "ValidationErrorBrush", theme.ValidationError);
 
             SetSolidColorBrush(resourceDictionary, "MaterialDesignBackground", theme.Background);
+            SetSolidColorBrush(resourceDictionary, "MaterialDesignForeground", theme.Foreground);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignPaper", theme.Paper);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignCardBackground", theme.CardBackground);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignToolBarBackground", theme.ToolBarBackground);

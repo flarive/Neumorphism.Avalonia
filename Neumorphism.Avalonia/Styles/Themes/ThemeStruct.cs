@@ -15,6 +15,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
             SecondaryDark = baseTheme.SecondaryDark;
             ValidationError = baseTheme.ValidationError;
             Background = baseTheme.Background;
+            Foreground = baseTheme.Foreground;
             Paper = baseTheme.Paper;
             CardBackground = baseTheme.CardBackground;
             ToolBarBackground = baseTheme.ToolBarBackground;
@@ -55,6 +56,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
         public ColorPair SecondaryDark { get; set; }
         public Color ValidationError { get; set; }
         public Color Background { get; set; }
+        public Color Foreground { get; set; }
         public Color Paper { get; set; }
         public Color CardBackground { get; set; }
         public Color ToolBarBackground { get; set; }

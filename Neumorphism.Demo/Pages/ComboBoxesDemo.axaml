@@ -61,20 +61,20 @@
             <ComboBox Height="38">
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Red" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Primary Light" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Blue" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueMidBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Primary Mid" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Green" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueDarkBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Primary Dark" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
             </ComboBox>
@@ -137,20 +137,20 @@
             <ComboBox Classes="Outset" Height="38">
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Red" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueLightBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Secondary Light" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Blue" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueMidBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Secondary Mid" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Green" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueDarkBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Secondary Dark" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
             </ComboBox>
@@ -190,23 +190,41 @@
             </ComboBox>
           </showMeTheXaml:XamlDisplay>
           <showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes2">
-            <ComboBox Classes="Filled" Height="38">
+            <ComboBox Classes="Filled" Height="38" SelectedIndex="0">
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Red" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="Robot" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" Opacity="0.3" />
+                  <TextBlock Text="Choose a robot" Foreground="{DynamicResource MaterialDesignForeground}" Opacity="0.3" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Blue" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="RobotAngry" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+                  <TextBlock Text="Angry" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Green" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="RobotConfused" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+                  <TextBlock Text="Confused" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+                </StackPanel>
+              </ComboBoxItem>
+              <ComboBoxItem>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                  <avalonia:MaterialIcon Kind="RobotExcited" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+                  <TextBlock Text="Excited" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+                </StackPanel>
+              </ComboBoxItem>
+              <ComboBoxItem>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                  <avalonia:MaterialIcon Kind="RobotHappy" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+                  <TextBlock Text="Happy" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+                </StackPanel>
+              </ComboBoxItem>
+              <ComboBoxItem>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                  <avalonia:MaterialIcon Kind="RobotDead" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+                  <TextBlock Text="Dead" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
                 </StackPanel>
               </ComboBoxItem>
             </ComboBox>
@@ -248,25 +266,25 @@
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
                   <avalonia:MaterialIcon Kind="SettingsOutline" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" Opacity="0.3" VerticalAlignment="Center" />
-                  <TextBlock Text="Choose" Foreground="{DynamicResource MaterialDesignForeground}" Opacity="0.5" VerticalAlignment="Center" />
+                  <TextBlock Text="Settings" Foreground="{DynamicResource MaterialDesignForeground}" Opacity="0.5" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Red" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="DatabaseAdd" Width="32" Height="32" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Add" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Blue" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Blue" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="DatabaseRemove" Width="32" Height="32" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Remove" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
               <ComboBoxItem>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                  <avalonia:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Green" Margin="0,0,8,0" VerticalAlignment="Center" />
-                  <TextBlock Text="Green" VerticalAlignment="Center" />
+                  <avalonia:MaterialIcon Kind="DatabaseRefresh" Width="32" Height="32" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,0,8,0" />
+                  <TextBlock Text="Refresh" VerticalAlignment="Center" />
                 </StackPanel>
               </ComboBoxItem>
             </ComboBox>

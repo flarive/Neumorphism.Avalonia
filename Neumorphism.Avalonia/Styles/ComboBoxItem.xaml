@@ -9,14 +9,16 @@
 
    
 	<Style Selector="ComboBoxItem">
-    <Setter Property="Padding" Value="{Binding $parent[ComboBox].Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=50%|30%|50%|0%}" /><!--16 8-->
+    <Setter Property="Padding" Value="{Binding $parent[ComboBox].Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=50%|0%|50%|0%}" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Opacity" Value="1" />
-    <Setter Property="Height" Value="{Binding $parent[ComboBox].Height}" /> <!--38-->
+    <Setter Property="Height" Value="{Binding $parent[ComboBox].Height}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid>

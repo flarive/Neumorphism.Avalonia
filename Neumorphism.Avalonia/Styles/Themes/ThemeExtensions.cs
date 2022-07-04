@@ -44,6 +44,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
 
             theme.ValidationError = baseTheme.ValidationErrorColor;
             theme.Background = baseTheme.MaterialDesignBackground;
+            theme.Foreground = baseTheme.MaterialDesignForeground;
             theme.Paper = baseTheme.MaterialDesignPaper;
             theme.CardBackground = baseTheme.MaterialDesignCardBackground;
             theme.ToolBarBackground = baseTheme.MaterialDesignToolBarBackground;

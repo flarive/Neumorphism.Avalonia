@@ -20,6 +20,7 @@ namespace Neumorphism.Avalonia.Styles.Themes
 
         public Color ValidationError { get; set; }
         public Color Background { get; set; }
+        public Color Foreground { get; set; }
         public Color Paper { get; set; }
         public Color CardBackground { get; set; }
         public Color ToolBarBackground { get; set; }

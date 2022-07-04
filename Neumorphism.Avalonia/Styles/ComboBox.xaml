@@ -82,7 +82,7 @@
 							<TextBlock Name="floatingWatermark" Grid.Column="1"
 									HorizontalAlignment="Stretch"
 									VerticalAlignment="Center"
-								    Foreground="{TemplateBinding Foreground}"
+								  Foreground="{TemplateBinding Foreground}"
 									FontFamily="{TemplateBinding FontFamily}"
 									FontSize="{TemplateBinding FontSize}"
 									FontWeight="{TemplateBinding FontWeight}"
@@ -107,7 +107,7 @@
 							<!--Left container-->
 							<Border Grid.Column="0" Background="{TemplateBinding assists:ComboBoxAssist.InnerLeftBackground}" Width="{Binding ElementName=PART_InnerLeft, Path=Width}"
 						   	  CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
-							  VerticalAlignment="Stretch">
+									VerticalAlignment="Stretch">
 								<ContentPresenter Name="PART_InnerLeft" Background="Transparent" Content="{TemplateBinding assists:ComboBoxAssist.InnerLeftContent}" Padding="{TemplateBinding assists:ComboBoxAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
 							</Border>
 

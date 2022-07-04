@@ -88,38 +88,5 @@ namespace Neumorphism.Avalonia.Demo.Pages
         {
             AvaloniaXamlLoader.Load(this);
         }
-
-        /// <summary>
-        /// Dirty hack to force redraw box shadow when theme is changed !!!!
-        /// </summary>
-        //private void DirtyControlsRedrawFix()
-        //{
-        //    var zz = this.Parent;
-            
-        //    var controls = this.GetVisualDescendants().OfType<InputElement>();
-        //    foreach (InputElement ctrl in controls)
-        //    {
-        //        if (ctrl != null)
-        //        {
-        //            if (ctrl is CheckBox || ctrl is RadioButton)
-        //            {
-        //                double h = ctrl.GetValue<double>(SelectionControlAssist.SizeProperty);
-        //                ctrl.SetValue(SelectionControlAssist.SizeProperty, h - 1);
-        //                ctrl.SetValue(SelectionControlAssist.SizeProperty, h + 1);
-        //            }
-
-        //            if (ctrl.Height > 0)
-        //            {
-        //                ctrl.Height = ctrl.Height - 1;
-        //                ctrl.Height = ctrl.Height + 1;
-        //            }
-        //            else if (ctrl.Height is double.NaN)
-        //            {
-        //                ctrl.Height = 0;
-        //                ctrl.Height = double.NaN;
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
