@@ -29,6 +29,7 @@
     </ItemGroup>
     
     <ItemGroup>
+      <AvaloniaXaml Remove="Styles\ButtonLink.axaml" />
       <AvaloniaXaml Remove="Styles\CircularProgress.axaml" />
     </ItemGroup>
     
@@ -41,6 +42,9 @@
     </ItemGroup>
     
     <ItemGroup>
+      <AvaloniaResource Include="Styles\ButtonLink.axaml">
+        <Generator>MSBuild:Compile</Generator>
+      </AvaloniaResource>
       <AvaloniaResource Include="Styles\Fonts\Roboto\Roboto-Light.ttf">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </AvaloniaResource>

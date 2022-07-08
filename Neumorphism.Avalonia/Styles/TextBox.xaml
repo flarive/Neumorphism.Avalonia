@@ -87,6 +87,7 @@
     <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
+	<Setter Property="CornerRadius" Value="10" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
@@ -97,7 +98,7 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
-                CornerRadius="10">
+                CornerRadius="{TemplateBinding CornerRadius}">
             <Border.Styles>
               <!--Floating watermark anim-->
               <Style
@@ -180,7 +181,14 @@
     </Setter>
   </Style>
 
-  <!-- Feedbacks -->
+
+
+	<Style Selector="TextBox[CornerRadius=0] /template/ Border#PART_RootBorder">
+		<Setter Property="CornerRadius" Value="10"/>
+	</Style>
+
+
+	<!-- Feedbacks -->
   <Style Selector="TextBox:disabled /template/ Border#PART_RootBorder">
     <Setter Property="Opacity" Value="0.5" />
   </Style>
@@ -317,6 +325,7 @@
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
     <Setter Property="TextAlignment" Value="Left"/>
     <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+	<Setter Property="CornerRadius" Value="10" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
@@ -327,7 +336,7 @@
                 BorderBrush="Transparent"
                 BorderThickness="0"
                 BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=3}"
-                CornerRadius="10">
+                CornerRadius="{TemplateBinding CornerRadius}">
             <Border.Styles>
               <!--Floating watermark anim-->
               <Style
@@ -494,8 +503,7 @@
     </Setter>
   </Style>
 
-  <Style
-      Selector="TextBox.revealPasswordButton Border#PART_AssistButtonsContainer">
+  <Style Selector="TextBox.revealPasswordButton Border#PART_AssistButtonsContainer">
     <Setter Property="Child">
       <Template>
         <ToggleButton Name="PART_PasswordRevealToggle" Classes="no-material"
@@ -577,17 +585,17 @@
     <Setter Property="Height" Value="48"/>
     <Setter Property="Width" Value="NaN"/>
     <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
     <Setter Property="Cursor" Value="Arrow"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="VerticalAlignment" Value="Center"/>
+	<Setter Property="CornerRadius" Value="10" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_RootBorder"
                 Background="Transparent"
                 Width="{TemplateBinding Width}"
                 Height="{TemplateBinding Height}"
-                CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
+                CornerRadius="{TemplateBinding CornerRadius}"
                 BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 BorderBrush="{TemplateBinding BorderBrush}">
@@ -596,7 +604,7 @@
             <Grid ColumnDefinitions="Auto,*,Auto">
               <!--Left container-->
               <Border Grid.Column="0" Background="{TemplateBinding assists:TextFieldAssist.InnerLeftBackground}"
-                CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
+                CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
                 VerticalAlignment="Stretch">
                 <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
               </Border>
@@ -633,7 +641,7 @@
               </DataValidationErrors>
               <!--Right container-->
               <Border Grid.Column="2" Background="{TemplateBinding assists:TextFieldAssist.InnerRightBackground}"
-                  CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
+                  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
                   VerticalAlignment="Stretch">
                 <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" Padding="{TemplateBinding assists:TextFieldAssist.InnerRightPadding}" HorizontalContentAlignment="Right" />
               </Border>

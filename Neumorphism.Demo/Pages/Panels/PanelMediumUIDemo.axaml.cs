@@ -9,8 +9,6 @@ namespace Neumorphism.Avalonia.Demo.Pages.Panels
         public PanelMediumUIDemo()
         {
             this.InitializeComponent();
-
-            DataContext = new ButtonFieldsViewModel();
         }
 
         private void InitializeComponent()

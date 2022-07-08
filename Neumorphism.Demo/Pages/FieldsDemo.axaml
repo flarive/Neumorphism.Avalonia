@@ -228,7 +228,7 @@
             <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Classes="Header" Width="350"
                      Watermark="Enter your email"
                      Text="{Binding Email}"
-                     assists:TextFieldAssist.CornerRadius="32" assists:TextFieldAssist.InnerLeftBackground="#22666666" assists:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+                     CornerRadius="32" assists:TextFieldAssist.InnerLeftBackground="#22666666" assists:TextFieldAssist.InnerLeftPadding="10,0,0,0">
               <TextBox.InnerLeftContent>
                 <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
                   <avalonia:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />

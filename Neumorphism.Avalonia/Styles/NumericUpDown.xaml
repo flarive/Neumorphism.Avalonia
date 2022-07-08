@@ -23,7 +23,7 @@
         <Setter Property="Height" Value="48"/>
         <Setter Property="Width" Value="NaN"/>
         <Setter Property="MinWidth" Value="80"/>
-        <Setter Property="assists:TextFieldAssist.CornerRadius" Value="10"/>
+        <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Foreground" Value="Black"/>
@@ -36,7 +36,7 @@
                           Background="Transparent"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
-                          CornerRadius="{TemplateBinding assists:TextFieldAssist.CornerRadius}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
                           BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=2}">
                     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <Border Name="focusBorder"

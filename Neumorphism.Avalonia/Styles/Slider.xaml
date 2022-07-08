@@ -18,7 +18,7 @@
   
 
 
-  <!--Regular horizontal (no class) -->
+  <!-- Regular horizontal (no class) -->
   <Style Selector="Slider:horizontal">
 	<Setter Property="Background" Value="Transparent" />
 	<Setter Property="BorderBrush" Value="Transparent" />
@@ -34,14 +34,14 @@
     <Setter Property="assists:SliderAssist.ThumbForeground" Value="{DynamicResource PrimaryHueMidBrush}"/>
     <Setter Property="Template">
       <ControlTemplate>
-		  <Grid RowDefinitions="Auto,Auto,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" ClipToBounds="False">
+		  <Grid RowDefinitions="Auto,Auto,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" ClipToBounds="False" Margin="0">
 			  <!--Top ticks-->
 			  <TickBar Name="TopTick" Fill="Gray" Height="4" Margin="0,0,0,2" Orientation="Horizontal"
 					Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10%}"
 					Placement="Top" Grid.Row="0" TickFrequency="{Binding $parent[Slider].TickFrequency}"
 					Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}" />
 			  
-				  <Border Name="border" Grid.Row="1" BorderBrush="{TemplateBinding BorderBrush}" Height="{TemplateBinding Height}"
+				  <Border Name="border" Grid.Row="1" BorderBrush="{TemplateBinding BorderBrush}" Height="{TemplateBinding Height}" Margin="0"
 						CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
 						BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"
 						BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
@@ -83,7 +83,7 @@
   </Style>
 
 
-	<!--Regular vertical (no class) -->
+	<!-- Regular vertical (no class) -->
 	<Style Selector="Slider:vertical">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="BorderBrush" Value="Transparent" />
@@ -148,7 +148,7 @@
 		</Setter>
 	</Style>
 
-	<!-- horizontal class Outset -->
+	<!-- Horizontal class Outset -->
 	<Style Selector="Slider:horizontal.Outset">
 	<Setter Property="Background" Value="Transparent" />
 	<Setter Property="BorderBrush" Value="Transparent" />
@@ -215,7 +215,7 @@
 		</Setter>
 	</Style>
 
-	<!-- vertical class Outset -->
+	<!-- Vertical class Outset -->
 	<Style Selector="Slider:vertical.Outset">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="BorderBrush" Value="Transparent" />
@@ -285,7 +285,7 @@
 
   
 
-    <!--Class Accent-->
+    <!-- Class Accent -->
     <Style Selector="Slider.Accent">
 	    <Setter Property="Background" Value="Transparent" />
 	    <Setter Property="BorderBrush" Value="Transparent" />
@@ -295,7 +295,7 @@
     </Style>
 	
 	
-	<!--Shared styles-->
+	<!-- Shared styles -->
     <Style Selector="Slider:disabled">
 	    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
     </Style>

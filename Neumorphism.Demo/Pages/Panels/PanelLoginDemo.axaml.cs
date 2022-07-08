@@ -1,14 +1,16 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Avalonia.Demo.ViewModels;
+using Neumorphism.Avalonia.Demo.ViewModels.Panels;
 
 namespace Neumorphism.Avalonia.Demo.Pages.Panels
 {
-    public class PanelSmallUIDemo : UserControl
+    public class PanelLoginDemo : UserControl
     {
-        public PanelSmallUIDemo()
+        public PanelLoginDemo()
         {
             this.InitializeComponent();
+
+            this.DataContext = new PanelLoginDemoViewModel();
         }
 
         private void InitializeComponent()

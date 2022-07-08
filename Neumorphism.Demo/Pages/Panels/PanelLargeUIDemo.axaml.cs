@@ -1,6 +1,5 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages.Panels
 {
@@ -9,8 +8,6 @@ namespace Neumorphism.Avalonia.Demo.Pages.Panels
         public PanelLargeUIDemo()
         {
             this.InitializeComponent();
-
-            DataContext = new ButtonFieldsViewModel();
         }
 
         private void InitializeComponent()

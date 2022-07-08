@@ -6,25 +6,36 @@
               xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
               xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelSmallUIDemo">
 
-  <StackPanel Margin="40" Height="200">
-    
+	<StackPanel Margin="40" Height="200">
 
 
-    
-    <TextBlock Classes="Headline6 Subheadline2" Text="Small size UI" Margin="0,30,0,0" />
 
-	  <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-		  <TextBlock Text="User" Classes="PanelSubtitleSmall"/>
-		  <ComboBox Classes="Outset" Width="200" Height="22" PlaceholderText="Please select a user" FontSize="11" FontWeight="Medium" Padding="0" assist:ComboBoxAssist.UseFloatingWatermark="False" HorizontalAlignment="Left">
-			<TextBlock Text="John" />
-			<TextBlock Text="Paul" />
-			<TextBlock Text="Ringo" />
-			<TextBlock Text="Georges" />
-		</ComboBox>
-    </StackPanel>
 
-  </StackPanel>
+		<TextBlock Classes="Headline6 Subheadline2" Text="Small size UI" Margin="0,30,0,0" />
+
+		<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Margin="8" Padding="10">
+
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+				<TextBlock Text="User" Classes="PanelSubtitleSmall"/>
+				<ComboBox Classes="Outset" Width="200" Height="22" Margin="10" PlaceholderText="Please select a user" FontSize="11" FontWeight="Medium" Padding="0" assist:ComboBoxAssist.UseFloatingWatermark="False" HorizontalAlignment="Left">
+					<TextBlock Text="John" />
+					<TextBlock Text="Paul" />
+					<TextBlock Text="Ringo" />
+					<TextBlock Text="Georges" />
+				</ComboBox>
+				<Slider Classes="Outset" Value="0" Margin="10" TickFrequency="10" />
+				<styles:Card Padding="0" Margin="10" InsideClipping="True" Height="22">
+					<StackPanel Orientation="Horizontal">
+						<RadioButton Classes="Button Left" GroupName="3" Height="22" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
+						<RadioButton Classes="Button" GroupName="3" Height="22" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
+						<RadioButton Classes="Button Right" GroupName="3" Height="22" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
+					</StackPanel>
+				</styles:Card>
+			</StackPanel>
+
+		</Border>
+
+	</StackPanel>
 </UserControl>

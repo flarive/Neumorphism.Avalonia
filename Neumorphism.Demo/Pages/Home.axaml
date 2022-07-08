@@ -77,11 +77,10 @@
 
 
 	  <!--Full UI panel samples-->
-	  <StackPanel Orientation="Vertical" IsVisible="False">
-	    <fullpanels:PanelLargeUIDemo/>
-	    <fullpanels:PanelMediumUIDemo/>
-	    <fullpanels:PanelSmallUIDemo/>
-	  </StackPanel>
+	  <WrapPanel Orientation="Horizontal" Margin="0,50,0,80" IsVisible="False">
+	    <fullpanels:PanelLoginDemo/>
+		<fullpanels:PanelClockDemo/>
+	  </WrapPanel>
 	  
 	  
     </StackPanel>

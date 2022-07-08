@@ -6,7 +6,6 @@
               xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
               xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelLargeUIDemo">
 
   <StackPanel Margin="40" Height="200">
@@ -37,7 +36,7 @@
 			  
 			  <ComboBox.Styles>
 				  <Style Selector="ComboBox">
-					  <Setter Property="assists:ComboBoxAssist.InnerLeftContent">
+					  <Setter Property="assist:ComboBoxAssist.InnerLeftContent">
 						  <Setter.Value>
 							  <Template>
 								  <Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Cursor="Arrow">

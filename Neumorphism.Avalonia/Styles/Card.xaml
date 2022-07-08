@@ -1,6 +1,5 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
         xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
         xmlns:cc="clr-namespace:Neumorphism.Avalonia.Styles">
 
@@ -8,16 +7,17 @@
   <Styles.Resources>
     <converters:ControlWidthToBoxShadowConverter x:Key="ControlWidthToBoxShadowConverter" />
     <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
-    <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
   </Styles.Resources>
-  
-    <Style Selector="cc|Card">
+
+	<!--Regular Outset (no class)-->
+    <Style Selector="cc|Card, cc|Card.Outset">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Padding" Value="0" />
+        <Setter Property="Padding" Value="20" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
+		<Setter Property="CornerRadius" Value="0" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel VerticalAlignment="Stretch">
@@ -26,7 +26,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             BoxShadow="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=0}"
-                            CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}">
+                            CornerRadius="{TemplateBinding CornerRadius}">
                     </Border>
                     <Border Name="PART_ContentBorder" Margin="0"
                             CornerRadius="{TemplateBinding CornerRadius}"
@@ -41,6 +41,22 @@
             </ControlTemplate>
         </Setter>
     </Style>
+
+	
+	
+	<!-- Class Inset -->
+	<Style Selector="cc|Card.Inset /template/ Border#PART_BackgroundBorder">
+		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
+	</Style>
+	
+	
+
+	<Style Selector="cc|Card[CornerRadius=0] /template/ Border#PART_BackgroundBorder">
+		<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+	</Style>
+	
+	
+    
 
     <Design.PreviewWith>
         <Border Padding="40">

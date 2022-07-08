@@ -1,0 +1,49 @@
+<Styles
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
+  xmlns:ripple="clr-namespace:Neumorphism.Avalonia.Styles.Ripple"
+  xmlns:controls="clr-namespace:Neumorphism.Avalonia.Styles.Controls"
+  xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
+  xmlns:system="clr-namespace:System;assembly=netstandard">
+
+	<Style Selector="Button.Link">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="Blue" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Width" Value="NaN" />
+		<Setter Property="Height" Value="NaN" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Margin}"
+								  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								  VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+					<ContentPresenter.Styles>
+						<Style Selector="TextBlock">
+							<Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+							<Setter Property="Background" Value="{TemplateBinding Background}"/>
+							<Setter Property="Width" Value="{TemplateBinding Width}"/>
+							<Setter Property="Height" Value="{TemplateBinding Height}"/>
+							<Setter Property="FontSize" Value="{TemplateBinding FontSize}"/>
+							<Setter Property="TextDecorations" Value="{x:Null}"/>
+						</Style>
+					</ContentPresenter.Styles>
+				</ContentPresenter>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style
+      Selector="Button.Link:pointerover > TextBlock">
+		<Setter Property="TextDecorations" Value="Underline"/>
+	</Style>
+
+
+</Styles>

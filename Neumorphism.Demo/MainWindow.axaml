@@ -62,6 +62,7 @@
                             <TextBlock Classes="Body2" Text="Material Icons" />
                             <TextBlock Classes="Body2" Text="Sliders" />
                             <TextBlock Classes="Body2" Text="Progress indicators" />
+							<TextBlock Classes="Body2" Text="Card" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
@@ -70,7 +71,6 @@
                             <TextBlock Classes="Body2" Text="SideSheet" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="TabControls" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="TreeViews" IsEnabled="False" />
-                            <TextBlock Classes="Body2" Text="Card" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Typography" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Pickers" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Shadows" IsEnabled="False" />
@@ -88,7 +88,7 @@
                             <ColumnDefinition Width="32" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="32" />
-							              <ColumnDefinition Width="400" />
+                            <ColumnDefinition Width="400" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <!--Left side menu-->
@@ -168,6 +168,9 @@
                             <!-- Progress indicators -->
                             <pages:ProgressIndicatorDemo />
 
+							<!-- Card -->
+							<pages:CardsDemo />
+
                             <!-- Lists -->
                             <pages:ListsDemo />
                             
@@ -191,9 +194,6 @@
                             
                             <!-- TreeViews -->
                             <pages:TreeViewsDemo />
-
-                            <!-- Card -->
-                            <pages:CardsDemo />
 
                             <!-- Typography -->
                             <pages:TypographyDemo />

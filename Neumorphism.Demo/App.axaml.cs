@@ -4,6 +4,10 @@ using Avalonia.Markup.Xaml;
 
 namespace Neumorphism.Avalonia.Demo
 {
+    /// <summary>
+    /// Inpiration examples :
+    /// https://bashooka.com/inspiration/neumorphism-ui-design-examples/
+    /// </summary>
     public class App : Application
     {
         public override void Initialize()

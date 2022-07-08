@@ -1,0 +1,67 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+              x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelClockDemo">
+
+  <StackPanel Margin="40" VerticalAlignment="Top">
+	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30">
+		  <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Stretch">
+
+			  <Grid ColumnDefinitions="*, Auto">
+				  <TextBlock Grid.Column="0" Classes="Headline6" Text="Stopwatch" TextAlignment="Left" />
+				  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Command="{Binding ButtonSettings}">
+					  <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
+				  </Button>  
+			  </Grid>
+
+			  <ProgressBar Classes="Circle Outline2" Width="260" Height="260" Value="{Binding Progress}" Foreground="Gray" HorizontalAlignment="Center" BorderThickness="8">
+				  <ProgressBar.Styles>
+					  <Style Selector="ProgressBar.Circle">
+						  <Setter Property="assists:ProgressBarAssist.CircularInnerContent">
+							  <Setter.Value>
+								  <Template>
+									  <TextBlock Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0}s}" TextAlignment="Center" FontSize="40"/>
+								  </Template>
+							  </Setter.Value>
+						  </Setter>
+						  <Setter Property="BorderBrush">
+							  <Setter.Value>
+								  <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+									  <GradientStop Offset="0" Color="#FF5cbcd6" />
+									  <GradientStop Offset="1" Color="#FF77dbf0" />
+								  </LinearGradientBrush>
+							  </Setter.Value>
+						  </Setter>
+					  </Style>
+				  </ProgressBar.Styles>
+			  </ProgressBar>
+
+			  <Grid ColumnDefinitions="*,*" Margin="0,10,0,20">
+				  <Button Grid.Column="0" Margin="5" Width="100" Height="38" Content="{Binding Label}" Command="{Binding ButtonStartStopStopwatch}" CommandParameter="{Binding $self}"
+						  Background="#FF5cbcd6" Foreground="White" CornerRadius="12" HorizontalAlignment="Left"/>
+				  <Button Grid.Column="1" Margin="5" Width="100" Height="38" Content="Reset" Command="{Binding ButtonResetStopwatch}" CommandParameter="{Binding $self}"
+						  CornerRadius="8" HorizontalAlignment="Right"/>
+			  </Grid>
+
+			  <styles:Card Width="260" CornerRadius="15" Padding="10">
+				  <Grid ColumnDefinitions="Auto, *, Auto" Background="Yellow">
+					  <TextBlock Grid.Column="0" FontSize="20" Text="1" />
+					  <TextBlock Grid.Column="1" FontSize="14" Text="00:00:58" />
+					  <ToggleSwitch Grid.Column="2" Width="100" IsChecked="True" HorizontalAlignment="Right" HorizontalContentAlignment="Right" assists:ToggleButtonAssist.CheckedForeground="#FF5cbcd6" assists:ToggleButtonAssist.UncheckedBackground="#FF5cbcd6" />
+				  </Grid>
+			  </styles:Card>
+			  
+			  
+				  
+			  
+			  
+			  
+		  </StackPanel>
+	  </styles:Card>
+  </StackPanel>
+</UserControl>
