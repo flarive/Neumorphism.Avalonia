@@ -51,8 +51,10 @@ namespace Neumorphism.Avalonia.Styles.Themes
         public Color ShadowDarkColor { get; set; }
         public Color BorderShadowColor { get; set; }
         public Color DisabledNoTransparencyColor { get; set; }
+        public Color TransparentColor { get; set; }
+        public Color SilverGrayColor { get; set; }
 
-        
+
 
         public static BaseThemeMode? GetSystemTheme() {
             // TODO Implement getting system themes

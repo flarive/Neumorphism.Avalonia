@@ -1,5 +1,4 @@
-﻿using Avalonia.Controls;
-using Neumorphism.Avalonia.Styles;
+﻿using Neumorphism.Avalonia.Styles;
 using System.Timers;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
@@ -43,6 +42,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
         public PanelClockDemoViewModel()
         {
             Label = "Start";
+            Progress = 0;
         }
 
 
@@ -55,7 +55,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
                 // start
                 Label = "Stop";
 
-                _timer = new Timer(100);
+                _timer = new Timer(1000);
                 _timer.Elapsed += Timer_Elapsed;
 
                 _timer.Start();

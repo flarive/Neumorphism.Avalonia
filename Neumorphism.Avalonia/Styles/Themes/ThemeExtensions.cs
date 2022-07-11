@@ -75,6 +75,8 @@ namespace Neumorphism.Avalonia.Styles.Themes
             theme.ShadowDarkColor = baseTheme.MaterialDesignShadowDarkColor;
             theme.BorderShadowColor = baseTheme.MaterialDesignBorderShadowColor;
             theme.DisabledNoTransparencyColor = baseTheme.MaterialDesignDisabledNoTransparencyColor;
+            theme.TransparentColor = baseTheme.MaterialDesignTransparentColor;
+            theme.SilverGrayColor = baseTheme.MaterialDesignSilverGrayColor;
 
             return theme;
         }

@@ -40,5 +40,8 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
         public Color MaterialDesignBorderShadowColor { get; } = Color.Parse("#FF404548");
 
         public Color MaterialDesignDisabledNoTransparencyColor { get; } = Color.Parse("#FF42464A");
+
+        public Color MaterialDesignTransparentColor { get; } = Color.Parse("#00FFFFFF");
+        public Color MaterialDesignSilverGrayColor { get; } = Color.Parse("#44333333");
     }
 }

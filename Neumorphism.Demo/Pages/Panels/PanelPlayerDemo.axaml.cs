@@ -4,13 +4,13 @@ using Neumorphism.Avalonia.Demo.ViewModels.Panels;
 
 namespace Neumorphism.Avalonia.Demo.Pages.Panels
 {
-    public class PanelClockDemo : UserControl
+    public class PanelPlayerDemo : UserControl
     {
-        public PanelClockDemo()
+        public PanelPlayerDemo()
         {
             this.InitializeComponent();
 
-            this.DataContext = new PanelClockDemoViewModel();
+            this.DataContext = new PanelPlayerDemoViewModel();
         }
 
         private void InitializeComponent()

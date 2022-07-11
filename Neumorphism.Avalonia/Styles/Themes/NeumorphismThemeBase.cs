@@ -187,10 +187,9 @@ namespace Neumorphism.Avalonia.Styles.Themes
                 UpdateSolidColorBrush("MaterialDesignShadowLightColor", oldTheme?.ShadowLightColor, newTheme.ShadowLightColor),
                 UpdateSolidColorBrush("MaterialDesignShadowDarkColor", oldTheme?.ShadowDarkColor, newTheme.ShadowDarkColor),
                 UpdateSolidColorBrush("MaterialDesignBorderShadowColor", oldTheme?.BorderShadowColor, newTheme.BorderShadowColor),
-                UpdateSolidColorBrush("MaterialDesignDisabledNoTransparencyColor", oldTheme?.DisabledNoTransparencyColor, newTheme.DisabledNoTransparencyColor)
-
-                
-            );
+                UpdateSolidColorBrush("MaterialDesignDisabledNoTransparencyColor", oldTheme?.DisabledNoTransparencyColor, newTheme.DisabledNoTransparencyColor),
+                UpdateLinearGradientBrush("MaterialDesignLinearGradient1", oldTheme?.TransparentColor, oldTheme?.SilverGrayColor, newTheme.TransparentColor, newTheme.SilverGrayColor)
+            ); ;
         }
 
         private Task UpdateSolidColorBrush(string brushName, Color? oldColor, Color newColor)
@@ -218,6 +217,46 @@ namespace Neumorphism.Avalonia.Styles.Themes
                             }
                         }
                     };
+                });
+        }
+
+
+        private Task UpdateLinearGradientBrush(string brushName, Color? oldFromColor, Color? oldToColor, Color newFromColor, Color newToColor)
+        {
+            if (oldFromColor == newFromColor && oldToColor == newToColor) return Task.CompletedTask;
+
+            return LoadedResourceDictionary.TryGetValue(brushName, out var b) && b is LinearGradientBrush brush
+                ? UpdateLinearGradientBrushAsync(brushName)
+                : CreateLinearGradientBrushAsync(brushName);
+
+
+
+            Task UpdateLinearGradientBrushAsync(string brushName)
+                => Dispatcher.UIThread.InvokeAsync(() => {
+                    brush.GradientStops[0].Color = newFromColor;
+                    brush.GradientStops[1].Color = newToColor;
+                });
+
+            Task CreateLinearGradientBrushAsync(string brushName)
+                => Dispatcher.UIThread.InvokeAsync(() => {
+                    var l = new LinearGradientBrush();
+                    l.StartPoint = new RelativePoint(0.0f, 0.4f, RelativeUnit.Relative);
+                    l.EndPoint = new RelativePoint(0.0f, 1.0f, RelativeUnit.Relative);
+                    l.GradientStops = new GradientStops();
+                    l.GradientStops.Add(new GradientStop(newFromColor, 0.0f));
+                    l.GradientStops.Add(new GradientStop(newToColor, 1.0f));
+
+                    l.Transitions = new Transitions {
+                            new ColorTransition {
+                                Duration = TimeSpan.FromSeconds(0.35),
+                                Easing = new SineEaseOut(),
+                                Property = SolidColorBrush.ColorProperty
+                            }
+                        };
+
+                    LoadedResourceDictionary[brushName] = l;
+
+
                 });
         }
     }

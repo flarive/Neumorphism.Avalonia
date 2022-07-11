@@ -9,17 +9,19 @@
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelClockDemo">
 
   <StackPanel Margin="40" VerticalAlignment="Top">
-	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30">
+	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+      
 		  <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Stretch">
 
 			  <Grid ColumnDefinitions="*, Auto">
-				  <TextBlock Grid.Column="0" Classes="Headline6" Text="Stopwatch" TextAlignment="Left" />
-				  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Command="{Binding ButtonSettings}">
+				  <TextBlock Grid.Column="0" Classes="Headline6" Text="Stopwatch" Foreground="#ff555555" TextAlignment="Left" />
+				  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Margin="-10" Command="{Binding ButtonSettings}">
 					  <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
 				  </Button>  
 			  </Grid>
 
-			  <ProgressBar Classes="Circle Outline2" Width="260" Height="260" Value="{Binding Progress}" Foreground="Gray" HorizontalAlignment="Center" BorderThickness="8">
+			  <ProgressBar Classes="Circle Outline2" Width="260" Height="260" Value="{Binding Progress}" Foreground="Gray" Minimum="0" Maximum="60" SmallChange="1" HorizontalAlignment="Center" BorderThickness="8">
 				  <ProgressBar.Styles>
 					  <Style Selector="ProgressBar.Circle">
 						  <Setter Property="assists:ProgressBarAssist.CircularInnerContent">
@@ -49,10 +51,14 @@
 			  </Grid>
 
 			  <styles:Card Width="260" CornerRadius="15" Padding="10">
-				  <Grid ColumnDefinitions="Auto, *, Auto" Background="Yellow">
-					  <TextBlock Grid.Column="0" FontSize="20" Text="1" />
-					  <TextBlock Grid.Column="1" FontSize="14" Text="00:00:58" />
-					  <ToggleSwitch Grid.Column="2" Width="100" IsChecked="True" HorizontalAlignment="Right" HorizontalContentAlignment="Right" assists:ToggleButtonAssist.CheckedForeground="#FF5cbcd6" assists:ToggleButtonAssist.UncheckedBackground="#FF5cbcd6" />
+				  <Grid ColumnDefinitions="Auto, *, Auto">
+					  <TextBlock Grid.Column="0" FontSize="20" Text="1" VerticalAlignment="Center" Foreground="#FFcccccc" />
+            <TextBlock Grid.Column="0" FontSize="16" Text="Lap" VerticalAlignment="Center" Foreground="#FFcccccc" />
+					  <TextBlock Grid.Column="1" FontSize="14" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="#FF333333" Text="00:00:58" />
+
+            <ToggleSwitch Grid.Column="2" Content="" IsChecked="True" assists:SelectionControlAssist.Size="50" assists:ToggleSwitchAssist.SwitchTrackOnForeground="#FF5cbcd6" assists:ToggleSwitchAssist.SwitchTrackOverForeground="#FF5cbcd6"/>
+            
+				
 				  </Grid>
 			  </styles:Card>
 			  

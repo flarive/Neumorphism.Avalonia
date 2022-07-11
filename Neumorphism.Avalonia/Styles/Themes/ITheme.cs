@@ -57,5 +57,10 @@ namespace Neumorphism.Avalonia.Styles.Themes
         Color BorderShadowColor { get; set; }
 
         Color DisabledNoTransparencyColor { get; set; }
+
+
+
+        Color TransparentColor { get; set; }
+        Color SilverGrayColor { get; set; }
     }
 }

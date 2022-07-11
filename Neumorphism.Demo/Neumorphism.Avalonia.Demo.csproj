@@ -7,10 +7,10 @@
     <ApplicationIcon>Resources\Icons\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.15" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.15" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.15" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.15" />
+    <PackageReference Include="Avalonia" Version="0.10.16" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.16" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.16" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.16" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.0.2" />
     <PackageReference Include="ShowMeTheXaml.Avalonia.Generator" Version="0.3.0" />
   </ItemGroup>
@@ -33,10 +33,14 @@
     <AdditionalFiles Remove="Pages\Panels\PanelClockDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelLargeUIDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelMediumUIDemo.axaml" />
+    <AdditionalFiles Remove="Pages\Panels\PanelPlayerDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelSmallUIDemo.axaml" />
     <None Remove="Resources\Icons\app.ico" />
     <EmbeddedResource Include="Resources\Icons\app.ico" />
     <Content Include="Resources\Icons\app.ico" />
+    <Compile Update="Pages\Panels\PanelPlayerDemo.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="Pages\Panels\PanelLargeUIDemo.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>

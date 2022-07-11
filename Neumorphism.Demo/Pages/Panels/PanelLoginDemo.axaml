@@ -9,9 +9,11 @@
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelLoginDemo">
 
   <StackPanel Margin="40" VerticalAlignment="Top">
-	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30">
+	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+      
 		  <StackPanel Margin="0,4" HorizontalAlignment="Stretch">
-			  <TextBlock Classes="Headline6" Text="Login form" TextAlignment="Center" />
+			  <TextBlock Classes="Headline6" Text="Login form" TextAlignment="Center" Foreground="#ff555555" />
 
 			  <TextBox Watermark="Email or phone" Classes="Header" Margin="0,40,0,20" Width="240" Height="38" CornerRadius="50"
 					   Text="{Binding Login}"

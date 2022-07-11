@@ -1,7 +1,9 @@
 ﻿using Avalonia.Media;
 
-namespace Neumorphism.Avalonia.Styles.Themes.Base {
-    public interface IBaseTheme {
+namespace Neumorphism.Avalonia.Styles.Themes.Base
+{
+    public interface IBaseTheme
+    {
         Color ValidationErrorColor { get; }
         Color MaterialDesignBackground { get; }
         Color MaterialDesignForeground { get; }
@@ -35,5 +37,7 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base {
         Color MaterialDesignShadowDarkColor { get; }
         Color MaterialDesignBorderShadowColor { get; }
         Color MaterialDesignDisabledNoTransparencyColor { get; }
+        Color MaterialDesignTransparentColor { get; }
+        Color MaterialDesignSilverGrayColor { get; }
     }
 }

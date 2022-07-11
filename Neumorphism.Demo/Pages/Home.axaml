@@ -44,7 +44,7 @@
 
 
 
-  <StackPanel Margin="16, 0" MaxWidth="800">
+  <StackPanel Margin="16, 0" MaxWidth="1200">
       <StackPanel.Styles>
         <Style Selector="TextBlock.Content, TextBlock.Subheadline">
           <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -77,9 +77,10 @@
 
 
 	  <!--Full UI panel samples-->
-	  <WrapPanel Orientation="Horizontal" Margin="0,50,0,80" IsVisible="False">
+	  <WrapPanel Orientation="Horizontal" Margin="0,50,0,80" HorizontalAlignment="Stretch" IsVisible="True">
 	    <fullpanels:PanelLoginDemo/>
-		<fullpanels:PanelClockDemo/>
+		  <fullpanels:PanelClockDemo/>
+      <fullpanels:PanelPlayerDemo/>
 	  </WrapPanel>
 	  
 	  

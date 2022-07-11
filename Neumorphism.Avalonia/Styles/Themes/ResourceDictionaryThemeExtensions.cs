@@ -6,8 +6,10 @@ using Avalonia.Media;
 using Avalonia.Threading;
 using Neumorphism.Avalonia.Styles.Colors.ColorManipulation;
 
-namespace Neumorphism.Avalonia.Styles.Themes {
-    public static class ResourceDictionaryExtensions {
+namespace Neumorphism.Avalonia.Styles.Themes
+{
+    public static class ResourceDictionaryExtensions
+    {
         private static Guid CurrentThemeKey { get; } = Guid.NewGuid();
         private static Guid ThemeManagerKey { get; } = Guid.NewGuid();
 
@@ -62,6 +64,8 @@ namespace Neumorphism.Avalonia.Styles.Themes {
             SetSolidColorBrush(resourceDictionary, "MaterialDesignShadowLightColor", theme.ShadowLightColor);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignShadowDarkColor", theme.ShadowDarkColor);
             SetSolidColorBrush(resourceDictionary, "MaterialDesignBorderShadowColor", theme.BorderShadowColor);
+            SetSolidColorBrush(resourceDictionary, "MaterialDesignTransparentColor", theme.TransparentColor);
+            SetSolidColorBrush(resourceDictionary, "MaterialDesignSilverGrayColor", theme.SilverGrayColor);
         }
 
   

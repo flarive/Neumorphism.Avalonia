@@ -330,6 +330,10 @@
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
 
+  <Style Selector="ToggleSwitch[Content=] /template/ ContentPresenter#PART_ContentPresenterLeft">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
+
 	<Style Selector="ToggleSwitch:checked:not(.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterRight">
 		<Setter Property="Content">
 			<Setter.Value>
@@ -344,6 +348,10 @@
 	<Style Selector="ToggleSwitch:checked:not(.LeftHeader) /template/ ContentPresenter#PART_ContentPresenterLeft">
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
+
+  <Style Selector="ToggleSwitch[Content=] /template/ ContentPresenter#PART_ContentPresenterRight">
+    <Setter Property="IsVisible" Value="False"/>
+  </Style>
 
 
 	<!--LeftHeader content label-->

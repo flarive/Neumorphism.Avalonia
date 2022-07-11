@@ -62,7 +62,7 @@
                             <TextBlock Classes="Body2" Text="Material Icons" />
                             <TextBlock Classes="Body2" Text="Sliders" />
                             <TextBlock Classes="Body2" Text="Progress indicators" />
-							<TextBlock Classes="Body2" Text="Card" IsEnabled="False" />
+                            <TextBlock Classes="Body2" Text="Cards" IsEnabled="True" />
                             <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
