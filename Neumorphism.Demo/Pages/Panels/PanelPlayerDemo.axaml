@@ -27,7 +27,7 @@
 
         <styles:Card Width="240" Height="240" Margin="0,30,0,30" VerticalAlignment="Top" CornerRadius="150" HorizontalAlignment="Center" Padding="0">
           <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="4" ClipToBounds="True">
-            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" Background="Yellow" ClipToBounds="True">
+            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" ClipToBounds="True">
               <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
                                            Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Stretch="Uniform" Width="240" Height="240" />
             </Border>

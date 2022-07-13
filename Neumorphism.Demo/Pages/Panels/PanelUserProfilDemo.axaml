@@ -1,0 +1,66 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+              x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelUserProfilDemo">
+
+  <StackPanel Margin="40" VerticalAlignment="Top">
+	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+      
+		  <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Stretch">
+
+			  
+            <Grid ColumnDefinitions="*, *">
+                <Button Grid.Column="0" Classes="Icon" Width="40" Height="40" Margin="-10" Command="{Binding GoBackCommand}" HorizontalAlignment="Left">
+                    <avalonia:MaterialIcon Kind="ArrowLeft" Width="20" Height="20" Foreground="Gray" />
+                </Button>
+                <Button Grid.Column="2" Classes="Icon" Width="40" Height="40" Margin="-10" Command="{Binding AddToFavoritesCommand}" HorizontalAlignment="Right">
+                    <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
+                </Button>
+            </Grid>
+
+
+			  <styles:Card Width="120" Height="120" Margin="0,30,0,30" VerticalAlignment="Top" CornerRadius="120" HorizontalAlignment="Center" Padding="0">
+				  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="10" ClipToBounds="True">
+					  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+						  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													   Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="120" Height="120" />
+					  </Border>
+				  </Border>
+			  </styles:Card>
+
+			  <TextBlock Classes="Subtitle2" FontSize="24" Text="CodingKiller" Foreground="Gray" HorizontalAlignment="Center"/>
+			  <TextBlock Classes="Subtitle2" FontSize="18" Text="Designer - Developer" Foreground="Gray" HorizontalAlignment="Center"/>
+
+
+			  <Grid ColumnDefinitions="*,*,*,*" Margin="0,25,0,25">
+				  <Button Grid.Column="0" Classes="Icon" Width="40" Height="40">
+					  <avalonia:MaterialIcon Kind="Facebook" Width="20" Height="20" Foreground="#ff4365af" />
+				  </Button>
+				  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40">
+					  <avalonia:MaterialIcon Kind="Twitter" Width="20" Height="20" Foreground="#ff12a8ff" />
+				  </Button>
+				  <Button Grid.Column="2" Classes="Icon" Width="40" Height="40">
+					  <avalonia:MaterialIcon Kind="Instagram" Width="20" Height="20" Foreground="#ffb95e7d" />
+				  </Button>
+				  <Button Grid.Column="3" Classes="Icon" Width="40" Height="40">
+					  <avalonia:MaterialIcon Kind="Youtube" Width="20" Height="20" Foreground="#fff90403" />
+				  </Button>
+			  </Grid>
+
+			  <Grid ColumnDefinitions="*,*">
+				  <Button Grid.Column="0" Margin="5" Width="100" Height="38" Content="Message" CornerRadius="3" HorizontalAlignment="Left"/>
+				  <Button Grid.Column="1" Margin="5" Width="100" Height="38" Content="Subscribe" CornerRadius="3" HorizontalAlignment="Right"/>
+			  </Grid>
+			  
+			  
+			  
+		  </StackPanel>
+	  </styles:Card>
+  </StackPanel>
+</UserControl>
