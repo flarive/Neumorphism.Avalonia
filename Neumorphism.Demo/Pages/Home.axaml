@@ -44,7 +44,7 @@
 
 
 
-  <StackPanel Margin="16, 0" MaxWidth="1200">
+  <StackPanel Margin="16, 0" MaxWidth="1080">
       <StackPanel.Styles>
         <Style Selector="TextBlock.Content, TextBlock.Subheadline">
           <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -80,10 +80,11 @@
 	  <Grid ColumnDefinitions="*,*,*" Margin="0,50,0,80">
         <StackPanel Grid.Column="0" Orientation="Vertical">
             <fullpanels:PanelLoginDemo/>
-            <!--<fullpanels:PanelUserProfilDemo/>-->
+            <fullpanels:PanelUserProfilDemo/>
         </StackPanel>
 		  <StackPanel Grid.Column="1" Orientation="Vertical">
 			  <fullpanels:PanelClockDemo/>
+        <fullpanels:PanelSleepQualityDemo/>
 		  </StackPanel>
 		  <StackPanel Grid.Column="2" Orientation="Vertical">
 			  <fullpanels:PanelPlayerDemo/>

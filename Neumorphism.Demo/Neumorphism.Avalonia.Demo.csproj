@@ -34,11 +34,15 @@
     <AdditionalFiles Remove="Pages\Panels\PanelLargeUIDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelMediumUIDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelPlayerDemo.axaml" />
+    <AdditionalFiles Remove="Pages\Panels\PanelSleepQualityDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelSmallUIDemo.axaml" />
     <AdditionalFiles Remove="Pages\Panels\PanelUserProfilDemo.axaml" />
     <None Remove="Resources\Icons\app.ico" />
     <EmbeddedResource Include="Resources\Icons\app.ico" />
     <Content Include="Resources\Icons\app.ico" />
+    <Compile Update="Pages\Panels\PanelSleepQualityDemo.axaml.cs">
+      <DependentUpon>PanelSleepQualityDemo.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\Panels\PanelUserProfilDemo.axaml.cs">
       <DependentUpon>PanelUserProfilDemo.axaml</DependentUpon>
     </Compile>

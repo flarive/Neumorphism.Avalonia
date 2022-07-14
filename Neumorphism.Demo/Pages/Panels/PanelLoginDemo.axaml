@@ -8,7 +8,7 @@
               xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelLoginDemo">
 
-  <StackPanel Margin="40" VerticalAlignment="Top">
+  <StackPanel Margin="30" VerticalAlignment="Top">
 	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
 
       
