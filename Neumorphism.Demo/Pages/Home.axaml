@@ -84,7 +84,7 @@
         </StackPanel>
 		  <StackPanel Grid.Column="1" Orientation="Vertical">
 			  <fullpanels:PanelClockDemo/>
-        <fullpanels:PanelSleepQualityDemo/>
+              <!--<fullpanels:PanelSleepQualityDemo/>-->
 		  </StackPanel>
 		  <StackPanel Grid.Column="2" Orientation="Vertical">
 			  <fullpanels:PanelPlayerDemo/>

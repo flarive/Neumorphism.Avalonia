@@ -4,9 +4,15 @@
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
               xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+			  xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
               xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
               xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+			  xmlns:vm="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
               x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelSleepQualityDemo">
+
+	<UserControl.Resources>
+		<converters:EnumToBooleanConverter x:Key="EnumBoolConverter" />
+	</UserControl.Resources>
 
   <StackPanel Margin="30" VerticalAlignment="Top">
 	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
@@ -21,17 +27,66 @@
 				  </Button>  
 			  </Grid>
 
-        <styles:Card Padding="0" InsideClipping="True" Height="52" Margin="0,15,0,15">
-          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <RadioButton Classes="Button Left" GroupName="3" Height="52" Content="Days" IsChecked="True" />
-            <RadioButton Classes="Button" GroupName="3" Height="52" Content="Weeks" />
-            <RadioButton Classes="Button Right" GroupName="3" Height="52" Content="Month" />
+        <styles:Card Padding="0" InsideClipping="True" Height="52">
+          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+  		    <!--<RadioButton Classes="Button Left" GroupName="3a" Height="52" Content="Days" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Days}}"/>
+            <RadioButton Classes="Button" GroupName="3a" Height="52" Content="Weeks" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Weeks}}" />
+            <RadioButton Classes="Button Right" GroupName="3a" Height="52" Content="Months" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Months}}" />-->
+
+			  <RadioButton Classes="Button Left" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
+			  <RadioButton Classes="Button" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
+			  <RadioButton Classes="Button" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" IsEnabled="False" />
+			  <RadioButton Classes="Button Right" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
+			  
+			  
           </StackPanel>
         </styles:Card>
+
+
+		<TextBlock Grid.Column="0" Classes="Subtitle2" FontSize="10" Text="Sleep quality" HorizontalAlignment="Left"/>
+
+
+		<StackPanel Orientation="Horizontal" Margin="0,20,0,20">
+			<ProgressBar Orientation="Vertical" Margin="10,0,10,0" Classes="DeepInset Light" Height="200" Width="8" Value="80" />
+			<ProgressBar Orientation="Vertical" Margin="10,0,10,0" Classes="DeepInset Light" Height="200" Width="8" Value="30" />
+		</StackPanel>
+
+
+			  
 			  
 			  
 			  
 		  </StackPanel>
 	  </styles:Card>
+
+
+
+	  <!--Radiobuttons group-->
+	  <TextBlock Classes="Headline6 Subheadline2" Text="RadioButtons (button like)" Margin="0,30,0,0" />
+	  <StackPanel Orientation="Horizontal">
+		  <StackPanel Orientation="Vertical">
+
+			  <styles:Card Padding="0" InsideClipping="True" Height="52" ToolTip.Tip="Regular RadioButton with class Button.">
+				  <StackPanel Orientation="Horizontal">
+					  <RadioButton Classes="Button Left" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
+					  <RadioButton Classes="Button" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
+					  <RadioButton Classes="Button" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" IsEnabled="False" />
+					  <RadioButton Classes="Button Right" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
+				  </StackPanel>
+			  </styles:Card>
+
+
+			  <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="38" ToolTip.Tip="Regular RadioButton with classes Button and Accent.">
+				  <StackPanel Orientation="Horizontal">
+					  <RadioButton Classes="Button Accent Left" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchMinus}" />
+					  <RadioButton Classes="Button Accent" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchPlus}" />
+					  <RadioButton Classes="Button Accent" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchRefresh}" />
+					  <RadioButton Classes="Button Accent Right" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchSync}" />
+				  </StackPanel>
+			  </styles:Card>
+
+		  </StackPanel>
+	  </StackPanel>
+	  
   </StackPanel>
 </UserControl>

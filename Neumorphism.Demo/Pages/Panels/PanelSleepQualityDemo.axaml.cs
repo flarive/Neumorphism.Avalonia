@@ -10,6 +10,7 @@ namespace Neumorphism.Avalonia.Demo.Pages.Panels
         {
             this.InitializeComponent();
 
+            this.DataContext = new PanelSleepQualityDemoViewModel();
         }
 
         private void InitializeComponent()

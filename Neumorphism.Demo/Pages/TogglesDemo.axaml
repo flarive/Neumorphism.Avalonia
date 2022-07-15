@@ -170,7 +170,7 @@
         <showMeTheXaml:XamlDisplay UniqueId="RadioButtonsCard1">
           <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="38" ToolTip.Tip="Regular RadioButton with classes Button and Accent.">
             <StackPanel Orientation="Horizontal">
-              <RadioButton Classes="Button Accent Left" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchMinus}" />
+              <RadioButton Classes="Button Accent Left" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchMinus}" IsChecked="True" />
               <RadioButton Classes="Button Accent" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchPlus}" />
               <RadioButton Classes="Button Accent" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchRefresh}" />
               <RadioButton Classes="Button Accent Right" GroupName="4" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchSync}" />
