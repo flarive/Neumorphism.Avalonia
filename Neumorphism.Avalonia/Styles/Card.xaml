@@ -15,12 +15,15 @@
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Padding" Value="20" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Width" Value="NaN" />
+        <Setter Property="Height" Value="NaN" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-		<Setter Property="CornerRadius" Value="0" />
+		    <Setter Property="CornerRadius" Value="0" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Panel VerticalAlignment="Stretch">
+                <Panel VerticalAlignment="Stretch" Margin="{TemplateBinding Margin}" Height="{TemplateBinding Height}">
                     <Border Name="PART_BackgroundBorder" Margin="0" VerticalAlignment="Stretch"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"

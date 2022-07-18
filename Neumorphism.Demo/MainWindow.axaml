@@ -62,7 +62,7 @@
                             <TextBlock Classes="Body2" Text="Material Icons" />
                             <TextBlock Classes="Body2" Text="Sliders" />
                             <TextBlock Classes="Body2" Text="Progress indicators" />
-                            <TextBlock Classes="Body2" Text="Cards" IsEnabled="True" />
+                            <TextBlock Classes="Body2" Text="Cards" />
                             <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
@@ -144,6 +144,7 @@
                                     </Setter>
                                 </Style>
                             </Carousel.Styles>
+                          
                             <!-- Main page -->
                             <pages:Home />
 
@@ -168,8 +169,8 @@
                             <!-- Progress indicators -->
                             <pages:ProgressIndicatorDemo />
 
-							<!-- Card -->
-							<pages:CardsDemo />
+							              <!-- Card -->
+							              <pages:CardsDemo />
 
                             <!-- Lists -->
                             <pages:ListsDemo />

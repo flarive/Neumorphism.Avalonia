@@ -16,7 +16,7 @@
   <StackPanel Margin="16,0,16,50">
     <StackPanel.Styles>
       <Style Selector="styles|Card">
-        <Setter Property="Margin" Value="16" />
+        <Setter Property="Margin" Value="8" />
       </Style>
     </StackPanel.Styles>
 
@@ -26,7 +26,7 @@
     <TextBlock Classes="Headline6 Subheadline2" Text="Outset cards" Margin="0,30,0,0" />
     <WrapPanel HorizontalAlignment="Stretch">
       <showMeTheXaml:XamlDisplay UniqueId="Cards0">
-        <styles:Card Width="240" Height="240" VerticalAlignment="Top" ToolTip.Tip="Regular outset card">
+        <styles:Card Width="250" Height="240" VerticalAlignment="Top" ToolTip.Tip="Regular outset card">
           <StackPanel Margin="0,4">
             <TextBlock Classes="Headline6" Text="Card title" />
             <TextBlock Classes="Body2" Text="Secondary text" />
@@ -34,7 +34,7 @@
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="Cards1">
-        <styles:Card Width="240" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip="Ouset card with custom corner radius">
+        <styles:Card Width="250" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip="Ouset card with custom corner radius">
           <StackPanel Margin="0" Background="{DynamicResource PrimaryHueLightBrush}">
             <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Width="240" Height="240" Stretch="Uniform" />
             <StackPanel Orientation="Vertical" Margin="20,12">
@@ -45,7 +45,7 @@
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="Cards2">
-        <styles:Card Width="240" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip="Outset card with gradient background and border">
+        <styles:Card Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip="Outset card with gradient background and border">
           <styles:Card.Styles>
             <Style Selector="styles|Card">
               <Setter Property="Background">
@@ -68,7 +68,7 @@
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="Cards3">
-        <styles:Card Width="240" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" Background="{DynamicResource MaterialDesignLinearGradient1}" ToolTip.Tip="Nested outset cards">
+        <styles:Card Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" Background="{DynamicResource MaterialDesignLinearGradient1}" ToolTip.Tip="Nested outset cards">
           <styles:Card HorizontalAlignment="Stretch" VerticalAlignment="100" CornerRadius="8" Padding="0" Margin="20" Background="Transparent">
             <StackPanel Orientation="Vertical" Margin="28">
               <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
@@ -83,7 +83,7 @@
     <TextBlock Classes="Headline6 Subheadline2" Text="Inset cards" Margin="0,30,0,0" />
     <WrapPanel HorizontalAlignment="Stretch">
       <showMeTheXaml:XamlDisplay UniqueId="InsetCards0">
-        <styles:Card Classes="Inset" Width="240" Height="240" VerticalAlignment="Top" ToolTip.Tip="Regular inset card">
+        <styles:Card Classes="Inset" Width="250" Height="240" VerticalAlignment="Top" ToolTip.Tip="Regular inset card">
           <StackPanel Margin="0,4">
             <TextBlock Classes="Headline6" Text="Card title" />
             <TextBlock Classes="Body2" Text="Secondary text" />
@@ -91,7 +91,7 @@
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="InsetCards1">
-        <styles:Card Classes="Inset" Width="240" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip="Inset card with custom corner radius">
+        <styles:Card Classes="Inset" Width="250" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip="Inset card with custom corner radius">
           <Grid>
             <StackPanel Margin="0" Background="{DynamicResource PrimaryHueLightBrush}" ZIndex="1">
               <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Width="240" Height="240" Stretch="Uniform" />
@@ -100,12 +100,12 @@
                 <TextBlock Classes="Body2" Text="Secondary text" Foreground="{DynamicResource MaterialDesignBackground}" />
               </StackPanel>
             </StackPanel>
-            <Border Width="240" Height="310" CornerRadius="20" Background="Transparent" BoxShadow="inset 8 8 48 Black, inset -8 -8 48 White" ZIndex="2" />
+            <Border Width="250" Height="310" CornerRadius="20" Background="Transparent" BoxShadow="inset 8 8 48 Black, inset -8 -8 48 White" ZIndex="2" />
           </Grid>
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="InsetCards2">
-        <styles:Card Classes="Inset" Width="240" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip="Inset card with gradient background and border">
+        <styles:Card Classes="Inset" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip="Inset card with gradient background and border">
           <styles:Card.Styles>
             <Style Selector="styles|Card">
               <Setter Property="Background">
@@ -128,7 +128,7 @@
         </styles:Card>
       </showMeTheXaml:XamlDisplay>
       <showMeTheXaml:XamlDisplay UniqueId="InsetCards3">
-        <styles:Card Classes="Inset" Width="240" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" Background="{DynamicResource MaterialDesignLinearGradient1}" ToolTip.Tip="Nested inset cards">
+        <styles:Card Classes="Inset" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" Background="{DynamicResource MaterialDesignLinearGradient1}" ToolTip.Tip="Nested inset cards">
           <styles:Card Classes="Inset" HorizontalAlignment="Stretch" VerticalAlignment="100" CornerRadius="8" Padding="0" Margin="20" Background="Transparent">
             <StackPanel Orientation="Vertical" Margin="28">
               <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />

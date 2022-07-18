@@ -70,6 +70,7 @@ namespace Neumorphism.Avalonia.Demo
             catch
             {
             }
+
             NavDrawerSwitch.IsChecked = false;
         }
 

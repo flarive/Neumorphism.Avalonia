@@ -1,19 +1,20 @@
-﻿using Avalonia.Controls;
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Dialogs;
 using Avalonia.Markup.Xaml;
-using Neumorphism.Avalonia.Demo.Models;
-using Neumorphism.Avalonia.Styles.Assists;
-using System.Collections.ObjectModel;
-using Neumorphism.Avalonia.Styles.Dialog;
-using static Neumorphism.Avalonia.Demo.Models.StatusEnum;
 using Avalonia.VisualTree;
-using System.Linq;
+using Neumorphism.Avalonia.Demo.Models;
 using Neumorphism.Avalonia.Styles;
+using Neumorphism.Avalonia.Styles.Assists;
+using Neumorphism.Avalonia.Styles.Dialog;
+using System.Collections.ObjectModel;
+using System.Linq;
+using static Neumorphism.Avalonia.Demo.Models.StatusEnum;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
-    public class Home : UserControl
-    { 
+    public partial class Home : UserControl
+    {
         public Home()
         {
             Features = new ObservableCollection<FeatureStatusModels> {
@@ -50,12 +51,10 @@ namespace Neumorphism.Avalonia.Demo.Pages
             };
 
             InitializeComponent();
+
             DataContext = this;
         }
 
-        
-        
-        
         public ObservableCollection<FeatureStatusModels> Features { get; private set; }
 
         public void OpenLeftDrawer()

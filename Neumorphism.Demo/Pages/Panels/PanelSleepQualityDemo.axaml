@@ -1,92 +1,134 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
-              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-              xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
-			  xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
-              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-              xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
-			  xmlns:vm="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
-              x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelSleepQualityDemo">
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+             xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+             xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
+             xmlns:base="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelSleepQualityDemo">
 
-	<UserControl.Resources>
-		<converters:EnumToBooleanConverter x:Key="EnumBoolConverter" />
-	</UserControl.Resources>
+  <UserControl.Resources>
+    <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+  </UserControl.Resources>
+  
 
   <StackPanel Margin="30" VerticalAlignment="Top">
-	  <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+    <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
 
-      
-		  <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Stretch">
 
-			  <Grid ColumnDefinitions="*, Auto">
-				  <TextBlock Grid.Column="0" Classes="Headline6" Text="Statistics" Foreground="#ff555555" TextAlignment="Left" />
-				  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Margin="-10">
-					  <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
-				  </Button>  
-			  </Grid>
+      <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Center">
 
-        <styles:Card Padding="0" InsideClipping="True" Height="52">
-          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
-  		    <!--<RadioButton Classes="Button Left" GroupName="3a" Height="52" Content="Days" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Days}}"/>
-            <RadioButton Classes="Button" GroupName="3a" Height="52" Content="Weeks" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Weeks}}" />
-            <RadioButton Classes="Button Right" GroupName="3a" Height="52" Content="Months" IsChecked="{Binding Frequency, Converter={StaticResource EnumBoolConverter}, ConverterParameter={x:Static vm:SleepQualityFrequency.Months}}" />-->
+        <Grid ColumnDefinitions="*, Auto">
+          <TextBlock Grid.Column="0" Classes="Headline6" Text="Statistics" Foreground="#ff555555" TextAlignment="Left" />
+          <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Margin="-10">
+            <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
+          </Button>
+        </Grid>
 
-			  <RadioButton Classes="Button Left" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
-			  <RadioButton Classes="Button" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
-			  <RadioButton Classes="Button" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" IsEnabled="False" />
-			  <RadioButton Classes="Button Right" GroupName="333" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
-			  
-			  
+        <styles:Card Padding="0" InsideClipping="True" Height="52" Margin="0,30,0,30">
+          <StackPanel Orientation="Horizontal">
+            <RadioButton Classes="Button Left" GroupName="389" Height="52" Content="Days" assist:ToggleButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Days}}" />
+            <RadioButton Classes="Button" GroupName="389" Height="52" Content="Weeks" assist:ToggleButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Weeks}}" />
+            <RadioButton Classes="Button Right" GroupName="389" Height="52" Content="Months" assist:ToggleButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Months}}" />
           </StackPanel>
         </styles:Card>
 
 
-		<TextBlock Grid.Column="0" Classes="Subtitle2" FontSize="10" Text="Sleep quality" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Column="0" Classes="Headline6" FontSize="18" Foreground="#ff555555" Text="Sleep quality" HorizontalAlignment="Left"/>
 
 
-		<StackPanel Orientation="Horizontal" Margin="0,20,0,20">
-			<ProgressBar Orientation="Vertical" Margin="10,0,10,0" Classes="DeepInset Light" Height="200" Width="8" Value="80" />
-			<ProgressBar Orientation="Vertical" Margin="10,0,10,0" Classes="DeepInset Light" Height="200" Width="8" Value="30" />
-		</StackPanel>
+        <Grid ColumnDefinitions="Auto,*,*,*,*,*,*,*" Margin="0,20,0,20">
+          <StackPanel Grid.Column="0" Orientation="Vertical">
+            <TextBlock Text="100%" Classes="Subtitle2" Margin="0,0,0,0" FontSize="10"/>
+            <TextBlock Text="80%" Classes="Subtitle2" Margin="0,52,0,0" FontSize="10"/>
+            <TextBlock Text="60%" Classes="Subtitle2" Margin="0,52,0,0" FontSize="10"/>
+            <TextBlock Text="40%" Classes="Subtitle2" Margin="0,52,0,0" FontSize="10"/>
+          </StackPanel>
+          <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="60" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Mon" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+          <StackPanel Grid.Column="2" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="70" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Tue" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="3" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#55f8817d" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="78" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Wed" FontSize="10" TextAlignment="Center" Foreground="#fff8817d" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="4" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="72" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Thu" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="5" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="66" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Fri" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="6" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="74" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Sat" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+          <StackPanel Grid.Column="7" Orientation="Vertical">
+            <Border Width="16" Height="204" CornerRadius="10" BorderBrush="#ffdddddd" Padding="0" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <ProgressBar Orientation="Vertical" Margin="0" Padding="0" Height="200" Width="12" Value="64" Foreground="#fff8817d" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Text="Sun" FontSize="10" TextAlignment="Center" HorizontalAlignment="Center"/>
+          </StackPanel>
+
+        </Grid>
 
 
-			  
-			  
-			  
-			  
-		  </StackPanel>
-	  </styles:Card>
+        <Grid ColumnDefinitions="*,*,*,*" Margin="0,20,0,0">
+          <Button Grid.Column="0" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8">
+            <StackPanel Orientation="Vertical">
+              <avalonia:MaterialIcon Kind="WeatherNight" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock FontSize="9" Text="Sleep" Foreground="Gray"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="1" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8">
+            <StackPanel Orientation="Vertical">
+              <avalonia:MaterialIcon Kind="Pulse" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock FontSize="9" Text="Journal" Foreground="Gray"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="2" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8">
+            <StackPanel Orientation="Vertical">
+              <avalonia:MaterialIcon Kind="ChartAreaspline" Width="20" Height="20" Foreground="#fff8817d" />
+              <TextBlock FontSize="9" Text="Stats" Foreground="#fff8817d"/>
+            </StackPanel>
+          </Button>
+          <Button Grid.Column="3" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8">
+            <StackPanel Orientation="Vertical">
+              <avalonia:MaterialIcon Kind="User" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock FontSize="9" Text="Profile" Foreground="Gray"/>
+            </StackPanel>
+          </Button>
+        </Grid>
 
+      </StackPanel>
 
+    </styles:Card>
 
-	  <!--Radiobuttons group-->
-	  <TextBlock Classes="Headline6 Subheadline2" Text="RadioButtons (button like)" Margin="0,30,0,0" />
-	  <StackPanel Orientation="Horizontal">
-		  <StackPanel Orientation="Vertical">
-
-			  <styles:Card Padding="0" InsideClipping="True" Height="52" ToolTip.Tip="Regular RadioButton with class Button.">
-				  <StackPanel Orientation="Horizontal">
-					  <RadioButton Classes="Button Left" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignLeft}" />
-					  <RadioButton Classes="Button" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignCenter}" IsChecked="True" />
-					  <RadioButton Classes="Button" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignJustify}" IsEnabled="False" />
-					  <RadioButton Classes="Button Right" GroupName="38" Height="52" Content="{avalonia:MaterialIconExt Kind=FormatAlignRight}" />
-				  </StackPanel>
-			  </styles:Card>
-
-
-			  <styles:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="38" ToolTip.Tip="Regular RadioButton with classes Button and Accent.">
-				  <StackPanel Orientation="Horizontal">
-					  <RadioButton Classes="Button Accent Left" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchMinus}" />
-					  <RadioButton Classes="Button Accent" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchPlus}" />
-					  <RadioButton Classes="Button Accent" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchRefresh}" />
-					  <RadioButton Classes="Button Accent Right" GroupName="48" Height="38" Content="{avalonia:MaterialIconExt Kind=SourceBranchSync}" />
-				  </StackPanel>
-			  </styles:Card>
-
-		  </StackPanel>
-	  </StackPanel>
-	  
   </StackPanel>
+
 </UserControl>

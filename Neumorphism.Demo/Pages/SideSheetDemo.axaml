@@ -32,7 +32,7 @@
                 </DataTemplate>
             </styles:SideSheet.SideSheetContentTemplate>
             <Panel>
-                <pages:Home />
+                <!--<pages:Home />-->
                 <Button Classes="Icon" Width="36" Height="36"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"

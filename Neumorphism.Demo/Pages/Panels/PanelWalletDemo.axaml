@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+             xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+             xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelWalletDemo">
+
+
+  <StackPanel Margin="30" VerticalAlignment="Top">
+    <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+
+      <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Center">
+
+        <Grid ColumnDefinitions="*,*" HorizontalAlignment="Stretch">
+
+          <Border Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" CornerRadius="25" Width="50" Height="50" BorderBrush="{DynamicResource MaterialDesignPaper}" BorderThickness="2" ClipToBounds="True">
+            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+              <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+                             Source="avares://Neumorphism.Avalonia.Demo/Assets/200.jpg" Stretch="Uniform" Width="50" Height="50" />
+            </Border>
+          </Border>
+
+          <Button Grid.Column="1" HorizontalAlignment="Right" Classes="Icon" Width="40" Height="40" Margin="-10">
+            <avalonia:MaterialIcon Kind="Settings" Width="20" Height="20" Foreground="Gray" />
+          </Button>
+
+        </Grid>
+        
+        
+
+
+        <Grid ColumnDefinitions="*, Auto">
+          <TextBlock Grid.Column="0" Classes="Headline6" Text="Hi John !" Foreground="#ff555555" TextAlignment="Left" />
+         
+        </Grid>
+
+
+        <styles:Card Width="260" Height="260" Background="Orange" VerticalAlignment="Top" HorizontalAlignment="Center" CornerRadius="15" Padding="30">
+
+          <styles:Card Width="200" Height="126" Background="{DynamicResource MaterialDesignPaper}" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center" CornerRadius="15" Padding="30">
+          
+          </styles:Card>
+          
+        </styles:Card>
+
+     
+      </StackPanel>
+
+    </styles:Card>
+
+  </StackPanel>
+  
+  
+</UserControl>
