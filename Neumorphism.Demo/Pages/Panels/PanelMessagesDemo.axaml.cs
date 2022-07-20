@@ -5,13 +5,13 @@ using Neumorphism.Avalonia.Demo.ViewModels.Panels;
 
 namespace Neumorphism.Avalonia.Demo.Pages.Panels
 {
-    public partial class PanelWalletDemo : UserControl
+    public partial class PanelMessagesDemo : UserControl
     {
-        public PanelWalletDemo()
+        public PanelMessagesDemo()
         {
             InitializeComponent();
 
-            this.DataContext = new PanelWalletDemoViewModel();
+            this.DataContext = new PanelMessagesDemoViewModel();
         }
 
         private void InitializeComponent()

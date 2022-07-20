@@ -1,0 +1,139 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia"
+             xmlns:assist="clr-namespace:Neumorphism.Avalonia.Styles.Assists;assembly=Neumorphism.Avalonia"
+             xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelMessagesDemo">
+
+
+  <StackPanel Margin="30" VerticalAlignment="Top">
+    <styles:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+
+      <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Center">
+
+
+		  <Grid ColumnDefinitions="*, Auto">
+			  <TextBlock Grid.Column="0" Classes="Headline6" Text="Messages" Foreground="#ff555555" TextAlignment="Left" />
+			  <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Margin="-10">
+				  <avalonia:MaterialIcon Kind="Bell" Width="20" Height="20" Foreground="Gray" />
+			  </Button>
+		  </Grid>
+
+
+		  <styles:Card Width="240" VerticalAlignment="Top" Margin="0,20,0,0" CornerRadius="15" Padding="10" Background="{DynamicResource MaterialDesignLinearGradient1}">
+			  <Grid ColumnDefinitions="Auto,*,Auto">
+				<Border Grid.Column="0" Width="50" Height="50" Margin="0,0,8,0" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
+					<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+						<Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													Source="avares://Neumorphism.Avalonia.Demo/Assets/200.jpg" Stretch="Uniform" Width="50" Height="50" />
+					</Border>
+				</Border>
+				  <StackPanel Grid.Column="1" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="14" FontWeight="Bold" Text="Dianne Stones"/>
+					  <TextBlock Padding="2" FontSize="12" FontWeight="Normal" Foreground="Gray" Text="Me too, see you !"/>
+				  </StackPanel>
+
+				  <StackPanel Grid.Column="2" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="11" Foreground="Gray" Text="15 min"/>
+					  <Border Width="16" Height="16" Background="Crimson" HorizontalAlignment="Right" VerticalAlignment="Top" CornerRadius="3">
+						  <TextBlock Foreground="White" FontSize="11" FontWeight="Bold" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					  </Border>
+				  </StackPanel>
+			  </Grid>
+		  </styles:Card>
+
+
+		  <styles:Card Classes="Inset" Width="240" VerticalAlignment="Top" Margin="0,10,0,0" CornerRadius="15" Padding="10" Background="{DynamicResource MaterialDesignLinearGradient1}">
+			  <Grid ColumnDefinitions="Auto,*,Auto">
+				  <Border Grid.Column="0" Width="50" Height="50" Margin="0,0,8,0" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
+					  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+						  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													  Source="avares://Neumorphism.Avalonia.Demo/Assets/100.jpg" Stretch="Uniform" Width="50" Height="50" />
+					  </Border>
+				  </Border>
+				  <StackPanel Grid.Column="1" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="14" FontWeight="Bold" Text="Jay Bell"/>
+					  <TextBlock Padding="2" FontSize="12" FontWeight="Normal" Foreground="Gray" Text="Hi there ! Thanks for..."/>
+				  </StackPanel>
+
+				  <StackPanel Grid.Column="2" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="11" Foreground="Gray" Text="26 may"/>
+				  </StackPanel>
+			  </Grid>
+		  </styles:Card>
+
+		  <styles:Card Classes="Inset" Width="240" VerticalAlignment="Top" Margin="0,10,0,20" CornerRadius="15" Padding="10" Background="{DynamicResource MaterialDesignLinearGradient1}">
+			  <Grid ColumnDefinitions="Auto,*,Auto">
+				  <Border Grid.Column="0" Width="50" Height="50" Margin="0,0,8,0" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
+					  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+						  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													  Source="avares://Neumorphism.Avalonia.Demo/Assets/400.jpg" Stretch="Uniform" Width="50" Height="50" />
+					  </Border>
+				  </Border>
+				  <StackPanel Grid.Column="1" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="14" FontWeight="Bold" Text="Sophia Crowel"/>
+					  <TextBlock Padding="2" FontSize="12" FontWeight="Normal" Foreground="Gray" Text="Don't wait for me..."/>
+				  </StackPanel>
+
+				  <StackPanel Grid.Column="2" Orientation="Vertical">
+					  <TextBlock Padding="2" FontSize="11" Foreground="Gray" Text="14 jan"/>
+					  <Border Width="16" Height="16" Background="Crimson" HorizontalAlignment="Right" VerticalAlignment="Top" CornerRadius="3">
+						  <TextBlock Foreground="White" FontSize="11" FontWeight="Bold" Text="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+					  </Border>
+				  </StackPanel>
+			  </Grid>
+		  </styles:Card>
+
+
+		  <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,0">
+			  <Grid Grid.Column="0" RowDefinitions="Auto,Auto">
+				  <Button Grid.Row="0" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8" CornerRadius="24">
+					<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="3" ClipToBounds="True">
+						<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+							<Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+								Source="avares://Neumorphism.Avalonia.Demo/Assets/400.jpg" Stretch="Uniform" Width="50" Height="500" />
+						</Border>
+					</Border>
+				  </Button>
+				  <Border Grid.Row="0" Margin="32,-30,0,0" Width="10" Height="10" CornerRadius="10" Background="Red"/>
+				  <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray" Text="Sophia" TextAlignment="Center"/>
+			  </Grid>
+			  <Grid Grid.Column="1" RowDefinitions="Auto,Auto">
+				  <Button Grid.Row="0" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8" CornerRadius="24">
+					  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="3" ClipToBounds="True">
+						  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+							  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+														  Source="avares://Neumorphism.Avalonia.Demo/Assets/100.jpg" Stretch="Uniform" Width="50" Height="500" />
+						  </Border>
+					  </Border>
+				  </Button>
+				  <Border Grid.Row="0" Margin="32,-30,0,0" Width="10" Height="10" CornerRadius="10" Background="Red"/>
+				  <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray" Text="Jay" TextAlignment="Center"/>
+			  </Grid>
+			  <Grid Grid.Column="2" RowDefinitions="Auto,Auto">
+				  <Button Grid.Row="0" Width="48" Height="48" HorizontalAlignment="Center" Padding="0" Margin="8" CornerRadius="24">
+					  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="3" ClipToBounds="True">
+						  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+							  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+														  Source="avares://Neumorphism.Avalonia.Demo/Assets/200.jpg" Stretch="Uniform" Width="50" Height="500" />
+						  </Border>
+					  </Border>
+				  </Button>
+				  <Border Grid.Row="0" Margin="32,-30,0,0" Width="10" Height="10" CornerRadius="10" Background="Green"/>
+				  <TextBlock Grid.Row="1" FontSize="12" Foreground="Gray" Text="Dianne" TextAlignment="Center"/>
+			  </Grid>
+		  </Grid>
+
+      </StackPanel>
+
+    </styles:Card>
+
+  </StackPanel>
+  
+  
+</UserControl>

@@ -86,7 +86,7 @@
       </StackPanel>
       <StackPanel Grid.Column="2" Orientation="Vertical">
         <fullpanels:PanelPlayerDemo/>
-        <fullpanels:PanelWalletDemo/>
+        <fullpanels:PanelMessagesDemo/>
       </StackPanel>
     </Grid>
     

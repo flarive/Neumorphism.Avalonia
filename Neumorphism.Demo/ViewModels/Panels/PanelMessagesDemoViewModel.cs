@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
 {
-    public class PanelWalletDemoViewModel : ViewModelBase
+    public class PanelMessagesDemoViewModel : ViewModelBase
     {
     }
 }

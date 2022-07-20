@@ -47,7 +47,7 @@
 
 
 			    <styles:Card Width="120" Height="120" Margin="0,30,0,30" VerticalAlignment="Top" CornerRadius="120" HorizontalAlignment="Center" Padding="0">
-				    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="{DynamicResource MaterialDesignPaper}" BorderThickness="10" ClipToBounds="True">
+				    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="{DynamicResource MaterialDesignPaper}" BorderThickness="6" ClipToBounds="True">
 					    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
 						    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
 													     Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="120" Height="120" />
