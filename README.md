@@ -54,6 +54,7 @@ For the moment only the following controls are fully themed :
 - Comboboxes
 - ProgressBars
 - Sliders
+- Cards
 
 More controls should be themed soon.
 
