@@ -13,8 +13,9 @@
         <RepositoryType>git</RepositoryType>
         <LangVersion>9</LangVersion>
         <PackageReleaseNotes>
-          Easy to use and customizable Neumorphism Design implementation for AvaloniaUI framework.
-        </PackageReleaseNotes>
+			Easy to use and customizable Neumorphism Design implementation for AvaloniaUI framework.
+			Demo app can be found here : https://github.com/flarive/Neumorphism.Avalonia
+		</PackageReleaseNotes>
     </PropertyGroup>
 
     <!--For nightly versions-->
