@@ -9,9 +9,11 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
-# <img src="favicon.png" width="32" height="32"> New in latest release (0.3.0) !
-![Screenshot](Screenshots/sliders.png)
+# <img src="favicon.png" width="32" height="32"> New in latest release (0.4.0) !
+![Screenshot](Screenshots/usecases.png)
 
+# <img src="favicon.png" width="32" height="32"> New 0.3.1 !
+![Screenshot](Screenshots/sliders.png)
 
 # <img src="favicon.png" width="32" height="32"> New in 0.2.1 !
 ![Screenshot](Screenshots/progressbar.png)
