@@ -11,7 +11,7 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 # <img src="favicon.png" width="32" height="32"> New in latest release (0.4.0) !
 - Cards are now fully themed with 2 differents styles : outset (default) and inset
-- Added real life use cases samples (login, stopwatch, messages, sleep quality, user profile...)
+- Added real life use cases samples (login, stopwatch, audio player, messages, sleep quality, user profile...)
 
 ![Screenshot](Screenshots/usecases.png)
 
