@@ -10,12 +10,14 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
 # <img src="favicon.png" width="32" height="32"> New in latest release (0.4.0) !
+- Card now fully themed
+- Added real life use cases samples
 ![Screenshot](Screenshots/usecases.png)
 
-# <img src="favicon.png" width="32" height="32"> New in 0.3.1 !
+# <img src="favicon.png" width="32" height="32"> Sliders added in 0.3.1 !
 ![Screenshot](Screenshots/sliders.png)
 
-# <img src="favicon.png" width="32" height="32"> New in 0.2.1 !
+# <img src="favicon.png" width="32" height="32"> Progressbars added in 0.2.1 !
 ![Screenshot](Screenshots/progressbar.png)
 
 
