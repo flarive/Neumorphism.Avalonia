@@ -10,7 +10,7 @@
 							x:Class="Neumorphism.Avalonia.Demo.Pages.ProgressIndicatorDemo">
 
   <StackPanel Margin="16,0,16,50">
-    <TextBlock Classes="Headline4 Subheadline" Text="Progress Indicator" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Progress bars" />
     <WrapPanel>
       <StackPanel>
         <TextBlock Classes="Headline6 Subheadline2" Text="Linear progress bars" />

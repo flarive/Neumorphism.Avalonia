@@ -61,9 +61,9 @@
                             <TextBlock Classes="Body2" Text="ComboBoxes" />
                             <TextBlock Classes="Body2" Text="Material Icons" />
                             <TextBlock Classes="Body2" Text="Sliders" />
-                            <TextBlock Classes="Body2" Text="Progress indicators" />
+                            <TextBlock Classes="Body2" Text="Progressbars" />
                             <TextBlock Classes="Body2" Text="Cards" />
-                            <TextBlock Classes="Body2" Text="Lists" IsEnabled="False" />
+                            <TextBlock Classes="Body2" Text="Lists" IsEnabled="True" />
                             <TextBlock Classes="Body2" Text="Expanders" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="ColorZones" IsEnabled="False" />
                             <TextBlock Classes="Body2" Text="Dialogs" IsEnabled="False" />
@@ -166,11 +166,11 @@
                             <!-- Sliders -->
                             <pages:SlidersDemo />
 
-                            <!-- Progress indicators -->
+                            <!-- Progressbars -->
                             <pages:ProgressIndicatorDemo />
 
-							              <!-- Card -->
-							              <pages:CardsDemo />
+                            <!-- Cards -->
+                            <pages:CardsDemo />
 
                             <!-- Lists -->
                             <pages:ListsDemo />

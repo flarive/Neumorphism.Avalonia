@@ -63,7 +63,7 @@
 
 
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.16" />
+      <PackageReference Include="Avalonia" Version="0.10.17" />
       <PackageReference Include="DialogHost.Avalonia" Version="0.5.0" />
     </ItemGroup>
 

@@ -20,7 +20,7 @@
         <Setter Property="Height" Value="NaN" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-		    <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="CornerRadius" Value="0" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel VerticalAlignment="Stretch" Margin="{TemplateBinding Margin}" Height="{TemplateBinding Height}">
@@ -51,8 +51,6 @@
 	<Style Selector="cc|Card.Inset /template/ Border#PART_BackgroundBorder">
 		<Setter Property="BoxShadow" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToBoxShadowConverter}, ConverterParameter=1}"/>
 	</Style>
-	
-	
 
 	<Style Selector="cc|Card[CornerRadius=0] /template/ Border#PART_BackgroundBorder">
 		<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
