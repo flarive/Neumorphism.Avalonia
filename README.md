@@ -31,7 +31,8 @@ This library is a collection of styles to help you build your Avalonia app with 
 
 [![nuget](https://img.shields.io/nuget/v/Neumorphism.Avalonia?label=Nuget&style=flat-square)][nuget]
 [![nuget](https://img.shields.io/nuget/dt/Neumorphism.Avalonia?color=blue&label=Downloads&style=flat-square)][nuget]
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE)
+
+<a href='https://ko-fi.com/eviral' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
 
 
 
@@ -95,21 +96,13 @@ More controls should be themed soon.
 
 Neumorphism.Avalonia is free to use in any non commercial project.
 
-Please donate if you like this project and if you want to support it !
+If you like this project, if you need a feature or help, if you just want to support it, just buy me a little coffee my friend :)
+(i love coffee, it helps me to write incredible code !)
 
-
-
-
-
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUHJBYFUMEJFE" 
-target="_blank">
-<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" 
-title="PayPal – The safer, easier way to pay online!" border="0" />
-</a>
 
 
 <a href='https://ko-fi.com/eviral' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G0DYCCN)
+
 
 
