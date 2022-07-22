@@ -96,7 +96,7 @@ Neumorphism.Avalonia is free to use in any non commercial project.
 
 If you like this project, if you need a feature or help, if you just want to support it, just buy me a little coffee my friend :)
 
-(i love coffee, it helps me to write incredible code !)
+I love coffee, it helps me to write incredible code :)
 
 
 
