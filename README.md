@@ -64,7 +64,7 @@ More controls should be themed soon.
 # <img src="favicon.png" width="32" height="32"> Technical info
 
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
-- Can be used with .net Core 3.x, .net5, .net6...
+- Can be used with .net Core 3.x, .net5, .net6, .net7...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
 - Built upon the latest version of Avalonia UI (0.10.16)
 - .Net 5 demo application project
