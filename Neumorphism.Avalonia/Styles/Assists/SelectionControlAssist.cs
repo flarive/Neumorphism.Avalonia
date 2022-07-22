@@ -2,8 +2,10 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 
-namespace Neumorphism.Avalonia.Styles.Assists {
-    public static class SelectionControlAssist {
+namespace Neumorphism.Avalonia.Styles.Assists
+{
+    public static class SelectionControlAssist
+    {
         #region Size of selection widget
 
         public static readonly AvaloniaProperty<double> SizeProperty
@@ -36,31 +38,50 @@ namespace Neumorphism.Avalonia.Styles.Assists {
 
         #endregion
 
+        #region Main selection widget background
+
+        public static readonly AvaloniaProperty<IBrush> BackgroundProperty
+            = AvaloniaProperty.RegisterAttached<Control, IBrush>("Background", typeof(SelectionControlAssist));
+
+        public static IBrush GetBackground(Control element) {
+            return (IBrush) element.GetValue(BackgroundProperty);
+        }
+
+        public static void SetBackground(Control element, IBrush brush) {
+            element.SetValue(BackgroundProperty, brush);
+        }
+
+        #endregion
+
+
         #region Main selection widget foreground
 
         public static readonly AvaloniaProperty<IBrush> ForegroundProperty
-            = AvaloniaProperty.RegisterAttached<Button, IBrush>("Foreground", typeof(SelectionControlAssist));
+            = AvaloniaProperty.RegisterAttached<Control, IBrush>("Foreground", typeof(SelectionControlAssist));
 
-        public static IBrush GetForeground(Button element) {
-            return (IBrush) element.GetValue(ForegroundProperty);
+        public static IBrush GetForeground(Control element)
+        {
+            return (IBrush)element.GetValue(ForegroundProperty);
         }
 
-        public static void SetForeground(Button element, IBrush brush) {
+        public static void SetForeground(Control element, IBrush brush)
+        {
             element.SetValue(ForegroundProperty, brush);
         }
 
         #endregion
 
+
         #region Inner widget foreground color of selection widget
 
         public static readonly AvaloniaProperty<IBrush> InnerForegroundProperty
-            = AvaloniaProperty.RegisterAttached<Button, IBrush>("InnerForeground", typeof(SelectionControlAssist));
+            = AvaloniaProperty.RegisterAttached<Control, IBrush>("InnerForeground", typeof(SelectionControlAssist));
 
-        public static IBrush GetInnerForeground(Button element) {
+        public static IBrush GetInnerForeground(Control element) {
             return (IBrush) element.GetValue(InnerForegroundProperty);
         }
 
-        public static void SetInnerForeground(Button element, IBrush brush) {
+        public static void SetInnerForeground(Control element, IBrush brush) {
             element.SetValue(InnerForegroundProperty, brush);
         }
 

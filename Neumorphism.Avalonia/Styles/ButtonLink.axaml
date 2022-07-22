@@ -2,9 +2,7 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:assists="clr-namespace:Neumorphism.Avalonia.Styles.Assists"
-  xmlns:ripple="clr-namespace:Neumorphism.Avalonia.Styles.Ripple"
   xmlns:controls="clr-namespace:Neumorphism.Avalonia.Styles.Controls"
-  xmlns:converters="clr-namespace:Neumorphism.Avalonia.Styles.Converters"
   xmlns:system="clr-namespace:System;assembly=netstandard">
 
 	<Style Selector="Button.Link">

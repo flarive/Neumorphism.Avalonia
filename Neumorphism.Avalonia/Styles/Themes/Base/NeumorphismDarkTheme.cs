@@ -17,8 +17,8 @@ namespace Neumorphism.Avalonia.Styles.Themes.Base
         public Color MaterialDesignCheckBoxDisabled { get; } = Color.Parse("#FF647076");
         public Color MaterialDesignTextBoxBorder { get; } = Color.Parse("#89FFFFFF");
         public Color MaterialDesignDivider { get; } = Color.Parse("#1FFFFFFF");
-        public Color MaterialDesignSelection { get; } = Color.Parse("#757575");
-        public Color MaterialDesignToolForeground { get; } = Color.Parse("#FF616161");
+        public Color MaterialDesignSelection { get; } = Color.Parse("#44888b8f");
+        public Color MaterialDesignToolForeground { get; } = Color.Parse("#FFCCCCCC");
         public Color MaterialDesignToolBackground { get; } = Color.Parse("#FFE0E0E0");
         public Color MaterialDesignFlatButtonClick { get; } = Color.Parse("#19757575");
         public Color MaterialDesignFlatButtonRipple { get; } = Color.Parse("#FFB6B6B6");

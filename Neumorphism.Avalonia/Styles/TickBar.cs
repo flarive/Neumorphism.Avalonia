@@ -1,8 +1,5 @@
 ﻿using Avalonia.Utilities;
-using System;
-using System.Collections.Generic;
 using Avalonia;
-using System.Text;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Layout;
