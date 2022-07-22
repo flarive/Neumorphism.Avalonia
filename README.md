@@ -67,7 +67,7 @@ More controls should be themed soon.
 - Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
 - Can be used with .net Core 3.x, .net5, .net6...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
-- Built upon the latest version of Avalonia UI (0.10.15)
+- Built upon the latest version of Avalonia UI (0.10.16)
 - .Net 5 demo application project
 
 
@@ -106,5 +106,10 @@ target="_blank">
 <img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" 
 title="PayPal – The safer, easier way to pay online!" border="0" />
 </a>
+
+
+<a href='https://ko-fi.com/eviral' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G0DYCCN)
 
 
