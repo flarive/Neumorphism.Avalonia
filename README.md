@@ -96,7 +96,7 @@ Neumorphism.Avalonia is free to use in any non commercial project.
 
 If you like this project and want to help to maintain it, you can sponsor it (thanks a lot !)
 
-<a href="https://www.patreon.com/NeumorphismAvalonia"><img src="https://img.shields.io/badge/patreon-donate-green.svg" /> </a>
+<a target="_blank" href="https://www.patreon.com/NeumorphismAvalonia"><img src="https://img.shields.io/badge/patreon-donate-green.svg"/></a>
 
 
 
