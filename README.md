@@ -94,13 +94,9 @@ More controls should be themed soon.
 
 Neumorphism.Avalonia is free to use in any non commercial project.
 
-If you like this project, if you need a feature or help, if you just want to support it, just buy me a little coffee my friend :)
+If you like this project and want to help to maintain it, you can sponsor it (thanks a lot !)
 
-I love coffee, it helps me to write incredible code :)
-
-
-
-<a href='https://ko-fi.com/eviral' target='_blank'><img height='35' style='border:0px;height:46px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+<a href="https://www.patreon.com/NeumorphismAvalonia"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fendel&style=for-the-badge" /> </a>
 
 
 
