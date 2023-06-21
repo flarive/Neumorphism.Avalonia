@@ -5,6 +5,7 @@
 
 Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](http://avaloniaui.net/) framework.
 
+NEW ! Neumorphism Avalonia for Avalonia 0.11 rc1 should be available soon !
 
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
