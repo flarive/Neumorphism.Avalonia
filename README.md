@@ -1,7 +1,7 @@
 
 [nuget]: https://www.nuget.org/packages/Neumorphism.Avalonia/
 
-# <img src="favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia
+# <img src="favicon.png" width="48" height="48" valign="bottom"> Neumorphism.Avalonia for Avalonia 0.10.x
 
 Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](http://avaloniaui.net/) framework.
 
