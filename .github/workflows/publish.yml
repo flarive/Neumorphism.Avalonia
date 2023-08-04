@@ -1,11 +1,11 @@
 name: Release to NuGet
 
 on:
- release:
- types: [published]
+  release:
+    types: [published]
     
- jobs:
-   build:
+jobs:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
