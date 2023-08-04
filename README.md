@@ -9,6 +9,13 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> New in latest release (0.5.0) !
+- Totally rewritten for Avalonia 0.11 !
+- Support Avalonia 0.11 Control Themes
+- Works with native AOT compilation
+- ListBoxes now fully themed
+- Drawings page added in demo project
+
 # <img src="favicon.png" width="32" height="32"> New in latest release (0.4.0) !
 - Cards are now fully themed with 2 differents styles : outset (default) and inset
 - Added real life use cases samples (login, stopwatch, audio player, messages, sleep quality, user profile...)
