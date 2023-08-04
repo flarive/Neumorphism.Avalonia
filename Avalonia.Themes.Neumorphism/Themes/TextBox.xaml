@@ -1,0 +1,805 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+						xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+						xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+						xmlns:extensions="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Extensions"
+						xmlns:system="clr-namespace:System;assembly=netstandard"
+						xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+
+
+	<!-- Neumorphism theme ok -->
+
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<TextBox>Left</TextBox>
+				<TextBox TextAlignment="Center">Center</TextBox>
+				<TextBox Classes="clearButton">Clear</TextBox>
+				<TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
+				<TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+				<TextBox Watermark="Watermark"/>
+				<TextBox Watermark="Floating Watermark" UseFloatingWatermark="True"/>
+				<TextBox Watermark="Floating Watermark" UseFloatingWatermark="True">Content</TextBox>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+	
+	
+
+
+
+	<ContextMenu x:Key="DefaultTextBoxContextMenu"
+                 Name="TextBoxContextMenu"
+                 WindowManagerAddShadowHint="False">
+
+    <MenuItem Name="TextBoxContextMenuCutItem"
+				  Header="Cut"
+				  Command="{Binding $parent[TextBox].Cut}"
+				  IsEnabled="{Binding $parent[TextBox].CanCut}"
+				  InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=cut}"
+				  Icon="{extensions:MaterialInternalIcon Kind=MaterialContentCut}" />
+
+		<MenuItem Name="TextBoxContextMenuCopyItem"
+				  Header="Copy"
+				  Command="{Binding $parent[TextBox].Copy}"
+				  IsEnabled="{Binding $parent[TextBox].CanCopy}"
+				  InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=copy}"
+					Icon="{extensions:MaterialInternalIcon Kind=MaterialContentCopy}" />
+    
+		<MenuItem Name="TextBoxContextMenuPasteItem"
+				  Header="Paste"
+				  Command="{Binding $parent[TextBox].Paste}"
+				  IsEnabled="{Binding $parent[TextBox].CanPaste}"
+				  InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=paste}"
+				  Icon="{extensions:MaterialInternalIcon Kind=MaterialContentPaste}"/>
+
+		<Separator />
+
+		<MenuItem Name="TextBoxContextMenuSelectAllItem"
+				  Header="Select All"
+				  Command="{Binding $parent[TextBox].SelectAll}"
+				  InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=selectall}"
+					Icon="{extensions:MaterialInternalIcon Kind=MaterialSelectAll}" />
+	</ContextMenu>
+
+
+
+	<!--Default TextBox theme-->
+	<ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+		<Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0,15,0,15" />
+		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
+		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
+		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="Watermark" Value=" "/>
+		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Width" Value="240"/>
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Cursor" Value="Ibeam"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="TextAlignment" Value="Left"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="CornerRadius" Value="10" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
+					<Border Name="PART_RootBorder" Grid.Row="0" Height="{TemplateBinding Height}" VerticalAlignment="Top"
+						  Margin="0"
+						  Cursor="{TemplateBinding Cursor}"
+						  Background="{TemplateBinding Background}"
+						  BorderBrush="{TemplateBinding BorderBrush}"
+						  BorderThickness="{TemplateBinding BorderThickness}"
+						  CornerRadius="{TemplateBinding CornerRadius}">
+
+            <Border.BoxShadow>
+              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+              </MultiBinding>
+            </Border.BoxShadow>
+
+            <Border.Styles>
+							<!--Floating watermark anim-->
+							<Style
+								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
+                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
+								<Setter Property="Margin" Value="1,-16,1,1" />
+								<Setter Property="RenderTransform" Value="scale(0.75)" />
+							</Style>
+
+							<Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+								<Setter Property="Margin" Value="17 17 17 0" />
+								<Setter Property="RenderTransform" Value="scale(1)" />
+							</Style>
+						</Border.Styles>
+
+						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+							<TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+											IsVisible="{TemplateBinding UseFloatingWatermark}"
+											FontFamily="{TemplateBinding FontFamily}"
+											FontSize="{TemplateBinding FontSize}"
+											FontWeight="{TemplateBinding FontWeight}"
+											FontStyle="{TemplateBinding FontStyle}"
+											Text="{TemplateBinding (assist:TextFieldAssist.Label)}"
+											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+											RenderTransformOrigin="0, 0" />
+
+							<DataValidationErrors Name="DataValidation">
+								<Grid Name="PART_Grid" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+									<ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}" />
+									<Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="15,0,15,15"
+													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+											<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+												<TextBlock Name="watermark" Padding="0"
+															Margin="0"
+															VerticalAlignment="Stretch"
+															Foreground="{TemplateBinding Foreground}"
+															Opacity="0.5"
+															Text="{TemplateBinding Watermark}"
+															FontFamily="{TemplateBinding FontFamily}"
+															FontSize="{TemplateBinding FontSize}"
+															FontWeight="{TemplateBinding FontWeight}"
+															FontStyle="{TemplateBinding FontStyle}"
+															TextAlignment="{TemplateBinding TextAlignment}"
+															TextWrapping="{TemplateBinding TextWrapping}"/>
+												<TextPresenter Name="PART_TextPresenter"
+												  VerticalAlignment="Stretch"
+												  HorizontalAlignment="Left"
+												  Margin="0"
+												  TextBox.Foreground="{TemplateBinding Foreground}"
+												  TextBox.FontFamily="{TemplateBinding FontFamily}"
+												  TextBox.FontSize="{TemplateBinding FontSize}"
+												  TextBox.FontWeight="{TemplateBinding FontWeight}"
+												  TextBox.FontStyle="{TemplateBinding FontStyle}"
+												  Text="{TemplateBinding Text, Mode=TwoWay}"
+												  SelectionStart="{TemplateBinding SelectionStart}"
+												  SelectionEnd="{TemplateBinding SelectionEnd}"
+												  TextAlignment="{TemplateBinding TextAlignment}"
+												  TextWrapping="{TemplateBinding TextWrapping}"
+												  PasswordChar="{TemplateBinding PasswordChar}"
+												  RevealPassword="{TemplateBinding RevealPassword}"
+												  SelectionBrush="{TemplateBinding SelectionBrush}"
+												  SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                          CaretIndex="{TemplateBinding CaretIndex}"
+												  CaretBrush="{TemplateBinding CaretBrush}"/>
+											</Panel>
+										</ScrollViewer>
+									</Panel>
+									<ContentPresenter Grid.Column="2" Content="{TemplateBinding InnerRightContent}"/>
+								</Grid>
+							</DataValidationErrors>
+						</Grid>
+					</Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		
+
+		<Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
+			<Setter Property="CornerRadius" Value="10"/>
+		</Style>
+
+
+		<!-- Feedbacks -->
+		<Style Selector="^:disabled /template/ Border#PART_RootBorder">
+			<Setter Property="Opacity" Value="0.5" />
+		</Style>
+
+		<Style Selector="^:disabled /template/ TextPresenter#PART_TextPresenter">
+			<Setter Property="Opacity" Value="0.25" />
+		</Style>
+
+		<Style Selector="^:focus-within:empty /template/ TextBlock#watermark, ^:empty /template/ TextBlock#watermark">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+
+		<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#watermark, ^:not(:empty) /template/ TextBlock#watermark">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="^ /template/ Border#PART_RootBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
+		</Style>
+
+		
+		<!--????????????????????????????? A REMETRRE ???-->
+		<!--<Style Selector="^:focus-within /template/ controls|MaterialUnderline#PART_Underline">
+			<Setter Property="IsExpanded" Value="True" />
+		</Style>-->
+
+		<Style Selector="^:pointerover /template/ controls|MaterialUnderline#PART_Underline">
+			<Setter Property="IsActive" Value="True" />
+		</Style>
+
+		<!-- Default TextBox style -->
+		<Style Selector="^ /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="1, 0" />
+		</Style>
+
+		<Style Selector="^ /template/ TextBlock#floatingWatermark">
+			<Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
+		</Style>
+
+		<!--INVALID !!-->
+		<!--<Style Selector="^ /template/ #PART_Scroller /template/ ScrollBar.Modern /template/ Grid#rootGrid">
+			<Setter Property="Margin" Value="0 8 0 4" />
+		</Style>-->
+
+		<!-- Default TextBox style -->
+		<Style Selector="^[UseFloatingWatermark=True] /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="1, 16, 1, 0" />
+		</Style>
+
+		<Style Selector="^[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="1, 16, 1, 0" />
+		</Style>
+
+		<Style Selector="^[UseFloatingWatermark=True] /template/ Border#PART_RootBorder">
+			<Setter Property="MinHeight" Value="48" />
+		</Style>
+
+		<!-- Transitions for all styles textfield -->
+		<Style Selector="^:not(.notransitions) /template/ TextBlock#floatingWatermark, ^:not(.notransitions) /template/ Border#watermarkRoot">
+			<Setter Property="Transitions">
+				<Transitions>
+					<ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+					<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+				</Transitions>
+			</Setter>
+		</Style>
+
+
+		<!-- Singeline and wrapping -->
+		<Style Selector="^[AcceptsReturn=False] /template/ ScrollViewer#PART_Scroller">
+			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
+			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
+		</Style>
+
+
+
+
+
+		<!-- Fixed height multiline -->
+		<Style Selector="^[AcceptsReturn=True] /template/ ScrollViewer#PART_Scroller">
+			<Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30}}" />
+			<Setter Property="Height" Value="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30}}" />
+		</Style>
+
+		<Style Selector="^[AcceptsReturn=True] /template/ TextPresenter#PART_TextPresenter">
+			<Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}" />
+		</Style>
+
+
+
+		<!-- Invalid state -->
+		<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
+			<Setter Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
+		  </Style>
+
+		<Style Selector="^:error /template/ TextBlock#floatingWatermark">
+			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
+		</Style>
+
+		<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+
+    <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Margin" Value="15,6,15,0" />
+    </Style>
+    
+    
+    <!-- Additional decorations for TextFields -->
+    <Style Selector="^.clearButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)" >
+			<Setter Property="InnerRightContent" Value="{StaticResource ClearTextBoxButtonTemplate}"/>
+    </Style>
+
+		<Style Selector="^.revealPasswordButton" >
+			<Setter Property="InnerRightContent" Value="{StaticResource RevealTextMaskToggleButtonTemplate}"/>
+		</Style>
+  </ControlTheme>
+
+
+
+
+
+	<!-- Filled textbox theme -->
+	<ControlTheme x:Key="TextBoxFilled" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
+		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+
+		<Style Selector="^ /template/ Border#PART_AssistButtonsContainer">
+		  <Setter Property="Height" Value="52" />
+		  <Setter Property="VerticalAlignment" Value="Top" />
+		</Style>
+	</ControlTheme>
+
+
+
+
+
+	<!-- Outline textbox theme -->
+	<ControlTheme x:Key="TextBoxOutline" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+		<Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0,0,0,5" />
+		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
+		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Width" Value="245"/>
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="BorderThickness" Value="8"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Cursor" Value="Ibeam"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="TextAlignment" Value="Left"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+		<Setter Property="CornerRadius" Value="10" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
+					<Border Name="PART_RootBorder" Grid.Row="0" Height="{TemplateBinding Height}"
+						  Margin="0"
+						  Cursor="{TemplateBinding Cursor}"
+						  Background="{TemplateBinding Background}"
+						  BorderBrush="Transparent"
+						  BorderThickness="0"
+						  CornerRadius="{TemplateBinding CornerRadius}">
+
+							<Border.BoxShadow>
+							  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="3">
+								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+								<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+								<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+							  </MultiBinding>
+							</Border.BoxShadow>
+
+            <Border.Styles>
+							<!--Floating watermark anim-->
+							<Style
+								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
+                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
+								<Setter Property="Margin" Value="1,-16,1,1" />
+								<Setter Property="RenderTransform" Value="scale(0.75)" />
+							</Style>
+
+							<Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+								<Setter Property="Margin" Value="18 18 18 0" />
+								<Setter Property="RenderTransform" Value="scale(1)" />
+							</Style>
+						</Border.Styles>
+
+						<Panel>
+
+							<!--Outline-->
+							<Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+								  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"
+								  Background="Transparent" Padding="0"
+								  CornerRadius="10">
+									<Border.BoxShadow>
+										<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+											<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+											<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+											<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+										</MultiBinding>
+									</Border.BoxShadow>
+                </Border>
+
+              <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+								<TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+										   Classes="Subtitle1" IsVisible="{TemplateBinding UseFloatingWatermark}"
+										   FontFamily="{TemplateBinding FontFamily}"
+										   FontSize="{DynamicResource FontSizeSmall}"
+										   Text="{TemplateBinding (assist:TextFieldAssist.Label)}" Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+										   RenderTransformOrigin="0, 0" />
+
+								<DataValidationErrors Name="DataValidation">
+									<Grid Name="PART_Grid" ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+										<ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}"/>
+										<Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+											<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="20,0,20,0"
+														  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+														  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+												<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+													<TextBlock Name="watermark"
+																Padding="0"
+																Margin="0"
+																Classes="Subtitle1"
+																VerticalAlignment="Stretch"
+																Foreground="{TemplateBinding Foreground}"
+																Opacity="0.5"
+																Text="{TemplateBinding Watermark}"
+																FontFamily="{TemplateBinding FontFamily}"
+																TextAlignment="{TemplateBinding TextAlignment}"
+																TextWrapping="{TemplateBinding TextWrapping}"/>
+													<TextPresenter Name="PART_TextPresenter"
+													  VerticalAlignment="Stretch"
+													  HorizontalAlignment="Left"
+													  Margin="0"
+													  Text="{TemplateBinding Text, Mode=TwoWay}"
+													  CaretIndex="{TemplateBinding CaretIndex}"
+													  SelectionStart="{TemplateBinding SelectionStart}"
+													  SelectionEnd="{TemplateBinding SelectionEnd}"
+													  TextAlignment="{TemplateBinding TextAlignment}"
+													  TextWrapping="{TemplateBinding TextWrapping}"
+													  PasswordChar="{TemplateBinding PasswordChar}"
+													  RevealPassword="{TemplateBinding RevealPassword}"
+													  SelectionBrush="{TemplateBinding SelectionBrush}"
+													  SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+													  CaretBrush="{TemplateBinding CaretBrush}"/>
+												</Panel>
+											</ScrollViewer>
+										</Panel>
+										<StackPanel Grid.Column="2" Orientation="Horizontal">
+											<ContentPresenter Content="{TemplateBinding InnerRightContent}" Margin="0,-9,0,0"/>
+										</StackPanel>
+									</Grid>
+								</DataValidationErrors>
+							</Grid>
+						</Panel>
+					</Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:focus-within:not(:empty) /template/ Border#watermarkRoot,
+                     ^:focus-within /template/ Border#watermarkRoot,
+                     ^:not(:empty) /template/ Border#watermarkRoot">
+			<Setter Property="Margin" Value="14,-8,1,1" />
+			<Setter Property="RenderTransform" Value="scale(0.75)" />
+		</Style>
+
+		<Style Selector="^:empty:not(:focus-within) /template/ Border#watermarkRoot">
+			<Setter Property="Margin" Value="10,14,1,1" />
+			<Setter Property="RenderTransform" Value="scale(1)" />
+		</Style>
+		
+		<!--<Style Selector="^.Dense:empty:not(:focus-within) /template/ Border#watermarkRoot">
+			<Setter Property="Margin" Value="10,12,1,1" />
+		  </Style>-->
+
+		<Style Selector="^:focus-within /template/ Border#PART_HoverIndicator">
+			<Setter Property="BorderBrush" Value="#22000000" />
+			<Setter Property="BorderThickness" Value="4" />
+		</Style>
+
+
+		<Style Selector="^:disabled /template/ Border#PART_Border">
+			<Setter Property="Opacity" Value="0.34" />
+		</Style>
+
+		<Style Selector="^ /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="0,6,0,6" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>
+
+		<Style Selector="^ /template/ Grid#PART_RootBorder">
+			<Setter Property="MinHeight" Value="52" />
+		</Style>
+
+		<!-- Filled dense text field -->
+		<!--<Style Selector="^.Dense /template/ Grid#PART_RootBorder">
+		    <Setter Property="MinHeight" Value="44" />
+		</Style>-->
+
+		<!--<Style Selector="^.Dense[UseFloatingWatermark=False] /template/ Grid#PART_RootBorder">
+			<Setter Property="MinHeight" Value="40" />
+		</Style>-->
+
+		<!--<Style Selector="^.Dense[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="0, 8" />
+			<Setter Property="VerticalAlignment" Value="Center" />
+		</Style>-->
+
+		<!-- Invalid state -->
+		<Style Selector="^:error">
+			<Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}" />
+		</Style>
+
+    <Style Selector="^ /template/ Border#PART_AssistButtonsContainer">
+      <Setter Property="Height" Value="52" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    
+	</ControlTheme>
+
+
+
+
+  <!-- Header textbox theme -->
+  <ControlTheme x:Key="TextBoxHeader" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
+    <Setter Property="assist:TextFieldAssist.InnerLeftBackground" Value="#22444444"/>
+    <Setter Property="assist:TextFieldAssist.InnerRightBackground" Value="#22444444"/>
+    <Setter Property="assist:TextFieldAssist.InnerLeftPadding" Value="0"/>
+    <Setter Property="assist:TextFieldAssist.InnerRightPadding" Value="0"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid RowDefinitions="*, Auto" Margin="0" VerticalAlignment="Top">
+          <Border Name="PART_RootBorder" Grid.Row="0" Height="{TemplateBinding Height}" VerticalAlignment="Top"
+						  Margin="0"
+						  Cursor="{TemplateBinding Cursor}"
+						  Background="{TemplateBinding Background}"
+						  BorderBrush="{TemplateBinding BorderBrush}"
+						  BorderThickness="{TemplateBinding BorderThickness}"
+						  CornerRadius="{TemplateBinding CornerRadius}">
+
+            <Border.BoxShadow>
+              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+              </MultiBinding>
+            </Border.BoxShadow>
+
+            <Border.Styles>
+              <!--Floating watermark anim-->
+              <Style
+								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
+                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
+                <Setter Property="Margin" Value="1,-16,1,1" />
+                <Setter Property="RenderTransform" Value="scale(0.75)" />
+              </Style>
+
+              <Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+                <Setter Property="Margin" Value="17 17 17 0" />
+                <Setter Property="RenderTransform" Value="scale(1)" />
+              </Style>
+            </Border.Styles>
+
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+              <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+											IsVisible="{TemplateBinding UseFloatingWatermark}"
+											FontFamily="{TemplateBinding FontFamily}"
+											FontSize="{TemplateBinding FontSize}"
+											FontWeight="{TemplateBinding FontWeight}"
+											FontStyle="{TemplateBinding FontStyle}"
+											Text="{TemplateBinding (assist:TextFieldAssist.Label)}"
+											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+											RenderTransformOrigin="0, 0" />
+
+                <Grid Name="PART_Grid" ColumnDefinitions="Auto,*,Auto" Margin="0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+
+
+                  <!--Left container-->
+                  <Border Grid.Column="0" Background="{TemplateBinding assist:TextFieldAssist.InnerLeftBackground}"
+                    CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
+                    VerticalAlignment="Stretch">
+                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerLeftContent}" Padding="{TemplateBinding assist:TextFieldAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
+                  </Border>
+                  
+
+                  <!--Main container-->
+                  <DataValidationErrors Grid.Column="1" Name="DataValidation" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+										<!--<Panel Name="PART_TextRoot" VerticalAlignment="Center" HorizontalAlignment="Stretch">-->
+											<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,15,0"
+															HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+															VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+												<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+													<TextBlock Name="watermark" Padding="0"
+																Margin="0"
+																VerticalAlignment="Stretch"
+																Foreground="{TemplateBinding Foreground}"
+																Opacity="0.5"
+																Text="{TemplateBinding Watermark}"
+																FontFamily="{TemplateBinding FontFamily}"
+																FontSize="{TemplateBinding FontSize}"
+																FontWeight="{TemplateBinding FontWeight}"
+																FontStyle="{TemplateBinding FontStyle}"
+																TextAlignment="{TemplateBinding TextAlignment}"
+																TextWrapping="{TemplateBinding TextWrapping}"/>
+													<TextPresenter Name="PART_TextPresenter"
+														VerticalAlignment="Stretch"
+														HorizontalAlignment="Left"
+														Margin="0"
+														TextBox.Foreground="{TemplateBinding Foreground}"
+														TextBox.FontFamily="{TemplateBinding FontFamily}"
+														TextBox.FontSize="{TemplateBinding FontSize}"
+														TextBox.FontWeight="{TemplateBinding FontWeight}"
+														TextBox.FontStyle="{TemplateBinding FontStyle}"
+														Text="{TemplateBinding Text, Mode=TwoWay}"
+														SelectionStart="{TemplateBinding SelectionStart}"
+														SelectionEnd="{TemplateBinding SelectionEnd}"
+														TextAlignment="{TemplateBinding TextAlignment}"
+														TextWrapping="{TemplateBinding TextWrapping}"
+														PasswordChar="{TemplateBinding PasswordChar}"
+														RevealPassword="{TemplateBinding RevealPassword}"
+														SelectionBrush="{TemplateBinding SelectionBrush}"
+														SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+														CaretIndex="{TemplateBinding CaretIndex}"
+														CaretBrush="{TemplateBinding CaretBrush}"/>
+												</Panel>
+											</ScrollViewer>
+										<!--</Panel>-->
+                  </DataValidationErrors>
+
+                  
+                  <!--Right container-->
+                  <Border Grid.Column="2" Background="{TemplateBinding assist:TextFieldAssist.InnerRightBackground}"
+                    CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
+                    VerticalAlignment="Stretch">
+                    <ContentPresenter Background="Transparent" Content="{TemplateBinding InnerRightContent}" Padding="{TemplateBinding assist:TextFieldAssist.InnerRightPadding}" HorizontalContentAlignment="Right" />
+                  </Border>
+                  
+                  
+                </Grid>
+            </Grid>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Margin" Value="15,-8,15,-14" />
+    </Style>
+
+    <!-- Transitions for all styles textfield -->
+    <Style Selector="^:error:not(.notransitions) /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Transitions">
+        <Transitions>
+          <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+          <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+        </Transitions>
+      </Setter>
+    </Style>
+  </ControlTheme>
+
+
+
+	<!-- No material textbox theme -->
+	<ControlTheme x:Key="TextBoxNoMaterial" TargetType="TextBox">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+		<Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
+		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
+		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Width" Value="NaN"/>
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Cursor" Value="Ibeam"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="TextAlignment" Value="Left"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+		<Setter Property="HorizontalAlignment" Value="Left"/>
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
+					<TextBlock Name="PART_Watermark"
+						  Padding="0"
+						  Margin="{TemplateBinding Margin}"
+						  VerticalAlignment="Center"
+						  Foreground="{TemplateBinding Foreground}"
+						  Background="{TemplateBinding Background}"
+						  Opacity="0.5"
+						  IsVisible="{TemplateBinding IsVisible}"
+						  Text="{TemplateBinding Watermark}"
+						  FontFamily="{TemplateBinding FontFamily}"
+						  FontSize="{TemplateBinding FontSize}"
+						  FontWeight="{TemplateBinding FontWeight}"
+						  FontStyle="{TemplateBinding FontStyle}"
+						  TextAlignment="{TemplateBinding TextAlignment}"
+						  TextWrapping="{TemplateBinding TextWrapping}"/>
+					<TextPresenter Name="PART_TextPresenter"
+									Background="{TemplateBinding Background}"
+									IsEnabled="{TemplateBinding IsEnabled}"
+									VerticalAlignment="{TemplateBinding VerticalAlignment}"
+									HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+									Margin="{TemplateBinding Margin}"
+									Text="{TemplateBinding Text, Mode=TwoWay}"
+									CaretIndex="{TemplateBinding CaretIndex}"
+									SelectionStart="{TemplateBinding SelectionStart}"
+									SelectionEnd="{TemplateBinding SelectionEnd}"
+									TextAlignment="{TemplateBinding TextAlignment}"
+									TextWrapping="{TemplateBinding TextWrapping}"
+									PasswordChar="{TemplateBinding PasswordChar}"
+									RevealPassword="{TemplateBinding RevealPassword}"
+									SelectionBrush="{TemplateBinding SelectionBrush}"
+									SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+									CaretBrush="{TemplateBinding CaretBrush}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^[IsEnabled=False] /template/ TextPresenter#PART_TextPresenter">
+			<Setter Property="Opacity" Value="0.2" />
+		</Style>
+	</ControlTheme>
+
+
+	<!--Clear textbox theme-->
+	<Template x:Key="ClearTextBoxButtonTemplate">
+		<Button Name="PART_ClearButton"
+            Theme="{StaticResource ClearTextBoxButtonTheme}"
+            Command="{Binding $parent[TextBox].Clear}"/>
+	</Template>
+
+	<ControlTheme x:Key="ClearTextBoxButtonTheme" BasedOn="{StaticResource ButtonNoMaterial}" TargetType="Button">
+		<Setter Property="Height" Value="24" />
+		<Setter Property="Width" Value="24"/>
+		<Setter Property="Margin" Value="0, 0, 10, 0" />
+		<Setter Property="Padding" Value="4" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+		<Setter Property="ToolTip.Tip" Value="Click to clear field"/>
+		<Setter Property="Opacity" Value="0.5" />
+		<Setter Property="Content">
+		  <Template>
+			<controls:MaterialInternalIcon Kind="TextBoxClearButtonData" Width="16" Height="16" Opacity="{TemplateBinding Opacity}" Foreground="{TemplateBinding Foreground}"/>
+		  </Template>
+		</Setter>
+	</ControlTheme>
+
+
+	<!--Reveal password theme-->
+	<Template x:Key="RevealTextMaskToggleButtonTemplate">
+		<ToggleButton Name="PART_PasswordRevealToggle"
+                  Theme="{StaticResource RevealTextMaskToggleButtonTheme}"
+                  IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"/>
+	</Template>
+
+	<ControlTheme x:Key="RevealTextMaskToggleButtonTheme" BasedOn="{StaticResource ButtonNoMaterial}" TargetType="ToggleButton">
+      <Setter Property="Height" Value="24" />
+      <Setter Property="Width" Value="24"/>
+      <Setter Property="Margin" Value="0, 0, 10, 0" />
+      <Setter Property="Padding" Value="4"/>
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+      <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+			<Setter Property="Opacity" Value="0.5" />
+        
+      <Style Selector="^:unchecked">
+          <Setter Property="ToolTip.Tip" Value="Click to reveal content of field"/>
+          <Setter Property="Content">
+              <Template>
+                <controls:MaterialInternalIcon Kind="PasswordBoxRevealButtonData" Width="16" Height="16" Opacity="{TemplateBinding Opacity}" Foreground="{TemplateBinding Foreground}"/>
+              </Template>
+          </Setter>
+      </Style>
+        
+      <Style Selector="^:checked">
+          <Setter Property="ToolTip.Tip" Value="Click to hide content of field"/>
+          <Setter Property="Content">
+              <Template>
+                <controls:MaterialInternalIcon Kind="PasswordBoxHideButtonData" Width="16" Height="16" Opacity="{TemplateBinding Opacity}" Foreground="{TemplateBinding Foreground}"/>
+              </Template>
+          </Setter>
+      </Style>
+	</ControlTheme>
+</ResourceDictionary>

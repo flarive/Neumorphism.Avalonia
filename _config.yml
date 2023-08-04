@@ -1,0 +1,28 @@
+theme: jekyll-theme-slate
+
+lang: "en-US"
+title: "Neumorphism.Avalonia"
+author: "Eviral"
+description: "Easy to use and customizable Neumorphism Design implementation for AvaloniaUI framework."
+url: "https://github.com/flarive/Neumorphism.Avalonia"
+logo: "favicon.png"
+
+github_username: flarive
+languages: en
+keywords: "avalonia, neumorphism, xaml"
+
+social:
+  name: Eviral
+  links:
+    - https://github.com/flarive/Neumorphism.Avalonia
+
+
+google_site_verification: gFeL2UM3oqUu8vSx0mmJd0WQM-i-iA0G9w_RHnoLT2k
+
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate

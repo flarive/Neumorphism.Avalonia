@@ -1,0 +1,106 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:fullpanels="clr-namespace:Neumorphism.Avalonia.Demo.Pages.Panels"
+             xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
+             x:CompileBindings="True"
+             x:DataType="pages:Home"
+             x:Class="Neumorphism.Avalonia.Demo.Pages.Home">
+
+
+  <UserControl.Resources>
+    <LinearGradientBrush x:Key="MaterialDesignLinearGradient1" StartPoint="0%,0%" EndPoint="0%,100%">
+      <GradientStop Offset="0" Color="Transparent" />
+      <GradientStop Offset="1" Color="{DynamicResource MaterialDesignSilverGrayColor}" />
+    </LinearGradientBrush>
+  </UserControl.Resources>
+  
+
+  <UserControl.Styles>
+    <Style>
+      <Style.Resources>
+        <DrawingGroup x:Key="AvaloniaLogo">
+          <GeometryDrawing Geometry="m 150.66581 0.66454769 c -54.77764 0 -101.0652 38.86360031 -112.62109 90.33008031 a 26.1 26.1 0 0 1 18.92187 25.070312 26.1 26.1 0 0 1 -18.91992 25.08202 c 11.56024 51.46073 57.8456 90.31837 112.61914 90.31837 63.37832 0 115.40039 -52.02207 115.40039 -115.40039 0 -63.378322 -52.02207 -115.40039231 -115.40039 -115.40039231 z m 0 60.00000031 c 30.95192 0 55.40039 24.44847 55.40039 55.400392 0 30.9519 -24.44847 55.40039 -55.40039 55.40039 -30.95191 0 -55.40039 -24.44848 -55.40039 -55.40039 0 -30.951922 24.44848 -55.400392 55.40039 -55.400392 z">
+            <GeometryDrawing.Brush>
+              <SolidColorBrush Color="DarkGray"/>
+            </GeometryDrawing.Brush>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="DarkGray">
+            <GeometryDrawing.Geometry>
+              <EllipseGeometry Rect="9.6,95.8,40.6,40.6" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+          <GeometryDrawing Brush="DarkGray">
+            <GeometryDrawing.Geometry>
+              <RectangleGeometry Rect="206.06355, 114.56503,60,116.2" />
+            </GeometryDrawing.Geometry>
+          </GeometryDrawing>
+        </DrawingGroup>
+
+        <GeometryDrawing x:Key="GithubIcon" Brush="DarkGray" Geometry="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+      </Style.Resources>
+    </Style>
+  </UserControl.Styles>
+
+	
+
+
+
+
+  <StackPanel Margin="16, 0" MaxWidth="1080">
+    <StackPanel.Styles>
+      <Style Selector="TextBlock.Content, TextBlock.Subheadline">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+      </Style>
+    </StackPanel.Styles>
+
+    <Image Width="1004" Height="301" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,40" Source="avares://Neumorphism.Avalonia.Demo/Assets/Neumorphism.png" Opacity="1"/>
+
+
+    <StackPanel Margin="16">
+      <StackPanel.Styles>
+        <Style Selector="Button">
+          <Setter Property="Margin" Value="15"/>
+        </Style>
+      </StackPanel.Styles>
+      <WrapPanel HorizontalAlignment="Center" MaxWidth="800" >
+        <Button Name="btn1" Command="{Binding Path=OpenProjectRepoLink}">
+          <Image Width="40" Height="40" UseLayoutRounding="False">
+            <Image.Source>
+              <DrawingImage Drawing="{DynamicResource GithubIcon}" />
+            </Image.Source>
+          </Image>
+        </Button>
+        <Button Name="btn2" Width="200" Content="OPEN CONTROLS" Command="{Binding Path=OpenLeftDrawer}"/>
+        <Button Name="btn4" Command="{Binding Path=OpenAvaloniaWebsiteLink}">
+		    <Image Width="40" Height="40">
+			    <Image.Source>
+				    <DrawingImage Drawing="{DynamicResource AvaloniaLogo}" />
+			    </Image.Source>
+		    </Image>
+        </Button>
+      </WrapPanel>
+    </StackPanel>
+
+    <!--Full UI panel samples-->
+    <Grid ColumnDefinitions="*,*,*" Margin="0,50,0,80">
+      <StackPanel Grid.Column="0" Orientation="Vertical">
+        <fullpanels:PanelLoginDemo/>
+        <fullpanels:PanelUserProfilDemo/>
+      </StackPanel>
+      <StackPanel Grid.Column="1" Orientation="Vertical">
+        <fullpanels:PanelClockDemo/>
+        <fullpanels:PanelSleepQualityDemo/>
+      </StackPanel>
+      <StackPanel Grid.Column="2" Orientation="Vertical">
+        <fullpanels:PanelPlayerDemo/>
+        <fullpanels:PanelMessagesDemo/>
+      </StackPanel>
+    </Grid>
+
+  </StackPanel>
+</UserControl>

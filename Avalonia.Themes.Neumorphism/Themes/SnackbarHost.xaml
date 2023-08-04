@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+        xmlns:models="clr-namespace:Avalonia.Themes.Neumorphism.Models"
+        xmlns:system="clr-namespace:System;assembly=netstandard"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+        x:DataType="controls:SnackbarHost">
+
+
+  <!-- Neumorphism theme ok -->
+
+  <!--Default SnackbarHost theme-->
+  <ControlTheme x:Key="{x:Type controls:SnackbarHost}" TargetType="controls:SnackbarHost">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="assist:SnackbarHostAssist.SnackbarCornerRadius" Value="10" />
+    <Setter Property="assist:SnackbarHostAssist.SnackbarBackground" Value="{DynamicResource MaterialDesignPaper}" />
+    <Setter Property="assist:SnackbarHostAssist.SnackbarWidth" Value="344" />
+    <Setter Property="assist:SnackbarHostAssist.SnackbarHeight" Value="NaN" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel>
+          <Border Name="PART_SnackbarHostHiddenBorder" IsVisible="False"
+                 CornerRadius="{TemplateBinding assist:SnackbarHostAssist.SnackbarCornerRadius}"
+                 Background="{TemplateBinding assist:SnackbarHostAssist.SnackbarBackground}"
+                 Width="{TemplateBinding assist:SnackbarHostAssist.SnackbarWidth}"
+                 Height="{TemplateBinding assist:SnackbarHostAssist.SnackbarHeight}"/>
+          <ContentPresenter Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+          <ItemsControl Name="PART_SnackbarHostItemsContainer"
+                        HorizontalAlignment="{TemplateBinding SnackbarHorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding SnackbarVerticalAlignment}"
+                        ItemsSource="{CompiledBinding $parent[controls:SnackbarHost].SnackbarModels}">
+            <ItemsControl.ItemsPanel>
+              <ItemsPanelTemplate>
+                <ReversibleStackPanel />
+              </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="models:SnackbarModel">
+                <controls:Card Padding="0" Margin="8"
+                               CornerRadius="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=CornerRadius}"
+                               Background="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Background}"
+                               Width="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Width}"
+                               Height="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Height}">
+                  
+                  <Grid ColumnDefinitions="16,*,8,Auto,8" RowDefinitions="6,Auto,6" Margin="0, 8">
+                    <ContentPresenter Grid.Column="1" Grid.Row="1"
+                                      Content="{CompiledBinding Content,
+                                        Converter={x:Static converters:WrapContentIntoContentPresenterConverter.Instance}}">
+                      <ContentPresenter.DataTemplates>
+                        <DataTemplate DataType="system:String">
+                          <TextBlock Name="PART_SnackbarSupportingText" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" TextAlignment="Center" Text="{CompiledBinding}" />
+                        </DataTemplate>
+                      </ContentPresenter.DataTemplates>
+                    </ContentPresenter>
+
+                    <Button Grid.Column="3" Grid.Row="1"
+                            Content="{Binding Button}"
+                            Theme="{StaticResource ButtonFlat}"
+                            Command="{Binding Command}"
+                            IsVisible="{CompiledBinding !!Command}"/>
+                  </Grid>
+                </controls:Card>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </Panel>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^ /template/ ItemsControl#PART_SnackbarHostItemsContainer TextBlock#PART_SnackbarSupportingText">
+      <Setter Property="TextAlignment" Value="Center" />
+      <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="MaxLines" Value="2" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

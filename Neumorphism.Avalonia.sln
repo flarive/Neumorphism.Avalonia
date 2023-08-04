@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neumorphism.Avalonia.Demo", "Neumorphism.Avalonia.Demo\Neumorphism.Avalonia.Demo.csproj", "{41A52A04-F7D8-4981-9546-DB020E54851D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.Themes.Neumorphism", "Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj", "{0A2D8186-521E-4CB9-8390-D58171E02306}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{C448C412-7439-485B-9CAB-AAEEBD1F4194}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41A52A04-F7D8-4981-9546-DB020E54851D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41A52A04-F7D8-4981-9546-DB020E54851D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41A52A04-F7D8-4981-9546-DB020E54851D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41A52A04-F7D8-4981-9546-DB020E54851D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2D8186-521E-4CB9-8390-D58171E02306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2D8186-521E-4CB9-8390-D58171E02306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2D8186-521E-4CB9-8390-D58171E02306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2D8186-521E-4CB9-8390-D58171E02306}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A2D8186-521E-4CB9-8390-D58171E02306} = {C448C412-7439-485B-9CAB-AAEEBD1F4194}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7112F2A-E8C2-4BD4-BA4F-413BCBC3C55A}
+	EndGlobalSection
+EndGlobal

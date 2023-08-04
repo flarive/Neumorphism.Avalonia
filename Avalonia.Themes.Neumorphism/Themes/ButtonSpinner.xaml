@@ -1,0 +1,161 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System"
+					xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:system="clr-namespace:System;assembly=netstandard"
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+
+
+
+	<!-- Neumorphism theme ok -->
+	
+	
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20">
+        <ButtonSpinner Content="Right spinner" />
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       Content="Left spinner" />
+        <ButtonSpinner BorderThickness="2"
+                       BorderBrush="Blue"
+                       Content="Right Border" />
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       BorderThickness="2"
+                       BorderBrush="Blue"
+                       Content="Left Border" />
+        <ButtonSpinner Content="Right disabled"
+                       AllowSpin="False"/>
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       Content="Left disabled"
+                       AllowSpin="False"/>
+        <ButtonSpinner ShowButtonSpinner="False"
+                       Content="Hide spinner" />
+        <ButtonSpinner Content="Error">
+          <DataValidationErrors.Error>
+            <sys:Exception>
+              <x:Arguments>
+                <x:String>Error</x:String>
+              </x:Arguments>
+            </sys:Exception>
+          </DataValidationErrors.Error>
+        </ButtonSpinner>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+
+	<!--Default ButtonSpinner theme-->
+	<ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextAreaBorder}" />
+
+		<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+			<Setter Property="Content">
+				<Template>
+					<Path Fill="#FF555555"
+						  Width="8"
+						  Height="4"
+						  Stretch="Uniform"
+						  HorizontalAlignment="Center"
+						  VerticalAlignment="Center"
+						  Data="M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z" />
+				</Template>
+			</Setter>
+		</Style>
+
+		<Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
+			<Setter Property="Content">
+				<Template>
+					<Path Fill="#FF555555"
+						  Width="8"
+						  Height="4"
+						  Stretch="Uniform"
+						  HorizontalAlignment="Center"
+						  VerticalAlignment="Center"
+						  Data="M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z" />
+				</Template>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:right">
+			<Setter Property="Margin" Value="10,0,0,0"/>
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border Name="border"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Margin="0"
+							HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalAlignment}">
+						<Grid ColumnDefinitions="*,Auto">
+							<ContentPresenter Name="PART_ContentPresenter" Grid.Column="0" Margin="10,0,10,0"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Content="{TemplateBinding Content}"
+											  Width="{TemplateBinding Width}"
+											  ClipToBounds="True"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  Padding="{TemplateBinding Padding}" />
+							<Grid Grid.Column="1" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}" Width="30">
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+											  Background="Transparent"
+											  assist:ShadowAssist.ShadowDepth="Depth0"
+											  Grid.Row="0"
+											  Name="PART_IncreaseButton" />
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+											  assist:ShadowAssist.ShadowDepth="Depth0"
+											  Background="Transparent"
+											  Grid.Row="1"
+											  Name="PART_DecreaseButton" />
+							</Grid>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:left">
+			<Setter Property="Margin" Value="0,0,10,0"/>
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border Name="border"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Margin="0"
+							HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalAlignment}">
+						<Grid ColumnDefinitions="Auto,*">
+							<Grid Grid.Column="0" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}" Width="30">
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+											  assist:ShadowAssist.ShadowDepth="Depth0"
+											  Background="Transparent"
+											  Grid.Row="0"
+											  Name="PART_IncreaseButton" />
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+											  assist:ShadowAssist.ShadowDepth="Depth0"
+											  Background="Transparent"
+											  Grid.Row="1"
+											  Name="PART_DecreaseButton" />
+							</Grid>
+							<ContentPresenter Name="PART_ContentPresenter" Grid.Column="1" Margin="10,0,10,0"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  ClipToBounds="True"
+											  Content="{TemplateBinding Content}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  Padding="{TemplateBinding Padding}" />
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+		
+	</ControlTheme>
+</ResourceDictionary>

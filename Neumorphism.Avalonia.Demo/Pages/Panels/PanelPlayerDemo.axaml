@@ -1,0 +1,85 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
+            x:CompileBindings="True"
+            x:DataType="viewModels:PanelPlayerDemoViewModel"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelPlayerDemo">
+
+
+  <StackPanel Margin="30" VerticalAlignment="Top">
+	  <controls:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+      
+		  <StackPanel Orientation="Vertical" Margin="0,4" HorizontalAlignment="Stretch">
+
+        <Grid ColumnDefinitions="Auto, *, Auto">
+          <Button Grid.Column="0" Classes="Icon" Width="40" Height="40" Margin="-10" Command="{Binding GoBackCommand}">
+            <icons:MaterialIcon Kind="ArrowLeft" Width="20" Height="20" Foreground="Gray" />
+          </Button>
+          <TextBlock Grid.Column="1" Classes="Subtitle2" Text="NOW PLAYING" Foreground="#ff555555" TextAlignment="Center" />
+          <Button Grid.Column="2" Classes="Icon" Width="40" Height="40" Margin="-10" Command="{Binding AddToFavoritesCommand}">
+            <icons:MaterialIcon Kind="HeartOutline" Width="20" Height="20" Foreground="Gray" />
+          </Button>
+        </Grid>
+
+
+        <controls:Card Width="240" Height="240" Margin="0,30,0,30" VerticalAlignment="Top" CornerRadius="150" HorizontalAlignment="Center" Padding="0">
+          <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="White" BorderThickness="4" ClipToBounds="True">
+            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" ClipToBounds="True">
+              <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+                                           Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Stretch="Uniform" Width="240" Height="240" />
+            </Border>
+          </Border>
+        </controls:Card>
+
+        <TextBlock Classes="Subtitle2" Text="RADIOHEAD - A Moon Shaped Pool" Foreground="Gray" HorizontalAlignment="Center"/>
+        <TextBlock Classes="Subtitle2" Text="Daydreaming" Foreground="#FF444444" Margin="0,5,0,0" FontWeight="Regular" HorizontalAlignment="Center"/>
+
+        <Grid ColumnDefinitions="Auto, *, Auto" Margin="0,25,0,0">
+          <TextBlock Grid.Column="0" Classes="Subtitle2" FontSize="10" Text="2:58" HorizontalAlignment="Left"/>
+          <TextBlock Grid.Column="2" Classes="Subtitle2" FontSize="10" Text="6:24" HorizontalAlignment="Right"/>
+        </Grid>
+
+        <ProgressBar Classes="notransitions" Value="40" Width="240" Height="6" Margin="0,5,0,0" HorizontalAlignment="Center">
+          <ProgressBar.Styles>
+            <Style Selector="ProgressBar">
+              <Setter Property="Foreground">
+                <Setter.Value>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                    <GradientStop Offset="0" Color="#FF5cbcd6" />
+                    <GradientStop Offset="1" Color="#FF77dbf0" />
+                  </LinearGradientBrush>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </ProgressBar.Styles>
+        </ProgressBar>
+
+        <Grid ColumnDefinitions="Auto, *, Auto" Margin="0,45,0,0">
+          <Button Grid.Column="0" Classes="Icon" Width="55" Height="55" Command="{Binding PlayPreviousSongCommand}">
+            <icons:MaterialIcon Kind="Rewind" Width="22" Height="22" Foreground="Gray" />
+          </Button>
+          <ToggleButton Grid.Column="1" Classes="Icon" IsChecked="{Binding IsPlaying}" Width="55" Height="55" Background="#FF5cbcd6" BorderBrush="White" BorderThickness="2">
+            <ToggleButton.Styles>
+              <Style Selector="ToggleButton:not(:checked) icons|MaterialIcon#TogglePlayPauseIcon">
+                <Setter Property="Kind" Value="Play" />
+              </Style>
+              <Style Selector="ToggleButton:checked icons|MaterialIcon#TogglePlayPauseIcon">
+                <Setter Property="Kind" Value="Pause" />
+              </Style>
+            </ToggleButton.Styles>
+            <icons:MaterialIcon Name="TogglePlayPauseIcon" Width="22" Height="22" Foreground="White"/>
+          </ToggleButton>
+          <Button Grid.Column="2" Classes="Icon" Width="55" Height="55" Command="{Binding PlayNextSongCommand}">
+            <icons:MaterialIcon Kind="FastForward" Width="22" Height="22" Foreground="Gray" />
+          </Button>
+        </Grid>
+		  </StackPanel>
+	  </controls:Card>
+  </StackPanel>
+</UserControl>

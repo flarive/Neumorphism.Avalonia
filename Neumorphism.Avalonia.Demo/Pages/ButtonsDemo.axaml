@@ -1,0 +1,334 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+                xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+                xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia" 
+                x:CompileBindings="True"
+                x:DataType="viewModels:ButtonFieldsViewModel"
+                x:Class="Neumorphism.Avalonia.Demo.Pages.ButtonsDemo">
+
+
+  <UserControl.Styles>
+    <Style>
+      <Style.Resources>
+        <GeometryDrawing x:Key="HeartIcon" Brush="Red" Geometry="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
+        <GeometryDrawing x:Key="CloseIcon" Brush="#000000" Geometry="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        <GeometryDrawing x:Key="PlusIcon" Brush="#000000" Geometry="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+      </Style.Resources>
+    </Style>
+  </UserControl.Styles>
+  
+
+  <StackPanel Margin="16, 0">
+
+
+    <TextBlock Classes="Headline4 Subheadline" Text="Buttons" />
+
+
+    <!--Regular buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
+        <Button Content="Default" ToolTip.Tip='Regular button with default theme applied' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons2">
+        <Button ToolTip.Tip='Regular button with default theme applied' Command="{Binding ButtonClick}">
+          <Image Width="38" Height="38" UseLayoutRounding="False">
+            <Image.Source>
+              <DrawingImage Drawing="{DynamicResource HeartIcon}" />
+            </Image.Source>
+          </Image>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons3">
+        <Button Classes="Light" Content="Light" ToolTip.Tip='Regular button with default theme applied and class "Light"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons4">
+        <Button Classes="Dark" Content="Dark" ToolTip.Tip='Regular button with default theme applied and class "Dark"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons5">
+        <Button Classes="Accent" Content="Accent" ToolTip.Tip='Regular button with default theme applied and class "Accent"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons6">
+        <Button Classes="Gradient" Content="Gradient" ToolTip.Tip='Regular button with default theme applied and class "Gradient"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Buttons7">
+        <Button Content="Disabled" IsEnabled="False" ToolTip.Tip='Regular disabled button with default theme applied' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+    <!--Outline buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons1">
+        <Button Theme="{StaticResource ButtonOutline}" Content="Default" ToolTip.Tip='Button with theme "ButtonOutline" applied' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons2">
+        <Button Theme="{StaticResource ButtonOutline}" ToolTip.Tip='Button with theme "ButtonOutline" applied' Command="{Binding ButtonClick}">
+          <Image Width="38" Height="38" UseLayoutRounding="False">
+            <Image.Source>
+              <DrawingImage Drawing="{DynamicResource HeartIcon}" />
+            </Image.Source>
+          </Image>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons3">
+        <Button Theme="{StaticResource ButtonOutline}" Classes="Light" Content="Light" ToolTip.Tip='Button with "ButtonOutline" theme applied and class "Light"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons4">
+        <Button Theme="{StaticResource ButtonOutline}" Classes="Dark" Content="Dark" ToolTip.Tip='Button with "ButtonOutline" theme applied and class "Dark"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons5">
+        <Button Theme="{StaticResource ButtonOutline}" Classes="Accent" Content="Accent" ToolTip.Tip='Button with "ButtonOutline" theme applied and class "Accent"' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons6">
+        <Button Theme="{StaticResource ButtonOutline}" IsEnabled="False" Content="Disabled" ToolTip.Tip='Disabled button with "ButtonOutline" theme applied' Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+    <!--Icon buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="IconButtons0">
+        <Button Theme="{StaticResource ButtonIcon}" ToolTip.Tip='Button with "ButtonIcon" theme applied' Command="{Binding ButtonClick}">
+          <Button.Content>
+            <icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="Red" />
+          </Button.Content>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="IconButtons1">
+        <Button Theme="{StaticResource ButtonIcon}" Classes="Light" ToolTip.Tip='Button with "ButtonIcon" theme applied and class "Light"' Command="{Binding ButtonClick}">
+          <Button.Content>
+            <icons:MaterialIcon Kind="Close" Width="24" Height="24" />
+          </Button.Content>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="IconButtons2">
+        <Button Theme="{StaticResource ButtonIcon}" Classes="Dark" ToolTip.Tip='Button with "ButtonIcon" theme applied and class "Dark"' Command="{Binding ButtonClick}">
+          <Button.Content>
+            <icons:MaterialIcon Kind="Close" Width="24" Height="24" />
+          </Button.Content>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="IconButtons3">
+        <Button Theme="{StaticResource ButtonIcon}" Classes="Accent" ToolTip.Tip='Button with "ButtonIcon" theme applied and class "Accent"' Command="{Binding ButtonClick}">
+          <Button.Content>
+            <icons:MaterialIcon Kind="Close" Width="24" Height="24" Foreground="White" />
+          </Button.Content>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+    <!--Floating buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons0">
+        <controls:FloatingButton ToolTip.Tip="Regular floating button with default theme applied" Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Plus" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons1">
+        <controls:FloatingButton Classes="Mini" ToolTip.Tip='Regular floating button with default theme applied and class "Mini"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Settings" Width="22" Height="22" Foreground="{DynamicResource PrimaryHueLightBrush}" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons2">
+        <controls:FloatingButton Classes="Light Mini" ToolTip.Tip='Regular floating button with default theme applied and class "Light Mini"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Bell" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons3">
+        <controls:FloatingButton Classes="Light" ToolTip.Tip='Regular floating button with default theme applied and class "Light"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Speaker" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons4">
+        <controls:FloatingButton Classes="Dark Mini" ToolTip.Tip='Regular floating button with default theme applied and class "Dark Mini"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="ThumbUp" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons5">
+        <controls:FloatingButton Classes="Dark" ToolTip.Tip='Regular floating button with default theme applied and class "Dark"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Heart" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons6">
+        <controls:FloatingButton Classes="Accent Mini" ToolTip.Tip='Regular floating button with default theme applied and class "Accent Mini"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Heart" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons7">
+        <controls:FloatingButton Classes="Accent" ToolTip.Tip='Regular floating button with default theme applied and class "Accent"' Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Heart" Width="20" Height="20" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons8">
+        <controls:FloatingButton Classes="Accent" ToolTip.Tip='Regular disabled floating button with default theme applied and class "Accent"' IsEnabled="False" Command="{Binding ButtonClick}">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Heart" Width="28" Height="28" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+    <!--Extended floating buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Extended floating buttons" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
+      <StackPanel.Styles>
+        <Style Selector="controls|FloatingButton[IsExtended=false]">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <Viewbox Stretch="Fill"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch">
+                  <icons:MaterialIcon Kind="Plus" Width="24" Height="24" />
+                </Viewbox>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+        <Style Selector="controls|FloatingButton[IsExtended=true]">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <StackPanel Orientation="Horizontal" Height="24">
+                  <Viewbox Stretch="Fill"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch">
+                    <icons:MaterialIcon Kind="Plus" Width="24" Height="24" />
+                  </Viewbox>
+                  <TextBlock Margin="8,0" Text="ADD ITEM" Classes="Subtitle2"
+                             VerticalAlignment="Center" />
+                </StackPanel>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+      </StackPanel.Styles>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton0">
+        <controls:FloatingButton IsExtended="True" Command="{Binding ButtonClick}" Foreground="{DynamicResource MaterialDesignForeground}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton1">
+        <controls:FloatingButton Classes="Light" IsExtended="True"
+                               ToolTip.Tip="Regular expanded floating button with no class."
+                               Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton2">
+        <controls:FloatingButton Classes="Dark" IsExtended="True"
+                               ToolTip.Tip="Regular expanded floating button with class Dark."
+                               Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="ExpandedFloatingButton3">
+        <controls:FloatingButton Classes="Accent" IsExtended="{Binding ElementName=CheckBox1, Path=IsChecked}"
+                               ToolTip.Tip="Regular expanded floating button with class Light."
+                               Command="{Binding ButtonClick}" />
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <CheckBox Name="CheckBox1" Content="IsExtended" Margin="16,8" />
+    </StackPanel>
+
+    <!--Custom buttons-->
+    <TextBlock Classes="Headline6 Subheadline2" Text="Custom buttons" Margin="0,30,0,0" />
+    <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="CustomButtons0">
+        <Button Width="150" Foreground="Gray" Cursor="Hand" Content="Custom" BorderThickness="1"
+                BorderBrush="{DynamicResource MaterialDesignShadowLightColor}"
+                ToolTip.Tip='Button with classes "Custom" and custom attributes'>
+          <Button.Background>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+              <GradientStop Offset="0" Color="Transparent" />
+              <GradientStop Offset="1" Color="#55666666" />
+            </LinearGradientBrush>
+          </Button.Background>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="CustomButtons1">
+        <Button Theme="{StaticResource ButtonOutline}" Width="150" Foreground="Gray" Cursor="Hand"
+                BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignShadowLightColor}"
+                ToolTip.Tip='Button with class "Custom" and custom attributes'>
+          <Button.Background>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+              <GradientStop Offset="0" Color="Transparent" />
+              <GradientStop Offset="1" Color="#CCBBBBBB" />
+            </LinearGradientBrush>
+          </Button.Background>
+          <Button.Content>
+            <StackPanel Orientation="Vertical">
+              <TextBlock Text="Custom" TextAlignment="Center"/>
+              <TextBlock Text="outline" TextAlignment="Center"/>
+            </StackPanel>
+          </Button.Content>
+        </Button>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="CustomButtons2" Padding="0,15,0,0">
+        <controls:FloatingButton ToolTip.Tip="Customized floating button." Command="{Binding ButtonClick}"
+                               Background="LightSteelBlue" BorderBrush="White" BorderThickness="3">
+          <controls:FloatingButton.Content>
+            <icons:MaterialIcon Kind="Plus" Width="24" Height="24" Foreground="White" />
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+  </StackPanel>
+</UserControl>

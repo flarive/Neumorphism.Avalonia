@@ -1,0 +1,154 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+            x:CompileBindings="True"
+            x:DataType="viewModels:CardsDemoViewModel"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.CardsDemo">
+
+
+  <StackPanel Margin="16,0,16,50">
+    <StackPanel.Styles>
+      <Style Selector="controls|Card">
+        <Setter Property="Margin" Value="8" />
+      </Style>
+    </StackPanel.Styles>
+
+
+    <TextBlock Classes="Headline4 Subheadline" Text="Cards" />
+
+    <TextBlock Classes="Headline6 Subheadline2" Text="Outset cards" Margin="0,30,0,0" />
+    <WrapPanel HorizontalAlignment="Stretch">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Cards0">
+        <controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="240" VerticalAlignment="Top" ToolTip.Tip='Card with theme "CardOutset" applied'>
+          <StackPanel Margin="0,4">
+            <TextBlock Classes="Headline6" HorizontalAlignment="Center" Text="Card title" />
+            <TextBlock Classes="Body2" HorizontalAlignment="Center" Text="Secondary text" />
+          </StackPanel>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Cards1">
+        <controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip='Card with theme "CardOutset" applied with custom corner radius'>
+          <StackPanel Margin="0" Background="{DynamicResource PrimaryHueLightBrush}">
+            <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Width="240" Height="240" Stretch="Uniform" />
+            <StackPanel Orientation="Vertical" Margin="20,12">
+              <TextBlock Classes="Headline6" Text="Card title" Foreground="White" />
+              <TextBlock Classes="Body2" Text="Secondary text" Foreground="White" />
+            </StackPanel>
+          </StackPanel>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Cards2">
+        <controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip='Card with theme "CardOutset" applied with gradient background and border'>
+          <controls:Card.Styles>
+            <Style Selector="controls|Card">
+              <Setter Property="Background">
+                <Setter.Value>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#ffffffff" />
+                    <GradientStop Offset="1" Color="#ffdddddd" />
+                  </LinearGradientBrush>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </controls:Card.Styles>
+          <StackPanel Orientation="Vertical" Margin="28">
+            <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/avalonia-logo.png" Width="80" Height="80" Stretch="Uniform" />
+            <StackPanel Margin="16">
+              <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+              <TextBlock Classes="Body2" Text="Secondary text" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+            </StackPanel>
+          </StackPanel>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Cards3">
+        <controls:Card Theme="{StaticResource CardOutset}" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top"
+					   Background="{DynamicResource MaterialDesignLinearGradient1}" ToolTip.Tip='Nested cards with theme "CardOutset" applied'>
+          <controls:Card Theme="{StaticResource CardOutset}" HorizontalAlignment="Stretch" VerticalAlignment="100" CornerRadius="8" Padding="0" Margin="20" Background="Transparent">
+            <StackPanel Orientation="Vertical" Margin="28">
+              <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+              <TextBlock Classes="Body2" Text="Secondary text" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" Opacity="0.6" />
+            </StackPanel>
+          </controls:Card>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </WrapPanel>
+
+
+    <TextBlock Classes="Headline6 Subheadline2" Text="Inset cards" Margin="0,30,0,0" />
+    <WrapPanel HorizontalAlignment="Stretch">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="InsetCards0">
+        <controls:Card Theme="{StaticResource CardInset}" Width="250" Height="240" VerticalAlignment="Top" ToolTip.Tip='Card with theme "CardInset" applied'>
+          <StackPanel Margin="0,4">
+            <TextBlock Classes="Headline6" HorizontalAlignment="Center" Text="Card title" />
+            <TextBlock Classes="Body2" HorizontalAlignment="Center" Text="Secondary text" />
+          </StackPanel>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="InsetCards1">
+        <controls:Card Theme="{StaticResource CardInset}" Width="250" Height="310" CornerRadius="20" VerticalAlignment="Top" Padding="0" ToolTip.Tip='Card with theme "CardInset" applied with custom corner radius'>
+          <Grid>
+            <StackPanel Margin="0" Background="{DynamicResource PrimaryHueLightBrush}" ZIndex="1">
+              <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/Amoonshapedpool.png" Width="240" Height="240" Stretch="Uniform" />
+              <StackPanel Orientation="Vertical" Margin="20,12">
+                <TextBlock Classes="Headline6" Text="Card title" Foreground="White" />
+                <TextBlock Classes="Body2" Text="Secondary text" Foreground="White" Opacity="0.6" />
+              </StackPanel>
+            </StackPanel>
+            <Border Width="250" Height="310" CornerRadius="20" Background="Transparent" BoxShadow="inset 8 8 48 Black, inset -8 -8 48 White" ZIndex="2" />
+          </Grid>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="InsetCards2">
+        <controls:Card Theme="{StaticResource CardInset}" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3" ToolTip.Tip='Card with theme "CardInset" applied with gradient background and border'>
+          <controls:Card.Styles>
+            <Style Selector="controls|Card">
+              <Setter Property="Background">
+                <Setter.Value>
+                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#ffffffff" />
+                    <GradientStop Offset="1" Color="#ffdddddd" />
+                  </LinearGradientBrush>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </controls:Card.Styles>
+          <StackPanel Orientation="Vertical" Margin="28">
+            <Image Source="avares://Neumorphism.Avalonia.Demo/Assets/avalonia-logo.png" Width="80" Height="80" Stretch="Uniform" />
+            <StackPanel Margin="16">
+              <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+              <TextBlock Classes="Body2" Text="Secondary text" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+            </StackPanel>
+          </StackPanel>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="InsetCards3">
+        <controls:Card Theme="{StaticResource CardInset}" Width="250" Height="200" CornerRadius="8" Padding="0" VerticalAlignment="Top" Background="{DynamicResource MaterialDesignLinearGradient1}"
+					   ToolTip.Tip='Nested cards with theme "CardInset" applied'>
+          <controls:Card Theme="{StaticResource CardInset}" HorizontalAlignment="Stretch" VerticalAlignment="100" CornerRadius="8" Padding="0" Margin="20" Background="Transparent">
+            <StackPanel Orientation="Vertical" Margin="28">
+              <TextBlock Classes="Headline6" Text="Card title" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+              <TextBlock Classes="Body2" Text="Secondary text" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+            </StackPanel>
+          </controls:Card>
+        </controls:Card>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

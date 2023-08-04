@@ -1,0 +1,106 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
+            x:CompileBindings="True"
+            x:DataType="viewModels:PanelUserProfilDemoViewModel"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelUserProfilDemo">
+
+  <StackPanel Margin="30" VerticalAlignment="Top">
+	  <controls:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+      
+		  <Grid Margin="0,4" HorizontalAlignment="Stretch">
+
+        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-86,0,0" ClipToBounds="True"
+                              Source="avares://Neumorphism.Avalonia.Demo/Assets/borealis.jpg" Stretch="Uniform" Width="300" Height="200" />
+
+        <StackPanel Orientation="Vertical">
+
+			  
+          <Grid ColumnDefinitions="*, *">
+            <Grid.Styles>
+              <Style Selector="Button">
+                <Setter Property="RenderTransform" Value="scale(1.0)"/>
+              </Style>
+              <Style Selector="Button:pointerover">
+                <Setter Property="RenderTransform" Value="scale(2.0)"/>
+              </Style>
+              <Style Selector="Button">
+                <Setter Property="Transitions">
+                  <Transitions>
+                    <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut"/>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+                  </Transitions>
+                </Setter>
+              </Style>
+            </Grid.Styles>
+              <Button Grid.Column="0" Classes="no-material" Width="40" Height="40" Margin="-10" Command="{Binding GoBackCommand}" HorizontalAlignment="Left">
+				  <icons:MaterialIcon Name="Icon1" Kind="ArrowLeft" Width="20" Height="20" Foreground="White" />
+              </Button>
+              <Button Grid.Column="2" Classes="no-material" Width="40" Height="40" Margin="-10" Command="{Binding SettingsCommand}" HorizontalAlignment="Right">
+				  <icons:MaterialIcon Name="Icon2" Kind="Settings" Width="20" Height="20" Foreground="White" />
+              </Button>
+          </Grid>
+
+
+			<controls:Card Width="120" Height="120" Margin="0,30,0,30" VerticalAlignment="Top" CornerRadius="120" HorizontalAlignment="Center" Padding="0">
+				<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="150" BorderBrush="{DynamicResource MaterialDesignPaper}" BorderThickness="6" ClipToBounds="True">
+					<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+						<Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													 Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="120" Height="120" />
+					</Border>
+				</Border>
+			</controls:Card>
+
+			    <TextBlock Classes="Subtitle2" FontSize="24" Text="{Binding Name}" Foreground="Gray" HorizontalAlignment="Center"/>
+			    <TextBlock Classes="Subtitle2" FontSize="18" Text="{Binding Job}" Foreground="Gray" HorizontalAlignment="Center"/>
+
+
+			    <Grid ColumnDefinitions="*,*,*,*" Margin="0,25,0,25">
+				    <Button Grid.Column="0" Classes="Icon" Width="40" Height="40" Command="{Binding GoToSocialNetworkCommand}" CommandParameter="1">
+					    <icons:MaterialIcon Kind="Facebook" Width="20" Height="20" Foreground="#ff4365af" />
+				    </Button>
+				    <Button Grid.Column="1" Classes="Icon" Width="40" Height="40" Command="{Binding GoToSocialNetworkCommand}" CommandParameter="2">
+						<icons:MaterialIcon Kind="Twitter" Width="20" Height="20" Foreground="#ff12a8ff" />
+				    </Button>
+				    <Button Grid.Column="2" Classes="Icon" Width="40" Height="40" Command="{Binding GoToSocialNetworkCommand}" CommandParameter="3">
+						<icons:MaterialIcon Kind="Instagram" Width="20" Height="20" Foreground="#ffb95e7d" />
+				    </Button>
+				    <Button Grid.Column="3" Classes="Icon" Width="40" Height="40" Command="{Binding GoToSocialNetworkCommand}" CommandParameter="4">
+						<icons:MaterialIcon Kind="Youtube" Width="20" Height="20" Foreground="#fff90403" />
+				    </Button>
+			    </Grid>
+
+			    <Grid ColumnDefinitions="*,*">
+				    <Button Grid.Column="0" Margin="5" Width="110" Height="38" Content="Message" CornerRadius="10" HorizontalAlignment="Left" Command="{Binding SendMessageCommand}"/>
+				    <Button Grid.Column="1" Margin="5" Width="110" Height="38" Content="Subscribe" CornerRadius="10" HorizontalAlignment="Right" Command="{Binding SubscribeCommand}"/>
+			    </Grid>
+
+          <Grid ColumnDefinitions="*,*,*" Margin="0,30,0,5">
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+				<icons:MaterialIcon Kind="HeartOutline" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock Classes="Subtitle2" FontSize="15" Text="{Binding CountLikes, StringFormat=\{0:N1\}k}" Margin="5,0,0,0" Foreground="Gray"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+				<icons:MaterialIcon Kind="ChatOutline" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock Classes="Subtitle2" FontSize="15" Text="{Binding CountComments, StringFormat=\{0:N1\}k}" Margin="5,0,0,0" Foreground="Gray"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+				<icons:MaterialIcon Kind="RedoVariant" Width="20" Height="20" Foreground="Gray" />
+              <TextBlock Classes="Subtitle2" FontSize="15" Text="{Binding CountFollowers, StringFormat=\{0:N1\}k}" Margin="5,0,0,0" Foreground="Gray"/>
+            </StackPanel>
+          </Grid>
+
+
+        </StackPanel>
+      </Grid>
+    </controls:Card>
+  </StackPanel>
+</UserControl>

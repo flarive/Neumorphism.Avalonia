@@ -1,0 +1,247 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+                    xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <controls:FloatingButton />
+    </Border>
+  </Design.PreviewWith>
+
+
+	<!-- Neumorphism theme ok -->
+
+
+  <CornerRadius x:Key="FloatingButtonRoundCorner">32</CornerRadius>
+
+
+  <!--Default FloatingButton theme-->
+  <ControlTheme x:Key="{x:Type controls:FloatingButton}" TargetType="controls:FloatingButton">
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Padding" Value="16" />
+    <Setter Property="assist:ButtonAssist.HoverColor" Value="{DynamicResource MaterialDesignSilverGrayColor}"/>
+    <Setter Property="assist:ButtonAssist.ClickFeedbackColor" Value="{DynamicResource MaterialDesignSilverGrayColor}"/>
+    <Setter Property="FontWeight" Value="Medium" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_ButtonRootBorder"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{StaticResource FloatingButtonRoundCorner}">
+          <Border CornerRadius="{StaticResource FloatingButtonRoundCorner}"
+                  ClipToBounds="True">
+            <Grid MinHeight="{TemplateBinding MinHeight}"
+                  MinWidth="{TemplateBinding MinWidth}" Background="Transparent">
+              <Border Name="PART_HoverIndicator" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      Background="{TemplateBinding assist:ButtonAssist.HoverColor}" />
+              <ripple:RippleEffect RippleFill="{TemplateBinding assist:ButtonAssist.ClickFeedbackColor}" RaiseRippleCenter="True"
+                                   RippleOpacity="{StaticResource ButtonPressedOpacity}">
+                <ContentPresenter Name="PART_ContentPresenter"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Content="{TemplateBinding Content}"
+                                  Padding="{TemplateBinding Padding}"
+                                  Foreground="{TemplateBinding Foreground}"
+                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+              </ripple:RippleEffect>
+            </Grid>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Transitions -->
+    <Style Selector="^[IsVisible=true].notransitions /template/ Border#PART_ButtonRootBorder">
+      <Style.Animations>
+        <Animation Duration="0:0:0.001" FillMode="Both" Easing="QuarticEaseInOut">
+          <KeyFrame Cue="0%">
+            <Setter Property="Opacity" Value="0" />
+            <Setter Property="ScaleTransform.ScaleX" Value="0" />
+            <Setter Property="ScaleTransform.ScaleY" Value="0" />
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="ScaleTransform.ScaleX" Value="1" />
+            <Setter Property="ScaleTransform.ScaleY" Value="1" />
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="^[IsVisible=true]:not(.notransitions) /template/ Border#PART_ButtonRootBorder">
+      <Style.Animations>
+        <Animation Duration="0:0:0.5" FillMode="Both" Easing="QuarticEaseInOut">
+          <KeyFrame Cue="0%">
+            <Setter Property="Opacity" Value="0" />
+            <Setter Property="ScaleTransform.ScaleX" Value="0" />
+            <Setter Property="ScaleTransform.ScaleY" Value="0" />
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="Opacity" Value="1" />
+            <Setter Property="ScaleTransform.ScaleX" Value="1" />
+            <Setter Property="ScaleTransform.ScaleY" Value="1" />
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="^:not(.notransitions) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Transitions">
+        <Transitions>
+          <DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing"/>
+        </Transitions>
+      </Setter>
+    </Style>
+
+    <!-- Default state and appeared state -->
+    <Style Selector="^">
+      <Setter Property="Opacity" Value="0"/>
+      <Setter Property="ScaleTransform.ScaleX" Value="0" />
+      <Setter Property="ScaleTransform.ScaleY" Value="0" />
+    </Style>
+
+    <Style Selector="^[IsVisible=true]:not(.no-material)">
+      <Setter Property="Opacity" Value="1"/>
+      <Setter Property="ScaleTransform.ScaleX" Value="1" />
+      <Setter Property="ScaleTransform.ScaleY" Value="1" />
+    </Style>
+
+    <Style Selector="^:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
+
+    <Style Selector="^:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="3">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Feedbacks -->
+    <Style Selector="^:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
+    </Style>
+
+    <Style Selector="^:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="RenderTransform" Value="scale(1.0)"/>
+    </Style>
+
+    <Style Selector="^[IsExtended=false]:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="RenderTransform" Value="scale(1.5)"/>
+    </Style>
+
+    <Style Selector="^[IsExtended=true]:pointerover:not(.Mini,.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="RenderTransform" Value="scale(1.1)"/>
+    </Style>
+
+    <Style Selector="^.Mini:not(.Dark, .no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="RenderTransform" Value="scale(1.0)"/>
+    </Style>
+
+    <Style Selector="^.Mini:pointerover:not(.Dark, .no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="RenderTransform" Value="scale(1.25)"/>
+    </Style>
+
+    <Style Selector="^.Mini.Dark:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="Opacity" Value="0.5" />
+      <Setter Property="RenderTransform" Value="scale(1.0)"/>
+    </Style>
+
+    <Style Selector="^.Mini.Dark:pointerover:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{TemplateBinding Foreground}" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="RenderTransform" Value="scale(1.25)"/>
+    </Style>
+
+    <Style Selector="^:not(.notransitions) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Transitions">
+        <Transitions>
+          <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.85" Easing="CubicEaseOut" />
+        </Transitions>
+      </Setter>
+    </Style>
+
+    <!-- Mini and extended style -->
+    <Style Selector="^">
+      <Setter Property="MinHeight" Value="48" />
+      <Setter Property="MinWidth" Value="48" />
+      <Setter Property="Height" Value="48" />
+      <Setter Property="Width" Value="48" />
+      <Setter Property="Padding" Value="12" />
+    </Style>
+    <Style Selector="^.Mini">
+      <Setter Property="MinHeight" Value="40" />
+      <Setter Property="MinWidth" Value="40" />
+      <Setter Property="Height" Value="40" />
+      <Setter Property="Width" Value="40" />
+      <Setter Property="Padding" Value="8" />
+    </Style>
+    <Style Selector="^[IsExtended=true]">
+      <Setter Property="MinWidth" Value="48" />
+      <Setter Property="MinHeight" Value="48" />
+      <Setter Property="Height" Value="48" />
+      <Setter Property="Width" Value="NaN" />
+      <Setter Property="Padding" Value="12" />
+    </Style>
+
+    <!-- Color definitions -->
+    <Style Selector="^.Light">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
+    </Style>
+
+    <Style Selector="^.Dark">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+    </Style>
+
+    <Style Selector="^.Accent">
+      <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
+    </Style>
+
+    <Style Selector="^:disabled:not(.no-material)">
+      <Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />
+    </Style>
+
+  </ControlTheme>
+</ResourceDictionary>

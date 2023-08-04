@@ -1,0 +1,118 @@
+﻿<Styles
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+
+	<Styles.Resources>
+        <ResourceDictionary>
+
+
+			<converters:AutoBoxShadowsConverter x:Key="AutoBoxShadowsConverter" />
+            <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+            <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
+            <converters:WidthToRenderTransformConverter x:Key="WidthToRenderTransformConverter" />
+            <converters:StringReplaceConverter x:Key="StringReplaceConverter" />
+            <converters:BrushRoundConverter x:Key="BrushRoundConverter" />
+            <converters:DoubleToLeftRightCornerRadiusConverter x:Key="DoubleToLeftRightCornerRadiusConverter" />
+            <converters:RectangleHollowGeometryConverter x:Key="RectangleHollowGeometry" />
+            <converters:GetPlatformHotkeyConfigServiceConverter x:Key="GetPlatformHotkeyConfig" />
+            <converters:BooleanValueToDoubleConverter x:Key="BooleanValueToDoubleConverter" />
+            <converters:ComboboxHeightToFloatingWatermarkMarginConverter x:Key="ComboboxHeightToFloatingWatermarkMarginConverter" />
+            <converters:HeightToMarginConverter x:Key="HeightToMarginConverter" />
+            <converters:WidthToCustomValueConverter x:Key="WidthToCustomValueConverter" />
+            <converters:AutoCorrectPositionConverter x:Key="AutoCorrectPositionConverter"/>
+            <converters:MarginMultiplyConverter x:Key="MarginCreator" />
+            <converters:HeightToCornerRadiusConverter x:Key="HeightToCornerRadiusConverter"/>
+            <converters:RangeToSweepConverter x:Key="RangeToSweep" />
+            <converters:MultiWidthMinusValueConverter x:Key="MultiWidthMinusValueConverter" />
+            <converters:ThicknessToIntConverter x:Key="ThicknessToIntConverter" />
+            <converters:HeightToThicknessConverter x:Key="HeightToThicknessConverter" />
+            <!--<converters:TestConverter x:Key="TestConverter" />-->
+
+			
+			
+
+         
+          <ResourceDictionary.MergedDictionaries>
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MaterialInternalIcon.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/AdornerLayer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TextBlock.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Button.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/RadioButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Expander.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ProgressBar.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/AutoCompleteBox.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ButtonSpinner.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Calendar.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CalendarButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CalendarDatePicker.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CalendarDayButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CalendarItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CaptionButtons.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Carousel.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CheckBox.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/FlyoutPresenter.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/GridSplitter.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ItemsControl.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Label.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ListBox.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ListBoxItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MenuScrollViewer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Menu.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MenuItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MenuFlyoutPresenter.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/NativeMenuBar.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/NotificationCard.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/NumericUpDown.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/OverlayPopupHost.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/PopupRoot.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/PathIcon.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/RepeatButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ScrollBar.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ScrollViewer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Separator.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/SplitButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/SplitView.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TabControl.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TabItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TabStrip.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TabStripItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TextBox.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ToggleButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ToggleSwitch.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ToolTip.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TitleBar.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TransitioningContentControl.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TreeView.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TreeViewItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/WindowNotificationManager.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Window.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ComboBox.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ComboBoxItem.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ContentControl.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ContextMenu.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/DataValidationErrors.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/DateTimePickerShared.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/DatePicker.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/TimePicker.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/DropDownButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/EmbeddableControlRoot.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Slider.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ManagedFileChooser.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/SelectableTextBlock.xaml"/>
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/RefreshContainer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/RefreshVisualizer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ThemeVariantScope.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/Card.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/SnackbarHost.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/NavigationDrawer.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ColorZone.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/FloatingButton.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MaterialUnderline.xaml" />
+                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CircularProgress.xaml" />
+          </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/UserControl.xaml" />
+</Styles>

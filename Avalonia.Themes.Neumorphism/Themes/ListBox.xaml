@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+	<!-- Neumorphism theme ok -->
+	
+	
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <ListBox>
+        <ListBoxItem>Test</ListBoxItem>
+        <ListBoxItem>Test</ListBoxItem>
+        <ListBoxItem>Test</ListBoxItem>
+        <ListBoxItem>Test</ListBoxItem>
+      </ListBox>
+    </Border>
+  </Design.PreviewWith>
+
+
+
+	<!--Default ListBox theme-->
+	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						Background="{TemplateBinding Background}">
+					<ScrollViewer Name="PART_ScrollViewer"
+								  Focusable="False"
+								  Padding="{TemplateBinding Padding}"
+								  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+								  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+						<ItemsPresenter Name="PART_ItemsPresenter"
+										ItemsPanel="{TemplateBinding ItemsPanel}"
+										Margin="0" />
+					</ScrollViewer>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	
+
+	<!--Class NoScroll-->
+	<ControlTheme x:Key="ListBoxNoScroll" TargetType="ListBox">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						Background="{TemplateBinding Background}">
+					<ItemsPresenter Name="PART_ItemsPresenter"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									Margin="{TemplateBinding Padding}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

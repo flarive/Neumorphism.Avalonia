@@ -1,0 +1,352 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="2300"
+                xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+                xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+                xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+                xmlns:system="clr-namespace:System;assembly=System.Runtime"
+                x:CompileBindings="True"
+                x:DataType="viewModels:TextFieldsViewModel"
+                x:Class="Neumorphism.Avalonia.Demo.Pages.FieldsDemo">
+
+
+
+  <StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
+    <StackPanel.Styles>
+      <Style Selector="TextBox">
+        <Setter Property="Margin" Value="0"></Setter>
+      </Style>
+    </StackPanel.Styles>
+
+    <!--Classic fields-->
+    <TextBlock Classes="Headline4 Subheadline" Text="Classic fields" Margin="0,30,0,0" />
+    <WrapPanel HorizontalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes0">
+            <TextBox UseFloatingWatermark="False" Watermark="Regular watermarked textbox" ToolTip.Tip="Regular watermarked textbox with default theme applied"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes1">
+            <TextBox UseFloatingWatermark="True" assist:TextFieldAssist.Label="Floating watermark TextBox" ToolTip.Tip="Floating label watermarked textbox with default theme applied" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes2">
+            <TextBox UseFloatingWatermark="True" Classes="revealPasswordButton" assist:TextFieldAssist.Label="Password" PasswordChar="*" ToolTip.Tip='Floating label watermarked password textbox with default theme applied and with class "revealPasswordButton"'/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes3">
+            <TextBox UseFloatingWatermark="True" Classes="clearButton" assist:TextFieldAssist.Label="Text field" ToolTip.Tip='Floating label watermarked textbox with default theme applied with class "clearButton"'/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes4">
+            <TextBox UseFloatingWatermark="True" ToolTip.Tip='Floating label watermarked textbox with default theme applied with validation'
+                  assist:TextFieldAssist.Label="Text field with validation"
+                  Text="{Binding Numerics}"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes5">
+            <TextBox UseFloatingWatermark="True" IsEnabled="False" ToolTip.Tip='Floating label watermarked disabled textbox with default theme applied'
+                  Text="Disabled Field" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="MultilineFields0" VerticalAlignment="Top">
+            <TextBox AcceptsReturn="True" Width="360" Height="360" MaxHeight="360" TextWrapping="Wrap"
+					 assist:TextFieldAssist.Label="Multiline Test fixed height"
+					 ToolTip.Tip='Floating label watermarked multiline textbox with default theme applied and fixed height'
+					 UseFloatingWatermark="True"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="MultilineFields1" VerticalAlignment="Top">
+            <TextBox AcceptsReturn="True" Width="360" MinHeight="50" MaxHeight="360" Height="NaN" TextWrapping="Wrap"
+					 ToolTip.Tip='Floating label watermarked multiline textbox with default theme applied and dynamic height'
+					 assist:TextFieldAssist.Label="Multiline Test dynamic height" UseFloatingWatermark="True"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+    <!--Filled fields-->
+    <TextBlock Classes="Headline4 Subheadline" Text="Filled fields" Margin="0,30,0,0" />
+    <WrapPanel HorizontalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields0">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}"
+					 ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxFilled" applied'
+                     assist:TextFieldAssist.Label="Filled TextBox" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields1">
+            <TextBox UseFloatingWatermark="False" Theme="{StaticResource TextBoxFilled}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxFilled" applied'
+					 Watermark="No floating label" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields2">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}" Classes="revealPasswordButton"
+                     ToolTip.Tip='Floating label watermarked password textbox with theme "TextBoxFilled" applied and with class "revealPasswordButton"'
+					 assist:TextFieldAssist.Label="Password"
+                     PasswordChar="*" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields3">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}" Classes="clearButton"
+					 ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxFilled" applied and with class "clearButton"'
+                     assist:TextFieldAssist.Label="Text field" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields4">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}"
+                     assist:TextFieldAssist.Label="Text field with validation"
+					 ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxFilled" applied with validation'
+                     Text="{Binding Numerics}" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields5">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}" IsEnabled="False"
+					 ToolTip.Tip='Floating label watermarked disabled textbox with theme "TextBoxFilled" applied'
+                     Text="Disabled Field" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="MultilineFields2" VerticalAlignment="Top">
+            <TextBox UseFloatingWatermark="True"
+                     assist:TextFieldAssist.Label="Multiline textfield"
+                     Theme="{StaticResource TextBoxFilled}"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     ToolTip.Tip='Floating label watermarked multiline textbox with theme "TextBoxFilled" applied and fixed height'
+					 Width="360"
+                     Height="360"
+                     MaxHeight="360" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+    <!--Outlined fields-->
+    <TextBlock Classes="Headline4 Subheadline" Text="Outline fields" Margin="0,30,0,0" />
+    <WrapPanel HorizontalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields0">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}"
+			     ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxOutline" applied'
+                 assist:TextFieldAssist.Label="Outline TextBox" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields1">
+            <TextBox UseFloatingWatermark="False" Theme="{StaticResource TextBoxOutline}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxOutline" applied'
+					 Watermark="No floating label" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields2">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}" Classes="revealPasswordButton"
+			     ToolTip.Tip='Floating label watermarked password textbox with theme "TextBoxOutline" applied and with class "revealPasswordButton"'
+                 assist:TextFieldAssist.Label="Password" PasswordChar="*" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields3">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}" Classes="clearButton"
+			     ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxOutline" applied and with class "clearButton"'
+                 assist:TextFieldAssist.Label="Text field" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields4">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}"
+                 assist:TextFieldAssist.Label="Text field with validation"
+			     ToolTip.Tip='Floating label watermarked textbox with theme "TextBoxOutline" applied and validation'
+                 Text="{Binding Numerics}"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields5">
+            <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}"
+			     ToolTip.Tip='Floating label watermarked disabled textbox with theme "TextBoxOutline" applied'
+			     IsEnabled="False"
+                 Text="Disabled Field" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineMultilineFields0" VerticalAlignment="Top">
+            <TextBox UseFloatingWatermark="True"
+                     assist:TextFieldAssist.Label="Multiline textfield"
+                     Theme="{StaticResource TextBoxOutline}"
+                     Width="360"
+                     Height="360"
+                     MaxHeight="360"
+					 ToolTip.Tip='Floating label watermarked multiline textbox with theme "TextBoxOutline" applied and fixed height'
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+    <!--Header fields-->
+    <WrapPanel HorizontalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Classes="Headline4 Subheadline" Text="Header fields" Margin="0,30,0,0" />
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HeaderFields0">
+            <TextBox Theme="{StaticResource TextBoxHeader}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied and left custom header'
+					 Watermark="Header field with left icon" Width="300">
+              <TextBox.InnerLeftContent>
+                <Border Width="68" Height="38">
+                  <icons:MaterialIcon Kind="Search" Width="24" Height="24" />
+                </Border>
+              </TextBox.InnerLeftContent>
+            </TextBox>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HeaderFields1">
+            <TextBox Name="SearchTextbox" Theme="{StaticResource TextBoxHeader}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied and right custom header'
+					 Watermark="Header field with right icon" Width="300">
+              <TextBox.InnerRightContent>
+                <Button Classes="no-material" Margin="10,0,10,0" Width="48" Height="38" Cursor="Arrow"
+                        Command="{Binding ButtonSearchClick}" CommandParameter="{Binding ElementName=SearchTextbox}">
+                  <icons:MaterialIcon Kind="Search" Width="24" Height="24" />
+                </Button>
+              </TextBox.InnerRightContent>
+            </TextBox>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HeaderFields2">
+            <TextBox Watermark="Custom search field" Theme="{StaticResource TextBoxHeader}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied and left and right custom header'
+					 Margin="0" Width="360" Height="38">
+              <TextBox.Styles>
+                <Style Selector="TextBox.Header">
+                  <Setter Property="assist:TextFieldAssist.InnerLeftBackground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#CC888888" />
+                        <GradientStop Offset="1" Color="Transparent" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="assist:TextFieldAssist.InnerRightBackground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="Transparent" />
+                        <GradientStop Offset="1" Color="#22444444" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="assist:TextFieldAssist.InnerLeftPadding" Value="-10,0,0,0"/>
+                  <Setter Property="assist:TextFieldAssist.InnerRightPadding" Value="0,0,-18,0"/>
+                </Style>
+              </TextBox.Styles>
+              <TextBox.InnerLeftContent>
+                <Button Classes="no-material" Height="38" Width="60" Cursor="Arrow">
+                  <Button.Content>
+                    <icons:MaterialIcon Kind="Search" Width="24" Height="24" />
+                  </Button.Content>
+                </Button>
+              </TextBox.InnerLeftContent>
+              <TextBox.InnerRightContent>
+                <Button Classes="no-material" Height="38" Width="80" Cursor="Hand">
+                  <Button.Content>
+                    <icons:MaterialIcon Kind="Settings" Width="24" Height="24" Foreground="DarkGray" />
+                  </Button.Content>
+                </Button>
+              </TextBox.InnerRightContent>
+            </TextBox>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HeaderFields3">
+            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
+                     Watermark="Enter your email"
+                     Text="{Binding Email}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left custom header'
+                     CornerRadius="32" assist:TextFieldAssist.InnerLeftBackground="#22666666" assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+              <TextBox.InnerLeftContent>
+                <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
+                  <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
+                </Border>
+              </TextBox.InnerLeftContent>
+            </TextBox>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HeaderFields4">
+            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
+                     Watermark="Enter your email"
+                     Text="{Binding Email}"
+					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left and right custom header'
+                     CornerRadius="32" assist:TextFieldAssist.InnerLeftBackground="#22666666" assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+              <TextBox.InnerLeftContent>
+                <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
+                  <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
+                </Border>
+              </TextBox.InnerLeftContent>
+              <TextBox.InnerRightContent>
+                <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
+                  <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
+                </Border>
+              </TextBox.InnerRightContent>
+            </TextBox>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+
+    <WrapPanel HorizontalAlignment="Stretch" Margin="0,0,0,50">
+      <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" Margin="0,30,0,0" />
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown0">
+            <NumericUpDown Minimum="0" Maximum="100" Increment="1" Value="0" Foreground="#FF555555"
+						   ToolTip.Tip="Regular NumericUpDown with default theme applied and allowed values between 0 and 100" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown1">
+            <NumericUpDown Classes="Filled" ButtonSpinnerLocation="Left" Minimum="-1000" Maximum="1000" Increment="10" Width="120" Height="42"
+						   ToolTip.Tip="Regular NumericUpDown with default theme applied with button spinner right and allowed values between -1000 and 1000 with an increment of 10"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown2">
+            <NumericUpDown ButtonSpinnerLocation="Left" Minimum="-100" Maximum="100" Increment="10" IsEnabled="False"
+						   ToolTip.Tip="Regular disabled NumericUpDown with default theme applied"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+                  xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+                  xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                  xmlns:system="clr-namespace:System;assembly=netstandard"
+                  xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                  xmlns:sys="using:System">
+
+
+	<!-- Neumorphism theme ok -->
+  
+  
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <Border Background="{DynamicResource ComboBoxDropDownBackground}" BorderBrush="{DynamicResource ComboBoxDropDownBorderBrush}" BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}" Margin="0,-1,0,-1" Padding="{DynamicResource ComboBoxDropdownBorderPadding}" CornerRadius="{DynamicResource OverlayCornerRadius}">
+        <StackPanel HorizontalAlignment="Stretch">
+          <ComboBoxItem>Item 1</ComboBoxItem>
+          <ComboBoxItem>Item 2 long</ComboBoxItem>
+          <ComboBoxItem IsSelected="True">Item 3</ComboBoxItem>
+          <ComboBoxItem IsEnabled="False">Item 4</ComboBoxItem>
+          <ComboBoxItem IsSelected="True" IsEnabled="False">Item 5</ComboBoxItem>
+        </StackPanel>
+      </Border>
+    </Border>
+  </Design.PreviewWith>
+
+
+  <!--Default ComboBoxItem theme-->
+  <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
+    <Setter Property="Padding" Value="{Binding $parent[ComboBox].Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=50%|0%|50%|0%}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Opacity" Value="1" />
+    <Setter Property="Height" Value="{Binding $parent[ComboBox].Height}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <Border Name="PointerOverBorder"
+                  Opacity="{TemplateBinding Opacity}"
+                  Height="{Binding $parent[ComboBox].Height}"
+                  BorderBrush="Transparent"
+                  BorderThickness="0"
+                  Background="{TemplateBinding Background}" />
+          <ripple:RippleEffect RippleFill="{DynamicResource MaterialDesignFlatButtonRipple}">
+            <ContentPresenter Name="PART_ContentPresenter"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Padding="{TemplateBinding Padding}" />
+          </ripple:RippleEffect>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:selected /template/ Border#PointerOverBorder">
+      <Setter Property="Opacity" Value="0.1" />
+    </Style>
+    <Style Selector="^:pressed /template/ Border#PointerOverBorder">
+      <Setter Property="Opacity" Value="0.15" />
+    </Style>
+    <Style Selector="^:pointerover /template/ Border#PointerOverBorder">
+      <Setter Property="Opacity" Value="0.1" />
+      <Setter Property="Background" Value="Gray" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

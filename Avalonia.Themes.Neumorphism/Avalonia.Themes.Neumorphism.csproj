@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>netstandard2.1</TargetFramework>
+	<VersionPrefix>0.5.0</VersionPrefix>
+	<Title>Neumorphism.Avalonia</Title>
+	<Authors>Eviral</Authors>
+	<Description>Easy to use and customizable Neumorphism Design implementation for Avalonia UI framework.</Description>
+	<PackageProjectUrl>https://github.com/flarive/Neumorphism.Avalonia</PackageProjectUrl>
+	<PackageLicenseUrl></PackageLicenseUrl>
+	<RepositoryUrl>https://github.com/flarive/Neumorphism.Avalonia</RepositoryUrl>
+	<PackageIcon>Icon.png</PackageIcon>
+	<RepositoryType>git</RepositoryType>
+	<LangVersion>9</LangVersion>
+	<Nullable>disable</Nullable>
+	<PackageReleaseNotes>
+		Easy to use and customizable Neumorphism Design implementation for AvaloniaUI framework.
+		Demo app can be found here : https://github.com/flarive/Neumorphism.Avalonia
+	</PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="Avalonia" Version="11.0.1" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.0.1" />
+	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.1" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.1" />
+    <PackageReference Include="SkiaSharp" Version="2.88.3" />
+    <AvaloniaResource Include="**/*.xaml" />  
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="Themes\Ripple.axaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Fonts\Roboto\BROADW.TTF" />
+    <None Remove="Fonts\SF\SFProText-Light.ttf" />
+    <None Remove="Fonts\SF\SFProText-Medium.ttf" />
+    <None Remove="Fonts\SF\SFProText-Regular.ttf" />
+    <None Remove="Themes\CircularProgress.xaml" />
+    <None Remove="Themes\TextBlock.xaml" />
+    <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
+    <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
+    <None Remove="Fonts\Roboto\Roboto-Regular.ttf" />
+    <None Remove="Fonts\Roboto\Roboto-Thin.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Fonts\Roboto\BROADW.TTF" />
+    <AvaloniaResource Include="Fonts\SF\SFProText-Light.ttf" />
+    <AvaloniaResource Include="Fonts\SF\SFProText-Medium.ttf" />
+    <AvaloniaResource Include="Fonts\SF\SFProText-Regular.ttf" />
+    <AvaloniaResource Include="Themes\Ripple.axaml" />
+    <AvaloniaResource Include="Fonts\Roboto\Roboto-Light.ttf" />
+    <AvaloniaResource Include="Fonts\Roboto\Roboto-Medium.ttf" />
+    <AvaloniaResource Include="Fonts\Roboto\Roboto-Regular.ttf" />
+    <AvaloniaResource Include="Fonts\Roboto\Roboto-Thin.ttf" />
+  </ItemGroup>
+</Project>

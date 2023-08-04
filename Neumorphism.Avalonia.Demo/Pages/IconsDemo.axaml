@@ -1,0 +1,117 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+            xmlns:views="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
+            xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
+            xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
+            xmlns:demo="clr-namespace:Neumorphism.Avalonia.Demo"
+            xmlns:system="clr-namespace:System;assembly=netstandard"
+            x:CompileBindings="True"
+            x:DataType="viewModels:IconsDemoViewModel"
+            Name="aaaa"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.IconsDemo">
+
+	<UserControl.Resources>
+        <converters:StringJoinConverter x:Key="StringJoinConverter" Separator="{x:Static system:Environment.NewLine}" />
+    </UserControl.Resources>
+  
+    <Design.DataContext>
+        <viewModels:IconsDemoViewModel />
+    </Design.DataContext>
+
+	<Grid RowDefinitions="Auto,*,Auto" Height="{Binding $parent.Bounds.Height}">
+
+
+        <controls:ColorZone Grid.Row="0" Mode="Standard" Padding="8" assist:ShadowAssist.ShadowDepth="Depth2">
+          <StackPanel Margin="16,8,16,0">
+            <TextBlock Classes="Headline4" Text="Icons" />
+            <TextBlock Classes="Subtitle1 Subheadline" TextWrapping="Wrap" Text="Neumorphism.Avalonia.Demo using Material.Icons.Avalonia packages to provide icons for Neumorphic design. You can always use them freely in your application with Neumorphism.Avalonia !" />
+          </StackPanel>
+        </controls:ColorZone>
+    
+        <Panel Grid.Row="1" VerticalAlignment="Stretch">
+            <ScrollViewer VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          VerticalContentAlignment="Top"
+                          VerticalScrollBarVisibility="Visible"
+                          HorizontalScrollBarVisibility="Disabled">
+                 <StackPanel VerticalAlignment="Stretch">
+                    <ItemsRepeater ItemsSource="{Binding Kinds}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ItemsRepeater.Layout>
+                            <UniformGridLayout />
+                        </ItemsRepeater.Layout>
+                        <ItemsRepeater.ItemTemplate>
+                            <DataTemplate DataType="models:MaterialIconKindGroup">
+                              <demo:SelectionWrapper DataSource="{Binding}"
+                                          CurrentSelected="{Binding Parent.SelectedGroup, Mode=TwoWay}"
+                                          ToolTip.Tip="{Binding Aliases, Converter={StaticResource StringJoinConverter}}"
+                                          Background="Transparent">
+                                   <Grid>
+                                        <Grid RowDefinitions="*, Auto" Margin="21" Height="68">
+                                          <Button Grid.Row="0" Theme="{StaticResource ButtonIcon}">
+                                            <icons:MaterialIcon 
+                                                                     Kind="{Binding Kind}"
+                                                                     VerticalAlignment="Center"
+                                                                     HorizontalAlignment="Center"
+                                                                     Foreground="DarkGray"
+                                                                     Width="28"
+                                                                     Height="28" />
+                                          </Button>
+                                          <TextBlock Grid.Row="1" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" FontSize="12" FontWeight="Regular" MaxWidth="64"
+                                                       Text="{Binding Kind}"
+                                                       HorizontalAlignment="Center" />
+                                        </Grid>
+                                    </Grid>
+                                </demo:SelectionWrapper>
+                            </DataTemplate>
+                        </ItemsRepeater.ItemTemplate>
+                    </ItemsRepeater>
+                 </StackPanel>
+            </ScrollViewer>
+        </Panel>
+
+        
+        <controls:ColorZone Grid.Row="2" Padding="8" Mode="Standard" assist:ShadowAssist.ShadowDepth="Depth2">
+            <Grid Margin="8" ColumnDefinitions="430,Auto,*,50">
+
+                  <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" 
+                            Width="300" Classes="Header" Text="{Binding SearchText}" Margin="0">
+                      <TextBox.InnerRightContent>
+                          <Button Width="60"
+                                  Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
+                                  Classes="no-material" Command="{Binding SearchCommand}"
+                                  CommandParameter="{Binding ElementName=SearchBox, Path=Text}">
+                              <icons:MaterialIcon Kind="Magnify" Width="28" Height="28" Foreground="Gray"/>
+                          </Button>
+                      </TextBox.InnerRightContent>
+                  </TextBox>
+
+
+                  <TextBlock Grid.Column="1" Margin="16 0" Classes="Subtitle1" VerticalAlignment="Center" Text="Usage:"/>
+                
+
+                  <TextBox Grid.Column="2" GotFocus="TextBox_OnGotFocus" IsReadOnly="True" Classes="Header" Margin="0" Width="500" FontSize="14"
+                            Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;icons:MaterialIcon Kind=&quot;&quot; \/>'}">
+                      <TextBox.InnerRightContent>
+                          <Button Width="60" Foreground="{DynamicResource MaterialDesignCardBackground}" Click="CopyToClipboardAsync" Tag="{Binding SelectedGroup.Kind}"
+                                  Classes="no-material">
+                              <icons:MaterialIcon Kind="ContentCopy" Width="24" Height="24" Foreground="Gray"/>
+                          </Button>
+                      </TextBox.InnerRightContent>
+                  </TextBox>
+    
+                
+                <Grid Grid.Column="3" IsVisible="{Binding SelectedGroup, Converter={x:Static ObjectConverters.IsNotNull}}">
+                    <icons:MaterialIcon Width="48" Height="48" Kind="{Binding SelectedGroup.KindValue}" Foreground="Gray" Margin="0,0,15,0" VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+        </controls:ColorZone>
+    </Grid>
+
+</UserControl>

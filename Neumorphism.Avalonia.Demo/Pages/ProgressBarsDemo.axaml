@@ -1,0 +1,385 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+							xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+							mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	                        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+	                        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+	                        xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+	                        xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+	                        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+                          xmlns:materialAnimationAssists="clr-namespace:Material.Styles.Additional.MaterialAnimationAssists;assembly=Avalonia.Themes.Neumorphism"
+	                        x:CompileBindings="True"
+	                        x:DataType="viewModels:ProgressBarsViewModel"
+	                        x:Class="Neumorphism.Avalonia.Demo.Pages.ProgressBarsDemo">
+
+
+	<StackPanel Margin="16,0,16,50">
+    <TextBlock Classes="Headline4 Subheadline" Text="Progress bars" />
+    <WrapPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Linear progress bars" />
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators0">
+          <ProgressBar Width="260" Value="0" ToolTip.Tip="Regular horizontal progress bar with default theme applied and value 0" />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators1">
+          <ProgressBar Classes="DeepInset Light" Width="260" Height="50" Value="30" ToolTip.Tip='Horizontal progress bar with default theme applied with class "DeepInset Light" and value 30' />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators2">
+          <ProgressBar Classes="Dark" Width="260" IsIndeterminate="True" ToolTip.Tip='Horizontal indeterminate progress bar with default theme applied with class "Dark"' />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators3">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="0,0,10,0" Width="30" FontSize="11" Text="{Binding ElementName=InsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
+            <ProgressBar Name="InsetProgressCountDown" Classes="Accent notransitions" Width="220" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                         ToolTip.Tip='Horizontal progress bar decreasing seconds countdown with default theme applied with class "Accent"' />
+          </StackPanel>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators4">
+          <ProgressBar Classes="notransitions" Value="{Binding Progress1}" Width="260" ToolTip.Tip="Customized horizontal progress bar with custom gradient color">
+            <ProgressBar.Styles>
+              <Style Selector="ProgressBar">
+                <Setter Property="Foreground">
+                  <Setter.Value>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                      <GradientStop Offset="0" Color="#FF5cbcd6" />
+                      <GradientStop Offset="1" Color="#FF77dbf0" />
+                    </LinearGradientBrush>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ProgressBar.Styles>
+          </ProgressBar>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <TextBlock Classes="Headline6 Subheadline2" Text="Outset Linear progress bars" Margin="0,30,0,0" />
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators0">
+          <ProgressBar Theme="{StaticResource ProgressBarOutset}" Width="260" Value="0" ToolTip.Tip='Horizontal progress bar with theme "ProgressBarOutset" applied and value 0' />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators1">
+          <ProgressBar Theme="{StaticResource ProgressBarOutset}" Classes="Light" Width="260" Height="50" Value="30" ToolTip.Tip='Horizontal progress bar with theme "ProgressBarOutset" applied with class "Light" and value 30' />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators2">
+          <!--zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-->
+          <ProgressBar Theme="{StaticResource ProgressBarOutset}" Classes="Dark" Width="260" IsIndeterminate="True" ToolTip.Tip='Horizontal indeterminate progress bar with theme "ProgressBarOutset" applied with class "Dark"' />
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators3">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="0,2,10,0" Width="30" FontSize="11" Text="{Binding ElementName=OutsetProgressCountDown, Path=Value, StringFormat={}{0}s}"/>
+            <ProgressBar Name="OutsetProgressCountDown" Theme="{StaticResource ProgressBarOutset}" Classes="Accent notransitions" Width="220" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                         ToolTip.Tip='222Horizontal progress bar decreasing seconds countdown with theme "ProgressBarOutset" applied with class "Accent notransitions"' />
+          </StackPanel>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators4">
+          <ProgressBar Theme="{StaticResource ProgressBarOutset}" Classes="notransitions" Width="260" Value="{Binding Progress1}" ToolTip.Tip="Outset customized horizontal ProgressBar with custom gradient color">
+            <ProgressBar.Styles>
+              <Style Selector="ProgressBar">
+                <Setter Property="Foreground">
+                  <Setter.Value>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                      <GradientStop Offset="0" Color="#FF5cbcd6" />
+                      <GradientStop Offset="1" Color="#FF77dbf0" />
+                    </LinearGradientBrush>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ProgressBar.Styles>
+          </ProgressBar>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical">
+
+        <TextBlock Classes="Headline6 Subheadline2" TextAlignment="Center" HorizontalAlignment="Center" Text="Circular progress bars" />
+
+        <StackPanel Orientation="Horizontal">
+
+          <StackPanel>
+          
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar1" Margin="0" Padding="0">
+              <ProgressBar Theme="{StaticResource ProgressBarCircle}" Width="296" Height="296" Value="{Binding Progress1}"
+								     BorderThickness="8" ToolTip.Tip='Gradient circular progress bar with theme "ProgressBarCircle" applied with custom inner content'>
+                <ProgressBar.Styles>
+                  <Style Selector="ProgressBar">
+                    <Setter Property="assist:ProgressBarAssist.CircularInnerContent">
+                      <Setter.Value>
+                        <Template>
+                          <StackPanel Orientation="Vertical">
+                            <TextBlock Width="100" Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0} %}" TextAlignment="Center" FontSize="30"/>
+                            <icons:MaterialIcon Kind="Server" Width="60" Height="60" />
+                          </StackPanel>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ProgressBar.Styles>
+              </ProgressBar>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar2" Margin="0" Padding="0">
+              <ProgressBar Theme="{StaticResource ProgressBarCircleInset}" Width="296" Height="296" Minimum="0" Maximum="60" Value="{Binding Progress3}" BorderThickness="8" BorderBrush="Gray"
+								     Foreground="Gray"
+								     ToolTip.Tip='Circular progress bar countdown with theme "ProgressBarCircleInset" applied'>
+                <ProgressBar.Styles>
+                  <Style Selector="ProgressBar">
+                    <Setter Property="assist:ProgressBarAssist.CircularInnerContent">
+                      <Setter.Value>
+                        <Template>
+                          <StackPanel Orientation="Vertical">
+                            <TextBlock Width="100" Text="{Binding $parent[ProgressBar].Value}" TextAlignment="Center" FontSize="60"/>
+                            <TextBlock Text="SECONDS LEFT" FontSize="14" TextAlignment="Center"/>
+                          </StackPanel>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ProgressBar.Styles>
+              </ProgressBar>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+		      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			      <StackPanel.Styles>
+				      <Style Selector="showMeTheXaml|XamlDisplay">
+					      <Setter Property="HorizontalAlignment" Value="Center"/>
+					      <Setter Property="VerticalAlignment" Value="Center"/>
+					      <Setter Property="Height" Value="100"/>
+				      </Style>
+				      <Style Selector="ProgressBar">
+					      <Setter Property="HorizontalAlignment" Value="Center"/>
+					      <Setter Property="VerticalAlignment" Value="Center"/>
+				      </Style>
+            </StackPanel.Styles>
+              <!--****************************************************************-->
+              <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar3">
+                <ProgressBar Theme="{StaticResource ProgressBarCircleInset}" Width="96" Height="96" Value="50" BorderThickness="4"
+							 ToolTip.Tip='Customized circular progress bar with theme "ProgressBarCircleInset" applied and value 50' />
+              </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
+              <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar4">
+                <ProgressBar Theme="{StaticResource ProgressBarCircleOutline}" Width="48" Height="48" Value="{Binding Progress2}" IsIndeterminate="True"
+							 BorderBrush="Orange" ToolTip.Tip='Customized indeterminate circular progress bar with theme "ProgressBarCircleOutline" applied' />
+              </showMeTheXaml:XamlDisplay>
+              <!--****************************************************************-->
+		        </StackPanel>
+          </StackPanel>
+
+          <StackPanel>
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar7" Margin="0" Padding="0">
+              <ProgressBar Theme="{StaticResource ProgressBarCircleOutline}" Width="296" Height="296" Value="{Binding Progress1}"
+								     Foreground="Gray"
+								     ToolTip.Tip='Circular progress bar countdown with theme "ProgressBarCircleOutline" applied'>
+                <ProgressBar.Styles>
+                  <Style Selector="ProgressBar">
+                    <Setter Property="assist:ProgressBarAssist.CircularInnerContent">
+                      <Setter.Value>
+                        <Template>
+                          <TextBlock Width="100" Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0}%}" TextAlignment="Center" FontSize="34"/>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="BorderBrush">
+                      <Setter.Value>
+                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                          <GradientStop Offset="0" Color="#FF5cbcd6" />
+                          <GradientStop Offset="1" Color="#FF77dbf0" />
+                        </LinearGradientBrush>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ProgressBar.Styles>
+              </ProgressBar>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar8" Margin="0" Padding="0">
+              <ProgressBar Theme="{StaticResource ProgressBarCircleOutline2}" Width="296" Height="296" Value="{Binding Progress1}" Foreground="Gray"
+								     BorderThickness="8" assist:ProgressBarAssist.StrokeLineCap="Round"
+						             ToolTip.Tip='Gradient circular progress bar with theme "ProgressBarCircleOutline2" applied and custom inner content'>
+                <ProgressBar.Styles>
+                  <Style Selector="ProgressBar">
+                    <Setter Property="assist:ProgressBarAssist.CircularInnerContent">
+                      <Setter.Value>
+                        <Template>
+                          <TextBlock Name="PART_InnerContentTextBlock" Width="100" Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0}%}"
+									 Foreground="{TemplateBinding Foreground}" TextAlignment="Center" FontSize="40">
+                            <TextBlock.Styles>
+                              <Style Selector="TextBlock">
+                                <Style.Animations>
+                                  <Animation Duration="0:0:10" IterationCount="Infinite" PlaybackDirection="Normal">
+                                    <KeyFrame Cue="0%">
+                                      <Setter Property="Foreground" Value="#FF808080"/>
+                                      <Setter Property="Opacity" Value="0.2"/>
+                                    </KeyFrame>
+                                    <KeyFrame Cue="30%">
+                                      <Setter Property="Opacity" Value="1"/>
+                                    </KeyFrame>
+                                    <KeyFrame Cue="100%">
+                                      <Setter Property="Foreground" Value="#FF5cbcd6"/>
+                                    </KeyFrame>
+                                  </Animation>
+                                </Style.Animations>
+                              </Style>
+                            </TextBlock.Styles>
+                          </TextBlock>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="BorderBrush">
+                      <Setter.Value>
+                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                          <GradientStop Offset="0" Color="#FF5cbcd6" />
+                          <GradientStop Offset="1" Color="#FF77dbf0" />
+                        </LinearGradientBrush>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ProgressBar.Styles>
+              </ProgressBar>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+		      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			      <StackPanel.Styles>
+				      <Style Selector="showMeTheXaml|XamlDisplay">
+					      <Setter Property="HorizontalAlignment" Value="Center"/>
+					      <Setter Property="VerticalAlignment" Value="Center"/>
+					      <Setter Property="Height" Value="100"/>
+				      </Style>
+				      <Style Selector="ProgressBar">
+					      <Setter Property="HorizontalAlignment" Value="Center"/>
+					      <Setter Property="VerticalAlignment" Value="Center"/>
+				      </Style>
+			      </StackPanel.Styles>
+            <!--****************************************************************-->
+			      <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar5">
+				      <ProgressBar Theme="{StaticResource ProgressBarCircle}" Value="{Binding Progress2}" BorderThickness="10"
+								   ToolTip.Tip='Customized circular progress bar with theme "ProgressBarCircle" applied' />
+			      </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+			      <showMeTheXaml:XamlDisplay UniqueId="CircularProgressBar6">
+				      <ProgressBar Theme="{StaticResource ProgressBarCircleOutline2}" Classes="notransitions" Value="88" IsIndeterminate="True"
+								   ToolTip.Tip='Customized indeterminate circular progress bar with theme "ProgressBarCircleOutline2" applied and class "notransitions"'>
+					      <ProgressBar.Styles>
+						      <Style Selector="ProgressBar">
+							      <Setter Property="BorderBrush">
+								      <Setter.Value>
+									      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+										      <GradientStop Offset="0" Color="#FF5cbcd6" />
+										      <GradientStop Offset="1" Color="transparent" />
+									      </LinearGradientBrush>
+								      </Setter.Value>
+							      </Setter>
+						      </Style>
+					      </ProgressBar.Styles>
+				      </ProgressBar>
+			      </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+		        </StackPanel>
+          </StackPanel>
+
+        </StackPanel>
+
+      </StackPanel>
+
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical progress bars" />
+
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators0" Width="40">
+            <ProgressBar Orientation="Vertical" Height="260" Value="0" ToolTip.Tip="Regular vertical progress bar with default theme applied and value 0" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators1" Width="55">
+			  <ProgressBar Orientation="Vertical" Classes="DeepInset Light" Height="260" Width="30" Value="30" ToolTip.Tip='Vertical progress bar with default theme applied with class "DeepInset Light" and value 30' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators2" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="Dark" Height="260" IsIndeterminate="True" ToolTip.Tip='Vertical indeterminate progress bar with default theme applied and class "Dark"' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators3" Width="45">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+              <TextBlock Margin="0,0,0,10" Height="20" FontSize="11" Text="{Binding ElementName=VerticalProgressCountDown, Path=Value, StringFormat={}{0}s}" HorizontalAlignment="Center" TextAlignment="Center"/>
+              <ProgressBar Name="VerticalProgressCountDown" Orientation="Vertical" HorizontalAlignment="Center" Classes="Accent notransitions" Height="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                           ToolTip.Tip='Vertical progress bar decreasing seconds countdown with default theme applied and class "Accent notransitions"' />
+            </StackPanel>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalProgressIndicators4" Width="40">
+            <ProgressBar Orientation="Vertical" Classes="notransitions" Value="{Binding Progress1}" Height="260" ToolTip.Tip='Customized horizontal progress bar with default theme applied with class "notransitions" and custom gradient color'>
+              <ProgressBar.Styles>
+                <Style Selector="ProgressBar">
+                  <Setter Property="Foreground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#FF5cbcd6" />
+                        <GradientStop Offset="1" Color="#FF77dbf0" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ProgressBar.Styles>
+            </ProgressBar>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+
+        <TextBlock Classes="Headline6 Subheadline2" Text="Outset vertical progress bars" Margin="0,30,0,0" />
+
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators0" Width="40">
+            <ProgressBar Orientation="Vertical" Theme="{StaticResource ProgressBarOutset}" Height="260" Value="0" ToolTip.Tip='Vertical progress bar with theme "ProgressBarOutset" applied and value 0' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators1" Width="55">
+			  <ProgressBar Orientation="Vertical" Theme="{StaticResource ProgressBarOutset}" Classes="Light" Height="260" Width="50" Value="30" ToolTip.Tip='Vertical progress bar with theme "ProgressBarOutset" applied with class "Light" and value 30' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators2" Width="40">
+            <ProgressBar Orientation="Vertical" Theme="{StaticResource ProgressBarOutset}" Classes="Dark" Height="260" IsIndeterminate="True" ToolTip.Tip='Vertical indeterminate progress bar with theme "ProgressBarOutset" applied with class "Dark"' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators3" Width="45">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+              <TextBlock Margin="0,0,0,10" Height="20" FontSize="11" Text="{Binding ElementName=OutlineVerticalProgressCountDown, Path=Value, StringFormat={}{0}s}" HorizontalAlignment="Center" TextAlignment="Center"/>
+              <ProgressBar Name="OutlineVerticalProgressCountDown" Theme="{StaticResource ProgressBarOutset}" Orientation="Vertical" HorizontalAlignment="Center" Classes="Accent notransitions" Height="230" Value="{Binding Progress3}" Minimum="0" Maximum="60" SmallChange="1" LargeChange="1"
+                           ToolTip.Tip='Vertical progress bar decreasing seconds countdown with theme "ProgressBarOutset" applied with class "Accent"' />
+            </StackPanel>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="OutlineVerticalProgressIndicators4" Width="40">
+            <ProgressBar Orientation="Vertical" Theme="{StaticResource ProgressBarOutset}" Classes="notransitions" Value="{Binding Progress1}" Height="260"
+						 ToolTip.Tip='Customized horizontal progress bar with theme "ProgressBarOutset" applied and custom gradient color'>
+              <ProgressBar.Styles>
+                <Style Selector="ProgressBar">
+                  <Setter Property="Foreground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#FF5cbcd6" />
+                        <GradientStop Offset="1" Color="#FF77dbf0" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </ProgressBar.Styles>
+            </ProgressBar>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

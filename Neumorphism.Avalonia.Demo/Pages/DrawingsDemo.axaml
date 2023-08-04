@@ -1,0 +1,202 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+            xmlns:system="clr-namespace:System;assembly=System.Runtime"
+            x:CompileBindings="True"
+            x:DataType="viewModels:DrawingsDemoViewModel"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.DrawingsDemo">
+
+  <UserControl.Resources>
+    <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
+    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLightColor}, 5 5 20 {MaterialDesignShadowDarkColor}</system:String>
+  </UserControl.Resources>
+
+  <StackPanel Margin="16,0,16,50">
+
+
+    <TextBlock Classes="Headline4 Subheadline" Text="Drawings" />
+
+
+    <WrapPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Titles" />
+        <StackPanel Classes="Content" Orientation="Vertical">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingText1">
+            <controls:SkiaText
+            Margin="10" Width="850" Height="110"
+            Stretch="None"
+            FontFamily="avares://Neumorphism.Avalonia.Demo/Assets/Fonts/Cocogoose Pro-trial.ttf#Cocogoose"
+            Text="NEUMORPHISM"
+            FontSize="100"
+            ClipToBounds="False"
+            Fill="{DynamicResource MaterialDesignPaper}"
+            StrokeThickness="0">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaText>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingText2">
+            <controls:SkiaText
+            Margin="10" Width="850" Height="90"
+            Stretch="None"
+            FontFamily="avares://Neumorphism.Avalonia.Demo/Assets/Fonts/Cocogoose Pro-trial.ttf#Cocogoose"
+            Text="NEUMORPHISM"
+            FontSize="80"
+            ClipToBounds="False"
+            Fill="{DynamicResource MaterialDesignPaper}"
+            Stroke="White"
+            StrokeThickness="1">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaText>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingText3">
+            <controls:SkiaText
+            Margin="10" Width="850" Height="70"
+            Stretch="None"
+            FontFamily="avares://Neumorphism.Avalonia.Demo/Assets/Fonts/Cocogoose Pro-trial.ttf#Cocogoose"
+            Text="NEUMORPHISM"
+            FontSize="60"
+            ClipToBounds="False"
+            Fill="{DynamicResource MaterialDesignPaper}"
+            Stroke="#33666666"
+            StrokeThickness="1">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaText>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+
+    <WrapPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Icons" />
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon1">
+            <controls:SkiaGeometry
+                       Margin="20" Width="100" Height="100"
+                       Stretch="Uniform"
+                       Path="M19 3L13 9L15 11L22 4V3M12 12.5A0.5 0.5 0 0 1 11.5 12A0.5 0.5 0 0 1 12 11.5A0.5 0.5 0 0 1 12.5 12A0.5 0.5 0 0 1 12 12.5M6 20A2 2 0 0 1 4 18C4 16.89 4.9 16 6 16A2 2 0 0 1 8 18C8 19.11 7.1 20 6 20M6 8A2 2 0 0 1 4 6C4 4.89 4.9 4 6 4A2 2 0 0 1 8 6C8 7.11 7.1 8 6 8M9.64 7.64C9.87 7.14 10 6.59 10 6A4 4 0 0 0 6 2A4 4 0 0 0 2 6A4 4 0 0 0 6 10C6.59 10 7.14 9.87 7.64 9.64L10 12L7.64 14.36C7.14 14.13 6.59 14 6 14A4 4 0 0 0 2 18A4 4 0 0 0 6 22A4 4 0 0 0 10 18C10 17.41 9.87 16.86 9.64 16.36L12 14L19 21H22V20L9.64 7.64Z"
+                   ClipToBounds="False"
+                   Fill="{DynamicResource MaterialDesignPaper}"
+                   StrokeThickness="0">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaGeometry>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon2">
+            <controls:SkiaGeometry
+                       Margin="20" Width="100" Height="100"
+                       Stretch="Uniform"
+                       Path="M19 3L13 9L15 11L22 4V3M12 12.5A0.5 0.5 0 0 1 11.5 12A0.5 0.5 0 0 1 12 11.5A0.5 0.5 0 0 1 12.5 12A0.5 0.5 0 0 1 12 12.5M6 20A2 2 0 0 1 4 18C4 16.89 4.9 16 6 16A2 2 0 0 1 8 18C8 19.11 7.1 20 6 20M6 8A2 2 0 0 1 4 6C4 4.89 4.9 4 6 4A2 2 0 0 1 8 6C8 7.11 7.1 8 6 8M9.64 7.64C9.87 7.14 10 6.59 10 6A4 4 0 0 0 6 2A4 4 0 0 0 2 6A4 4 0 0 0 6 10C6.59 10 7.14 9.87 7.64 9.64L10 12L7.64 14.36C7.14 14.13 6.59 14 6 14A4 4 0 0 0 2 18A4 4 0 0 0 6 22A4 4 0 0 0 10 18C10 17.41 9.87 16.86 9.64 16.36L12 14L19 21H22V20L9.64 7.64Z"
+                   ClipToBounds="False"
+                   Fill="{DynamicResource PrimaryHueLightBrush}"
+                   StrokeThickness="0">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaGeometry>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon3">
+            <controls:SkiaGeometry
+                       Margin="20" Width="100" Height="100"
+                       Stretch="Uniform"
+                       Path="M19 3L13 9L15 11L22 4V3M12 12.5A0.5 0.5 0 0 1 11.5 12A0.5 0.5 0 0 1 12 11.5A0.5 0.5 0 0 1 12.5 12A0.5 0.5 0 0 1 12 12.5M6 20A2 2 0 0 1 4 18C4 16.89 4.9 16 6 16A2 2 0 0 1 8 18C8 19.11 7.1 20 6 20M6 8A2 2 0 0 1 4 6C4 4.89 4.9 4 6 4A2 2 0 0 1 8 6C8 7.11 7.1 8 6 8M9.64 7.64C9.87 7.14 10 6.59 10 6A4 4 0 0 0 6 2A4 4 0 0 0 2 6A4 4 0 0 0 6 10C6.59 10 7.14 9.87 7.64 9.64L10 12L7.64 14.36C7.14 14.13 6.59 14 6 14A4 4 0 0 0 2 18A4 4 0 0 0 6 22A4 4 0 0 0 10 18C10 17.41 9.87 16.86 9.64 16.36L12 14L19 21H22V20L9.64 7.64Z"
+                   ClipToBounds="False"
+                   Fill="White"
+                   StrokeThickness="0">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaGeometry>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon4">
+            <controls:SkiaGeometry
+                             Margin="20" Width="100" Height="100"
+                             Stretch="Uniform"
+                             Path="M19 21H8V7H19M19 5H8A2 2 0 0 0 6 7V21A2 2 0 0 0 8 23H19A2 2 0 0 0 21 21V7A2 2 0 0 0 19 5M16 1H4A2 2 0 0 0 2 3V17H4V3H16V1Z"
+                             ClipToBounds="False"
+                             Fill="{DynamicResource MaterialDesignPaper}"
+                             Stroke="White"
+                             StrokeThickness="1">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaGeometry>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon5">
+            <controls:SkiaGeometry
+                       Margin="20" Width="100" Height="100"
+                       Stretch="Uniform"
+                       Path="M19 20H5V4H7V7H17V4H19M12 2A1 1 0 0 1 13 3A1 1 0 0 1 12 4A1 1 0 0 1 11 3A1 1 0 0 1 12 2M19 2H14.82C14.4 0.84 13.3 0 12 0C10.7 0 9.6 0.84 9.18 2H5A2 2 0 0 0 3 4V20A2 2 0 0 0 5 22H19A2 2 0 0 0 21 20V4A2 2 0 0 0 19 2Z"
+                   ClipToBounds="False"
+                   Fill="{DynamicResource MaterialDesignPaper}"
+                   Stroke="#FFCCCCCC"
+                   StrokeThickness="1">
+              <controls:SkiaGeometry.BoxShadow>
+                <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                  <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                </MultiBinding>
+              </controls:SkiaGeometry.BoxShadow>
+            </controls:SkiaGeometry>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+
+  </StackPanel>
+</UserControl>

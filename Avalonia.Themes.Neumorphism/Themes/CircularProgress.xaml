@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+         xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+         xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+
+
+	<!-- Neumorphism theme ok -->
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20">
+        <controls:CircularProgress StrokeThickness="8"
+                         IsIndeterminate="False"
+                         Width="100"
+                         Height="100"
+                         Background="Transparent" StrokeBrush="Red"
+                         ProgressValue="33">
+        </controls:CircularProgress>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+	<!--Default CircularProgress theme-->
+	<ControlTheme x:Key="{x:Type controls:CircularProgress}" TargetType="controls:CircularProgress">
+		<Setter Property="StrokeThickness" Value="{TemplateBinding StrokeThickness}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Background="{TemplateBinding Background}">
+					<ContentPresenter Background="Transparent" Content="{TemplateBinding ContentControl.Content}"
+                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+          <Arc Stroke="{TemplateBinding StrokeBrush}" StrokeThickness="{TemplateBinding StrokeThickness}"
+               StartAngle="-90"
+               SweepAngle="{Binding SweepAngle, RelativeSource={RelativeSource TemplatedParent}}"
+               StrokeJoin="Bevel"
+               StrokeLineCap="{Binding StrokeLineCap, RelativeSource={RelativeSource TemplatedParent}}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^[IsIndeterminate=True]">
+			<Style.Animations>
+				<Animation Duration="0:0:2" IterationCount="INFINITE">
+					<KeyFrame Cue="0%">
+						<Setter Property="RotateTransform.Angle" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="RotateTransform.Angle" Value="360" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,52 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels.Panels"
+			x:CompileBindings="True"
+			x:DataType="viewModels:PanelLoginDemoViewModel"
+			x:Class="Neumorphism.Avalonia.Demo.Pages.Panels.PanelLoginDemo">
+
+
+  <StackPanel Margin="30" VerticalAlignment="Top">
+	  <controls:Card Width="300" VerticalAlignment="Top" CornerRadius="15" Padding="30" Background="{DynamicResource MaterialDesignLinearGradient1}">
+
+      
+		  <StackPanel Margin="0,4" HorizontalAlignment="Stretch">
+			  <TextBlock Classes="Headline6" Text="Login form" TextAlignment="Center" Foreground="#ff555555" />
+
+			  <TextBox Watermark="Email or phone" Theme="{StaticResource TextBoxHeader}" Margin="0,40,0,20" Width="240" Height="38" CornerRadius="50"
+					   Text="{Binding Login}"
+					   assist:TextFieldAssist.InnerLeftBackground="Transparent"
+					   assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+				  <TextBox.InnerLeftContent>
+					  <icons:MaterialIcon Kind="User" Width="24" Height="24" Foreground="Gray" />
+				  </TextBox.InnerLeftContent>
+			  </TextBox>
+
+			  <TextBox Watermark="Password" Theme="{StaticResource TextBoxHeader}" Margin="0,20,0,5" Width="240" Height="38" CornerRadius="50"
+					   PasswordChar="*"
+					   Text="{Binding Password}"
+					   assist:TextFieldAssist.InnerLeftBackground="Transparent"
+					   assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
+				  <TextBox.InnerLeftContent>
+					  <icons:MaterialIcon Kind="Lock" Width="24" Height="24" Foreground="Gray" />
+				  </TextBox.InnerLeftContent>
+			  </TextBox>
+
+			  <Button Theme="{StaticResource ButtonLink}" Content="Forgot password ?" Foreground="#FF5cbcd6" HorizontalAlignment="Center" FontWeight="Regular" FontSize="15 "/>
+
+			  <Button Width="240" Height="38" Content="Sign in" Margin="0,30,0,40" Command="{Binding ButtonLoginClick}" CommandParameter="{Binding $self}" CornerRadius="50"/>
+
+			  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				  <TextBlock Text="Not a member ?" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+				  <Button Theme="{StaticResource ButtonLink}" Content="Sign up now" Margin="5,0,0,0" HorizontalAlignment="Center" Foreground="#FF5cbcd6" FontWeight="Regular" FontSize="15 "/>
+			  </StackPanel>
+		  </StackPanel>
+	  </controls:Card>
+  </StackPanel>
+</UserControl>

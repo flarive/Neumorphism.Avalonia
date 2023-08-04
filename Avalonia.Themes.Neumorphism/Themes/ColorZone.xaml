@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
+
+    <ControlTheme x:Key="{x:Type controls:ColorZone}" TargetType="controls:ColorZone">
+        <Setter Property="Mode" Value="Standard"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border Name="{x:Static naming:PartNames.PartRootBorder}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            assist:ShadowAssist.ShadowDepth="{TemplateBinding assist:ShadowAssist.ShadowDepth}">
+                        <Border Name="{x:Static naming:PartNames.PartInnerBorder}"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter Name="{x:Static naming:PartNames.PartContentPresenter}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              TextBlock.Foreground="{TemplateBinding TextBlock.Foreground}"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </ControlTheme>
+<!-- Compatibility issue: require preloaded MaterialTheme
+    <Design.PreviewWith>
+        <Border Padding="40" BorderThickness="1">
+            <controls:ColorZone Mode="PrimaryMid">
+                <Grid Margin="16">
+                    <TextBlock Text="ColorZone" />
+                </Grid>
+            </controls:ColorZone>
+        </Border>
+    </Design.PreviewWith>
+    -->
+</ResourceDictionary>

@@ -1,0 +1,359 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+                xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+                xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+                xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+                x:CompileBindings="True"
+                x:DataType="viewModels:ComboBoxFieldsViewModel"
+                x:Class="Neumorphism.Avalonia.Demo.Pages.ComboBoxesDemo">
+
+	<StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
+		<TextBlock Classes="Headline4 Subheadline" Text="ComboBoxes" />
+
+		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+			<StackPanel>
+				<TextBlock Classes="Headline6 Subheadline2" Text="Classic comboboxes" />
+				<StackPanel Orientation="Horizontal">
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes0">
+						<ComboBox PlaceholderText="Select an item" ToolTip.Tip='Regular ComboBox with default theme applied'>
+							<TextBlock Text="Item 1" />
+							<TextBlock Text="Item 2" />
+							<TextBlock Text="Item 3" />
+							<TextBlock Text="Item with long long text" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
+						<ComboBox Width="500" PlaceholderText="Please select a user" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True"
+								  ToolTip.Tip='Floating label watermarked comboBox with default theme applied and custom inner left content'
+								  SelectionChanged="ClassicComboBoxes1SelectionChanged">
+							<ComboBox.Styles>
+								<Style Selector="ComboBox">
+									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
+										<Setter.Value>
+											<Template>
+												<Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Cursor="Arrow">
+													<icons:MaterialIcon Kind="AccountDetails" Width="24" Height="24" />
+												</Button>
+											</Template>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</ComboBox.Styles>
+							<ComboBoxItem Tag="0">
+								<TextBlock Text="John" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="1">
+								<TextBlock Text="Paul" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="2">
+								<TextBlock Text="Ringo" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="3">
+								<TextBlock Text="Georges" />
+							</ComboBoxItem>
+							<ComboBoxItem Tag="-1">
+								<TextBlock Text="None" />
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes2">
+						<ComboBox Height="38" ToolTip.Tip='ComboBox with default theme applied and icon items'>
+							<!--<ComboBox.Styles>
+					    <Style Selector="ComboBox">
+						    <Setter Property="assist:ComboBoxAssist.WatermarkContent">
+							    <Setter.Value>
+								    <Template>
+									    <TextBlock Text="zzzzzzzzz"/>
+								    </Template>
+							    </Setter.Value>
+						    </Setter>
+					    </Style>
+				    </ComboBox.Styles>-->
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueLightBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Primary Light" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueMidBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Primary Mid" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource PrimaryHueDarkBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Primary Dark" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes3">
+						<ComboBox IsEnabled="False" Height="32" PlaceholderText="Disabled" ToolTip.Tip='Disabled comboBox with default theme applied'>
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+				</StackPanel>
+			</StackPanel>
+		</WrapPanel>
+
+		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+			<StackPanel>
+				<TextBlock Classes="Headline6 Subheadline2" Text="Outset comboboxes" />
+				<StackPanel Orientation="Horizontal">
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes0">
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" PlaceholderText="Select an item" ToolTip.Tip='Disabled comboBox with theme "ComboBoxOutset" applied'>
+							<TextBlock Text="Item 1" />
+							<TextBlock Text="Item 2" />
+							<TextBlock Text="Item 3" />
+							<TextBlock Text="Item with long long text" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes1">
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" Width="500" PlaceholderText="Please select a user" Height="42"
+							  ToolTip.Tip='Floating label comboBox with theme "ComboBoxOutset" applied and custom left and right inner content'
+							  assist:ComboBoxAssist.InnerLeftBackground="{DynamicResource PrimaryHueMidBrush}"
+							  assist:ComboBoxAssist.InnerRightBackground="{DynamicResource SecondaryHueMidBrush}"
+							  assist:ComboBoxAssist.UseFloatingWatermark="True">
+							<ComboBox.Styles>
+								<Style Selector="ComboBox">
+									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
+										<Setter.Value>
+											<Template>
+												<Button Theme="{StaticResource ButtonNoMaterial}" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
+													<icons:MaterialIcon Kind="AccountCircle" Width="28" Height="28" Foreground="White" />
+												</Button>
+											</Template>
+										</Setter.Value>
+									</Setter>
+									<Setter Property="assist:ComboBoxAssist.InnerRightContent">
+										<Setter.Value>
+											<Template>
+												<Button Theme="{StaticResource ButtonNoMaterial}" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
+													<icons:MaterialIcon Kind="Info" Width="28" Height="28" Foreground="White" />
+												</Button>
+											</Template>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</ComboBox.Styles>
+							<ComboBoxItem>
+								<TextBlock Text="John" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Paul" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Ringo" />
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<TextBlock Text="Georges" />
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes2">
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" Height="38" ToolTip.Tip='ComboBox with theme "ComboBoxOutset" applied and just icons'>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueLightBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Secondary Light" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueMidBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Secondary Mid" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Heart" Width="24" Height="24" Foreground="{DynamicResource SecondaryHueDarkBrush}" Margin="0,0,8,0" />
+									<TextBlock Text="Secondary Dark" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes3">
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" IsEnabled="False" Height="32" PlaceholderText="Disabled" ToolTip.Tip='Disabled comboBox with theme "ComboBoxOutset" applied'>
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+				</StackPanel>
+			</StackPanel>
+		</WrapPanel>
+
+
+
+		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+			<StackPanel>
+				<TextBlock Classes="Headline6 Subheadline2" Text="Filled comboboxes" />
+				<StackPanel Orientation="Horizontal">
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes0">
+						<ComboBox Classes="Filled" PlaceholderText="Select an item" ToolTip.Tip='ComboBox with theme "Filled" applied'>
+							<TextBlock Text="Item 1" />
+							<TextBlock Text="Item 2" />
+							<TextBlock Text="Item 3" />
+							<TextBlock Text="Item 4" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes1">
+						<ComboBox Classes="Filled" PlaceholderText="Please select a user"
+								  ToolTip.Tip='Floating label watermarked comboBox with theme "Filled" applied'
+								  assist:ComboBoxAssist.UseFloatingWatermark="True">
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes2">
+						<ComboBox Classes="Filled" Height="38" SelectedIndex="0">
+							<ComboBoxItem BorderThickness="0,0,0,1"
+										  ToolTip.Tip='ComboBox with theme "Filled" applied'
+										  BorderBrush="{DynamicResource MaterialDesignFlatButtonRipple}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="Robot" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" Opacity="0.3" />
+									<TextBlock Text="Choose a robot" Foreground="{DynamicResource MaterialDesignForeground}" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="RobotAngry" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Angry" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="RobotConfused" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Confused" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="RobotExcited" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Excited" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="RobotHappy" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Happy" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="RobotDead" Width="28" Height="28" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Dead" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" />
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes3">
+						<ComboBox Classes="Filled" IsEnabled="False" PlaceholderText="Disabled" ToolTip.Tip='Disabled comboBox with theme "Filled" applied'>
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+				</StackPanel>
+			</StackPanel>
+		</WrapPanel>
+
+		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
+			<StackPanel Margin="0,0,0,50">
+				<TextBlock Classes="Headline6 Subheadline2" Text="Outline comboboxes" />
+				<StackPanel Orientation="Horizontal">
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes0">
+						<ComboBox Theme="{StaticResource ComboBoxOutline}" PlaceholderText="Select an item"
+								  ToolTip.Tip='ComboBox with theme "ComboBoxOutline" applied'>
+							<TextBlock Text="Item 1" />
+							<TextBlock Text="Item 2" />
+							<TextBlock Text="Item 3" />
+							<TextBlock Text="Item 4" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes1">
+						<ComboBox Theme="{StaticResource ComboBoxOutline}" PlaceholderText="Please select a user"
+								  ToolTip.Tip='Floating label watermarked comboBox with theme "ComboBoxOutline" applied'
+								  assist:ComboBoxAssist.UseFloatingWatermark="True">
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes2">
+						<ComboBox Theme="{StaticResource ComboBoxOutline}" SelectedIndex="0"
+								  ToolTip.Tip='ComboBox with theme "ComboBoxOutline" applied'>
+							<ComboBoxItem Background="{DynamicResource MaterialDesignChipBackground}" BorderThickness="1,1,1,0" BorderBrush="{DynamicResource MaterialDesignFlatButtonRipple}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="SettingsOutline" Width="24" Height="24"  Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" VerticalAlignment="Center" />
+									<TextBlock Text="Settings" Opacity="0.8" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem BorderThickness="1,1,1,0" BorderBrush="{DynamicResource MaterialDesignFlatButtonRipple}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="DatabaseAdd" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Add" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem BorderThickness="1,1,1,0" BorderBrush="{DynamicResource MaterialDesignFlatButtonRipple}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="DatabaseRemove" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Remove" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+							<ComboBoxItem BorderThickness="1,1,1,1" BorderBrush="{DynamicResource MaterialDesignFlatButtonRipple}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+									<icons:MaterialIcon Kind="DatabaseRefresh" Width="24" Height="24" Foreground="{DynamicResource MaterialDesignForeground}" Margin="0,0,8,0" />
+									<TextBlock Text="Refresh" VerticalAlignment="Center" />
+								</StackPanel>
+							</ComboBoxItem>
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes3">
+						<ComboBox Theme="{StaticResource ComboBoxOutline}" IsEnabled="False" PlaceholderText="Disabled" ToolTip.Tip='Disabled comboBox with theme "ComboBoxOutline" applied'>
+							<TextBlock Text="John" />
+							<TextBlock Text="Paul" />
+							<TextBlock Text="Ringo" />
+							<TextBlock Text="Georges" />
+						</ComboBox>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+				</StackPanel>
+			</StackPanel>
+		</WrapPanel>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+		mc:Ignorable="d" x:Class="Neumorphism.Avalonia.Demo.Windows.AboutWindow"
+		d:DesignWidth="640" d:DesignHeight="256"
+		WindowState="Normal"
+		WindowStartupLocation="CenterOwner"
+		Width="500" Height="200"
+		Title="About"
+		CanResize="false" ShowInTaskbar="False"
+		Icon="avares://Neumorphism.Avalonia.Demo/Assets/about.ico"
+		x:CompileBindings="True"
+		x:DataType="viewModels:AboutViewModel">
+  
+	<Grid VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
+		<TextBlock Text="Neumorphism Avalonia" FontSize="13" Foreground="{DynamicResource MaterialDesignForeground}"/>
+	</Grid>
+</Window>

@@ -1,0 +1,242 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			xmlns:system="clr-namespace:System;assembly=System.Runtime"
+			x:CompileBindings="True"
+			x:DataType="viewModels:ListsDemoViewModel"
+			x:Class="Neumorphism.Avalonia.Demo.Pages.ListsDemo">
+
+	<StackPanel Margin="16,0,16,50">
+		<TextBlock Classes="Headline4 Subheadline" Text="ListBoxes" />
+
+		<WrapPanel Orientation="Horizontal">
+
+			<StackPanel Orientation="Vertical">
+				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Regular" />
+				<StackPanel Orientation="Vertical">
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="List1">
+						<controls:Card Padding="0" CornerRadius="10">
+							<ListBox Width="300" ToolTip.Tip="List box with just text blocks">
+								<TextBlock Text="Text 1" />
+								<TextBlock Text="Text 2" />
+								<TextBlock Text="Text 3" />
+								<TextBlock Text="Text 4" />
+							</ListBox>
+						</controls:Card>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="List2">
+						<controls:Card Padding="0" CornerRadius="10">
+							<ListBox Width="300" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemBorder" applied'>
+								<ListBox.Styles>
+									<Style Selector="ListBoxItem > TextBlock">
+										<Setter Property="TextAlignment" Value="Center"/>
+									</Style>
+								</ListBox.Styles>
+								<ListBox.Items>
+									<ListBoxItem Theme="{StaticResource ListBoxItemBorder}">
+										<TextBlock Text="Centered Text 1" />
+									</ListBoxItem>
+									<ListBoxItem Theme="{StaticResource ListBoxItemBorder}" IsEnabled="False">
+										<TextBlock Text="Centered Text 2 (disabled)" />
+									</ListBoxItem>
+									<ListBoxItem Theme="{StaticResource ListBoxItemBorder}">
+										<TextBlock Text="Centered Text 3" />
+									</ListBoxItem>
+									<ListBoxItem Theme="{StaticResource ListBoxItemBorder}">
+										<TextBlock Text="Centered Text 4" />
+									</ListBoxItem>
+								</ListBox.Items>
+							</ListBox>
+						</controls:Card>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+					<TextBlock Classes="Headline6 Subheadline2" Margin="15,15,0,0" Text="Horizontal" />
+					<!--****************************************************************-->
+					<showMeTheXaml:XamlDisplay UniqueId="List3">
+						<controls:Card Padding="0" CornerRadius="10">
+							<ListBox Width="300" ToolTip.Tip='List box with wrapped text blocks'>
+								<ListBox.ItemsPanel>
+									<ItemsPanelTemplate>
+										<WrapPanel />
+									</ItemsPanelTemplate>
+								</ListBox.ItemsPanel>
+								<ListBox.Items>
+									<TextBlock Text="Text 1" />
+									<TextBlock Text="Text 2" />
+									<TextBlock Text="Text 3" />
+									<TextBlock Text="Text 4" />
+									<TextBlock Text="Text 5" />
+									<TextBlock Text="Text 6" />
+								</ListBox.Items>
+							</ListBox>
+						</controls:Card>
+					</showMeTheXaml:XamlDisplay>
+					<!--****************************************************************-->
+				</StackPanel>
+			</StackPanel>
+
+			<StackPanel Orientation="Vertical">
+				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Outset" />
+				<!--****************************************************************-->
+				<showMeTheXaml:XamlDisplay UniqueId="List4">
+					<ListBox Width="300" Height="240" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemOutset" applied'>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40">
+							<TextBlock Text="Outset item 1" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40">
+							<TextBlock Text="Outset item 2" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40">
+							<TextBlock Text="Outset item 3" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40" IsEnabled="False">
+							<TextBlock Text="Outset item 4 (disabled)" />
+						</ListBoxItem>
+					</ListBox>
+				</showMeTheXaml:XamlDisplay>
+				<!--****************************************************************-->
+				<showMeTheXaml:XamlDisplay UniqueId="List5" Margin="0,15,0,0">
+					<ListBox Width="300" Height="240" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemOutset" applied'>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40" HorizontalContentAlignment="Center" CornerRadius="100"
+									 assist:SelectionControlAssist.Background="{DynamicResource PrimaryHueMidBrush}"
+									 assist:SelectionControlAssist.Foreground="White">
+							<TextBlock Text="Outset item 1" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40" HorizontalContentAlignment="Center" CornerRadius="100"
+									 assist:SelectionControlAssist.Background="{DynamicResource PrimaryHueMidBrush}"
+									 assist:SelectionControlAssist.Foreground="White">
+							<TextBlock Text="Outset item 2" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40" HorizontalContentAlignment="Center" CornerRadius="100"
+									 assist:SelectionControlAssist.Background="{DynamicResource PrimaryHueMidBrush}"
+									 assist:SelectionControlAssist.Foreground="White">
+							<TextBlock Text="Outset item 3" />
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemOutset}" Height="40" HorizontalContentAlignment="Center" CornerRadius="100"
+									 assist:SelectionControlAssist.Background="{DynamicResource PrimaryHueMidBrush}"
+									 assist:SelectionControlAssist.Foreground="White">
+							<TextBlock Text="Outset item 4" />
+						</ListBoxItem>
+					</ListBox>
+				</showMeTheXaml:XamlDisplay>
+				<!--****************************************************************-->
+			</StackPanel>
+
+			<StackPanel Orientation="Vertical">
+				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Inset" />
+				<!--****************************************************************-->
+				<showMeTheXaml:XamlDisplay UniqueId="List6">
+					<ListBox Width="400" Height="224" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemInset" applied'>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 1" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 2" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 3" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 4" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 5" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 6" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 7" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 8" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="Heart" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 9" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+					</ListBox>
+				</showMeTheXaml:XamlDisplay>
+				<!--****************************************************************-->
+				<showMeTheXaml:XamlDisplay UniqueId="List7" Margin="0,38,0,0">
+					<ListBox Width="400" Height="224" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemInset" applied'>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" CornerRadius="100" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="TooltipOutline" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 1" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="32" Height="32" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" CornerRadius="100" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="TooltipOutline" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 2" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="32" Height="32" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" CornerRadius="100" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="TooltipOutline" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 3" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="32" Height="32" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+						<ListBoxItem Theme="{StaticResource ListBoxItemInset}" Height="50" HorizontalContentAlignment="Stretch" CornerRadius="100" Margin="8,3,8,3">
+							<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch">
+								<icons:MaterialIcon Grid.Column="0" Kind="TooltipOutline" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
+								<TextBlock Grid.Column="1" Text="Inset item 4" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
+								<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="32" Height="32" HorizontalAlignment="Right" Foreground="Gray" />
+							</Grid>
+						</ListBoxItem>
+					</ListBox>
+				</showMeTheXaml:XamlDisplay>
+				<!--****************************************************************-->
+			</StackPanel>
+
+		</WrapPanel>
+	</StackPanel>
+</UserControl>

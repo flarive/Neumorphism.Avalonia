@@ -1,0 +1,167 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
+        xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+        xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
+		xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Neumorphism.Avalonia.Demo.Windows.MainWindow"
+        Width="1280" Height="720" MinWidth="720"
+        WindowStartupLocation="CenterScreen"
+        Title="Neumorphism.Avalonia.Demo"
+        Icon="avares://Neumorphism.Avalonia.Demo/Assets/app.ico"
+        x:CompileBindings="True"
+        x:DataType="viewModels1:ApplicationModelBase">
+
+
+
+  <Window.Styles>
+    <Style Selector="TextBlock.Subheadline">
+      <Setter Property="Margin" Value="0, 16" />
+    </Style>
+    <Style Selector="TextBlock.Subheadline2">
+      <Setter Property="Margin" Value="0, 8" />
+    </Style>
+    <Style Selector="TextBlock.Content">
+      <Setter Property="Margin" Value="0, 4" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+  </Window.Styles>
+
+
+
+  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost">
+    <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
+                           assist:SnackbarHostAssist.SnackbarWidth="600">
+      <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
+               LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch2, Path=IsChecked, Mode=TwoWay}" LeftDrawerWidth="320"
+               RightDrawerOpened="False" RightDrawerWidth="0">
+        <controls:NavigationDrawer.LeftDrawerContent>
+          <Grid RowDefinitions="Auto,*">
+            <controls:ColorZone Grid.Row="0" Mode="Custom" Height="210">
+              <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="avares://Neumorphism.Avalonia.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="1" />
+            </controls:ColorZone>
+            <ListBox Grid.Row="1" Name="DrawerList2" Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
+              <ListBox.Styles>
+                <Style Selector="ListBoxItem">
+                  <Setter Property="Height" Value="48" />
+                  <Setter Property="Padding" Value="16,0" />
+                  <Setter Property="VerticalContentAlignment" Value="Center" />
+                  <Setter Property="IsEnabled" Value="{Binding $self.IsEnabled}" />
+                </Style>
+              </ListBox.Styles>
+              <ListBoxItem Content="Home" IsEnabled="True"/>
+              <ListBoxItem Content="Buttons" IsEnabled="True"/>
+              <ListBoxItem Content="Toggles" IsEnabled="True"/>
+              <ListBoxItem Content="Fields" IsEnabled="True"/>
+              <ListBoxItem Content="ComboBoxes" IsEnabled="True"/>
+              <ListBoxItem Content="Sliders" IsEnabled="True"/>
+              <ListBoxItem Content="Progress" IsEnabled="True"/>
+              <ListBoxItem Content="Icons" IsEnabled="True"/>
+              <ListBoxItem Content="Drawings" IsEnabled="True"/>
+              <ListBoxItem Content="Cards" IsEnabled="True"/>
+              <ListBoxItem Content="Lists" IsEnabled="True"/>
+            </ListBox>
+          </Grid>
+        </controls:NavigationDrawer.LeftDrawerContent>
+        <DockPanel LastChildFill="true">
+          <controls:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                              DockPanel.Dock="Top" assist:ShadowAssist.ShadowDepth="Depth3"
+                              Height="60" Mode="Standard" Background="Transparent" ZIndex="1">
+            <Grid Margin="16">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24" />
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <!--Left side menu-->
+              <ToggleButton Name="NavDrawerSwitch2"
+                            Classes="Flat TransparentBack"
+                            Width="38" Height="38" CornerRadius="6" Padding="4">
+                <icons:MaterialIcon Kind="Menu" Width="28" Height="28"  UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
+              </ToggleButton>
+              <!--App title-->
+              <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
+              <!--Theme toggle switch-->
+              <StackPanel Grid.Column="4" Orientation="Horizontal">
+                <ToggleSwitch Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
+                              Command="{Binding Path=SwitchThemeCommand}" CommandParameter="{Binding ElementName=toggleSwitchTheme, Path=$self.IsChecked}"/>
+              </StackPanel>
+              <!--<Right side menu-->
+              <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
+                <MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt DotsVertical, Size=24}"
+                    assist:MenuAssist.PopupAnchor="TopRight"
+                    assist:MenuAssist.HorizontalOffset="-140"
+                    assist:MenuAssist.VerticalOffset="10">
+                  <MenuItem Header="Hello !" Click="HelloButtonMenuItem_OnClick">
+                    <MenuItem.Icon>
+                      <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
+                    </MenuItem.Icon>
+                  </MenuItem>
+                  <Separator />
+                  <MenuItem Header="About" IsEnabled="{Binding AboutEnabled}" Command="{Binding HelpAboutMethod}" />
+                  <MenuItem Header="Action 2" />
+                  <MenuItem Header="Action 3" />
+                  <Separator />
+                  <MenuItem Header="Goodbye" Click="GoodbyeButtonMenuItem_OnClick">
+                    <MenuItem.Icon>
+                      <icons:MaterialIcon Kind="ExitRun" Width="24" Height="24" />
+                    </MenuItem.Icon>
+                  </MenuItem>
+                </MenuItem>
+              </Menu>
+            </Grid>
+          </controls:ColorZone>
+          <ScrollViewer Name="mainScroller2"
+                        DockPanel.Dock="Top"
+                        HorizontalContentAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        HorizontalScrollBarVisibility="Disabled">
+            <Border HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+              <Carousel Name="PageCarousel2"
+                        HorizontalAlignment="Stretch">
+                <Carousel.Styles>
+                  <Style Selector="Carousel#PageCarousel2:not(.no-transitions)">
+                    <Setter Property="PageTransition">
+                      <PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
+                                 SlideInEasing="CircularEaseOut" />
+                    </Setter>
+                  </Style>
+                </Carousel.Styles>
+                <!-- Main page -->
+                <pages:Home />
+                <!--Buttons-->
+                <pages:ButtonsDemo/>
+                <!--Toggles-->
+                <pages:TogglesDemo/>
+                <!--Fields-->
+                <pages:FieldsDemo/>
+                <!--ComboBoxes-->
+                <pages:ComboBoxesDemo/>
+                <!--Sliders-->
+                <pages:SlidersDemo/>
+                <!-- Progressbars -->
+                <pages:ProgressBarsDemo />
+                <!--Icons-->
+                <pages:IconsDemo/>
+                <!--Drawings-->
+                <pages:DrawingsDemo/>
+                <!--Cards-->
+                <pages:CardsDemo/>
+                <!--Lists-->
+                <pages:ListsDemo/>
+              </Carousel>
+            </Border>
+          </ScrollViewer>
+        </DockPanel>
+      </controls:NavigationDrawer>
+    </controls:SnackbarHost>
+  </dialogHostAvalonia:DialogHost>
+</Window>

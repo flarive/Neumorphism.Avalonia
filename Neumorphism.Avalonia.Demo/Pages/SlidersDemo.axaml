@@ -1,0 +1,385 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+              xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+              xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+              xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+              xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+              x:CompileBindings="True"
+              x:DataType="viewModels:SliderFieldsViewModel"
+              x:Class="Neumorphism.Avalonia.Demo.Pages.SlidersDemo">
+
+  <StackPanel Margin="16,0,16,50">
+    <StackPanel.Styles>
+      <Style Selector="StackPanel.Content Slider">
+        <Setter Property="Maximum" Value="100" />
+        <Setter Property="Minimum" Value="0" />
+      </Style>
+      <Style Selector="StackPanel.Content > TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="16 0" />
+        <Setter Property="TextAlignment" Value="Center" />
+      </Style>
+      <Style Selector="StackPanel.Content">
+        <Setter Property="Margin" Value="4 2" />
+      </Style>
+    </StackPanel.Styles>
+
+
+    <TextBlock Classes="Headline4 Subheadline" Text="Sliders" />
+
+
+    <WrapPanel>
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal" />
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider1">
+            <Slider Name="Slider1" Theme="{StaticResource SliderHorizontal}" Value="80" ToolTip.Tip='Regular slider with theme "SliderHorizontal" applied'/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider1.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider2">
+            <Slider Name="Slider2" Theme="{StaticResource SliderHorizontal}" IsSnapToTickEnabled="True" Height="30" Value="50" TickFrequency="10"
+					TickPlacement="BottomRight" Foreground="{DynamicResource PrimaryHueLightBrush}" assist:SliderAssist.ThumbForeground="{DynamicResource PrimaryHueLightBrush}"
+					ToolTip.Tip='Regular horizontal slider with theme "SliderHorizontal" applied and with ticks'/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider2.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider3">
+            <Slider Name="Slider3" Theme="{StaticResource SliderHorizontal}" IsSnapToTickEnabled="True" Classes="Accent" assist:SliderAssist.ValueTooltip="True" Width="120" Height="40" Value="50" TickFrequency="1"
+					assist:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}"
+					ToolTip.Tip='Regular horizontal slider with theme "SliderHorizontal" applied with class "Accent" and value tooltip'>
+              <Slider.Styles>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="assist:SliderAssist.ThumbContent">
+                    <Setter.Value>
+                      <Template>
+                        <icons:MaterialIcon Kind="VolumeHigh" Width="20" Height="20" Foreground="White" />
+                      </Template>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Slider.Styles>
+            </Slider>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider3.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider4">
+            <Slider Name="Slider4" Theme="{StaticResource SliderHorizontal}" Height="80" Value="30" TickFrequency="25"
+					assist:SliderAssist.ThumbForeground="#FF5cbcd6"
+					ToolTip.Tip='Fully customized horizontal slider with theme "SliderHorizontal" applied and thumb custom template'>
+              <Slider.Styles>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="Foreground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#FF77dbf0" />
+                        <GradientStop Offset="0.8" Color="#FF5cbcd6" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="assist:SliderAssist.ThumbContent">
+                    <Setter.Value>
+                      <Template>
+                        <TextBlock Text="{Binding $parent[Slider].Value, StringFormat=\{0:N0\}, FallbackValue=0}" TextAlignment="Center" HorizontalAlignment="Center"
+								   VerticalAlignment="Center" Background="Transparent" Foreground="White" FontSize="20"/>
+                      </Template>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Slider.Styles>
+            </Slider>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider4.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider5">
+            <Slider Name="Slider5" Theme="{StaticResource SliderHorizontal}" IsEnabled="False" Value="20" IsSnapToTickEnabled="True" TickFrequency="10" TickPlacement="TopLeft"
+					ToolTip.Tip='Disabled horizontal slider with theme "SliderHorizontal" applied' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider5.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical" />
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider1" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider6" Theme="{StaticResource SliderVertical}" Orientation="Vertical" Value="80"
+					  ToolTip.Tip='Regular vertical slider with theme "SliderVertical" applied'/>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider6.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider2" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider7" Theme="{StaticResource SliderVertical}" IsSnapToTickEnabled="True" Height="260" Width="30"
+					  Orientation="Vertical" Value="50" TickFrequency="10" TickPlacement="BottomRight" Foreground="{DynamicResource PrimaryHueLightBrush}"
+					  assist:SliderAssist.ThumbForeground="{DynamicResource PrimaryHueLightBrush}" ToolTip.Tip='Regular vertical slider with theme "SliderVertical" applied and ticks'/>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider7.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider3" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider8" Theme="{StaticResource SliderVertical}" IsSnapToTickEnabled="True" Height="120" Width="40" Orientation="Vertical" Classes="Accent"
+					  assist:SliderAssist.ValueTooltip="True" Value="50" TickFrequency="10" assist:SliderAssist.ThumbForeground="{DynamicResource SecondaryHueDarkBrush}"
+					  ToolTip.Tip='Regular vertical slider with theme "SliderVertical" applied with class "accent" and value tooltip'>
+                <Slider.Styles>
+                  <Style Selector="Slider:vertical">
+                    <Setter Property="assist:SliderAssist.ThumbContent">
+                      <Setter.Value>
+                        <Template>
+                          <icons:MaterialIcon Kind="VolumeHigh" Width="20" Height="20" Foreground="White" />
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Slider.Styles>
+              </Slider>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider8.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider4" Width="80" Padding="0,0,0,20">
+              <Slider Name="Slider9" Theme="{StaticResource SliderVertical}" IsSnapToTickEnabled="True" Height="260" Width="80" Value="30" TickFrequency="10"
+					  Orientation="Vertical" assist:SliderAssist.ThumbForeground="#FF5cbcd6"
+					  ToolTip.Tip='Fully customized vertical slider with theme "SliderVertical" applied with thumb custom template'>
+                <Slider.Styles>
+                  <Style Selector="Slider:vertical">
+                    <Setter Property="Foreground">
+                      <Setter.Value>
+                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                          <GradientStop Offset="0.2" Color="#FF5cbcd6" />
+                          <GradientStop Offset="1.0" Color="#FF77dbf0" />
+                        </LinearGradientBrush>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="assist:SliderAssist.ThumbContent">
+                      <Setter.Value>
+                        <Template>
+                          <TextBlock Text="{Binding $parent[Slider].Value, StringFormat=\{0:N0\}, FallbackValue=0}" TextAlignment="Center" HorizontalAlignment="Center"
+									 VerticalAlignment="Center" Background="Transparent" Foreground="White" FontSize="20"/>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Slider.Styles>
+              </Slider>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider9.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalSlider5" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider10" Theme="{StaticResource SliderVertical}" IsEnabled="False" Value="20" Height="260" Width="20" Orientation="Vertical" IsSnapToTickEnabled="True"
+					  TickFrequency="10" TickPlacement="TopLeft"  ToolTip.Tip='Disabled vertical slider with theme "SliderVertical" applied' />
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider10.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+        </StackPanel>
+      </StackPanel>
+
+      <StackPanel>
+        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal Outset" />
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider1">
+            <Slider Name="Slider11" Theme="{StaticResource SliderHorizontalOutset}" Value="80" ToolTip.Tip='Horizontal slider with theme "SliderHorizontalOutset" applied' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider11.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider2">
+            <Slider Name="Slider12" Theme="{StaticResource SliderHorizontalOutset}" IsSnapToTickEnabled="True" Height="30" Value="50" TickFrequency="10"
+					TickPlacement="BottomRight" Foreground="{DynamicResource PrimaryHueLightBrush}" assist:SliderAssist.ThumbForeground="{DynamicResource PrimaryHueLightBrush}"
+					ToolTip.Tip='Horizontal slider with theme "SliderHorizontalOutset" applied and with ticks' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider12.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider3">
+            <Slider Name="Slider13" Theme="{StaticResource SliderHorizontalOutset}" IsSnapToTickEnabled="True" Classes="Accent"
+					assist:SliderAssist.ValueTooltip="True" Width="120" Height="40" TickFrequency="10" Value="50"
+					ToolTip.Tip='Horizontal slider with theme "SliderHorizontalOutset" applied with class "Accent" and value tooltip'>
+              <Slider.Styles>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="assist:SliderAssist.ThumbContent">
+                    <Setter.Value>
+                      <Template>
+                        <icons:MaterialIcon Kind="ArrowSplitVertical" Width="20" Height="20" Foreground="White" />
+                      </Template>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Slider.Styles>
+            </Slider>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider13.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider4">
+            <Slider Name="Slider14" Theme="{StaticResource SliderHorizontalOutset}" Height="80" Value="30" TickFrequency="25" assist:SliderAssist.ThumbForeground="#FF5cbcd6"
+								ToolTip.Tip='Fully customized horizontal slider with theme "SliderHorizontalOutset" applied with thumb custom template'>
+              <Slider.Styles>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="Foreground">
+                    <Setter.Value>
+                      <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                        <GradientStop Offset="0" Color="#FF77dbf0" />
+                        <GradientStop Offset="0.8" Color="#FF5cbcd6" />
+                      </LinearGradientBrush>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+                <Style Selector="Slider:horizontal">
+                  <Setter Property="assist:SliderAssist.ThumbContent">
+                    <Setter.Value>
+                      <Template>
+                        <TextBlock Text="{Binding $parent[Slider].Value, StringFormat=\{0:N0\}, FallbackValue=0}" TextAlignment="Center" HorizontalAlignment="Center"
+								   VerticalAlignment="Center" Background="Transparent" Foreground="White" FontSize="20"/>
+                      </Template>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+              </Slider.Styles>
+            </Slider>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider14.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+        <StackPanel Classes="Content" Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider5">
+            <Slider Name="Slider15" Theme="{StaticResource SliderHorizontalOutset}" IsEnabled="False" Value="20" IsSnapToTickEnabled="True" TickFrequency="10"
+					TickPlacement="TopLeft" ToolTip.Tip='Disabled horizontal slider with theme "SliderHorizontalOutset" applied' />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <TextBlock Width="60" Text="{Binding #Slider15.Value, StringFormat=\{0:N0\}}" />
+        </StackPanel>
+      </StackPanel>
+
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical Outset" />
+        <StackPanel Orientation="Horizontal">
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider1" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider16" Theme="{StaticResource SliderVerticalOutset}" Orientation="Vertical" Value="80"
+					  ToolTip.Tip='Vertical slider with theme "SliderVerticalOutset" applied'/>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider16.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider2" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider17" Theme="{StaticResource SliderVerticalOutset}" IsSnapToTickEnabled="True" Height="260" Width="30" Value="50"
+					  Orientation="Vertical" TickFrequency="10" TickPlacement="BottomRight" Foreground="{DynamicResource PrimaryHueLightBrush}"
+					  assist:SliderAssist.ThumbForeground="{DynamicResource PrimaryHueLightBrush}"
+					  ToolTip.Tip='Vertical slider with theme "SliderVerticalOutset" applied with ticks' />
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider17.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider3" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider18" Theme="{StaticResource SliderVerticalOutset}" Classes="Accent" assist:SliderAssist.ValueTooltip="True"
+					  IsSnapToTickEnabled="True" Height="120" Width="40"
+					  Orientation="Vertical" Value="50" TickFrequency="10"
+					  ToolTip.Tip='Vertical slider with theme "SliderVerticalOutset" applied with class "Accent" and value tooltip'>
+                <Slider.Styles>
+                  <Style Selector="Slider:vertical">
+                    <Setter Property="assist:SliderAssist.ThumbContent">
+                      <Setter.Value>
+                        <Template>
+                          <icons:MaterialIcon Kind="ArrowSplitHorizontal" Width="20" Height="20" Foreground="White" />
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Slider.Styles>
+              </Slider>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider18.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider4" Width="80" Padding="0,0,0,20">
+              <Slider Name="Slider19" Theme="{StaticResource SliderVerticalOutset}" IsSnapToTickEnabled="True" Height="260" Width="80" Value="30" TickFrequency="10"
+					  Orientation="Vertical" assist:SliderAssist.ThumbForeground="#FF5cbcd6"
+					  ToolTip.Tip='Fully customized vertical slider with theme "SliderVerticalOutset" applied with thumb custom template'>
+                <Slider.Styles>
+                  <Style Selector="Slider:vertical">
+                    <Setter Property="Foreground">
+                      <Setter.Value>
+                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                          <GradientStop Offset="0.2" Color="#FF5cbcd6" />
+                          <GradientStop Offset="1.0" Color="#FF77dbf0" />
+                        </LinearGradientBrush>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="assist:SliderAssist.ThumbContent">
+                      <Setter.Value>
+                        <Template>
+                          <TextBlock Text="{Binding $parent[Slider].Value, StringFormat=\{0:N0\}, FallbackValue=0}" TextAlignment="Center" HorizontalAlignment="Center"
+									 VerticalAlignment="Center" Background="Transparent" Foreground="White" FontSize="20"/>
+                        </Template>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </Slider.Styles>
+              </Slider>
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider19.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+          <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
+            <!--****************************************************************-->
+            <showMeTheXaml:XamlDisplay UniqueId="VerticalOutsetSlider5" Width="40" Padding="0,0,0,20">
+              <Slider Name="Slider20" Theme="{StaticResource SliderVerticalOutset}" IsEnabled="False" Value="20" Height="260" Width="20" Orientation="Vertical"
+					  IsSnapToTickEnabled="True" TickFrequency="10" TickPlacement="TopLeft" ToolTip.Tip='Disabled vertical slider with theme "SliderVerticalOutset" applied' />
+            </showMeTheXaml:XamlDisplay>
+            <!--****************************************************************-->
+            <TextBlock Width="60" Text="{Binding #Slider20.Value, StringFormat=\{0:N0\}}" />
+          </StackPanel>
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>
