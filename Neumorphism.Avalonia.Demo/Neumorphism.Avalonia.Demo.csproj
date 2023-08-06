@@ -72,11 +72,7 @@
     <ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
   </ItemGroup>
     
-  <ItemGroup>
-    <AvaloniaXaml Update="Pages\DrawingsDemo.axaml">
-      <SubType>Designer</SubType>
-    </AvaloniaXaml>
-  </ItemGroup>
+
     
  	
   <!-- Information for Dotnet.Bundle to Generate macOS app-->
