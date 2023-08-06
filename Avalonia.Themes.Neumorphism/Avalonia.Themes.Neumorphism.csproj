@@ -51,4 +51,7 @@
     <AvaloniaResource Include="Fonts\Roboto\Roboto-Regular.ttf" />
     <AvaloniaResource Include="Fonts\Roboto\Roboto-Thin.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
 </Project>
