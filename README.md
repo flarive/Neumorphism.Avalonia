@@ -61,6 +61,7 @@ For the moment only the following controls are fully themed :
 - ProgressBars
 - Sliders
 - Cards
+- ListBoxes
 
 More controls should be themed soon.
 
@@ -70,11 +71,11 @@ More controls should be themed soon.
 
 # <img src="favicon.png" width="32" height="32"> Technical info
 
-- Single .net Standard Library DLL (Neumorphism.Avalonia.dll)
+- Single .net Standard Library DLL (Avalonia.Themes.Neumorphism.dll)
 - Can be used with .net Core 3.x, .net5, .net6, .net7...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
-- Built upon the latest version of Avalonia UI (0.10.16)
-- .Net 5 demo application project
+- Built upon the latest version of Avalonia UI (11.0.1)
+- .Net 7 demo application project
 
 
 # <img src="favicon.png" width="32" height="32"> How to start ?
