@@ -3,6 +3,7 @@ name: Release to NuGet !
 on:
   release:
     types: [published]
+  workflow_dispatch: # Put here!!
     
 jobs:
   build:
