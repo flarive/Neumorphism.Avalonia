@@ -28,6 +28,6 @@ jobs:
     - name: Prep packages
       run: dotnet nuget add source --username eviral --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/eviral/index.json"
     - name: Publish to GitHub packages 
-      run: dotnet nuget push "neumorphism.avalonia.0.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
+      run: dotnet nuget push "neumorphism.avalonia.0.*.nupkg" --api-key ${{secrets.NUGET_API_KEY}}  --source "github"
       
       
