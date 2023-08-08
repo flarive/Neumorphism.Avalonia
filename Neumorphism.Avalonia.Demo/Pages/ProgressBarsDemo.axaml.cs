@@ -7,14 +7,14 @@ namespace Neumorphism.Avalonia.Demo.Pages
 { 
     public partial class ProgressBarsDemo : UserControl
     { 
-        private Timer _timer1;
-        private Timer _timer2;
-        private Timer _timer3;
+        private readonly Timer _timer1;
+        private readonly Timer _timer2;
+        private readonly Timer _timer3;
         private int _caseProgress1 = 0;
         private int _caseProgress2 = 0;
         private int _caseProgress3 = 60;
 
-        private ProgressBarsViewModel _context;
+        private readonly ProgressBarsViewModel _context;
 
         
         

@@ -8,7 +8,7 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
     internal sealed class MainViewModel<TWindow> : ApplicationModelBase
         where TWindow : Window, IMainWindow
     {
-        private TWindow _window;
+        private readonly TWindow _window;
 
         public MainViewModel(TWindow window)
             : base(window.ThemeSwitch)
