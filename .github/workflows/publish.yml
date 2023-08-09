@@ -9,7 +9,7 @@ jobs:
   build:
     permissions:
       packages: write
-      contents: write
+      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -28,8 +28,5 @@ jobs:
     - name: Prep packages
       run: dotnet nuget add source --username eviral --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/eviral/index.json"
     - name: Publish to GitHub packages
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-      run: dotnet nuget push "neumorphism.avalonia.0.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
-      
+      run: dotnet nuget push "neumorphism.avalonia.0.*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate    
       
