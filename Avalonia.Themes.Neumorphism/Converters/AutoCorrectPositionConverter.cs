@@ -19,7 +19,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
             return new Vector(bounds.Transform.M31, bounds.Transform.M32);
         }
 
-        private Vector _prevCorrect = Vector.One;
+        private readonly Vector _prevCorrect = Vector.One;
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
