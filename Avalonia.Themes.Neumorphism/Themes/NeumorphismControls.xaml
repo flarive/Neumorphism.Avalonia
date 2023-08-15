@@ -27,6 +27,7 @@
             <converters:MultiWidthMinusValueConverter x:Key="MultiWidthMinusValueConverter" />
             <converters:ThicknessToIntConverter x:Key="ThicknessToIntConverter" />
             <converters:HeightToThicknessConverter x:Key="HeightToThicknessConverter" />
+            <converters:CustomCornerRadiusConverter x:Key="CustomCornerRadiusConverter" />
             <!--<converters:TestConverter x:Key="TestConverter" />-->
 
 			

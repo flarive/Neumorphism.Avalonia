@@ -392,11 +392,11 @@
 							  BorderBrush="Transparent"
 							  BorderThickness="8">
 								<Border.BoxShadow>
-								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-									<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-									<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-									<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-								</MultiBinding>
+									<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+										<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+										<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+										<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+									</MultiBinding>
 								</Border.BoxShadow>
 
 

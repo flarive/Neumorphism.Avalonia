@@ -21,10 +21,10 @@
 	</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-	  <PackageReference Include="Avalonia" Version="11.0.2" />
-	  <PackageReference Include="Avalonia.Desktop" Version="11.0.2" />
-	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.2" />
-	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.2" />
+	  <PackageReference Include="Avalonia" Version="11.0.3" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.0.3" />
+	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.3" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.3" />
     <PackageReference Include="SkiaSharp" Version="2.88.3" />
     <AvaloniaResource Include="**/*.xaml" />  
   </ItemGroup>
@@ -32,7 +32,6 @@
     <AvaloniaXaml Remove="Themes\Ripple.axaml" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Fonts\Roboto\BROADW.TTF" />
     <None Remove="Fonts\SF\SFProText-Light.ttf" />
     <None Remove="Fonts\SF\SFProText-Medium.ttf" />
     <None Remove="Fonts\SF\SFProText-Regular.ttf" />
@@ -44,7 +43,6 @@
     <None Remove="Fonts\Roboto\Roboto-Thin.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Fonts\Roboto\BROADW.TTF" />
     <AvaloniaResource Include="Fonts\SF\SFProText-Light.ttf" />
     <AvaloniaResource Include="Fonts\SF\SFProText-Medium.ttf" />
     <AvaloniaResource Include="Fonts\SF\SFProText-Regular.ttf" />

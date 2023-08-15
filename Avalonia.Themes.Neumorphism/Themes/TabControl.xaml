@@ -1,5 +1,12 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist">
+
+
+  <!-- Neumorphism theme ok -->
+
+
   <Design.PreviewWith>
     <Border Width="400">
       <TabControl>
@@ -16,11 +23,11 @@
     </Border>
   </Design.PreviewWith>
 
-  <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
+
 
   <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl">
     <Setter Property="Margin" Value="0" />
-    <Setter Property="Padding" Value="{DynamicResource TabItemMargin}" />
+    <Setter Property="Padding" Value="20" />
     <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -28,18 +35,22 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}"
                 Background="{TemplateBinding Background}"
+                Margin="0"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
           <DockPanel>
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
-            <ContentPresenter Name="PART_SelectedContentHost"
-                              Margin="{TemplateBinding Padding}"
-                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                              Content="{TemplateBinding SelectedContent}"
-                              ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+            <controls:ColorZone Mode="Custom" Margin="0,-2,0,0" Height="200">
+              <ContentPresenter Name="PART_SelectedContentHost"
+                                Margin="{TemplateBinding Margin}"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding SelectedContent}"
+                                ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+              </controls:ColorZone>
           </DockPanel>
         </Border>
       </ControlTemplate>
@@ -52,7 +63,9 @@
       <Setter Property="Orientation" Value="Vertical" />
     </Style>
     <Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
-      <Setter Property="Margin" Value="{DynamicResource TabControlTopPlacementItemMargin}" />
+      <Setter Property="Margin" Value="0,0,0,2" />
     </Style>
   </ControlTheme>
+
+
 </ResourceDictionary>

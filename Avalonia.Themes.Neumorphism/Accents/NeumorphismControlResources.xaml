@@ -176,7 +176,7 @@
       <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
 
       <!-- Resources for TextBox.xaml -->
-      <StaticResource x:Key="TextControlForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
+      <!--<StaticResource x:Key="TextControlForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="TextControlForegroundPointerOver" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="TextControlForegroundDisabled" ResourceKey="SystemControlDisabledChromeDisabledLowBrush" />
       <StaticResource x:Key="TextControlBackground" ResourceKey="SystemControlBackgroundAltMediumLowBrush" />
@@ -201,14 +201,14 @@
       <StaticResource x:Key="TextControlBorderBrushPointerOver" ResourceKey="SystemControlHighlightBaseMediumHighBrush" />
       <StaticResource x:Key="TextControlButtonForeground" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />
       <StaticResource x:Key="TextControlForegroundFocused" ResourceKey="SystemControlForegroundBaseHighBrush" />
-      <StaticResource x:Key="TextControlPlaceholderForegroundFocused"	ResourceKey="SystemControlForegroundBaseMediumLowBrush" />
+      <StaticResource x:Key="TextControlPlaceholderForegroundFocused"	ResourceKey="SystemControlForegroundBaseMediumLowBrush" />-->
 
       <!-- Resources for AutoCompleteBox.xaml -->
       <StaticResource x:Key="AutoCompleteBoxSuggestionsListBackground" ResourceKey="SystemControlTransientBackgroundBrush" />
       <StaticResource x:Key="AutoCompleteBoxSuggestionsListBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
 
       <!-- Resources for CheckBox.xaml -->
-      <Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
+      <!--<Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
       <StaticResource x:Key="CheckBoxForegroundUnchecked" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="CheckBoxForegroundUncheckedPointerOver" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="CheckBoxForegroundUncheckedPressed" ResourceKey="SystemControlForegroundBaseHighBrush" />
@@ -279,7 +279,7 @@
       <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminate"	ResourceKey="SystemControlForegroundChromeWhiteBrush" />
       <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminatePointerOver" ResourceKey="SystemControlForegroundChromeWhiteBrush" />
       <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminatePressed" ResourceKey="SystemControlForegroundChromeWhiteBrush" />
-      <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminateDisabled"	ResourceKey="SystemControlForegroundChromeWhiteBrush" />
+      <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminateDisabled"	ResourceKey="SystemControlForegroundChromeWhiteBrush" />-->
 
       <!-- Resources for Calendar.xaml, CalendarButton.xaml, CalendarDayButton.xaml, CalendarItem.xaml -->
       <StaticResource x:Key="CalendarViewSelectedHoverBorderBrush" ResourceKey="SystemControlHighlightListAccentMediumBrush" />
@@ -346,7 +346,7 @@
       <SolidColorBrush x:Key="NotificationCardErrorBackgroundBrush" Color="#F03916" />
 
       <!-- Resources for RadioButton.xaml -->
-      <x:Double x:Key="RadioButtonBorderThemeThickness">1</x:Double>
+      <!--<x:Double x:Key="RadioButtonBorderThemeThickness">1</x:Double>
       <StaticResource x:Key="RadioButtonForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="RadioButtonForegroundPointerOver" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="RadioButtonForegroundPressed" ResourceKey="SystemControlForegroundBaseHighBrush" />
@@ -390,10 +390,10 @@
       <StaticResource x:Key="RadioButtonCheckGlyphStroke" ResourceKey="SystemControlTransparentBrush" />
       <StaticResource x:Key="RadioButtonCheckGlyphStrokePointerOver" ResourceKey="SystemControlTransparentBrush" />
       <StaticResource x:Key="RadioButtonCheckGlyphStrokePressed" ResourceKey="SystemControlTransparentBrush" />
-      <StaticResource x:Key="RadioButtonCheckGlyphStrokeDisabled" ResourceKey="SystemControlTransparentBrush" />
+      <StaticResource x:Key="RadioButtonCheckGlyphStrokeDisabled" ResourceKey="SystemControlTransparentBrush" />-->
 
       <!-- Resources for Slider.xaml -->
-      <x:Double x:Key="SliderOutsideTickBarThemeHeight">4</x:Double>
+      <!--<x:Double x:Key="SliderOutsideTickBarThemeHeight">4</x:Double>
       <x:Double x:Key="SliderTrackThemeHeight">2</x:Double>
       <Thickness x:Key="SliderBorderThemeThickness">0</Thickness>
       <StaticResource x:Key="SliderContainerBackground" ResourceKey="SystemControlTransparentBrush" />
@@ -414,10 +414,10 @@
       <StaticResource x:Key="SliderTrackValueFillDisabled" ResourceKey="SystemControlDisabledChromeDisabledHighBrush" />
       <StaticResource x:Key="SliderTickBarFill" ResourceKey="SystemControlForegroundBaseMediumLowBrush" />
       <StaticResource x:Key="SliderTickBarFillDisabled" ResourceKey="SystemControlDisabledBaseMediumLowBrush" />
-      <StaticResource x:Key="SliderInlineTickBarFill" ResourceKey="SystemControlBackgroundAltHighBrush" />
+      <StaticResource x:Key="SliderInlineTickBarFill" ResourceKey="SystemControlBackgroundAltHighBrush" />-->
 
       <!--Recources ToggleSwitch-->
-      <Thickness x:Key="ToggleSwitchOnStrokeThickness">0</Thickness>
+      <!--<Thickness x:Key="ToggleSwitchOnStrokeThickness">0</Thickness>
       <Thickness x:Key="ToggleSwitchOuterBorderStrokeThickness">1</Thickness>
       <StaticResource x:Key="ToggleSwitchContentForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="ToggleSwitchHeaderForegroundDisabled"
@@ -447,7 +447,7 @@
       <StaticResource x:Key="ToggleSwitchKnobFillOn" ResourceKey="SystemControlHighlightAltChromeWhiteBrush" />
       <StaticResource x:Key="ToggleSwitchKnobFillOnPointerOver" ResourceKey="SystemControlHighlightChromeWhiteBrush" />
       <StaticResource x:Key="ToggleSwitchKnobFillOnPressed" ResourceKey="SystemControlHighlightAltChromeWhiteBrush" />
-      <StaticResource x:Key="ToggleSwitchKnobFillOnDisabled" ResourceKey="SystemControlPageBackgroundBaseLowBrush" />
+      <StaticResource x:Key="ToggleSwitchKnobFillOnDisabled" ResourceKey="SystemControlPageBackgroundBaseLowBrush" />-->
 
       <!-- Resources for ToolTip.xaml -->
       <x:Double x:Key="ToolTipContentThemeFontSize">12</x:Double>

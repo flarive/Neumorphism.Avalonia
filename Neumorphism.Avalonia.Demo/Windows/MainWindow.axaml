@@ -2,7 +2,7 @@
         xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
         xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
         xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
-		xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+		    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
@@ -64,6 +64,7 @@
               <ListBoxItem Content="Drawings" IsEnabled="True"/>
               <ListBoxItem Content="Cards" IsEnabled="True"/>
               <ListBoxItem Content="Lists" IsEnabled="True"/>
+              <!--<ListBoxItem Content="Tabs" IsEnabled="True"/>-->
             </ListBox>
           </Grid>
         </controls:NavigationDrawer.LeftDrawerContent>
@@ -157,6 +158,8 @@
                 <pages:CardsDemo/>
                 <!--Lists-->
                 <pages:ListsDemo/>
+                <!--Tabs-->
+                <!--<pages:TabsDemo/>-->
               </Carousel>
             </Border>
           </ScrollViewer>

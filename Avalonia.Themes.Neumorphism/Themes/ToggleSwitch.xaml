@@ -349,19 +349,19 @@
 
 
     <Style Selector="^:not(.Outline) /template/ Border#Track">
-		<Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
+		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
     </Style>
 
     <Style Selector="^:checked:not(.Outline) /template/ Border#Track">
-		<Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
+		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
     </Style>
 
     <Style Selector="^.Outline /template/ Border#Track">
-		<Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
+		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
     </Style>
 
     <Style Selector="^.Outline:checked /template/ Border#Track">
-		<Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
+		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
     </Style>
 
     <Style Selector="^:disabled">

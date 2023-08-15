@@ -7,7 +7,8 @@ namespace Avalonia.Themes.Neumorphism.Assist
     /// <summary>
     ///     Contains attached properties for <code>TabControl</code>.
     /// </summary>
-    public static class TabControlAssist {
+    public static class TabControlAssist
+    {
         /// <summary>
         ///     The alignment of the horizontal tab headers in the <code>TabControl</code>.
         /// </summary>
@@ -24,33 +25,23 @@ namespace Avalonia.Themes.Neumorphism.Assist
                 "TabHeaderVerticalAlignment", typeof(TabControlAssist), VerticalAlignment.Top, true
             );
 
-        /// <summary>
-        ///     The brush for not selected tab headers.
-        /// </summary>
-        public static readonly AvaloniaProperty<IBrush> TabHeaderInactiveBrushProperty = AvaloniaProperty.RegisterAttached<TabControl, IBrush>(
-            "TabHeaderInactiveBrush", typeof(TabControlAssist), null, true
-        );
 
         /// <summary>
-        ///     The opacity for not selected tab headers.
+        ///     Use highlight color for the selected tab item header.
         /// </summary>
-        public static readonly AvaloniaProperty<double> TabHeaderInactiveOpacityProperty = AvaloniaProperty.RegisterAttached<TabControl, double>(
-            "TabHeaderInactiveOpacity", typeof(TabControlAssist), 1, true
+        public static readonly AvaloniaProperty<bool> HighlightSelectedItemProperty = AvaloniaProperty.RegisterAttached<TabItem, bool>(
+            "HighlightSelectedItem", typeof(TabControlAssist), false, true
         );
+
 
         /// <summary>
         ///     The highlight color of the selected tab item header.
         /// </summary>
-        public static readonly AvaloniaProperty<IBrush> TabHeaderHighlightBrushProperty = AvaloniaProperty.RegisterAttached<TabControl, IBrush>(
-            "TabHeaderHighlightBrush", typeof(TabControlAssist), null, true
+        public static readonly AvaloniaProperty<IBrush> HighlightBrushProperty = AvaloniaProperty.RegisterAttached<TabItem, IBrush>(
+            "HighlightBrush", typeof(TabControlAssist), null, true
         );
 
-        /// <summary>
-        ///     The current color of the tab item header. Intended to be read-only.
-        /// </summary>
-        public static readonly AvaloniaProperty<IBrush> TabHeaderForegroundProperty = AvaloniaProperty.RegisterAttached<TabItem, IBrush>(
-            "TabHeaderForeground", typeof(TabControlAssist), null, true
-        );
+
 
         /// <summary>
         ///     Gets the alignment of the horizontal tab headers in the <code>TabControl</code>.
@@ -88,49 +79,37 @@ namespace Avalonia.Themes.Neumorphism.Assist
             element.SetValue(TabHeaderVerticalAlignmentProperty, value);
         }
 
+
         /// <summary>
-        ///     Gets the brush for not selected tab headers.
+        ///     Gets the highlight status of the selected tab item header.
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public static IBrush GetTabHeaderInactiveBrush(AvaloniaObject element) {
-            return (IBrush) element.GetValue(TabHeaderInactiveBrushProperty);
+        public static bool GetHighlightSelectedItem(AvaloniaObject element)
+        {
+            return (bool)element.GetValue(HighlightSelectedItemProperty);
         }
 
         /// <summary>
-        ///     Sets the brush for not selected tab headers.
+        ///     Sets the highlight status of the selected tab item header.
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
-        public static void SetTabHeaderInactiveBrush(AvaloniaObject element, IBrush value) {
-            element.SetValue(TabHeaderInactiveBrushProperty, value);
+        public static void SetHighlightSelectedItem(AvaloniaObject element, bool value)
+        {
+            element.SetValue(HighlightSelectedItemProperty, value);
         }
 
-        /// <summary>
-        ///     Gets the opacity for not selected tab headers.
-        /// </summary>
-        /// <param name="element"></param>
-        /// <returns></returns>
-        public static double GetTabHeaderInactiveOpacity(AvaloniaObject element) {
-            return (double) element.GetValue(TabHeaderInactiveOpacityProperty);
-        }
 
-        /// <summary>
-        ///     Sets the ppacity for not selected tab headers.
-        /// </summary>
-        /// <param name="element"></param>
-        /// <param name="value"></param>
-        public static void SetTabHeaderInactiveOpacity(AvaloniaObject element, double value) {
-            element.SetValue(TabHeaderInactiveOpacityProperty, value);
-        }
+
 
         /// <summary>
         ///     Gets the highlight color of the selected tab item header.
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public static IBrush GetTabHeaderHighlightBrush(AvaloniaObject element) {
-            return (IBrush) element.GetValue(TabHeaderHighlightBrushProperty);
+        public static IBrush GetHighlightBrush(AvaloniaObject element) {
+            return (IBrush) element.GetValue(HighlightBrushProperty);
         }
 
         /// <summary>
@@ -138,26 +117,10 @@ namespace Avalonia.Themes.Neumorphism.Assist
         /// </summary>
         /// <param name="element"></param>
         /// <param name="value"></param>
-        public static void SetTabHeaderHighlightBrush(AvaloniaObject element, IBrush value) {
-            element.SetValue(TabHeaderHighlightBrushProperty, value);
+        public static void SetHighlightBrush(AvaloniaObject element, IBrush value) {
+            element.SetValue(HighlightBrushProperty, value);
         }
 
-        /// <summary>
-        ///     Gets the current color of the tab item header.
-        /// </summary>
-        /// <param name="element"></param>
-        /// <returns></returns>
-        public static IBrush GetTabHeaderForeground(AvaloniaObject element) {
-            return (IBrush) element.GetValue(TabHeaderForegroundProperty);
-        }
 
-        /// <summary>
-        ///     Sets the current color of the tab item header.
-        /// </summary>
-        /// <param name="element"></param>
-        /// <param name="value"></param>
-        public static void SetTabHeaderForeground(AvaloniaObject element, IBrush value) {
-            element.SetValue(TabHeaderForegroundProperty, value);
-        }
     }
 }

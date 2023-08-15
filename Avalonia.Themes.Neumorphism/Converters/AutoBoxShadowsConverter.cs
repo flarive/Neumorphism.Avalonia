@@ -15,8 +15,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
             if (values != null && values.Count == 3
             && values[0] != AvaloniaProperty.UnsetValue
             && values[1] != AvaloniaProperty.UnsetValue
-            && values[2] != AvaloniaProperty.UnsetValue
-            )
+            && values[2] != AvaloniaProperty.UnsetValue)
             {
                 object value = values[0];
                 Color shadowLightColor = (Color)values[1];

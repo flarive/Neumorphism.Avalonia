@@ -1,0 +1,83 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+			xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			xmlns:system="clr-namespace:System;assembly=System.Runtime"
+			x:CompileBindings="True"
+			x:DataType="viewModels:TabsDemoViewModel"
+			x:Class="Neumorphism.Avalonia.Demo.Pages.TabsDemo">
+
+	<StackPanel Margin="16,0,16,50">
+		<TextBlock Classes="Headline4 Subheadline" Text="Tabs" />
+
+		<WrapPanel Orientation="Vertical">
+
+			<StackPanel Orientation="Vertical">
+				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal" />
+				<StackPanel Orientation="Horizontal">
+					<!--****************************************************************-->
+          <TabControl TabStripPlacement="Top">
+            <TabControl.Items>
+              <TabItem Header="aaaaa">
+                <TextBlock Text="111111"/>
+              </TabItem>
+              <TabItem Header="bbbbbbbbbbbbbbbbbbbbbbb">
+                <TextBlock Text="222222"/>
+              </TabItem>
+              <TabItem Header="cccc">
+                <TextBlock Text="333333"/>
+              </TabItem>
+            </TabControl.Items>
+          </TabControl>
+          <!--****************************************************************-->
+          <TabControl TabStripPlacement="Top">
+            <TabControl.Items>
+              <TabItem Header="Home" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="#FF77dbf0">
+                <TextBlock Text="111111"/>
+              </TabItem>
+              <TabItem Header="Settings" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
+                <TextBlock Text="222222"/>
+              </TabItem>
+              <TabItem Header="Performance" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
+                <TextBlock Text="333333"/>
+              </TabItem>
+              <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
+                <TextBlock Text="333333"/>
+              </TabItem>
+            </TabControl.Items>
+          </TabControl>
+          <!--****************************************************************-->
+				</StackPanel>
+      </StackPanel>
+
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical" />
+        <StackPanel Orientation="Vertical">
+          <!--****************************************************************-->
+          <TabControl TabStripPlacement="Left">
+            <TabControl.Items>
+              <TabItem Header="aaaaa">
+                <TextBlock Text="111111"/>
+              </TabItem>
+              <TabItem Header="bbbbbbbbbbbbbbbbbbbbbbb">
+                <TextBlock Text="222222"/>
+              </TabItem>
+              <TabItem Header="cccc">
+                <TextBlock Text="333333"/>
+              </TabItem>
+            </TabControl.Items>
+          </TabControl>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+
+		</WrapPanel>
+	</StackPanel>
+</UserControl>
