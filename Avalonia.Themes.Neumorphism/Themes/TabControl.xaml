@@ -11,14 +11,16 @@
     <Border Width="400">
       <TabControl>
         <TabItem Header="Arch">
-          <Border Background="AntiqueWhite" Height="100">
-            <TextBlock Text="Content" Foreground="Black" FontSize="20"/>
+          <Border Background="Transparent" Height="100">
+            <TextBlock Text="Content 1" Foreground="Black" FontSize="20"/>
           </Border>
         </TabItem>
         <TabItem Header="Leaf">
-          <Border Background="Green" Height="100" />
+          <TextBlock Text="Content 2" Foreground="Black" FontSize="20"/>
         </TabItem>
-        <TabItem Header="Disabled" IsEnabled="False" />
+        <TabItem Header="Disabled" IsEnabled="False">
+          <TextBlock Text="Content 3" Foreground="Black" FontSize="20"/>
+         </TabItem>
       </TabControl>
     </Border>
   </Design.PreviewWith>
@@ -28,7 +30,11 @@
   <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl">
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="20" />
+    <Setter Property="Height" Value="200" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Top" />
     <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
+    <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth1" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border BorderBrush="{TemplateBinding BorderBrush}"
@@ -38,11 +44,16 @@
                 Margin="0"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
-          <DockPanel>
+          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom">
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
-            <controls:ColorZone Mode="Custom" Margin="0,-2,0,0" Height="200">
+            <Border Name="PART_SelectedContentBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    assist:ShadowAssist.ShadowDepth="{TemplateBinding assist:ShadowAssist.ShadowDepth}">
               <ContentPresenter Name="PART_SelectedContentHost"
                                 Margin="{TemplateBinding Margin}"
                                 Padding="{TemplateBinding Padding}"
@@ -50,22 +61,94 @@
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Content="{TemplateBinding SelectedContent}"
                                 ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
-              </controls:ColorZone>
+            </Border>
           </DockPanel>
         </Border>
       </ControlTemplate>
     </Setter>
 
+
+    
+
+    <Style Selector="^[TabStripPlacement=Top]">
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Top] /template/ DockPanel#PART_TabControlDockPanel">
+      <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Bottom]">
+      <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Bottom] /template/ DockPanel#PART_TabControlDockPanel">
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Left]">
+      <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Left] /template/ DockPanel#PART_TabControlDockPanel">
+      <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Right]">
+      <Setter Property="HorizontalAlignment" Value="Right" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Right] /template/ DockPanel#PART_TabControlDockPanel">
+      <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+    
+
     <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
       <Setter Property="Orientation" Value="Vertical" />
     </Style>
+    
     <Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
       <Setter Property="Orientation" Value="Vertical" />
     </Style>
-    <Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
-      <Setter Property="Margin" Value="0,0,0,2" />
+
+
+    <Style Selector="^[TabStripPlacement=Top]:not(.Bordered) /template/ Border#PART_SelectedContentBorder">
+      <Setter Property="BorderThickness" Value="0,1,0,0" />
+      <Setter Property="BorderBrush" Value="#ffd1d6dc" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Margin" Value="0,-1,0,0" />
+      <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Bottom]:not(.Bordered) /template/ Border#PART_SelectedContentBorder">
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+      <Setter Property="BorderBrush" Value="#ffd1d6dc" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Margin" Value="0,0,0,-1" />
+      <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Left]:not(.Bordered) /template/ Border#PART_SelectedContentBorder">
+      <Setter Property="BorderThickness" Value="1,0,0,0" />
+      <Setter Property="BorderBrush" Value="#ffd1d6dc" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Margin" Value="-8,0,0,0" />
+      <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Right]:not(.Bordered) /template/ Border#PART_SelectedContentBorder">
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+      <Setter Property="BorderBrush" Value="Green" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Margin" Value="0,0,0,-1" />
+      <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
+    </Style>
+
+
+    <Style Selector="^.Bordered /template/ Border#PART_SelectedContentBorder">
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Margin" Value="10" />
     </Style>
   </ControlTheme>
-
-
 </ResourceDictionary>

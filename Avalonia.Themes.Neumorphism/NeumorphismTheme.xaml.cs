@@ -5,7 +5,6 @@ using Avalonia.Media;
 using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Colors;
 using Avalonia.Themes.Neumorphism.Colors.ColorManipulation;
-using Avalonia.Themes.Neumorphism.Converters;
 using Avalonia.Themes.Neumorphism.Enums;
 
 namespace Avalonia.Themes.Neumorphism

@@ -7,6 +7,7 @@
   <!--Default TextBlock theme-->
   <ControlTheme x:Key="{x:Type TextBlock}" TargetType="TextBlock">
     <Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
+    <Setter Property="FontSize" Value="14" />
 
     <Style Selector="^.Caption">
       <Setter Property="FontSize" Value="12" />

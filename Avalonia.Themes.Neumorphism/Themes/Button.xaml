@@ -11,7 +11,7 @@
 		<Border Padding="20">
 			<StackPanel Spacing="20">
 				<Button Content="Click Me!" />
-				<Button Classes="accent" Content="Click Me!" />
+				<Button Classes="Accent" Content="Click Me!" />
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>

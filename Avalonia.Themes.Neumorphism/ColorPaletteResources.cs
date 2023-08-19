@@ -65,15 +65,6 @@ namespace Avalonia.Themes.Neumorphism
                     return _hasAccentColor;
                 }
 
-                // FL !!!!!!!!!!!!!!!
-                //if (strKey.Equals(SystemAccentColors.PrimaryHueLightForegroundBrushKey, StringComparison.InvariantCulture))
-                //{
-                //    value = _primaryHueLightForegroundColor;
-                //    return _hasAccentColor;
-                //}
-
-
-
                 if (_colors.TryGetValue(strKey, out var color))
                 {
                     value = color;

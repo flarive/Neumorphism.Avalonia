@@ -19,61 +19,332 @@
 		<WrapPanel Orientation="Vertical">
 
 			<StackPanel Orientation="Vertical">
-				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal" />
+				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal top" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
-          <TabControl TabStripPlacement="Top">
-            <TabControl.Items>
-              <TabItem Header="aaaaa">
-                <TextBlock Text="111111"/>
-              </TabItem>
-              <TabItem Header="bbbbbbbbbbbbbbbbbbbbbbb">
-                <TextBlock Text="222222"/>
-              </TabItem>
-              <TabItem Header="cccc">
-                <TextBlock Text="333333"/>
-              </TabItem>
-            </TabControl.Items>
-          </TabControl>
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab1">
+            <TabControl TabStripPlacement="Top">
+              <TabControl.Items>
+                <TabItem Header="TAB 1">
+                  <TextBlock Text="Hey, I'm content 1" Margin="0,30,0,0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 2">
+                  <TextBlock Text="Hey, I'm content 2" Margin="0,30,0,0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 3">
+                  <TextBlock Text="Hey, I'm content 3" Margin="0,30,0,0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
-          <TabControl TabStripPlacement="Top">
-            <TabControl.Items>
-              <TabItem Header="Home" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="#FF77dbf0">
-                <TextBlock Text="111111"/>
-              </TabItem>
-              <TabItem Header="Settings" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
-                <TextBlock Text="222222"/>
-              </TabItem>
-              <TabItem Header="Performance" Height="50" FontSize="14" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
-                <TextBlock Text="333333"/>
-              </TabItem>
-              <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False" assist:TabControlAssist.HighlightSelectedItem="True" assist:TabControlAssist.HighlightBrush="Red">
-                <TextBlock Text="333333"/>
-              </TabItem>
-            </TabControl.Items>
-          </TabControl>
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab2">
+            <TabControl TabStripPlacement="Top" Classes="Bordered" Padding="0">
+              <TabControl.Items>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="UserAccessControl" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 1" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                        </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="Database" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="Database" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc."/>
+                        </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="FileAccount" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 3" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="FileAccount" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis."/>
+                      </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab3">
+            <TabControl TabStripPlacement="Top" SelectedIndex="1" Width="440" Height="250">
+              <TabControl.Items>
+                <TabItem Header="Home" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                </TabItem>
+                <TabItem Header="Settings" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
+                </TabItem>
+                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
 				</StackPanel>
       </StackPanel>
 
 
+
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical" />
-        <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal bottom" />
+        <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
-          <TabControl TabStripPlacement="Left">
-            <TabControl.Items>
-              <TabItem Header="aaaaa">
-                <TextBlock Text="111111"/>
-              </TabItem>
-              <TabItem Header="bbbbbbbbbbbbbbbbbbbbbbb">
-                <TextBlock Text="222222"/>
-              </TabItem>
-              <TabItem Header="cccc">
-                <TextBlock Text="333333"/>
-              </TabItem>
-            </TabControl.Items>
-          </TabControl>
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab4">
+            <TabControl TabStripPlacement="Bottom">
+              <TabControl.Items>
+                <TabItem Header="TAB 1">
+                  <TextBlock Text="Hey, I'm content 1" Margin="0,0,0,30" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 2">
+                  <TextBlock Text="Hey, I'm content 2" Margin="0,0,0,30" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 3">
+                  <TextBlock Text="Hey, I'm content 3" Margin="0,0,0,30" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab5">
+            <TabControl TabStripPlacement="Bottom" Classes="Bordered" Padding="0">
+              <TabControl.Items>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="UserAccessControl" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 1" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                      </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="Database" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="Database" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc."/>
+                      </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="FileAccount" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 3" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <Grid ColumnDefinitions="Auto,*" HorizontalAlignment="Stretch" MaxWidth="360" Height="120">
+                      <icons:MaterialIcon Grid.Column="0" Kind="FileAccount" Width="48" Height="48" Foreground="Gray" Margin="15,0,20,0" />
+                      <ScrollViewer Grid.Column="1" Height="100" Padding="0,0,15,0">
+                        <TextBlock TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0"
+                                 Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis."/>
+                      </ScrollViewer>
+                    </Grid>
+                  </TabItem.Content>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab6">
+            <TabControl TabStripPlacement="Bottom" Width="440" Height="250">
+              <TabControl.Items>
+                <TabItem Header="Home" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
+                  <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                </TabItem>
+                <TabItem Header="Settings" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
+                </TabItem>
+                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical left" />
+        <StackPanel Orientation="Horizontal">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalTab1">
+            <TabControl TabStripPlacement="Left">
+              <TabControl.Items>
+                <TabItem Header="TAB 1">
+                  <TextBlock Text="Hey, I'm content 1" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 2">
+                  <TextBlock Text="Hey, I'm content 2" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+                <TabItem Header="TAB 3">
+                  <TextBlock Text="Hey, I'm content 3" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalTab2">
+            <TabControl TabStripPlacement="Left" Classes="Bordered" Padding="0">
+              <TabControl.Items>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="UserAccessControl" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 1" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <TextBlock Text="Hey, I'm content 1" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="Database" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 2" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <TextBlock Text="Hey, I'm content 2" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                  </TabItem.Content>
+                </TabItem>
+                <TabItem Classes="Button">
+                  <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                      <icons:MaterialIcon Kind="FileAccount" Margin="0" Width="24" Height="24" Foreground="Gray" VerticalAlignment="Center" />
+                      <TextBlock Margin="5,0,5,0" Text="TAB 3" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </TabItem.Header>
+                  <TabItem.Content>
+                    <TextBlock Text="Hey, I'm content 3" Margin="0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+                  </TabItem.Content>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="VerticalTab3">
+            <TabControl TabStripPlacement="Left" Width="440" Height="250">
+              <TabControl.Items>
+                <TabItem Header="Home" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
+                  <TextBlock TextWrapping="WrapWithOverflow" ScrollViewer.VerticalScrollBarVisibility="Visible" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+                </TabItem>
+                <TabItem Header="Project" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                  <TextBlock TextWrapping="Wrap" MinHeight="100" MaxHeight="100" ScrollViewer.VerticalScrollBarVisibility="Visible" Text="At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. Eget nunc lobortis mattis aliquam faucibus purus. Arcu felis bibendum ut tristique et egestas. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Egestas sed tempus urna et pharetra pharetra massa. Suspendisse in est ante in nibh mauris cursus. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Consectetur libero id faucibus nisl. Ornare arcu odio ut sem nulla pharetra diam. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Sodales ut eu sem integer vitae justo. Erat imperdiet sed euismod nisi porta lorem mollis. Nullam non nisi est sit amet. Ipsum faucibus vitae aliquet nec ullamcorper sit. Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Porttitor eget dolor morbi non arcu risus quis."/>
+                </TabItem>
+                <TabItem Header="Settings" Height="50" FontSize="14"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                  <Grid Height="120" VerticalAlignment="Top" ClipToBounds="True" Background="Yellow">
+                    <TextBlock TextWrapping="WrapWithOverflow" Height="120" ScrollViewer.VerticalScrollBarVisibility="Visible" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Nascetur ridiculus mus mauris vitae ultricies leo. Euismod nisi porta lorem mollis aliquam ut porttitor leo. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin. Eget mauris pharetra et ultrices. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Dis parturient montes nascetur ridiculus. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Risus ultricies tristique nulla aliquet enim tortor at auctor. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Blandit volutpat maecenas volutpat blandit aliquam etiam erat. Purus sit amet luctus venenatis lectus magna. Orci a scelerisque purus semper. In nibh mauris cursus mattis molestie a iaculis at. Augue eget arcu dictum varius duis at consectetur lorem donec."/>
+                  </Grid>
+                </TabItem>
+                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
+                         assist:TabControlAssist.TabHeight="32"
+                         assist:TabControlAssist.SelectedTabHeight="40"
+                         assist:TabControlAssist.UseHighlightStroke="True"
+                         assist:TabControlAssist.HighlightStrokeSize="5"
+                         assist:TabControlAssist.HighlightStrokeBrush="Red">
+                  <TextBlock TextWrapping="WrapWithOverflow" Height="200" ScrollViewer.VerticalScrollBarVisibility="Visible" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Quam lacus suspendisse faucibus interdum posuere lorem. Ultrices eros in cursus turpis massa tincidunt dui ut. Id venenatis a condimentum vitae. Convallis tellus id interdum velit. Tellus orci ac auctor augue mauris. Ac tortor dignissim convallis aenean. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin."/>
+                </TabItem>
+              </TabControl.Items>
+            </TabControl>
+          </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
         </StackPanel>
       </StackPanel>

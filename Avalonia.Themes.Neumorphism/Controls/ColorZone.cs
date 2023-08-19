@@ -1,5 +1,6 @@
 using System;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Data;
 using Avalonia.Media;
 
@@ -49,6 +50,8 @@ namespace Avalonia.Themes.Neumorphism.Controls
             // ???????????????????????????
             //OnModeChanged(null);
 
+            //OnModeChanged();
+
             DisposeSubscription();
 
             // ????????????????????????????
@@ -76,70 +79,80 @@ namespace Avalonia.Themes.Neumorphism.Controls
         //    Dispatcher.UIThread.InvokeAsync(delegate { OnModeChanged(theme); });
         //}
 
-        //private void OnModeChanged(MaterialThemeBase? theme) {
-        //    var colorZone = this;
-        //    theme ??= Application.Current!.LocateMaterialTheme<MaterialTheme>();
+        private void OnModeChanged()
+        {
+            var colorZone = this;
+            //theme ??= Application.Current!.LocateMaterialTheme<MaterialTheme>();
 
-        //    var resources = theme;
+            //var resources = theme;
 
-        //    var foregroundProperty = TemplatedControl.ForegroundProperty;
+            //var foregroundProperty = TemplatedControl.ForegroundProperty;
 
-        //    switch (colorZone.Mode) {
-        //        case ColorZoneMode.Standard: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignPaper"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignBody"));
-        //        }
-        //            break;
+            switch (colorZone.Mode)
+            {
+                case ColorZoneMode.Standard:
+                    {
+                        SetValueInternal(BackgroundProperty, Application.Current!.Resources["MaterialDesignPaper"]);
+                        SetValueInternal(ForegroundProperty, Application.Current!.Resources["MaterialDesignBody"]);
+                    }
+                    break;
 
-        //        case ColorZoneMode.Inverted: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignBody"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignPaper"));
-        //        }
-        //            break;
+                //case ColorZoneMode.Inverted:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignBody"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignPaper"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.Light: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignLightBackground"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignLightForeground"));
-        //        }
-        //            break;
+                //case ColorZoneMode.Light:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignLightBackground"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignLightForeground"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.Dark: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignDarkBackground"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignDarkForeground"));
-        //        }
-        //            break;
+                //case ColorZoneMode.Dark:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "MaterialDesignDarkBackground"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "MaterialDesignDarkForeground"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.PrimaryLight: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueLightBrush"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueLightForegroundBrush"));
-        //        }
-        //            break;
+                //case ColorZoneMode.PrimaryLight:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueLightBrush"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueLightForegroundBrush"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.PrimaryMid: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueMidBrush"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueMidForegroundBrush"));
-        //        }
-        //            break;
+                //case ColorZoneMode.PrimaryMid:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueMidBrush"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueMidForegroundBrush"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.PrimaryDark: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueDarkBrush"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueDarkForegroundBrush"));
-        //        }
-        //            break;
+                //case ColorZoneMode.PrimaryDark:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "PrimaryHueDarkBrush"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "PrimaryHueDarkForegroundBrush"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.Accent: {
-        //            SetValueInternal(BackgroundProperty, GetBrushResource(resources, "SecondaryHueMidBrush"));
-        //            SetValueInternal(foregroundProperty, GetBrushResource(resources, "SecondaryHueMidForegroundBrush"));
-        //        }
-        //            break;
+                //case ColorZoneMode.Accent:
+                //    {
+                //        SetValueInternal(BackgroundProperty, GetBrushResource(resources, "SecondaryHueMidBrush"));
+                //        SetValueInternal(foregroundProperty, GetBrushResource(resources, "SecondaryHueMidForegroundBrush"));
+                //    }
+                //    break;
 
-        //        case ColorZoneMode.Custom:
-        //            break;
+                //case ColorZoneMode.Custom:
+                //    break;
 
-        //        default:
-        //            throw new ArgumentOutOfRangeException();
-        //    }
-        //}
+                //default:
+                //    throw new ArgumentOutOfRangeException();
+            }
+        }
 
         private void SetValueInternal(AvaloniaProperty property, object value) {
             SetValue(property, value, BindingPriority.Style);
