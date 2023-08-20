@@ -9,6 +9,11 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> New in latest release (0.6.0) !
+- Tabs are now fully themed with different possible styles
+
+![Screenshot](Screenshots/tabs.png)
+
 # <img src="favicon.png" width="32" height="32"> New in latest release (0.5.0) !
 - Totally rewritten for Avalonia 0.11 !
 - Support Avalonia 0.11 Control Themes
