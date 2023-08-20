@@ -53,18 +53,91 @@
                   <Setter Property="IsEnabled" Value="{Binding $self.IsEnabled}" />
                 </Style>
               </ListBox.Styles>
-              <ListBoxItem Content="Home" IsEnabled="True"/>
-              <ListBoxItem Content="Buttons" IsEnabled="True"/>
-              <ListBoxItem Content="Toggles" IsEnabled="True"/>
-              <ListBoxItem Content="Fields" IsEnabled="True"/>
-              <ListBoxItem Content="ComboBoxes" IsEnabled="True"/>
-              <ListBoxItem Content="Sliders" IsEnabled="True"/>
-              <ListBoxItem Content="Progress" IsEnabled="True"/>
-              <ListBoxItem Content="Icons" IsEnabled="True"/>
-              <ListBoxItem Content="Drawings" IsEnabled="True"/>
-              <ListBoxItem Content="Cards" IsEnabled="True"/>
-              <ListBoxItem Content="Lists" IsEnabled="True"/>
-              <!--<ListBoxItem Content="Tabs" IsEnabled="True"/>-->
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="HomeOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Home" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+              
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="ButtonPointer" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Buttons" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="ToggleSwitchOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Toggles" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="FormTextbox" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="TextBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="FormDropdown" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="ComboBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="ElectricSwitchClosed" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Sliders" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="Poll" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Progress" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="ImageOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Icons" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="Drawing" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Drawings" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="CardTextOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Cards" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="ListBoxOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="ListBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="Tab" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Tabs" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+         
             </ListBox>
           </Grid>
         </controls:NavigationDrawer.LeftDrawerContent>
@@ -107,8 +180,6 @@
                   </MenuItem>
                   <Separator />
                   <MenuItem Header="About" IsEnabled="{Binding AboutEnabled}" Command="{Binding HelpAboutMethod}" />
-                  <MenuItem Header="Action 2" />
-                  <MenuItem Header="Action 3" />
                   <Separator />
                   <MenuItem Header="Goodbye" Click="GoodbyeButtonMenuItem_OnClick">
                     <MenuItem.Icon>
@@ -159,7 +230,7 @@
                 <!--Lists-->
                 <pages:ListsDemo/>
                 <!--Tabs-->
-                <!--<pages:TabsDemo/>-->
+                <pages:TabsDemo/>
               </Carousel>
             </Border>
           </ScrollViewer>

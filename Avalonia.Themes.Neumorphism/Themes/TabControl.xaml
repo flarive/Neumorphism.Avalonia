@@ -33,7 +33,7 @@
     <Setter Property="Height" Value="200" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Top" />
-    <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
+    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth1" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -44,7 +44,7 @@
                 Margin="0"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
-          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom">
+          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
@@ -116,7 +116,7 @@
       <Setter Property="BorderThickness" Value="0,1,0,0" />
       <Setter Property="BorderBrush" Value="#ffd1d6dc" />
       <Setter Property="CornerRadius" Value="0" />
-      <Setter Property="Margin" Value="0,-1,0,0" />
+      <Setter Property="Margin" Value="0,-2,0,0" />
       <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
     </Style>
 
@@ -132,15 +132,15 @@
       <Setter Property="BorderThickness" Value="1,0,0,0" />
       <Setter Property="BorderBrush" Value="#ffd1d6dc" />
       <Setter Property="CornerRadius" Value="0" />
-      <Setter Property="Margin" Value="-8,0,0,0" />
+      <Setter Property="Margin" Value="-10,0,0,0" />
       <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
     </Style>
 
     <Style Selector="^[TabStripPlacement=Right]:not(.Bordered) /template/ Border#PART_SelectedContentBorder">
-      <Setter Property="BorderThickness" Value="0,0,0,1" />
-      <Setter Property="BorderBrush" Value="Green" />
+      <Setter Property="BorderThickness" Value="0,0,1,0" />
+      <Setter Property="BorderBrush" Value="#ffd1d6dc" />
       <Setter Property="CornerRadius" Value="0" />
-      <Setter Property="Margin" Value="0,0,0,-1" />
+      <Setter Property="Margin" Value="0,0,-10,0" />
       <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0" />
     </Style>
 

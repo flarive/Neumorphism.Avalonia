@@ -2,18 +2,27 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters;assembly=Avalonia.Themes.Neumorphism"
+    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
 		mc:Ignorable="d" x:Class="Neumorphism.Avalonia.Demo.Windows.AboutWindow"
 		d:DesignWidth="640" d:DesignHeight="256"
 		WindowState="Normal"
 		WindowStartupLocation="CenterOwner"
-		Width="500" Height="200"
+		Width="500" Height="240"
 		Title="About"
 		CanResize="false" ShowInTaskbar="False"
 		Icon="avares://Neumorphism.Avalonia.Demo/Assets/about.ico"
 		x:CompileBindings="True"
 		x:DataType="viewModels:AboutViewModel">
-  
-	<Grid VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20">
-		<TextBlock Text="Neumorphism Avalonia" FontSize="13" Foreground="{DynamicResource MaterialDesignForeground}"/>
-	</Grid>
+
+  <Window.Resources>
+    <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
+    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLightColor}, 5 5 20 {MaterialDesignShadowDarkColor}</system:String>
+  </Window.Resources>
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+      <Image Width="500" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Source="avares://Neumorphism.Avalonia.Demo/Assets/Neumorphism.png"/>
+      <Button Theme="{StaticResource ButtonLink}" Margin="0,15,0,15" Content="https://github.com/flarive/Neumorphism.Avalonia" Foreground="#FF5cbcd6" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="15 "/>
+    </StackPanel>
 </Window>

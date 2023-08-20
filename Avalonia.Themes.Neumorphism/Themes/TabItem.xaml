@@ -20,7 +20,20 @@
   </Design.PreviewWith>
 
 
-
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundSelected" Color="Transparent" />
+  <SolidColorBrush x:Key="TabItemHeaderForegroundSelected" Color="Black" />
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundUnselectedPointerOver" Color="Transparent"/>
+  <SolidColorBrush x:Key="TabItemHeaderForegroundUnselectedPointerOver" Color="Black"/>
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundSelectedPointerOver" Color="Transparent"/>
+  <SolidColorBrush x:Key="TabItemHeaderForegroundSelectedPointerOver" Color="Black"/>
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundUnselectedPressed" Color="Transparent"/>
+  <SolidColorBrush x:Key="TabItemHeaderForegroundUnselectedPressed" Color="Black"/>
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundSelectedPressed" Color="Transparent"/>
+  <SolidColorBrush x:Key="TabItemHeaderForegroundSelectedPressed" Color="Black"/>
+  <SolidColorBrush x:Key="TabItemHeaderBackgroundDisabled" Color="Transparent"/>
+  <SolidColorBrush x:Key="TabItemHeaderForegroundDisabled" Color="#FFCCCCCC"/>
+  
+  
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="FontWeight" Value="Normal" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
@@ -206,9 +219,9 @@
     <!--  TabStripPlacement Left  -->
     <Style Selector="^[TabStripPlacement=Left] /template/ Border#PART_SelectedPipe">
       <Setter Property="Width" Value="{TemplateBinding assist:TabControlAssist.HighlightStrokeSize}" />
-      <Setter Property="Margin" Value="0,0,2,0" />
+      <Setter Property="Margin" Value="0" />
       <Setter Property="HorizontalAlignment" Value="Right" />
-      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
     
     <Style Selector="^[TabStripPlacement=Left] /template/ ContentPresenter#PART_ContentPresenter">
@@ -217,7 +230,7 @@
 
     <Style Selector="^[TabStripPlacement=Left]:not(.Button) /template/ Border#PART_LayoutRoot">
       <Setter Property="Margin" Value="8"/>
-      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="HorizontalAlignment" Value="Right"/>
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=100%|0%|0%|100%}" />
     </Style>
 
@@ -236,17 +249,24 @@
     <!--  TabStripPlacement Right  -->
     <Style Selector="^[TabStripPlacement=Right] /template/ Border#PART_SelectedPipe">
       <Setter Property="Width" Value="{TemplateBinding assist:TabControlAssist.HighlightStrokeSize}" />
-      <Setter Property="Margin" Value="2,0,0,0" />
+      <Setter Property="Margin" Value="0" />
       <Setter Property="HorizontalAlignment" Value="Left" />
-      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
     
     <Style Selector="^[TabStripPlacement=Right] /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Margin" Value="0,0,8,0" />
+      <Setter Property="Margin" Value="20,0,20,0" />
     </Style>
-    
-    <Style Selector="^[TabStripPlacement=Right]">
-      <Setter Property="HorizontalContentAlignment" Value="Right" />
+
+    <Style Selector="^[TabStripPlacement=Right]:not(.Button) /template/ Border#PART_LayoutRoot">
+      <Setter Property="Margin" Value="8"/>
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|100%|100%|0%}" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Right].Button /template/ Border#PART_LayoutRoot">
+      <Setter Property="Margin" Value="10"/>
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=100%|100%|100%|100%}" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>

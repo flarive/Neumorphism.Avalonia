@@ -520,14 +520,14 @@
 							ResourceKey="SystemControlHighlightListAccentLowBrush" />
 
       <!-- Resources for TabItem.xaml -->
-      <x:Double x:Key="TabItemHeaderFontSize">24</x:Double>
+      <!--<x:Double x:Key="TabItemHeaderFontSize">24</x:Double>
       <Thickness x:Key="TabItemHeaderMargin">12,0,12,0</Thickness>
       <Thickness x:Key="TabItemMargin">12,0,12,0</Thickness>
       <FontWeight x:Key="TabItemHeaderThemeFontWeight">SemiLight</FontWeight>
-      <StaticResource x:Key="TabControlBackground" ResourceKey="SystemControlTransparentBrush" />
+      <StaticResource x:Key="TabControlBackground" ResourceKey="SystemControlTransparentBrush" />-->
 
       <!-- Resources for TabItem -->
-      <StaticResource x:Key="TabItemHeaderBackgroundUnselected" ResourceKey="SystemControlTransparentBrush" />
+      <!--<StaticResource x:Key="TabItemHeaderBackgroundUnselected" ResourceKey="SystemControlTransparentBrush" />
       <StaticResource x:Key="TabItemHeaderBackgroundUnselectedPointerOver"
 							ResourceKey="SystemControlHighlightTransparentBrush" />
       <StaticResource x:Key="TabItemHeaderBackgroundUnselectedPressed"
@@ -549,7 +549,7 @@
       <StaticResource x:Key="TabItemHeaderForegroundSelectedPressed"
 							ResourceKey="SystemControlHighlightAltBaseMediumHighBrush" />
       <StaticResource x:Key="TabItemHeaderForegroundDisabled" ResourceKey="SystemControlDisabledBaseMediumLowBrush" />
-      <StaticResource x:Key="TabItemHeaderSelectedPipeFill" ResourceKey="SystemControlHighlightAltAccentBrush" />
+      <StaticResource x:Key="TabItemHeaderSelectedPipeFill" ResourceKey="SystemControlHighlightAltAccentBrush" />-->
 
       <!-- Resources for ScrollBar.xaml -->
       <x:Double x:Key="ScrollBarTrackBorderThemeThickness">0</x:Double>

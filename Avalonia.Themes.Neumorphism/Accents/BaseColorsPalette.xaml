@@ -35,8 +35,8 @@
 			<Color x:Key="SystemRevealListLowColor">#17000000</Color>
 			<Color x:Key="SystemRevealListMediumColor">#2E000000</Color>
 
-			<!--new !!!!!!!!!!-->
-			<Color x:Key="ValidationErrorColor">#F44336</Color>
+      <!--new Neumorphism theme !!!!-->
+      <Color x:Key="ValidationErrorColor">#F44336</Color>
 			<Color x:Key="MaterialDesignBackground">#FFFFFFFF</Color>
 			<Color x:Key="MaterialDesignForeground">#FF616163</Color>
 			<Color x:Key="MaterialDesignPaper">#FFE0E5EC</Color>
@@ -106,7 +106,7 @@
 			<Color x:Key="SystemRevealListLowColor">#18FFFFFF</Color>
 			<Color x:Key="SystemRevealListMediumColor">#30FFFFFF</Color>
 
-			<!--new !!!!-->
+			<!--new Neumorphism theme !!!!-->
 			<Color x:Key="ValidationErrorColor">#f44336</Color>
 			<Color x:Key="MaterialDesignBackground">#FF000000</Color>
 			<Color x:Key="MaterialDesignForeground">#FFFFFFFF</Color>
