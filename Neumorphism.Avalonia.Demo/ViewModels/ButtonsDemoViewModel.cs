@@ -3,7 +3,7 @@ using Avalonia.Themes.Neumorphism.Controls;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class ButtonFieldsViewModel : ViewModelBase
+    public class ButtonsDemoViewModel : ViewModelBase
     {
         #region commands
 

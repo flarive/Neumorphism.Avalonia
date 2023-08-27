@@ -5,7 +5,7 @@ using Avalonia.Themes.Neumorphism.Controls;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class TextFieldsViewModel : ViewModelBase
+    public class TextBoxesDemoViewModel : ViewModelBase
     {
         private string _numerics;
         public string Numerics
@@ -57,7 +57,6 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 {
                     SnackbarHost.Post("Please enter something to search !");
                 }
-                
             }
         }
     }

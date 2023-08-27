@@ -1,6 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="using:System">
+                    xmlns:sys="using:System"
+                    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+
+  <!-- Neumorphism theme ok -->
+  
+  
   <Design.PreviewWith>
     <Border Margin="20, 20, 20, 200">
       <CalendarDatePicker Width="200" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
@@ -21,56 +28,37 @@
               HorizontalAlignment="Center"
               VerticalAlignment="Center"
               Margin="0"
-              ColumnDefinitions="*,*,*,*"
-              RowDefinitions="23*,19*,19*,19*"
               ClipToBounds="False">
-          <Border Name="Background"
-                  Margin="0,-1,0,0"
-                  Grid.ColumnSpan="4"
-                  Grid.Row="1"
-                  Grid.RowSpan="3"
-                  BorderThickness="0.5,0,0.5,0.5"
-                  BorderBrush="{TemplateBinding Foreground}"
-                  CornerRadius="0,0,2,2" />
-          <Border Grid.ColumnSpan="4"
-                  Grid.RowSpan="1"
-                  BorderBrush="{TemplateBinding Foreground}"
-                  BorderThickness="0.5"
-                  CornerRadius="2,2,0,0" />
-          <TextBlock Margin="0,-1,0,0"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Center"
-                     Grid.Column="0"
+          <controls:MaterialInternalIcon Grid.Column="0"
                      Grid.Row="1"
                      Grid.ColumnSpan="4"
                      Grid.RowSpan="3"
-                     Foreground="{TemplateBinding Foreground}"
-                     FontSize="{DynamicResource CalendarDatePickerCurrentDayFontSize}"
-                     Text="{Binding Source={x:Static sys:DateTime.Today}, Path=Day}" />
-          <Ellipse HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Fill="{TemplateBinding Foreground}"
-                   StrokeThickness="0"
-                   Grid.ColumnSpan="4"
-                   Width="3"
-                   Height="3" />
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Kind="Calendar" Width="24" Height="24"/>
         </Grid>
       </ControlTemplate>
     </Setter>
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
-    <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackground}" />
-    <Setter Property="Foreground" Value="{DynamicResource CalendarDatePickerForeground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource CalendarDatePickerBorderThemeThickness}" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="MinHeight" Value="{DynamicResource CalendarDatePickerMinHeight}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="Black" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="assist:DatePickerAssist.UseFloatingWatermark" Value="False"/>
+    <Setter Property="assist:DatePickerAssist.InnerRightBackground" Value="#22444444"/>
+    <Setter Property="assist:DatePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="Padding" Value="4" />
+    <Setter Property="Height" Value="50"/>
+    <Setter Property="Width" Value="240"/>
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Margin" Value="0,15,0,15" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Watermark" Value="zz" />
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
@@ -78,49 +66,47 @@
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch">
             <Border x:Name="Background"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    Background="{TemplateBinding Background}" />
+                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+                    BorderThickness="0"
+                    BorderBrush="Transparent"
+                    Background="Transparent">
+                <Border.BoxShadow>
+                  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                    <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                    <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                    <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  </MultiBinding>
+                </Border.BoxShadow>
+              </Border>
             <Grid ColumnDefinitions="*,Auto">
+              <!--Main container-->
               <TextBox Name="PART_TextBox"
+                       Grid.Column="0"
+                       Theme="{StaticResource TextBoxNoMaterial}"
+                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
                        Foreground="{TemplateBinding Foreground}"
-                       Background="Transparent"
+                       Background="Yellow"
                        BorderBrush="Transparent"
                        BorderThickness="0"
-                       CornerRadius="{TemplateBinding CornerRadius}"
-                       Margin="{TemplateBinding BorderThickness}"
-                       Padding="{TemplateBinding Padding}"
+                       Padding="0"
+                       Margin="5,0,5,0"
                        Watermark="{TemplateBinding Watermark}"
                        UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
-                       HorizontalAlignment="Stretch"
-                       VerticalAlignment="Stretch"
-                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       Grid.Column="0">
-                <TextBox.Styles>
-                  <Style Selector="TextBox#PART_TextBox:focus /template/ Border#PART_BorderElement">
-                    <!-- By default the TextBox has its own focused state, override this to disable it here -->
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="BorderThickness" Value="0" />
-                  </Style>
-                  <Style Selector="TextBox#PART_TextBox:disabled">
-                    <Style Selector="^ /template/ Border#PART_BorderElement">
-                      <!-- By default the TextBox has its own disabled state, override this to make the border background show through -->
-                      <Setter Property="Background" Value="Transparent" />
-                      <Setter Property="BorderBrush" Value="Transparent" />
-                    </Style>
-                    <Style Selector="^ /template/ TextBlock#PART_Watermark, ^ TextBlock#PART_FloatingWatermark">
-                      <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarDatePickerTextForegroundDisabled}" />
-                    </Style>
-                  </Style>
-                </TextBox.Styles>
-              </TextBox>
-              <Button Name="PART_Button"
-                      Theme="{StaticResource FluentCalendarDatePickerButton}"
-                      Grid.Column="1"
-                      Focusable="False" />
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"/>
+              <!--Right container-->
+              <Border Grid.Column="1" Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+                      Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
+                      CornerRadius="0"
+                      VerticalAlignment="Stretch">
+                  <Button Name="PART_Button" Width="40"
+                  Theme="{StaticResource FluentCalendarDatePickerButton}"
+                  Focusable="False" />
+              </Border>
+              
+
               <Popup Name="PART_Popup"
                      PlacementTarget="{TemplateBinding}"
                      IsLightDismissEnabled="True">

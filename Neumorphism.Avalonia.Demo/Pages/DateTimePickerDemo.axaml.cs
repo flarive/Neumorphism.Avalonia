@@ -3,13 +3,13 @@ using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
-    public partial class ButtonsDemo : UserControl
+    public partial class DateTimePickerDemo : UserControl
     {
-        public ButtonsDemo()
+        public DateTimePickerDemo()
         {
             InitializeComponent();
 
-            DataContext = new ButtonsDemoViewModel();
+            DataContext = new DateTimePickersDemoViewModel();
         }
     }
 }

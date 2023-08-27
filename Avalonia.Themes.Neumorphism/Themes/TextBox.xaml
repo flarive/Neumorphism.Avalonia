@@ -697,6 +697,7 @@
 		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
 		<Setter Property="HorizontalAlignment" Value="Left"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="CornerRadius" Value="0"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
@@ -731,7 +732,7 @@
 									RevealPassword="{TemplateBinding RevealPassword}"
 									SelectionBrush="{TemplateBinding SelectionBrush}"
 									SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-									CaretBrush="{TemplateBinding CaretBrush}"/>
+									CaretBrush="{TemplateBinding CaretBrush}" />
 				</Grid>
 			</ControlTemplate>
 		</Setter>
@@ -739,6 +740,14 @@
 		<Style Selector="^[IsEnabled=False] /template/ TextPresenter#PART_TextPresenter">
 			<Setter Property="Opacity" Value="0.2" />
 		</Style>
+
+    <Style Selector="^:focus-within:empty /template/ TextBlock#PART_Watermark, ^:empty /template/ TextBlock#PART_Watermark">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+    <Style Selector="^:focus-within:not(:empty) /template/ TextBlock#PART_Watermark, ^:not(:empty) /template/ TextBlock#PART_Watermark">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
 	</ControlTheme>
 
 

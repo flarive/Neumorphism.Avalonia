@@ -6,7 +6,14 @@
 -->
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
         xmlns:sys="using:System">
+
+
+  <!-- Neumorphism theme ok -->
+  
+  
+  
   <Design.PreviewWith>
     <Border Padding="20">
       <Calendar DisplayDate="2000-01-01">
@@ -21,13 +28,15 @@
       </Calendar>
     </Border>
   </Design.PreviewWith>
+  
+  
 
   <ControlTheme x:Key="FluentCalendarButton" TargetType="Button">
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="VerticalAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="FontSize" Value="20" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewNavigationButtonBackground}" />
+    <Setter Property="Background" Value="Pink" /><!--{DynamicResource CalendarViewNavigationButtonBackground}-->
     <Setter Property="Template">
       <ControlTemplate>
         <!-- HCA was changed here to ensure nav arrows display correctly -->
@@ -76,37 +85,28 @@
                  Viewport height is set from # of rows displayed (2-8) in Month mode, = ~290 for 6 weeks (+ day names)
                  -->
           <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RowDefinitions="40,*" MinWidth="294">
-            <Grid ColumnDefinitions="5*,*,*">
-              <Button Name="PART_HeaderButton"
-                      Theme="{StaticResource FluentCalendarButton}"
-                      Foreground="{TemplateBinding Foreground}"
-                      Padding="12,0,0,0"
-                      HorizontalContentAlignment="Left" />
+            <Grid ColumnDefinitions="Auto,*,Auto">
               <Button Name="PART_PreviousButton"
-                      Grid.Column="1"
+                      Grid.Column="0"
                       Theme="{StaticResource FluentCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
                       Padding="1"
                       HorizontalContentAlignment="Left">
-                <!--Path mimics Segoe MDL2 Assets font glyph used in WinUI-->
-                <Path Stroke="{DynamicResource CalendarViewForeground}"
-                      StrokeThickness="1.5" 
-                      Data="M 0,9 L 9,0 L 18,9" 
-                      HorizontalAlignment="Center" 
-                      VerticalAlignment="Center" />
+                <controls:MaterialInternalIcon Kind="ChevronLeft" Width="24" Height="24" Margin="10,0,10,0"/>
               </Button>
+              <Button Name="PART_HeaderButton"
+                      Grid.Column="1"
+                      Theme="{StaticResource FluentCalendarButton}"
+                      Foreground="{TemplateBinding Foreground}"
+                      Padding="0" TextBlock.TextAlignment="Center"
+                      HorizontalContentAlignment="Center" />
               <Button Name="PART_NextButton"
                       Grid.Column="2"
                       Theme="{StaticResource FluentCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
                       Padding="1"
                       HorizontalContentAlignment="Left">
-                <!--Path mimics Segoe MDL2 Assets font glyph used in WinUI-->
-                <Path Stroke="{DynamicResource CalendarViewForeground}"
-                      StrokeThickness="1.5" 
-                      Data="M 0,0 L 9,9 L 18,0" 
-                      HorizontalAlignment="Center" 
-                      VerticalAlignment="Center" />
+                <controls:MaterialInternalIcon Kind="ChevronRight" Width="24" Height="24" Margin="10,0,10,0"/>
               </Button>
             </Grid>
             <!--Border below is used only for MonthView but it can't be moved inside of Grid because CalendarItem expects it to be empty and it will cause side-effects-->

@@ -10,7 +10,7 @@
                 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
                 xmlns:system="clr-namespace:System;assembly=System.Runtime"
                 x:CompileBindings="True"
-                x:DataType="viewModels:TextFieldsViewModel"
+                x:DataType="viewModels:TextBoxesDemoViewModel"
                 x:Class="Neumorphism.Avalonia.Demo.Pages.FieldsDemo">
 
 
@@ -336,7 +336,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown1">
-            <NumericUpDown Classes="Filled" ButtonSpinnerLocation="Left" Minimum="-1000" Maximum="1000" Increment="10" Width="120" Height="42"
+            <NumericUpDown Classes="Filled" ButtonSpinnerLocation="Left" Watermark="Select" Minimum="-1000" Maximum="1000" Increment="10" Width="120" Height="42"
 						   ToolTip.Tip="Regular NumericUpDown with default theme applied with button spinner right and allowed values between -1000 and 1000 with an increment of 10"/>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->

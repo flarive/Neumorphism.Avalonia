@@ -1,7 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class SliderFieldsViewModel : ViewModelBase
+    public class DateTimePickersDemoViewModel : ViewModelBase
     {
-
     }
 }

@@ -22,7 +22,7 @@
     <Setter Property="Padding" Value="0,0,0,0" />
     <!--These are actually set on the CalendarView in WinUI-->
     <Setter Property="Foreground" Value="{DynamicResource CalendarViewCalendarItemForeground}" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewCalendarItemRevealBackground}" />
+    <Setter Property="Background" Value="Blue" /><!--{DynamicResource CalendarViewCalendarItemRevealBackground}-->
     <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewCalendarItemRevealBorderBrush}" />
     <Setter Property="BorderThickness" Value="2" />
     <Setter Property="FontSize" Value="20" />

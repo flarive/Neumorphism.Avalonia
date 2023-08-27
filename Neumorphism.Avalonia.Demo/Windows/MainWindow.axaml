@@ -127,7 +127,7 @@
               <ListBoxItem IsEnabled="True">
                 <StackPanel Orientation="Horizontal">
                   <icons:MaterialIcon Kind="ListBoxOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="ListBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+                  <TextBlock Text="Lists" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
               </ListBoxItem>
 
@@ -137,6 +137,13 @@
                   <TextBlock Text="Tabs" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
               </ListBoxItem>
+
+              <!--<ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="DateRange" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>-->
          
             </ListBox>
           </Grid>
@@ -231,6 +238,8 @@
                 <pages:ListsDemo/>
                 <!--Tabs-->
                 <pages:TabsDemo/>
+                <!--DatetimePickers-->
+                <!--<pages:DateTimePickerDemo/>-->
               </Carousel>
             </Border>
           </ScrollViewer>

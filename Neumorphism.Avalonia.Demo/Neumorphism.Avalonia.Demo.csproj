@@ -45,6 +45,7 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets/**" />
     <AvaloniaResource Include="Images/**" />
+    <AdditionalFiles Remove="Pages\DateTimePickerDemo.axaml" />
     <AvaloniaResource Include="NeumorphismXamlDisplay.axaml" />	  
     <None Update="Assets/app.icns" CopyToPublishDirectory="PreserveNewest" Condition="$(RuntimeIdentifier.StartsWith('osx'))">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -69,6 +70,12 @@
     
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <AvaloniaXaml Update="Pages\DateTimePickerDemo.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
   </ItemGroup>
     
 

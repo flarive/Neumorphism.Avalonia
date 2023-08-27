@@ -15,7 +15,7 @@
 
   <ControlTheme x:Key="{x:Type Calendar}" TargetType="Calendar">
     <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewBackground}" />
+    <Setter Property="Background" Value="Orange" /><!--{DynamicResource CalendarViewBackground}-->
     <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewBorderBrush}" />
     <Setter Property="BorderThickness" Value="1" />
     <Setter Property="HorizontalAlignment" Value="Left" />

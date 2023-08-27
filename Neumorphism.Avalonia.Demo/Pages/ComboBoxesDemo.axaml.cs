@@ -9,7 +9,7 @@ namespace Neumorphism.Avalonia.Demo.Pages
         {
             InitializeComponent();
 
-            DataContext = new ComboBoxFieldsViewModel();
+            DataContext = new ComboBoxesDemoViewModel();
         }
 
         private void ClassicComboBoxes1SelectionChanged(object sender, SelectionChangedEventArgs e)

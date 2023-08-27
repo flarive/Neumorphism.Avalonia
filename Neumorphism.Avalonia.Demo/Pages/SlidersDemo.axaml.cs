@@ -9,7 +9,7 @@ namespace Neumorphism.Avalonia.Demo.Pages
         {
             InitializeComponent();
 
-            DataContext = new SliderFieldsViewModel();
+            DataContext = new SlidersDemoViewModel();
         }
     }
 }

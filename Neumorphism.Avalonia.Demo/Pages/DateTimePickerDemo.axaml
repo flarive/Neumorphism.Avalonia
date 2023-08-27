@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+            xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+            xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+            xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+            xmlns:system="clr-namespace:System;assembly=System.Runtime"
+            x:CompileBindings="True"
+            x:DataType="viewModels:DateTimePickersDemoViewModel"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.DateTimePickerDemo">
+
+  <StackPanel Margin="16,0,16,50">
+    <TextBlock Classes="Headline4 Subheadline" Text="DateTime pickers" />
+
+    <WrapPanel Orientation="Horizontal">
+
+      <StackPanel Orientation="Vertical">
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" />
+        <StackPanel Orientation="Vertical">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
+            <CalendarDatePicker Watermark="01/01/1970" SelectedDateFormat="Long" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
+            <CalendarDatePicker UseFloatingWatermark="True" Watermark="Birthdate" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Time" />
+        <StackPanel Orientation="Vertical">
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker4">
+            <TimePicker MinuteIncrement="15"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker5">
+            <TimePicker SelectedTime="14:30" ClockIdentifier="24HourClock"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+        </StackPanel>
+      </StackPanel>
+    </WrapPanel>
+    
+    </StackPanel>
+</UserControl>

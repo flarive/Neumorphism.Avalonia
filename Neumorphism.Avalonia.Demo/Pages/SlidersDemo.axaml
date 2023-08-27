@@ -9,7 +9,7 @@
               xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
               xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
               x:CompileBindings="True"
-              x:DataType="viewModels:SliderFieldsViewModel"
+              x:DataType="viewModels:SlidersDemoViewModel"
               x:Class="Neumorphism.Avalonia.Demo.Pages.SlidersDemo">
 
   <StackPanel Margin="16,0,16,50">
