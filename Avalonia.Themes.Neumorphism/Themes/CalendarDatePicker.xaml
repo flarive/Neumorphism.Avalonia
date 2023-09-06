@@ -29,10 +29,7 @@
               VerticalAlignment="Center"
               Margin="0"
               ClipToBounds="False">
-          <controls:MaterialInternalIcon Grid.Column="0"
-                     Grid.Row="1"
-                     Grid.ColumnSpan="4"
-                     Grid.RowSpan="3"
+          <controls:MaterialInternalIcon
                      VerticalAlignment="Center"
                      HorizontalAlignment="Center"
                      Kind="Calendar" Width="24" Height="24"/>
@@ -82,14 +79,14 @@
               <!--Main container-->
               <TextBox Name="PART_TextBox"
                        Grid.Column="0"
-                       Theme="{StaticResource TextBoxNoMaterial}"
-                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+                       Theme="{StaticResource TextBoxNoMaterial2}"
+                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=150}"
                        Foreground="{TemplateBinding Foreground}"
                        Background="Yellow"
                        BorderBrush="Transparent"
                        BorderThickness="0"
                        Padding="0"
-                       Margin="5,0,5,0"
+                       Margin="5,0,0,0"
                        Watermark="{TemplateBinding Watermark}"
                        UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
                        HorizontalAlignment="Left"
@@ -97,11 +94,11 @@
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Left"/>
               <!--Right container-->
-              <Border Grid.Column="1" Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
-                      CornerRadius="0"
+				<Border Grid.Column="1"
+					  Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=2}"
                       VerticalAlignment="Stretch">
-                  <Button Name="PART_Button" Width="40"
+                  <Button Name="PART_Button" Width="40" Cursor="Hand" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                   Theme="{StaticResource FluentCalendarDatePickerButton}"
                   Focusable="False" />
               </Border>

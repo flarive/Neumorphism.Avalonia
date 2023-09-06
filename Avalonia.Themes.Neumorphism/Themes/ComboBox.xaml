@@ -126,7 +126,7 @@
 								<ContentPresenter Name="PART_InnerLeft" Background="Transparent" Content="{TemplateBinding assist:ComboBoxAssist.InnerLeftContent}" Padding="{TemplateBinding assist:ComboBoxAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
 							</Border>
 
-              <!--Middle-->
+							<!--Middle-->
 							<ToggleButton Name="PART_Toggle" Grid.Column="1" Theme="{StaticResource ToggleButtonNoFeedback}"
 									  Height="{TemplateBinding Height}" Width="{Binding ElementName=watermark, Path=Width}"
 									  BorderThickness="0"

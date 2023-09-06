@@ -177,7 +177,7 @@
 												  RevealPassword="{TemplateBinding RevealPassword}"
 												  SelectionBrush="{TemplateBinding SelectionBrush}"
 												  SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-                          CaretIndex="{TemplateBinding CaretIndex}"
+												  CaretIndex="{TemplateBinding CaretIndex}"
 												  CaretBrush="{TemplateBinding CaretBrush}"/>
 											</Panel>
 										</ScrollViewer>
@@ -697,7 +697,7 @@
 		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
 		<Setter Property="HorizontalAlignment" Value="Left"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
-    <Setter Property="CornerRadius" Value="0"/>
+		<Setter Property="CornerRadius" Value="0"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="{TemplateBinding Width}">
@@ -717,7 +717,8 @@
 						  TextAlignment="{TemplateBinding TextAlignment}"
 						  TextWrapping="{TemplateBinding TextWrapping}"/>
 					<TextPresenter Name="PART_TextPresenter"
-									Background="{TemplateBinding Background}"
+								    ClipToBounds="{TemplateBinding ClipToBounds}"
+								    Background="{TemplateBinding Background}"
 									IsEnabled="{TemplateBinding IsEnabled}"
 									VerticalAlignment="{TemplateBinding VerticalAlignment}"
 									HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
@@ -811,4 +812,136 @@
           </Setter>
       </Style>
 	</ControlTheme>
+
+
+
+	<!--Default TextBox theme-->
+	<ControlTheme x:Key="TextBoxNoMaterial2" TargetType="TextBox">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+		<Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+		<Setter Property="Padding" Value="0" />
+		<Setter Property="Margin" Value="0,15,0,15" />
+		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
+		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
+		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="Watermark" Value=" "/>
+		<Setter Property="FontWeight" Value="Normal"/>
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Width" Value="NaN"/>
+		<Setter Property="ClipToBounds" Value="False" />
+		<Setter Property="BorderThickness" Value="0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="Cursor" Value="Ibeam"/>
+		<Setter Property="AcceptsReturn" Value="False"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="TextAlignment" Value="Left"/>
+		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="CornerRadius" Value="0" />
+		<Setter Property="Template">
+			<ControlTemplate>
+						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+							<DataValidationErrors Name="DataValidation">
+								<Grid Name="PART_Grid" ColumnDefinitions="*" Margin="0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+									<Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="15,0,15,15"
+													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+											<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+												<TextBlock Name="watermark" Padding="0"
+															Margin="0"
+														   Background="Purple"
+															VerticalAlignment="Stretch"
+															Foreground="{TemplateBinding Foreground}"
+															Opacity="0.5"
+															Text="{TemplateBinding Watermark}"
+															FontFamily="{TemplateBinding FontFamily}"
+															FontSize="{TemplateBinding FontSize}"
+															FontWeight="{TemplateBinding FontWeight}"
+															FontStyle="{TemplateBinding FontStyle}"
+															TextAlignment="{TemplateBinding TextAlignment}"
+															TextWrapping="{TemplateBinding TextWrapping}"/>
+												<TextPresenter Name="PART_TextPresenter"
+												  VerticalAlignment="Stretch"
+												  HorizontalAlignment="Left"
+												  Margin="0"
+												  TextBox.Background="{TemplateBinding Background}"
+												  TextBox.Foreground="{TemplateBinding Foreground}"
+												  TextBox.FontFamily="{TemplateBinding FontFamily}"
+												  TextBox.FontSize="{TemplateBinding FontSize}"
+												  TextBox.FontWeight="{TemplateBinding FontWeight}"
+												  TextBox.FontStyle="{TemplateBinding FontStyle}"
+												  Text="{TemplateBinding Text, Mode=TwoWay}"
+												  SelectionStart="{TemplateBinding SelectionStart}"
+												  SelectionEnd="{TemplateBinding SelectionEnd}"
+												  TextAlignment="{TemplateBinding TextAlignment}"
+												  TextWrapping="{TemplateBinding TextWrapping}"
+												  PasswordChar="{TemplateBinding PasswordChar}"
+												  RevealPassword="{TemplateBinding RevealPassword}"
+												  SelectionBrush="{TemplateBinding SelectionBrush}"
+												  SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+												  CaretIndex="{TemplateBinding CaretIndex}"
+												  CaretBrush="{TemplateBinding CaretBrush}"/>
+											</Panel>
+										</ScrollViewer>
+									</Panel>
+								</Grid>
+							</DataValidationErrors>
+						</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled /template/ TextPresenter#PART_TextPresenter">
+			<Setter Property="Opacity" Value="0.25" />
+		</Style>
+
+		<Style Selector="^:focus-within:empty /template/ TextBlock#watermark, ^:empty /template/ TextBlock#watermark">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+
+		<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#watermark, ^:not(:empty) /template/ TextBlock#watermark">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+
+		<Style Selector="^ /template/ Panel#PART_TextRoot">
+			<Setter Property="Margin" Value="1, 16, 1, 0" />
+		</Style>
+
+
+
+		<!-- Singeline and wrapping -->
+		<Style Selector="^[AcceptsReturn=False] /template/ ScrollViewer#PART_Scroller">
+			<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
+			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
+		</Style>
+
+
+
+		<!-- Invalid state -->
+		<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
+			<Setter Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
+		</Style>
+
+		<Style Selector="^:error /template/ TextBlock#floatingWatermark">
+			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
+		</Style>
+
+		<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+
+		<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+			<Setter Property="Margin" Value="15,6,15,0" />
+		</Style>
+	</ControlTheme>
+
 </ResourceDictionary>
