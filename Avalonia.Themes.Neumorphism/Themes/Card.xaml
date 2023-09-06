@@ -50,7 +50,7 @@
     </Setter>
 
     <Style Selector="^[CornerRadius=0] /template/ Border#PART_BackgroundBorder">
-      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
     </Style>
 
     <Style Selector="^ /template/ Border#PART_BackgroundBorder">

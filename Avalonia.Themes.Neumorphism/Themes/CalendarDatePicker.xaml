@@ -63,7 +63,7 @@
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch">
             <Border x:Name="Background"
-                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
                     Background="Transparent">
@@ -80,7 +80,7 @@
               <TextBox Name="PART_TextBox"
                        Grid.Column="0"
                        Theme="{StaticResource TextBoxNoMaterial2}"
-                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=150}"
+                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
                        Foreground="{TemplateBinding Foreground}"
                        Background="Yellow"
                        BorderBrush="Transparent"
@@ -94,9 +94,9 @@
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Left"/>
               <!--Right container-->
-				<Border Grid.Column="1"
-					  Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=2}"
+				      <Border Grid.Column="1" Margin="0" Padding="0" 
+					            Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
                       VerticalAlignment="Stretch">
                   <Button Name="PART_Button" Width="40" Cursor="Hand" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                   Theme="{StaticResource FluentCalendarDatePickerButton}"

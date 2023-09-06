@@ -219,12 +219,6 @@
 			<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
 		</Style>
 
-		
-		<!--????????????????????????????? A REMETRRE ???-->
-		<!--<Style Selector="^:focus-within /template/ controls|MaterialUnderline#PART_Underline">
-			<Setter Property="IsExpanded" Value="True" />
-		</Style>-->
-
 		<Style Selector="^:pointerover /template/ controls|MaterialUnderline#PART_Underline">
 			<Setter Property="IsActive" Value="True" />
 		</Style>
@@ -237,11 +231,6 @@
 		<Style Selector="^ /template/ TextBlock#floatingWatermark">
 			<Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
 		</Style>
-
-		<!--INVALID !!-->
-		<!--<Style Selector="^ /template/ #PART_Scroller /template/ ScrollBar.Modern /template/ Grid#rootGrid">
-			<Setter Property="Margin" Value="0 8 0 4" />
-		</Style>-->
 
 		<!-- Default TextBox style -->
 		<Style Selector="^[UseFloatingWatermark=True] /template/ Panel#PART_TextRoot">
@@ -273,10 +262,6 @@
 			<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
 		</Style>
 
-
-
-
-
 		<!-- Fixed height multiline -->
 		<Style Selector="^[AcceptsReturn=True] /template/ ScrollViewer#PART_Scroller">
 			<Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=30}}" />
@@ -286,8 +271,6 @@
 		<Style Selector="^[AcceptsReturn=True] /template/ TextPresenter#PART_TextPresenter">
 			<Setter Property="Width" Value="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}" />
 		</Style>
-
-
 
 		<!-- Invalid state -->
 		<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
@@ -597,7 +580,6 @@
 
                   <!--Main container-->
                   <DataValidationErrors Grid.Column="1" Name="DataValidation" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
-										<!--<Panel Name="PART_TextRoot" VerticalAlignment="Center" HorizontalAlignment="Stretch">-->
 											<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,15,0"
 															HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 															VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
@@ -636,7 +618,6 @@
 														CaretBrush="{TemplateBinding CaretBrush}"/>
 												</Panel>
 											</ScrollViewer>
-										<!--</Panel>-->
                   </DataValidationErrors>
 
                   

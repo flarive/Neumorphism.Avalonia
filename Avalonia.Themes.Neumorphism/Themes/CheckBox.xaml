@@ -49,7 +49,7 @@
               <Border Name="OuterGraphicBorder" Opacity="1" Cursor="{TemplateBinding Cursor}"
 											Width="{TemplateBinding assist:SelectionControlAssist.Size}"
 											Height="{TemplateBinding assist:SelectionControlAssist.Size}"
-											CornerRadius="{TemplateBinding assist:SelectionControlAssist.Size, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+											CornerRadius="{TemplateBinding assist:SelectionControlAssist.Size, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 											BorderThickness="{TemplateBinding BorderThickness}"
 											BorderBrush="{TemplateBinding BorderBrush}"
                       Tag="{TemplateBinding assist:SelectionControlAssist.Size}"
@@ -65,7 +65,7 @@
 
                 <Border Name="InnerGraphicBorder"
 										HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="1"
-										CornerRadius="{TemplateBinding assist:SelectionControlAssist.Size, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}">
+										CornerRadius="{TemplateBinding assist:SelectionControlAssist.Size, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}">
                   <Panel>
                     <Viewbox
 										    VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0"

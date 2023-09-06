@@ -139,19 +139,19 @@
 		</Setter>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 	</ControlTheme>
   
@@ -226,19 +226,19 @@
 		</Setter>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 	</ControlTheme>
 

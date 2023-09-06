@@ -8,7 +8,7 @@
 
 
 			<converters:AutoBoxShadowsConverter x:Key="AutoBoxShadowsConverter" />
-            <converters:ControlWidthToCornerRadiusConverter x:Key="ControlWidthToCornerRadiusConverter" />
+            <converters:ControlHeightToCornerRadiusConverter x:Key="ControlHeightToCornerRadiusConverter" />
             <converters:WidthMinusValueConverter x:Key="WidthMinusValueConverter" />
             <converters:WidthToRenderTransformConverter x:Key="WidthToRenderTransformConverter" />
             <converters:StringReplaceConverter x:Key="StringReplaceConverter" />

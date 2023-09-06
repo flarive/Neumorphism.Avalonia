@@ -85,7 +85,7 @@
 				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 							  Background="{TemplateBinding Background}"
 							  BorderBrush="{TemplateBinding BorderBrush}"
 							  BorderThickness="{TemplateBinding BorderThickness}">
@@ -372,7 +372,7 @@
 							  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 							  Background="{TemplateBinding Background}"
 							  BorderBrush="{TemplateBinding BorderBrush}"
 							  BorderThickness="{TemplateBinding BorderThickness}">
@@ -385,7 +385,7 @@
 							</Border.BoxShadow>
 
 						<Border Name="PART_InnerBorder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 							  Background="Transparent"
 							  BorderBrush="Transparent"
 							  BorderThickness="8">
@@ -405,7 +405,7 @@
 										  BorderThickness="0"
 										  HorizontalContentAlignment="Stretch"
 										  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-										  Margin="0" assist:ButtonAssist.CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"
+										  Margin="0" assist:ButtonAssist.CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 										  Padding="0">
 
 

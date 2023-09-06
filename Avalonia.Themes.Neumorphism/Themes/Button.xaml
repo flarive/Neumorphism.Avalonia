@@ -60,7 +60,7 @@
 						<Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
 							  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
 							  Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 
 						<ContentPresenter Name="PART_ContentPresenter"
 										  Content="{TemplateBinding Content}"
@@ -79,7 +79,7 @@
 		</Setter>
 
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlWidthToCornerRadiusConverter}, ConverterParameter=0}"/>
+			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
 
