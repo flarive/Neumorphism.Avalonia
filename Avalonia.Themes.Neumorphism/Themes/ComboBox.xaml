@@ -49,10 +49,11 @@
 		<Setter Property="Padding" Value="8,4" />
 		<Setter Property="ClipToBounds" Value="False"/>
 		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}"/>
+    <Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
 		<Setter Property="Cursor" Value="Hand"/>
@@ -331,7 +332,7 @@
 		<Setter Property="Padding" Value="8,4" />
 		<Setter Property="ClipToBounds" Value="False"/>
 		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}"/>

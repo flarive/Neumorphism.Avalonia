@@ -23,11 +23,11 @@
         <StackPanel Orientation="Vertical">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
-            <CalendarDatePicker Watermark="01/01/1970" SelectedDateFormat="Long" />
+            <CalendarDatePicker Watermark="What is your birthdate ?" SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
-            <CalendarDatePicker UseFloatingWatermark="True" Watermark="Birthdate" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
+            <CalendarDatePicker UseFloatingWatermark="True" Watermark="yyyy-MM-dd" Width="180" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
         </StackPanel>

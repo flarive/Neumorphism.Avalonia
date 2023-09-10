@@ -1,11 +1,4 @@
-﻿<!--
-    // (c) Copyright Microsoft Corporation.
-    // This source is subject to the Microsoft Public License (Ms-PL).
-    // Please see https://go.microsoft.com/fwlink/?LinkID=131993 for details.
-    // All other rights reserved.
--->
-
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
                     xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
@@ -19,10 +12,10 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Calendar}" TargetType="Calendar">
-    <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewBackground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewBorderBrush}" />
-    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Template">
@@ -34,8 +27,8 @@
           <CalendarItem
               Name="PART_CalendarItem"
               Background="{TemplateBinding Background}"
-              BorderBrush="Transparent"
-              BorderThickness="0"
+              BorderBrush="{TemplateBinding Background}"
+              BorderThickness="{TemplateBinding BorderThickness}"
               CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
               HeaderBackground="{TemplateBinding HeaderBackground}"/>
         </Panel>

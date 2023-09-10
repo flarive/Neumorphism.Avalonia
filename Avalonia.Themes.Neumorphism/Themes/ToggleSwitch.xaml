@@ -14,13 +14,10 @@
   <Design.PreviewWith>
     <StackPanel Margin="20" Width="250" Spacing="24">
       <StackPanel Spacing="12" >
-        <ToggleSwitch/>
-        <ToggleSwitch IsChecked="True" />
         <ToggleSwitch HorizontalContentAlignment="Left"
                       Content="Header"
                       OffContent="Off"
                       OnContent="On"/>
-        <ToggleSwitch Background="Yellow"/>
       </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
@@ -44,7 +41,7 @@
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="Height" Value="28" />
     <Setter Property="MinWidth" Value="72" />
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="FontStyle" Value="Normal"/>
     <Setter Property="Cursor" Value="Hand" />
@@ -388,7 +385,7 @@
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="MinWidth" Value="82" />
     <Setter Property="Height" Value="28" />
-    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="FontStyle" Value="Normal"/>
     <Setter Property="Template">

@@ -1,10 +1,4 @@
-﻿<!--
-// (c) Copyright Microsoft Corporation.
-// This source is subject to the Microsoft Public License (Ms-PL).
-// Please see https://go.microsoft.com/fwlink/?LinkID=131993 for details.
-// All other rights reserved.
--->
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
@@ -33,18 +27,16 @@
   
   
 
-  <ControlTheme x:Key="FluentCalendarButton" TargetType="Button">
+  <ControlTheme x:Key="CustomCalendarButton" TargetType="Button">
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="VerticalAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="FontSize" Value="20" />
-    <Setter Property="Background" Value="Transparent" /><!--{DynamicResource CalendarViewNavigationButtonBackground}-->
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="Template">
       <ControlTemplate>
         <!-- HCA was changed here to ensure nav arrows display correctly -->
         <ContentPresenter Name="Text" Background="{TemplateBinding Background}"
-                          BorderBrush="{DynamicResource CalendarViewNavigationButtonBorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
                           Content="{TemplateBinding Content}"
                           Margin="{TemplateBinding Padding}"
                           HorizontalContentAlignment="Stretch"
@@ -63,9 +55,11 @@
       <Setter Property="Foreground" Value="{DynamicResource CalendarViewWeekDayForegroundDisabled}" />
     </Style>
   </ControlTheme>
+  
+  
+  
 
   <ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="DayTitleTemplate">
       <Template x:DataType="x:String">
         <TextBlock Text="{Binding}"
@@ -77,17 +71,17 @@
 
     <Setter Property="Template">
       <ControlTemplate>
-        <Border BorderThickness="{TemplateBinding BorderThickness}"
-                Background="{TemplateBinding Background}"
+        <Border Background="Transparent"
+                BorderThickness="{TemplateBinding BorderThickness}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 CornerRadius="10">
-			<Border.BoxShadow>
+			<!--<Border.BoxShadow>
 				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
 					<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 					<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
 					<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
 				</MultiBinding>
-			</Border.BoxShadow>
+			</Border.BoxShadow>-->
 			<!-- To keep calendar from resizing when switching DisplayMode
                  In WinUI Min-Width from TemplateSettings
                  basically...MinWidth of DayItem = 40, 40 * 7 = 280 + margins/padding = ~294
@@ -97,7 +91,8 @@
             <Grid ColumnDefinitions="Auto,*,Auto">
               <Button Name="PART_PreviousButton"
                       Grid.Column="0"
-                      Theme="{StaticResource FluentCalendarButton}"
+                      Cursor="Hand"
+                      Theme="{StaticResource CustomCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
                       Padding="1"
                       HorizontalContentAlignment="Left">
@@ -105,13 +100,15 @@
               </Button>
               <Button Name="PART_HeaderButton"
                       Grid.Column="1"
-                      Theme="{StaticResource FluentCalendarButton}"
+                      Cursor="Hand"
+                      Theme="{StaticResource CustomCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
                       Padding="0" TextBlock.TextAlignment="Center"
                       HorizontalContentAlignment="Center" />
               <Button Name="PART_NextButton"
                       Grid.Column="2"
-                      Theme="{StaticResource FluentCalendarButton}"
+                      Cursor="Hand"
+                      Theme="{StaticResource CustomCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
                       Padding="1"
                       HorizontalContentAlignment="Left">
@@ -119,8 +116,8 @@
               </Button>
             </Grid>
             <!--Border below is used only for MonthView but it can't be moved inside of Grid because CalendarItem expects it to be empty and it will cause side-effects-->
-            <Border Name="BackgroundLayer" Background="{TemplateBinding BorderBrush}" Margin="0,38,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
-            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="290">
+            <Border Name="BackgroundLayer" Background="Transparent" Margin="0,38,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
+            <Grid Name="PART_MonthView" Grid.Row="1" Background="Transparent" IsVisible="False" MinHeight="290">
               <Grid.RowDefinitions>
                 <!--This should always be the week day names??-->
                 <RowDefinition Height="38" />
@@ -142,7 +139,7 @@
               </Grid.ColumnDefinitions>
             </Grid>
             <Grid Name="PART_YearView"
-                  Background="{TemplateBinding BorderBrush}"
+                  Background="Transparent"
                   MinHeight="290"
                   Grid.Row="1"
                   IsVisible="False">

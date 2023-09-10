@@ -33,7 +33,7 @@
 		<Setter Property="Padding" Value="10,0,0,0" />
 		<Setter Property="Margin" Value="10" />
 		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="FontSize" Value="15"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
 		<Setter Property="Template">

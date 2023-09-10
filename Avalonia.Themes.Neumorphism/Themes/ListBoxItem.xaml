@@ -32,6 +32,7 @@
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="Padding" Value="8" />
+    <Setter Property="FontSize" Value="8" />
 		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
 		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
 		<Setter Property="Template">
@@ -43,10 +44,8 @@
 						Margin="{TemplateBinding Margin}"
 						ClipToBounds="{TemplateBinding ClipToBounds}">
 					<Grid>
-						<Border Name="selectedBorder"
-								Background="{TemplateBinding Foreground}"/>
-						<Border Name="pointerOverBorder"
-								Background="{TemplateBinding Foreground}"/>
+						<Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
+						<Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
 						<ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"
@@ -264,10 +263,8 @@
 						Margin="{TemplateBinding Margin}"
 						ClipToBounds="{TemplateBinding ClipToBounds}">
           <Grid>
-            <Border Name="selectedBorder"
-								Background="{TemplateBinding Foreground}"/>
-            <Border Name="pointerOverBorder"
-								Background="{TemplateBinding Foreground}"/>
+            <Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
+            <Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
             <ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"

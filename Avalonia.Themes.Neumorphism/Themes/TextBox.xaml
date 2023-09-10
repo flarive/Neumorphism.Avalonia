@@ -77,10 +77,10 @@
 		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
 		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
-		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="Watermark" Value=" "/>
 		<Setter Property="FontWeight" Value="Normal"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Width" Value="240"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="BorderThickness" Value="0"/>
@@ -330,9 +330,9 @@
 		<Setter Property="Margin" Value="0,0,0,5" />
 		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
 		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
-		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Width" Value="245"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="BorderThickness" Value="8"/>
@@ -664,9 +664,9 @@
 		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
 		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
-		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Width" Value="NaN"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="BorderThickness" Value="0"/>
@@ -803,14 +803,14 @@
 		<Setter Property="SelectionBrush" Value="{DynamicResource MaterialDesignSelection}" />
 		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
 		<Setter Property="Padding" Value="0" />
-		<Setter Property="Margin" Value="0,15,0,15" />
+		<Setter Property="Margin" Value="0" />
 		<Setter Property="ContextMenu" Value="{StaticResource DefaultTextBoxContextMenu}" />
 		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
-		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="Watermark" Value=" "/>
 		<Setter Property="FontWeight" Value="Normal"/>
-		<Setter Property="Height" Value="50"/>
+		<Setter Property="Height" Value="40"/>
 		<Setter Property="Width" Value="NaN"/>
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="BorderThickness" Value="0"/>
@@ -829,17 +829,17 @@
 						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 							<DataValidationErrors Name="DataValidation">
-								<Grid Name="PART_Grid" ColumnDefinitions="*" Margin="0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
-									<Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
-										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="15,0,15,15"
+								<Grid Name="PART_Grid" Margin="12,0,12,0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+									<Panel Name="PART_TextRoot" Height="{TemplateBinding Height}" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Stretch">
+										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0"
 													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-											<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+											<Panel VerticalAlignment="Center" HorizontalAlignment="Left">
 												<TextBlock Name="watermark" Padding="0"
 															Margin="0"
-														   Background="Purple"
-															VerticalAlignment="Stretch"
-															Foreground="{TemplateBinding Foreground}"
+														  Background="{TemplateBinding Background}"
+                              Foreground="{TemplateBinding Foreground}"
+															VerticalAlignment="Center"
 															Opacity="0.5"
 															Text="{TemplateBinding Watermark}"
 															FontFamily="{TemplateBinding FontFamily}"
@@ -849,9 +849,9 @@
 															TextAlignment="{TemplateBinding TextAlignment}"
 															TextWrapping="{TemplateBinding TextWrapping}"/>
 												<TextPresenter Name="PART_TextPresenter"
-												  VerticalAlignment="Stretch"
+												  VerticalAlignment="Center"
 												  HorizontalAlignment="Left"
-												  Margin="0"
+													Margin="0"
 												  TextBox.Background="{TemplateBinding Background}"
 												  TextBox.Foreground="{TemplateBinding Foreground}"
 												  TextBox.FontFamily="{TemplateBinding FontFamily}"

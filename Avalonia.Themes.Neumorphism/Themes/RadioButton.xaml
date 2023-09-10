@@ -41,7 +41,7 @@
 		<Setter Property="Margin" Value="10" />
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
-		<Setter Property="FontSize" Value="15"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
 		<Setter Property="Template">
@@ -162,7 +162,7 @@
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="CornerRadius" Value="0" />
-		<Setter Property="FontSize" Value="15"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
 		<Setter Property="Template">

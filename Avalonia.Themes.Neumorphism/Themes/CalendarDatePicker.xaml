@@ -14,11 +14,11 @@
     </Border>
   </Design.PreviewWith>
 
-  <x:Double x:Key="CalendarDatePickerCurrentDayFontSize">12</x:Double>
-  <x:Double x:Key="CalendarDatePickerMinHeight">32</x:Double>
 
-  <ControlTheme x:Key="FluentCalendarDatePickerButton" TargetType="Button">
-    <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarDatePickerCalendarGlyphForeground}" />
+
+
+  <ControlTheme x:Key="CustomCalendarDatePickerButton" TargetType="Button">
+    <Setter Property="TextElement.Foreground" Value="Gray" />
     <Setter Property="Margin" Value="2,0,4,0" />
     <Setter Property="Width" Value="20" />
     <Setter Property="Template">
@@ -39,7 +39,7 @@
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
-    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="Black" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
@@ -50,12 +50,13 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="Height" Value="50"/>
+    <Setter Property="Height" Value="40"/>
     <Setter Property="Width" Value="240"/>
     <Setter Property="Padding" Value="0" />
     <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="CornerRadius" Value="0" />
     <Setter Property="Watermark" Value="zz" />
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
@@ -66,7 +67,7 @@
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
-                    Background="Transparent">
+                    Background="{TemplateBinding Background}">
                 <Border.BoxShadow>
                   <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
                     <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -82,11 +83,12 @@
                        Theme="{StaticResource TextBoxNoMaterial2}"
                        Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
                        Foreground="{TemplateBinding Foreground}"
-                       Background="Yellow"
+                       Background="Transparent"
                        BorderBrush="Transparent"
                        BorderThickness="0"
                        Padding="0"
-                       Margin="5,0,0,0"
+                       Margin="0"
+                       FontSize="{TemplateBinding FontSize}"
                        Watermark="{TemplateBinding Watermark}"
                        UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
                        HorizontalAlignment="Left"
@@ -99,7 +101,7 @@
                       CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
                       VerticalAlignment="Stretch">
                   <Button Name="PART_Button" Width="40" Cursor="Hand" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
-                  Theme="{StaticResource FluentCalendarDatePickerButton}"
+                  Theme="{StaticResource CustomCalendarDatePickerButton}"
                   Focusable="False" />
               </Border>
               
@@ -107,13 +109,24 @@
               <Popup Name="PART_Popup"
                      PlacementTarget="{TemplateBinding}"
                      IsLightDismissEnabled="True">
-                <Calendar Name="PART_Calendar"
+                
+                <Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
+                  <Border.BoxShadow>
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                      <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                      <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                    </MultiBinding>
+                  </Border.BoxShadow>
+                
+                  <Calendar Name="PART_Calendar"
                           FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
                           IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
                           SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
                           DisplayDate="{TemplateBinding DisplayDate}"
                           DisplayDateStart="{TemplateBinding DisplayDateStart}"
                           DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+                </Border>
               </Popup>
             </Grid>
           </Panel>

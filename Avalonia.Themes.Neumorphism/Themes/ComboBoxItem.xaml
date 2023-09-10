@@ -37,6 +37,7 @@
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Opacity" Value="1" />
+    <Setter Property="FontSize" Value="14" />
     <Setter Property="Height" Value="{Binding $parent[ComboBox].Height}" />
     <Setter Property="Template">
       <ControlTemplate>

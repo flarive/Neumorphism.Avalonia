@@ -35,6 +35,7 @@
     <Setter Property="VerticalAlignment" Value="Top" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth1" />
+    <Setter Property="FontSize" Value="14"/>
     <Setter Property="Template">
       <ControlTemplate>
         <Border BorderBrush="{TemplateBinding BorderBrush}"

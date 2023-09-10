@@ -25,7 +25,7 @@
 					<showMeTheXaml:XamlDisplay UniqueId="List1">
 						<controls:Card Padding="0" CornerRadius="10">
 							<ListBox Width="300" ToolTip.Tip="List box with just text blocks">
-								<TextBlock Text="Text 1" />
+                <TextBlock Text="Text 1"/>
 								<TextBlock Text="Text 2" />
 								<TextBlock Text="Text 3" />
 								<TextBlock Text="Text 4" />
