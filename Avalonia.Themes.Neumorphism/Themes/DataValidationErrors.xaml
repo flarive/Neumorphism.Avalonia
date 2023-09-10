@@ -31,11 +31,12 @@
 
   <!--Default DataValidationErrors theme-->
   <ControlTheme x:Key="{x:Type DataValidationErrors}" TargetType="DataValidationErrors">
+    <Setter Property="Margin" Value="0,4,0,0"/>
     <Setter Property="Template">
       <ControlTemplate TargetType="DataValidationErrors">
         <DockPanel LastChildFill="True">
           <ContentControl x:Name="InlineDataValidationContentControl"
-                          Margin="0,4,0,0"
+                          Margin="{TemplateBinding Margin}"
                           Content="{Binding (DataValidationErrors.Errors)}"
                           ContentTemplate="{TemplateBinding ErrorTemplate}"
                           DataContext="{TemplateBinding Owner}"
@@ -61,7 +62,7 @@
               <Setter Property="TextWrapping" Value="Wrap" />
               <Setter Property="FontSize" Value="10" />
               <Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
-              <Setter Property="Padding" Value="16,0,16,0" />
+              <Setter Property="Padding" Value="16,4,16,0" />
               <Setter Property="Height" Value="20" />
               <Setter Property="MinHeight" Value="20" />
               <Setter Property="MaxHeight" Value="20" />
