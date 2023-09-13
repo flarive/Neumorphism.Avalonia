@@ -36,11 +36,11 @@
         <StackPanel Orientation="Vertical">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker4">
-            <TimePicker MinuteIncrement="15"/>
+            <controls:ExtendedTimePicker MinuteIncrement="15"/>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker5">
-            <TimePicker SelectedTime="14:30" ClockIdentifier="24HourClock"/>
+            <controls:ExtendedTimePicker SelectedTime="14:30" ClockIdentifier="24HourClock"/>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
         </StackPanel>
