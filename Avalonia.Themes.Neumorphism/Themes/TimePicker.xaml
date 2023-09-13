@@ -1,6 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
         xmlns:sys="using:System">
+
+	<!-- Neumorphism theme ok -->
+	
+	
   <Design.PreviewWith>
     <Border Padding="20" Height="500">
       <StackPanel Spacing="20" VerticalAlignment="Center">
@@ -29,6 +36,28 @@
   <x:Double x:Key="TimePickerThemeMaxWidth">456</x:Double>
   <Thickness x:Key="TimePickerFlyoutPresenterItemPadding">0,3,0,6</Thickness>
   <Thickness x:Key="TimePickerHostPadding">0,3,0,6</Thickness>
+
+
+	<ControlTheme x:Key="CustomTimePickerButton" TargetType="Button">
+		<Setter Property="TextElement.Foreground" Value="Gray" />
+		<Setter Property="Margin" Value="2,0,4,0" />
+		<Setter Property="Width" Value="20" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Height="24"
+					  Width="20"
+					  HorizontalAlignment="Center"
+					  VerticalAlignment="Center"
+					  Margin="0"
+					  ClipToBounds="False">
+					<controls:MaterialInternalIcon
+							   VerticalAlignment="Center"
+							   HorizontalAlignment="Center"
+							   Kind="Calendar" Width="24" Height="24"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
 
   <ControlTheme x:Key="FluentTimePickerFlyoutButton" TargetType="Button">
     <Setter Property="RenderTransform" Value="none" />
@@ -71,10 +100,11 @@
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
+	<Setter Property="assist:TimePickerAssist.UseFloatingWatermark" Value="False"/>
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
-          <Grid Name="LayoutRoot" Margin="{TemplateBinding Padding}">
+          <!--<Grid Name="LayoutRoot" Margin="{TemplateBinding Padding}">
             <Button x:Name="PART_FlyoutButton"
                     Theme="{StaticResource FluentTimePickerFlyoutButton}"
                     Foreground="{TemplateBinding Foreground}"
@@ -89,7 +119,7 @@
                     VerticalAlignment="Top">
 
               <Grid Name="PART_FlyoutButtonContentGrid">
-                <!--Ignore col defs here, set in code-->
+                --><!--Ignore col defs here, set in code--><!--
                 <Border x:Name="PART_FirstPickerHost"
                         Grid.Column="0"
                         HorizontalAlignment="Stretch"
@@ -148,7 +178,96 @@
               <TimePickerPresenter Name="PART_PickerPresenter" />
             </Popup>
 
-          </Grid>
+          </Grid>-->
+			<DataValidationErrors>
+				<Panel x:Name="LayoutRoot"
+					   HorizontalAlignment="Stretch"
+					   VerticalAlignment="Stretch">
+					<Border x:Name="Background"
+							CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
+							BorderThickness="0"
+							BorderBrush="Transparent"
+							Background="{TemplateBinding Background}">
+						<Border.BoxShadow>
+							<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+								<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+								<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+							</MultiBinding>
+						</Border.BoxShadow>
+					</Border>
+					<Grid ColumnDefinitions="*,Auto">
+						<!--Main container-->
+						<TextBox Name="PART_TextBox"
+								 Grid.Column="0"
+								 Theme="{StaticResource TextBoxNoMaterial2}"
+								 Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+								 Foreground="{TemplateBinding Foreground}"
+								 Background="Transparent"
+								 BorderBrush="Transparent"
+								 BorderThickness="0"
+								 Padding="0"
+								 Margin="0"
+								 FontSize="{TemplateBinding FontSize}"
+								 HorizontalAlignment="Left"
+								 VerticalAlignment="Center"
+								 VerticalContentAlignment="Center"
+								 HorizontalContentAlignment="Left"/>
+						<!--UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"-->
+						<!--Watermark="{TemplateBinding Watermark}"-->
+						<!--Right container-->
+						<Border Grid.Column="1" Margin="0" Padding="0"
+								  Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+						CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
+						VerticalAlignment="Stretch">
+							<Button Name="PART_Button" Width="40" Cursor="Hand" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
+							Theme="{StaticResource CustomTimePickerButton}"
+							Focusable="False" />
+						</Border>
+
+						<Popup Name="PART_Popup"
+                               WindowManagerAddShadowHint="False"
+                               IsLightDismissEnabled="True"
+                               PlacementTarget="{TemplateBinding}"
+                               Placement="Bottom">
+							<Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
+								<Border.BoxShadow>
+									<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+										<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+										<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+										<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+									</MultiBinding>
+								</Border.BoxShadow>
+							    <TimePickerPresenter Name="PART_PickerPresenter" />
+                            </Border>
+						</Popup>
+
+
+						<!--<Popup Name="PART_Popup"
+							   PlacementTarget="{TemplateBinding}"
+							   IsLightDismissEnabled="True">
+
+							<Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
+								<Border.BoxShadow>
+									<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+										<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+										<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+										<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+									</MultiBinding>
+								</Border.BoxShadow>
+
+								<Calendar Name="PART_Calendar"
+										FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+										IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+										SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
+										DisplayDate="{TemplateBinding DisplayDate}"
+										DisplayDateStart="{TemplateBinding DisplayDateStart}"
+										DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+							</Border>
+						</Popup>-->
+					</Grid>
+				</Panel>
+			</DataValidationErrors>
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
