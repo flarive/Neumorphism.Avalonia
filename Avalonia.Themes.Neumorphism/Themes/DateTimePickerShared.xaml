@@ -17,6 +17,8 @@
     <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
+	<!--<Setter Property="BorderBrush" Value="Red" />
+	<Setter Property="BorderThickness" Value="1" />-->
 
     <Style Selector="^:selected">
       <Setter Property="IsHitTestVisible" Value="False"/>

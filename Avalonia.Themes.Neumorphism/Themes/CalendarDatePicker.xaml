@@ -29,7 +29,7 @@
               VerticalAlignment="Center"
               Margin="0"
               ClipToBounds="False">
-          <controls:MaterialInternalIcon
+          <controls:MaterialInternalIcon Background="Transparent" Cursor="Hand"
                      VerticalAlignment="Center"
                      HorizontalAlignment="Center"
                      Kind="Calendar" Width="24" Height="24"/>
@@ -55,7 +55,7 @@
     <Setter Property="Padding" Value="0" />
     <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="Watermark" Value="zz" />
+    <Setter Property="Watermark" Value="" />
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="Template">
       <ControlTemplate>
@@ -97,10 +97,10 @@
                        HorizontalContentAlignment="Left"/>
               <!--Right container-->
 				      <Border Grid.Column="1" Margin="0" Padding="0" 
-					            Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+                      Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
                       CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
                       VerticalAlignment="Stretch">
-                  <Button Name="PART_Button" Width="40" Cursor="Hand" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
+                  <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                   Theme="{StaticResource CustomCalendarDatePickerButton}"
                   Focusable="False" />
               </Border>
