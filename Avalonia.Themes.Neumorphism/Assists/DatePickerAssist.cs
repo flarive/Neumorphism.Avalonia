@@ -60,5 +60,15 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static void SetInnerRightPadding(AvaloniaObject element, Thickness value) => element.SetValue(InnerRightPaddingProperty, value);
 
         public static Thickness GetInnerRightPadding(AvaloniaObject element) => (Thickness)element.GetValue(InnerRightPaddingProperty);
+
+
+
+
+        public static AvaloniaProperty<string> LabelProperty = AvaloniaProperty.RegisterAttached<CalendarDatePicker, string>(
+            "Label", typeof(DatePickerAssist));
+
+        public static void SetLabel(AvaloniaObject element, string value) => element.SetValue(LabelProperty, value);
+
+        public static string GetLabel(AvaloniaObject element) => (string)element.GetValue(LabelProperty);
     }
 }

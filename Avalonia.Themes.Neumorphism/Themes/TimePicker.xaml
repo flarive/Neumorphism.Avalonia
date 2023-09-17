@@ -99,9 +99,8 @@
     <Setter Property="Foreground" Value="Black" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="assist:TimePickerAssist.UseFloatingWatermark" Value="False"/>
-	<Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
-	<Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
+	  <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
+	  <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Height" Value="40"/>
@@ -110,7 +109,9 @@
     <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="CornerRadius" Value="0" />
     <Setter Property="Watermark" Value="" />
+    <Setter Property="UseFloatingWatermark" Value="False"/>
     <Setter Property="FontSize" Value="14"/>
+    <Setter Property="ClockIdentifier" Value="24HourClock"/>
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
@@ -138,28 +139,30 @@
 						    <TextBlock Name="PART_PeriodTextBlock" IsVisible="False"/>
 						</StackPanel>
 						<TextBox Name="PART_TextBox"
-								 Grid.Column="0"
-								 Theme="{StaticResource TextBoxNoMaterial2}"
-								 Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-								 Foreground="{TemplateBinding Foreground}"
-								 Background="Transparent"
-								 BorderBrush="Transparent"
-								 BorderThickness="0"
-								 Padding="0"
-								 Margin="0"
-                                 UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
-                                 Watermark="{TemplateBinding Watermark}"
-								 FontSize="{TemplateBinding FontSize}"
-								 HorizontalAlignment="Left"
-								 VerticalAlignment="Center"
-								 VerticalContentAlignment="Center"
-								 HorizontalContentAlignment="Left">
-							<TextBlock.Text>
-								<MultiBinding StringFormat="{}{0}:{1}">
-									<Binding ElementName="PART_HourTextBlock" Path="Text" FallbackValue="xx" />
-									<Binding ElementName="PART_MinuteTextBlock" Path="Text" FallbackValue="ii" />
-								</MultiBinding>
-							</TextBlock.Text>
+                            Grid.Column="0"
+                            Theme="{StaticResource TextBoxNoMaterial2}"
+                            Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Margin="0"
+                            UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
+                            Watermark="{TemplateBinding Watermark}"
+                            FontSize="{TemplateBinding FontSize}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Left">
+                <TextBox.Text>
+                  <MultiBinding Converter="{StaticResource TimeFormatStringConverter}">
+                    <Binding Path="ClockIdentifier" RelativeSource="{RelativeSource TemplatedParent}"/>
+                    <Binding ElementName="PART_HourTextBlock" Path="Text" />
+                    <Binding ElementName="PART_MinuteTextBlock" Path="Text" />
+                    <Binding ElementName="PART_PeriodTextBlock" Path="Text" />
+                  </MultiBinding>
+                </TextBox.Text>
 							</TextBox>
 						<!--Right container-->
 						<Border Grid.Column="1" Margin="0" Padding="0"
@@ -185,7 +188,7 @@
 									</MultiBinding>
 								</Border.BoxShadow>
 							    <TimePickerPresenter Name="PART_PickerPresenter" />
-                            </Border>
+              </Border>
 						</Popup>
 					</Grid>
 				</Panel>
@@ -204,6 +207,22 @@
     <Style Selector="^:error /template/ Button#PART_FlyoutButton">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}"/>
     </Style>
+
+    <!--<Style Selector="^:hasnotime /template/ TextBox#PART_TextBox">
+      <Setter Property="Background" Value="Yellow"/>
+      --><!--<Setter Property="Text" Value="00:11"/>--><!--
+    </Style>-->
+
+    <!--<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#PART_TextBox, ^:focus-within /template/ TextBlock#PART_TextBox, ^:not(:empty) /template/ TextBlock#PART_TextBox">
+      <Setter Property="Background" Value="Red" />
+    </Style>-->
+
+    <!--<Style Selector="^:empty /template/ TextBox#PART_TextBox">
+      <Setter Property="Background" Value="Red" />
+    </Style>-->
+
+    
+    
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type TimePickerPresenter}" TargetType="TimePickerPresenter">

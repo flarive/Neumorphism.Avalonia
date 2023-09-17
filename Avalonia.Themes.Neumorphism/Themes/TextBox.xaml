@@ -112,22 +112,6 @@
               </MultiBinding>
             </Border.BoxShadow>
 
-            <Border.Styles>
-							<!--Floating watermark anim-->
-							<Style
-								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
-                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
-                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
-								<Setter Property="Margin" Value="1,-16,1,1" />
-								<Setter Property="RenderTransform" Value="scale(0.75)" />
-							</Style>
-
-							<Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
-								<Setter Property="Margin" Value="13,13,13,0" />
-								<Setter Property="RenderTransform" Value="scale(1)" />
-							</Style>
-						</Border.Styles>
-
 						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 							<TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
 											IsVisible="{TemplateBinding UseFloatingWatermark}"
@@ -300,6 +284,20 @@
 		<Style Selector="^.revealPasswordButton" >
 			<Setter Property="InnerRightContent" Value="{StaticResource RevealTextMaskToggleButtonTemplate}"/>
 		</Style>
+
+
+    <!--Floating watermark anim-->
+    <Style Selector="^:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                          ^:focus-within /template/ TextBlock#floatingWatermark,
+                                          ^:not(:empty) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="1,-16,1,1" />
+      <Setter Property="RenderTransform" Value="scale(0.75)" />
+    </Style>
+
+    <Style Selector="^:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="13,13,13,0" />
+      <Setter Property="RenderTransform" Value="scale(1)" />
+    </Style>
   </ControlTheme>
 
 
@@ -309,11 +307,6 @@
 	<!-- Filled textbox theme -->
 	<ControlTheme x:Key="TextBoxFilled" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
 		<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-
-		<!--<Style Selector="^ /template/ Border#PART_AssistButtonsContainer">
-		  <Setter Property="Height" Value="40" />
-		  <Setter Property="VerticalAlignment" Value="Top" />
-		</Style>-->
 	</ControlTheme>
 
 
@@ -359,22 +352,6 @@
 								<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
 							  </MultiBinding>
 							</Border.BoxShadow>
-
-            <Border.Styles>
-							<!--Floating watermark anim-->
-							<Style
-								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
-                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
-                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
-								<Setter Property="Margin" Value="1,-16,1,1" />
-								<Setter Property="RenderTransform" Value="scale(0.75)" />
-							</Style>
-
-							<Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
-								<Setter Property="Margin" Value="13,13,10,0" />
-								<Setter Property="RenderTransform" Value="scale(1)" />
-							</Style>
-						</Border.Styles>
 
 						<Panel>
 
@@ -493,6 +470,19 @@
 		<Style Selector="^:error">
 			<Setter Property="BorderBrush" Value="{DynamicResource ValidationErrorBrush}" />
 		</Style>
+
+    <!--Floating watermark anim-->
+    <Style Selector="^:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                          ^:focus-within /template/ TextBlock#floatingWatermark,
+                                          ^:not(:empty) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="1,-16,1,1" />
+      <Setter Property="RenderTransform" Value="scale(0.75)" />
+    </Style>
+
+    <Style Selector="^:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="13,13,10,0" />
+      <Setter Property="RenderTransform" Value="scale(1)" />
+    </Style>
 	</ControlTheme>
 
 
@@ -522,22 +512,6 @@
                 <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
               </MultiBinding>
             </Border.BoxShadow>
-
-            <Border.Styles>
-              <!--Floating watermark anim-->
-              <Style
-								Selector="TextBox:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
-                                          TextBox:focus-within /template/ TextBlock#floatingWatermark,
-                                          TextBox:not(:empty) /template/ TextBlock#floatingWatermark">
-                <Setter Property="Margin" Value="1,-16,1,1" />
-                <Setter Property="RenderTransform" Value="scale(0.75)" />
-              </Style>
-
-              <Style Selector="TextBox:empty:not(:focus) /template/ TextBlock#floatingWatermark">
-                <Setter Property="Margin" Value="13,13,13,0" />
-                <Setter Property="RenderTransform" Value="scale(1)" />
-              </Style>
-            </Border.Styles>
 
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
@@ -641,6 +615,19 @@
     <Style Selector="^[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
       <Setter Property="Margin" Value="1, 20, 1, 0" />
     </Style>-->
+
+    <!--Floating watermark anim-->
+    <Style Selector="^:focus-within:not(:empty) /template/ TextBlock#floatingWatermark,
+                                ^:focus-within /template/ TextBlock#floatingWatermark,
+                                ^:not(:empty) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="1,-16,1,1" />
+      <Setter Property="RenderTransform" Value="scale(0.75)" />
+    </Style>
+
+    <Style Selector="^:empty:not(:focus) /template/ TextBlock#floatingWatermark">
+      <Setter Property="Margin" Value="13,13,13,0" />
+      <Setter Property="RenderTransform" Value="scale(1)" />
+    </Style>
   </ControlTheme>
 
 
@@ -809,8 +796,8 @@
 		<Setter Property="BorderBrush" Value="Transparent"/>
 		<Setter Property="Cursor" Value="Ibeam"/>
 		<Setter Property="AcceptsReturn" Value="False"/>
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
 		<Setter Property="TextAlignment" Value="Left"/>
 		<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
 		<Setter Property="HorizontalAlignment" Value="Left" />
@@ -821,7 +808,9 @@
 						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 							<DataValidationErrors Name="DataValidation">
-								<Grid Name="PART_Grid" Margin="12,0,12,0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+								<Grid Name="PART_Grid" Margin="12,0,12,0" VerticalAlignment="Stretch"
+                      Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24}"
+                      Height="{TemplateBinding Height}">
 									<Panel Name="PART_TextRoot" Height="{TemplateBinding Height}" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Stretch">
 										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0"
 													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
@@ -843,6 +832,8 @@
 												<TextPresenter Name="PART_TextPresenter"
 												  VerticalAlignment="Center"
 												  HorizontalAlignment="Left"
+                          MinWidth="{TemplateBinding Width}"
+                          MinHeight="{TemplateBinding Height}"
 													Margin="0"
 												  TextBox.Background="{TemplateBinding Background}"
 												  TextBox.Foreground="{TemplateBinding Foreground}"
