@@ -212,31 +212,33 @@
             </Border.BoxShadow>
 
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-              <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+              <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
+                      MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
 											IsVisible="{TemplateBinding UseFloatingWatermark}"
 											FontFamily="{TemplateBinding FontFamily}"
 											FontSize="{TemplateBinding FontSize}"
 											FontWeight="{TemplateBinding FontWeight}"
 											FontStyle="{TemplateBinding FontStyle}"
+                      TextWrapping="NoWrap"
+                      TextTrimming="CharacterEllipsis"
 											Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
 											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
 											RenderTransformOrigin="0, 0" />
 
-              <DataValidationErrors Name="DataValidation">
-                <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
+              <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0">
+                <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
                   <!--Main container-->
-                  <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
-                    <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="15,0,15,0"
+                  <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0"
 													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                      <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                      <Panel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0">
 
                         <TextBox Name="PART_TextBox"
                        Theme="{StaticResource TextBoxNoMaterial2}"
                        Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-                       Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=0}"
                        Foreground="{TemplateBinding Foreground}"
-                       Background="Green"
+                       Background="Transparent"
                        BorderBrush="Transparent"
                        BorderThickness="0"
                        Padding="0"
@@ -244,7 +246,7 @@
                        FontSize="{TemplateBinding FontSize}"
                        UseFloatingWatermark="False"
                        HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Stretch"
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Left"/>
                       </Panel>
@@ -254,7 +256,7 @@
                   <!--Right container-->
                   <Border Grid.Column="1" Margin="0" Padding="0"
                       Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      CornerRadius="10"
+                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
                       VerticalAlignment="Stretch">
                     <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                     Theme="{StaticResource CustomCalendarDatePickerButton}"
@@ -377,17 +379,17 @@
     </Style>
 
     <!-- Default TextBox style -->
-    <Style Selector="^[UseFloatingWatermark=True] /template/ Panel#PART_TextRoot">
+    <!--<Style Selector="^[UseFloatingWatermark=True] /template/ Panel#PART_TextRoot">
       <Setter Property="Margin" Value="1, 10, 1, 0" />
-    </Style>
+    </Style>-->
 
     <!--<Style Selector="^[UseFloatingWatermark=True] /template/ TextBlock#watermark">
       <Setter Property="IsVisible" Value="False" />
     </Style>-->
 
-    <Style Selector="^[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
+    <!--<Style Selector="^[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
       <Setter Property="Margin" Value="1, 10, 1, 0" />
-    </Style>
+    </Style>-->
 
 
     <!--<Style Selector="^[UseFloatingWatermark=True] /template/ TextBox#PART_TextBox">

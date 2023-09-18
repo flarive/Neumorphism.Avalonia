@@ -805,9 +805,9 @@
 		<Setter Property="CornerRadius" Value="0" />
 		<Setter Property="Template">
 			<ControlTemplate>
-						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
 
-							<DataValidationErrors Name="DataValidation">
+							<DataValidationErrors Name="DataValidation" Margin="0" Padding="0">
 								<Grid Name="PART_Grid" Margin="12,0,12,0" VerticalAlignment="Stretch"
                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24}"
                       Height="{TemplateBinding Height}">
@@ -833,7 +833,6 @@
 												  VerticalAlignment="Center"
 												  HorizontalAlignment="Left"
                           MinWidth="{TemplateBinding Width}"
-                          MinHeight="{TemplateBinding Height}"
 													Margin="0"
 												  TextBox.Background="{TemplateBinding Background}"
 												  TextBox.Foreground="{TemplateBinding Foreground}"
