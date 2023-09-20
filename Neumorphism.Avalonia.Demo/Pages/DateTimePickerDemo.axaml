@@ -24,11 +24,11 @@
           <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
-            <CalendarDatePicker Theme="{StaticResource Test}" UseFloatingWatermark="False" Watermark="What is your birthdate ?" SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
+            <CalendarDatePicker UseFloatingWatermark="False" Watermark="What is your birthdate ?" SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
-            <CalendarDatePicker Theme="{StaticResource Test}" UseFloatingWatermark="True" assist:DatePickerAssist.Label="Floating watermark TextBox" Width="180" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
+            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Floating watermark TextBox" Width="180" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker3">

@@ -38,7 +38,7 @@
     </Setter>
   </ControlTheme>
 
-  <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+  <!--<ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="Black" />
     <Setter Property="BorderBrush" Value="Transparent" />
@@ -77,7 +77,7 @@
                 </Border.BoxShadow>
               </Border>
             <Grid ColumnDefinitions="*,Auto">
-              <!--Main container-->
+              --><!--Main container--><!--
               <TextBox Name="PART_TextBox"
                        Grid.Column="0"
                        Theme="{StaticResource TextBoxNoMaterial2}"
@@ -95,7 +95,7 @@
                        VerticalAlignment="Center"
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Left"/>
-              <!--Right container-->
+              --><!--Right container--><!--
 				      <Border Grid.Column="1" Margin="0" Padding="0" 
                       Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
                       CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
@@ -134,19 +134,19 @@
       </ControlTemplate>
     </Setter>
 
-    <!-- Pressed State -->
+    --><!-- Pressed State --><!--
     <Style Selector="^:pressed /template/ Border#Background">
       <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPressed}" />
       <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPressed}" />
     </Style>
 
-    <!-- Pointer-over State -->
+    --><!-- Pointer-over State --><!--
     <Style Selector="^:pointerover /template/ Border#Background">
       <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPointerOver}" />
       <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPointerOver}" />
     </Style>
 
-    <!-- Disabled State -->
+    --><!-- Disabled State --><!--
     <Style Selector="^:disabled">
       <Style Selector="^ /template/ Border#Background">
         <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundDisabled}" />
@@ -158,42 +158,42 @@
       </Style>
     </Style>
 
-    <!-- Focused State -->
+    --><!-- Focused State --><!--
     <Style Selector="^:focus-within:not(CalendarDatePicker:focus) /template/ Border#Background">
       <Setter Property="Background" Value="{DynamicResource TextControlBackgroundFocused}" />
       <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}" />
       <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
     </Style>
 
-    <!-- Error State -->
+    --><!-- Error State --><!--
     <Style Selector="^:error /template/ Border#Background">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
     </Style>
-  </ControlTheme>
+  </ControlTheme>-->
 
 
-  <ControlTheme x:Key="Test" TargetType="CalendarDatePicker">
-    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-    <Setter Property="Foreground" Value="Black" />
-    <Setter Property="BorderBrush" Value="Transparent" />
-    <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="UseFloatingWatermark" Value="False"/>
-    <Setter Property="assist:DatePickerAssist.InnerRightBackground" Value="#22444444"/>
-    <Setter Property="assist:DatePickerAssist.InnerRightPadding" Value="0"/>
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="HorizontalContentAlignment" Value="Left" />
-    <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="Height" Value="40"/>
-    <Setter Property="Width" Value="240"/>
-    <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="0,15,0,15" />
-    <Setter Property="CornerRadius" Value="10" />
-    <Setter Property="Watermark" Value="" />
-    <Setter Property="FontSize" Value="14"/>
-    <Setter Property="ClipToBounds" Value="False" />
-    <Setter Property="Template">
-      <ControlTemplate>
+    <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+        <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="UseFloatingWatermark" Value="False"/>
+        <Setter Property="assist:DatePickerAssist.InnerRightBackground" Value="#22444444"/>
+        <Setter Property="assist:DatePickerAssist.InnerRightPadding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="240"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0,15,0,15" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Watermark" Value="" />
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="ClipToBounds" Value="False" />
+        <Setter Property="Template">
+        <ControlTemplate>
         <Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">
 
           <Border x:Name="PART_RootBorder"
@@ -213,14 +213,14 @@
 
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
-                      MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
+                                            MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
 											IsVisible="{TemplateBinding UseFloatingWatermark}"
 											FontFamily="{TemplateBinding FontFamily}"
 											FontSize="{TemplateBinding FontSize}"
 											FontWeight="{TemplateBinding FontWeight}"
 											FontStyle="{TemplateBinding FontStyle}"
-                      TextWrapping="NoWrap"
-                      TextTrimming="CharacterEllipsis"
+                                            TextWrapping="NoWrap"
+                                            TextTrimming="CharacterEllipsis"
 											Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
 											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
 											RenderTransformOrigin="0, 0" />
@@ -330,34 +330,24 @@
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
     </Style>
 
-
-    
-    
-
-
-
     <!--Floating watermark anim-->
     <Style Selector="^:not(^[Text=]):focus-within /template/ TextBlock#floatingWatermark,
                     ^:not(^[Text=]) /template/ TextBlock#floatingWatermark">
       <Setter Property="Margin" Value="1,-16,1,1" />
       <Setter Property="RenderTransform" Value="scale(0.75)" />
-      <!--<Setter Property="Background" Value="Green" />
-      <Setter Property="Foreground" Value="Yellow" />-->
-    </Style>
+	  <Setter Property="MaxWidth" Value="{TemplateBinding Width}" />
+	</Style>
 
 
     <Style Selector="^[Text=]:not(:focus) /template/ TextBlock#floatingWatermark">
       <Setter Property="Margin" Value="10,10,10,0" />
       <Setter Property="RenderTransform" Value="scale(1)" />
-      <!--<Setter Property="Background" Value="Blue" />
-      <Setter Property="Foreground" Value="Red" />-->
     </Style>
 
     <Style Selector="^:focus-within /template/ TextBlock#floatingWatermark">
       <Setter Property="Margin" Value="1,-16,1,1" />
       <Setter Property="RenderTransform" Value="scale(0.75)" />
-      <!--<Setter Property="Background" Value="Orange" />
-      <Setter Property="Foreground" Value="Black" />-->
+  	  <Setter Property="MaxWidth" Value="{TemplateBinding Width}" />
     </Style>
 
 
