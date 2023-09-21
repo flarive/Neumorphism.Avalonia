@@ -225,45 +225,47 @@
 											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
 											RenderTransformOrigin="0, 0" />
 
-              <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0">
+              
                 <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
                   <!--Main container-->
                   <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-                    <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0"
-													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                      <Panel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0">
+                    <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0">
+                      <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0"
+													    HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+													    VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+                        <Panel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0">
 
-                        <TextBox Name="PART_TextBox"
-                       Theme="{StaticResource TextBoxNoMaterial2}"
-                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-                       Foreground="{TemplateBinding Foreground}"
-                       Background="Transparent"
-                       BorderBrush="Transparent"
-                       BorderThickness="0"
-                       Padding="0"
-                       Margin="0"
-                       FontSize="{TemplateBinding FontSize}"
-                       UseFloatingWatermark="False"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Stretch"
-                       VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Left"/>
-                      </Panel>
-                    </ScrollViewer>
+                          <TextBox Name="PART_TextBox"
+                         Theme="{StaticResource TextBoxNoMaterial2}"
+                         Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+                         Foreground="{TemplateBinding Foreground}"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         BorderThickness="0"
+                         Padding="0"
+                         Margin="0"
+                         FontSize="{TemplateBinding FontSize}"
+                         UseFloatingWatermark="False"
+                         HorizontalAlignment="Left"
+                         VerticalAlignment="Stretch"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"/>
+                        </Panel>
+                      </ScrollViewer>
+                    </DataValidationErrors>
                   </Panel>
                   
                   <!--Right container-->
                   <Border Grid.Column="1" Margin="0" Padding="0"
                       Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
+                      CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|0%|100%|100%}"
                       VerticalAlignment="Stretch">
                     <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                     Theme="{StaticResource CustomCalendarDatePickerButton}"
                     Focusable="False" />
                   </Border>
                 </Grid>
-              </DataValidationErrors>
+              
 
               <Popup Name="PART_Popup"
                      PlacementTarget="{TemplateBinding}"
@@ -414,6 +416,8 @@
     <Style Selector="^:error /template/ TextBlock#HintsTextBlock">
       <Setter Property="IsVisible" Value="False" />
     </Style>
+
+
     
     
   </ControlTheme>
