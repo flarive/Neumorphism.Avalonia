@@ -25,7 +25,7 @@
 	  <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
 	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.4" />
 	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.4" />
-    <PackageReference Include="SkiaSharp" Version="2.88.5" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
     <AvaloniaResource Include="**/*.xaml" />  
   </ItemGroup>
   <ItemGroup>

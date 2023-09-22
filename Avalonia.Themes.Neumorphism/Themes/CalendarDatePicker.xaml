@@ -198,6 +198,7 @@
 
           <Border x:Name="PART_RootBorder"
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
+				    Height="{TemplateBinding Height}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
                     Background="{TemplateBinding Background}">
@@ -226,14 +227,15 @@
 											RenderTransformOrigin="0, 0" />
 
               
+				
                 <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
                   <!--Main container-->
-                  <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Center" HorizontalAlignment="Stretch">
-                    <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0" Padding="0">
+                  <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
                       <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0"
-													    HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-													    VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-                        <Panel VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0">
+													    HorizontalScrollBarVisibility="Hidden"
+													    VerticalScrollBarVisibility="Hidden">
+                        <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0">
 
                           <TextBox Name="PART_TextBox"
                          Theme="{StaticResource TextBoxNoMaterial2}"
@@ -257,14 +259,16 @@
                   
                   <!--Right container-->
                   <Border Grid.Column="1" Margin="0" Padding="0"
+				      Height="{TemplateBinding Height}"
                       Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|0%|100%|100%}"
+                      CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|100%|100%|0%}"
                       VerticalAlignment="Stretch">
                     <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
                     Theme="{StaticResource CustomCalendarDatePickerButton}"
                     Focusable="False" />
                   </Border>
                 </Grid>
+					
               
 
               <Popup Name="PART_Popup"
@@ -302,11 +306,12 @@
       <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPressed}" />
     </Style>
 
+		<!--KEEP ????????????-->
     <!-- Pointer-over State -->
-    <Style Selector="^:pointerover /template/ Border#PART_RootBorder">
+    <!--<Style Selector="^:pointerover /template/ Border#PART_RootBorder">
       <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPointerOver}" />
       <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPointerOver}" />
-    </Style>
+    </Style>-->
 
     <!-- Disabled State -->
     <Style Selector="^:disabled">
@@ -413,9 +418,13 @@
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
     </Style>
 
-    <Style Selector="^:error /template/ TextBlock#HintsTextBlock">
+    <!--<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
       <Setter Property="IsVisible" Value="False" />
+    </Style>-->
+    <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Margin" Value="0,-10,0,0" />
     </Style>
+		
 
 
     

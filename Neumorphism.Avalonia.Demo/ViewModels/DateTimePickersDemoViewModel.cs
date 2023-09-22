@@ -14,24 +14,36 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             {
                 if (value.HasValue)
                 {
-                    if (value > DateTime.MinValue && value < DateTime.MaxValue)
+                    if (value < DateTime.Today)
                     {
                         _birthDate = value;
                         OnPropertyChanged(nameof(BirthDate));
                     }
                     else
                     {
-                        throw new ArgumentNullException(nameof(BirthDate), "Invalid date !");
+                        throw new DataValidationException("Invalid birth date !");
                     }
                 }
                 else
                 {
-                    throw new ArgumentNullException(nameof(BirthDate), "This field is required");
+                    throw new DataValidationException("This field is required");
                 }
-                
-                
             }
         }
+
+
+
+        private DateTime _displayBirthDate;
+        public DateTime DisplayBirthDate
+        {
+            get { return _displayBirthDate; }
+            set
+            {
+                _displayBirthDate = value;
+                OnPropertyChanged(nameof(DisplayBirthDate));
+            }
+        }
+
 
         private DateTime? _dateStart;
         public DateTime? DateStart
@@ -62,7 +74,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             get => _dates;
             set
             {
-                if (!string.IsNullOrWhiteSpace(value) && !Regex.IsMatch(value, @"^\d+([A-Za-z-+.']\d+)*$"))
+                if (!string.IsNullOrWhiteSpace(value) && !Regex.IsMatch(value, @"([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"))
                 {
                     throw new DataValidationException("Invalid date");
                 }
@@ -70,6 +82,12 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 _dates = value;
                 OnPropertyChanged();
             }
+        }
+
+
+        public DateTimePickersDemoViewModel()
+        {
+            DisplayBirthDate = DateTime.Today;
         }
     }
 }

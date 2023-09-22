@@ -28,7 +28,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
-            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Birthdate" Width="180" SelectedDate="{Binding Dates}" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
+            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Birthdate" Width="180" SelectedDate="{Binding BirthDate}" DisplayDate="{Binding DisplayBirthDate}" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker3">

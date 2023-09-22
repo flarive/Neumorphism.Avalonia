@@ -266,9 +266,9 @@
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
 		</Style>
 
-		<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
+		<!--<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
 			<Setter Property="IsVisible" Value="False" />
-		</Style>
+		</Style>-->
 
 
     <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
@@ -537,44 +537,44 @@
 
                   <!--Main container-->
                   <DataValidationErrors Grid.Column="1" Name="DataValidation" Margin="0" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
-											<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,15,0"
-															HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-															VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-												<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-													<TextBlock Name="watermark" Padding="0"
-																Margin="0"
-																VerticalAlignment="Stretch"
-																Foreground="{TemplateBinding Foreground}"
-																Opacity="0.5"
-																Text="{TemplateBinding Watermark}"
-																FontFamily="{TemplateBinding FontFamily}"
-																FontSize="{TemplateBinding FontSize}"
-																FontWeight="{TemplateBinding FontWeight}"
-																FontStyle="{TemplateBinding FontStyle}"
-																TextAlignment="{TemplateBinding TextAlignment}"
-																TextWrapping="{TemplateBinding TextWrapping}"/>
-													<TextPresenter Name="PART_TextPresenter"
-														VerticalAlignment="Stretch"
-														HorizontalAlignment="Left"
-														Margin="0"
-														TextBox.Foreground="{TemplateBinding Foreground}"
-														TextBox.FontFamily="{TemplateBinding FontFamily}"
-														TextBox.FontSize="{TemplateBinding FontSize}"
-														TextBox.FontWeight="{TemplateBinding FontWeight}"
-														TextBox.FontStyle="{TemplateBinding FontStyle}"
-														Text="{TemplateBinding Text, Mode=TwoWay}"
-														SelectionStart="{TemplateBinding SelectionStart}"
-														SelectionEnd="{TemplateBinding SelectionEnd}"
-														TextAlignment="{TemplateBinding TextAlignment}"
-														TextWrapping="{TemplateBinding TextWrapping}"
-														PasswordChar="{TemplateBinding PasswordChar}"
-														RevealPassword="{TemplateBinding RevealPassword}"
-														SelectionBrush="{TemplateBinding SelectionBrush}"
-														SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
-														CaretIndex="{TemplateBinding CaretIndex}"
-														CaretBrush="{TemplateBinding CaretBrush}"/>
-												</Panel>
-											</ScrollViewer>
+					<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,15,0"
+									HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+									VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+						<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+							<TextBlock Name="watermark" Padding="0"
+										Margin="0"
+										VerticalAlignment="Stretch"
+										Foreground="{TemplateBinding Foreground}"
+										Opacity="0.5"
+										Text="{TemplateBinding Watermark}"
+										FontFamily="{TemplateBinding FontFamily}"
+										FontSize="{TemplateBinding FontSize}"
+										FontWeight="{TemplateBinding FontWeight}"
+										FontStyle="{TemplateBinding FontStyle}"
+										TextAlignment="{TemplateBinding TextAlignment}"
+										TextWrapping="{TemplateBinding TextWrapping}"/>
+							<TextPresenter Name="PART_TextPresenter"
+								VerticalAlignment="Stretch"
+								HorizontalAlignment="Left"
+								Margin="0"
+								TextBox.Foreground="{TemplateBinding Foreground}"
+								TextBox.FontFamily="{TemplateBinding FontFamily}"
+								TextBox.FontSize="{TemplateBinding FontSize}"
+								TextBox.FontWeight="{TemplateBinding FontWeight}"
+								TextBox.FontStyle="{TemplateBinding FontStyle}"
+								Text="{TemplateBinding Text, Mode=TwoWay}"
+								SelectionStart="{TemplateBinding SelectionStart}"
+								SelectionEnd="{TemplateBinding SelectionEnd}"
+								TextAlignment="{TemplateBinding TextAlignment}"
+								TextWrapping="{TemplateBinding TextWrapping}"
+								PasswordChar="{TemplateBinding PasswordChar}"
+								RevealPassword="{TemplateBinding RevealPassword}"
+								SelectionBrush="{TemplateBinding SelectionBrush}"
+								SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+								CaretIndex="{TemplateBinding CaretIndex}"
+								CaretBrush="{TemplateBinding CaretBrush}"/>
+						</Panel>
+					</ScrollViewer>
                   </DataValidationErrors>
 
                   
@@ -901,9 +901,9 @@
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
 		</Style>
 
-		<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
+		<!--<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
 			<Setter Property="IsVisible" Value="False" />
-		</Style>
+		</Style>-->
 
 
 		<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
