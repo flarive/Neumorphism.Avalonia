@@ -1,6 +1,5 @@
 ﻿using Avalonia.Data;
 using System;
-using System.Text.RegularExpressions;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
@@ -24,25 +23,10 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                         throw new DataValidationException("Invalid birth date !");
                     }
                 }
-                else
-                {
-                    throw new DataValidationException("This field is required");
-                }
             }
         }
 
 
-
-        private DateTime _displayBirthDate;
-        public DateTime DisplayBirthDate
-        {
-            get { return _displayBirthDate; }
-            set
-            {
-                _displayBirthDate = value;
-                OnPropertyChanged(nameof(DisplayBirthDate));
-            }
-        }
 
 
         private DateTime? _dateStart;
@@ -68,26 +52,26 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         }
 
 
-        private string _dates;
-        public string Dates
+
+        private TimeSpan? _currentTime;
+        public TimeSpan? CurrentTime
         {
-            get => _dates;
+            get { return _currentTime; }
             set
             {
-                if (!string.IsNullOrWhiteSpace(value) && !Regex.IsMatch(value, @"([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))"))
+                if (value.HasValue)
                 {
-                    throw new DataValidationException("Invalid date");
+                    if (value < new TimeSpan(12, 0, 0))
+                    {
+                        _currentTime = value;
+                        OnPropertyChanged(nameof(CurrentTime));
+                    }
+                    else
+                    {
+                        throw new DataValidationException("Invalid time !");
+                    }
                 }
-
-                _dates = value;
-                OnPropertyChanged();
             }
-        }
-
-
-        public DateTimePickersDemoViewModel()
-        {
-            DisplayBirthDate = DateTime.Today;
         }
     }
 }

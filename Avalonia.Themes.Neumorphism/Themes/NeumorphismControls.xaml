@@ -29,7 +29,7 @@
             <converters:HeightToThicknessConverter x:Key="HeightToThicknessConverter" />
             <converters:CustomCornerRadiusConverter x:Key="CustomCornerRadiusConverter" />
             <converters:TimeFormatStringConverter x:Key="TimeFormatStringConverter"/>
-            <!--<converters:TestConverter x:Key="TestConverter" />-->
+            <converters:TestConverter x:Key="TestConverter" />
 
 			
 			

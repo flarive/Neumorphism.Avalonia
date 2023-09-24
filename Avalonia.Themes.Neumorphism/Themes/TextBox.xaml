@@ -787,7 +787,7 @@
 		<Setter Property="CaretBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Foreground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}" />
 		<Setter Property="FontSize" Value="14"/>
-		<Setter Property="Watermark" Value=" "/>
+		<Setter Property="Watermark" Value=""/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="Height" Value="40"/>
 		<Setter Property="Width" Value="NaN"/>
@@ -806,33 +806,31 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
-
 							<DataValidationErrors Name="DataValidation" Margin="0" Padding="0">
-								<Grid Name="PART_Grid" Margin="12,0,12,0" VerticalAlignment="Stretch"
-									  Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=24}"
+								<Grid Name="PART_Grid" Margin="0" VerticalAlignment="Stretch"
+									  Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=14}"
 									  Height="{TemplateBinding Height}">
-									<Panel Name="PART_TextRoot" Height="{TemplateBinding Height}" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Stretch">
+									<Panel Name="PART_TextRoot" Height="{TemplateBinding Height}" VerticalAlignment="Center" Margin="10,0,0,0" HorizontalAlignment="Stretch">
 										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0"
 													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
 											<Panel VerticalAlignment="Center" HorizontalAlignment="Left">
 												<TextBlock Name="watermark" Padding="0"
-															Margin="0"
-															Background="{TemplateBinding Background}"
-															Foreground="{TemplateBinding Foreground}"
-															VerticalAlignment="Center"
-														    HorizontalAlignment="Left"
-															Opacity="0.5"
-														    Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=20}"
-															Text="{TemplateBinding Watermark}"
-															FontFamily="{TemplateBinding FontFamily}"
-															FontSize="{TemplateBinding FontSize}"
-															FontWeight="{TemplateBinding FontWeight}"
-															FontStyle="{TemplateBinding FontStyle}"
-															TextAlignment="{TemplateBinding TextAlignment}"
-														    TextWrapping="NoWrap"
-															TextTrimming="CharacterEllipsis"
-															/>
+																		Margin="0"
+																		Background="{TemplateBinding Background}"
+																		Foreground="{TemplateBinding Foreground}"
+																		VerticalAlignment="Center"
+																		HorizontalAlignment="Left"
+																		Opacity="0.5"
+																		Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=10}"
+																		Text="{TemplateBinding Watermark}"
+																		FontFamily="{TemplateBinding FontFamily}"
+																		FontSize="{TemplateBinding FontSize}"
+																		FontWeight="{TemplateBinding FontWeight}"
+																		FontStyle="{TemplateBinding FontStyle}"
+																		TextAlignment="{TemplateBinding TextAlignment}"
+																		TextWrapping="NoWrap"
+																		TextTrimming="CharacterEllipsis"/>
 												<TextPresenter Name="PART_TextPresenter"
 																VerticalAlignment="Center"
 																HorizontalAlignment="Left"

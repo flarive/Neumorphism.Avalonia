@@ -38,143 +38,11 @@
     </Setter>
   </ControlTheme>
 
-  <!--<ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
-    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-    <Setter Property="Foreground" Value="Black" />
-    <Setter Property="BorderBrush" Value="Transparent" />
-    <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="assist:DatePickerAssist.UseFloatingWatermark" Value="False"/>
-    <Setter Property="assist:DatePickerAssist.InnerRightBackground" Value="#22444444"/>
-    <Setter Property="assist:DatePickerAssist.InnerRightPadding" Value="0"/>
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="HorizontalContentAlignment" Value="Left" />
-    <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="Height" Value="40"/>
-    <Setter Property="Width" Value="240"/>
-    <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="0,15,0,15" />
-    <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="Watermark" Value="" />
-    <Setter Property="FontSize" Value="14"/>
-    <Setter Property="Template">
-      <ControlTemplate>
-        <DataValidationErrors>
-          <Panel x:Name="LayoutRoot"
-                 HorizontalAlignment="Stretch"
-                 VerticalAlignment="Stretch">
-            <Border x:Name="Background"
-                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-                    BorderThickness="0"
-                    BorderBrush="Transparent"
-                    Background="{TemplateBinding Background}">
-                <Border.BoxShadow>
-                  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-                    <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                    <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                    <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-                  </MultiBinding>
-                </Border.BoxShadow>
-              </Border>
-            <Grid ColumnDefinitions="*,Auto">
-              --><!--Main container--><!--
-              <TextBox Name="PART_TextBox"
-                       Grid.Column="0"
-                       Theme="{StaticResource TextBoxNoMaterial2}"
-                       Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-                       Foreground="{TemplateBinding Foreground}"
-                       Background="Transparent"
-                       BorderBrush="Transparent"
-                       BorderThickness="0"
-                       Padding="0"
-                       Margin="0"
-                       FontSize="{TemplateBinding FontSize}"
-                       Watermark="{TemplateBinding Watermark}"
-                       UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Left"/>
-              --><!--Right container--><!--
-				      <Border Grid.Column="1" Margin="0" Padding="0" 
-                      Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                      CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=2}"
-                      VerticalAlignment="Stretch">
-                  <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
-                  Theme="{StaticResource CustomCalendarDatePickerButton}"
-                  Focusable="False" />
-              </Border>
-              
-
-              <Popup Name="PART_Popup"
-                     PlacementTarget="{TemplateBinding}"
-                     IsLightDismissEnabled="True">
-                
-                <Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
-                  <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                      <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                      <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-                    </MultiBinding>
-                  </Border.BoxShadow>
-                
-                  <Calendar Name="PART_Calendar"
-                          FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
-                          IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
-                          SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
-                          DisplayDate="{TemplateBinding DisplayDate}"
-                          DisplayDateStart="{TemplateBinding DisplayDateStart}"
-                          DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
-                </Border>
-              </Popup>
-            </Grid>
-          </Panel>
-        </DataValidationErrors>
-      </ControlTemplate>
-    </Setter>
-
-    --><!-- Pressed State --><!--
-    <Style Selector="^:pressed /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPressed}" />
-    </Style>
-
-    --><!-- Pointer-over State --><!--
-    <Style Selector="^:pointerover /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPointerOver}" />
-    </Style>
-
-    --><!-- Disabled State --><!--
-    <Style Selector="^:disabled">
-      <Style Selector="^ /template/ Border#Background">
-        <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundDisabled}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushDisabled}" />
-      </Style>
-
-      <Style Selector="^ /template/ Button#PART_Button">
-        <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarDatePickerCalendarGlyphForegroundDisabled}" />
-      </Style>
-    </Style>
-
-    --><!-- Focused State --><!--
-    <Style Selector="^:focus-within:not(CalendarDatePicker:focus) /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource TextControlBackgroundFocused}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
-    </Style>
-
-    --><!-- Error State --><!--
-    <Style Selector="^:error /template/ Border#Background">
-      <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
-    </Style>
-  </ControlTheme>-->
 
 
     <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="UseFloatingWatermark" Value="False"/>
@@ -198,7 +66,7 @@
 
           <Border x:Name="PART_RootBorder"
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-				    Height="{TemplateBinding Height}"
+				            Height="{TemplateBinding Height}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
                     Background="{TemplateBinding Background}">
@@ -214,17 +82,17 @@
 
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
-                                            MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
-											IsVisible="{TemplateBinding UseFloatingWatermark}"
-											FontFamily="{TemplateBinding FontFamily}"
-											FontSize="{TemplateBinding FontSize}"
-											FontWeight="{TemplateBinding FontWeight}"
-											FontStyle="{TemplateBinding FontStyle}"
-                                            TextWrapping="NoWrap"
-                                            TextTrimming="CharacterEllipsis"
-											Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
-											Foreground="{TemplateBinding Foreground}" Opacity="0.5"
-											RenderTransformOrigin="0, 0" />
+                        MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
+                        IsVisible="{TemplateBinding UseFloatingWatermark}"
+                        FontFamily="{TemplateBinding FontFamily}"
+                        FontSize="{TemplateBinding FontSize}"
+                        FontWeight="{TemplateBinding FontWeight}"
+                        FontStyle="{TemplateBinding FontStyle}"
+                        TextWrapping="NoWrap"
+                        TextTrimming="CharacterEllipsis"
+                        Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
+                        Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+                        RenderTransformOrigin="0, 0" />
 
               
 				
@@ -232,11 +100,6 @@
                   <!--Main container-->
                   <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
-                      <ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="0"
-													    HorizontalScrollBarVisibility="Hidden"
-													    VerticalScrollBarVisibility="Hidden">
-                        <Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0">
-
                           <TextBox Name="PART_TextBox"
                          Theme="{StaticResource TextBoxNoMaterial2}"
                          Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
@@ -252,14 +115,12 @@
                          VerticalAlignment="Stretch"
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Left"/>
-                        </Panel>
-                      </ScrollViewer>
                     </DataValidationErrors>
                   </Panel>
                   
                   <!--Right container-->
                   <Border Grid.Column="1" Margin="0" Padding="0"
-				      Height="{TemplateBinding Height}"
+				              Height="{TemplateBinding Height}"
                       Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
                       CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|100%|100%|0%}"
                       VerticalAlignment="Stretch">
@@ -363,40 +224,23 @@
 
 
 
-    <Style Selector="^:focus-within:empty /template/ TextBlock#watermark, ^:empty /template/ TextBlock#watermark">
+    <!--<Style Selector="^:focus-within:empty /template/ TextBlock#watermark, ^:empty /template/ TextBlock#watermark">
       <Setter Property="IsVisible" Value="True" />
-    </Style>
+    </Style>-->
 
-    <Style Selector="^:focus-within:not(:empty) /template/ TextBlock#watermark, ^:not(:empty) /template/ TextBlock#watermark">
+    <!--<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#watermark, ^:not(:empty) /template/ TextBlock#watermark">
       <Setter Property="IsVisible" Value="False" />
-    </Style>
+    </Style>-->
 
     <Style Selector="^ /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
     </Style>
 
-    <!-- Default TextBox style -->
-    <!--<Style Selector="^[UseFloatingWatermark=True] /template/ Panel#PART_TextRoot">
-      <Setter Property="Margin" Value="1, 10, 1, 0" />
-    </Style>-->
 
-    <!--<Style Selector="^[UseFloatingWatermark=True] /template/ TextBlock#watermark">
-      <Setter Property="IsVisible" Value="False" />
-    </Style>-->
-
-    <!--<Style Selector="^[UseFloatingWatermark=False] /template/ Panel#PART_TextRoot">
-      <Setter Property="Margin" Value="1, 10, 1, 0" />
-    </Style>-->
-
-
-    <!--<Style Selector="^[UseFloatingWatermark=True] /template/ TextBox#PART_TextBox">
-      <Setter Property="Watermark" Value="{TemplateBinding (assist:DatePickerAssist.Label)}" />
-    </Style>-->
 
     <Style Selector="^[UseFloatingWatermark=False] /template/ TextBox#PART_TextBox">
       <Setter Property="Watermark" Value="{TemplateBinding Watermark}" />
     </Style>
-    
 
     <!-- Transitions for all styles textfield -->
     <Style Selector="^:not(.notransitions) /template/ TextBlock#floatingWatermark, ^:not(.notransitions) /template/ Border#watermarkRoot">

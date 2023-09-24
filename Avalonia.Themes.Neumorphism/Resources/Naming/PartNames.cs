@@ -1,4 +1,4 @@
-﻿using Avalonia.Styling;
+﻿using System;
 
 namespace Avalonia.Themes.Neumorphism.Resources.Naming
 {
