@@ -252,26 +252,12 @@
       </Setter>
     </Style>
 
-    <!-- Invalid state -->
-    <!--<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
-      <Setter Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
-      <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-    </Style>-->
-
     <Style Selector="^:error /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
     </Style>
 
-    <!--<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
-      <Setter Property="IsVisible" Value="False" />
-    </Style>-->
     <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
       <Setter Property="Margin" Value="0,-10,0,0" />
     </Style>
-		
-
-
-    
-    
   </ControlTheme>
 </ResourceDictionary>

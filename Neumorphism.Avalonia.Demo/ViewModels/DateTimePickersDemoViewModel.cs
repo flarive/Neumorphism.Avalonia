@@ -35,8 +35,18 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             get { return _dateStart; }
             set
             {
-                _dateStart = value;
-                OnPropertyChanged(nameof(DateStart));
+                if (value.HasValue)
+                {
+                    if (!DateEnd.HasValue || (DateEnd.HasValue && value < DateEnd.Value))
+                    {
+                        _dateStart = value;
+                        OnPropertyChanged(nameof(DateStart));
+                    }
+                    else
+                    {
+                        throw new DataValidationException("Invalid start date !");
+                    }
+                }
             }
         }
 
@@ -46,8 +56,18 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             get { return _dateEnd; }
             set
             {
-                _dateEnd = value;
-                OnPropertyChanged(nameof(DateEnd));
+                if (value.HasValue)
+                {
+                    if (!DateStart.HasValue || (DateStart.HasValue && value > DateStart.Value))
+                    {
+                        _dateEnd = value;
+                        OnPropertyChanged(nameof(DateEnd));
+                    }
+                    else
+                    {
+                        throw new DataValidationException("Invalid end date !");
+                    }
+                }
             }
         }
 
@@ -69,6 +89,49 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     else
                     {
                         throw new DataValidationException("Invalid time !");
+                    }
+                }
+            }
+        }
+
+
+        private TimeSpan? _timeStart;
+        public TimeSpan? TimeStart
+        {
+            get { return _timeStart; }
+            set
+            {
+                if (value.HasValue)
+                {
+                    if (!TimeStart.HasValue || (TimeStart.HasValue && value > TimeStart.Value))
+                    {
+                        _timeStart = value;
+                        OnPropertyChanged(nameof(TimeStart));
+                    }
+                    else
+                    {
+                        throw new DataValidationException("Invalid start time !");
+                    }
+                }
+            }
+        }
+
+        private TimeSpan? _timeEnd;
+        public TimeSpan? TimeEnd
+        {
+            get { return _timeEnd; }
+            set
+            {
+                if (value.HasValue)
+                {
+                    if (!TimeStart.HasValue || (TimeStart.HasValue && value > TimeStart.Value))
+                    {
+                        _timeEnd = value;
+                        OnPropertyChanged(nameof(TimeEnd));
+                    }
+                    else
+                    {
+                        throw new DataValidationException("Invalid end time !");
                     }
                 }
             }

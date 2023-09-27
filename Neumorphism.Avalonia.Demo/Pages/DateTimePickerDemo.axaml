@@ -74,11 +74,17 @@
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker9">
-          <TimePicker MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" assist:TimePickerAssist.UseFloatingWatermark="False" ClockIdentifier="12HourClock"/>
+			<StackPanel Orientation="Horizontal">
+				<TimePicker MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="12HourClock"/>
+				<TimePicker MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="12HourClock"/>
+			</StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker10">
-          <TimePicker MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" ClockIdentifier="24HourClock" />
+			<StackPanel Orientation="Horizontal">
+				<TimePicker MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="24HourClock" />
+				<TimePicker MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="24HourClock" />
+			</StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
       </StackPanel>

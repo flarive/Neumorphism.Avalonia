@@ -263,11 +263,9 @@
 
     <Style Selector="^:error /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
+	  <Setter Property="Background" Value="Yellow" />
     </Style>
 
-    <!--<Style Selector="^:error /template/ TextBlock#HintsTextBlock">
-      <Setter Property="IsVisible" Value="False" />
-    </Style>-->
     <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
       <Setter Property="Margin" Value="0,-10,0,0" />
     </Style>
