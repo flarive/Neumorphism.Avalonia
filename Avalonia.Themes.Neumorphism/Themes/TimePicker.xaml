@@ -6,6 +6,8 @@
         xmlns:sys="using:System">
 
 	<!-- Neumorphism theme ok -->
+
+	<sys:TimeSpan x:Key="aaaa">18:30:00.0</sys:TimeSpan>
 	
 	
   <Design.PreviewWith>
@@ -63,13 +65,13 @@
 	</ControlTheme>
 
   
-  <ControlTheme x:Key="{x:Type TimePicker}" TargetType="TimePicker">
+  <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker}" TargetType="controls:ExtendedTimePicker">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
-	  <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
-	  <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
+	<Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
+	<Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Height" Value="40"/>
@@ -131,20 +133,22 @@
                    Padding="0"
                    Margin="0"
                    FontSize="{TemplateBinding FontSize}"
+				   Tag="{StaticResource aaaa}"
+				   Text="{TemplateBinding Tag, Converter={StaticResource TestConverter}}"
                    UseFloatingWatermark="False"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Stretch"
                    Watermark="{TemplateBinding assist:TimePickerAssist.Watermark}"
                    VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Left">
-                      <TextBox.Text>
+                      <!--<TextBox.Text>
                         <MultiBinding Converter="{StaticResource TimeFormatStringConverter}">
                           <Binding Path="ClockIdentifier" RelativeSource="{RelativeSource TemplatedParent}"/>
                           <Binding ElementName="PART_HourTextBlock" Path="Text" />
                           <Binding ElementName="PART_MinuteTextBlock" Path="Text" />
                           <Binding ElementName="PART_PeriodTextBlock" Path="Text" />
                         </MultiBinding>
-                      </TextBox.Text>
+                      </TextBox.Text>-->
                       </TextBox>
                   </DataValidationErrors>
                 </Panel>
@@ -263,12 +267,12 @@
 
     <Style Selector="^:error /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-	  <Setter Property="Background" Value="Yellow" />
+	  <Setter Property="Background" Value="Pink" />
     </Style>
 
-    <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+    <!--<Style Selector="^ /template/ ScrollViewer#PART_Scroller">
       <Setter Property="Margin" Value="0,-10,0,0" />
-    </Style>
+    </Style>-->
   </ControlTheme>
   
   

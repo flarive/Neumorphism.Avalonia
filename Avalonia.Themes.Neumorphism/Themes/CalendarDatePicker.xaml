@@ -256,8 +256,8 @@
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
     </Style>
 
-    <Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+    <!--<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
       <Setter Property="Margin" Value="0,-10,0,0" />
-    </Style>
+    </Style>-->
   </ControlTheme>
 </ResourceDictionary>
