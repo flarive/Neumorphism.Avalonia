@@ -20,7 +20,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid birth date !");
+                        throw new DataValidationException("Invalid birth date");
                     }
                 }
             }
@@ -44,7 +44,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid start date !");
+                        throw new DataValidationException("Invalid start date");
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid end date !");
+                        throw new DataValidationException("Invalid end date");
                     }
                 }
             }
@@ -88,7 +88,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time !");
+                        throw new DataValidationException("Invalid time");
                     }
                 }
             }
@@ -133,6 +133,24 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     {
                         throw new DataValidationException("Invalid end time !");
                     }
+                }
+            }
+        }
+
+        private string _test;
+        public string Test
+        {
+            get { return _test; }
+            set
+            {
+                if (value != "aaa")
+                {
+                    _test = value;
+                    OnPropertyChanged(nameof(Test));
+                }
+                else
+                {
+                    throw new DataValidationException("Invalid string !");
                 }
             }
         }

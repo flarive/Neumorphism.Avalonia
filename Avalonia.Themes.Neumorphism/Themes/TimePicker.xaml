@@ -7,16 +7,15 @@
 
 	<!-- Neumorphism theme ok -->
 
-	<sys:TimeSpan x:Key="aaaa">18:30:00.0</sys:TimeSpan>
-	
+
 	
   <Design.PreviewWith>
-    <Border Padding="20" Height="500">
+    <Border Padding="20" Width="500" Height="500">
       <StackPanel Spacing="20" VerticalAlignment="Center">
-        <TimePicker />
-        <TimePicker CornerRadius="10" />
-        <TimePicker IsEnabled="False"/>
-        <TimePicker>
+        <controls:ExtendedTimePicker />
+        <controls:ExtendedTimePicker CornerRadius="10" />
+        <controls:ExtendedTimePicker IsEnabled="False"/>
+        <controls:ExtendedTimePicker>
           <DataValidationErrors.Error>
             <sys:Exception>
               <x:Arguments>
@@ -24,7 +23,7 @@
               </x:Arguments>
             </sys:Exception>
           </DataValidationErrors.Error>
-        </TimePicker>
+        </controls:ExtendedTimePicker>
       </StackPanel>
     </Border>
   </Design.PreviewWith>
@@ -65,13 +64,13 @@
 	</ControlTheme>
 
   
-  <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker}" TargetType="controls:ExtendedTimePicker">
+  <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker2}" TargetType="controls:ExtendedTimePicker2">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
-	<Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
-	<Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
+	  <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
+	  <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Height" Value="40"/>
@@ -79,8 +78,9 @@
     <Setter Property="Padding" Value="0" />
     <Setter Property="Margin" Value="0,15,0,15" />
     <Setter Property="CornerRadius" Value="10" />
-    <Setter Property="assist:TimePickerAssist.UseFloatingWatermark" Value="False"/>
-    <Setter Property="assist:TimePickerAssist.Watermark" Value="" />
+    <Setter Property="UseFloatingWatermark" Value="False"/>
+    <Setter Property="Watermark" Value="" />
+    <Setter Property="Text" Value="" />
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="ClockIdentifier" Value="24HourClock"/>
     <Setter Property="ClipToBounds" Value="False" />
@@ -103,7 +103,7 @@
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
               <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
                         MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
-                        IsVisible="{TemplateBinding assist:TimePickerAssist.UseFloatingWatermark}"
+                        IsVisible="{TemplateBinding UseFloatingWatermark}"
                         FontFamily="{TemplateBinding FontFamily}"
                         FontSize="{TemplateBinding FontSize}"
                         FontWeight="{TemplateBinding FontWeight}"
@@ -122,33 +122,23 @@
                   <TextBlock Name="PART_PeriodTextBlock" IsVisible="False"/>
                 </StackPanel>
                 <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                  <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
+                  <DataValidationErrors Name="DataValidation" Errors="{TemplateBinding (DataValidationErrors.Errors)}" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
                     <TextBox Name="PART_TextBox"
-                   Theme="{StaticResource TextBoxNoMaterial2}"
-                   Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-                   Foreground="{TemplateBinding Foreground}"
-                   Background="Transparent"
-                   BorderBrush="Transparent"
-                   BorderThickness="0"
-                   Padding="0"
-                   Margin="0"
-                   FontSize="{TemplateBinding FontSize}"
-				   Tag="{StaticResource aaaa}"
-				   Text="{TemplateBinding Tag, Converter={StaticResource TestConverter}}"
-                   UseFloatingWatermark="False"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Stretch"
-                   Watermark="{TemplateBinding assist:TimePickerAssist.Watermark}"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left">
-                      <!--<TextBox.Text>
-                        <MultiBinding Converter="{StaticResource TimeFormatStringConverter}">
-                          <Binding Path="ClockIdentifier" RelativeSource="{RelativeSource TemplatedParent}"/>
-                          <Binding ElementName="PART_HourTextBlock" Path="Text" />
-                          <Binding ElementName="PART_MinuteTextBlock" Path="Text" />
-                          <Binding ElementName="PART_PeriodTextBlock" Path="Text" />
-                        </MultiBinding>
-                      </TextBox.Text>-->
+                             Theme="{StaticResource TextBoxNoMaterial2}"
+                             Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+                             Foreground="{TemplateBinding Foreground}"
+                             Background="Transparent"
+                             BorderBrush="Transparent"
+                             BorderThickness="0"
+                             Padding="0"
+                             Margin="0"
+                             FontSize="{TemplateBinding FontSize}"
+                             UseFloatingWatermark="False"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Stretch"
+                             Watermark="{TemplateBinding Watermark}"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Left">
                       </TextBox>
                   </DataValidationErrors>
                 </Panel>
@@ -239,20 +229,14 @@
       <Setter Property="MaxWidth" Value="{TemplateBinding Width}" />
     </Style>
 
-
-
-
-
-
     <Style Selector="^ /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
     </Style>
 
+    <Style Selector="^[UseFloatingWatermark=False] /template/ TextBox#PART_TextBox">
+      <Setter Property="Watermark" Value="{TemplateBinding Watermark}" />
+    </Style>
 
-
-    <!--<Style Selector="^[UseFloatingWatermark=False] /template/ TextBox#PART_TextBox">
-      <Setter Property="Watermark" Value="{TemplateBinding Watermark, Converter={StaticResource TestConverter}}" />
-    </Style>-->
 
 
     <!-- Transitions for all styles textfield -->
@@ -267,12 +251,7 @@
 
     <Style Selector="^:error /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-	  <Setter Property="Background" Value="Pink" />
     </Style>
-
-    <!--<Style Selector="^ /template/ ScrollViewer#PART_Scroller">
-      <Setter Property="Margin" Value="0,-10,0,0" />
-    </Style>-->
   </ControlTheme>
   
   
