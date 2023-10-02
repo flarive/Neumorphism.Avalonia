@@ -177,8 +177,8 @@
                                        ItemHeight="{DynamicResource DatePickerFlyoutPresenterItemHeight}"
                                        ShouldLoop="True" />
                 </ScrollViewer>
-                <RepeatButton Name="PART_MonthUpButton" Theme="{StaticResource FluentDateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_MonthDownButton" Theme="{StaticResource FluentDateTimePickerDownButton}"/>
+                <RepeatButton Name="PART_MonthUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
+                <RepeatButton Name="PART_MonthDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
               </Panel>
               <Panel Name="PART_DayHost">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled"
@@ -188,8 +188,8 @@
                                        ItemHeight="{DynamicResource DatePickerFlyoutPresenterItemHeight}"
                                        ShouldLoop="True" />
                 </ScrollViewer>
-                <RepeatButton Name="PART_DayUpButton" Theme="{StaticResource FluentDateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_DayDownButton" Theme="{StaticResource FluentDateTimePickerDownButton}"/>
+                <RepeatButton Name="PART_DayUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
+                <RepeatButton Name="PART_DayDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
               </Panel>
               <Panel Name="PART_YearHost">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled"
@@ -199,8 +199,8 @@
                                        ItemHeight="{DynamicResource DatePickerFlyoutPresenterItemHeight}"
                                        ShouldLoop="False" />
                 </ScrollViewer>
-                <RepeatButton Name="PART_YearUpButton" Theme="{StaticResource FluentDateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_YearDownButton" Theme="{StaticResource FluentDateTimePickerDownButton}"/>
+                <RepeatButton Name="PART_YearUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
+                <RepeatButton Name="PART_YearDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
               </Panel>
               <Rectangle Name="HighlightRect" IsHitTestVisible="False" ZIndex="-1"
                          Fill="{DynamicResource DatePickerFlyoutPresenterHighlightFill}"

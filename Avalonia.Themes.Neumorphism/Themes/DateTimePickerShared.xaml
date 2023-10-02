@@ -6,8 +6,8 @@
         <ListBoxItem Theme="{DynamicResource FluentDateTimePickerItem}">Standard Item</ListBoxItem>
         <ListBoxItem Theme="{DynamicResource FluentDateTimePickerItem}" Classes="MonthItem">Month Item</ListBoxItem>
         <RepeatButton Theme="{DynamicResource FluentDateTimePickerButton}">Button</RepeatButton>
-        <RepeatButton Theme="{DynamicResource FluentDateTimePickerUpButton}" IsVisible="True"/>
-        <RepeatButton Theme="{DynamicResource FluentDateTimePickerDownButton}" IsVisible="True"/>
+        <RepeatButton Theme="{DynamicResource DateTimePickerUpButton}" IsVisible="True"/>
+        <RepeatButton Theme="{DynamicResource DateTimePickerDownButton}" IsVisible="True"/>
       </StackPanel>
     </Border>
   </Design.PreviewWith>
@@ -77,13 +77,13 @@
     </Style>
   </ControlTheme>
 
-  <ControlTheme x:Key="FluentDateTimePickerUpButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
+  <ControlTheme x:Key="DateTimePickerUpButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
     <Setter Property="VerticalAlignment" Value="Top"/>
     <Setter Property="Height" Value="22" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="Focusable" Value="False" />
     <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}" />
-    <Setter Property="IsVisible" Value="False"/>
+    <Setter Property="IsVisible" Value="True"/>
     <Setter Property="Content">
       <Template>
         <Viewbox Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -93,13 +93,13 @@
     </Setter>
   </ControlTheme>
 
-  <ControlTheme x:Key="FluentDateTimePickerDownButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
+  <ControlTheme x:Key="DateTimePickerDownButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
     <Setter Property="VerticalAlignment" Value="Bottom"/>
     <Setter Property="Height" Value="22" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="Focusable" Value="False" />
     <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}" />
-    <Setter Property="IsVisible" Value="False"/>
+    <Setter Property="IsVisible" Value="True"/>
     <Setter Property="Content">
       <Template>
         <Viewbox Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center">
