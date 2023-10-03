@@ -48,7 +48,7 @@
                 The background is doubled here for the loopingselector up/down repeat buttons 
                 that appear opaque. Not sure how MS does it though I suspect this is it
                 but source isn't MIT yet, so this is my solution -->
-        <Border Background="{TemplateBinding Background}">
+        <Border Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
           <ContentPresenter x:Name="ContentPresenter"
                   Background="{TemplateBinding Background}"
                   BorderBrush="{DynamicResource DateTimePickerFlyoutButtonBorderBrush}"

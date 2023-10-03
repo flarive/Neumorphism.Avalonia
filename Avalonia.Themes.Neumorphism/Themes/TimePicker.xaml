@@ -279,36 +279,37 @@
 			  <Grid.Styles>
 				  <Style Selector="DateTimePickerPanel > ListBoxItem">
 					  <!--<Setter Property="Theme" Value="{StaticResource FluentDateTimePickerItem}" />-->
-					  <Setter Property="Padding" Value="3" />
+            <Setter Property="Padding" Value="3" />
 					  <Setter Property="Margin" Value="0" />
 					  <Setter Property="HorizontalAlignment" Value="Stretch" />
 				  </Style>
 			  </Grid.Styles>
             <Grid Name="PART_PickerContainer">
               <!--Ignore col defs here, set in code-->
-              <Panel Name="PART_HourHost" Grid.Column="0">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+              <Grid Name="PART_HourHost" Grid.Column="0" RowDefinitions="Auto,*,Auto">
+                <RepeatButton Name="PART_HourUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}" CornerRadius="10,0,0,0"/>
+                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_HourSelector"
                                        PanelType="Hour"
                                        ShouldLoop="True" Width="120"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
-                <RepeatButton Name="PART_HourUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_HourDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
-              </Panel>
+                <RepeatButton Name="PART_HourDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}" CornerRadius="0"/>
+              </Grid>
 
-              <Panel Name="PART_MinuteHost" Grid.Column="2">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+              <Grid Name="PART_MinuteHost" Grid.Column="2" RowDefinitions="Auto,*,Auto">
+                <RepeatButton Name="PART_MinuteUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}" CornerRadius="0,10,0,0"/>
+                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_MinuteSelector"
                                        PanelType="Minute"
                                        ShouldLoop="True" Width="120"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
-                <RepeatButton Name="PART_MinuteUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_MinuteDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
-              </Panel>
+                
+                <RepeatButton Name="PART_MinuteDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
+              </Grid>
 
               <Panel Name="PART_PeriodHost" Grid.Column="4">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled"
