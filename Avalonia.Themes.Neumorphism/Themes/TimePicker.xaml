@@ -69,8 +69,8 @@
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
-	  <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
-	  <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
+	<Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
+	<Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Height" Value="40"/>
@@ -295,11 +295,11 @@
                                        ShouldLoop="True" Width="120"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
-                <RepeatButton Name="PART_HourDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}" CornerRadius="0"/>
+                <RepeatButton Name="PART_HourDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
               </Grid>
 
               <Grid Name="PART_MinuteHost" Grid.Column="2" RowDefinitions="Auto,*,Auto">
-                <RepeatButton Name="PART_MinuteUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}" CornerRadius="0,10,0,0"/>
+                <RepeatButton Name="PART_MinuteUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}"/>
                 <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_MinuteSelector"
@@ -307,21 +307,20 @@
                                        ShouldLoop="True" Width="120"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
-                
                 <RepeatButton Name="PART_MinuteDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
               </Grid>
 
-              <Panel Name="PART_PeriodHost" Grid.Column="4">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+              <Grid Name="PART_PeriodHost" Grid.Column="4" RowDefinitions="Auto,*,Auto">
+				  <RepeatButton Name="PART_PeriodUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}"/>
+				  <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_PeriodSelector"
                                        PanelType="TimePeriod"
                                        ShouldLoop="False"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
-                <RepeatButton Name="PART_PeriodUpButton" Theme="{StaticResource DateTimePickerUpButton}"/>
-                <RepeatButton Name="PART_PeriodDownButton" Theme="{StaticResource DateTimePickerDownButton}"/>
-              </Panel>
+                <RepeatButton Name="PART_PeriodDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
+              </Grid>
 
               <Rectangle x:Name="HighlightRect" ZIndex="-1"
                          Fill="{DynamicResource TimePickerFlyoutPresenterHighlightFill}"
@@ -343,11 +342,10 @@
 
             <Grid Name="AcceptDismissGrid"
                   Grid.Row="1"
-                  ColumnDefinitions="*,*">
+                  ColumnDefinitions="*">
               <Rectangle Height="{DynamicResource TimePickerSpacerThemeWidth}" 
                          VerticalAlignment="Top"
-                         Fill="{DynamicResource TimePickerFlyoutPresenterSpacerFill}"
-                         Grid.ColumnSpan="2"/>
+                         Fill="{DynamicResource TimePickerFlyoutPresenterSpacerFill}" />
               <Button Name="PART_AcceptButton"
                       Grid.Column="0"
                       Theme="{StaticResource FluentDateTimePickerButton}"
@@ -359,7 +357,7 @@
                       StrokeThickness="0.75"
                       Data="M0.5,8.5 5,13.5 15.5,3" />
               </Button>
-              <Button Name="PART_DismissButton"
+              <!--<Button Name="PART_DismissButton"
                       Grid.Column="1"
                       Theme="{StaticResource FluentDateTimePickerButton}"
                       Height="{DynamicResource TimePickerFlyoutPresenterAcceptDismissHostGridHeight}"
@@ -370,16 +368,38 @@
                       StrokeLineCap="Round"
                       StrokeThickness="0.75" 
                       Data="M2,2 14,14 M2,14 14 2" />
-              </Button>
+              </Button>-->
             </Grid>
           </Grid>
         </Border>
       </ControlTemplate>
-    </Setter>
-    
-    <Style Selector="^ /template/ Panel">
+	</Setter>
+
+	  
+    <Style Selector="^[ClockIdentifier=24HourClock] /template/ RepeatButton#PART_MinuteUpButton">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background" Value="Yellow" />
+    </Style>
+
+    <Style Selector="^[ClockIdentifier=24HourClock] /template/ RepeatButton#PART_PeriodUpButton">
+        <Setter Property="CornerRadius" Value="0,10,0,0" />
+        <Setter Property="Background" Value="Purple" />
+		<Setter Property="BorderBrush" Value="Red" />
+		<Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+
+	  
+
+
+
+
+
+
+	  <Style Selector="^ /template/ Panel">
       <Style Selector="^:pointerover RepeatButton">
         <Setter Property="IsVisible" Value="True" />
       </Style>
-    </Style>  </ControlTheme>
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>
