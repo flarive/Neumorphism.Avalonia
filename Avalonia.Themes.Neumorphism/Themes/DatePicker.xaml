@@ -165,7 +165,7 @@
             <Grid Name="PART_PickerContainer">
               <Grid.Styles>
                 <Style Selector="DateTimePickerPanel > ListBoxItem">
-                  <Setter Property="Theme" Value="{StaticResource FluentDateTimePickerItem}" />
+                  <Setter Property="Theme" Value="{StaticResource NeumorphismDateTimePickerItem}" />
                 </Style>
               </Grid.Styles>
               <!--Column Definitions set in code, ignore here-->
@@ -227,7 +227,7 @@
                          Grid.ColumnSpan="2"/>
               <Button Name="PART_AcceptButton"
                       Grid.Column="0"
-                      Theme="{StaticResource FluentDateTimePickerButton}"
+                      Theme="{StaticResource NeumorphismDateTimePickerButton}"
                       Height="{DynamicResource DatePickerFlyoutPresenterAcceptDismissHostGridHeight}"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch">
@@ -238,7 +238,7 @@
               </Button>
               <Button Name="PART_DismissButton"
                       Grid.Column="1"
-                      Theme="{StaticResource FluentDateTimePickerButton}"
+                      Theme="{StaticResource NeumorphismDateTimePickerButton}"
                       Height="{DynamicResource DatePickerFlyoutPresenterAcceptDismissHostGridHeight}"
                       HorizontalAlignment="Stretch" 
                       VerticalAlignment="Stretch">

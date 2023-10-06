@@ -3,9 +3,9 @@
   <Design.PreviewWith>
     <Border Padding="20" Width="200">
       <StackPanel Spacing="20">
-        <ListBoxItem Theme="{DynamicResource FluentDateTimePickerItem}">Standard Item</ListBoxItem>
-        <ListBoxItem Theme="{DynamicResource FluentDateTimePickerItem}" Classes="MonthItem">Month Item</ListBoxItem>
-        <RepeatButton Theme="{DynamicResource FluentDateTimePickerButton}">Button</RepeatButton>
+        <ListBoxItem Theme="{DynamicResource NeumorphismDateTimePickerItem}">Standard Item</ListBoxItem>
+        <ListBoxItem Theme="{DynamicResource NeumorphismDateTimePickerItem}" Classes="MonthItem">Month Item</ListBoxItem>
+        <RepeatButton Theme="{DynamicResource NeumorphismDateTimePickerButton}">Button</RepeatButton>
         <RepeatButton Theme="{DynamicResource DateTimePickerUpButton}" IsVisible="True"/>
         <RepeatButton Theme="{DynamicResource DateTimePickerDownButton}" IsVisible="True"/>
       </StackPanel>
@@ -13,23 +13,33 @@
   </Design.PreviewWith>
 
   <!-- Theme for the items displayed in the selectors -->
-  <ControlTheme x:Key="FluentDateTimePickerItem" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-    <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>
+  <ControlTheme x:Key="NeumorphismDateTimePickerItem" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+    <!--<Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>-->
+	<Setter Property="Padding" Value="0"/>
+	
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
-	<!--<Setter Property="BorderBrush" Value="Red" />
-	<Setter Property="BorderThickness" Value="1" />-->
+
+	  <Setter Property="Template">
+	    <ControlTemplate>
+			<TextPresenter Text="{Binding RelativeSource={RelativeSource TemplatedParent}}" TextAlignment="Center" ToolTip.Tip="{Binding RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" Height="20"/>
+		</ControlTemplate>
+	  </Setter>
+	
+	  
 
     <Style Selector="^:selected">
       <Setter Property="IsHitTestVisible" Value="False"/>
-      <Style Selector="^/template/ Rectangle#PressedBackground">
-        <Setter Property="Fill" Value="Transparent"/>
+		<Style Selector="^/template/ Rectangle#PressedBackground">
+            <Setter Property="Fill" Value="Transparent"/>
       </Style>
       <Style Selector="^/template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
       </Style>
     </Style>
+	  
+	  
     <Style Selector="^.MonthItem">
       <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterMonthPadding}"/>
       <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -37,7 +47,7 @@
   </ControlTheme>
 
   <!-- This is used for both the accept/dismiss & repeatbuttons in the presenter-->
-  <ControlTheme x:Key="FluentDateTimePickerButton" TargetType="Button">
+  <ControlTheme x:Key="NeumorphismDateTimePickerButton" TargetType="Button">
     <Setter Property="Background" Value="{DynamicResource DateTimePickerFlyoutButtonBackground}" />
     <Setter Property="Height" Value="22" />
     <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -77,7 +87,7 @@
     </Style>
   </ControlTheme>
 
-  <ControlTheme x:Key="DateTimePickerUpButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
+  <ControlTheme x:Key="DateTimePickerUpButton" TargetType="RepeatButton" BasedOn="{StaticResource NeumorphismDateTimePickerButton}">
     <Setter Property="VerticalAlignment" Value="Top"/>
     <Setter Property="Height" Value="22" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -93,7 +103,7 @@
     </Setter>
   </ControlTheme>
 
-  <ControlTheme x:Key="DateTimePickerDownButton" TargetType="RepeatButton" BasedOn="{StaticResource FluentDateTimePickerButton}">
+  <ControlTheme x:Key="DateTimePickerDownButton" TargetType="RepeatButton" BasedOn="{StaticResource NeumorphismDateTimePickerButton}">
     <Setter Property="VerticalAlignment" Value="Bottom"/>
     <Setter Property="Height" Value="22" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
