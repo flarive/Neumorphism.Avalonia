@@ -20,12 +20,7 @@
 
 
 
-
-
-
-
-
-	<!--Default ListBoxItem theme-->
+  <!--Default ListBoxItem theme-->
 	<ControlTheme x:Key="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
 		<Setter Property="Background" Value="Transparent" />

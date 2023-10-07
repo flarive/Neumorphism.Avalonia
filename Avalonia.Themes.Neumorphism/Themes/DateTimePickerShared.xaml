@@ -1,5 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple">
+  
+  
   <Design.PreviewWith>
     <Border Padding="20" Width="200">
       <StackPanel Spacing="20">
@@ -12,39 +15,128 @@
     </Border>
   </Design.PreviewWith>
 
+
+
+
   <!-- Theme for the items displayed in the selectors -->
   <ControlTheme x:Key="NeumorphismDateTimePickerItem" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-    <!--<Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>-->
-	<Setter Property="Padding" Value="0"/>
-	
+    <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="14" />
 
-	  <Setter Property="Template">
-	    <ControlTemplate>
-			<TextPresenter Text="{Binding RelativeSource={RelativeSource TemplatedParent}}" TextAlignment="Center" ToolTip.Tip="{Binding RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" Height="20"/>
-		</ControlTemplate>
-	  </Setter>
-	
-	  
+    <Setter Property="Template">
+      <ControlTemplate>
+        <TextPresenter Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}" Background="Yellow"
+                TextBox.FontSize="{TemplateBinding FontSize}"
+                       TextAlignment="Center" VerticalAlignment="Center" Height="20">
+        </TextPresenter>
+      </ControlTemplate>
+    </Setter>
 
     <Style Selector="^:selected">
       <Setter Property="IsHitTestVisible" Value="False"/>
-		<Style Selector="^/template/ Rectangle#PressedBackground">
-            <Setter Property="Fill" Value="Transparent"/>
+      <Style Selector="^/template/ Rectangle#PressedBackground">
+        <Setter Property="Fill" Value="Transparent"/>
       </Style>
       <Style Selector="^/template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
+        <Setter Property="Foreground" Value="Red"/>
       </Style>
     </Style>
-	  
-	  
+
     <Style Selector="^.MonthItem">
       <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterMonthPadding}"/>
       <Setter Property="HorizontalContentAlignment" Value="Left" />
     </Style>
   </ControlTheme>
+
+
+
+  <!-- Theme for the items displayed in the selectors -->
+  <ControlTheme x:Key="NeumorphismDateTimePickerItem2" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+    <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterItemPadding}"/>
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Cursor" Value="Hand" />
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder" Cursor="{TemplateBinding Cursor}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						Margin="{TemplateBinding Margin}"
+						ClipToBounds="{TemplateBinding ClipToBounds}">
+          <Grid>
+            <Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
+            <Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
+            <!--<ripple:RippleEffect Name="Ripple"
+											 RippleFill="White"
+											 Focusable="False"
+											 ContentTemplate="{TemplateBinding ContentTemplate}"
+											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											 Padding="{TemplateBinding Padding}">-->
+              <ContentPresenter Name="PART_ContentPresenter"
+											  Background="{TemplateBinding Background}"
+											  BorderBrush="{TemplateBinding BorderBrush}"
+											  BorderThickness="{TemplateBinding BorderThickness}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Content="{TemplateBinding Content}"
+											  Padding="{TemplateBinding Padding}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+            <!--</ripple:RippleEffect>-->
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+
+    <!-- Transitions -->
+    <Style Selector="^:not(.notransitions) /template/ Border#selectedBorder,
+					   ^:not(.notransitions) /template/ Border#pointerOverBorder">
+      <Setter Property="Transitions">
+        <Transitions>
+          <DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing" />
+        </Transitions>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.56" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style Selector="^:not(:disabled):pointerover /template/ Border#pointerOverBorder">
+      <Setter Property="Opacity" Value="0.06" />
+    </Style>
+
+    <Style Selector="^:selected /template/ Border#selectedBorder">
+      <Setter Property="Background" Value="{StaticResource PrimaryHueLightBrush}" />
+    </Style>
+
+    <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White" />
+    </Style>
+
+    <Style Selector="^:not(:pointerover) /template/ Border#pointerOverBorder, ^:not(:selected) /template/ Border#selectedBorder">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
+
+
+    <Style Selector="^.MonthItem">
+      <Setter Property="Padding" Value="{DynamicResource DatePickerFlyoutPresenterMonthPadding}"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+  </ControlTheme>
+
+
+  
+
 
   <!-- This is used for both the accept/dismiss & repeatbuttons in the presenter-->
   <ControlTheme x:Key="NeumorphismDateTimePickerButton" TargetType="Button">

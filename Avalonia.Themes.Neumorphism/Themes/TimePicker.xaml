@@ -64,13 +64,13 @@
 	</ControlTheme>
 
   
-  <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker2}" TargetType="controls:ExtendedTimePicker2">
+  <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker}" TargetType="controls:ExtendedTimePicker">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
-	<Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
-	<Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
+    <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
+    <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Height" Value="40"/>
@@ -87,7 +87,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">
-          <Border x:Name="Background"
+          <Border x:Name="PART_RootBorder"
 							CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 							BorderThickness="0"
 							BorderBrush="Transparent"
@@ -252,6 +252,21 @@
     <Style Selector="^:error /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
     </Style>
+
+
+    <Style Selector="^:error /template/ TextBox#PART_TextBox">
+      <Setter Property="Margin" Value="0,8,0,0" />
+    </Style>
+
+    <!-- Transitions for all styles textfield -->
+    <Style Selector="^:error:not(.notransitions) /template/ TextBox#PART_TextBox">
+      <Setter Property="Transitions">
+        <Transitions>
+          <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+          <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+        </Transitions>
+      </Setter>
+    </Style>
   </ControlTheme>
   
   
@@ -278,8 +293,8 @@
           <Grid Name="ContentPanel" RowDefinitions="*,Auto">
 			  <Grid.Styles>
 				  <Style Selector="DateTimePickerPanel > ListBoxItem">
-					  <Setter Property="Theme" Value="{StaticResource NeumorphismDateTimePickerItem}" />
-                      <Setter Property="Padding" Value="0" />
+					  <Setter Property="Theme" Value="{StaticResource NeumorphismDateTimePickerItem2}" />
+            <Setter Property="Padding" Value="0" />
 					  <Setter Property="Margin" Value="0" />
 					  <Setter Property="HorizontalAlignment" Value="Stretch" />
 				  </Style>
@@ -292,7 +307,7 @@
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_HourSelector"
                                        PanelType="Hour"
-                                       ShouldLoop="True" Width="120" Background="Yellow"
+                                       ShouldLoop="True" Width="120"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                 </ScrollViewer>
                 <RepeatButton Name="PART_HourDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>

@@ -43,15 +43,15 @@
           <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Time" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker4">
-            <controls:ExtendedTimePicker2 MinuteIncrement="15" Watermark="hh:mm" ClockIdentifier="12HourClock"/>
+            <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="hh:mm" ClockIdentifier="12HourClock"/>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker5">
-            <controls:ExtendedTimePicker2 MinuteIncrement="5" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting time" SelectedTime="{Binding CurrentTime}" ClockIdentifier="24HourClock" />
+            <controls:ExtendedTimePicker MinuteIncrement="5" Width="160" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting time" SelectedTime="{Binding MeetingTime}" ClockIdentifier="24HourClock" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker6">
-            <controls:ExtendedTimePicker2 SelectedTime="14:30" Watermark="--:--" ClockIdentifier="24HourClock"/>
+            <controls:ExtendedTimePicker SelectedTime="14:30" Watermark="--:--" ClockIdentifier="24HourClock"/>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
         </StackPanel>
@@ -76,15 +76,15 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker9">
 			  <StackPanel Orientation="Horizontal">
-				  <controls:ExtendedTimePicker2 MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="12HourClock"/>
-				  <controls:ExtendedTimePicker2 MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="12HourClock"/>
+				  <controls:ExtendedTimePicker MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="12HourClock"/>
+				  <controls:ExtendedTimePicker MinuteIncrement="15" assist:TimePickerAssist.Watermark="hh:mm" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="12HourClock"/>
 			  </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker10">
 			  <StackPanel Orientation="Horizontal">
-				  <controls:ExtendedTimePicker2 MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="24HourClock" />
-				  <controls:ExtendedTimePicker2 MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="24HourClock" />
+				  <controls:ExtendedTimePicker MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeStart}" Margin="0,15,0,15" ClockIdentifier="24HourClock" />
+				  <controls:ExtendedTimePicker MinuteIncrement="5" assist:TimePickerAssist.Watermark="--:--" SelectedTime="{Binding TimeEnd}" Margin="15,15,0,15" ClockIdentifier="24HourClock" />
 			  </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->

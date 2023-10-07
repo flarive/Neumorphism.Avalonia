@@ -31,7 +31,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
     [TemplatePart("PART_SecondPickerHost", typeof(Border))]
     [TemplatePart("PART_ThirdPickerHost", typeof(Border))]
     [PseudoClasses(":hasnotime")]
-    public class ExtendedTimePicker2 : TemplatedControl
+    public class ExtendedTimePicker : TemplatedControl
     {
         // Template Items
         private TimePickerPresenter? _presenter;
@@ -82,17 +82,17 @@ namespace Avalonia.Themes.Neumorphism.Controls
         /// Defines the <see cref="MinuteIncrement"/> property
         /// </summary>
         public static readonly StyledProperty<int> MinuteIncrementProperty =
-            AvaloniaProperty.Register<ExtendedTimePicker2, int>(nameof(MinuteIncrement), 1, coerce: CoerceMinuteIncrement);
+            AvaloniaProperty.Register<ExtendedTimePicker, int>(nameof(MinuteIncrement), 1, coerce: CoerceMinuteIncrement);
 
         /// <summary>
         /// Defines the <see cref="ClockIdentifier"/> property
         /// </summary>
         public static readonly StyledProperty<string> ClockIdentifierProperty =
-           AvaloniaProperty.Register<ExtendedTimePicker2, string>(nameof(ClockIdentifier), "12HourClock", coerce: CoerceClockIdentifier);
+           AvaloniaProperty.Register<ExtendedTimePicker, string>(nameof(ClockIdentifier), "12HourClock", coerce: CoerceClockIdentifier);
 
 
         public static readonly StyledProperty<TimeSpan?> SelectedTimeProperty =
-            AvaloniaProperty.Register<ExtendedTimePicker2, TimeSpan?>(
+            AvaloniaProperty.Register<ExtendedTimePicker, TimeSpan?>(
                 nameof(SelectedTime),
                 enableDataValidation: true,
                 defaultBindingMode: BindingMode.TwoWay);
@@ -102,7 +102,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
         /// Defines the <see cref="Watermark"/> property.
         /// </summary>
         public static readonly StyledProperty<string?> WatermarkProperty =
-            TextBox.WatermarkProperty.AddOwner<ExtendedTimePicker2>();
+            TextBox.WatermarkProperty.AddOwner<ExtendedTimePicker>();
 
 
         /// <inheritdoc cref="TextBox.Watermark"/>
@@ -118,7 +118,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
         /// Defines the <see cref="UseFloatingWatermark"/> property.
         /// </summary>
         public static readonly StyledProperty<bool> UseFloatingWatermarkProperty =
-            TextBox.UseFloatingWatermarkProperty.AddOwner<ExtendedTimePicker2>();
+            TextBox.UseFloatingWatermarkProperty.AddOwner<ExtendedTimePicker>();
 
 
         /// <inheritdoc cref="TextBox.UseFloatingWatermark"/>
@@ -133,11 +133,8 @@ namespace Avalonia.Themes.Neumorphism.Controls
         /// <summary>
         /// Defines the <see cref="Text"/> property.
         /// </summary>
-        //public static readonly StyledProperty<string?> TextProperty =
-        //    AvaloniaProperty.Register<CalendarDatePicker, string?>(nameof(Text));
-
         public static readonly StyledProperty<string?> TextProperty =
-            AvaloniaProperty.Register<ExtendedTimePicker2, string?>(
+            AvaloniaProperty.Register<ExtendedTimePicker, string?>(
                 nameof(Text),
                 enableDataValidation: true,
                 defaultBindingMode: BindingMode.TwoWay);
@@ -153,7 +150,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
         
 
 
-        public ExtendedTimePicker2()
+        public ExtendedTimePicker()
         {
             PseudoClasses.Set(":hasnotime", true);
 
@@ -436,10 +433,10 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
             //var deltaY = _presenter.GetOffsetForPopup();
 
-            var deltaY = 0;
+            //var deltaY = -6;
 
             // The extra 5 px I think is related to default popup placement behavior
-            _popup.VerticalOffset = deltaY + 5;
+            _popup.VerticalOffset = -1;
         }
 
         private void OnDismissPicker(object? sender, EventArgs e)
@@ -664,40 +661,40 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
             if (ClockIdentifier == "12HourClock")
             {
-                string zz = ts.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
-                return string.Format("{0}:{1} {2}", ts.Hours, ts.Minutes, zz);
+                string period = ts.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
+                return string.Format("{0}:{1} {2}", ts.Hours, ts.Minutes.ToString().PadLeft(2, '0'), period);
             }
 
-            return string.Format("{0}:{1}", ts.Hours, ts.Minutes);
+            return string.Format("{0}:{1}", ts.Hours, ts.Minutes.ToString().PadLeft(2, '0'));
         }
 
-        private DateTimeFormatInfo GetCurrentDateFormat()
-        {
-            if (CultureInfo.CurrentCulture.Calendar is GregorianCalendar)
-            {
-                return CultureInfo.CurrentCulture.DateTimeFormat;
-            }
-            else
-            {
-                foreach (System.Globalization.Calendar cal in CultureInfo.CurrentCulture.OptionalCalendars)
-                {
-                    if (cal is GregorianCalendar)
-                    {
-                        // if the default calendar is not Gregorian, return the
-                        // first supported GregorianCalendar dtfi
-                        DateTimeFormatInfo dtfi = new CultureInfo(CultureInfo.CurrentCulture.Name).DateTimeFormat;
-                        dtfi.Calendar = cal;
-                        return dtfi;
-                    }
-                }
+        //private DateTimeFormatInfo GetCurrentDateFormat()
+        //{
+        //    if (CultureInfo.CurrentCulture.Calendar is GregorianCalendar)
+        //    {
+        //        return CultureInfo.CurrentCulture.DateTimeFormat;
+        //    }
+        //    else
+        //    {
+        //        foreach (System.Globalization.Calendar cal in CultureInfo.CurrentCulture.OptionalCalendars)
+        //        {
+        //            if (cal is GregorianCalendar)
+        //            {
+        //                // if the default calendar is not Gregorian, return the
+        //                // first supported GregorianCalendar dtfi
+        //                DateTimeFormatInfo dtfi = new CultureInfo(CultureInfo.CurrentCulture.Name).DateTimeFormat;
+        //                dtfi.Calendar = cal;
+        //                return dtfi;
+        //            }
+        //        }
 
-                // if there are no GregorianCalendars in the OptionalCalendars
-                // list, use the invariant dtfi
-                DateTimeFormatInfo dt = new CultureInfo(CultureInfo.InvariantCulture.Name).DateTimeFormat;
-                dt.Calendar = new GregorianCalendar();
-                return dt;
-            }
-        }
+        //        // if there are no GregorianCalendars in the OptionalCalendars
+        //        // list, use the invariant dtfi
+        //        DateTimeFormatInfo dt = new CultureInfo(CultureInfo.InvariantCulture.Name).DateTimeFormat;
+        //        dt.Calendar = new GregorianCalendar();
+        //        return dt;
+        //    }
+        //}
 
 
 

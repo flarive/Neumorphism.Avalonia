@@ -73,22 +73,22 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
 
 
-        private TimeSpan? _currentTime;
-        public TimeSpan? CurrentTime
+        private TimeSpan? _meetingTime;
+        public TimeSpan? MeetingTime
         {
-            get { return _currentTime; }
+            get { return _meetingTime; }
             set
             {
                 if (value.HasValue)
                 {
                     if (value < new TimeSpan(12, 0, 0))
                     {
-                        _currentTime = value;
-                        OnPropertyChanged(nameof(CurrentTime));
+                        _meetingTime = value;
+                        OnPropertyChanged(nameof(MeetingTime));
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time");
+                        throw new DataValidationException("Invalid meeting time");
                     }
                 }
             }

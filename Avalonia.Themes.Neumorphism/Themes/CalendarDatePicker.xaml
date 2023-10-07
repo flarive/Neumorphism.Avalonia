@@ -198,6 +198,20 @@
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
     </Style>
 
+      <Style Selector="^:error /template/ TextBox#PART_TextBox">
+        <Setter Property="Margin" Value="0,8,0,0" />
+      </Style>
+
+      <!-- Transitions for all styles textfield -->
+      <Style Selector="^:error:not(.notransitions) /template/ TextBox#PART_TextBox">
+        <Setter Property="Transitions">
+          <Transitions>
+            <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+            <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+          </Transitions>
+        </Setter>
+      </Style>
+
     <!--Floating watermark anim-->
     <Style Selector="^:not(^[Text=]):focus-within /template/ TextBlock#floatingWatermark,
                     ^:not(^[Text=]) /template/ TextBlock#floatingWatermark">

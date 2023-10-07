@@ -38,7 +38,7 @@
 									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
 										<Setter.Value>
 											<Template>
-												<Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Cursor="Arrow">
+												<Button Classes="no-material" Margin="8,0,8,0" Width="42" Height="42" Focusable="False" Cursor="Arrow">
 													<icons:MaterialIcon Kind="AccountDetails" Width="24" Height="24" />
 												</Button>
 											</Template>
@@ -136,7 +136,7 @@
 									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
 										<Setter.Value>
 											<Template>
-												<Button Theme="{StaticResource ButtonNoMaterial}" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
+												<Button Theme="{StaticResource ButtonNoMaterial}" Focusable="False" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
 													<icons:MaterialIcon Kind="AccountCircle" Width="28" Height="28" Foreground="White" />
 												</Button>
 											</Template>
@@ -145,7 +145,7 @@
 									<Setter Property="assist:ComboBoxAssist.InnerRightContent">
 										<Setter.Value>
 											<Template>
-												<Button Theme="{StaticResource ButtonNoMaterial}" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
+												<Button Theme="{StaticResource ButtonNoMaterial}" Focusable="False" Command="{Binding ButtonClick}" Margin="8,0,8,0" Width="42" Height="42" ToolTip.Tip="I'm clickable">
 													<icons:MaterialIcon Kind="Info" Width="28" Height="28" Foreground="White" />
 												</Button>
 											</Template>

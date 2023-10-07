@@ -461,13 +461,11 @@
       <StaticResource x:Key="DatePickerSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
       <StaticResource x:Key="DatePickerSpacerFillDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="DatePickerButtonBorderBrush" ResourceKey="SystemControlForegroundBaseMediumBrush" />
-      <StaticResource x:Key="DatePickerButtonBorderBrushPointerOver"
-							ResourceKey="SystemControlHighlightBaseMediumHighBrush" />
+      <StaticResource x:Key="DatePickerButtonBorderBrushPointerOver" ResourceKey="SystemControlHighlightBaseMediumHighBrush" />
       <StaticResource x:Key="DatePickerButtonBorderBrushPressed" ResourceKey="SystemControlHighlightBaseMediumBrush" />
       <StaticResource x:Key="DatePickerButtonBorderBrushDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="DatePickerButtonBackground" ResourceKey="SystemControlBackgroundAltMediumLowBrush" />
-      <StaticResource x:Key="DatePickerButtonBackgroundPointerOver"
-							ResourceKey="SystemControlPageBackgroundAltMediumBrush" />
+      <StaticResource x:Key="DatePickerButtonBackgroundPointerOver"	ResourceKey="SystemControlPageBackgroundAltMediumBrush" />
       <StaticResource x:Key="DatePickerButtonBackgroundPressed" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <StaticResource x:Key="DatePickerButtonBackgroundDisabled" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <StaticResource x:Key="DatePickerButtonForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
@@ -477,36 +475,26 @@
       <StaticResource x:Key="DatePickerFlyoutPresenterBackground" ResourceKey="SystemControlTransientBackgroundBrush" />
       <StaticResource x:Key="DatePickerFlyoutPresenterBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
       <StaticResource x:Key="DatePickerFlyoutPresenterSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
-      <StaticResource x:Key="DatePickerFlyoutPresenterHighlightFill"
-							ResourceKey="SystemControlHighlightListAccentLowBrush" />
+      <StaticResource x:Key="DatePickerFlyoutPresenterHighlightFill" ResourceKey="SystemControlHighlightListAccentLowBrush" />
 
       <StaticResource x:Key="DateTimePickerFlyoutButtonBackground" ResourceKey="SystemControlTransparentBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonBackgroundPointerOver"
-							ResourceKey="SystemControlHighlightListLowBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonBackgroundPressed"
-							ResourceKey="SystemControlHighlightListMediumBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrush"
-							ResourceKey="SystemControlForegroundTransparentBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrushPointerOver"
-							ResourceKey="SystemControlHighlightTransparentBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrushPressed"
-							ResourceKey="SystemControlHighlightTransparentBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPointerOver"
-							ResourceKey="SystemControlHighlightAltBaseHighBrush" />
-      <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPressed"
-							ResourceKey="SystemControlHighlightAltBaseHighBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonBackgroundPointerOver"	ResourceKey="SystemControlHighlightListLowBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonBackgroundPressed"	ResourceKey="SystemControlHighlightListMediumBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrush"	ResourceKey="SystemControlForegroundTransparentBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrushPointerOver" ResourceKey="SystemControlHighlightTransparentBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonBorderBrushPressed"	ResourceKey="SystemControlHighlightTransparentBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPointerOver"	ResourceKey="SystemControlHighlightAltBaseHighBrush" />
+      <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPressed"	ResourceKey="SystemControlHighlightAltBaseHighBrush" />
 
       <!-- Resources for TimePicker.xaml -->
       <StaticResource x:Key="TimePickerSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
       <StaticResource x:Key="TimePickerSpacerFillDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="TimePickerButtonBorderBrush" ResourceKey="SystemControlForegroundBaseMediumBrush" />
-      <StaticResource x:Key="TimePickerButtonBorderBrushPointerOver"
-							ResourceKey="SystemControlHighlightBaseMediumHighBrush" />
+      <StaticResource x:Key="TimePickerButtonBorderBrushPointerOver" ResourceKey="SystemControlHighlightBaseMediumHighBrush" />
       <StaticResource x:Key="TimePickerButtonBorderBrushPressed" ResourceKey="SystemControlHighlightBaseMediumBrush" />
       <StaticResource x:Key="TimePickerButtonBorderBrushDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="TimePickerButtonBackground" ResourceKey="SystemControlBackgroundAltMediumLowBrush" />
-      <StaticResource x:Key="TimePickerButtonBackgroundPointerOver"
-							ResourceKey="SystemControlPageBackgroundAltMediumBrush" />
+      <StaticResource x:Key="TimePickerButtonBackgroundPointerOver"	ResourceKey="SystemControlPageBackgroundAltMediumBrush" />
       <StaticResource x:Key="TimePickerButtonBackgroundPressed" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <StaticResource x:Key="TimePickerButtonBackgroundDisabled" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <StaticResource x:Key="TimePickerButtonForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
@@ -516,8 +504,7 @@
       <StaticResource x:Key="TimePickerFlyoutPresenterBackground" ResourceKey="SystemControlTransientBackgroundBrush" />
       <StaticResource x:Key="TimePickerFlyoutPresenterBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
       <StaticResource x:Key="TimePickerFlyoutPresenterSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
-      <StaticResource x:Key="TimePickerFlyoutPresenterHighlightFill"
-							ResourceKey="SystemControlHighlightListAccentLowBrush" />
+      <!--<StaticResource x:Key="TimePickerFlyoutPresenterHighlightFill" ResourceKey="SystemControlHighlightListAccentLowBrush" />-->
 
       <!-- Resources for TabItem.xaml -->
       <!--<x:Double x:Key="TabItemHeaderFontSize">24</x:Double>

@@ -63,7 +63,7 @@
 		<Setter Property="assist:ComboBoxAssist.InnerLeftPadding" Value="0"/>
 		<Setter Property="assist:ComboBoxAssist.InnerRightPadding" Value="0"/>
 
-		<!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
+    <!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
 			<Setter.Value>
 				<Template>
 					<TextBlock Name="watermark" Background="Red"

@@ -203,9 +203,9 @@
 			<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
 		</Style>
 
-		<Style Selector="^:pointerover /template/ controls|MaterialUnderline#PART_Underline">
+		<!--<Style Selector="^:pointerover /template/ controls|MaterialUnderline#PART_Underline">
 			<Setter Property="IsActive" Value="True" />
-		</Style>
+		</Style>-->
 
 		<!-- Default TextBox style -->
 		<Style Selector="^ /template/ Panel#PART_TextRoot">
@@ -257,10 +257,10 @@
 		</Style>
 
 		<!-- Invalid state -->
-		<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
+		<!--<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
 			<Setter Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-		  </Style>
+		  </Style>-->
 
 		<Style Selector="^:error /template/ TextBlock#floatingWatermark">
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
@@ -885,18 +885,34 @@
 
 
 		<!-- Invalid state -->
-		<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
+		<!--<Style Selector="^:error /template/ controls|MaterialUnderline#PART_Underline">
 			<Setter Property="Background" Value="{DynamicResource ValidationErrorBrush}" />
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-		</Style>
+		</Style>-->
 
-		<Style Selector="^:error /template/ TextBlock#floatingWatermark">
+		<!--<Style Selector="^:error /template/ TextBlock#floatingWatermark">
 			<Setter Property="Foreground" Value="{DynamicResource ValidationErrorBrush}" />
-		</Style>
+		</Style>-->
 
-		<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
-			<Setter Property="Margin" Value="15,6,15,0" />
-		</Style>
+	  <!--<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Margin" Value="15,6,15,0" />
+      <Setter Property="Background" Value="Pink" />
+    </Style>-->
+
+    <!--<Style Selector="^:error /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Margin" Value="15,-8,15,-14" />
+    </Style>
+
+    --><!-- Transitions for all styles textfield --><!--
+    <Style Selector="^:error:not(.notransitions) /template/ ScrollViewer#PART_Scroller">
+      <Setter Property="Transitions">
+        <Transitions>
+          <ThicknessTransition Duration="0:0:0.25" Property="Margin" Easing="CubicEaseOut" />
+          <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
+        </Transitions>
+      </Setter>
+    </Style>-->
+    
 	</ControlTheme>
 
 </ResourceDictionary>
