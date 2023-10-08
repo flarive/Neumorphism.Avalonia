@@ -6,7 +6,7 @@
     <OutputType Condition="'$(Configuration.toUpper())' == 'DEBUG'">WinExe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ApplicationIcon>Assets/app.ico</ApplicationIcon>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
     <Nullable>disable</Nullable>
     <PublishAot>true</PublishAot>
     <PublishTrimmed>true</PublishTrimmed>

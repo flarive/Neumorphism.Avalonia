@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Avalonia.Themes.Neumorphism.Controls
+namespace Avalonia.Themes.Neumorphism.Events
 {
     public class TimePickerTimeValidationErrorEventArgs : EventArgs
     {
@@ -12,7 +12,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
             Exception = exception;
         }
 
-   
+
         public Exception Exception { get; private set; }
 
 
