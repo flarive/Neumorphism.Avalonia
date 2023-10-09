@@ -51,7 +51,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
-            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Birthdate" Width="180" SelectedDate="{Binding BirthDate}" />
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Birthdate" Width="180" SelectedDate="{Binding BirthDate}" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker3">
