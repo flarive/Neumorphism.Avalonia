@@ -28,8 +28,12 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 }
                 else if (SelectedCulture == TestCultureEnum.French)
                 {
+                    CultureInfo c = (CultureInfo)CultureInfo.GetCultureInfo("fr-FR").Clone();
+                    c.DateTimeFormat.AMDesignator = "AM";
+                    c.DateTimeFormat.PMDesignator = "PM";
+
                     // french France
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR");
+                    Thread.CurrentThread.CurrentCulture = c;
                 }
                 else if (SelectedCulture == TestCultureEnum.Invariant)
                 {

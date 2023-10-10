@@ -370,7 +370,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
             if (_textBox == null)
                 return;
 
-
             var time = SelectedTime;
             if (time.HasValue)
             {
@@ -403,7 +402,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
                 _periodText.Text = DateTime.Now.Hour >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator :
                     CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
 
-                _textBox.Text = "";
+                _textBox.Text = string.Empty;
             }
         }
 
@@ -412,7 +411,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
             SelectedTimeChanged?.Invoke(this, new TimePickerSelectedValueChangedEventArgs(oldTime, newTime));
         }
 
-        private void OnFlyoutButtonClicked(object? sender, Interactivity.RoutedEventArgs e)
+        private void OnFlyoutButtonClicked(object? sender, RoutedEventArgs e)
         {
             if (_presenter == null)
                 throw new InvalidOperationException("No DatePickerPresenter found.");

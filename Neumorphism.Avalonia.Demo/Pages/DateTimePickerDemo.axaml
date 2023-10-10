@@ -47,7 +47,7 @@
           <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
-            <CalendarDatePicker UseFloatingWatermark="False" Watermark="What is your birthdate ?" SelectedDate="{Binding BirthDate}" SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="False" Watermark="What is your birthdate ?" SelectedDate="{Binding BirthDate}" SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
@@ -55,11 +55,11 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker3">
-            <CalendarDatePicker Watermark="yyyy-MM-dd" SelectedDate="{Binding TestDate1}" Width="180" />
+            <controls:ExtendedCalendarDatePicker Watermark="yyyy-MM-dd" SelectedDate="{Binding TestDate1}" Width="180" />
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker4">
-            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Custom date format" Watermark="yyyy-MM-dd" Width="220"
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Custom date format" Watermark="yyyy-MM-dd" Width="220"
                                 ToolTip.Tip="Date with custom date format yyyy-MM-dd forced"
                                 SelectedDate="{Binding TestDate2}" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
           </showMeTheXaml:XamlDisplay>
@@ -96,15 +96,15 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker8">
           <StackPanel Orientation="Horizontal">
-            <CalendarDatePicker Watermark="Holidays start" SelectedDateFormat="Short" SelectedDate="{Binding UnsetHolidaysDateStart}" Width="180" Margin="0,15,0,15" IsTodayHighlighted="True" />
-            <CalendarDatePicker Watermark="Holidays end" SelectedDateFormat="Short" SelectedDate="{Binding UnsetHolidaysDateEnd}" Width="180" Margin="15,15,0,15" IsTodayHighlighted="True" />
+            <controls:ExtendedCalendarDatePicker Watermark="Holidays start" SelectedDateFormat="Short" SelectedDate="{Binding UnsetHolidaysDateStart}" Width="180" Margin="0,15,0,15" IsTodayHighlighted="True" />
+            <controls:ExtendedCalendarDatePicker Watermark="Holidays end" SelectedDateFormat="Short" SelectedDate="{Binding UnsetHolidaysDateEnd}" Width="180" Margin="15,15,0,15" IsTodayHighlighted="True" />
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker9">
           <StackPanel Orientation="Horizontal">
-            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays start" Width="180" SelectedDate="{Binding HolidaysDateStart}" SelectedDateFormat="Custom" Margin="0,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
-            <CalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays end" Width="180" SelectedDate="{Binding HolidaysDateEnd}" SelectedDateFormat="Custom" Margin="15,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays start" Width="180" SelectedDate="{Binding HolidaysDateStart}" SelectedDateFormat="Custom" Margin="0,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays end" Width="180" SelectedDate="{Binding HolidaysDateEnd}" SelectedDateFormat="Custom" Margin="15,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->

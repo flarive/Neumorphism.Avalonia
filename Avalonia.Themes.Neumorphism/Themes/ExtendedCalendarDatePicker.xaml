@@ -225,7 +225,6 @@
 
     <Style Selector="^ /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
-      <Setter Property="Background" Value="Yellow" />
     </Style>
 
 
