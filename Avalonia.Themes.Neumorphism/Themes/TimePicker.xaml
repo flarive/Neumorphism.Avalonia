@@ -116,11 +116,11 @@
 
               <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
                 <!--Main container-->
-                <StackPanel Orientation="Horizontal">
+                <!--<StackPanel Orientation="Horizontal">
                   <TextBlock Name="PART_HourTextBlock" IsVisible="False"/>
                   <TextBlock Name="PART_MinuteTextBlock" IsVisible="False"/>
                   <TextBlock Name="PART_PeriodTextBlock" IsVisible="False"/>
-                </StackPanel>
+                </StackPanel>-->
                 <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                   <DataValidationErrors Name="DataValidation" Errors="{TemplateBinding (DataValidationErrors.Errors)}" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
                     <TextBox Name="PART_TextBox"

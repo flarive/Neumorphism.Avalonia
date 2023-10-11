@@ -23,9 +23,9 @@ namespace Avalonia.Themes.Neumorphism.Controls
     [TemplatePart("PART_FlyoutButton", typeof(Button))]
     [TemplatePart("PART_FlyoutButtonContentGrid", typeof(Grid))]
     [TemplatePart("PART_TextBox", typeof(TextBox))]
-    [TemplatePart("PART_HourTextBlock", typeof(TextBlock))]
-    [TemplatePart("PART_MinuteTextBlock", typeof(TextBlock))]
-    [TemplatePart("PART_PeriodTextBlock", typeof(TextBlock))]
+    //[TemplatePart("PART_HourTextBlock", typeof(TextBlock))]
+    //[TemplatePart("PART_MinuteTextBlock", typeof(TextBlock))]
+    //[TemplatePart("PART_PeriodTextBlock", typeof(TextBlock))]
     [TemplatePart("PART_PickerPresenter", typeof(TimePickerPresenter))]
     [TemplatePart("PART_Popup", typeof(Popup))]
     [TemplatePart("PART_SecondColumnDivider", typeof(Rectangle))]
@@ -41,9 +41,9 @@ namespace Avalonia.Themes.Neumorphism.Controls
         private Border? _secondPickerHost;
         private Border? _thirdPickerHost;
         private TextBox? _textBox;
-        private TextBlock? _hourText;
-        private TextBlock? _minuteText;
-        private TextBlock? _periodText;
+        //private TextBlock? _hourText;
+        //private TextBlock? _minuteText;
+        //private TextBlock? _periodText;
         private Rectangle? _firstSplitter;
         private Rectangle? _secondSplitter;
         private Grid? _contentGrid;
@@ -224,9 +224,9 @@ namespace Avalonia.Themes.Neumorphism.Controls
             _secondPickerHost = e.NameScope.Find<Border>("PART_SecondPickerHost");
             _thirdPickerHost = e.NameScope.Find<Border>("PART_ThirdPickerHost");
 
-            _hourText = e.NameScope.Find<TextBlock>("PART_HourTextBlock");
-            _minuteText = e.NameScope.Find<TextBlock>("PART_MinuteTextBlock");
-            _periodText = e.NameScope.Find<TextBlock>("PART_PeriodTextBlock");
+            //_hourText = e.NameScope.Find<TextBlock>("PART_HourTextBlock");
+            //_minuteText = e.NameScope.Find<TextBlock>("PART_MinuteTextBlock");
+            //_periodText = e.NameScope.Find<TextBlock>("PART_PeriodTextBlock");
 
             _firstSplitter = e.NameScope.Find<Rectangle>("PART_FirstColumnDivider");
             _secondSplitter = e.NameScope.Find<Rectangle>("PART_SecondColumnDivider");
@@ -382,25 +382,23 @@ namespace Avalonia.Themes.Neumorphism.Controls
                     newTime = new TimeSpan(hr, newTime.Minutes, 0);
                 }
 
-                _hourText.Text = newTime.ToString("%h");
-                _minuteText.Text = newTime.ToString("mm");
+                //_hourText.Text = newTime.ToString("%h");
+                //_minuteText.Text = newTime.ToString("mm");
                 PseudoClasses.Set(":hasnotime", false);
 
 
 
-                _periodText.Text = time.Value.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator :
-                    CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
+                //_periodText.Text = time.Value.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
 
                 _textBox.Text = TimeToString(newTime);
             }
             else
             {
-                _hourText.Text = "hour";
-                _minuteText.Text = "minute";
+                //_hourText.Text = "hour";
+                //_minuteText.Text = "minute";
                 PseudoClasses.Set(":hasnotime", true);
 
-                _periodText.Text = DateTime.Now.Hour >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator :
-                    CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
+                //_periodText.Text = DateTime.Now.Hour >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
 
                 _textBox.Text = string.Empty;
             }
@@ -466,7 +464,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
         private void _textBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetTextBoxValue(_textBox.Text);
+            SetTextBoxValue(_textBox?.Text ?? string.Empty);
         }
 
         private void TextBox_KeyDown(object? sender, KeyEventArgs e)
@@ -483,7 +481,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
             {
                 case Key.Enter:
                     {
-                        SetTextBoxValue(_textBox.Text);
+                        SetTextBoxValue(_textBox?.Text ?? string.Empty);
                         return true;
                     }
                 case Key.Down:
@@ -534,7 +532,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
                     removedItems.Add(removedDate.Value);
                 }
 
-                handler(this, new TimePickerSelectedValueChangedEventArgs(removedDate.Value, addedDate.Value));
+                handler(this, new TimePickerSelectedValueChangedEventArgs(removedDate.HasValue ? removedDate.Value : null, addedDate.HasValue ? addedDate.Value : null));
             }
         }
 
@@ -609,7 +607,12 @@ namespace Avalonia.Themes.Neumorphism.Controls
                     {
                         //SetWaterMarkText();
                         SetCurrentValue(TextProperty, string.Empty);
-                        _textBox.Text = string.Empty;
+
+                        if (_textBox != null)
+                        {
+                            _textBox.Text = string.Empty;
+                        }
+
                         Clear();
                         return null;
                     }

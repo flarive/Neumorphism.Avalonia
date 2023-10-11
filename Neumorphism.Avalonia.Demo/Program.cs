@@ -1,7 +1,7 @@
-﻿using Avalonia;
-using Neumorphism.Avalonia.Demo.Windows;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Avalonia;
+using Neumorphism.Avalonia.Demo.Windows;
 using ShowMeTheXaml;
 
 namespace Neumorphism.Avalonia.Demo
@@ -18,7 +18,8 @@ namespace Neumorphism.Avalonia.Demo
             //dotnet publish -c release --framework net7.0 -r win-x64
             //dotnet publish -c release --framework net8.0 -r win-x64
 
-            //https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/debugging.md
+            // how to debug a native aot crash :
+            // https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/debugging.md
 
 
 

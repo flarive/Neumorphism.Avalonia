@@ -43,7 +43,7 @@
 
           <Border x:Name="PART_RootBorder"
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-				            Height="{TemplateBinding Height}"
+                    Height="{TemplateBinding Height}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
                     Background="{TemplateBinding Background}">
