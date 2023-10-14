@@ -27,7 +27,7 @@
 
     <Setter Property="Template">
       <ControlTemplate>
-        <TextPresenter Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}" Background="Yellow"
+        <TextPresenter Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"
                 TextBox.FontSize="{TemplateBinding FontSize}"
                        TextAlignment="Center" VerticalAlignment="Center" Height="20">
         </TextPresenter>

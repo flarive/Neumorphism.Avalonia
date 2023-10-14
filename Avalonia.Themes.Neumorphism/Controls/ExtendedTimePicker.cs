@@ -23,9 +23,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
     [TemplatePart("PART_FlyoutButton", typeof(Button))]
     [TemplatePart("PART_FlyoutButtonContentGrid", typeof(Grid))]
     [TemplatePart("PART_TextBox", typeof(TextBox))]
-    //[TemplatePart("PART_HourTextBlock", typeof(TextBlock))]
-    //[TemplatePart("PART_MinuteTextBlock", typeof(TextBlock))]
-    //[TemplatePart("PART_PeriodTextBlock", typeof(TextBlock))]
     [TemplatePart("PART_PickerPresenter", typeof(TimePickerPresenter))]
     [TemplatePart("PART_Popup", typeof(Popup))]
     [TemplatePart("PART_SecondColumnDivider", typeof(Rectangle))]
@@ -41,9 +38,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
         private Border? _secondPickerHost;
         private Border? _thirdPickerHost;
         private TextBox? _textBox;
-        //private TextBlock? _hourText;
-        //private TextBlock? _minuteText;
-        //private TextBlock? _periodText;
         private Rectangle? _firstSplitter;
         private Rectangle? _secondSplitter;
         private Grid? _contentGrid;
@@ -62,8 +56,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
         private string _defaultText = string.Empty;
 
-
-        //private bool _settingSelectedDate;
 
         /// <summary>
         /// Raised when the <see cref="SelectedTime"/> property changes
@@ -224,10 +216,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
             _secondPickerHost = e.NameScope.Find<Border>("PART_SecondPickerHost");
             _thirdPickerHost = e.NameScope.Find<Border>("PART_ThirdPickerHost");
 
-            //_hourText = e.NameScope.Find<TextBlock>("PART_HourTextBlock");
-            //_minuteText = e.NameScope.Find<TextBlock>("PART_MinuteTextBlock");
-            //_periodText = e.NameScope.Find<TextBlock>("PART_PeriodTextBlock");
-
             _firstSplitter = e.NameScope.Find<Rectangle>("PART_FirstColumnDivider");
             _secondSplitter = e.NameScope.Find<Rectangle>("PART_SecondColumnDivider");
 
@@ -275,14 +263,19 @@ namespace Avalonia.Themes.Neumorphism.Controls
                 if (SelectedTime.HasValue)
                 {
                     _textBox.Text = TimeToString(SelectedTime.Value);
+                    PseudoClasses.Set(":hasnotime", false);
+                    SetSelectedTime();
                 }
                 else if (!string.IsNullOrEmpty(_defaultText))
                 {
                     _textBox.Text = _defaultText;
+                    PseudoClasses.Set(":hasnotime", false);
                     SetSelectedTime();
                 }
             }
         }
+
+
 
         protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
         {
@@ -375,31 +368,12 @@ namespace Avalonia.Themes.Neumorphism.Controls
             {
                 var newTime = SelectedTime!.Value;
 
-                if (ClockIdentifier == "12HourClock")
-                {
-                    var hr = newTime.Hours;
-                    hr = hr > 12 ? hr - 12 : hr == 0 ? 12 : hr;
-                    newTime = new TimeSpan(hr, newTime.Minutes, 0);
-                }
-
-                //_hourText.Text = newTime.ToString("%h");
-                //_minuteText.Text = newTime.ToString("mm");
                 PseudoClasses.Set(":hasnotime", false);
-
-
-
-                //_periodText.Text = time.Value.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
-
                 _textBox.Text = TimeToString(newTime);
             }
             else
             {
-                //_hourText.Text = "hour";
-                //_minuteText.Text = "minute";
                 PseudoClasses.Set(":hasnotime", true);
-
-                //_periodText.Text = DateTime.Now.Hour >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
-
                 _textBox.Text = string.Empty;
             }
         }
@@ -583,7 +557,15 @@ namespace Avalonia.Themes.Neumorphism.Controls
             if (string.IsNullOrEmpty(s))
             {
                 SetValue(TextProperty, s);
-                return SelectedTime;
+                
+                SetCurrentValue(TextProperty, string.Empty);
+                if (_textBox != null)
+                {
+                    _textBox.Text = string.Empty;
+                    PseudoClasses.Set(":hasnotime", true);
+                }
+                Clear();
+                return null;
             }
             else
             {
@@ -591,6 +573,8 @@ namespace Avalonia.Themes.Neumorphism.Controls
                 if (d != null)
                 {
                     SetValue(TextProperty, s);
+                    PseudoClasses.Set(":hasnotime", false);
+                    SetCurrentValue(SelectedTimeProperty, d);
                     return d;
                 }
                 else
@@ -611,6 +595,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
                         if (_textBox != null)
                         {
                             _textBox.Text = string.Empty;
+                            PseudoClasses.Set(":hasnotime", true);
                         }
 
                         Clear();
@@ -622,15 +607,20 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
         private TimeSpan? ParseText(string text)
         {
-            TimeSpan newSelectedTime;
-
-            // TryParse is not used in order to be able to pass the exception to
-            // the TextParseError event
             try
             {
-                if (TimeSpan.TryParse(text, out newSelectedTime))
+                string template = "HH:mm";
+
+                if (ClockIdentifier == "12HourClock")
                 {
-                    return newSelectedTime;
+                    template = "hh:mm tt";
+                }
+
+
+                DateTime dt;
+                if (DateTime.TryParseExact(text.ToUpper(), template, CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))
+                {
+                    return dt.TimeOfDay;
                 }
                 else
                 {
@@ -664,8 +654,15 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
             if (ClockIdentifier == "12HourClock")
             {
+
+                var hr = ts.Hours;
+                hr = hr > 12 ? hr - 12 : hr == 0 ? 12 : hr;
+                TimeSpan newTime = new TimeSpan(hr, ts.Minutes, 0);
+
+
+
                 string period = ts.Hours >= 12 ? CultureInfo.CurrentCulture.DateTimeFormat.PMDesignator : CultureInfo.CurrentCulture.DateTimeFormat.AMDesignator;
-                return string.Format("{0}:{1} {2}", ts.Hours, ts.Minutes.ToString().PadLeft(2, '0'), period);
+                return string.Format("{0}:{1} {2}", newTime.Hours, newTime.Minutes.ToString().PadLeft(2, '0'), period);
             }
 
             return string.Format("{0}:{1}", ts.Hours, ts.Minutes.ToString().PadLeft(2, '0'));

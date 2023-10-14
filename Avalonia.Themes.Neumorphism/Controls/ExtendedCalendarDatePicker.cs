@@ -13,7 +13,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
         private Calendar? _calendar;
 
 
-        /// <inheritdoc/>
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             _textBox = e.NameScope.Find<TextBox>("PART_TextBox");
@@ -22,6 +22,9 @@ namespace Avalonia.Themes.Neumorphism.Controls
             {
                 _textBox.LostFocus -= _textBox_LostFocus;
                 _textBox.LostFocus += _textBox_LostFocus;
+
+                _textBox.TextChanged -= _textBox_TextChanged;
+                _textBox.TextChanged += _textBox_TextChanged;
             }
 
             _calendar = e.NameScope.Find<Calendar>("PART_Calendar");
@@ -30,16 +33,31 @@ namespace Avalonia.Themes.Neumorphism.Controls
             base.OnApplyTemplate(e);
         }
 
+        private void _textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)e.Source).Text;
+
+            SetValue(TextProperty, text);
+        }
+
         private void _textBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (_textBox != null && !string.IsNullOrEmpty(_textBox.Text))
+            if (_textBox != null)
             {
-                DateTime? d = ParseText(_textBox.Text);
-
-                if (!d.HasValue)
+                if (!string.IsNullOrEmpty(_textBox.Text))
                 {
-                    // clear invalid text entries
-                    _textBox.Text = string.Empty;
+                    DateTime? d = ParseText(_textBox.Text);
+
+                    if (!d.HasValue)
+                    {
+                        // clear invalid text entries
+                        _textBox.Text = string.Empty;
+                    }
+                }
+                else
+                {
+                    SetValue(TextProperty, string.Empty);
+                    SetValue(SelectedDateProperty, null);
                 }
             }
         }

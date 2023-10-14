@@ -111,7 +111,6 @@
                 <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/FloatingButton.xaml" />
                 <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/MaterialUnderline.xaml" />
                 <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/CircularProgress.xaml" />
-                <MergeResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Themes/ExtendedCalendarDatePicker.xaml" />
           </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

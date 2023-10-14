@@ -32,8 +32,8 @@
     <None Remove="Fonts\SF\SFProText-Light.ttf" />
     <None Remove="Fonts\SF\SFProText-Medium.ttf" />
     <None Remove="Fonts\SF\SFProText-Regular.ttf" />
+    <None Remove="Themes\CalendarDatePicker.xaml" />
     <None Remove="Themes\CircularProgress.xaml" />
-    <None Remove="Themes\ExtendedCalendarDatePicker.xaml" />
     <None Remove="Themes\TextBlock.xaml" />
     <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
     <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
@@ -55,7 +55,7 @@
     <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Update="Themes\ExtendedCalendarDatePicker.xaml">
+    <AvaloniaResource Update="Themes\CalendarDatePicker.xaml">
       <Generator></Generator>
     </AvaloniaResource>
   </ItemGroup>

@@ -16,7 +16,6 @@
 
 
 
-
   <ControlTheme x:Key="CustomCalendarDatePickerButton" TargetType="Button">
     <Setter Property="TextElement.Foreground" Value="Gray" />
     <Setter Property="Margin" Value="2,0,4,0" />
@@ -38,9 +37,15 @@
     </Setter>
   </ControlTheme>
 
-
-
+  
+  
     <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+    </ControlTheme>
+
+
+
+
+    <ControlTheme x:Key="{x:Type controls:ExtendedCalendarDatePicker}" TargetType="controls:ExtendedCalendarDatePicker">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -66,7 +71,7 @@
 
           <Border x:Name="PART_RootBorder"
                     CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-				            Height="{TemplateBinding Height}"
+                    Height="{TemplateBinding Height}"
                     BorderThickness="0"
                     BorderBrush="Transparent"
                     Background="{TemplateBinding Background}">
@@ -248,7 +253,6 @@
 
     <Style Selector="^ /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />
-      <Setter Property="Background" Value="Yellow" />
     </Style>
 
 

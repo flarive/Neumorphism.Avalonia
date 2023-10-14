@@ -63,6 +63,11 @@
 		</Setter>
 	</ControlTheme>
 
+
+
+  <ControlTheme x:Key="{x:Type TimePicker}" TargetType="TimePicker">
+  </ControlTheme>
+
   
   <ControlTheme x:Key="{x:Type controls:ExtendedTimePicker}" TargetType="controls:ExtendedTimePicker">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
@@ -116,11 +121,6 @@
 
               <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
                 <!--Main container-->
-                <!--<StackPanel Orientation="Horizontal">
-                  <TextBlock Name="PART_HourTextBlock" IsVisible="False"/>
-                  <TextBlock Name="PART_MinuteTextBlock" IsVisible="False"/>
-                  <TextBlock Name="PART_PeriodTextBlock" IsVisible="False"/>
-                </StackPanel>-->
                 <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                   <DataValidationErrors Name="DataValidation" Errors="{TemplateBinding (DataValidationErrors.Errors)}" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
                     <TextBox Name="PART_TextBox"
@@ -190,19 +190,7 @@
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}"/>
     </Style>
 
-    <!--<Style Selector="^:hasnotime /template/ TextBox#PART_TextBox">
-      <Setter Property="Background" Value="Yellow"/>
-      --><!--<Setter Property="Text" Value="00:11"/>--><!--
-    </Style>-->
-
-    <!--<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#PART_TextBox, ^:focus-within /template/ TextBlock#PART_TextBox, ^:not(:empty) /template/ TextBlock#PART_TextBox">
-      <Setter Property="Background" Value="Red" />
-    </Style>-->
-
-    <!--<Style Selector="^:empty /template/ TextBox#PART_TextBox">
-      <Setter Property="Background" Value="Red" />
-    </Style>-->
-    
+   
     <!-- Error State -->
     <Style Selector="^:error /template/ Border#PART_RootBorder">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
@@ -325,7 +313,7 @@
               </Grid>
 
               <Grid Name="PART_PeriodHost" Grid.Column="4" RowDefinitions="Auto,*,Auto">
-				        <RepeatButton Name="PART_PeriodUpButton" Grid.Row="0" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}"/>
+				        <RepeatButton Name="PART_PeriodUpButton" Grid.Row="0" IsVisible="False" Theme="{StaticResource DateTimePickerUpButton}" Background="{StaticResource MaterialDesignPaper}"/>
 				        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled"
                               VerticalScrollBarVisibility="Hidden">
                   <DateTimePickerPanel Name="PART_PeriodSelector"
@@ -333,7 +321,7 @@
                                        ShouldLoop="False"
                                        ItemHeight="{DynamicResource TimePickerFlyoutPresenterItemHeight}"/>
                   </ScrollViewer>
-                <RepeatButton Name="PART_PeriodDownButton" Grid.Row="2" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
+                <RepeatButton Name="PART_PeriodDownButton" Grid.Row="2" IsVisible="False" Theme="{StaticResource DateTimePickerDownButton}" Background="{StaticResource MaterialDesignPaper}"/>
               </Grid>
 
               <Rectangle x:Name="HighlightRect" ZIndex="-1"

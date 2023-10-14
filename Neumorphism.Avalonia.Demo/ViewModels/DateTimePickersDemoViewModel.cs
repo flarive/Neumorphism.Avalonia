@@ -16,30 +16,34 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             {
                 _selectedCulture = value;
 
+                CultureInfo c = CultureInfo.InstalledUICulture;
+
+
                 if (SelectedCulture == TestCultureEnum.System)
                 {
                     // OS current culture
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.InstalledUICulture;
+                    c = CultureInfo.InstalledUICulture;
+                    c = AddMissingAmPmDesignators(c);
                 }
                 else if (SelectedCulture == TestCultureEnum.English)
                 {
                     // english USA
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+                    c = CultureInfo.GetCultureInfo("en-US");
                 }
                 else if (SelectedCulture == TestCultureEnum.French)
                 {
-                    CultureInfo c = (CultureInfo)CultureInfo.GetCultureInfo("fr-FR").Clone();
+                    // french France
+                    c = (CultureInfo)CultureInfo.GetCultureInfo("fr-FR").Clone();
                     c.DateTimeFormat.AMDesignator = "AM";
                     c.DateTimeFormat.PMDesignator = "PM";
-
-                    // french France
-                    Thread.CurrentThread.CurrentCulture = c;
                 }
                 else if (SelectedCulture == TestCultureEnum.Invariant)
                 {
                     // invariant culture
-                    Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+                    c = CultureInfo.InvariantCulture;
                 }
+
+                Thread.CurrentThread.CurrentCulture = c;
 
                 OnPropertyChanged(nameof(SelectedCulture));
                 OnPropertyChanged(nameof(CurrentCultureName));
@@ -52,10 +56,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         public string CurrentCultureName
         {
-            get
-            {
-                return CultureInfo.CurrentCulture.Name;
-            }
+            get { return CultureInfo.CurrentCulture.Name; }
         }
 
 
@@ -190,13 +191,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             }
         }
 
-
-
-
-        
-
         #endregion
-
 
 
         #region time
@@ -216,7 +211,14 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid meeting time");
+                        if (value < new TimeSpan(9, 0, 0))
+                        {
+                            throw new DataValidationException("Invalid time ! Meeting shouldn't start before 09:00 AM ! ");
+                        }
+                        else if (value > new TimeSpan(18, 0, 0))
+                        {
+                            throw new DataValidationException("Invalid time ! Meeting shouldn't start after 06:00 PM ! ");
+                        }
                     }
                 }
             }
@@ -260,7 +262,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid start time");
+                        throw new DataValidationException("Invalid time");
                     }
                 }
             }
@@ -281,7 +283,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid end time");
+                        throw new DataValidationException("Invalid time");
                     }
                 }
             }
@@ -306,7 +308,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid start time");
+                        throw new DataValidationException("Invalid time");
                     }
                 }
             }
@@ -327,7 +329,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid end time");
+                        throw new DataValidationException("Invalid time");
                     }
                 }
             }
@@ -336,6 +338,38 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         #endregion
 
 
+        public DateTimePickersDemoViewModel()
+        {
+            HolidaysDateStart = new DateTime(DateTime.Today.Year, 8, 1);
+            HolidaysDateEnd = new DateTime(DateTime.Today.Year, 8, 20);
+
+            MeetingTimeStart = new TimeSpan(9,0,0);
+            MeetingTimeEnd = new TimeSpan(17,0,0);
+
+
+            TestDate1 = new DateTime(1980, 12, 25);
+
+            MeetingTime = new TimeSpan(15,0,0);
+
+            // retreive current os/system culture
+            CultureInfo c = CultureInfo.InstalledUICulture;
+            c = AddMissingAmPmDesignators(c);
+            Thread.CurrentThread.CurrentCulture = c;
+        }
+
+
+        private CultureInfo AddMissingAmPmDesignators(CultureInfo c)
+        {
+            if (string.IsNullOrEmpty(c.DateTimeFormat.AMDesignator) || string.IsNullOrEmpty(c.DateTimeFormat.PMDesignator))
+            {
+                // Some cultures, such as french are 24 hour clock based so they don't have any AM/PM designator, so add missing designators
+                c = (CultureInfo)c.Clone();
+                c.DateTimeFormat.AMDesignator = "AM";
+                c.DateTimeFormat.PMDesignator = "PM";
+            }
+
+            return c;
+        }
 
         /// <summary>
         /// Dirty hack to force binding refresh
@@ -415,28 +449,5 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 UnsetMeetingTimeEnd = new TimeSpan(UnsetMeetingTimeEnd.Value.Hours, UnsetMeetingTimeEnd.Value.Minutes, UnsetMeetingTimeEnd.Value.Seconds - 1);
             }
         }
-
-
-
-
-
-        public DateTimePickersDemoViewModel()
-        {
-            HolidaysDateStart = new DateTime(DateTime.Today.Year, 8, 1);
-            HolidaysDateEnd = new DateTime(DateTime.Today.Year, 8, 20);
-
-            MeetingTimeStart = new TimeSpan(9,0,0);
-            MeetingTimeEnd = new TimeSpan(17,0,0);
-
-
-            TestDate1 = new DateTime(1980, 12, 25);
-
-
-            MeetingTime = new TimeSpan(15,0,0);
-
-            // retreive current os/system culture
-            //CultureInfo culture = CultureInfo.CurrentCulture;
-        }
-
     }
 }
