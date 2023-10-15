@@ -9,6 +9,12 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> Date Time pickers added 0.7.0 !
+- Calendar based date picker
+- Time picker
+
+![Screenshot](Screenshots/datetimepickers.png)
+
 # <img src="favicon.png" width="32" height="32"> Tabs added 0.6.0 !
 - Tabs are now fully themed with different possible styles
 
