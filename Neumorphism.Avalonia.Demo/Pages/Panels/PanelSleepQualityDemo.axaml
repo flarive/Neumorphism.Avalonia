@@ -31,11 +31,11 @@
           </Button>
         </Grid>
 
-        <controls:Card Padding="0" InsideClipping="True" Height="52" Margin="0,30,0,30">
+        <controls:Card Padding="0" InsideClipping="True" Height="52" Width="240" Margin="0,30,0,30">
           <StackPanel Orientation="Horizontal">
-            <RadioButton Theme="{StaticResource RadioButtonButton}" Classes="Left" GroupName="389" Height="52" Content="Days" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Days}}" />
-            <RadioButton Theme="{StaticResource RadioButtonButton}" GroupName="389" Height="52" Content="Weeks" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Weeks}}" />
-            <RadioButton Theme="{StaticResource RadioButtonButton}" Classes="Right" GroupName="389" Height="52" Content="Months" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Months}}" />
+            <RadioButton Theme="{StaticResource RadioButtonButton}" Width="70" Classes="Left" GroupName="389" Height="52" Content="Days" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Days}}" />
+            <RadioButton Theme="{StaticResource RadioButtonButton}" Width="80" GroupName="389" Height="52" Content="Weeks" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Weeks}}" />
+            <RadioButton Theme="{StaticResource RadioButtonButton}" Width="90" Classes="Right" GroupName="389" Height="52" Content="Months" assist:RadioButtonAssist.CheckedForeground="#fff8817d" IsChecked="{Binding Frequency, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static base:SleepQualityFrequency.Months}}" />
           </StackPanel>
         </controls:Card>
 

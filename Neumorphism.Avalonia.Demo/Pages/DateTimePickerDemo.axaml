@@ -47,14 +47,19 @@
           <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
-            <controls:ExtendedCalendarDatePicker Watermark="What is your birthdate ?" SelectedDate="{Binding BirthDate}"
-                                                 ToolTip.Tip="Date with long display format, watermark and no selected date yet"
-                                                 SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" />
+            <StackPanel Orientation="Vertical">
+              <controls:ExtendedCalendarDatePicker Watermark="What is your birthdate ?" SelectedDate="{Binding BirthDate}"
+                                                   ToolTip.Tip="Date with long display format, watermark and no selected date yet"
+                                                   SelectedDateFormat="Long" Width="280" IsTodayHighlighted="True" Margin="0,10,0,0" />
+              <TextBlock Text="{Binding ComputedAge, StringFormat={}You are {0} years old !, TargetNullValue={}}"
+                         Classes="Caption" Margin="0,6,0,0"
+                         Foreground="{DynamicResource MaterialDesignForeground}" />
+            </StackPanel>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker2">
             <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True"
-                                                 assist:DatePickerAssist.Label="Birthdate" Width="180"
+                                                 assist:DatePickerAssist.Label="Birthdate" Watermark="{Binding CurrentCultureDateWatermark}" Width="180"
                                                  ToolTip.Tip="Date with short display format, floating watermark and no selected date yet"
                                                  SelectedDate="{Binding BirthDate}" />
           </showMeTheXaml:XamlDisplay>
@@ -67,7 +72,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker4">
-            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True"
+            <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" IsEnabled="False"
                                                  assist:DatePickerAssist.Label="Custom date format" Watermark="yyyy-MM-dd" Width="220"
                                                  ToolTip.Tip="Date with custom display format yyyy-MM-dd forced, floating watermark and no selected date"
                                                  SelectedDate="{Binding TestDate2}" SelectedDateFormat="Custom" CustomDateFormatString="yyyy-MM-dd" />
@@ -98,7 +103,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker8">
-            <controls:ExtendedTimePicker MinuteIncrement="5" Width="180" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting time"
+            <controls:ExtendedTimePicker MinuteIncrement="5" Width="180" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting time" IsEnabled="False"
                                          SelectedTime="{Binding MeetingTime}" ClockIdentifier="24HourClock"
                                          ToolTip.Tip="24 hour clock with floating watermark and already selected time"/>
           </showMeTheXaml:XamlDisplay>
@@ -106,34 +111,34 @@
         </StackPanel>
 
 
-      <StackPanel Orientation="Vertical" Margin="40,0,0,0" Width="460">
+        <StackPanel Orientation="Vertical" Margin="40,0,0,0" Width="460">
         <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Range" />
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker9">
-          <StackPanel Orientation="Horizontal">
+          <StackPanel Orientation="Horizontal" ToolTip.Tip="Date range with short display format, watermark and already selected dates">
             <controls:ExtendedCalendarDatePicker Watermark="Holidays start" SelectedDateFormat="Short" SelectedDate="{Binding HolidaysDateStart}" Width="180" Margin="0,15,0,15" IsTodayHighlighted="True" />
             <controls:ExtendedCalendarDatePicker Watermark="Holidays end" SelectedDateFormat="Short" SelectedDate="{Binding HolidaysDateEnd}" Width="180" Margin="15,15,0,15" IsTodayHighlighted="True" />
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker10">
-          <StackPanel Orientation="Horizontal">
+          <StackPanel Orientation="Horizontal" ToolTip.Tip="Date range with custom display format yyyy-MM-dd, floating watermark and already selected dates">
             <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays start" Width="180" SelectedDate="{Binding HolidaysDateStart}" SelectedDateFormat="Custom" Margin="0,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
             <controls:ExtendedCalendarDatePicker UseFloatingWatermark="True" assist:DatePickerAssist.Label="Holidays end" Width="180" SelectedDate="{Binding HolidaysDateEnd}" SelectedDateFormat="Custom" Margin="15,15,0,15" CustomDateFormatString="yyyy-MM-dd" />
           </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker11">
-			  <StackPanel Orientation="Horizontal">
-				  <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="Meeting start" Width="180" SelectedTime="{Binding UnsetMeetingTimeStart}" Margin="0,15,0,15" ClockIdentifier="12HourClock"/>
-				  <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="Meeting end" Width="180" SelectedTime="{Binding UnsetMeetingTimeEnd}" Margin="15,15,0,15" ClockIdentifier="12HourClock"/>
-			  </StackPanel>
+          <StackPanel Orientation="Horizontal" ToolTip.Tip="12 hour clock date range with default display format, watermark and no selected dates yet">
+            <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="Meeting start" Width="180" SelectedTime="{Binding UnsetMeetingTimeStart}" Margin="0,15,0,15" ClockIdentifier="12HourClock"/>
+            <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="Meeting end" Width="180" SelectedTime="{Binding UnsetMeetingTimeEnd}" Margin="15,15,0,15" ClockIdentifier="12HourClock"/>
+          </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker12">
-			  <StackPanel Orientation="Horizontal">
-				  <controls:ExtendedTimePicker MinuteIncrement="10" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting start" Watermark="--:--" SelectedTime="{Binding MeetingTimeStart}" Margin="0,15,0,15" ClockIdentifier="24HourClock" />
-				  <controls:ExtendedTimePicker MinuteIncrement="10" UseFloatingWatermark="True" assist:TimePickerAssist.Label="Meeting end" Watermark="--:--" SelectedTime="{Binding MeetingTimeEnd}" Margin="15,15,0,15" ClockIdentifier="24HourClock" />
+			  <StackPanel Orientation="Horizontal" ToolTip.Tip="24 hour clock date range with default display format, floating watermark and already selected dates">
+				  <controls:ExtendedTimePicker MinuteIncrement="10" UseFloatingWatermark="True" IsEnabled="False" assist:TimePickerAssist.Label="Meeting start" Watermark="--:--" SelectedTime="{Binding MeetingTimeStart}" Margin="0,15,0,15" ClockIdentifier="24HourClock" />
+				  <controls:ExtendedTimePicker MinuteIncrement="10" UseFloatingWatermark="True" IsEnabled="False" assist:TimePickerAssist.Label="Meeting end" Watermark="--:--" SelectedTime="{Binding MeetingTimeEnd}" Margin="15,15,0,15" ClockIdentifier="24HourClock" />
 			  </StackPanel>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
@@ -143,5 +148,5 @@
 
     </StackPanel>
     
-    </StackPanel>
+  </StackPanel>
 </UserControl>

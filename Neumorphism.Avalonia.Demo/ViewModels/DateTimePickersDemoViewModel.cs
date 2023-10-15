@@ -47,6 +47,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
                 OnPropertyChanged(nameof(SelectedCulture));
                 OnPropertyChanged(nameof(CurrentCultureName));
+                OnPropertyChanged(nameof(CurrentCultureDateWatermark));
 
                 ForceDateBindingsRefresh();
                 ForceTimeBindingsRefresh();
@@ -57,6 +58,11 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public string CurrentCultureName
         {
             get { return CultureInfo.CurrentCulture.Name; }
+        }
+
+        public string CurrentCultureDateWatermark
+        {
+            get { return CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern; }
         }
 
 
@@ -74,12 +80,31 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     {
                         _birthDate = value;
                         OnPropertyChanged(nameof(BirthDate));
+                        OnPropertyChanged(nameof(ComputedAge));
                     }
                     else
                     {
                         throw new DataValidationException("Invalid birth date");
                     }
                 }
+            }
+        }
+
+        public int? ComputedAge
+        {
+            get
+            {
+                if (BirthDate.HasValue)
+                {
+                    var today = DateTime.Today;
+
+                    var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+                    var b = (BirthDate.Value.Year * 100 + BirthDate.Value.Month) * 100 + BirthDate.Value.Day;
+
+                    return (a - b) / 10000;
+                }
+
+                return null;
             }
         }
 
@@ -240,7 +265,14 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid meeting time");
+                        if (value < new TimeSpan(9, 0, 0))
+                        {
+                            throw new DataValidationException("Invalid time ! Meeting shouldn't start before 09:00 AM ! ");
+                        }
+                        else if (value > new TimeSpan(18, 0, 0))
+                        {
+                            throw new DataValidationException("Invalid time ! Meeting shouldn't start after 06:00 PM ! ");
+                        }
                     }
                 }
             }
@@ -262,7 +294,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time");
+                        throw new DataValidationException("Invalid time ! Meeting can't start after its end time !");
                     }
                 }
             }
@@ -283,7 +315,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time");
+                        throw new DataValidationException("Invalid time ! Meeting can't end before its start time !");
                     }
                 }
             }
@@ -308,7 +340,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time");
+                        throw new DataValidationException("Invalid time ! Meeting can't start after its end time !");
                     }
                 }
             }
@@ -329,7 +361,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                     else
                     {
-                        throw new DataValidationException("Invalid time");
+                        throw new DataValidationException("Invalid time ! Meeting can't end before its start time !");
                     }
                 }
             }
@@ -349,7 +381,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             TestDate1 = new DateTime(1980, 12, 25);
 
-            MeetingTime = new TimeSpan(15,0,0);
+            MeetingTime = new TimeSpan(15,30,0);
 
             // retreive current os/system culture
             CultureInfo c = CultureInfo.InstalledUICulture;

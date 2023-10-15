@@ -609,13 +609,12 @@ namespace Avalonia.Themes.Neumorphism.Controls
         {
             try
             {
-                string template = "HH:mm";
+                string template = "H:mm";
 
                 if (ClockIdentifier == "12HourClock")
                 {
-                    template = "hh:mm tt";
+                    template = "h:mm tt";
                 }
-
 
                 DateTime dt;
                 if (DateTime.TryParseExact(text.ToUpper(), template, CultureInfo.InvariantCulture, DateTimeStyles.None, out dt))

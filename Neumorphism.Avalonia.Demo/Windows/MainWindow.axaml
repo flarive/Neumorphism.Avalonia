@@ -138,12 +138,12 @@
                 </StackPanel>
               </ListBoxItem>
 
-              <!--<ListBoxItem IsEnabled="True">
+              <ListBoxItem IsEnabled="True">
                 <StackPanel Orientation="Horizontal">
                   <icons:MaterialIcon Kind="DateRange" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
                   <TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
-              </ListBoxItem>-->
+              </ListBoxItem>
          
             </ListBox>
           </Grid>
@@ -165,7 +165,7 @@
               <ToggleButton Name="NavDrawerSwitch2"
                             Classes="Flat TransparentBack"
                             Width="38" Height="38" CornerRadius="6" Padding="4">
-                <icons:MaterialIcon Kind="Menu" Width="28" Height="28"  UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
+                <icons:MaterialIcon Kind="Menu" Width="28" Height="28" UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
               </ToggleButton>
               <!--App title-->
               <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
@@ -239,7 +239,7 @@
                 <!--Tabs-->
                 <pages:TabsDemo/>
                 <!--DatetimePickers-->
-                <!--<pages:DateTimePickerDemo/>-->
+                <pages:DateTimePickerDemo/>
               </Carousel>
             </Border>
           </ScrollViewer>

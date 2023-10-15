@@ -4,6 +4,7 @@ using System;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Controls;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
@@ -20,27 +21,41 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
             if (_textBox != null)
             {
-                _textBox.LostFocus -= _textBox_LostFocus;
-                _textBox.LostFocus += _textBox_LostFocus;
+                _textBox.Loaded -= TextBox_Loaded;
+                _textBox.Loaded += TextBox_Loaded;
 
-                _textBox.TextChanged -= _textBox_TextChanged;
-                _textBox.TextChanged += _textBox_TextChanged;
+                _textBox.GotFocus -= TextBox_GotFocus;
+                _textBox.GotFocus += TextBox_GotFocus;
+
+                _textBox.LostFocus -= TextBox_LostFocus;
+                _textBox.LostFocus += TextBox_LostFocus;
             }
 
             _calendar = e.NameScope.Find<Calendar>("PART_Calendar");
-            
 
             base.OnApplyTemplate(e);
         }
 
-        private void _textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string text = ((TextBox)e.Source).Text;
 
-            SetValue(TextProperty, text);
+
+        private void TextBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (_textBox != null)
+            {
+                if (UseFloatingWatermark)
+                {
+                    _textBox.Watermark = string.Empty;
+                }
+
+                if (e != null && e.Source != null)
+                {
+                    string text = ((TextBox)e.Source).Text ?? string.Empty;
+                    SetValue(TextProperty, text);
+                }
+            }
         }
 
-        private void _textBox_LostFocus(object sender, RoutedEventArgs e)
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (_textBox != null)
             {
@@ -53,11 +68,31 @@ namespace Avalonia.Themes.Neumorphism.Controls
                         // clear invalid text entries
                         _textBox.Text = string.Empty;
                     }
+                    else
+                    {
+                        SetValue(SelectedDateProperty, d.Value);
+                    }
                 }
                 else
                 {
                     SetValue(TextProperty, string.Empty);
                     SetValue(SelectedDateProperty, null);
+                }
+
+                if (UseFloatingWatermark)
+                {
+                    _textBox.Watermark = string.Empty;
+                }
+            }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (_textBox != null)
+            {
+                if (UseFloatingWatermark)
+                {
+                    _textBox.Watermark = Watermark;
                 }
             }
         }

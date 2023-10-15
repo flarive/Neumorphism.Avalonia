@@ -40,6 +40,11 @@
   
   
     <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <TextBlock Text="Please use ExtendedCalendarDatePicker instead of CalendarDatePicker"/>
+        </ControlTemplate>
+      </Setter>
     </ControlTheme>
 
 
@@ -182,8 +187,7 @@
     <!-- Disabled State -->
     <Style Selector="^:disabled">
       <Style Selector="^ /template/ Border#PART_RootBorder">
-        <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundDisabled}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushDisabled}" />
+        <Setter Property="Opacity" Value="0.5" />
       </Style>
 
       <Style Selector="^ /template/ Button#PART_Button">
@@ -236,20 +240,6 @@
       <Setter Property="RenderTransform" Value="scale(0.75)" />
   	  <Setter Property="MaxWidth" Value="{TemplateBinding Width}" />
     </Style>
-
-
-
-
-
-
-
-    <!--<Style Selector="^:focus-within:empty /template/ TextBlock#watermark, ^:empty /template/ TextBlock#watermark">
-      <Setter Property="IsVisible" Value="True" />
-    </Style>-->
-
-    <!--<Style Selector="^:focus-within:not(:empty) /template/ TextBlock#watermark, ^:not(:empty) /template/ TextBlock#watermark">
-      <Setter Property="IsVisible" Value="False" />
-    </Style>-->
 
     <Style Selector="^ /template/ TextBlock#floatingWatermark">
       <Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush}" />

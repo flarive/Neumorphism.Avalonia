@@ -457,7 +457,7 @@
       <StaticResource x:Key="ToolTipBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
       <Thickness x:Key="ToolTipBorderThemePadding">8,5,8,7</Thickness>
 
-      <!-- Resources for DatePicker.xaml-->
+      <!-- Resources for DatePicker.xaml (TO CLEAN UP !) -->
       <StaticResource x:Key="DatePickerSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
       <StaticResource x:Key="DatePickerSpacerFillDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="DatePickerButtonBorderBrush" ResourceKey="SystemControlForegroundBaseMediumBrush" />
@@ -486,7 +486,7 @@
       <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPointerOver"	ResourceKey="SystemControlHighlightAltBaseHighBrush" />
       <StaticResource x:Key="DateTimePickerFlyoutButtonForegroundPressed"	ResourceKey="SystemControlHighlightAltBaseHighBrush" />
 
-      <!-- Resources for TimePicker.xaml -->
+      <!-- Resources for TimePicker.xaml (TO CLEAN UP !) -->
       <StaticResource x:Key="TimePickerSpacerFill" ResourceKey="SystemControlForegroundBaseLowBrush" />
       <StaticResource x:Key="TimePickerSpacerFillDisabled" ResourceKey="SystemControlDisabledBaseLowBrush" />
       <StaticResource x:Key="TimePickerButtonBorderBrush" ResourceKey="SystemControlForegroundBaseMediumBrush" />

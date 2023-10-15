@@ -39,6 +39,10 @@
   <Thickness x:Key="TimePickerHostPadding">0,3,0,6</Thickness>
 
 
+  
+  
+
+
 	<ControlTheme x:Key="CustomTimePickerButton" TargetType="Button">
 		<Setter Property="TextElement.Foreground" Value="Gray" />
 		<Setter Property="Margin" Value="2,0,4,0" />
@@ -66,6 +70,11 @@
 
 
   <ControlTheme x:Key="{x:Type TimePicker}" TargetType="TimePicker">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <TextBlock Text="Please use ExtendedTimePicker instead of TimePicker"/>
+      </ControlTemplate>
+    </Setter>
   </ControlTheme>
 
   
@@ -178,10 +187,6 @@
       </ControlTemplate>
     </Setter>
     
-    <Style Selector="^:disabled /template/ Rectangle">
-      <Setter Property="Fill" Value="{DynamicResource TimePickerSpacerFillDisabled}"/>
-    </Style>
-
     <Style Selector="^:hasnotime /template/ Button#PART_FlyoutButton TextBlock">
       <Setter Property="Foreground" Value="{DynamicResource TextControlPlaceholderForeground}"/>
     </Style>
@@ -253,6 +258,13 @@
           <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.25" Easing="CubicEaseOut" />
         </Transitions>
       </Setter>
+    </Style>
+
+
+
+    <!-- Disabled State -->
+    <Style Selector="^:disabled /template/ Border#PART_RootBorder">
+      <Setter Property="Opacity" Value="0.5" />
     </Style>
   </ControlTheme>
   
@@ -353,7 +365,7 @@
                       Theme="{StaticResource NeumorphismDateTimePickerButton}"
                       Height="{DynamicResource TimePickerFlyoutPresenterAcceptDismissHostGridHeight}"
                       CornerRadius="0,0,10,10"
-					  HorizontalAlignment="Stretch"
+					            HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch">
                 <Path Stroke="{Binding $parent[Button].Foreground}"
                       StrokeLineCap="Round"
