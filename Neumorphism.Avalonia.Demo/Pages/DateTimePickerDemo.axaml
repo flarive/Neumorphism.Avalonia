@@ -13,7 +13,7 @@
             xmlns:system="clr-namespace:System;assembly=System.Runtime"
             x:CompileBindings="True"
             x:DataType="viewModels:DateTimePickersDemoViewModel"
-            x:Class="Neumorphism.Avalonia.Demo.Pages.DateTimePickerDemo"
+            x:Class="Neumorphism.Avalonia.Demo.Pages.DateTimePickersDemo"
             xmlns:sys="using:System">
 
   <UserControl.Resources>

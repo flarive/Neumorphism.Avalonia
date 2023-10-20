@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:main="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs"
+        xmlns:material="clr-namespace:Material.Styles;assembly=Material.Styles"
+        xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels"
+        xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Converters"
+        x:Class="Neumorphism.Avalonia.Demo.Dialogs.Views.DatePickerDialog"
+        SizeToContent="WidthAndHeight" CanResize="False"
+        HorizontalContentAlignment="Stretch"
+        Title="{CompiledBinding WindowTitle}"
+        WindowStartupLocation="{CompiledBinding WindowStartupLocation}"
+        x:DataType="viewModels:DatePickerDialogViewModel">
+  
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:DateStringConverter x:Key="DateStringConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Styles>
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+
+    
+</Window>

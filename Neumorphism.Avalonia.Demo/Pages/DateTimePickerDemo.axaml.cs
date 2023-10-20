@@ -3,9 +3,9 @@ using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
-    public partial class DateTimePickerDemo : UserControl
+    public partial class DateTimePickersDemo : UserControl
     {
-        public DateTimePickerDemo()
+        public DateTimePickersDemo()
         {
             InitializeComponent();
 

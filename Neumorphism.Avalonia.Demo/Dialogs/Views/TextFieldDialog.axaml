@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels"
+        xmlns:textField="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.TextField"
+        xmlns:controls="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Controls"
+        x:Class="Neumorphism.Avalonia.Demo.Dialogs.Views.TextFieldDialog"
+        x:DataType="viewModels:TextFieldDialogViewModel">
+  
+    
+    <Window.Styles>
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+    
+    <controls:EmbeddedDialogControl>
+        <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
+            <StackPanel Name="PART_ContentPanel">
+                <TextBlock Name="PART_SupportingText"
+                           Classes="Body1"
+                           IsVisible="{CompiledBinding !!ContentMessage.Length}"
+                           Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}" />
+
+                <ItemsControl Name="PART_Fields"
+                              ItemsSource="{CompiledBinding TextFields}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="textField:TextFieldViewModel">
+                            <TextBox Name="PART_Field"
+                                     PasswordChar="{CompiledBinding MaskChar}"
+                                     HorizontalAlignment="Stretch"
+                                     MaxLength="{CompiledBinding MaxCountChars}"
+                                     Text="{CompiledBinding Text, Mode=TwoWay}"
+                                     Watermark="{CompiledBinding PlaceholderText}"
+                                     UseFloatingWatermark="True"
+                                     assist:TextFieldAssist.Hints="{CompiledBinding AssistiveText}"
+                                     assist:TextFieldAssist.Label="{CompiledBinding Label}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+    </controls:EmbeddedDialogControl>
+</Window>

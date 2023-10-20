@@ -144,6 +144,13 @@
                   <TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
               </ListBoxItem>
+
+              <!--<ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="Window" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>-->
          
             </ListBox>
           </Grid>
@@ -239,7 +246,9 @@
                 <!--Tabs-->
                 <pages:TabsDemo/>
                 <!--DatetimePickers-->
-                <pages:DateTimePickerDemo/>
+                <pages:DateTimePickersDemo/>
+                <!--Dialogs-->
+                <!--<pages:DialogDemo/>-->
               </Carousel>
             </Border>
           </ScrollViewer>
