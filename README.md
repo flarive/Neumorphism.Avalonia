@@ -74,6 +74,7 @@ For the moment only the following controls are fully themed :
 - Cards
 - ListBoxes
 - Tabs
+- DateTime pickers
 
 More controls should be themed soon.
 
