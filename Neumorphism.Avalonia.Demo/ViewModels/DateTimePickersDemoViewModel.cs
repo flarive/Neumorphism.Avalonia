@@ -1,4 +1,5 @@
-﻿using Avalonia.Data;
+﻿using Avalonia;
+using Avalonia.Data;
 using Neumorphism.Avalonia.Demo.Models;
 using System;
 using System.Globalization;
@@ -17,7 +18,6 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 _selectedCulture = value;
 
                 CultureInfo c = CultureInfo.InstalledUICulture;
-
 
                 if (SelectedCulture == TestCultureEnum.System)
                 {

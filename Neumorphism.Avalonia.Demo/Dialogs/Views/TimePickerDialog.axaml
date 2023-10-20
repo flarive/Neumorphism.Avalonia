@@ -2,11 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:main="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs"
-        xmlns:material="clr-namespace:Material.Styles;assembly=Material.Styles"
-        xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
         xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels"
-        xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Converters"
+        xmlns:converters="clr-namespace:Neumorphism.Avalonia.Demo.Converters"
         xmlns:controls="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Controls"
+        xmlns:themeControls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         x:Class="Neumorphism.Avalonia.Demo.Dialogs.Views.TimePickerDialog"
         SizeToContent="WidthAndHeight"
         Title="{CompiledBinding WindowTitle}"
@@ -24,16 +23,18 @@
     </Window.Resources>
     
     <Window.Styles>
-        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/DialogWindow.axaml" />
-        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Styles/StyleInclude.axaml" />
-        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo.Dialogs/Icons/DialogIconStyle.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo/Dialogs/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo/Dialogs/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Neumorphism.Avalonia.Demo/Dialogs/Icons/DialogIconStyle.axaml" />
     </Window.Styles>
     
     <controls:EmbeddedDialogControl>
         <ScrollViewer Name="PART_ScrollView">
             <StackPanel Name="PART_ContentPanel">
                 <StackPanel Margin="0,24,0,0" >
-                    <Border></Border>
+                  <themeControls:ExtendedTimePicker SelectedTime="{Binding UnsetMeetingTime}"
+                                        Watermark="hh:mm" ClockIdentifier="24HourClock"
+                                        ToolTip.Tip="24 hour clock"/>
                 </StackPanel>            
             </StackPanel>
         </ScrollViewer>

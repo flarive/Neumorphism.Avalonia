@@ -34,7 +34,5 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
                 base.SetTheme(ApplicationTheme.Light);
             }
         }
-
-
     }
 }

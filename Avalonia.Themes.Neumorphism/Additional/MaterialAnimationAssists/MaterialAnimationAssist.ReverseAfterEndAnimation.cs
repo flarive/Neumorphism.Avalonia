@@ -1,31 +1,29 @@
 using System.Threading;
-using Avalonia;
 using Avalonia.Animation;
 
-namespace Material.Styles.Additional.MaterialAnimationAssists
+namespace Avalonia.Themes.Neumorphism.Additional
 {
-
     public static partial class MaterialAnimationAssist
     {
-        public static readonly AttachedProperty<Animation> ReverseAfterEndAnimationProperty =
-            AvaloniaProperty.RegisterAttached<Animatable, Animation>("ReverseAfterEndAnimation", typeof(MaterialAnimationAssist));
+        public static readonly AttachedProperty<Animation.Animation> ReverseAfterEndAnimationProperty =
+            AvaloniaProperty.RegisterAttached<Animatable, Animation.Animation>("ReverseAfterEndAnimation", typeof(MaterialAnimationAssist));
 
-        public static Animation GetReverseAfterEndAnimation(Animatable element)
+        public static Animation.Animation GetReverseAfterEndAnimation(Animatable element)
         {
             return element.GetValue(ReverseAfterEndAnimationProperty);
         }
 
-        public static void SetReverseAfterEndAnimation(Animatable element, Animation value)
+        public static void SetReverseAfterEndAnimation(Animatable element, Animation.Animation value)
         {
             element.SetValue(ReverseAfterEndAnimationProperty, value);
         }
 
-        private static void OnReverseAfterEndAnimationChanged(Animatable control, AvaloniaPropertyChangedEventArgs<Animation> args)
+        private static void OnReverseAfterEndAnimationChanged(Animatable control, AvaloniaPropertyChangedEventArgs<Animation.Animation> args)
         {
             var oldData = GetAnimationInternalData<ReverseAfterEndAnimationData>(control, nameof(ReverseAfterEndAnimationProperty));
             oldData?.CancellationTokenSource.Cancel();
 
-            var animation = args.GetNewValue<Animation>();
+            var animation = args.GetNewValue<Animation.Animation>();
             if (animation != null)
             {
                 // Running animation
@@ -33,7 +31,7 @@ namespace Material.Styles.Additional.MaterialAnimationAssists
                 _ = animation.RunAsync(control, cancellationTokenSource.Token);
 
                 // Creating reversed animation
-                var reversedAnimation = new Animation()
+                var reversedAnimation = new Animation.Animation()
                 {
                     Delay = animation.Delay,
                     Duration = animation.Duration,
@@ -68,9 +66,9 @@ namespace Material.Styles.Additional.MaterialAnimationAssists
         private sealed class ReverseAfterEndAnimationData
         {
             public CancellationTokenSource CancellationTokenSource { get; set; }
-            public Animation ReversedAnimation { get; set; }
+            public Animation.Animation ReversedAnimation { get; set; }
 
-            public ReverseAfterEndAnimationData(CancellationTokenSource cancellationTokenSource, Animation reversedAnimation)
+            public ReverseAfterEndAnimationData(CancellationTokenSource cancellationTokenSource, Animation.Animation reversedAnimation)
             {
                 CancellationTokenSource = cancellationTokenSource;
                 ReversedAnimation = reversedAnimation;

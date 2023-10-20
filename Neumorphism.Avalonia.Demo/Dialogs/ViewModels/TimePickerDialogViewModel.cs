@@ -54,6 +54,21 @@ namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels
             }
         }
 
+
+
+        private TimeSpan? _unsetMeetingTime;
+        public TimeSpan? UnsetMeetingTime
+        {
+            get { return _unsetMeetingTime; }
+            set
+            {
+                _unsetMeetingTime = value;
+                OnPropertyChanged(nameof(UnsetMeetingTime));
+            }
+        }
+
+
+
         private string _firstPanelPointerTransform;
 
         public string FirstPanelPointerTransform

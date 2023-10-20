@@ -45,6 +45,14 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets/**" />
     <AvaloniaResource Include="Images/**" />
+    <AdditionalFiles Remove="Dialogs\Styles\DialogWindow.axaml" />
+    <AdditionalFiles Remove="Dialogs\Styles\EmbeddedDialogControl.axaml" />
+    <AdditionalFiles Remove="Dialogs\Styles\StyleInclude.axaml" />
+    <AdditionalFiles Remove="Dialogs\Views\AlertDialog.axaml" />
+    <AdditionalFiles Remove="Dialogs\Views\CustomDialog.axaml" />
+    <AdditionalFiles Remove="Dialogs\Views\DatePickerDialog.axaml" />
+    <AdditionalFiles Remove="Dialogs\Views\TextFieldDialog.axaml" />
+    <AdditionalFiles Remove="Dialogs\Views\TimePickerDialog.axaml" />
     <AvaloniaResource Include="NeumorphismXamlDisplay.axaml" />	  
     <None Update="Assets/app.icns" CopyToPublishDirectory="PreserveNewest" Condition="$(RuntimeIdentifier.StartsWith('osx'))">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -70,6 +78,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
   </ItemGroup>
+    
+
     
 
  	

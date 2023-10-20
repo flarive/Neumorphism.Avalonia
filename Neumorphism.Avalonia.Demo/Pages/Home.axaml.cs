@@ -1,5 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Dialogs;
 using Avalonia.Themes.Neumorphism.Controls;
 using Avalonia.VisualTree;
 using System.Linq;
@@ -31,7 +30,5 @@ namespace Neumorphism.Avalonia.Demo.Pages
         public void OpenProjectRepoLink() => GlobalCommand.OpenProjectRepoLink();
 
         public void OpenAvaloniaWebsiteLink() => GlobalCommand.OpenAvaloniaWebsiteLink();
-
-        public void ShowAboutAvaloniaUI() => new AboutAvaloniaDialog().ShowDialog(Program.MainWindow);
     }
 }

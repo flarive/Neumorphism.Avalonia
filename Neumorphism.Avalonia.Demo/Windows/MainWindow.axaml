@@ -2,6 +2,7 @@
         xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
         xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
         xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
+        xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
 		    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
@@ -30,6 +31,22 @@
       <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
   </Window.Styles>
+
+
+  <Window.DataTemplates>
+    <DataTemplate DataType="models:Sample2Model">
+      <StackPanel>
+        <TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
+        <TextBlock Classes="Body1"
+                   TextAlignment="Center"
+                   Text="{Binding Number}" />
+        <Button Margin="0 8 0 0"
+                Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
+          THANKS, CLOSE
+        </Button>
+      </StackPanel>
+    </DataTemplate>
+  </Window.DataTemplates>
 
 
 
@@ -147,7 +164,7 @@
 
               <!--<ListBoxItem IsEnabled="True">
                 <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="Window" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
                   <TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
               </ListBoxItem>-->
@@ -248,7 +265,7 @@
                 <!--DatetimePickers-->
                 <pages:DateTimePickersDemo/>
                 <!--Dialogs-->
-                <!--<pages:DialogDemo/>-->
+                <!--<pages:DialogsDemo/>-->
               </Carousel>
             </Border>
           </ScrollViewer>

@@ -11,34 +11,29 @@ using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class DialogDemoViewModel : ViewModelBase
+    public class DialogsDemoViewModel : ViewModelBase
     {
         private TimeSpan _previousTimePickerResult = TimeSpan.Zero;
         private DateTime _previousDatePickerResult = DateTime.Now;
-        private readonly MainWindow? _window;
+        private readonly MainWindow _window;
 
-        public DialogDemoItemViewModel[] StandaloneDialogItems { get; }
+        public DialogsDemoItemViewModel[] StandaloneDialogItems { get; }
 
-        public DialogDemoViewModel()
+        public DialogsDemoViewModel(Window window)
         {
-            if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime app)
-            {
-                if(app.MainWindow is not MainWindow w)
-                    return;
+            _window = window as MainWindow;
 
-                _window = w;
-            }
-            
+
             StandaloneDialogItems = new[]
             {
-                new DialogDemoItemViewModel("Simple Dialog", Dialog1),
-                new DialogDemoItemViewModel("Dialog with confirmation", Dialog2),
-                new DialogDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
-                new DialogDemoItemViewModel("Dialog with bitmap icon", Dialog4),
-                new DialogDemoItemViewModel("Login dialog", LoginDialog),
-                new DialogDemoItemViewModel("Folder rename dialog", FolderNameDialog),
-                new DialogDemoItemViewModel("Time picker", TimePickerDialog),
-                new DialogDemoItemViewModel("Date picker", DatePickerDialog)
+                new DialogsDemoItemViewModel("Simple Dialog", Dialog1),
+                new DialogsDemoItemViewModel("Dialog with confirmation", Dialog2),
+                new DialogsDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
+                new DialogsDemoItemViewModel("Dialog with bitmap icon", Dialog4),
+                new DialogsDemoItemViewModel("Login dialog", LoginDialog),
+                new DialogsDemoItemViewModel("Folder rename dialog", FolderNameDialog),
+                new DialogsDemoItemViewModel("Time picker", TimePickerDialog),
+                new DialogsDemoItemViewModel("Date picker", DatePickerDialog)
             };
         }
 
@@ -123,7 +118,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         private async IAsyncEnumerable<string> Dialog4()
         {
             // Open asset stream using assets.Open method.
-            await using var icon = AssetLoader.Open(new Uri("avares://Material.Demo/Assets/avalonia-logo.png"));
+            await using var icon = AssetLoader.Open(new Uri("avares://Neumorphism.Avalonia.Demo/Assets/avalonia-logo.png"));
 
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {

@@ -3,7 +3,7 @@
                     xmlns:converters="using:Avalonia.Controls.Converters"
                     xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
 										xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
-                    xmlns:materialAnimationAssists="clr-namespace:Material.Styles.Additional.MaterialAnimationAssists">
+                    xmlns:materialAnimationAssists="clr-namespace:Avalonia.Themes.Neumorphism.Additional">
 
 	<!-- Neumorphism theme ok -->
 

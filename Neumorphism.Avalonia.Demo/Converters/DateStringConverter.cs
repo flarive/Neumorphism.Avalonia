@@ -2,17 +2,19 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Neumorphism.Avalonia.Demo.Dialogs.Converters
+namespace Neumorphism.Avalonia.Demo.Converters
 {
     public class DateStringConverter : IValueConverter
     {
-        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture) {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
             var format = "ddd, MMM d";
 
             if (parameter is string s)
                 format = s;
 
-            if (value is DateTime) {
+            if (value is DateTime)
+            {
                 var v = (DateTime)value;
                 return v.ToString(format);
             }
@@ -20,7 +22,8 @@ namespace Neumorphism.Avalonia.Demo.Dialogs.Converters
             return "";
         }
 
-        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) {
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
             throw new NotImplementedException();
         }
     }
