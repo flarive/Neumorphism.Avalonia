@@ -30,21 +30,17 @@ namespace Neumorphism.Avalonia.Demo.Pages
             base.OnApplyTemplate(e);
         }
 
-        private void OpenDialogWithView(object? sender, RoutedEventArgs e)
+        private void OpenDialogWithView(object sender, RoutedEventArgs e)
         {
-            DialogHost.Show(this.Resources["Sample2View"]!, "MainDialogHost");
+            var view = this.Resources["Sample2View"]!;
+            DialogHost.Show(view, "MainDialogHost");
         }
 
-        private void OpenDialogWithModel(object? sender, RoutedEventArgs e)
+        private void OpenDialogWithModel(object sender, RoutedEventArgs e)
         {
-            // View that associated with this model defined at DialogContentTemplate in DialogDemo.axaml
-            DialogHost.Show(new Sample2Model(new Random().Next(0, 100)), "MainDialogHost");
-        }
-
-        private void OpenMoreDialogHostExamples(object? sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo()
-                { FileName = "https://github.com/AvaloniaUtils/DialogHost.Avalonia", UseShellExecute = true });
+            // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
+            var model = new Sample2Model(new Random().Next(0, 100));
+            DialogHost.Show(model, "MainDialogHost");
         }
     }
 }

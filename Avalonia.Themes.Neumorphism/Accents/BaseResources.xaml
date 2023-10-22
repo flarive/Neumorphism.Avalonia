@@ -55,8 +55,7 @@
 	<!-- Moved from MenuItem.xaml -->
 	<Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
 
-	<!-- Moved from Menu.xaml -->
-	<Thickness x:Key="MenuBarItemPadding">12,0,12,0</Thickness>
+
 
 	<ResourceDictionary.ThemeDictionaries>
 		<ResourceDictionary x:Key="Default">

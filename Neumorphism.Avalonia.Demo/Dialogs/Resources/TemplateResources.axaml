@@ -3,8 +3,8 @@
                     xmlns:elements="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements"
                     xmlns:icons="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons"
                     xmlns:icons1="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Icons"
-
                     x:Class="Neumorphism.Avalonia.Demo.Dialogs.Resources.TemplateResources">
+  
     <ItemsPanelTemplate x:Key="DialogButtonPlacementPanel">
         <WrapPanel Orientation="Horizontal"/>
     </ItemsPanelTemplate>

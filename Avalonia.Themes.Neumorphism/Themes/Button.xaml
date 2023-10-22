@@ -251,7 +251,7 @@
 	</ControlTheme>
 
 
-	<!--No Material class-->
+	<!--No Material theme-->
 	<ControlTheme x:Key="ButtonNoMaterial" TargetType="Button">
 		<Setter Property="Cursor" Value="Hand" />
 		<Setter Property="Template">
@@ -270,7 +270,7 @@
 	</ControlTheme>
 
 
-	<!--Flat class-->
+	<!--Flat theme-->
 	<ControlTheme x:Key="ButtonFlat" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -281,7 +281,7 @@
 	</ControlTheme>
 
 
-	<!--Icon class-->
+	<!--Button icon theme-->
 	<ControlTheme x:Key="ButtonIcon" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
 		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
 		<Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -386,13 +386,6 @@
 			<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
 		</Style>
 
-
-
-
-
-
-
-
 		<!--Class Icon Dark default state-->
 		<Style Selector="^.Dark">
 			<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
@@ -407,13 +400,6 @@
 			<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
 		</Style>
 
-
-
-
-
-
-
-
 		<!--Class Icon Accent default state-->
 		<Style Selector="^.Accent">
 			<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
@@ -423,8 +409,6 @@
 			<Setter Property="TextBlock.Foreground" Value="White"/>
 		</Style>
 
-
-
 		<!---Class Icon Accent pressed state -->
 		<Style Selector="^.Accent:pressed /template/ Border#PART_ButtonRootBorder">
 			<Setter Property="Background" Value="{DynamicResource SecondaryHueDarkBrush}"/>
@@ -432,7 +416,7 @@
 	</ControlTheme>
 
 
-	<!-- Outlined buttons -->
+	<!-- Outlined button theme -->
 	<ControlTheme x:Key="ButtonOutline" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
@@ -506,7 +490,7 @@
 	</ControlTheme>
 
 
-	<!--Button link-->
+	<!-- Link button theme -->
 	<ControlTheme x:Key="ButtonLink" TargetType="Button">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="Blue" />

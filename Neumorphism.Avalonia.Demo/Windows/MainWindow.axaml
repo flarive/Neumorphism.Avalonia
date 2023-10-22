@@ -33,6 +33,8 @@
   </Window.Styles>
 
 
+
+  <!--OpenDialogWithModel-->
   <Window.DataTemplates>
     <DataTemplate DataType="models:Sample2Model">
       <StackPanel>
@@ -50,7 +52,8 @@
 
 
 
-  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost">
+
+  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource zzz}">
     <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
                            assist:SnackbarHostAssist.SnackbarWidth="600">
       <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
@@ -164,6 +167,13 @@
 
               <!--<ListBoxItem IsEnabled="True">
                 <StackPanel Orientation="Horizontal">
+                  <icons:MaterialIcon Kind="Menu" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                  <TextBlock Text="Menus" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </StackPanel>
+              </ListBoxItem>
+
+              <ListBoxItem IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
                   <icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
                   <TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
                 </StackPanel>
@@ -199,11 +209,12 @@
                               Command="{Binding Path=SwitchThemeCommand}" CommandParameter="{Binding ElementName=toggleSwitchTheme, Path=$self.IsChecked}"/>
               </StackPanel>
               <!--<Right side menu-->
-              <Menu Grid.Column="5" Height="32" Padding="0" Margin="0">
+              <Menu Grid.Column="5" Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
                 <MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt DotsVertical, Size=24}"
                     assist:MenuAssist.PopupAnchor="TopRight"
-                    assist:MenuAssist.HorizontalOffset="-140"
-                    assist:MenuAssist.VerticalOffset="10">
+                    assist:MenuAssist.PopupPlacement="BottomEdgeAlignedRight"
+                    assist:MenuAssist.PopupHorizontalOffset="0"
+                    assist:MenuAssist.PopupVerticalOffset="0">
                   <MenuItem Header="Hello !" Click="HelloButtonMenuItem_OnClick">
                     <MenuItem.Icon>
                       <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
@@ -264,6 +275,8 @@
                 <pages:TabsDemo/>
                 <!--DatetimePickers-->
                 <pages:DateTimePickersDemo/>
+                <!--Menus-->
+                <!--<pages:MenusDemo/>-->
                 <!--Dialogs-->
                 <!--<pages:DialogsDemo/>-->
               </Carousel>

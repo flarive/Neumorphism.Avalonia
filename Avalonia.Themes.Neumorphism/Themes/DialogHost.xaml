@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia">
+
+
+  <Design.PreviewWith>
+    <dialogHostAvalonia:DialogHost Name="DialogHost" Height="300" Width="300"
+                                   Background="Gray">
+      <dialogHostAvalonia:DialogHost.DialogContent>
+        <Grid RowDefinitions="Auto Auto">
+          <TextBlock>You content here</TextBlock>
+          <Button Grid.Row="1" Command="{Binding #DialogHost.CloseDialogCommand}">
+            CLOSE
+          </Button>
+        </Grid>
+      </dialogHostAvalonia:DialogHost.DialogContent>
+      <Button Margin="8" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+              Command="{Binding #DialogHost.OpenDialogCommand}">
+        OPEN
+      </Button>
+    </dialogHostAvalonia:DialogHost>
+  </Design.PreviewWith>
+
+
+  <ControlTheme x:Key="zzz" TargetType="dialogHostAvalonia:DialogHost" BasedOn="{StaticResource {x:Type dialogHostAvalonia:DialogHost}}">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="DialogMargin" Value="8" />
+    <Setter Property="OverlayBackground" Value="Black" />
+    <Setter Property="Background" Value="Black" />
+    <Setter Property="dialogHostAvalonia:DialogHostStyle.ClipToBounds" Value="False" />
+    <Setter Property="dialogHostAvalonia:DialogHostStyle.CornerRadius" Value="10" />
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Name="PART_DialogHostRoot" Focusable="False">
+          <ContentPresenter Name="ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+          <Rectangle Name="PART_ContentCover"
+                     Fill="{TemplateBinding OverlayBackground}"
+                     Focusable="False">
+            <Rectangle.Styles>
+              <Style Selector="Rectangle#PART_ContentCover[Opacity=0]">
+                <Setter Property="IsVisible" Value="False" />
+              </Style>
+              <Style Selector="Rectangle#PART_ContentCover:not(.notransitions)">
+                <Setter Property="Transitions">
+                  <Transitions>
+                    <DoubleTransition Property="Opacity" Easing="LinearEasing" Duration="0.3" />
+                  </Transitions>
+                </Setter>
+              </Style>
+            </Rectangle.Styles>
+          </Rectangle>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+    
+    
+    <Setter Property="PopupTemplate">
+      <ControlTemplate>
+        <Border Name="PART_ContentBackground"
+                BorderBrush="Purple"
+                BorderThickness="2"
+                CornerRadius="10"
+                BoxShadow="1.5 1.5 8 #4c000000"
+                ClipToBounds="True"
+                Background="{DynamicResource MaterialDesignPaper}">
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Background="{TemplateBinding Background}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding Content}"
+                            Padding="{TemplateBinding Padding}" />
+        </Border>
+      </ControlTemplate>
+    </Setter>
+    
+
+    <!--<Style Selector="^[IsOpen=True] /template/ Rectangle#PART_ContentCover">
+      <Setter Property="IsHitTestVisible" Value="True" />
+      <Setter Property="Opacity" Value="0.56" />
+    </Style>
+    <Style Selector="^[IsOpen=False] /template/ Rectangle#PART_ContentCover">
+      <Setter Property="IsHitTestVisible" Value="False" />
+      <Setter Property="Opacity" Value="0" />
+    </Style>-->
+  </ControlTheme>
+
+</ResourceDictionary>

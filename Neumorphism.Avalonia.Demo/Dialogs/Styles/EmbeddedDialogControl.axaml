@@ -4,6 +4,7 @@
         xmlns:controls="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Controls"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
         xmlns:naming="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Resources.Naming">
+  
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,10 +14,17 @@
     </Styles.Resources>
 
     <Style Selector="controls|EmbeddedDialogControl" x:DataType="viewModels:DialogWindowViewModel" >
+        <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="Template">
             <ControlTemplate>
-                <Border Name="PART_RootBorder"
-                        Background="{DynamicResource MaterialCardBackgroundBrush}" >
+                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}">
+                  <Border.BoxShadow>
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                      <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+                      <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                    </MultiBinding>
+                  </Border.BoxShadow>
                     <DockPanel Name="PART_RootPanel"
                                Width="{CompiledBinding Width}"
                                MaxWidth="{CompiledBinding MaxWidth}" >
@@ -56,6 +64,13 @@
             </ControlTemplate>
         </Setter>
     </Style>
+
+    <!--??????????????????????-->
+    <Style Selector="controls|EmbeddedDialogControl[CornerRadius=0] /template/ Border#PART_RootBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+      <Setter Property="Background" Value="Red"/>
+    </Style>
+  
     
     <Style Selector="controls|EmbeddedDialogControl /template/ Border#PART_RootBorder">
         <Setter Property="assist:ShadowAssist.ShadowDepth" Value="CenterDepth3"/>

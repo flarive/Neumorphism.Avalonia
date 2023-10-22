@@ -42,10 +42,10 @@
               </Style>
             </Grid.Styles>
               <Button Grid.Column="0" Classes="no-material" Width="40" Height="40" Margin="-10" Command="{Binding GoBackCommand}" HorizontalAlignment="Left">
-				  <icons:MaterialIcon Name="Icon1" Kind="ArrowLeft" Width="20" Height="20" Foreground="White" />
+				        <icons:MaterialIcon Name="Icon1" Kind="ArrowLeft" Width="20" Height="20" Foreground="White" />
               </Button>
               <Button Grid.Column="2" Classes="no-material" Width="40" Height="40" Margin="-10" Command="{Binding SettingsCommand}" HorizontalAlignment="Right">
-				  <icons:MaterialIcon Name="Icon2" Kind="Settings" Width="20" Height="20" Foreground="White" />
+				        <icons:MaterialIcon Name="Icon2" Kind="Settings" Width="20" Height="20" Foreground="White" />
               </Button>
           </Grid>
 

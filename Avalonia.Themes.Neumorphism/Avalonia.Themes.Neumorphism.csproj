@@ -21,11 +21,12 @@
 	</PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-	  <PackageReference Include="Avalonia" Version="11.0.4" />
-	  <PackageReference Include="Avalonia.Desktop" Version="11.0.4" />
-	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.4" />
-	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.4" />
-      <PackageReference Include="SkiaSharp" Version="2.88.6" />
+	  <PackageReference Include="Avalonia" Version="11.0.5" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
+	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.5" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.5" />
+	  <PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
     <AvaloniaResource Include="**/*.xaml" />  
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,7 @@
     <None Remove="Fonts\SF\SFProText-Regular.ttf" />
     <None Remove="Themes\CalendarDatePicker.xaml" />
     <None Remove="Themes\CircularProgress.xaml" />
+    <None Remove="Themes\DialogHost.xaml" />
     <None Remove="Themes\TextBlock.xaml" />
     <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
     <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
@@ -53,10 +55,5 @@
   <ItemGroup>
     <None Include="Icon.png" Pack="true" PackagePath="" />
     <None Include="README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AvaloniaResource Update="Themes\CalendarDatePicker.xaml">
-      <Generator></Generator>
-    </AvaloniaResource>
   </ItemGroup>
 </Project>
