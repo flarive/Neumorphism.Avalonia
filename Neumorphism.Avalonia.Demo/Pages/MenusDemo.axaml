@@ -99,6 +99,48 @@
           </Menu>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu3" Height="100">
+          <Menu Grid.Column="5" Height="64" Padding="0" Margin="0" Cursor="Hand">
+            <MenuItem Height="64" Width="64" CornerRadius="100" assist:MenuAssist.PopupCornerRadius="10"
+                assist:MenuAssist.PopupAnchor="TopRight"
+                assist:MenuAssist.PopupHorizontalOffset="-140"
+                assist:MenuAssist.PopupVerticalOffset="10">
+              <MenuItem.Resources>
+                <!--<StaticResource x:Key="MenuFlyoutItemBackground" ResourceKey="SystemControlTransparentBrush" />
+                    <SolidColorBrush x:Key="SystemControlTransparentBrush" Color="Green" />-->
+
+                <!--<StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="SystemControlHighlightListLowBrush" />
+                <SolidColorBrush x:Key="SystemControlHighlightListLowBrush" Color="Red" />
+
+
+                <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="SystemControlHighlightListMediumBrush" />
+                <SolidColorBrush x:Key="SystemControlHighlightListMediumBrush" Color="Blue" />-->
+              </MenuItem.Resources>
+              <MenuItem.Header>
+                <Border Width="64" Height="64" Margin="20" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
+                  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+                                Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="64" Height="64" />
+                  </Border>
+                </Border>
+              </MenuItem.Header>
+              <MenuItem Header="Hello !">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <Separator />
+              <MenuItem Header="About" Command="{Binding HelpAboutMethod}" />
+              <Separator />
+              <MenuItem Header="Goodbye">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="ExitRun" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+            </MenuItem>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
       </StackPanel>
         
     </StackPanel>
