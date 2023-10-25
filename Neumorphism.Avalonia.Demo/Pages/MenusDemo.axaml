@@ -61,11 +61,26 @@
         <showMeTheXaml:XamlDisplay UniqueId="Menu2" Height="100">
           <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
             <MenuItem Height="32" Header="File">
-              <MenuItem Header="Hello !">
+				<MenuItem Header="New">
+					<MenuItem.Icon>
+						<icons:MaterialIcon Kind="Create" Width="24" Height="24" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Open">
                 <MenuItem.Icon>
-                  <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
+                  <icons:MaterialIcon Kind="Folder" Width="24" Height="24" />
                 </MenuItem.Icon>
               </MenuItem>
+				<MenuItem Header="Save">
+					<MenuItem.Icon>
+						<icons:MaterialIcon Kind="FolderAddOutline" Width="24" Height="24" />
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Save as">
+					<MenuItem.Icon>
+						<icons:MaterialIcon Kind="FolderArrowDownOutline" Width="24" Height="24" />
+					</MenuItem.Icon>
+				</MenuItem>
               <Separator />
             </MenuItem>
             <MenuItem Height="32" Header="Edit">
@@ -100,30 +115,50 @@
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="Menu3" Height="100">
-          <Menu Grid.Column="5" Height="64" Padding="0" Margin="0" Cursor="Hand">
-            <MenuItem Height="64" Width="64" CornerRadius="100" assist:MenuAssist.PopupCornerRadius="10"
+          <Menu Padding="0" Margin="0" Cursor="Hand">
+            <MenuItem Height="64" Width="64" assist:MenuAssist.PopupCornerRadius="10"
                 assist:MenuAssist.PopupAnchor="TopRight"
                 assist:MenuAssist.PopupHorizontalOffset="-140"
-                assist:MenuAssist.PopupVerticalOffset="10">
-              <MenuItem.Resources>
-                <!--<StaticResource x:Key="MenuFlyoutItemBackground" ResourceKey="SystemControlTransparentBrush" />
-                    <SolidColorBrush x:Key="SystemControlTransparentBrush" Color="Green" />-->
+                assist:MenuAssist.PopupVerticalOffset="10" Header="aaa">
 
-                <!--<StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="SystemControlHighlightListLowBrush" />
-                <SolidColorBrush x:Key="SystemControlHighlightListLowBrush" Color="Red" />
+				<MenuItem.Template>
+					<ControlTemplate>
+						<Panel>
+						<Border Width="64" Height="64" Margin="0" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
+							<Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="32" ClipToBounds="True">
+								<Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+											Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="64" Height="64" />
+							</Border>
+						</Border>
+						<Popup Name="PART_Popup"
+                 WindowManagerAddShadowHint="False"
+                 Placement="RightEdgeAlignedTop"
+                 HorizontalOffset="{DynamicResource MenuFlyoutSubItemPopupHorizontalOffset}"
+                 IsLightDismissEnabled="False"
+                 IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
+							<Border Background="{DynamicResource MenuFlyoutPresenterBackground}"
+									BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+									BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}"
+									Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
+									MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
+									MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
+									HorizontalAlignment="Stretch"
+									CornerRadius="{DynamicResource OverlayCornerRadius}">
+								<ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
+									<ItemsPresenter Name="PART_ItemsPresenter"
+													ItemsPanel="{TemplateBinding ItemsPanel}"
+													Margin="{DynamicResource MenuFlyoutScrollerMargin}"
+													Grid.IsSharedSizeScope="True" />
+								</ScrollViewer>
+							</Border>
+						</Popup>
+                        </Panel>
+					</ControlTemplate>
+				</MenuItem.Template>
 
-
-                <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="SystemControlHighlightListMediumBrush" />
-                <SolidColorBrush x:Key="SystemControlHighlightListMediumBrush" Color="Blue" />-->
-              </MenuItem.Resources>
-              <MenuItem.Header>
-                <Border Width="64" Height="64" Margin="20" CornerRadius="25" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="True">
-                  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="120" ClipToBounds="True">
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
-                                Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="64" Height="64" />
-                  </Border>
-                </Border>
-              </MenuItem.Header>
+              
+                
+              
               <MenuItem Header="Hello !">
                 <MenuItem.Icon>
                   <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
