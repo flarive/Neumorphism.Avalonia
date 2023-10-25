@@ -53,7 +53,7 @@
 
 
 
-  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource zzz}">
+  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
     <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
                            assist:SnackbarHostAssist.SnackbarWidth="600">
       <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"

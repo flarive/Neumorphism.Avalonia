@@ -22,7 +22,7 @@
   </Design.PreviewWith>
 
 
-  <ControlTheme x:Key="zzz" TargetType="dialogHostAvalonia:DialogHost" BasedOn="{StaticResource {x:Type dialogHostAvalonia:DialogHost}}">
+  <ControlTheme x:Key="DialogHostTheme" TargetType="dialogHostAvalonia:DialogHost" BasedOn="{StaticResource {x:Type dialogHostAvalonia:DialogHost}}">
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="VerticalAlignment" Value="Stretch" />
     <Setter Property="DialogMargin" Value="8" />
