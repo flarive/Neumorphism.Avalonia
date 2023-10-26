@@ -1,6 +1,4 @@
-﻿using Avalonia.Controls;
-
-namespace Neumorphism.Avalonia.Demo.ViewModels
+﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public class MenusDemoViewModel : ViewModelBase
     {

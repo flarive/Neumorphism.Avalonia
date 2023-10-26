@@ -179,24 +179,31 @@
     <Setter Property="ItemContainerTheme" Value="{StaticResource NoMaterialTopLevelMenuItem}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                Height="{TemplateBinding Height}"
-                HorizontalAlignment="Stretch"
-                Margin="{TemplateBinding Margin}"
-                Padding="{TemplateBinding Padding}">
-          <ItemsPresenter Name="PART_ItemsPresenter"
-                          ItemsPanel="{TemplateBinding ItemsPanel}"
-                          VerticalAlignment="Stretch"
-                          KeyboardNavigation.TabNavigation="Continue" />
-        </Border>
+
+        <Panel HorizontalAlignment="Stretch">
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Height="{TemplateBinding Height}"
+                  HorizontalAlignment="Stretch"
+                  Margin="{TemplateBinding Margin}"
+                  Padding="{TemplateBinding Padding}">
+
+              <ItemsPresenter Name="PART_ItemsPresenter"
+                              ItemsPanel="{TemplateBinding ItemsPanel}"
+                              VerticalAlignment="Stretch"
+                              KeyboardNavigation.TabNavigation="Continue" />
+            </Border>
+            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="#ffd1d6dc"/>
+        </Panel>
       </ControlTemplate>
     </Setter>
+
+    <Style Selector="^ /template/ Rectangle#PART_Stroke">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
   </ControlTheme>
-
-
 
 
   <ControlTheme x:Key="NoMaterialTopLevelMenuItem" TargetType="MenuItem">
@@ -256,6 +263,9 @@
       </ControlTemplate>
     </Setter>
 
+
+    
+    
     <Style Selector="^:selected">
       <Style Selector="^ /template/ Border#PART_LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPointerOver}" />
@@ -284,6 +294,20 @@
   </ControlTheme>
 
 
+
+
+  <!-- No material Menu with bottom stroke theme-->
+  <ControlTheme x:Key="NoMaterialMenuStroked" TargetType="Menu" BasedOn="{StaticResource NoMaterialMenu}">
+    <Setter Property="ItemContainerTheme" Value="{StaticResource NoMaterialTopLevelMenuItemStroked}" />
+
+    <Style Selector="^ /template/ Rectangle#PART_Stroke">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="NoMaterialTopLevelMenuItemStroked" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
+    <Setter Property="CornerRadius" Value="10,10,0,0" />
+  </ControlTheme>
 
   
 

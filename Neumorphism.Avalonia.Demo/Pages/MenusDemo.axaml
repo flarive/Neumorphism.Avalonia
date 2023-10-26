@@ -115,6 +115,62 @@
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="Menu3" Height="100">
+          <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenuStroked}">
+            <MenuItem Height="32" Header="File">
+              <MenuItem Header="New">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Create" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Open">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Folder" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Save">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="FolderAddOutline" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Save as">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="FolderArrowDownOutline" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <Separator />
+            </MenuItem>
+            <MenuItem Height="32" Header="Edit">
+              <MenuItem Header="Copy">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Copyleft" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Cut">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Cutlery" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Paste">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Pasta" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <Separator />
+              <MenuItem Header="Undo">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Undo" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Redo">
+                <MenuItem.Icon>
+                  <icons:MaterialIcon Kind="Redo" Width="24" Height="24" />
+                </MenuItem.Icon>
+              </MenuItem>
+            </MenuItem>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Height="100">
           <Menu Padding="0" Margin="0" Cursor="Hand">
             <MenuItem Height="64" Width="64" assist:MenuAssist.PopupCornerRadius="10"
                 assist:MenuAssist.PopupAnchor="TopRight"
