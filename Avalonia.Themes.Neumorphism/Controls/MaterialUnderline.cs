@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class MaterialUnderline : ContentControl
+    public sealed class MaterialUnderline : ContentControl
     {
         /// <summary>
         /// Defines the <see cref="IdleBrush"/> property.

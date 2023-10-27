@@ -4,7 +4,7 @@ using Avalonia.Data.Converters;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class ThicknessToIntConverter : IValueConverter
+    public sealed class ThicknessToIntConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

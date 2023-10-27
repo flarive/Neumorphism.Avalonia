@@ -8,7 +8,7 @@ using Avalonia.Metadata;
 namespace Avalonia.Themes.Neumorphism.Controls
 {
     [PseudoClasses(":open", ":closed", ":left", ":right", ":left-expand", ":right-expand")]
-    public class NavigationDrawer : ContentControl
+    public sealed class NavigationDrawer : ContentControl
     {
         /// <summary>
         /// <b>Internal use!</b>

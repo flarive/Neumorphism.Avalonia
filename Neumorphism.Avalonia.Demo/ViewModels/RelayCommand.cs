@@ -8,7 +8,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
     /// Do not use it in your project! It should be used only inside of Neumorphism.Avalonia.Demo.<br/>
     /// If you want to use this, you should copy all whole code and paste them to your new RelayCommand.cs source file.
     /// </summary>
-    public class RelayCommand : ICommand
+    public sealed class RelayCommand : ICommand
     {
         private readonly Action<object> execute;
         private readonly Func<object, bool> canExecute;

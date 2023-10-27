@@ -3,7 +3,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class DateTimePickerDialogResult : IDialogResult
+    public sealed class DateTimePickerDialogResult : IDialogResult
     {
         public DateTimePickerDialogResult()
         {

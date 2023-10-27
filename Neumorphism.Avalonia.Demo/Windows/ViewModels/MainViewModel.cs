@@ -16,23 +16,15 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
             _window = window;
         }
 
-        public override void HelpAboutMethod() => base.RunHelpAbout(_window);
 
-        public override void FileExitCommand()
-        {
-            Environment.Exit(0);
-        }
+        public override void SayHelloCommand(string msg) => base.SayHello(msg);
+        public override void HelpAboutMethod() => base.RunHelpAbout(_window);
+        public override void AppExitCommand() => base.AppExit();
+
 
         public override void SwitchThemeCommand(bool dark)
         {
-            if (dark)
-            {
-                base.SetTheme(ApplicationTheme.Dark);
-            }
-            else
-            {
-                base.SetTheme(ApplicationTheme.Light);
-            }
+            base.SetTheme(dark ? ApplicationTheme.Dark : ApplicationTheme.Light);
         }
     }
 }

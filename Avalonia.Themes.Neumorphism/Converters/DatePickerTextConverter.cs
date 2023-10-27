@@ -5,7 +5,7 @@ using Avalonia.Data;
 using Avalonia.Data.Converters;
 
 namespace Avalonia.Themes.Neumorphism.Converters {
-    public class DatePickerTextConverter : IMultiValueConverter {
+    public sealed class DatePickerTextConverter : IMultiValueConverter {
         public static DatePickerTextConverter Instance { get; } = new DatePickerTextConverter();
         public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture) {
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse

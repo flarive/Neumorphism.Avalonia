@@ -17,7 +17,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
         Custom
     }
 
-    public class ColorZone : ContentControl
+    public sealed class ColorZone : ContentControl
     {
         public static readonly StyledProperty<ColorZoneMode> ModeProperty = AvaloniaProperty.Register<ColorZone, ColorZoneMode>(nameof(Mode));
 

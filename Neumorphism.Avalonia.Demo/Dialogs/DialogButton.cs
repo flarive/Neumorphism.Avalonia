@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class DialogButton
+    public sealed class DialogButton
     {
         public string Result = "None";
         public object Content = "Action";

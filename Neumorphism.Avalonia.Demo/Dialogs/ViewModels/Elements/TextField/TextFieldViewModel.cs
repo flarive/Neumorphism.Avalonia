@@ -3,7 +3,7 @@ using Avalonia.Data;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.TextField
 {
-    public class TextFieldViewModel : DialogViewModelBase
+    public sealed class TextFieldViewModel : DialogViewModelBase
     {
         private readonly TextFieldDialogViewModel _parent;
 

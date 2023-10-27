@@ -5,7 +5,7 @@ using Avalonia.Data.Converters;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class StringReplaceConverter : IMultiValueConverter
+    public sealed class StringReplaceConverter : IMultiValueConverter
     {
         public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture)
         {

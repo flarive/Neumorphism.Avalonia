@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class SlidersDemoViewModel : ViewModelBase
+    public sealed class SlidersDemoViewModel : ViewModelBase
     {
 
     }

@@ -8,7 +8,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
     /// <summary>
     /// Converter for NavigationDrawer use.
     /// </summary>
-    public class MarginCreator : IMultiValueConverter
+    public sealed class MarginCreator : IMultiValueConverter
     {
         public const double Offset = -8;
 

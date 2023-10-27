@@ -5,7 +5,7 @@ using Avalonia.Themes.Neumorphism.Converters.Parameters;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class MarginMultiplyConverter : IValueConverter
+    public sealed class MarginMultiplyConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

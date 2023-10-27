@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Colors.Recommended
 {
-    public class IndigoSwatch : ISwatch
+    public sealed class IndigoSwatch : ISwatch
     {
         public static Color Indigo50 { get; } = Color.Parse("#E8EAF6");
         public static Color Indigo100 { get; } = Color.Parse("#C5CAE9");

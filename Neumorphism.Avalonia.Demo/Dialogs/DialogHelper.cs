@@ -14,7 +14,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Views;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class DialogHelper
+    public sealed class DialogHelper
     {
         public const string DIALOG_RESULT_OK = "ok";
         public const string DIALOG_RESULT_CANCEL = "cancel";

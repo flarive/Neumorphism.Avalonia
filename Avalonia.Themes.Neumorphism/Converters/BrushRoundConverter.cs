@@ -5,7 +5,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class BrushRoundConverter : IValueConverter
+    public sealed class BrushRoundConverter : IValueConverter
     {
         public static readonly IValueConverter Instance = new BrushRoundConverter();
 

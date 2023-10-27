@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class AlertDialogBuilderParams : DialogWindowBuilderParamsBase
+    public sealed class AlertDialogBuilderParams : DialogWindowBuilderParamsBase
     {
     }
 }

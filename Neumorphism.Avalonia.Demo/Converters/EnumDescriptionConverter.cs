@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Neumorphism.Avalonia.Demo.Converters
 {
-    public class EnumDescriptionConverter : IValueConverter
+    public sealed class EnumDescriptionConverter : IValueConverter
     {
         private string GetEnumDescription(Enum enumObj)
         {

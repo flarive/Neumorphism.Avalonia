@@ -6,7 +6,7 @@ using Avalonia.VisualTree;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class AutoCorrectPositionConverter : IValueConverter
+    public sealed class AutoCorrectPositionConverter : IValueConverter
     {
         public static double DefaultOffsetY = 0;
         

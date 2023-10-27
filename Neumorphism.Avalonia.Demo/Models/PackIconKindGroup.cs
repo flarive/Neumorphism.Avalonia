@@ -6,7 +6,7 @@ using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Models
 {
-    public class MaterialIconKindGroup
+    public sealed class MaterialIconKindGroup
     {
         private readonly IconsDemoViewModel _parent;
 

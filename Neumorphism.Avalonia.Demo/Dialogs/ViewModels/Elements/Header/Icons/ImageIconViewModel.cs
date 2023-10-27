@@ -3,7 +3,7 @@ using Avalonia.Media.Imaging;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons
 {
-    public class ImageIconViewModel : IconViewModelBase
+    public sealed class ImageIconViewModel : IconViewModelBase
     {
         private Bitmap _bitmap;
 

@@ -3,7 +3,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Bases;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class DatePickerDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
+    public sealed class DatePickerDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
     {
         /// <summary>
         /// Define implicit date.
@@ -11,7 +11,7 @@ namespace Neumorphism.Avalonia.Demo.Dialogs
         public DateTime ImplicitValue = DateTime.Now;
     }
 
-    public class TimePickerDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
+    public sealed class TimePickerDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
     {
         /// <summary>
         /// Define implicit time.

@@ -6,7 +6,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons;
 namespace Neumorphism.Avalonia.Demo.Dialogs.Resources
 {
     // ReSharper disable once UnusedType.Global
-    public class TemplateResources : ResourceDictionary
+    public sealed class TemplateResources : ResourceDictionary
     {
         // ReSharper disable UnusedMember.Local
         private void DialogButtonTemplate_OnSelectTemplateKey(object sender, SelectTemplateEventArgs e)

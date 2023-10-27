@@ -4,7 +4,7 @@ using Avalonia.Media;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Icons
 {
-    public class DialogIcon : TemplatedControl
+    public sealed class DialogIcon : TemplatedControl
     {
         public static readonly StyledProperty<DialogIconKind> KindProperty
             = AvaloniaProperty.Register<DialogIcon, DialogIconKind>(nameof(Kind));

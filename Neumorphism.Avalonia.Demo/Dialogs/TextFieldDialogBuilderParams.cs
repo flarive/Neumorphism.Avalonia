@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class TextFieldDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
+    public sealed class TextFieldDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
     {
         /// <summary>
         /// Build text fields stack.

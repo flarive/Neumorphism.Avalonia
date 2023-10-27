@@ -4,7 +4,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class CircularProgress : ContentControl
+    public sealed class CircularProgress : ContentControl
     {
         private double _radius;
 

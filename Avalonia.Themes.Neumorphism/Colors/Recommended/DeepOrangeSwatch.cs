@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Colors.Recommended
 {
-    public class DeepOrangeSwatch : ISwatch
+    public sealed class DeepOrangeSwatch : ISwatch
     {
         public static Color DeepOrange50 { get; } = Color.Parse("#FBE9E7");
         public static Color DeepOrange100 { get; } = Color.Parse("#FFCCBC");

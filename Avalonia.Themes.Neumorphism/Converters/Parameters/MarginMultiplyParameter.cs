@@ -1,6 +1,6 @@
 ﻿namespace Avalonia.Themes.Neumorphism.Converters.Parameters
 {
-    public class MarginMultiplyParameter
+    public sealed class MarginMultiplyParameter
     {
         public static MarginMultiplyParameter Default { get; } = new();
         

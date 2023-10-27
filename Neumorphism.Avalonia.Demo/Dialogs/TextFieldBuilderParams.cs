@@ -3,7 +3,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Enums;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class TextFieldBuilderParams
+    public sealed class TextFieldBuilderParams
     {
         /// <summary>
         /// Constant normal text field.

@@ -89,18 +89,6 @@ namespace Neumorphism.Avalonia.Demo.Windows
             SnackbarHost.Post("Welcome to\r\nNeumorphism.Avalonia demo !");
         }
 
-        private void HelloButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
-        {
-            SnackbarHost.Post("Hello user !");
-        }
-
-        private void GoodbyeButtonMenuItem_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.Shutdown(0);
-            }
-        }
 
         private void DrawerList_KeyUp(object sender, KeyEventArgs e)
         {

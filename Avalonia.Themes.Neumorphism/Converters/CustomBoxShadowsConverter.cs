@@ -6,7 +6,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class CustomBoxShadowsConverter : IMultiValueConverter
+    public sealed class CustomBoxShadowsConverter : IMultiValueConverter
     {
         public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture)
         {

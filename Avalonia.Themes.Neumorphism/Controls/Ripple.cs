@@ -8,7 +8,7 @@ using Avalonia.Layout;
 
 namespace Avalonia.Themes.Neumorphism.Controls.Ripple
 {
-    public class Ripple : Ellipse
+    public sealed class Ripple : Ellipse
     {
         public static Easing Easing
         {

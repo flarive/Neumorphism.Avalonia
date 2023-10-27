@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Controls
 {
-    public class EmbeddedDialogControl : ContentControl
+    public sealed class EmbeddedDialogControl : ContentControl
     {
     }
 }

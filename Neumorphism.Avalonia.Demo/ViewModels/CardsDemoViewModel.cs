@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class CardsDemoViewModel : ViewModelBase
+    public sealed class CardsDemoViewModel : ViewModelBase
     {
     }
 }

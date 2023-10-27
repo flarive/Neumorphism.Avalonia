@@ -2,7 +2,7 @@ using Avalonia.Controls;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class Card : ContentControl
+    public sealed class Card : ContentControl
     {
         public static readonly StyledProperty<bool> InsideClippingProperty =
             AvaloniaProperty.Register<Card, bool>(nameof(InsideClipping), true);

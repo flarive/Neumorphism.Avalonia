@@ -2,7 +2,7 @@ using Avalonia.Controls;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class FloatingButton : Button
+    public sealed class FloatingButton : Button
     {
         public static readonly StyledProperty<bool> IsExtendedProperty =
             AvaloniaProperty.Register<FloatingButton, bool>(nameof(IsExtended));

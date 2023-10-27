@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
 {
-    public class PanelPlayerDemoViewModel : ViewModelBase
+    public sealed class PanelPlayerDemoViewModel : ViewModelBase
     {
         #region properties
 

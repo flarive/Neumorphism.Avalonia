@@ -3,7 +3,7 @@ using Avalonia.Markup.Xaml;
 
 namespace Avalonia.Themes.Neumorphism.Controls.Extensions
 {
-    public class MaterialInternalIconExtension : MarkupExtension
+    public sealed class MaterialInternalIconExtension : MarkupExtension
     {
         public MaterialInternalIconExtension()
         {

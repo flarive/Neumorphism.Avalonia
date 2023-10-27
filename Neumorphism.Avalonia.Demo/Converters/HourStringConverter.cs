@@ -4,7 +4,7 @@ using Avalonia.Data.Converters;
 
 namespace Neumorphism.Avalonia.Demo.Converters
 {
-    public class HourStringConverter : IValueConverter
+    public sealed class HourStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Avalonia.Themes.Neumorphism.Models
 {
-    public class SnackbarModel
+    public sealed class SnackbarModel
     {
         public SnackbarModel(object content)
         {

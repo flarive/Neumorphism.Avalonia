@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Styling;
+using Avalonia.Themes.Neumorphism.Controls;
 using Avalonia.Themes.Neumorphism.Enums;
 using Neumorphism.Avalonia.Demo.Interfaces;
 using Neumorphism.Avalonia.Demo.ViewModels;
@@ -60,18 +62,16 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
             IntializeTheme(appTheme);
         }
 
+        public abstract void SayHelloCommand(string msg);
         public abstract void HelpAboutMethod();
-
+        public abstract void AppExitCommand();
         public abstract void SwitchThemeCommand(bool dark);
 
-        public abstract void FileExitCommand();
 
-
-
-
-
-
-
+        protected void SayHello(string msg)
+        {
+            SnackbarHost.Post(msg);
+        }
 
         protected async void RunHelpAbout(Window currentWindow)
         {
@@ -86,6 +86,14 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
                 {
                     AboutEnabled = true;
                 }
+            }
+        }
+
+        protected void AppExit()
+        {
+            if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.Shutdown(0);
             }
         }
 

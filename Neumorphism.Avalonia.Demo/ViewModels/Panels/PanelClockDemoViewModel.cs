@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
 {
-    public class PanelClockDemoViewModel : ViewModelBase
+    public sealed class PanelClockDemoViewModel : ViewModelBase
     {
         private Timer _timer;
         private int _caseProgress = 0;

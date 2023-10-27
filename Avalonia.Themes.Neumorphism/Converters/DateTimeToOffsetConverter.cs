@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 
 namespace Avalonia.Themes.Neumorphism.Converters {
-    public class DateTimeToOffsetConverter : IValueConverter {
+    public sealed class DateTimeToOffsetConverter : IValueConverter {
         public static DateTimeToOffsetConverter Instance { get; } = new DateTimeToOffsetConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {

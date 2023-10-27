@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Assist
 {
-    public class ComboBoxAssist
+    public sealed class ComboBoxAssist
     {
         public static readonly AvaloniaProperty<object> WatermarkContentProperty = AvaloniaProperty.RegisterAttached<ComboBox, object>(
            "WatermarkContent", typeof(ComboBoxAssist), null, true);

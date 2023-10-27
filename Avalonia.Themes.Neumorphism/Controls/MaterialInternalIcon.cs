@@ -6,7 +6,7 @@ using Avalonia.Themes.Neumorphism.Additional;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class MaterialInternalIcon : TemplatedControl
+    public sealed class MaterialInternalIcon : TemplatedControl
     {
         private static readonly Lazy<IDictionary<string, string>> DataSetInstance = new(IconsDataSet.CreateDataSet);
 

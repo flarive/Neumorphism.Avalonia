@@ -5,7 +5,7 @@ using Avalonia.Media.Transformation;
 
 namespace Neumorphism.Avalonia.Demo.Converters
 {
-    public class StringToTransformConverter : IValueConverter
+    public sealed class StringToTransformConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

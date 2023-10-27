@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Colors.Recommended
 {
-    public class DeepPurpleSwatch : ISwatch
+    public sealed class DeepPurpleSwatch : ISwatch
     {
         public static Color DeepPurple50 { get; } = Color.Parse("#EDE7F6");
         public static Color DeepPurple100 { get; } = Color.Parse("#D1C4E9");

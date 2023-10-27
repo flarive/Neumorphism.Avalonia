@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
 {
-    public class PanelSleepQualityDemoViewModel : ViewModelBase
+    public sealed class PanelSleepQualityDemoViewModel : ViewModelBase
     {
         #region properties
 

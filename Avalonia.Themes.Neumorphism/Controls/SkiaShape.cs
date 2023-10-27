@@ -169,7 +169,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
             }
         }
 
-        public class ShapeCustomDrawOperation : CustomDrawOperation
+        public sealed class ShapeCustomDrawOperation : CustomDrawOperation
         {
             private readonly SKPath _strokePath;
             //private readonly IGeometryImpl _impl;

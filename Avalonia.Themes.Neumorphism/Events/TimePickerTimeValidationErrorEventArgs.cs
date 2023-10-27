@@ -2,7 +2,7 @@
 
 namespace Avalonia.Themes.Neumorphism.Events
 {
-    public class TimePickerTimeValidationErrorEventArgs : EventArgs
+    public sealed class TimePickerTimeValidationErrorEventArgs : EventArgs
     {
         private bool _throwException;
 

@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.Dialogs
 {
-    public class TextFieldDialogResult : DialogResult
+    public sealed class TextFieldDialogResult : DialogResult
     {
         public TextFieldDialogResult()
         {

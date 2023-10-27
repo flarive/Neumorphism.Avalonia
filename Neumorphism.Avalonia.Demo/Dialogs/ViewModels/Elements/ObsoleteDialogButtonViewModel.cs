@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements
 {
-    public class ObsoleteDialogButtonViewModel : DialogButtonViewModel
+    public sealed class ObsoleteDialogButtonViewModel : DialogButtonViewModel
     {
         public ObsoleteDialogButtonViewModel(DialogWindowViewModel parent, object content, string result) : base(parent,
             content)

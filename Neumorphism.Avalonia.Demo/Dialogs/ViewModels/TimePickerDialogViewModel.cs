@@ -5,7 +5,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Views;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels
 {
-    public class TimePickerDialogViewModel : DialogWindowViewModel
+    public sealed class TimePickerDialogViewModel : DialogWindowViewModel
     {
         private readonly TimePickerDialog _window;
 

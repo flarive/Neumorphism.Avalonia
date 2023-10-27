@@ -1,5 +1,8 @@
 ﻿#nullable enable
 
+using System;
+using System.Collections.ObjectModel;
+using System.Globalization;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
@@ -8,10 +11,6 @@ using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Themes.Neumorphism.Events;
-using System;
-using System.Collections.ObjectModel;
-using System.Globalization;
-
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {

@@ -1,289 +1,284 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+<Window xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
         xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
         xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
         xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
-		    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+	    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
         xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Neumorphism.Avalonia.Demo.Windows.MainWindow"
         Width="1280" Height="720" MinWidth="720"
         WindowStartupLocation="CenterScreen"
         Title="Neumorphism.Avalonia.Demo"
         Icon="avares://Neumorphism.Avalonia.Demo/Assets/app.ico"
         x:CompileBindings="True"
-        x:DataType="viewModels1:ApplicationModelBase">
+        x:DataType="viewModels1:ApplicationModelBase"
+		x:Class="Neumorphism.Avalonia.Demo.Windows.MainWindow">
 
 
 
-  <Window.Styles>
-    <Style Selector="TextBlock.Subheadline">
-      <Setter Property="Margin" Value="0, 16" />
-    </Style>
-    <Style Selector="TextBlock.Subheadline2">
-      <Setter Property="Margin" Value="0, 8" />
-    </Style>
-    <Style Selector="TextBlock.Content">
-      <Setter Property="Margin" Value="0, 4" />
-      <Setter Property="HorizontalAlignment" Value="Left" />
-    </Style>
-  </Window.Styles>
+	<Window.Styles>
+		<Style Selector="TextBlock.Subheadline">
+			<Setter Property="Margin" Value="0, 16" />
+		</Style>
+		<Style Selector="TextBlock.Subheadline2">
+			<Setter Property="Margin" Value="0, 8" />
+		</Style>
+		<Style Selector="TextBlock.Content">
+			<Setter Property="Margin" Value="0, 4" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+	</Window.Styles>
 
 
 
-  <!--OpenDialogWithModel-->
-  <Window.DataTemplates>
-    <DataTemplate DataType="models:Sample2Model">
-      <StackPanel>
-        <TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
-        <TextBlock Classes="Body1"
-                   TextAlignment="Center"
-                   Text="{Binding Number}" />
-        <Button Margin="0 8 0 0"
-                Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
-          THANKS, CLOSE
-        </Button>
-      </StackPanel>
-    </DataTemplate>
-  </Window.DataTemplates>
+	<!--OpenDialogWithModel-->
+	<Window.DataTemplates>
+		<DataTemplate DataType="models:Sample2Model">
+			<StackPanel>
+				<TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
+				<TextBlock Classes="Body1"
+						   TextAlignment="Center"
+						   Text="{Binding Number}" />
+				<Button Margin="0 8 0 0"
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
+					THANKS, CLOSE
+				</Button>
+			</StackPanel>
+		</DataTemplate>
+	</Window.DataTemplates>
 
 
 
 
-  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
-    <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
-                           assist:SnackbarHostAssist.SnackbarWidth="600">
-      <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
-               LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch2, Path=IsChecked, Mode=TwoWay}" LeftDrawerWidth="320"
-               RightDrawerOpened="False" RightDrawerWidth="0">
-        <controls:NavigationDrawer.LeftDrawerContent>
-          <Grid RowDefinitions="Auto,*">
-            <controls:ColorZone Grid.Row="0" Mode="Custom" Height="210">
-              <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="avares://Neumorphism.Avalonia.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="1" />
-            </controls:ColorZone>
-            <ListBox Grid.Row="1" Name="DrawerList2" Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
-              <ListBox.Styles>
-                <Style Selector="ListBoxItem">
-                  <Setter Property="Height" Value="48" />
-                  <Setter Property="Padding" Value="16,0" />
-                  <Setter Property="VerticalContentAlignment" Value="Center" />
-                  <Setter Property="IsEnabled" Value="{Binding $self.IsEnabled}" />
-                </Style>
-              </ListBox.Styles>
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="HomeOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Home" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
-              
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="ButtonPointer" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Buttons" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+	<dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
+		<controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
+							   assist:SnackbarHostAssist.SnackbarWidth="600">
+			<controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
+					 LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch2, Path=IsChecked, Mode=TwoWay}" LeftDrawerWidth="320"
+					 RightDrawerOpened="False" RightDrawerWidth="0">
+				<controls:NavigationDrawer.LeftDrawerContent>
+					<Grid RowDefinitions="Auto,*">
+						<controls:ColorZone Grid.Row="0" Mode="Custom" Height="210">
+							<Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="avares://Neumorphism.Avalonia.Demo/Assets/Banner.png" Stretch="None" Width="320" Height="210" Margin="0,0,0,8" Opacity="1" />
+						</controls:ColorZone>
+						<ListBox Grid.Row="1" Name="DrawerList2" Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
+							<ListBox.Styles>
+								<Style Selector="ListBoxItem">
+									<Setter Property="Height" Value="48" />
+									<Setter Property="Padding" Value="16,0" />
+									<Setter Property="VerticalContentAlignment" Value="Center" />
+									<Setter Property="IsEnabled" Value="{Binding $self.IsEnabled}" />
+								</Style>
+							</ListBox.Styles>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="HomeOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Home" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="ToggleSwitchOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Toggles" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="ButtonPointer" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Buttons" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="FormTextbox" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="TextBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="ToggleSwitchOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Toggles" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="FormDropdown" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="ComboBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="FormTextbox" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="TextBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="ElectricSwitchClosed" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Sliders" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="FormDropdown" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="ComboBoxes" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="Poll" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Progress" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="ElectricSwitchClosed" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Sliders" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="ImageOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Icons" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="Poll" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Progress" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
+
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="ImageOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Icons" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="Drawing" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Drawings" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="Drawing" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Drawings" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="CardTextOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Cards" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="CardTextOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Cards" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="ListBoxOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Lists" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="ListBoxOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Lists" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="Tab" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Tabs" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="Tab" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Tabs" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="DateRange" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="DateRange" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="DateTime pickers" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <!--<ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="Menu" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Menus" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>
+							<!--<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="Menu" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Menus" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>
 
-              <ListBoxItem IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                  <icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
-                  <TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
-                </StackPanel>
-              </ListBoxItem>-->
-         
-            </ListBox>
-          </Grid>
-        </controls:NavigationDrawer.LeftDrawerContent>
-        <DockPanel LastChildFill="true">
-          <controls:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                              DockPanel.Dock="Top" assist:ShadowAssist.ShadowDepth="Depth3"
-                              Height="60" Mode="Standard" Background="Transparent" ZIndex="1">
-            <Grid Margin="16">
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="24" />
-                <ColumnDefinition Width="32" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="32" />
-                <ColumnDefinition Width="400" />
-                <ColumnDefinition Width="Auto" />
-              </Grid.ColumnDefinitions>
-              <!--Left side menu-->
-              <ToggleButton Name="NavDrawerSwitch2"
-                            Classes="Flat TransparentBack"
-                            Width="38" Height="38" CornerRadius="6" Padding="4">
-                <icons:MaterialIcon Kind="Menu" Width="28" Height="28" UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
-              </ToggleButton>
-              <!--App title-->
-              <TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
-              <!--Theme toggle switch-->
-              <StackPanel Grid.Column="4" Orientation="Horizontal">
-                <ToggleSwitch Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
-                              Command="{Binding Path=SwitchThemeCommand}" CommandParameter="{Binding ElementName=toggleSwitchTheme, Path=$self.IsChecked}"/>
-              </StackPanel>
-              <!--<Right side menu-->
-              <Menu Grid.Column="5" Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
-                <MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt DotsVertical, Size=24}"
-                    assist:MenuAssist.PopupAnchor="TopRight"
-                    assist:MenuAssist.PopupPlacement="BottomEdgeAlignedRight"
-                    assist:MenuAssist.PopupHorizontalOffset="0"
-                    assist:MenuAssist.PopupVerticalOffset="0">
-                  <MenuItem Header="Hello !" Click="HelloButtonMenuItem_OnClick">
-                    <MenuItem.Icon>
-                      <icons:MaterialIcon Kind="Hand" Width="24" Height="24" />
-                    </MenuItem.Icon>
-                  </MenuItem>
-                  <Separator />
-                  <MenuItem Header="About" IsEnabled="{Binding AboutEnabled}" Command="{Binding HelpAboutMethod}" />
-                  <Separator />
-                  <MenuItem Header="Goodbye" Click="GoodbyeButtonMenuItem_OnClick">
-                    <MenuItem.Icon>
-                      <icons:MaterialIcon Kind="ExitRun" Width="24" Height="24" />
-                    </MenuItem.Icon>
-                  </MenuItem>
-                </MenuItem>
-              </Menu>
-            </Grid>
-          </controls:ColorZone>
-          <ScrollViewer Name="mainScroller2"
-                        DockPanel.Dock="Top"
-                        HorizontalContentAlignment="Stretch"
-                        HorizontalAlignment="Stretch"
-                        HorizontalScrollBarVisibility="Disabled">
-            <Border HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch">
-              <Carousel Name="PageCarousel2"
-                        HorizontalAlignment="Stretch">
-                <Carousel.Styles>
-                  <Style Selector="Carousel#PageCarousel2:not(.no-transitions)">
-                    <Setter Property="PageTransition">
-                      <PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
-                                 SlideInEasing="CircularEaseOut" />
-                    </Setter>
-                  </Style>
-                </Carousel.Styles>
-                <!-- Main page -->
-                <pages:Home />
-                <!--Buttons-->
-                <pages:ButtonsDemo/>
-                <!--Toggles-->
-                <pages:TogglesDemo/>
-                <!--Fields-->
-                <pages:FieldsDemo/>
-                <!--ComboBoxes-->
-                <pages:ComboBoxesDemo/>
-                <!--Sliders-->
-                <pages:SlidersDemo/>
-                <!-- Progressbars -->
-                <pages:ProgressBarsDemo />
-                <!--Icons-->
-                <pages:IconsDemo/>
-                <!--Drawings-->
-                <pages:DrawingsDemo/>
-                <!--Cards-->
-                <pages:CardsDemo/>
-                <!--Lists-->
-                <pages:ListsDemo/>
-                <!--Tabs-->
-                <pages:TabsDemo/>
-                <!--DatetimePickers-->
-                <pages:DateTimePickersDemo/>
-                <!--Menus-->
-                <!--<pages:MenusDemo/>-->
-                <!--Dialogs-->
-                <!--<pages:DialogsDemo/>-->
-              </Carousel>
-            </Border>
-          </ScrollViewer>
-        </DockPanel>
-      </controls:NavigationDrawer>
-    </controls:SnackbarHost>
-  </dialogHostAvalonia:DialogHost>
+							<ListBoxItem IsEnabled="True">
+								<StackPanel Orientation="Horizontal">
+									<icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+									<TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
+								</StackPanel>
+							</ListBoxItem>-->
+
+						</ListBox>
+					</Grid>
+				</controls:NavigationDrawer.LeftDrawerContent>
+				<DockPanel LastChildFill="true">
+					<controls:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+										DockPanel.Dock="Top" assist:ShadowAssist.ShadowDepth="Depth3"
+										Height="60" Mode="Standard" Background="Transparent" ZIndex="1">
+						<Grid Margin="16">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="24" />
+								<ColumnDefinition Width="32" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="32" />
+								<ColumnDefinition Width="400" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<!--Left side menu-->
+							<ToggleButton Name="NavDrawerSwitch2"
+										  Classes="Flat TransparentBack"
+										  Width="38" Height="38" CornerRadius="6" Padding="4">
+								<icons:MaterialIcon Kind="Menu" Width="28" Height="28" UseLayoutRounding="False" Foreground="{DynamicResource MaterialDesignForeground}" />
+							</ToggleButton>
+							<!--App title-->
+							<TextBlock Grid.Column="2" Classes="Headline6" Text="Neumorphism.Avalonia Demo" VerticalAlignment="Center" />
+							<!--Theme toggle switch-->
+							<StackPanel Grid.Column="4" Orientation="Horizontal">
+								<ToggleSwitch Name="toggleSwitchTheme" Content="Light theme" IsChecked="False" OnContent="Dark theme" OffContent="Light theme"
+											  Command="{Binding Path=SwitchThemeCommand}" CommandParameter="{Binding ElementName=toggleSwitchTheme, Path=$self.IsChecked}"/>
+							</StackPanel>
+							<!--<Right side menu-->
+							<Menu Grid.Column="5" Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
+								<MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt DotsVertical, Size=24}"
+									assist:MenuAssist.PopupAnchor="TopRight"
+									assist:MenuAssist.PopupPlacement="BottomEdgeAlignedRight"
+									assist:MenuAssist.PopupHorizontalOffset="0"
+									assist:MenuAssist.PopupVerticalOffset="0">
+									<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Smiley, Size=24}" Command="{Binding SayHelloCommand}" CommandParameter="Hello"/>
+									<Separator />
+									<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircleOutline, Size=24}" IsEnabled="{Binding AboutEnabled}" Command="{Binding HelpAboutMethod}" />
+									<Separator />
+									<MenuItem Header="Exit" Icon="{icons:MaterialIconExt ExitToApp, Size=24}" Command="{Binding AppExitCommand}"/>
+								</MenuItem>
+							</Menu>
+						</Grid>
+					</controls:ColorZone>
+					<ScrollViewer Name="mainScroller2"
+								  DockPanel.Dock="Top"
+								  HorizontalContentAlignment="Stretch"
+								  HorizontalAlignment="Stretch"
+								  HorizontalScrollBarVisibility="Disabled">
+						<Border HorizontalAlignment="Stretch"
+								VerticalAlignment="Stretch">
+							<Carousel Name="PageCarousel2"
+									  HorizontalAlignment="Stretch">
+								<Carousel.Styles>
+									<Style Selector="Carousel#PageCarousel2:not(.no-transitions)">
+										<Setter Property="PageTransition">
+											<PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
+													   SlideInEasing="CircularEaseOut" />
+										</Setter>
+									</Style>
+								</Carousel.Styles>
+								<!-- Main page -->
+								<pages:Home />
+								<!--Buttons-->
+								<pages:ButtonsDemo/>
+								<!--Toggles-->
+								<pages:TogglesDemo/>
+								<!--Fields-->
+								<pages:FieldsDemo/>
+								<!--ComboBoxes-->
+								<pages:ComboBoxesDemo/>
+								<!--Sliders-->
+								<pages:SlidersDemo/>
+								<!-- Progressbars -->
+								<pages:ProgressBarsDemo />
+								<!--Icons-->
+								<pages:IconsDemo/>
+								<!--Drawings-->
+								<pages:DrawingsDemo/>
+								<!--Cards-->
+								<pages:CardsDemo/>
+								<!--Lists-->
+								<pages:ListsDemo/>
+								<!--Tabs-->
+								<pages:TabsDemo/>
+								<!--DatetimePickers-->
+								<pages:DateTimePickersDemo/>
+								<!--Menus-->
+								<!--<pages:MenusDemo/>-->
+								<!--Dialogs-->
+								<!--<pages:DialogsDemo/>-->
+							</Carousel>
+						</Border>
+					</ScrollViewer>
+				</DockPanel>
+			</controls:NavigationDrawer>
+		</controls:SnackbarHost>
+	</dialogHostAvalonia:DialogHost>
 </Window>

@@ -2,7 +2,7 @@
 
 namespace Avalonia.Themes.Neumorphism.Models
 {
-    public class SnackbarButtonModel
+    public sealed class SnackbarButtonModel
     {
         public string Text { get; set; } = string.Empty;
         public Action Action { get; set; }

@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class DateTimePickersDemoViewModel : ViewModelBase
+    public sealed class DateTimePickersDemoViewModel : ViewModelBase
     {
         private TestCultureEnum _selectedCulture;
         public TestCultureEnum SelectedCulture

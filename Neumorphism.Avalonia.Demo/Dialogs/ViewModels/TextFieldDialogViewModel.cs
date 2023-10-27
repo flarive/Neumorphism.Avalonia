@@ -8,7 +8,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Views;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels
 {
-    public class TextFieldDialogViewModel : DialogWindowViewModel
+    public sealed class TextFieldDialogViewModel : DialogWindowViewModel
     {
         private ObservableCollection<TextFieldViewModel> _textFields;
 

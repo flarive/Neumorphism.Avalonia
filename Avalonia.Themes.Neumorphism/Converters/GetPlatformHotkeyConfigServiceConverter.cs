@@ -6,7 +6,7 @@ using Avalonia.Input.Platform;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class GetPlatformHotkeyConfigServiceConverter : IValueConverter
+    public sealed class GetPlatformHotkeyConfigServiceConverter : IValueConverter
     {
         private readonly PlatformHotkeyConfiguration _config = Application.Current?.PlatformSettings?.HotkeyConfiguration;
 

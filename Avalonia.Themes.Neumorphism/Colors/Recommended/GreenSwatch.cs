@@ -3,7 +3,7 @@ using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Colors.Recommended
 {
-    public class GreenSwatch : ISwatch
+    public sealed class GreenSwatch : ISwatch
     {
         public static Color Green50 { get; } = Color.Parse("#E8F5E9");
         public static Color Green100 { get; } = Color.Parse("#C8E6C9");

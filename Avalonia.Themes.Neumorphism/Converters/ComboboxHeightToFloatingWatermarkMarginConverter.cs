@@ -4,7 +4,7 @@ using Avalonia.Data.Converters;
 
 namespace Avalonia.Themes.Neumorphism.Converters
 {
-    public class ComboboxHeightToFloatingWatermarkMarginConverter : IValueConverter
+    public sealed class ComboboxHeightToFloatingWatermarkMarginConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

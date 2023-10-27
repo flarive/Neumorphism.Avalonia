@@ -3,7 +3,7 @@ using Avalonia.Themes.Neumorphism.Controls;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels.Panels
 {
-    public class PanelLoginDemoViewModel : ViewModelBase
+    public sealed class PanelLoginDemoViewModel : ViewModelBase
     {
 
         #region properties

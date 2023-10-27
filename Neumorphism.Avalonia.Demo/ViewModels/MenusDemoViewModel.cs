@@ -1,10 +1,24 @@
-﻿namespace Neumorphism.Avalonia.Demo.ViewModels
+﻿using Avalonia.Themes.Neumorphism.Controls;
+
+namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class MenusDemoViewModel : ViewModelBase
+    public sealed class MenusDemoViewModel : ViewModelBase
     {
-        public void HelpAboutMethod()
+        public void MenuItemClickMethod()
         {
-            string aa = null;
+            SnackbarHost.Post("Subscribe command not implemented !");
         }
-    }   
+
+        #region commands
+
+        public void ButtonClick() => SnackbarHost.Post("You have clicked on the button !");
+
+        public void ToggleButtonClick(object sender)
+        {
+            SnackbarHost.Post("You have switched the toggle button !");
+        }
+
+        #endregion
+
+    }
 }

@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class DialogsDemoItemViewModel : ViewModelBase
+    public sealed class DialogsDemoItemViewModel : ViewModelBase
     {
         public DialogsDemoItemViewModel(string header, Func<IAsyncEnumerable<string>> handler)
         {

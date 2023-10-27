@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class ProgressBarsViewModel : ViewModelBase
+    public sealed class ProgressBarsViewModel : ViewModelBase
     {
         private double _progress1;
         public double Progress1

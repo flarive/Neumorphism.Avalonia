@@ -12,7 +12,7 @@ using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class IconsDemoViewModel : ViewModelBase
+    public sealed class IconsDemoViewModel : ViewModelBase
     {
         private readonly Lazy<List<MaterialIconKindGroup>> _materialIconKinds;
         private IEnumerable<MaterialIconKindGroup> _kinds;

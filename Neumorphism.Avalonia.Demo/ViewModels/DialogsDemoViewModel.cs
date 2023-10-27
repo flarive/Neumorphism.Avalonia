@@ -11,7 +11,7 @@ using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class DialogsDemoViewModel : ViewModelBase
+    public sealed class DialogsDemoViewModel : ViewModelBase
     {
         private TimeSpan _previousTimePickerResult = TimeSpan.Zero;
         private DateTime _previousDatePickerResult = DateTime.Now;

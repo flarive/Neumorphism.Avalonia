@@ -5,7 +5,7 @@ using Avalonia.Themes.Neumorphism.Controls;
 
 namespace Avalonia.Themes.Neumorphism.Builders
 {
-    public class FloatingButtonBuilder
+    public sealed class FloatingButtonBuilder
     {
         private Control _icon;
         private double _spacing = 12.0;

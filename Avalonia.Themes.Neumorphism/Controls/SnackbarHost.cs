@@ -12,7 +12,7 @@ using Avalonia.Threading;
 
 namespace Avalonia.Themes.Neumorphism.Controls
 {
-    public class SnackbarHost : ContentControl
+    public sealed class SnackbarHost : ContentControl
     {
         private static readonly Dictionary<string, SnackbarHost> SnackbarHostDictionary;
 

@@ -10,7 +10,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
     /// <summary>
     /// Converter for creating rectangle geometry with hollow. Basically used for Outline TextBox.
     /// </summary>
-    public class RectangleHollowGeometryConverter : IMultiValueConverter
+    public sealed class RectangleHollowGeometryConverter : IMultiValueConverter
     {
         public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture)
         {

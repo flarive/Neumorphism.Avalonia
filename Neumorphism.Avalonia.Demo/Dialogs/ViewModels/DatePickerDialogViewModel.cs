@@ -5,7 +5,7 @@ using Neumorphism.Avalonia.Demo.Dialogs.Views;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels
 {
-    public class DatePickerDialogViewModel : DialogWindowViewModel
+    public sealed class DatePickerDialogViewModel : DialogWindowViewModel
     {
         private readonly DatePickerDialog _window;
 

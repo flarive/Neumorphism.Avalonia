@@ -4,7 +4,7 @@ using Avalonia.Data.Converters;
 
 namespace Neumorphism.Avalonia.Demo.Converters
 {
-    public class PadNumbersConverter : IValueConverter
+    public sealed class PadNumbersConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

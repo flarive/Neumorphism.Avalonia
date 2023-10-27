@@ -5,7 +5,7 @@ using Avalonia.Themes.Neumorphism.Controls;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class TextBoxesDemoViewModel : ViewModelBase
+    public sealed class TextBoxesDemoViewModel : ViewModelBase
     {
         private string _numerics;
         public string Numerics

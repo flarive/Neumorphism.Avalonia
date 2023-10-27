@@ -6,7 +6,7 @@ using Avalonia.Data.Converters;
 
 namespace Neumorphism.Avalonia.Demo.Converters
 {
-    public class StringJoinConverter : IValueConverter
+    public sealed class StringJoinConverter : IValueConverter
     {
         public string Separator { get; set; }
 

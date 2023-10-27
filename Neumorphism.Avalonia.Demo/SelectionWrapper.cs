@@ -6,7 +6,7 @@ using Avalonia.Controls.Metadata;
 namespace Neumorphism.Avalonia.Demo
 {
     [PseudoClasses("selectednow")]
-    public class SelectionWrapper : UserControl
+    public sealed class SelectionWrapper : UserControl
     {
         static SelectionWrapper()
         {

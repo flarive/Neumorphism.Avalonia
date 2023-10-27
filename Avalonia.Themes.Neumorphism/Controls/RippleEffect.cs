@@ -8,7 +8,7 @@ using Avalonia.Threading;
 
 namespace Avalonia.Themes.Neumorphism.Controls.Ripple
 {
-    public class RippleEffect : ContentControl
+    public sealed class RippleEffect : ContentControl
     {
         public bool UseTransitions
         {

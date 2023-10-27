@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.Models
 {
-    public class Sample2Model
+    public sealed class Sample2Model
     {
         public Sample2Model(int number)
         {

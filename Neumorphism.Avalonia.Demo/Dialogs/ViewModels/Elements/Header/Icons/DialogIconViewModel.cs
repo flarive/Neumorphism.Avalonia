@@ -2,7 +2,7 @@
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons
 {
-    public class DialogIconViewModel : IconViewModelBase
+    public sealed class DialogIconViewModel : IconViewModelBase
     {
         private DialogIconKind _kind;
 
