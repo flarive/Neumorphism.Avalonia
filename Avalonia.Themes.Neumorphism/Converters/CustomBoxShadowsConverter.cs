@@ -31,20 +31,6 @@ namespace Avalonia.Themes.Neumorphism.Converters
                 }
             }
 
-
-            //BoxShadow main = new BoxShadow();
-            //BoxShadow rest1 = new BoxShadow();
-
-            //List<BoxShadow> rests = new List<BoxShadow>();
-
-            //main.IsInset = true;
-            //main.OffsetX = -3.3;
-            //main.OffsetY = -3.3;
-            //main.Blur = 10;
-            //main.Color = Color.FromRgb(100, 0, 20);
-
-            //b = new BoxShadows(main, rests.ToArray());
-
             return b;
         }
 

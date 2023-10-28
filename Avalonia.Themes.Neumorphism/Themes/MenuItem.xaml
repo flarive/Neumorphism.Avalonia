@@ -64,6 +64,8 @@
     <Setter Property="Padding" Value="{DynamicResource MenuFlyoutItemThemePaddingNarrow}" />
     <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
     <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="CornerRadius" Value="5" />
+    <Setter Property="Margin" Value="2" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>
@@ -72,6 +74,7 @@
                   Background="{TemplateBinding Background}"
                   BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}"
+                  Margin="{TemplateBinding Margin}"
                   CornerRadius="{TemplateBinding CornerRadius}">
             <Grid>
               <Grid.ColumnDefinitions>
@@ -86,8 +89,7 @@
                        StretchDirection="DownOnly"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       IsVisible="False"
-                       Width="16" Height="16">
+                       IsVisible="False">
                 <ContentPresenter Name="PART_Icon" Content="{TemplateBinding Icon}"/>
               </Viewbox>
 
@@ -179,7 +181,6 @@
     </Style>
 
     <Style Selector="^:disabled">
-
 		  <Style Selector="^ /template/ Border#PART_LayoutRoot">
 		    <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
 	    </Style>
@@ -195,7 +196,6 @@
       <Style Selector="^ /template/ TextBlock#PART_InputGestureText">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled}" />
       </Style>
-
       
       <Style Selector="^ /template/ ContentPresenter#PART_Icon">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />

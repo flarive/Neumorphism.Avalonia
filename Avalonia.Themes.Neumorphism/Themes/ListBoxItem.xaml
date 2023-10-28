@@ -300,13 +300,12 @@
       <Setter Property="BorderThickness" Value="1,1,1,1"/>
       <Setter Property="CornerRadius" Value="0,0,10,10"/>
     </Style>
-    
 	</ControlTheme>
 
 
 
 
-
+	<!--Shared theme-->
 	<ControlTheme x:Key="ListBoxItemShared" TargetType="ListBoxItem">
 		<!-- Transitions -->
 		<Style Selector="^:not(.notransitions) /template/ Border#selectedBorder,

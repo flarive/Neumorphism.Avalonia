@@ -147,20 +147,20 @@
       <Thickness x:Key="ProgressBarBorderThemeThickness">0</Thickness>-->
 
       <!-- Resources for MenuFlyout.xaml (Menu, ContextMenu, etc) -->
-      <x:Double x:Key="MenuFlyoutSeparatorThemeHeight">1</x:Double>
+      <!--<x:Double x:Key="MenuFlyoutSeparatorThemeHeight">1</x:Double>
       <x:Double x:Key="MenuFlyoutThemeMinHeight">32</x:Double>
       <Thickness x:Key="MenuFlyoutPresenterThemePadding">0,0</Thickness>
       <Thickness x:Key="MenuFlyoutItemChevronMargin">12,0,0,0</Thickness>
-      <Thickness x:Key="MenuFlyoutSeparatorThemePadding">12,4,12,4</Thickness>
-      <StaticResource x:Key="MenuFlyoutItemBackground" ResourceKey="SystemControlTransparentBrush" />
+      <Thickness x:Key="MenuFlyoutSeparatorThemePadding">12,4,12,4</Thickness>-->
+      <!--<StaticResource x:Key="MenuFlyoutItemBackground" ResourceKey="SystemControlTransparentBrush" />
       <StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="SystemControlHighlightListLowBrush" />
       <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="SystemControlHighlightListMediumBrush" />
       <StaticResource x:Key="MenuFlyoutItemBackgroundDisabled" ResourceKey="SystemControlTransparentBrush" />
       <StaticResource x:Key="MenuFlyoutItemForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="MenuFlyoutItemForegroundPointerOver" ResourceKey="SystemControlHighlightAltBaseHighBrush" />
       <StaticResource x:Key="MenuFlyoutItemForegroundPressed" ResourceKey="SystemControlHighlightAltBaseHighBrush" />
-      <StaticResource x:Key="MenuFlyoutItemForegroundDisabled" ResourceKey="SystemControlDisabledBaseMediumLowBrush" />
-      <StaticResource x:Key="MenuFlyoutSubItemChevron" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />
+      <StaticResource x:Key="MenuFlyoutItemForegroundDisabled" ResourceKey="SystemControlDisabledBaseMediumLowBrush" />-->
+      <!--<StaticResource x:Key="MenuFlyoutSubItemChevron" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />
       <StaticResource x:Key="MenuFlyoutSubItemChevronPointerOver" ResourceKey="SystemControlHighlightAltBaseHighBrush" />
       <StaticResource x:Key="MenuFlyoutSubItemChevronPressed" ResourceKey="SystemControlHighlightAltBaseHighBrush" />
       <StaticResource x:Key="MenuFlyoutSubItemChevronSubMenuOpened" ResourceKey="SystemControlHighlightAltBaseHighBrush" />
@@ -173,7 +173,7 @@
       <Thickness x:Key="MenuFlyoutItemThemePaddingNarrow">11,4,11,7</Thickness>
       <StaticResource x:Key="MenuFlyoutPresenterBackground" ResourceKey="MaterialDesignPaper" />
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
-      <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
+      <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>-->
 
       <!-- Resources for TextBox.xaml -->
       <!--<StaticResource x:Key="TextControlForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />

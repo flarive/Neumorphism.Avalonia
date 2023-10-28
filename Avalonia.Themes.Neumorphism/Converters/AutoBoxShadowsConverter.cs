@@ -26,6 +26,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
                 bool isFixedOutset = parameter != null && parameter.Equals("3");
                 bool insetAndOutset = parameter != null && parameter.Equals("4");
                 bool smallerOutset = parameter != null && parameter.Equals("5");
+                bool outset = parameter != null && parameter.Equals("6");
 
 
                 BoxShadow main = new BoxShadow();
@@ -111,6 +112,22 @@ namespace Avalonia.Themes.Neumorphism.Converters
                                 // inset
                                 main.IsInset = true;
                                 rest1.IsInset = true;
+
+                                main.OffsetX = offset / 2;
+                                main.OffsetY = offset / 2;
+
+                                rest1.OffsetX = -offset / 2;
+                                rest1.OffsetY = -offset / 2;
+
+                                // invert shadow colors
+                                rest1.Color = shadowLightColor;
+                                main.Color = shadowDarkColor;
+                            }
+                            else if (outset)
+                            {
+                                // outset
+                                main.IsInset = false;
+                                rest1.IsInset = false;
 
                                 main.OffsetX = offset / 2;
                                 main.OffsetY = offset / 2;

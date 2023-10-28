@@ -9,7 +9,7 @@
 	<Description>Easy to use and customizable Neumorphism Design implementation for Avalonia UI framework.</Description>
 	<PackageProjectUrl>https://github.com/flarive/Neumorphism.Avalonia</PackageProjectUrl>
 	<PackageLicenseUrl></PackageLicenseUrl>
-    <PackageId>Neumorphism.Avalonia</PackageId>
+  <PackageId>Neumorphism.Avalonia</PackageId>
 	<RepositoryUrl>https://github.com/flarive/Neumorphism.Avalonia</RepositoryUrl>
 	<PackageIcon>Icon.png</PackageIcon>
 	<RepositoryType>git</RepositoryType>

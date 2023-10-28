@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Primitives.PopupPositioning;
+using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Assist
 {
@@ -8,6 +9,8 @@ namespace Avalonia.Themes.Neumorphism.Assist
         private static readonly PopupAnchor DefaultPopupAnchor = PopupAnchor.TopLeft;
         private static readonly CornerRadius DefaultPopupCornerRadius = new CornerRadius(10);
         private static readonly PlacementMode DefaultPopupPlacement = PlacementMode.BottomEdgeAlignedLeft;
+        public static readonly Thickness DefaultPopuBorderThickness = new Thickness(1);
+        public static readonly SolidColorBrush DefaultPopuBorderBrush = new SolidColorBrush();
 
         #region AttachedProperty : PopupAnchorProperty
 
@@ -88,6 +91,41 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static void SetPopupPlacement(AvaloniaObject element, PlacementMode value)
         {
             element.SetValue(PopupPlacementProperty, value);
+        }
+
+        #endregion
+
+
+        #region AttachedProperty : PopupBorderThicknessProperty
+
+        public static readonly AvaloniaProperty<Thickness> PopupBorderThicknessProperty = AvaloniaProperty.RegisterAttached<MenuItem, Thickness>(
+            "PopupBorderThickness", typeof(MenuAssist), DefaultPopuBorderThickness, true);
+
+        public static Thickness GetPopupBorderThickness(AvaloniaObject element)
+        {
+            return (Thickness)element.GetValue(PopupBorderThicknessProperty);
+        }
+
+        public static void SetPopupBorderThickness(AvaloniaObject element, Thickness value)
+        {
+            element.SetValue(PopupBorderThicknessProperty, value);
+        }
+
+        #endregion
+
+        #region AttachedProperty : PopupBorderBrushProperty
+
+        public static readonly AvaloniaProperty<IBrush> PopupBorderBrushProperty = AvaloniaProperty.RegisterAttached<MenuItem, IBrush>(
+            "PopupBorderBrush", typeof(MenuAssist), DefaultPopuBorderBrush, true);
+
+        public static IBrush GetPopupBorderBrush(AvaloniaObject element)
+        {
+            return (IBrush)element.GetValue(PopupBorderBrushProperty);
+        }
+
+        public static void SetPopupBorderBrush(AvaloniaObject element, IBrush value)
+        {
+            element.SetValue(PopupBorderBrushProperty, value);
         }
 
         #endregion
