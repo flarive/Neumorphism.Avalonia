@@ -23,68 +23,116 @@
 
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
-			<showMeTheXaml:XamlDisplay UniqueId="Menu1" Width="300" Height="100">
-				<Menu Padding="0" Margin="0" Cursor="Hand">
+			<showMeTheXaml:XamlDisplay UniqueId="Menu1" Width="380" Height="150">
+				<Menu Padding="0" Margin="0" HorizontalAlignment="Center">
           <MenuItem Height="32" Header="File">
-            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}"/>
-            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=16}"/>
-            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=16}"/>
-            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=16}"/>
+            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}">
+              <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=16}">
+                <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=16}">
+                <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=16}">
+                <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Edit">
-            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=16}"/>
-            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=16}"/>
-            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=16}"/>
+            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=16}"/>
-            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=16}"/>
+            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Help">
-            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=16}"/>
+            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
 				</Menu>
 			</showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu2" Width="300" Height="100">
-        <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource MenuCapsuleBarOutset}">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu2" Width="380" Height="150">
+        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarOutset}">
           <MenuItem Height="32" Header="File">
-            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}"/>
-            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}"/>
-            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}"/>
-            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}"/>
+            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
+              <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
+                <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
+                <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
+                <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Edit">
-            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}"/>
-            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}"/>
-            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}"/>
+            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}"/>
-            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}"/>
+            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Help">
-            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}"/>
+            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
         </Menu>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu3" Width="300" Height="100">
-        <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource MenuCapsuleBarInset}">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu3" Width="380" Height="150">
+        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarInset}">
           <MenuItem Height="32" Header="File">
-            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}"/>
-            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}"/>
-            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}"/>
-            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}"/>
+            <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
+              <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
+                <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
+                <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+              <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
+                <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Edit">
-            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}"/>
-            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}"/>
-            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}"/>
+            <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}"/>
-            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}"/>
+            <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
           <MenuItem Height="32" Header="Help">
-            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}"/>
+            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
         </Menu>
       </showMeTheXaml:XamlDisplay>
@@ -94,68 +142,116 @@
 
       <StackPanel Orientation="Horizontal">
         <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Width="300" Height="100">
-          <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource MenuCapsuleBarFlat}">
+        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarFlat}">
             <MenuItem Height="32" Header="File">
-              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}"/>
-              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}"/>
-              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}"/>
-              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}"/>
+              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
+                <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
+                  <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
+                  <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
+                  <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+              </MenuItem>
+              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Edit">
-              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}"/>
-              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}"/>
-              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}"/>
+              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
               <Separator />
-              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}"/>
-              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}"/>
+              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Help">
-              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}"/>
+              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
           </Menu>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu5" Width="300" Height="100">
-          <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenuStroked}">
+        <showMeTheXaml:XamlDisplay UniqueId="Menu5" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenuStroked}">
             <MenuItem Height="32" Header="File">
-              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}"/>
-              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}"/>
-              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}"/>
-              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}"/>
+              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
+                <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
+                  <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
+                  <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
+                  <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+              </MenuItem>
+              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Edit">
-              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}"/>
-              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}"/>
-              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}"/>
+              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
               <Separator />
-              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}"/>
-              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}"/>
+              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Help">
-              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}"/>
+              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
           </Menu>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu6" Width="260" Height="100">
-          <Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
+        <showMeTheXaml:XamlDisplay UniqueId="Menu6" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
             <MenuItem Height="32" Header="File">
-              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}"/>
-              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=16}"/>
-              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=16}"/>
-              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=16}"/>
+              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}">
+                <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=16}">
+                  <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=16}">
+                  <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=16}">
+                  <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+              </MenuItem>
+              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Edit">
-              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=16}"/>
-              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=16}"/>
-              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=16}"/>
+              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
               <Separator />
-              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=16}"/>
-              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=16}"/>
+              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
             <MenuItem Height="32" Header="Help">
-              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=16}"/>
+              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
           </Menu>
         </showMeTheXaml:XamlDisplay>
@@ -164,9 +260,10 @@
 
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
-			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="200" Height="100">
-			  <Menu Padding="0" Margin="0" Cursor="Hand">
-				  <MenuItem Height="64" Width="64" assist:MenuAssist.PopupCornerRadius="10"
+			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="380" Height="150">
+			  <Menu Padding="0" Margin="0" HorizontalAlignment="Center">
+				  <MenuItem Height="64" Width="64"
+            assist:MenuAssist.PopupCornerRadius="10"
 					  assist:MenuAssist.PopupAnchor="TopRight"
 					  assist:MenuAssist.PopupHorizontalOffset="-140"
 					  assist:MenuAssist.PopupVerticalOffset="10">
@@ -174,7 +271,7 @@
 					  <MenuItem.Template>
 						  <ControlTemplate>
 							  <Panel Width="100" Height="100">
-								  <Border Width="64" Height="64" Margin="20" CornerRadius="100" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="False">
+								  <Border Width="64" Height="64" Margin="20" Cursor="Hand" CornerRadius="100" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="False">
 									  <Border.BoxShadow>
 										  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="6">
                         <DynamicResource ResourceKey="CustomBoxShadowRadius"/>
@@ -213,37 +310,53 @@
 						  </ControlTemplate>
 					  </MenuItem.Template>
 
-				    <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=22}"/>
+				    <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="Follow us" Command="{Binding MenuItemClickMethod}" Icon="{icons:MaterialIconExt Share, Size=22}">
-              <MenuItem Header="Twitter" Command="{Binding MenuItemClickMethod}" Icon="{icons:MaterialIconExt Twitter, Size=22}"/>
-              <MenuItem Header="Instagram" Command="{Binding MenuItemClickMethod}" Icon="{icons:MaterialIconExt Instagram, Size=22}"/>
-              <MenuItem Header="Facebook" Command="{Binding MenuItemClickMethod}" Icon="{icons:MaterialIconExt Facebook, Size=22}"/>
+            <MenuItem Header="Follow us" Icon="{icons:MaterialIconExt Share, Size=22}">
+              <MenuItem Header="Twitter" Icon="{icons:MaterialIconExt Twitter, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Instagram" Icon="{icons:MaterialIconExt Instagram, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Facebook" Icon="{icons:MaterialIconExt Facebook, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             </MenuItem>
 				    <Separator />
-				    <MenuItem Header="About" Command="{Binding MenuItemClickMethod}" Icon="{icons:MaterialIconExt AboutOutline, Size=22}"/>
+				    <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 				    <Separator />
-				    <MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitToApp, Size=22}"/>
+				    <MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitToApp, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 				  </MenuItem>
 			  </Menu>
         </showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu8" Width="200" Height="100">
-				<Menu Height="32" Padding="0" Margin="0" Cursor="Hand" Theme="{StaticResource NoMaterialMenu}">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu8" Width="380" Height="150">
+				<Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
 					<MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt Menu, Size=24}"
 											assist:MenuAssist.PopupAnchor="TopLeft"
 											assist:MenuAssist.PopupPlacement="BottomEdgeAlignedLeft"
 											assist:MenuAssist.PopupHorizontalOffset="0"
 											assist:MenuAssist.PopupVerticalOffset="0">
-						<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=16}"/>
+						<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 						<Separator />
-						<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=16}" Command="{Binding ToggleButtonClick}" CommandParameter="{Binding $self}" />
+						<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 						<Separator />
-						<MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=16}"/>
+						<MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 					</MenuItem>
 				</Menu>
       </showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150">
+        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
+          <MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt Menu, Size=24}"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="BottomEdgeAlignedLeft"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="0">
+            <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+        </Menu>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
       </StackPanel>
     </StackPanel>
 </UserControl>

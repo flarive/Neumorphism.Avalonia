@@ -108,9 +108,9 @@ namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels
             }
         }
 
-        private IconViewModelBase? _dialogIcon;
+        private IconViewModelBase _dialogIcon;
 
-        public IconViewModelBase? DialogIcon
+        public IconViewModelBase DialogIcon
         {
             get => _dialogIcon;
             set

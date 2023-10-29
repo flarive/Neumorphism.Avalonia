@@ -4,9 +4,9 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public sealed class MenusDemoViewModel : ViewModelBase
     {
-        public void MenuItemClickMethod()
+        public void MenuItemClickMethod(string msg)
         {
-            SnackbarHost.Post("Subscribe command not implemented !");
+            SnackbarHost.Post("You clicked on menu item " + msg);
         }
 
         #region commands

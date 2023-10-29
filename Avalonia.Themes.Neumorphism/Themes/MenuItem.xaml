@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:conv="using:Avalonia.Controls.Converters">
+                    xmlns:conv="using:Avalonia.Controls.Converters"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist">
+
+  <!-- Neumorphism theme ok -->
+  
 	
   <Design.PreviewWith>
     <Border Padding="20" Width="320">
@@ -57,14 +61,17 @@
   <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
   <StreamGeometry x:Key="MenuItemChevronPathData">M 1,0 10,10 l -9,10 -1,-1 L 8,10 -0,1 Z</StreamGeometry>
 
+
   <!--Default MenuItem theme-->
   <ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Padding" Value="{DynamicResource MenuFlyoutItemThemePaddingNarrow}" />
     <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
+    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
+    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
     <Setter Property="Cursor" Value="Hand" />
-    <Setter Property="CornerRadius" Value="5" />
+    <Setter Property="CornerRadius" Value="8" />
     <Setter Property="Margin" Value="2" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -126,8 +133,8 @@
                  IsLightDismissEnabled="False"
                  IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
             <Border Background="{DynamicResource MenuFlyoutPresenterBackground}"
-                    BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
-                    BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}"
+                      BorderBrush="{TemplateBinding assist:MenuAssist.PopupBorderBrush}"
+                      BorderThickness="{TemplateBinding assist:MenuAssist.PopupBorderThickness}"
                     Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
                     MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
                     MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
@@ -204,6 +211,10 @@
       <Style Selector="^ /template/ Path#PART_ChevronPath">
         <Setter Property="Fill" Value="{DynamicResource MenuFlyoutSubItemChevronDisabled}" />
       </Style>
+    </Style>
+
+    <Style Selector="^:open /template/ Border#PART_LayoutRoot">
+      <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPressed}" />
     </Style>
 
     <Style Selector="^:open /template/ Path#PART_ChevronPath">

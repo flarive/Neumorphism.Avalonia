@@ -95,6 +95,7 @@
     <Setter Property="Padding" Value="0" />
     <Setter Property="Height" Value="32" />
     <Setter Property="ItemContainerTheme" Value="{StaticResource NoMaterialTopLevelMenuItem}" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel HorizontalAlignment="Stretch" Height="{TemplateBinding Height}">
@@ -103,13 +104,14 @@
                   BorderThickness="{TemplateBinding BorderThickness}"
                   CornerRadius="{TemplateBinding CornerRadius}"
                   Height="{TemplateBinding Height}"
-                  HorizontalAlignment="Stretch"
+                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                   Margin="{TemplateBinding Margin}"
                   Padding="{TemplateBinding Padding}">
 
               <ItemsPresenter Name="PART_ItemsPresenter"
                               ItemsPanel="{TemplateBinding ItemsPanel}"
                               VerticalAlignment="Stretch"
+                              HorizontalAlignment="Center"
                               KeyboardNavigation.TabNavigation="Continue" />
             </Border>
             <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="#ffd1d6dc"/>
@@ -212,6 +214,7 @@
     <Setter Property="FontSize" Value="14" />
     <Setter Property="Padding" Value="{DynamicResource MenuBarItemPadding}" />
     <Setter Property="CornerRadius" Value="10" />
+    <Setter Property="Cursor" Value="Hand" />
     <Setter Property="assist:MenuAssist.PopupCornerRadius" Value="10" />
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="BottomEdgeAlignedLeft" />
@@ -244,7 +247,8 @@
                    HorizontalOffset="{TemplateBinding assist:MenuAssist.PopupHorizontalOffset}"
                    VerticalOffset="{TemplateBinding assist:MenuAssist.PopupVerticalOffset}"
                    OverlayInputPassThroughElement="{Binding $parent[Menu]}">
-              <Border Name="PART_PopupBorder" Background="{DynamicResource MaterialDesignPaper}"
+              <Border Name="PART_PopupBorder"
+                      Background="{DynamicResource MaterialDesignPaper}"
                       BorderBrush="{TemplateBinding assist:MenuAssist.PopupBorderBrush}"
                       BorderThickness="{TemplateBinding assist:MenuAssist.PopupBorderThickness}"
                       Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
@@ -329,6 +333,7 @@
     <Setter Property="Margin" Value="10" />
     <Setter Property="CornerRadius" Value="0" />
     <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Height" Value="32" />
     <Setter Property="assist:MenuAssist.PopupCornerRadius" Value="10" />
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
@@ -445,12 +450,15 @@
 
   <!--Popup MenuCapsuleBarOutsetMenuItem theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
     <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="-10" />
     <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="0" />
     <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="Transparent" />
+
+
 
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">

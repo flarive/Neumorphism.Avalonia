@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 { 
@@ -7,6 +8,8 @@ namespace Neumorphism.Avalonia.Demo.Pages
         public MenusDemo()
         {
             InitializeComponent();
+
+            DataContext = new MenusDemoViewModel();
         }
     }
 }
