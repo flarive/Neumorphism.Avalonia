@@ -24,9 +24,10 @@
     
     <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
         <!-- ReSharper disable once Xaml.StyleClassNotFound -->
-        <Button Classes="Flat"
+        <Button Classes="ButtonFlat"
                 Content="{CompiledBinding Content, FallbackValue='NULL'}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding }"/>
     </DataTemplate>
+
 </ResourceDictionary>

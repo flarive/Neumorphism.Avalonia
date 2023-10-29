@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
              xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
              x:CompileBindings="True"
              x:DataType="viewModels:DialogsDemoViewModel"
              x:Class="Neumorphism.Avalonia.Demo.Pages.DialogsDemo">
@@ -9,27 +10,27 @@
   
     <UserControl.Resources>
         <!-- OpenDialogWithView -->
-        <StackPanel x:Key="Sample2View">
+        <StackPanel x:Key="DialogSampleView">
             <ProgressBar Classes="Circle" IsIndeterminate="True" />
-            <Button Margin="0 16 0 0"
-                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+            <Button Margin="0 16 0 0" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
                 CLOSE
             </Button>
         </StackPanel>
     </UserControl.Resources>
 
 
+
+
     <StackPanel Margin="16, 0" >
         <TextBlock Classes="Headline4 Subheadline" Text="Dialogs" />
-        <Grid ColumnDefinitions="*, *" >
+        <Grid ColumnDefinitions="*, *">
 
             <StackPanel>
                 <TextBlock Classes="Headline6 Subheadline2" Text="DialogHost" />
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Text="Top level dialog with custom corner radius, using OpenDialog, passing content via the Parameter. You can pass a view model, provided a corresponding DataTemplate can be found in the scope of the root DialogHost."/>
-                    <StackPanel Spacing="8" >
-                        <Button Classes="flat" Click="OpenDialogWithView">PASS VIEW</Button>
-                        <Button Classes="flat" Click="OpenDialogWithModel">PASS MODEL</Button>
+                    <StackPanel Spacing="20">
+                        <Button Classes="ButtonFlat" Width="200" Click="OpenDialogWithView">Open dialog with view</Button>
+                        <Button Classes="ButtonFlat" Width="200" Click="OpenDialogWithModel">Open dialog with model</Button>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

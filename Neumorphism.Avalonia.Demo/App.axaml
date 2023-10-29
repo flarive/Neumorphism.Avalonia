@@ -15,7 +15,7 @@
 	<Application.Resources>
 		<StyleInclude x:Key="fluentDataGrid" Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
 		<StyleInclude x:Key="simpleDataGrid" Source="avares://Avalonia.Controls.DataGrid/Themes/Simple.xaml" />
-		<StyleInclude x:Key="neumorphismDataGrid" Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+		<StyleInclude x:Key="neumorphismDataGrid" Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" /> 
 	</Application.Resources>
   
 	<Application.Styles>

@@ -40,7 +40,7 @@
 	<!--OpenDialogWithModel-->
 	<Window.DataTemplates>
 		<DataTemplate DataType="models:Sample2Model">
-			<StackPanel>
+			<StackPanel Margin="10">
 				<TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
 				<TextBlock Classes="Body1"
 						   TextAlignment="Center"

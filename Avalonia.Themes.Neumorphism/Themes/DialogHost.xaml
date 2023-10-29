@@ -62,13 +62,21 @@
     
     <Setter Property="PopupTemplate">
       <ControlTemplate>
-        <Border Name="PART_ContentBackground"
-                BorderBrush="Purple"
-                BorderThickness="2"
+        <Border Name="PART_ContentBackground" Padding="20"
+                BorderBrush="Transparent"
+                BorderThickness="0" Margin="0"
                 CornerRadius="10"
-                BoxShadow="1.5 1.5 8 #4c000000"
                 ClipToBounds="True"
                 Background="{DynamicResource MaterialDesignPaper}">
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            </MultiBinding>
+          </Border.BoxShadow>
+          
+          
           <ContentPresenter Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -32,8 +31,12 @@ namespace Neumorphism.Avalonia.Demo.Pages
 
         private void OpenDialogWithView(object sender, RoutedEventArgs e)
         {
-            var view = this.Resources["Sample2View"]!;
-            DialogHost.Show(view, "MainDialogHost");
+            // View DialogSampleView is defined in <UserControl.Resources> in DialogsDemo.axaml
+            var view = this.Resources["DialogSampleView"]!;
+            if (view != null)
+            {
+                DialogHost.Show(view, "MainDialogHost");
+            }
         }
 
         private void OpenDialogWithModel(object sender, RoutedEventArgs e)

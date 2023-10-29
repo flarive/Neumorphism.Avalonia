@@ -22,8 +22,8 @@
 	</Design.PreviewWith>
 
 
-    <system:Double x:Key="RadioButtonHoveredOpacity">0.12</system:Double>
-    <system:Double x:Key="RadioButtonPressedOpacity">0.26</system:Double>
+  <system:Double x:Key="RadioButtonHoveredOpacity">0.12</system:Double>
+  <system:Double x:Key="RadioButtonPressedOpacity">0.26</system:Double>
 
 
 
