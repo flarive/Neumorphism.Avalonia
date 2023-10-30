@@ -7,7 +7,7 @@ namespace Neumorphism.Avalonia.Demo.Dialogs
         /// <summary>
         /// Constant none result.
         /// </summary>
-        public static DialogResult NoResult { get; private set; } = new DialogResult {result = "none"};
+        public static DialogResult NoResult { get; private set; } = new DialogResult { result = "none" };
 
 
         public DialogResult()

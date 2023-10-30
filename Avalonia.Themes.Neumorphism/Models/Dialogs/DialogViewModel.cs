@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace Neumorphism.Avalonia.Demo.ViewModels
+namespace Avalonia.Themes.Neumorphism.Models.Dialogs
 {
-    public sealed class DialogsDemoItemViewModel : ViewModelBase
+    public sealed class DialogViewModel : ModelBase
     {
-        public DialogsDemoItemViewModel(string header, Func<IAsyncEnumerable<string>> handler)
+        public DialogViewModel(string header, Func<IAsyncEnumerable<string>> handler)
         {
             _header = header;
             _commandHandler = handler;
@@ -41,9 +41,9 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             }
         }
 
-        private string? _result;
+        private string _result;
 
-        public string? Result
+        public string Result
         {
             get => _result;
             set

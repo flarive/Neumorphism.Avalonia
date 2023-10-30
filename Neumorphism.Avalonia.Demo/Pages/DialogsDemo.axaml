@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
              xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
              xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
              x:CompileBindings="True"
              x:DataType="viewModels:DialogsDemoViewModel"
@@ -36,31 +37,38 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" >
-                <TextBlock Classes="Headline6 Subheadline2" Text="Standalone dialog" />
+                <TextBlock Classes="Headline6 Subheadline2" Text="Builder dialogs" />
 
-                <ItemsControl ItemsSource="{CompiledBinding StandaloneDialogItems}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="viewModels:DialogsDemoItemViewModel" >
-                            <DockPanel Margin="8">
-                                <Button DockPanel.Dock="Top"
-                                        Classes="flat"
-                                        Content="{CompiledBinding Header}"
-                                        Command="{CompiledBinding Command}" />
-                                <TextBlock Margin="8"
-                                           HorizontalAlignment="Center"
-                                           TextWrapping="Wrap"
+              <StackPanel Orientation="Vertical">
 
-                                           DockPanel.Dock="Bottom"
+                <!--****************************************************************-->
+                <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog1">
+                  <StackPanel Orientation="Vertical" Margin="8" DataContext="{CompiledBinding AlertDialog}">
+                    <Button Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Height="38" />
+                    <TextBlock Margin="8"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Text="{CompiledBinding Result}"
+                               IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </StackPanel>
+                </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
+                <showMeTheXaml:XamlDisplay UniqueId="BuilderDialog2">
+                  <StackPanel Orientation="Vertical" Margin="8" DataContext="{CompiledBinding ConfirmDialog}">
+                    <Button Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Height="38" />
+                    <TextBlock Margin="8"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Text="{CompiledBinding Result}"
+                               IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </StackPanel>
+                </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
 
-                                           Text="{CompiledBinding Result}"
-                                           IsVisible="{CompiledBinding Result,
-                                                 Converter={x:Static StringConverters.IsNotNullOrEmpty},
-                                                 FallbackValue=False}" />
-                            </DockPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
+              </StackPanel>
+              
+
+              </StackPanel>
         </Grid>
     </StackPanel>
 

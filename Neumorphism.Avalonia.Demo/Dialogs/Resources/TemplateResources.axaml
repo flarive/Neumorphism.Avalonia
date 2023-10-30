@@ -23,8 +23,7 @@
     </RecyclingElementFactory>
     
     <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
-        <!-- ReSharper disable once Xaml.StyleClassNotFound -->
-        <Button Classes="ButtonFlat"
+        <Button Height="32" Width="80" Margin="20"
                 Content="{CompiledBinding Content, FallbackValue='NULL'}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding }"/>

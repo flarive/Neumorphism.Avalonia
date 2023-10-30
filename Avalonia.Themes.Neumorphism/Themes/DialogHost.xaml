@@ -69,7 +69,7 @@
                 ClipToBounds="True"
                 Background="{DynamicResource MaterialDesignPaper}">
           <Border.BoxShadow>
-            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
               <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
               <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
               <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />

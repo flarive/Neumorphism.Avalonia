@@ -3,7 +3,7 @@
         xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels" 
         xmlns:controls="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Controls"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
-        xmlns:naming="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Resources.Naming">
+        xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming;assembly=Avalonia.Themes.Neumorphism">
   
     <Styles.Resources>
         <ResourceDictionary>

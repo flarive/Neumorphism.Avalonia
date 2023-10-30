@@ -1,7 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Themes.Neumorphism.Enums;
 using Neumorphism.Avalonia.Demo.Interfaces;
-using System;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 {

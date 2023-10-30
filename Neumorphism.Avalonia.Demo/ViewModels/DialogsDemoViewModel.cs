@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Themes.Neumorphism.Models.Dialogs;
 using Neumorphism.Avalonia.Demo.Dialogs;
 using Neumorphism.Avalonia.Demo.Dialogs.Enums;
+using Neumorphism.Avalonia.Demo.Dialogs.Icons;
 using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
@@ -17,47 +17,59 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         private DateTime _previousDatePickerResult = DateTime.Now;
         private readonly MainWindow _window;
 
-        public DialogsDemoItemViewModel[] StandaloneDialogItems { get; }
+        //public DialogsDemoItemViewModel[] StandaloneDialogItems { get; }
+
+        public DialogViewModel AlertDialog { get; }
+        public DialogViewModel ConfirmDialog { get; }
 
         public DialogsDemoViewModel(Window window)
         {
             _window = window as MainWindow;
 
 
-            StandaloneDialogItems = new[]
-            {
-                new DialogsDemoItemViewModel("Simple Dialog", Dialog1),
-                new DialogsDemoItemViewModel("Dialog with confirmation", Dialog2),
-                new DialogsDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
-                new DialogsDemoItemViewModel("Dialog with bitmap icon", Dialog4),
-                new DialogsDemoItemViewModel("Login dialog", LoginDialog),
-                new DialogsDemoItemViewModel("Folder rename dialog", FolderNameDialog),
-                new DialogsDemoItemViewModel("Time picker", TimePickerDialog),
-                new DialogsDemoItemViewModel("Date picker", DatePickerDialog)
-            };
+            //StandaloneDialogItems = new[]
+            //{
+            //    new DialogsDemoItemViewModel("Simple Dialog", Dialog1),
+            //    new DialogsDemoItemViewModel("Dialog with confirmation", Dialog2),
+            //    new DialogsDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
+            //    new DialogsDemoItemViewModel("Dialog with bitmap icon", Dialog4),
+            //    new DialogsDemoItemViewModel("Login dialog", LoginDialog),
+            //    new DialogsDemoItemViewModel("Folder rename dialog", FolderNameDialog),
+            //    new DialogsDemoItemViewModel("Time picker", TimePickerDialog),
+            //    new DialogsDemoItemViewModel("Date picker", DatePickerDialog)
+            //};
+
+            AlertDialog = new DialogViewModel("Alert dialog", CreateAlertDialog);
+            ConfirmDialog = new DialogViewModel("Confirm dialog", CreateConfirmDialog);
         }
 
-        private async IAsyncEnumerable<string> Dialog1()
+
+
+
+        private async IAsyncEnumerable<string> CreateAlertDialog()
         {
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
                 ContentHeader = "Welcome to use Material.Avalonia",
                 SupportingText = "Enjoy Material Design in AvaloniaUI!",
+                WindowTitle = "Alert dialog",
                 StartupLocation = WindowStartupLocation.CenterOwner
             });
             var result = await dialog.ShowDialog(_window);
             yield return $"Result: {result.GetResult}";
         }
 
-        private async IAsyncEnumerable<string> Dialog2()
+        private async IAsyncEnumerable<string> CreateConfirmDialog()
         {
             var result = await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams()
             {
                 ContentHeader = "Confirm action",
-                SupportingText = "Are you sure to DELETE 20 FILES?",
+                SupportingText = "Are you sure to perform this action ?",
                 StartupLocation = WindowStartupLocation.CenterOwner,
+                WindowTitle = "Confirm dialog",
                 NegativeResult = new DialogResult("cancel"),
-                DialogHeaderIcon = Dialogs.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = DialogIconKind.Help,
+                Width = 500,
                 DialogButtons = new[]
                 {
                     new DialogButton
@@ -81,7 +93,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure to DELETE 20 FILES?",
-                DialogHeaderIcon = Dialogs.Icons.DialogIconKind.Help,
+                DialogHeaderIcon = DialogIconKind.Help,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
                 Borderless = true,
@@ -109,7 +121,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     ContentHeader = "Result",
                     SupportingText = "20 files has deleted.",
                     StartupLocation = WindowStartupLocation.CenterOwner,
-                    DialogHeaderIcon = Dialogs.Icons.DialogIconKind.Success,
+                    DialogHeaderIcon = DialogIconKind.Success,
                     Borderless = true,
                 }).ShowDialog(_window);
             }
@@ -149,7 +161,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 ContentHeader = "Authentication required.",
                 SupportingText = "Please login before any action.",
                 StartupLocation = WindowStartupLocation.CenterOwner,
-                DialogHeaderIcon = Dialogs.Icons.DialogIconKind.Blocked,
+                DialogHeaderIcon = DialogIconKind.Blocked,
                 Borderless = true,
                 Width = 400,
                 TextFields = new[]

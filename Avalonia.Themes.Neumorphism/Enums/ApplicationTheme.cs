@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Avalonia.Themes.Neumorphism.Enums
+﻿namespace Avalonia.Themes.Neumorphism.Enums
 {
     public enum ApplicationTheme : byte
     {

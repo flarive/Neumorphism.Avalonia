@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using Avalonia.Threading;
 
-namespace Neumorphism.Avalonia.Demo.ViewModels
+namespace Avalonia.Themes.Neumorphism.Models
 {
     /// <summary>
     /// Do not use it in your project! It should be used only inside of Neumorphism.Avalonia.Demo.<br/>
