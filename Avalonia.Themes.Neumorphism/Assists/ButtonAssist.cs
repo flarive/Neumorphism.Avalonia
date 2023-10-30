@@ -22,8 +22,11 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static void SetCornerRadius(AvaloniaObject element, CornerRadius value) {
             element.SetValue(CornerRadiusProperty, value);
         }
-        
-        
+
+        #endregion
+
+        #region AttachedProperty : HoverColorProperty
+
         public static AvaloniaProperty<IBrush> HoverColorProperty = AvaloniaProperty.RegisterAttached<Button, IBrush>(
             "HoverColor", typeof(ButtonAssist));
         
@@ -34,7 +37,11 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static IBrush GetHoverColor(AvaloniaObject element) {
             return (IBrush) element.GetValue(HoverColorProperty);
         }
-        
+
+        #endregion
+
+        #region AttachedProperty : ClickFeedbackColorProperty
+
         public static AvaloniaProperty<IBrush> ClickFeedbackColorProperty = AvaloniaProperty.RegisterAttached<Button, IBrush>(
             "ClickFeedbackColor", typeof(ButtonAssist));
         

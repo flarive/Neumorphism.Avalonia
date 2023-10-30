@@ -16,14 +16,13 @@
             </DataTemplate>
             
             <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
-                <Image Source="{CompiledBinding Bitmap}"
-                       Stretch="{CompiledBinding Stretch}"/>
+                <Image Source="{CompiledBinding Bitmap}" Stretch="{CompiledBinding Stretch}"/>
             </DataTemplate>
         </RecyclingElementFactory.Templates>
     </RecyclingElementFactory>
     
     <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
-        <Button Height="32" Width="80" Margin="20"
+        <Button Height="32" Width="NaN" Margin="20" FontWeight="Normal"
                 Content="{CompiledBinding Content, FallbackValue='NULL'}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding }"/>

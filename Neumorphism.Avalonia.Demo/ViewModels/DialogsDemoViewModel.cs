@@ -21,6 +21,10 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         public DialogViewModel AlertDialog { get; }
         public DialogViewModel ConfirmDialog { get; }
+        public DialogViewModel ConfirmSequenceDialog { get; }
+        public DialogViewModel ImageDialog { get; }
+        public DialogViewModel LoginDialog { get; }
+        public DialogViewModel FolderNameDialog { get; }
 
         public DialogsDemoViewModel(Window window)
         {
@@ -41,6 +45,10 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             AlertDialog = new DialogViewModel("Alert dialog", CreateAlertDialog);
             ConfirmDialog = new DialogViewModel("Confirm dialog", CreateConfirmDialog);
+            ConfirmSequenceDialog = new DialogViewModel("Confirm dialog sequence", CreateConfirmSequenceDialog);
+            ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
+            LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
+            FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
         }
 
 
@@ -65,11 +73,11 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure to perform this action ?",
-                StartupLocation = WindowStartupLocation.CenterOwner,
                 WindowTitle = "Confirm dialog",
+                StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
                 DialogHeaderIcon = DialogIconKind.Help,
-                Width = 500,
+                Width = 480,
                 DialogButtons = new[]
                 {
                     new DialogButton
@@ -87,16 +95,18 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             yield return $"Result: {result.GetResult}";
         }
 
-        private async IAsyncEnumerable<string> Dialog3()
+        private async IAsyncEnumerable<string> CreateConfirmSequenceDialog()
         {
             var result = await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
                 ContentHeader = "Confirm action",
-                SupportingText = "Are you sure to DELETE 20 FILES?",
+                SupportingText = "Are you sure you want to do that ?",
+                WindowTitle = "Confirm dialog",
                 DialogHeaderIcon = DialogIconKind.Help,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 NegativeResult = new DialogResult("cancel"),
                 Borderless = true,
+                Width = 480,
                 DialogButtons = new[]
                 {
                     new DialogButton
@@ -119,7 +129,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
                 {
                     ContentHeader = "Result",
-                    SupportingText = "20 files has deleted.",
+                    SupportingText = "You have done it ! Congrats !",
                     StartupLocation = WindowStartupLocation.CenterOwner,
                     DialogHeaderIcon = DialogIconKind.Success,
                     Borderless = true,
@@ -127,7 +137,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             }
         }
 
-        private async IAsyncEnumerable<string> Dialog4()
+        private async IAsyncEnumerable<string> CreateImageDialog()
         {
             // Open asset stream using assets.Open method.
             await using var icon = AssetLoader.Open(new Uri("avares://Neumorphism.Avalonia.Demo/Assets/avalonia-logo.png"));
@@ -154,7 +164,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             yield return $"Result: {result.GetResult}";
         }
 
-        private async IAsyncEnumerable<string> LoginDialog()
+        private async IAsyncEnumerable<string> CreateLoginDialog()
         {
             var result = await DialogHelper.CreateTextFieldDialog(new TextFieldDialogBuilderParams
             {
@@ -223,7 +233,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         }
 
 
-        private async IAsyncEnumerable<string> FolderNameDialog()
+        private async IAsyncEnumerable<string> CreateFolderNameDialog()
         {
             var result = await DialogHelper.CreateTextFieldDialog(new TextFieldDialogBuilderParams()
             {

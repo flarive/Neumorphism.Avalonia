@@ -41,7 +41,6 @@
                         </DockPanel>
 
                         <DockPanel Name="{x:Static naming:PartNames.PartButtonsPanel}">
-                            
                             <ItemsControl Name="{x:Static naming:PartNames.PartNeutralButtonPlacement}"
                                           DockPanel.Dock="Left"
                                           ItemsSource="{CompiledBinding NeutralDialogButton}"
@@ -68,7 +67,6 @@
     <!--??????????????????????-->
     <Style Selector="controls|EmbeddedDialogControl[CornerRadius=0] /template/ Border#PART_RootBorder">
       <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-      <Setter Property="Background" Value="Red"/>
     </Style>
   
     

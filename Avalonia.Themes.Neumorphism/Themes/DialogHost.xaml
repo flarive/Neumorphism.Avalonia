@@ -4,8 +4,7 @@
 
 
   <Design.PreviewWith>
-    <dialogHostAvalonia:DialogHost Name="DialogHost" Height="300" Width="300"
-                                   Background="Gray">
+    <dialogHostAvalonia:DialogHost Name="DialogHost" Height="300" Width="300" Background="Gray">
       <dialogHostAvalonia:DialogHost.DialogContent>
         <Grid RowDefinitions="Auto Auto">
           <TextBlock>You content here</TextBlock>
@@ -14,8 +13,7 @@
           </Button>
         </Grid>
       </dialogHostAvalonia:DialogHost.DialogContent>
-      <Button Margin="8" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-              Command="{Binding #DialogHost.OpenDialogCommand}">
+      <Button Margin="8" HorizontalAlignment="Center" VerticalAlignment="Bottom" Command="{Binding #DialogHost.OpenDialogCommand}">
         OPEN
       </Button>
     </dialogHostAvalonia:DialogHost>
@@ -87,14 +85,14 @@
     </Setter>
     
 
-    <!--<Style Selector="^[IsOpen=True] /template/ Rectangle#PART_ContentCover">
+    <Style Selector="^[IsOpen=True] /template/ Rectangle#PART_ContentCover">
       <Setter Property="IsHitTestVisible" Value="True" />
       <Setter Property="Opacity" Value="0.56" />
     </Style>
     <Style Selector="^[IsOpen=False] /template/ Rectangle#PART_ContentCover">
       <Setter Property="IsHitTestVisible" Value="False" />
       <Setter Property="Opacity" Value="0" />
-    </Style>-->
+    </Style>
   </ControlTheme>
 
 </ResourceDictionary>
