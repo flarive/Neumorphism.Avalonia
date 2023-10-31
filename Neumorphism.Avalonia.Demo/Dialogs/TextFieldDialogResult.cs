@@ -1,4 +1,6 @@
-﻿namespace Neumorphism.Avalonia.Demo.Dialogs
+﻿using Avalonia.Themes.Neumorphism.Dialogs;
+
+namespace Neumorphism.Avalonia.Demo.Dialogs
 {
     public sealed class TextFieldDialogResult : DialogResult
     {

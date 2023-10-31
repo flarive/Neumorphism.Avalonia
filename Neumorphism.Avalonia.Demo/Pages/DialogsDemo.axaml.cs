@@ -42,7 +42,7 @@ namespace Neumorphism.Avalonia.Demo.Pages
         private void OpenDialogWithModel(object sender, RoutedEventArgs e)
         {
             // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
-            var model = new Sample2Model(new Random().Next(0, 100));
+            var model = new DialogSampleModel(new Random().Next(0, 100));
             DialogHost.Show(model, "MainDialogHost");
         }
     }

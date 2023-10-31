@@ -39,15 +39,15 @@
 
 	<!--OpenDialogWithModel-->
 	<Window.DataTemplates>
-		<DataTemplate DataType="models:Sample2Model">
+		<DataTemplate DataType="models:DialogSampleModel">
 			<StackPanel Margin="10">
 				<TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
 				<TextBlock Classes="Body1"
 						   TextAlignment="Center"
 						   Text="{Binding Number}" />
-				<Button Margin="0 8 0 0"
+				<Button Margin="0 8 0 0" Height="32" Width="NaN"
 						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
-					THANKS, CLOSE
+					OK
 				</Button>
 			</StackPanel>
 		</DataTemplate>

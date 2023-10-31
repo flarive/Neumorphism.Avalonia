@@ -2,10 +2,10 @@
 using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Media.Imaging;
+using Avalonia.Themes.Neumorphism.Dialogs;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
+using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 using Neumorphism.Avalonia.Demo.Dialogs.Bases;
-using Neumorphism.Avalonia.Demo.Dialogs.Enums;
-using Neumorphism.Avalonia.Demo.Dialogs.Icons;
-using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
 using Neumorphism.Avalonia.Demo.Dialogs.ViewModels;
 using Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements;
 using Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons;

@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
-using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
+using Avalonia.Themes.Neumorphism.Dialogs;
+using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 using Neumorphism.Avalonia.Demo.Dialogs.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Views

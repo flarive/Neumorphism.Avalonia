@@ -1,4 +1,5 @@
 ﻿using System;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Bases
 {
@@ -10,7 +11,7 @@ namespace Neumorphism.Avalonia.Demo.Dialogs.Bases
         /// </summary>
         [Obsolete(
             "Please use DialogButton.IsPositive instead. This API will be deprecated and removed on future updates.")]
-        public DialogButton PositiveButton = DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum.Ok)[0];
+        public DialogButton PositiveButton = DialogHelper.CreateSimpleDialogButtons(DialogButtonsEnum.Ok)[0];
 
         /// <summary>
         /// Define a negative action button.
@@ -18,6 +19,6 @@ namespace Neumorphism.Avalonia.Demo.Dialogs.Bases
         [Obsolete(
             "Please use DialogButton.IsPositive instead. This API will be deprecated and removed on future updates.")]
         public DialogButton NegativeButton =
-            DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum.OkCancel)[0];
+            DialogHelper.CreateSimpleDialogButtons(DialogButtonsEnum.OkCancel)[0];
     }
 }

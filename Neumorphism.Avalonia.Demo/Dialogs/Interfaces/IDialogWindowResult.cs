@@ -1,10 +1,10 @@
-﻿// This is clone of code IMsBoxWindow<T>
-// https://github.com/AvaloniaUtils/MessageBox.Avalonia/blob/master/src/MessageBox.Avalonia/BaseWindows/Base/IWindowGetResult.cs
+﻿//// This is clone of code IMsBoxWindow<T>
+//// https://github.com/AvaloniaUtils/MessageBox.Avalonia/blob/master/src/MessageBox.Avalonia/BaseWindows/Base/IWindowGetResult.cs
 
-namespace Neumorphism.Avalonia.Demo.Dialogs.Interfaces
-{
-    public interface IDialogWindowResult<T>
-    {
-        T GetResult();
-    }
-}
+//namespace Neumorphism.Avalonia.Demo.Dialogs.Interfaces
+//{
+//    public interface IDialogWindowResult<T>
+//    {
+//        T GetResult();
+//    }
+//}

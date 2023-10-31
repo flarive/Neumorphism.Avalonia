@@ -1,4 +1,5 @@
-﻿using Neumorphism.Avalonia.Demo.Dialogs.Commands;
+﻿using Avalonia.Themes.Neumorphism.Dialogs;
+using Neumorphism.Avalonia.Demo.Dialogs.Commands;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements
 {

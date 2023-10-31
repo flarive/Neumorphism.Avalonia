@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Themes.Neumorphism.Dialogs;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
 using Neumorphism.Avalonia.Demo.Dialogs;
-using Neumorphism.Avalonia.Demo.Dialogs.Enums;
-using Neumorphism.Avalonia.Demo.Dialogs.Icons;
 using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
@@ -17,7 +17,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         private DateTime _previousDatePickerResult = DateTime.Now;
         private readonly MainWindow _window;
 
-        //public DialogsDemoItemViewModel[] StandaloneDialogItems { get; }
+        
 
         public DialogViewModel AlertDialog { get; }
         public DialogViewModel ConfirmDialog { get; }
@@ -29,19 +29,6 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public DialogsDemoViewModel(Window window)
         {
             _window = window as MainWindow;
-
-
-            //StandaloneDialogItems = new[]
-            //{
-            //    new DialogsDemoItemViewModel("Simple Dialog", Dialog1),
-            //    new DialogsDemoItemViewModel("Dialog with confirmation", Dialog2),
-            //    new DialogsDemoItemViewModel("Dialog with confirmation (content-only)", Dialog3),
-            //    new DialogsDemoItemViewModel("Dialog with bitmap icon", Dialog4),
-            //    new DialogsDemoItemViewModel("Login dialog", LoginDialog),
-            //    new DialogsDemoItemViewModel("Folder rename dialog", FolderNameDialog),
-            //    new DialogsDemoItemViewModel("Time picker", TimePickerDialog),
-            //    new DialogsDemoItemViewModel("Date picker", DatePickerDialog)
-            //};
 
             AlertDialog = new DialogViewModel("Alert dialog", CreateAlertDialog);
             ConfirmDialog = new DialogViewModel("Confirm dialog", CreateConfirmDialog);

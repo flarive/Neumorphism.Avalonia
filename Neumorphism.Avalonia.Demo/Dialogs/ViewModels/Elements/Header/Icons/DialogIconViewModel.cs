@@ -1,4 +1,4 @@
-﻿using Neumorphism.Avalonia.Demo.Dialogs.Icons;
+﻿using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons
 {

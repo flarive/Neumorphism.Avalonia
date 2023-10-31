@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:elements="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements"
                     xmlns:icons="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.ViewModels.Elements.Header.Icons"
-                    xmlns:icons1="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs.Icons"
+                    xmlns:icons1="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Icons;assembly=Avalonia.Themes.Neumorphism"
                     x:Class="Neumorphism.Avalonia.Demo.Dialogs.Resources.TemplateResources">
   
     <ItemsPanelTemplate x:Key="DialogButtonPlacementPanel">

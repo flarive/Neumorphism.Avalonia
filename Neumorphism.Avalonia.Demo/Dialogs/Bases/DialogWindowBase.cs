@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Themes.Neumorphism.Assist;
-using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
+using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Bases
 {

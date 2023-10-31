@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Layout;
-using Neumorphism.Avalonia.Demo.Dialogs.Icons;
+using Avalonia.Themes.Neumorphism.Dialogs;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs.Bases
 {

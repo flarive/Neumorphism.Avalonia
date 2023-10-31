@@ -1,26 +1,26 @@
-﻿using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
+﻿//using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
 
-namespace Neumorphism.Avalonia.Demo.Dialogs
-{
-    public class DialogResult : IDialogResult
-    {
-        /// <summary>
-        /// Constant none result.
-        /// </summary>
-        public static DialogResult NoResult { get; private set; } = new DialogResult { result = "none" };
-
-
-        public DialogResult()
-        {
-        }
-
-        public DialogResult(string result)
-        {
-            this.result = result;
-        }
+//namespace Neumorphism.Avalonia.Demo.Dialogs
+//{
+//    public class DialogResult : IDialogResult
+//    {
+//        /// <summary>
+//        /// Constant none result.
+//        /// </summary>
+//        public static DialogResult NoResult { get; private set; } = new DialogResult { result = "none" };
 
 
-        private string result;
-        public virtual string GetResult => result;
-    }
-}
+//        public DialogResult()
+//        {
+//        }
+
+//        public DialogResult(string result)
+//        {
+//            this.result = result;
+//        }
+
+
+//        private string result;
+//        public virtual string GetResult => result;
+//    }
+//}

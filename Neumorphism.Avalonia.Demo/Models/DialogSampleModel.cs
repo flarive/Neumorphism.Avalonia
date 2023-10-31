@@ -1,8 +1,8 @@
 ﻿namespace Neumorphism.Avalonia.Demo.Models
 {
-    public sealed class Sample2Model
+    public sealed class DialogSampleModel
     {
-        public Sample2Model(int number)
+        public DialogSampleModel(int number)
         {
             Number = number;
         }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Neumorphism.Avalonia.Demo.Dialogs.Enums;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {

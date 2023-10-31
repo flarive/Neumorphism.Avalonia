@@ -1,5 +1,5 @@
 ﻿using System;
-using Neumorphism.Avalonia.Demo.Dialogs.Interfaces;
+using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 
 namespace Neumorphism.Avalonia.Demo.Dialogs
 {
