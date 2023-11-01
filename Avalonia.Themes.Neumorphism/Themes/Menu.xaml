@@ -60,7 +60,7 @@
     <Setter Property="Height" Value="48" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="ClipToBounds" Value="False" />
-    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuFlatTopLevelMenuItem}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuFlatTopLevelMenuItem0}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_BorderLayout" Background="{TemplateBinding Background}"
@@ -128,7 +128,7 @@
 
   <!--No material Menu with bottom stroke theme-->
   <ControlTheme x:Key="NoMaterialMenuStroked" TargetType="Menu" BasedOn="{StaticResource NoMaterialMenu}">
-    <Setter Property="ItemContainerTheme" Value="{StaticResource NoMaterialTopLevelMenuItemStroked}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource NoMaterialTopLevelMenuItemStroked0}" />
 
     <Style Selector="^ /template/ Rectangle#PART_Stroke">
       <Setter Property="IsVisible" Value="True" />
@@ -142,10 +142,10 @@
   <!--MenuCapsuleBarFlat theme-->
   <ControlTheme x:Key="MenuCapsuleBarFlat" TargetType="Menu" BasedOn="{StaticResource NoMaterialMenu}">
     <Setter Property="Background" Value="Transparent"/>
-    <Setter Property="Height" Value="44"/>
+    <Setter Property="Height" Value="48"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
-    <Setter Property="BorderBrush" Value="Transparent"/>
-    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}"/>
+    <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarFlatMenuItem}" />
   </ControlTheme>
 
@@ -160,7 +160,7 @@
     <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}"/>
     <Setter Property="BorderThickness" Value="0"/>
-    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarInsetMenuItem}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarInsetMenuItem0}" />
     <Setter Property="ClipToBounds" Value="False" />
 
     <Style Selector="^ /template/ Border#PART_BorderLayout">
@@ -185,7 +185,7 @@
     <Setter Property="HorizontalAlignment" Value="Left"/>
     <Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}"/>
     <Setter Property="BorderThickness" Value="0"/>
-    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarOutsetMenuItem}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarOutsetMenuItem0}" />
     <Setter Property="ClipToBounds" Value="False" />
 
     <Style Selector="^ /template/ Border#PART_BorderLayout">
@@ -207,295 +207,6 @@
   <!-- ************************** -->
 
 
-  <!--Popup NoMaterialTopLevelMenuItem theme-->
-  <ControlTheme x:Key="NoMaterialTopLevelMenuItem" TargetType="MenuItem">
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForeground}" />
-    <Setter Property="FontSize" Value="14" />
-    <Setter Property="Padding" Value="{DynamicResource MenuBarItemPadding}" />
-    <Setter Property="CornerRadius" Value="10" />
-    <Setter Property="Cursor" Value="Hand" />
-    <Setter Property="assist:MenuAssist.PopupCornerRadius" Value="10" />
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="BottomEdgeAlignedLeft" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Border Name="PART_LayoutRoot"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}">
-          <Panel>
-            <ContentPresenter Name="PART_HeaderPresenter"
-                              Content="{TemplateBinding Header}"
-                              ContentTemplate="{TemplateBinding HeaderTemplate}"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Stretch"
-                              RecognizesAccessKey="True"
-                              Margin="{TemplateBinding Padding}"/>
-            <Popup Name="PART_Popup"
-                   WindowManagerAddShadowHint="False"
-                   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
-                   IsLightDismissEnabled="True"
-                   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
-                   PlacementAnchor="{TemplateBinding assist:MenuAssist.PopupAnchor}"
-                   Placement="{TemplateBinding assist:MenuAssist.PopupPlacement}"
-                   HorizontalOffset="{TemplateBinding assist:MenuAssist.PopupHorizontalOffset}"
-                   VerticalOffset="{TemplateBinding assist:MenuAssist.PopupVerticalOffset}"
-                   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
-              <Border Name="PART_PopupBorder"
-                      Background="{DynamicResource MaterialDesignPaper}"
-                      BorderBrush="{TemplateBinding assist:MenuAssist.PopupBorderBrush}"
-                      BorderThickness="{TemplateBinding assist:MenuAssist.PopupBorderThickness}"
-                      Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
-                      MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
-                      MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
-                      HorizontalAlignment="Stretch"
-                      CornerRadius="{TemplateBinding assist:MenuAssist.PopupCornerRadius}">
-                <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
-                  <ItemsPresenter Name="PART_ItemsPresenter"
-                                  ItemsPanel="{TemplateBinding ItemsPanel}"
-                                  Margin="{DynamicResource MenuFlyoutScrollerMargin}"
-                                  Grid.IsSharedSizeScope="True" />
-                </ScrollViewer>
-              </Border>
-            </Popup>
-          </Panel>
-        </Border>
-      </ControlTemplate>
-    </Setter>
-
-    <Style Selector="^:selected">
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPointerOver}" />
-      </Style>
-      <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundPointerOver}" />
-      </Style>
-    </Style>
-
-    <!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
-    <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
-      <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPressed}" />
-      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundPressed}" />
-      </Style>
-    </Style>
-
-    <Style Selector="^:disabled">
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
-      </Style>
-      <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
-      </Style>
-    </Style>
-  </ControlTheme>
-
-
-
-
-  <!--Popup MenuCapsuleBarFlatMenuItem theme-->
-  <ControlTheme x:Key="MenuCapsuleBarFlatMenuItem" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-  </ControlTheme>
-
-
-  <!--Popup NoMaterialTopLevelMenuItemStroked theme-->
-  <ControlTheme x:Key="NoMaterialTopLevelMenuItemStroked" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
-    <Setter Property="CornerRadius" Value="10,10,0,0" />
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-  </ControlTheme>
-
-
-
-
-  <!--Popup MenuFlatTopLevelMenuItem theme-->
-  <ControlTheme x:Key="MenuFlatTopLevelMenuItem" TargetType="MenuItem">
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForeground}" />
-    <Setter Property="FontSize" Value="14" />
-    <Setter Property="Padding" Value="{DynamicResource MenuBarItemPadding}" />
-    <Setter Property="Margin" Value="10" />
-    <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="ClipToBounds" Value="False" />
-    <Setter Property="Cursor" Value="Hand" />
-    <Setter Property="Height" Value="32" />
-    <Setter Property="assist:MenuAssist.PopupCornerRadius" Value="10" />
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="BottomEdgeAlignedLeft" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Border Name="PART_LayoutRoot"
-                Height="{TemplateBinding Height}"
-                Margin="{TemplateBinding Margin}"
-                Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}">
-          <Panel>
-            <ContentPresenter Name="PART_HeaderPresenter"
-                              Content="{TemplateBinding Header}"
-                              ContentTemplate="{TemplateBinding HeaderTemplate}"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Stretch"
-                              RecognizesAccessKey="True"
-                              Margin="{TemplateBinding Padding}"/>
-            <Popup Name="PART_Popup"
-                   WindowManagerAddShadowHint="False"
-                   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
-                   IsLightDismissEnabled="True"
-                   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
-                   PlacementAnchor="{TemplateBinding assist:MenuAssist.PopupAnchor}"
-                   Placement="{TemplateBinding assist:MenuAssist.PopupPlacement}"
-                   HorizontalOffset="{TemplateBinding assist:MenuAssist.PopupHorizontalOffset}"
-                   VerticalOffset="{TemplateBinding assist:MenuAssist.PopupVerticalOffset}"
-                   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
-              <Border Background="{DynamicResource MaterialDesignPaper}"
-                      BorderBrush="{TemplateBinding assist:MenuAssist.PopupBorderBrush}"
-                      BorderThickness="{TemplateBinding assist:MenuAssist.PopupBorderThickness}"
-                      Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
-                      MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
-                      MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
-                      HorizontalAlignment="Stretch"
-                      CornerRadius="{TemplateBinding assist:MenuAssist.PopupCornerRadius}">
-                <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
-                  <ItemsPresenter Name="PART_ItemsPresenter"
-                                  ItemsPanel="{TemplateBinding ItemsPanel}"
-                                  Margin="{DynamicResource MenuFlyoutScrollerMargin}"
-                                  Grid.IsSharedSizeScope="True" />
-                </ScrollViewer>
-              </Border>
-            </Popup>
-          </Panel>
-        </Border>
-      </ControlTemplate>
-    </Setter>
-
-    <Style Selector="^[CornerRadius=0] /template/ Border#PART_LayoutRoot">
-      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-    </Style>
-
-    <Style Selector="^:selected">
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPointerOver}" />
-      </Style>
-      <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundPointerOver}" />
-      </Style>
-    </Style>
-
-    <Style Selector="^ /template/ Border#PART_LayoutRoot">
-      <Setter Property="BoxShadow">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-    </Style>
-
-    <Style Selector="^:pointerover /template/ Border#PART_LayoutRoot">
-      <Setter Property="BoxShadow">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-    </Style>
-
-
-    <!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
-    <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
-      <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPressed}" />
-      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundPressed}" />
-      </Style>
-    </Style>
-
-    <Style Selector="^:disabled">
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
-      </Style>
-      <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
-      </Style>
-    </Style>
-  </ControlTheme>
   
-
-  <!--Popup MenuCapsuleBarOutsetMenuItem theme-->
-  <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="-10" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="Transparent" />
-
-
-
-    <Style Selector="^ /template/ Border#PART_PopupBorder">
-      <Setter Property="BoxShadow">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="Margin" Value="10"/>
-    </Style>
-  </ControlTheme>
-
-
-  <!--Popup MenuCapsuleBarInsetMenuItem theme-->
-  <ControlTheme x:Key="MenuCapsuleBarInsetMenuItem" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
-    <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
-    <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
-    <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="-10" />
-    <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="0" />
-    <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="Transparent" />
-
-    <Style Selector="^ /template/ Border#PART_PopupBorder">
-      <Setter Property="BoxShadow">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="Margin" Value="10"/>
-    </Style>
-  </ControlTheme>
   
 </ResourceDictionary>

@@ -332,27 +332,49 @@
 											assist:MenuAssist.PopupPlacement="BottomEdgeAlignedLeft"
 											assist:MenuAssist.PopupHorizontalOffset="0"
 											assist:MenuAssist.PopupVerticalOffset="0">
-						<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+						<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 						<Separator />
-						<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+						<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 						<Separator />
-						<MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+						<MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
 					</MenuItem>
 				</Menu>
       </showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150">
-        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
-          <MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt Menu, Size=24}"
+        <Menu Height="48" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}" VerticalAlignment="Bottom">
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt RocketLaunchOutline, Size=34}" Margin="10,0,10,0"
 											assist:MenuAssist.PopupAnchor="TopLeft"
-											assist:MenuAssist.PopupPlacement="BottomEdgeAlignedLeft"
+											assist:MenuAssist.PopupPlacement="Top"
 											assist:MenuAssist.PopupHorizontalOffset="0"
-											assist:MenuAssist.PopupVerticalOffset="0">
-            <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Go to the moon !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Go to mars !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
-            <MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=16}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <MenuItem Header="Go to Saturn !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt User, Size=34}" Margin="10,0,10,0"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="Top"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Create" Icon="{icons:MaterialIconExt Hand, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Disable" Icon="{icons:MaterialIconExt AboutCircle, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Lock" Icon="{icons:MaterialIconExt ExitRun, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt SecurityAccountOutline, Size=34}" Margin="10,0,10,0"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="Top"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Allow" Icon="{icons:MaterialIconExt UserAddOutline, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Deny" Icon="{icons:MaterialIconExt UserRemoveOutline, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Default" Icon="{icons:MaterialIconExt UserGroupOutline, Size=24}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
           </MenuItem>
         </Menu>
       </showMeTheXaml:XamlDisplay>
