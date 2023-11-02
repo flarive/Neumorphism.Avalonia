@@ -83,6 +83,7 @@ For the moment only the following controls are fully themed :
 - ListBoxes
 - Tabs
 - DateTime pickers
+- Menus
 
 More controls should be themed soon.
 
