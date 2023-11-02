@@ -9,6 +9,14 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> Menus added in 0.8.0 !
+- 6 different possible themes
+- Icon support
+- Multi level menu items
+- Fully custom template possible for root menu
+
+![Screenshot](Screenshots/menus.png)
+
 # <img src="favicon.png" width="32" height="32"> DateTime pickers added in 0.7.0 !
 - Calendar based date picker
 - Time picker
