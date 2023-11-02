@@ -24,7 +24,8 @@
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
 			<showMeTheXaml:XamlDisplay UniqueId="Menu1" Width="380" Height="150">
-				<Menu Padding="0" Margin="0" HorizontalAlignment="Center">
+				<Menu Padding="0" Margin="0" HorizontalAlignment="Center"
+              ToolTip.Tip='Menu with default theme applied'>
           <MenuItem Height="32" Header="File">
             <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}">
               <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=16}">
@@ -61,7 +62,8 @@
 				</Menu>
 			</showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu2" Width="380" Height="150">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu2" Width="380" Height="150"
+                                 ToolTip.Tip='Menu with theme "MenuCapsuleBarOutset" applied'>
         <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarOutset}">
           <MenuItem Height="32" Header="File">
             <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
@@ -99,7 +101,8 @@
         </Menu>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu3" Width="380" Height="150">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu3" Width="380" Height="150"
+                                 ToolTip.Tip='Menu with theme "MenuCapsuleBarInset" applied'>
         <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarInset}">
           <MenuItem Height="32" Header="File">
             <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
@@ -142,8 +145,9 @@
 
       <StackPanel Orientation="Horizontal">
         <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Width="380" Height="150">
-          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarFlat}">
+        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Width="380" Height="150"
+                                   ToolTip.Tip='Menu with theme "MenuCapsuleBarFlat" applied'>
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource MenuCapsuleBarFlat}" CornerRadius="100">
             <MenuItem Height="32" Header="File">
               <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
                 <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
@@ -180,45 +184,8 @@
           </Menu>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu5" Width="380" Height="150">
-          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenuStroked}">
-            <MenuItem Height="32" Header="File">
-              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
-                <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
-                  <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                </MenuItem>
-                <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
-                  <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                </MenuItem>
-                <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
-                  <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                  <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-                </MenuItem>
-              </MenuItem>
-              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-            </MenuItem>
-            <MenuItem Height="32" Header="Edit">
-              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <Separator />
-              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-            </MenuItem>
-            <MenuItem Height="32" Header="Help">
-              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
-            </MenuItem>
-          </Menu>
-        </showMeTheXaml:XamlDisplay>
-        <!--****************************************************************-->
-        <showMeTheXaml:XamlDisplay UniqueId="Menu6" Width="380" Height="150">
+        <showMeTheXaml:XamlDisplay UniqueId="Menu5" Width="380" Height="150"
+                                   ToolTip.Tip='Menu with theme "NoMaterialMenu" applied'>
           <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
             <MenuItem Height="32" Header="File">
               <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=16}">
@@ -256,11 +223,51 @@
           </Menu>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu6" Width="380" Height="150"
+                                   ToolTip.Tip='Menu with theme "NoMaterialMenuStroked" applied'>
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenuStroked}">
+            <MenuItem Height="32" Header="File">
+              <MenuItem Header="New" Icon="{icons:MaterialIconExt FilePlusOutline, Size=20}">
+                <MenuItem Header="Image" Icon="{icons:MaterialIconExt Image, Size=20}">
+                  <MenuItem Header="GIF" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="JPG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="PNG" Icon="{icons:MaterialIconExt ImageArea, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Video" Icon="{icons:MaterialIconExt Video, Size=20}">
+                  <MenuItem Header="MP4" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MKV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="MOV" Icon="{icons:MaterialIconExt VideoFilm, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+                <MenuItem Header="Music" Icon="{icons:MaterialIconExt Music, Size=20}">
+                  <MenuItem Header="MP3" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="FLAC" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                  <MenuItem Header="WAV" Icon="{icons:MaterialIconExt MusicBox, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+                </MenuItem>
+              </MenuItem>
+              <MenuItem Header="Open" Icon="{icons:MaterialIconExt FileEditOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Save" Icon="{icons:MaterialIconExt FileRefreshOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Delete" Icon="{icons:MaterialIconExt FileRemoveOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            </MenuItem>
+            <MenuItem Height="32" Header="Edit">
+              <MenuItem Header="Copy" Icon="{icons:MaterialIconExt ContentCopy, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Cut" Icon="{icons:MaterialIconExt ContentCut, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Paste" Icon="{icons:MaterialIconExt ContentPaste, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <Separator />
+              <MenuItem Header="Undo" Icon="{icons:MaterialIconExt Undo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Redo" Icon="{icons:MaterialIconExt Redo, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            </MenuItem>
+            <MenuItem Height="32" Header="Help">
+              <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=20}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
+            </MenuItem>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
       </StackPanel>
 
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
-			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="380" Height="150">
+			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="380" Height="150"
+                                 ToolTip.Tip='Fully custom image menu with default theme applied and custom template'>
 			  <Menu Padding="0" Margin="0" HorizontalAlignment="Center">
 				  <MenuItem Height="64" Width="64"
             assist:MenuAssist.PopupCornerRadius="10"
@@ -287,21 +294,21 @@
 								  <Popup Name="PART_Popup"
 						   WindowManagerAddShadowHint="False"
 						   Placement="RightEdgeAlignedTop"
-						   HorizontalOffset="{DynamicResource MenuFlyoutSubItemPopupHorizontalOffset}"
+						   HorizontalOffset="-16"
 						   IsLightDismissEnabled="False"
 						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
-									  <Border Background="{DynamicResource MenuFlyoutPresenterBackground}"
-											  BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
-											  BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}"
-											  Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"
-											  MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
-											  MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
+									  <Border Background="{DynamicResource MaterialDesignPaper}"
+											  BorderBrush="{DynamicResource MenuFlyoutSeparatorColor}"
+											  BorderThickness="1"
+											  Padding="0"
+											  MaxWidth="456"
+											  MinHeight="32"
 											  HorizontalAlignment="Stretch"
-											  CornerRadius="{DynamicResource OverlayCornerRadius}">
+											  CornerRadius="5">
 										  <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
 											  <ItemsPresenter Name="PART_ItemsPresenter"
 															  ItemsPanel="{TemplateBinding ItemsPanel}"
-															  Margin="{DynamicResource MenuFlyoutScrollerMargin}"
+															  Margin="0,4,0,4"
 															  Grid.IsSharedSizeScope="True" />
 										  </ScrollViewer>
 									  </Border>
@@ -325,7 +332,8 @@
 			  </Menu>
         </showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu8" Width="380" Height="150">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu8" Width="380" Height="150"
+                                 ToolTip.Tip='Custom icon based menu with theme "NoMaterialMenu" applied'>
 				<Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}">
 					<MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt Menu, Size=24}"
 											assist:MenuAssist.PopupAnchor="TopLeft"
@@ -341,7 +349,8 @@
 				</Menu>
       </showMeTheXaml:XamlDisplay>
 			<!--****************************************************************-->
-      <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150">
+      <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150"
+                                 ToolTip.Tip='Custom icons based menu with theme "NoMaterialMenu" applied'>
         <Menu Height="48" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}" VerticalAlignment="Bottom">
           <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt RocketLaunchOutline, Size=34}" Foreground="{DynamicResource MaterialDesignBodyLight}" Margin="10,0,10,0"
 											assist:MenuAssist.PopupAnchor="TopLeft"

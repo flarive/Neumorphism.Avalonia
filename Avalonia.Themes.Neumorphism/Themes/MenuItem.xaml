@@ -141,7 +141,7 @@
                  IsLightDismissEnabled="False"
                  IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
             <Border Name="PART_PopupBorder"
-                    Background="{DynamicResource MenuFlyoutPresenterBackground}"
+                    Background="{DynamicResource MaterialDesignPaper}"
                     BorderBrush="{TemplateBinding assist:MenuAssist.PopupBorderBrush}"
                     BorderThickness="{TemplateBinding assist:MenuAssist.PopupBorderThickness}"
                     Padding="{DynamicResource MenuFlyoutPresenterThemePadding}"

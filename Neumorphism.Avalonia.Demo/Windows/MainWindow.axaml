@@ -168,14 +168,14 @@
 								</StackPanel>
 							</ListBoxItem>
 
-							<!--<ListBoxItem IsEnabled="True">
+							<ListBoxItem IsEnabled="True">
 								<StackPanel Orientation="Horizontal">
 									<icons:MaterialIcon Kind="Menu" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
 									<TextBlock Text="Menus" VerticalAlignment="Center" Margin="8,0,0,0" />
 								</StackPanel>
 							</ListBoxItem>
 
-							<ListBoxItem IsEnabled="True">
+							<!--<ListBoxItem IsEnabled="True">
 								<StackPanel Orientation="Horizontal">
 									<icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
 									<TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
@@ -271,7 +271,7 @@
 								<!--DatetimePickers-->
 								<pages:DateTimePickersDemo/>
 								<!--Menus-->
-								<!--<pages:MenusDemo/>-->
+								<pages:MenusDemo/>
 								<!--Dialogs-->
 								<!--<pages:DialogsDemo/>-->
 							</Carousel>

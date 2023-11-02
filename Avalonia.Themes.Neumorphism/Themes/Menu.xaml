@@ -114,7 +114,7 @@
                               HorizontalAlignment="Center"
                               KeyboardNavigation.TabNavigation="Continue" />
             </Border>
-            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="#ffd1d6dc"/>
+            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="{DynamicResource MaterialDesignBorderShadowColor}"/>
         </Panel>
       </ControlTemplate>
     </Setter>
@@ -144,7 +144,7 @@
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Height" Value="48"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBorderShadowColor}"/>
     <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarFlatMenuItem}" />
   </ControlTheme>
