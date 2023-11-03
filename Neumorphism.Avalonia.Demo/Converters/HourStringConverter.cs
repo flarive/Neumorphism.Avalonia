@@ -1,29 +1,29 @@
-﻿using System;
-using System.Globalization;
-using Avalonia.Data.Converters;
+﻿//using System;
+//using System.Globalization;
+//using Avalonia.Data.Converters;
 
-namespace Neumorphism.Avalonia.Demo.Converters
-{
-    public sealed class HourStringConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value is ushort v)
-            {
-                if (v == 0)
-                {
-                    return 12.ToString();
-                }
+//namespace Neumorphism.Avalonia.Demo.Converters
+//{
+//    public sealed class HourStringConverter : IValueConverter
+//    {
+//        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+//        {
+//            if (value is ushort v)
+//            {
+//                if (v == 0)
+//                {
+//                    return 12.ToString();
+//                }
 
-                return v.ToString();
-            }
+//                return v.ToString();
+//            }
 
-            return 0.ToString();
-        }
+//            return 0.ToString();
+//        }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
+//        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+//        {
+//            throw new NotImplementedException();
+//        }
+//    }
+//}

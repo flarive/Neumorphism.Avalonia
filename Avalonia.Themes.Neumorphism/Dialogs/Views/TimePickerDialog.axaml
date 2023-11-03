@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:main="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs"
+        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
+        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
+        xmlns:themeControls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.TimePickerDialog"
+        SizeToContent="WidthAndHeight"
+        Title="{CompiledBinding WindowTitle}"
+        CanResize="False"
+        WindowStartupLocation="{CompiledBinding WindowStartupLocation}"
+        HorizontalContentAlignment="Stretch"
+        x:DataType="viewModels:TimePickerDialogViewModel">
+  
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:PadNumbersConverter x:Key="PadNumbersConverter"/>
+            <converters:StringToTransformConverter x:Key="StringToTransformConverter"/>
+            <converters:HourStringConverter x:Key="HourString"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Window.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+    
+    <controls:EmbeddedDialogControl>
+        <ScrollViewer Name="PART_ScrollView">
+            <StackPanel Name="PART_ContentPanel">
+                <StackPanel Margin="0,24,0,0" >
+                  <themeControls:ExtendedTimePicker SelectedTime="{Binding UnsetMeetingTime}"
+                                        Watermark="hh:mm" ClockIdentifier="24HourClock"
+                                        ToolTip.Tip="24 hour clock"/>
+                </StackPanel>            
+            </StackPanel>
+        </ScrollViewer>
+    </controls:EmbeddedDialogControl>
+</Window>

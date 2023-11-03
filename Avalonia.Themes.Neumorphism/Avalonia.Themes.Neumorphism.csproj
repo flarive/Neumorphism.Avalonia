@@ -24,24 +24,11 @@
 	  <PackageReference Include="Avalonia" Version="11.0.5" />
 	  <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
 	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.5" />
-    <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.5" />
+	<PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.5" />
 	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.5" />
 	  <PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
     <PackageReference Include="SkiaSharp" Version="2.88.6" />
     <AvaloniaResource Include="**/*.xaml" />  
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Fonts\SF\SFProText-Light.ttf" />
-    <None Remove="Fonts\SF\SFProText-Medium.ttf" />
-    <None Remove="Fonts\SF\SFProText-Regular.ttf" />
-    <None Remove="Themes\CalendarDatePicker.xaml" />
-    <None Remove="Themes\CircularProgress.xaml" />
-    <None Remove="Themes\DialogHost.xaml" />
-    <None Remove="Themes\TextBlock.xaml" />
-    <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
-    <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
-    <None Remove="Fonts\Roboto\Roboto-Regular.ttf" />
-    <None Remove="Fonts\Roboto\Roboto-Thin.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Fonts\SF\SFProText-Light.ttf" />

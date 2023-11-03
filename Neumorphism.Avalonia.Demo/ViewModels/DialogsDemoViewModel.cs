@@ -6,7 +6,6 @@ using Avalonia.Platform;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
-using Neumorphism.Avalonia.Demo.Dialogs;
 using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels

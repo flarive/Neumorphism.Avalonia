@@ -2,7 +2,8 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Avalonia.Themes.Neumorphism.Converters {
+namespace Avalonia.Themes.Neumorphism.Converters
+{
     public sealed class DateTimeToOffsetConverter : IValueConverter {
         public static DateTimeToOffsetConverter Instance { get; } = new DateTimeToOffsetConverter();
 

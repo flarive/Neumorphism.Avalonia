@@ -1,0 +1,29 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
+        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.CustomDialog"
+        x:DataType="viewModels:CustomDialogViewModel">
+  
+  
+    <Window.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+    
+    <!--<controls:EmbeddedDialogControl>
+        <ScrollViewer Name="PART_ScrollView">
+            <StackPanel Name="PART_ContentPanel">
+                <TextBlock Name="PART_SupportingText"
+                           Classes="Body1"
+                           IsVisible="{CompiledBinding !!ContentMessage.Length}"
+                           Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}"/>
+            
+                <ContentPresenter Name="PART_ContentPresenter"
+                                  Content="{CompiledBinding Content}"
+                                  ContentTemplate="{CompiledBinding ContentTemplate}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </controls:EmbeddedDialogControl>-->
+</Window>

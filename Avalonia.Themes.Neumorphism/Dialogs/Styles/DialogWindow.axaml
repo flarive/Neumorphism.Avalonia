@@ -1,0 +1,11 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels" >
+  
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/EmbeddedDialogControl.axaml"/>
+
+    <Style Selector="Window" x:DataType="viewModels:DialogWindowViewModel">
+        <Setter Property="Title" Value="{CompiledBinding WindowTitle}" />
+        <Setter Property="WindowStartupLocation" Value="{CompiledBinding WindowStartupLocation}" />
+    </Style>
+</Styles>

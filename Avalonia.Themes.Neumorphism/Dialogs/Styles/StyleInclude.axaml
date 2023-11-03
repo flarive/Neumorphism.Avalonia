@@ -1,0 +1,22 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls" >
+  
+    <Style Selector="Window">
+        <Setter Property="CanResize" Value="False"/>
+        <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    </Style>
+    
+    <Style Selector="Window[SystemDecorations=None]">
+        <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+        <Setter Property="TransparencyLevelHint" Value="Transparent" />
+    </Style>
+    
+    <Style Selector="Window[SystemDecorations=Full] controls|EmbeddedDialogControl /template/ Border#PART_RootBorder">
+        <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+</Styles>

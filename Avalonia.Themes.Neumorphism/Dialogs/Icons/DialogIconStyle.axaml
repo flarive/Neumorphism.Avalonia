@@ -1,0 +1,21 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Icons">
+	
+    <Style Selector="icons|DialogIcon">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Viewbox Stretch="Uniform"
+                             ClipToBounds="False"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch">
+                        <Path Name="PATH_DialogIconVectorPath"
+                              Data="{TemplateBinding Data}"
+                              Fill="{TemplateBinding Foreground}" />
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</Styles>

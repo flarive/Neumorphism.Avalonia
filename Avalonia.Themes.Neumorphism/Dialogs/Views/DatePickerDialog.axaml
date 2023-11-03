@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:main="clr-namespace:Neumorphism.Avalonia.Demo.Dialogs"
+        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
+        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
+        xmlns:themeControls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.DatePickerDialog"
+        SizeToContent="WidthAndHeight" CanResize="False"
+        HorizontalContentAlignment="Stretch"
+        Title="{CompiledBinding WindowTitle}"
+        WindowStartupLocation="{CompiledBinding WindowStartupLocation}"
+        x:DataType="viewModels:DatePickerDialogViewModel">
+  
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:DateStringConverter x:Key="DateStringConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Styles>
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml" />
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml" />
+        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
+    </Window.Styles>
+
+  <controls:EmbeddedDialogControl>
+    <ScrollViewer Name="PART_ScrollView">
+      <StackPanel Name="PART_ContentPanel">
+        <StackPanel Margin="0,24,0,0" >
+          <themeControls:ExtendedCalendarDatePicker UseFloatingWatermark="True"
+                                     assist:DatePickerAssist.Label="Birthdate" Watermark="???" Width="180"
+                                     ToolTip.Tip="Date with short display format, floating watermark and no selected date yet"
+                                     SelectedDate="{Binding DateTime}" />
+        </StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+  </controls:EmbeddedDialogControl>
+
+    
+</Window>
