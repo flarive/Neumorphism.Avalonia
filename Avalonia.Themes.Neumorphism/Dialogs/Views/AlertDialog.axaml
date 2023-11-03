@@ -1,7 +1,7 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
-        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Control"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
         x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.AlertDialog"
         x:DataType="viewModels:AlertDialogViewModel">
   
@@ -11,7 +11,7 @@
         <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
     </Window.Styles>
     
-    <!--<controls:EmbeddedDialogControl>
+    <controls:EmbeddedDialogControl>
         <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
             <StackPanel Name="PART_ContentPanel">
                 <TextBlock Name="PART_SupportingText"
@@ -20,5 +20,5 @@
                            Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}"/>              
             </StackPanel>
         </ScrollViewer>
-    </controls:EmbeddedDialogControl>-->
+    </controls:EmbeddedDialogControl>
 </Window>

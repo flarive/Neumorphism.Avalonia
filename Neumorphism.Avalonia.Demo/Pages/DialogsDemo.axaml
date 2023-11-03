@@ -24,20 +24,18 @@
 
     <StackPanel Margin="16, 0" >
         <TextBlock Classes="Headline4 Subheadline" Text="Dialogs" />
-        <Grid ColumnDefinitions="*,*">
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*">
 
-            <StackPanel>
-                <TextBlock Classes="Headline6 Subheadline2" Text="DialogHost" />
-                <StackPanel>
-                    <StackPanel Spacing="20">
-                        <Button Width="NaN" Height="32" Click="OpenDialogWithView">Open dialog with view</Button>
-                        <Button Width="NaN" Height="32" Click="OpenDialogWithModel">Open dialog with model</Button>
-                    </StackPanel>
+            <Grid RowDefinitions="Auto,*">
+                <TextBlock Grid.Row="0" Classes="Headline6 Subheadline2" Text="DialogHost (fake popup window)" />
+                <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
+                    <Button Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Click="OpenDialogWithView">Open dialog from view</Button>
+                    <Button Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Click="OpenDialogWithModel">Open dialog from model</Button>
                 </StackPanel>
-            </StackPanel>
+            </Grid>
 
             <StackPanel Grid.Column="1" >
-                <TextBlock Classes="Headline6 Subheadline2" Text="Builder dialogs" />
+                <TextBlock Classes="Headline6 Subheadline2" Text="Builder dialogs (real child windows)" />
 
                   <StackPanel Orientation="Vertical">
 

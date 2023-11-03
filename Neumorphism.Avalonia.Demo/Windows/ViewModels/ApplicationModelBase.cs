@@ -50,6 +50,20 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
         }
 
 
+        private bool _isDialogOpened;
+        public bool IsDialogOpened
+        {
+            get { return _isDialogOpened; }
+            set
+            {
+                _isDialogOpened = value;
+                OnPropertyChanged(nameof(IsDialogOpened));
+            }
+        }
+
+
+
+
         public ApplicationModelBase(IThemeSwitch themeSwitch)
         {
             AboutEnabled = true;
@@ -66,6 +80,11 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
         public abstract void HelpAboutMethod();
         public abstract void AppExitCommand();
         public abstract void SwitchThemeCommand(bool dark);
+
+
+
+
+
 
 
         protected void SayHello(string msg)

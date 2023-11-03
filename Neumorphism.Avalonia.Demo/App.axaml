@@ -1,6 +1,6 @@
 <Application xmlns="https://github.com/avaloniaui"
 			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
 			xmlns:theme="clr-namespace:Avalonia.Themes.Neumorphism;assembly=Avalonia.Themes.Neumorphism"
 			xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
       xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
@@ -8,7 +8,7 @@
 			RequestedThemeVariant="Light"
 			x:Class="Neumorphism.Avalonia.Demo.App"
 			x:CompileBindings="True"
-			x:DataType="viewModels1:ApplicationModelBase">
+			x:DataType="viewModels:ApplicationModelBase">
 
 
 

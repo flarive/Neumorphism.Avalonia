@@ -12,7 +12,7 @@
         <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
     </Window.Styles>
     
-    <!--<controls:EmbeddedDialogControl>
+    <controls:EmbeddedDialogControl>
         <ScrollViewer Name="PART_ScrollView">
             <StackPanel Name="PART_ContentPanel">
                 <TextBlock Name="PART_SupportingText"
@@ -25,5 +25,5 @@
                                   ContentTemplate="{CompiledBinding ContentTemplate}"/>
             </StackPanel>
         </ScrollViewer>
-    </controls:EmbeddedDialogControl>-->
+    </controls:EmbeddedDialogControl>
 </Window>

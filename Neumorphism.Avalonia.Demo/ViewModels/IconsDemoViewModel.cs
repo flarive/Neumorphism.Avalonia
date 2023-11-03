@@ -2,14 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Avalonia.Controls;
-using Avalonia.Data;
-using Avalonia.Input.Platform;
 using Avalonia.Themes.Neumorphism.Models;
 using Avalonia.Threading;
 using Material.Icons;
 using Neumorphism.Avalonia.Demo.Models;
-using Neumorphism.Avalonia.Demo.Windows;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {

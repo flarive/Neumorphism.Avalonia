@@ -98,8 +98,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             var window = new TextFieldDialog();
             var context = new TextFieldDialogViewModel(window);
 
-            context.TextFields =
-                new ObservableCollection<TextFieldViewModel>(TextFieldsBuilder(context, @params.TextFields));
+            context.TextFields = new ObservableCollection<TextFieldViewModel>(TextFieldsBuilder(context, @params.TextFields));
 
             ApplyBaseParams(context, @params);
 
