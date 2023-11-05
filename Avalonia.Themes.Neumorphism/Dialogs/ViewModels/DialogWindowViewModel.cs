@@ -122,30 +122,45 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
 
         #endregion
 
-        private ObservableCollection<DialogButtonViewModel> _neutralDialogButton;
+        private ObservableCollection<DialogButtonViewModel> _leftDialogButtons;
 
-        public ObservableCollection<DialogButtonViewModel> NeutralDialogButton
+        public ObservableCollection<DialogButtonViewModel> LeftDialogButtons
         {
-            get => _neutralDialogButton;
+            get => _leftDialogButtons;
             internal set
             {
-                _neutralDialogButton = value;
+                _leftDialogButtons = value;
                 OnPropertyChanged();
             }
         }
 
 
-        private ObservableCollection<DialogButtonViewModel> _dialogButtons;
 
-        public ObservableCollection<DialogButtonViewModel> DialogButtons
+        private ObservableCollection<DialogButtonViewModel> _centerDialogButtons;
+
+        public ObservableCollection<DialogButtonViewModel> CenterDialogButtons
         {
-            get => _dialogButtons;
+            get => _centerDialogButtons;
             internal set
             {
-                _dialogButtons = value;
+                _centerDialogButtons = value;
                 OnPropertyChanged();
             }
         }
+
+
+        private ObservableCollection<DialogButtonViewModel> _rightDialogButtons;
+
+        public ObservableCollection<DialogButtonViewModel> RightDialogButtons
+        {
+            get => _rightDialogButtons;
+            internal set
+            {
+                _rightDialogButtons = value;
+                OnPropertyChanged();
+            }
+        }
+       
 
         private Orientation _buttonsStackOrientation;
 

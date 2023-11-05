@@ -113,8 +113,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -127,8 +127,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -345,8 +345,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -359,8 +359,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -434,8 +434,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>

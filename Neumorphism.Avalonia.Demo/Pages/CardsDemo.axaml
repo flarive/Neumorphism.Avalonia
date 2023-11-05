@@ -21,9 +21,9 @@
     </StackPanel.Styles>
 
 
-    <TextBlock Classes="Headline4 Subheadline" Text="Cards" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Cards" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
-    <TextBlock Classes="Headline6 Subheadline2" Text="Outset cards" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Outset cards" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
     <WrapPanel HorizontalAlignment="Stretch">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Cards0">
@@ -86,7 +86,7 @@
     </WrapPanel>
 
 
-    <TextBlock Classes="Headline6 Subheadline2" Text="Inset cards" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Inset cards" Margin="0,30,0,0" Foreground="{DynamicResource MaterialDesignMediumGray}" />
     <WrapPanel HorizontalAlignment="Stretch">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="InsetCards0">

@@ -13,7 +13,7 @@
   <UserControl.Resources>
     <LinearGradientBrush x:Key="MaterialDesignLinearGradient1" StartPoint="0%,0%" EndPoint="0%,100%">
       <GradientStop Offset="0" Color="Transparent" />
-      <GradientStop Offset="1" Color="{DynamicResource MaterialDesignSilverGrayColor}" />
+      <GradientStop Offset="1" Color="{DynamicResource MaterialDesignSilverGray}" />
     </LinearGradientBrush>
   </UserControl.Resources>
   
@@ -49,7 +49,7 @@
 
 
 
-  <StackPanel Margin="16, 0" MaxWidth="1080">
+  <StackPanel Margin="20" MaxWidth="1080">
     <StackPanel.Styles>
       <Style Selector="TextBlock.Content, TextBlock.Subheadline">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

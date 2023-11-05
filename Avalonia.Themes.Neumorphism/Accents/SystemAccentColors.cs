@@ -60,10 +60,10 @@ namespace Avalonia.Themes.Neumorphism.Accents
         public const string MaterialDesignTextAreaBorderKey = "MaterialDesignTextAreaBorder";
         public const string MaterialDesignTextAreaInactiveBorderKey = "MaterialDesignTextAreaInactiveBorder";
         public const string MaterialDesignDataGridRowHoverBackgroundKey = "MaterialDesignDataGridRowHoverBackground";
-        public const string MaterialDesignShadowLightColorKey = "MaterialDesignShadowLightColor";
-        public const string MaterialDesignShadowDarkColorKey = "MaterialDesignShadowDarkColor";
-        public const string MaterialDesignBorderShadowColorKey = "MaterialDesignBorderShadowColor";
-        public const string MaterialDesignDisabledNoTransparencyColorKey = "MaterialDesignDisabledNoTransparencyColor";
+        public const string MaterialDesignShadowLightKey = "MaterialDesignShadowLight";
+        public const string MaterialDesignShadowDarkKey = "MaterialDesignShadowDark";
+        public const string MaterialDesignBorderShadowKey = "MaterialDesignBorderShadow";
+        public const string MaterialDesignDisabledNoTransparencyKey = "MaterialDesignDisabledNoTransparency";
 
 
 

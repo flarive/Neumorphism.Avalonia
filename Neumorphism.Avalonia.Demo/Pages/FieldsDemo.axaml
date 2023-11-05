@@ -15,7 +15,7 @@
 
 
 
-  <StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
+  <StackPanel Margin="20" HorizontalAlignment="Stretch">
     <StackPanel.Styles>
       <Style Selector="TextBox">
         <Setter Property="Margin" Value="0"></Setter>
@@ -23,11 +23,11 @@
     </StackPanel.Styles>
 
     <!--Classic fields-->
-    <TextBlock Classes="Headline4 Subheadline" Text="Classic fields" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Classic fields" Margin="0,30,0,0" Foreground="{DynamicResource MaterialDesignDarkGray}" />
     <WrapPanel HorizontalAlignment="Stretch">
       <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
-          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="SingleLineTextBoxes0">
             <TextBox UseFloatingWatermark="False" Watermark="Regular watermarked textbox" ToolTip.Tip="Regular watermarked textbox with default theme applied"/>
@@ -59,7 +59,7 @@
         </StackPanel>
       </StackPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="MultilineFields0" VerticalAlignment="Top">
@@ -80,11 +80,11 @@
     </WrapPanel>
 
     <!--Filled fields-->
-    <TextBlock Classes="Headline4 Subheadline" Text="Filled fields" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Filled fields" Foreground="{DynamicResource MaterialDesignDarkGray}" Margin="0,30,0,0" />
     <WrapPanel HorizontalAlignment="Stretch">
       <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
-          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="SingleLineFields0">
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxFilled}"
@@ -127,7 +127,7 @@
         </StackPanel>
       </StackPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="MultilineFields2" VerticalAlignment="Top">
@@ -147,11 +147,11 @@
     </WrapPanel>
 
     <!--Outlined fields-->
-    <TextBlock Classes="Headline4 Subheadline" Text="Outline fields" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Outline fields" Foreground="{DynamicResource MaterialDesignDarkGray}" Margin="0,30,0,0" />
     <WrapPanel HorizontalAlignment="Stretch">
       <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
-          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Margin="14,20,0,20" />
+          <TextBlock Classes="Headline6 Subheadline2" Text="Single-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="OutlineSinglelineFields0">
             <TextBox UseFloatingWatermark="True" Theme="{StaticResource TextBoxOutline}"
@@ -194,7 +194,7 @@
         </StackPanel>
       </StackPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Margin="14,20,0,20" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Multi-Line fields" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="14,20,0,20" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="OutlineMultilineFields0" VerticalAlignment="Top">
@@ -217,7 +217,7 @@
     <WrapPanel HorizontalAlignment="Stretch">
       <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
-          <TextBlock Classes="Headline4 Subheadline" Text="Header fields" Margin="0,30,0,0" />
+          <TextBlock Classes="Headline4 Subheadline" Text="Header fields" Foreground="{DynamicResource MaterialDesignDarkGray}" Margin="0,30,0,0" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HeaderFields0">
             <TextBox Theme="{StaticResource TextBoxHeader}"
@@ -288,7 +288,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HeaderFields3">
-            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
+            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadow}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
                      Watermark="Enter your email"
                      Text="{Binding Email}"
 					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left custom header'
@@ -302,7 +302,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HeaderFields4">
-            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadowColor}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
+            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadow}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
                      Watermark="Enter your email"
                      Text="{Binding Email}"
 					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left and right custom header'
@@ -328,7 +328,7 @@
     <WrapPanel HorizontalAlignment="Stretch" Margin="0,0,0,50">
       <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical">
-          <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" Margin="0,30,0,0" />
+          <TextBlock Classes="Headline6 Subheadline2" Text="Numeric Up Down" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown0">
             <NumericUpDown Minimum="0" Maximum="100" Increment="1" Value="0" Foreground="#FF555555"

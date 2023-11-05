@@ -220,7 +220,7 @@
 			<SolidColorBrush x:Key="SystemRegionBrush" Color="{StaticResource SystemRegionColor}" />
 
 			<!--new !!!-->
-			<SolidColorBrush x:Key="MaterialDesignPaperBrush" Color="{StaticResource MaterialDesignPaper}" />
+			<SolidColorBrush x:Key="MaterialDesignPaperBrush" Color="{DynamicResource MaterialDesignPaper}" />
 		</ResourceDictionary>
 
 
@@ -385,7 +385,7 @@
 			<SolidColorBrush x:Key="SystemRegionBrush" Color="{StaticResource SystemRegionColor}" />
 
 			<!--new !!!-->
-			<SolidColorBrush x:Key="MaterialDesignPaperBrush" Color="{StaticResource MaterialDesignPaper}" />
+			<SolidColorBrush x:Key="MaterialDesignPaperBrush" Color="{DynamicResource MaterialDesignPaper}" />
 			
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>

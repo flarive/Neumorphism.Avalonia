@@ -20,8 +20,8 @@
     <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
   </UserControl.Resources>
 
-  <StackPanel Margin="16,0,16,50">
-    <TextBlock Classes="Headline4 Subheadline" Text="DateTime pickers" />
+  <StackPanel Margin="20">
+    <TextBlock Classes="Headline4 Subheadline" Text="DateTime pickers" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
     <StackPanel Orientation="Vertical">
       <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -44,7 +44,7 @@
 
         
         <StackPanel Orientation="Vertical" Width="350">
-          <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" />
+          <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Date" Foreground="{DynamicResource MaterialDesignMediumGray}" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker1">
             <StackPanel Orientation="Vertical">
@@ -82,7 +82,7 @@
 
 
         <StackPanel Orientation="Vertical" Margin="40,0,0,0" Width="260">
-          <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Time" />
+          <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Time" Foreground="{DynamicResource MaterialDesignMediumGray}" />
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker5">
             <controls:ExtendedTimePicker MinuteIncrement="15" Watermark="hh:mm tt"
@@ -112,7 +112,7 @@
 
 
         <StackPanel Orientation="Vertical" Margin="40,0,0,0" Width="460">
-        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Range" />
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Range" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="DateTimePicker9">
           <StackPanel Orientation="Horizontal" ToolTip.Tip="Date range with short display format, watermark and already selected dates">

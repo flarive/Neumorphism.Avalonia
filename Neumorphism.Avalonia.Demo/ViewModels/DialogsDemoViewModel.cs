@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
+using DialogHostAvalonia;
+using Neumorphism.Avalonia.Demo.Models;
 using Neumorphism.Avalonia.Demo.Windows;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
 
@@ -21,12 +25,37 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
 
 
-        public DialogViewModel AlertDialog { get; }
+        public DialogViewModel InfoDialog { get; }
         public DialogViewModel ConfirmDialog { get; }
         public DialogViewModel ConfirmSequenceDialog { get; }
         public DialogViewModel ImageDialog { get; }
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
+
+
+        
+
+        private string _openDialogWithViewResult;
+        public string OpenDialogWithViewResult
+        {
+            get { return _openDialogWithViewResult; }
+            set
+            {
+                _openDialogWithViewResult = value;
+                OnPropertyChanged(nameof(OpenDialogWithViewResult));
+            }
+        }
+
+        private string _openDialogWithModelResult;
+        public string OpenDialogWithModelResult
+        {
+            get { return _openDialogWithModelResult; }
+            set
+            {
+                _openDialogWithModelResult = value;
+                OnPropertyChanged(nameof(OpenDialogWithModelResult));
+            }
+        }
 
 
 
@@ -43,7 +72,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 _appModelBase = _window.DataContext as ApplicationModelBase;
             }
 
-            AlertDialog = new DialogViewModel("Alert dialog", CreateAlertDialog);
+            InfoDialog = new DialogViewModel("Alert dialog", CreateInfoDialog);
             ConfirmDialog = new DialogViewModel("Confirm dialog", CreateConfirmDialog);
             ConfirmSequenceDialog = new DialogViewModel("Confirm dialog sequence", CreateConfirmSequenceDialog);
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
@@ -54,14 +83,16 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
 
 
-        private async IAsyncEnumerable<string> CreateAlertDialog()
+        private async IAsyncEnumerable<string> CreateInfoDialog()
         {
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
-                ContentHeader = "Welcome to use Material.Avalonia",
-                SupportingText = "Enjoy Material Design in AvaloniaUI!",
-                WindowTitle = "Alert dialog",
-                StartupLocation = WindowStartupLocation.CenterOwner
+                ContentHeader = "Welcome to Neumorphism design !",
+                SupportingText = "Enjoy Neumorphism Design in AvaloniaUI !",
+                WindowTitle = "Info dialog",
+                DialogHeaderIcon = DialogIconKind.Info,
+                DialogIcon = DialogIconKind.Info,
+                StartupLocation = WindowStartupLocation.CenterOwner,
             });
 
 
@@ -87,13 +118,16 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 NegativeResult = new DialogResult("cancel"),
                 DialogHeaderIcon = DialogIconKind.Help,
                 Width = 480,
-                DialogButtons = new[]
+                LeftDialogButtons = new[]
                 {
                     new DialogButton
                     {
                         Content = "CANCEL",
                         Result = "cancel"
-                    },
+                    }
+                },
+                RightDialogButtons = new[]
+                {
                     new DialogButton
                     {
                         Content = "DELETE",
@@ -121,13 +155,16 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 NegativeResult = new DialogResult("cancel"),
                 Borderless = true,
                 Width = 480,
-                DialogButtons = new[]
+                LeftDialogButtons = new[]
                 {
                     new DialogButton
                     {
                         Content = "CANCEL",
                         Result = "cancel"
-                    },
+                    }
+                },
+                RightDialogButtons = new[]
+                {
                     new DialogButton
                     {
                         Content = "DELETE",
@@ -170,13 +207,12 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 SupportingText = "Enjoy Material Design in AvaloniaUI!",
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 Borderless = true,
-                // Create Image control
                 DialogIcon = new Bitmap(icon),
-                NeutralDialogButtons = new[]
+                CenterDialogButtons = new[]
                 {
                     new DialogButton
                     {
-                        Content = "READ MORE...",
+                        Content = "READ MORE",
                         Result = "read_more"
                     }
                 }
@@ -220,7 +256,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                         Validater = ValidatePassword
                     }
                 },
-                DialogButtons = new[]
+                RightDialogButtons = new[]
                 {
                     new DialogButton
                     {
@@ -282,7 +318,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                         HelperText = "* Required"
                     }
                 },
-                DialogButtons = new[]
+                RightDialogButtons = new[]
                 {
                     new DialogButton
                     {
@@ -318,7 +354,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 Borderless = true,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 ImplicitValue = _previousTimePickerResult,
-                DialogButtons = new[]
+                RightDialogButtons = new[]
                 {
                     new DialogButton
                     {
@@ -350,7 +386,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 Borderless = true,
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 ImplicitValue = _previousDatePickerResult,
-                DialogButtons = new[]
+                RightDialogButtons = new[]
                 {
                     new DialogButton
                     {
@@ -372,6 +408,35 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             // ReSharper disable once SimplifyStringInterpolation
             yield return $"TimeSpan: {r.ToString("d")}";
             _previousDatePickerResult = r;
+        }
+
+
+        public void OpenDialogWithViewCommand()
+        {
+            // View DialogSampleView is defined in <UserControl.Resources> in DialogsDemo.axaml
+            var view = _window.Resources["DialogSampleView"]!;
+            if (view != null)
+            {
+                DialogHost.Show(view, "MainDialogHost", OpenDialogWithViewClose);
+            }
+        }
+
+        private void OpenDialogWithViewClose(object sender, DialogClosingEventArgs eventArgs)
+        {
+            OpenDialogWithViewResult = "Result : lllll";
+        }
+
+
+        public void OpenDialogWithModelCommand()
+        {
+            // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
+            var model = new DialogSampleModel(new Random().Next(0, 100));
+            DialogHost.Show(model, "MainDialogHost", OpenDialogWithModelClose);
+        }
+
+        private void OpenDialogWithModelClose(object sender, DialogClosingEventArgs eventArgs)
+        {
+            OpenDialogWithModelResult = "Result : xxxx";
         }
     }
 }

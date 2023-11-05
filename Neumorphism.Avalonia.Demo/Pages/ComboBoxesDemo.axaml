@@ -12,12 +12,12 @@
                 x:DataType="viewModels:ComboBoxesDemoViewModel"
                 x:Class="Neumorphism.Avalonia.Demo.Pages.ComboBoxesDemo">
 
-	<StackPanel Margin="16, 0" HorizontalAlignment="Stretch">
-		<TextBlock Classes="Headline4 Subheadline" Text="ComboBoxes" />
+	<StackPanel Margin="20" HorizontalAlignment="Stretch">
+		<TextBlock Classes="Headline4 Subheadline" Text="ComboBoxes" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
 			<StackPanel>
-				<TextBlock Classes="Headline6 Subheadline2" Text="Classic comboboxes" />
+				<TextBlock Classes="Headline6 Subheadline2" Text="Classic comboboxes" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes0">
@@ -113,7 +113,7 @@
 
 		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
 			<StackPanel>
-				<TextBlock Classes="Headline6 Subheadline2" Text="Outset comboboxes" />
+				<TextBlock Classes="Headline6 Subheadline2" Text="Outset comboboxes" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes0">
@@ -208,7 +208,7 @@
 
 		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
 			<StackPanel>
-				<TextBlock Classes="Headline6 Subheadline2" Text="Filled comboboxes" />
+				<TextBlock Classes="Headline6 Subheadline2" Text="Filled comboboxes" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes0">
@@ -289,7 +289,7 @@
 
 		<WrapPanel HorizontalAlignment="Stretch" Margin="0,30,0,0">
 			<StackPanel Margin="0,0,0,50">
-				<TextBlock Classes="Headline6 Subheadline2" Text="Outline comboboxes" />
+				<TextBlock Classes="Headline6 Subheadline2" Text="Outline comboboxes" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes0">

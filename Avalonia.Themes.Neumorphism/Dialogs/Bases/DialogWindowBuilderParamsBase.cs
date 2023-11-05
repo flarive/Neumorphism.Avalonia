@@ -30,13 +30,19 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Bases
         /// Build dialog buttons stack (left side). 
         /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
         /// </summary>
-        public DialogButton[] NeutralDialogButtons;
+        public DialogButton[] LeftDialogButtons;
 
         /// <summary>
-        /// Build dialog buttons stack. 
+        /// Build dialog buttons stack (middle).
         /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
         /// </summary>
-        public DialogButton[] DialogButtons;
+        public DialogButton[] CenterDialogButtons;
+
+        /// <summary>
+        /// Build dialog buttons stack (right side).
+        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
+        /// </summary>
+        public DialogButton[] RightDialogButtons;
 
         /// <summary>
         /// Define result after close the dialog not from buttons

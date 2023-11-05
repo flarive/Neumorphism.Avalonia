@@ -200,8 +200,8 @@
 							<Border.BoxShadow>
 								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 									<Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-									<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-									<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+									<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 								</MultiBinding>
 							</Border.BoxShadow>
 
@@ -222,8 +222,8 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -273,8 +273,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -295,7 +295,7 @@
 
 		<!--Filled-->
     <Style Selector="^.Filled[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
-      <Setter Property="Background" Value="{DynamicResource MaterialDesignDisabledNoTransparencyColor}"/>
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignDisabledNoTransparency}"/>
     </Style>
 
     <Style Selector="^.Filled /template/ Border#PART_Border">
@@ -314,8 +314,8 @@
 				<Setter.Value>
 					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 					</MultiBinding>
 				</Setter.Value>
 			</Setter>
@@ -380,8 +380,8 @@
 							<Border.BoxShadow>
 							  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-								<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-								<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+								<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+								<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 							  </MultiBinding>
 							</Border.BoxShadow>
 
@@ -393,8 +393,8 @@
 								<Border.BoxShadow>
 									<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
 										<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-										<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-										<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+										<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+										<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 									</MultiBinding>
 								</Border.BoxShadow>
 
@@ -460,8 +460,8 @@
               <Border.BoxShadow>
                 <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
                   <Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </Border.BoxShadow>
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"

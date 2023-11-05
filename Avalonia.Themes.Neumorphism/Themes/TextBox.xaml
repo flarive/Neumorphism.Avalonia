@@ -107,8 +107,8 @@
             <Border.BoxShadow>
               <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
                 <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                <DynamicResource ResourceKey="MaterialDesignShadowDark" />
               </MultiBinding>
             </Border.BoxShadow>
 
@@ -343,8 +343,8 @@
 							<Border.BoxShadow>
 							  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="3">
 								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-								<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-								<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+								<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+								<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 							  </MultiBinding>
 							</Border.BoxShadow>
 
@@ -358,8 +358,8 @@
 									<Border.BoxShadow>
 										<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
 											<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-											<DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-											<DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+											<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+											<DynamicResource ResourceKey="MaterialDesignShadowDark" />
 										</MultiBinding>
 									</Border.BoxShadow>
                 </Border>
@@ -503,8 +503,8 @@
             <Border.BoxShadow>
               <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
                 <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                <DynamicResource ResourceKey="MaterialDesignShadowDark" />
               </MultiBinding>
             </Border.BoxShadow>
 

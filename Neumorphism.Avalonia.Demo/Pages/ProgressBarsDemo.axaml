@@ -14,11 +14,11 @@
 	            x:Class="Neumorphism.Avalonia.Demo.Pages.ProgressBarsDemo">
 
 
-	<StackPanel Margin="16,0,16,50">
-    <TextBlock Classes="Headline4 Subheadline" Text="Progress bars" />
+	<StackPanel Margin="20">
+    <TextBlock Classes="Headline4 Subheadline" Text="Progress bars" Foreground="{DynamicResource MaterialDesignDarkGray}" />
     <WrapPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Linear progress bars" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Linear progress bars" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="ProgressIndicators0">
           <ProgressBar Width="260" Value="0" ToolTip.Tip="Regular horizontal progress bar with default theme applied and value 0" />
@@ -57,7 +57,7 @@
           </ProgressBar>
         </showMeTheXaml:XamlDisplay>
         <!--****************************************************************-->
-        <TextBlock Classes="Headline6 Subheadline2" Text="Outset Linear progress bars" Margin="0,30,0,0" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Outset Linear progress bars" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="OutsetProgressIndicators0">
           <ProgressBar Theme="{StaticResource ProgressBarOutset}" Width="260" Value="0" ToolTip.Tip='Horizontal progress bar with theme "ProgressBarOutset" applied and value 0' />
@@ -101,7 +101,7 @@
 
       <StackPanel Orientation="Vertical">
 
-        <TextBlock Classes="Headline6 Subheadline2" TextAlignment="Center" HorizontalAlignment="Center" Text="Circular progress bars" />
+        <TextBlock Classes="Headline6 Subheadline2" TextAlignment="Center" HorizontalAlignment="Center" Text="Circular progress bars" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 
         <StackPanel Orientation="Horizontal">
 
@@ -293,7 +293,7 @@
       </StackPanel>
 
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical progress bars" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical progress bars" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
@@ -336,7 +336,7 @@
           <!--****************************************************************-->
         </StackPanel>
 
-        <TextBlock Classes="Headline6 Subheadline2" Text="Outset vertical progress bars" Margin="0,30,0,0" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Outset vertical progress bars" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
 
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->

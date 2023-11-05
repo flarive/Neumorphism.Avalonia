@@ -21,11 +21,11 @@ namespace Avalonia.Themes.Neumorphism.Converters
                 string colorLight = values[1].ToString();
                 string colorDark = values[2].ToString();
 
-                //-5 -5 20 {MaterialDesignShadowLightColor}, 5 5 20 {MaterialDesignShadowDarkColor}
+                //-5 -5 20 {MaterialDesignShadowLight}, 5 5 20 {MaterialDesignShadowDark}
                 if (!string.IsNullOrEmpty(boxShadowsTemplate))
                 {
-                    boxShadowsTemplate = boxShadowsTemplate.Replace("{MaterialDesignShadowLightColor}", colorLight);
-                    boxShadowsTemplate = boxShadowsTemplate.Replace("{MaterialDesignShadowDarkColor}", colorDark);
+                    boxShadowsTemplate = boxShadowsTemplate.Replace("{MaterialDesignShadowLight}", colorLight);
+                    boxShadowsTemplate = boxShadowsTemplate.Replace("{MaterialDesignShadowDark}", colorDark);
 
                     b = BoxShadows.Parse(boxShadowsTemplate);
                 }

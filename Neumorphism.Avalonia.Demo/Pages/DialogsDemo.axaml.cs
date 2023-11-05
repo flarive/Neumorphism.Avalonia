@@ -28,22 +28,5 @@ namespace Neumorphism.Avalonia.Demo.Pages
 
             base.OnApplyTemplate(e);
         }
-
-        private void OpenDialogWithView(object sender, RoutedEventArgs e)
-        {
-            // View DialogSampleView is defined in <UserControl.Resources> in DialogsDemo.axaml
-            var view = this.Resources["DialogSampleView"]!;
-            if (view != null)
-            {
-                DialogHost.Show(view, "MainDialogHost");
-            }
-        }
-
-        private void OpenDialogWithModel(object sender, RoutedEventArgs e)
-        {
-            // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
-            var model = new DialogSampleModel(new Random().Next(0, 100));
-            DialogHost.Show(model, "MainDialogHost");
-        }
     }
 }

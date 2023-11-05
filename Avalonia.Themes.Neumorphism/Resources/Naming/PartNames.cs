@@ -203,9 +203,15 @@
         public static string PartButtonsPanel => "PART_ButtonsPanel";
 
 
-        public static string PartButtonPlacement => "PART_ButtonPlacement";
+        
 
-        public static string PartNeutralButtonPlacement => "PART_NeutralButtonPlacement";
+        public static string PartLeftButtonPlacement => "PART_LeftButtonPlacement";
+
+        public static string PartCenterButtonPlacement => "PART_CenterButtonPlacement";
+
+        public static string PartRightButtonPlacement => "PART_RightButtonPlacement";
+
+
 
         #endregion
 

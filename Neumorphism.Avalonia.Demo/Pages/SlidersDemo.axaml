@@ -12,7 +12,7 @@
               x:DataType="viewModels:SlidersDemoViewModel"
               x:Class="Neumorphism.Avalonia.Demo.Pages.SlidersDemo">
 
-  <StackPanel Margin="16,0,16,50">
+  <StackPanel Margin="20">
     <StackPanel.Styles>
       <Style Selector="StackPanel.Content Slider">
         <Setter Property="Maximum" Value="100" />
@@ -29,12 +29,12 @@
     </StackPanel.Styles>
 
 
-    <TextBlock Classes="Headline4 Subheadline" Text="Sliders" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Sliders" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 
     <WrapPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Classes="Content" Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalSlider1">
@@ -120,7 +120,7 @@
       </StackPanel>
 
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Classes="Content" Orientation="Horizontal">
           <StackPanel Orientation="Vertical" VerticalAlignment="Bottom">
             <!--****************************************************************-->
@@ -207,7 +207,7 @@
       </StackPanel>
 
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal Outset" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal Outset" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Classes="Content" Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalOutsetSlider1">
@@ -293,7 +293,7 @@
 
 
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical Outset" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Vertical Outset" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Orientation="Horizontal">
           <StackPanel Classes="Content" Orientation="Vertical" VerticalAlignment="Bottom">
             <!--****************************************************************-->

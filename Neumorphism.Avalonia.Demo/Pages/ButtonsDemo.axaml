@@ -24,14 +24,14 @@
   </UserControl.Styles>
   
 
-  <StackPanel Margin="16, 0">
+  <StackPanel Margin="20">
 
 
-    <TextBlock Classes="Headline4 Subheadline" Text="Buttons" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Buttons" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 
     <!--Regular buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Regular buttons" Margin="0,30,0,0" Foreground="{DynamicResource MaterialDesignMediumGray}" />
     <StackPanel Orientation="Horizontal">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Buttons1">
@@ -71,7 +71,7 @@
     </StackPanel>
 
     <!--Outline buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Outline buttons" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
     <StackPanel Orientation="Horizontal">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="OutlineButtons1">
@@ -107,7 +107,7 @@
     </StackPanel>
 
     <!--Icon buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Icon buttons" Margin="0,30,0,0" Foreground="{DynamicResource MaterialDesignMediumGray}" />
     <StackPanel Orientation="Horizontal">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="IconButtons0">
@@ -145,7 +145,7 @@
     </StackPanel>
 
     <!--Floating buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Floating buttons with icon" Margin="0,30,0,0" Foreground="{DynamicResource MaterialDesignMediumGray}" />
     <StackPanel Orientation="Horizontal">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="FloatingButtons0">
@@ -223,7 +223,7 @@
     </StackPanel>
 
     <!--Extended floating buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Extended floating buttons" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Extended floating buttons" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
     <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
       <StackPanel.Styles>
         <Style Selector="controls|FloatingButton[IsExtended=false]">
@@ -284,12 +284,12 @@
     </StackPanel>
 
     <!--Custom buttons-->
-    <TextBlock Classes="Headline6 Subheadline2" Text="Custom buttons" Margin="0,30,0,0" />
+    <TextBlock Classes="Headline6 Subheadline2" Text="Custom buttons" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,30,0,0" />
     <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="CustomButtons0">
         <Button Width="150" Foreground="Gray" Cursor="Hand" Content="Custom" BorderThickness="1"
-                BorderBrush="{DynamicResource MaterialDesignShadowLightColor}"
+                BorderBrush="{DynamicResource MaterialDesignShadowLight}"
                 ToolTip.Tip='Button with classes "Custom" and custom attributes'>
           <Button.Background>
             <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
@@ -302,7 +302,7 @@
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="CustomButtons1">
         <Button Theme="{StaticResource ButtonOutline}" Width="150" Foreground="Gray" Cursor="Hand"
-                BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignShadowLightColor}"
+                BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignShadowLight}"
                 ToolTip.Tip='Button with class "Custom" and custom attributes'>
           <Button.Background>
             <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">

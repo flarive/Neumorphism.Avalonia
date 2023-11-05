@@ -13,13 +13,13 @@
 			x:DataType="viewModels:TabsDemoViewModel"
 			x:Class="Neumorphism.Avalonia.Demo.Pages.TabsDemo">
 
-	<StackPanel Margin="16,0,16,50">
-		<TextBlock Classes="Headline4 Subheadline" Text="Tabs" />
+	<StackPanel Margin="20">
+		<TextBlock Classes="Headline4 Subheadline" Text="Tabs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 		<WrapPanel Orientation="Vertical">
 
 			<StackPanel Orientation="Vertical">
-				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal top" />
+				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal top" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab1">
@@ -133,7 +133,7 @@
 
 
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal bottom" />
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal bottom" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab4">
@@ -246,7 +246,7 @@
 
 
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical left" />
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical left" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab1">
@@ -359,7 +359,7 @@
 
 
       <StackPanel Orientation="Vertical">
-        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical right" />
+        <TextBlock Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Vertical right" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab4">

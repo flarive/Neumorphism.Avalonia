@@ -16,18 +16,18 @@
 
   <UserControl.Resources>
     <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
-    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLightColor}, 5 5 20 {MaterialDesignShadowDarkColor}</system:String>
+    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLight}, 5 5 20 {MaterialDesignShadowDark}</system:String>
   </UserControl.Resources>
 
-  <StackPanel Margin="16,0,16,50">
+  <StackPanel Margin="20">
 
 
-    <TextBlock Classes="Headline4 Subheadline" Text="Drawings" />
+    <TextBlock Classes="Headline4 Subheadline" Text="Drawings" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 
     <WrapPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Titles" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Titles" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Classes="Content" Orientation="Vertical">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DrawingText1">
@@ -43,8 +43,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaText>
@@ -64,8 +64,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaText>
@@ -85,8 +85,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaText>
@@ -99,7 +99,7 @@
 
     <WrapPanel>
       <StackPanel>
-        <TextBlock Classes="Headline6 Subheadline2" Text="Icons" />
+        <TextBlock Classes="Headline6 Subheadline2" Text="Icons" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Classes="Content" Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="DrawingIcon1">
@@ -113,8 +113,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaGeometry>
@@ -131,8 +131,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaGeometry>
@@ -149,8 +149,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaGeometry>
@@ -168,8 +168,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaGeometry>
@@ -187,8 +187,8 @@
               <controls:SkiaGeometry.BoxShadow>
                 <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
                   <DynamicResource ResourceKey="BoxShadowsTemplate" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </controls:SkiaGeometry.BoxShadow>
             </controls:SkiaGeometry>

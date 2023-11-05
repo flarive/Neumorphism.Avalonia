@@ -28,8 +28,8 @@
     <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Padding" Value="16" />
-    <Setter Property="assist:ButtonAssist.HoverColor" Value="{DynamicResource MaterialDesignSilverGrayColor}"/>
-    <Setter Property="assist:ButtonAssist.ClickFeedbackColor" Value="{DynamicResource MaterialDesignSilverGrayColor}"/>
+    <Setter Property="assist:ButtonAssist.HoverColor" Value="{DynamicResource MaterialDesignSilverGray}"/>
+    <Setter Property="assist:ButtonAssist.ClickFeedbackColor" Value="{DynamicResource MaterialDesignSilverGray}"/>
     <Setter Property="FontWeight" Value="Medium" />
     <Setter Property="FontSize" Value="14" />
     <Setter Property="BorderThickness" Value="0" />
@@ -128,8 +128,8 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="3">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -141,8 +141,8 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
           </MultiBinding>
         </Setter.Value>
       </Setter>

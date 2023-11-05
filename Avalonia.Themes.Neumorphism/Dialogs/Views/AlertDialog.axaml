@@ -14,7 +14,7 @@
     <controls:EmbeddedDialogControl>
         <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
             <StackPanel Name="PART_ContentPanel">
-                <TextBlock Name="PART_SupportingText"
+                <TextBlock Name="PART_SupportingText" Foreground="{DynamicResource MaterialDesignMediumGray}"
                            Classes="Body1"
                            IsVisible="{CompiledBinding !!ContentMessage.Length}"
                            Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}"/>              

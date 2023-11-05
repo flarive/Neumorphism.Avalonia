@@ -13,13 +13,13 @@
 			x:DataType="viewModels:ListsDemoViewModel"
 			x:Class="Neumorphism.Avalonia.Demo.Pages.ListsDemo">
 
-	<StackPanel Margin="16,0,16,50">
-		<TextBlock Classes="Headline4 Subheadline" Text="ListBoxes" />
+	<StackPanel Margin="20">
+		<TextBlock Classes="Headline4 Subheadline" Text="ListBoxes" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 		<WrapPanel Orientation="Horizontal">
 
 			<StackPanel Orientation="Vertical">
-				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Regular" />
+				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Regular" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Vertical">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List1">
@@ -59,7 +59,7 @@
 						</controls:Card>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
-					<TextBlock Classes="Headline6 Subheadline2" Margin="15,15,0,0" Text="Horizontal" />
+					<TextBlock Classes="Headline6 Subheadline2" Margin="15,15,0,0" Text="Horizontal" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List3">
 						<controls:Card Padding="0" CornerRadius="10">
@@ -85,7 +85,7 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Vertical">
-				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Outset" />
+				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Outset" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<!--****************************************************************-->
 				<showMeTheXaml:XamlDisplay UniqueId="List4">
 					<ListBox Width="300" Height="240" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemOutset" applied'>
@@ -132,7 +132,7 @@
 			</StackPanel>
 
 			<StackPanel Orientation="Vertical">
-				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Inset" />
+				<TextBlock Classes="Headline6 Subheadline2" Margin="25,0,0,0" Text="Inset" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<!--****************************************************************-->
 				<showMeTheXaml:XamlDisplay UniqueId="List6">
 					<ListBox Width="400" Height="224" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemInset" applied'>

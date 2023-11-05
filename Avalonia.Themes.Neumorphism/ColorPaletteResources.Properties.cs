@@ -317,37 +317,52 @@ namespace Avalonia.Themes.Neumorphism
 
 
         /// <summary>
-        /// Gets or sets the MaterialDesignShadowLightColor color value.
+        /// Gets or sets the MaterialDesignShadowLight color value.
         /// </summary>
-        public Color MaterialDesignShadowLightColor { get => GetColor("MaterialDesignShadowLightColor"); set => SetColor("MaterialDesignShadowLightColor", value); }
+        public Color MaterialDesignShadowLight { get => GetColor("MaterialDesignShadowLight"); set => SetColor("MaterialDesignShadowLight", value); }
 
 
         /// <summary>
-        /// Gets or sets the MaterialDesignShadowDarkColor color value.
+        /// Gets or sets the MaterialDesignShadowDark color value.
         /// </summary>
-        public Color MaterialDesignShadowDarkColor { get => GetColor("MaterialDesignShadowDarkColor"); set => SetColor("MaterialDesignShadowDarkColor", value); }
+        public Color MaterialDesignShadowDark { get => GetColor("MaterialDesignShadowDark"); set => SetColor("MaterialDesignShadowDark", value); }
 
 
         /// <summary>
-        /// Gets or sets the MaterialDesignBorderShadowColor color value.
+        /// Gets or sets the MaterialDesignBorderShadow color value.
         /// </summary>
-        public Color MaterialDesignBorderShadowColor { get => GetColor("MaterialDesignBorderShadowColor"); set => SetColor("MaterialDesignBorderShadowColor", value); }
+        public Color MaterialDesignBorderShadow { get => GetColor("MaterialDesignBorderShadow"); set => SetColor("MaterialDesignBorderShadow", value); }
 
 
         /// <summary>
-        /// Gets or sets the MaterialDesignDisabledNoTransparencyColor color value.
+        /// Gets or sets the MaterialDesignDisabledNoTransparency color value.
         /// </summary>
-        public Color MaterialDesignDisabledNoTransparencyColor { get => GetColor("MaterialDesignDisabledNoTransparencyColor"); set => SetColor("MaterialDesignDisabledNoTransparencyColor", value); }
+        public Color MaterialDesignDisabledNoTransparency { get => GetColor("MaterialDesignDisabledNoTransparency"); set => SetColor("MaterialDesignDisabledNoTransparency", value); }
 
 
         /// <summary>
-        /// Gets or sets the MaterialDesignTransparentColor color value.
+        /// Gets or sets the MaterialDesignTransparent color value.
         /// </summary>
-        public Color MaterialDesignTransparentColor { get => GetColor("MaterialDesignTransparentColor"); set => SetColor("MaterialDesignTransparentColor", value); }
+        public Color MaterialDesignTransparent { get => GetColor("MaterialDesignTransparent"); set => SetColor("MaterialDesignTransparent", value); }
 
         /// <summary>
-        /// Gets or sets the MaterialDesignSilverGrayColor color value.
+        /// Gets or sets the MaterialDesignSilverGray color value.
         /// </summary>
-        public Color MaterialDesignSilverGrayColor { get => GetColor("MaterialDesignSilverGrayColor"); set => SetColor("MaterialDesignSilverGrayColor", value); }
+        public Color MaterialDesignSilverGray { get => GetColor("MaterialDesignSilverGray"); set => SetColor("MaterialDesignSilverGray", value); }
+
+        /// <summary>
+        /// Gets or sets the MaterialDesignDarkGray color value.
+        /// </summary>
+        public Color MaterialDesignDarkGray { get => GetColor("MaterialDesignDarkGray"); set => SetColor("MaterialDesignDarkGray", value); }
+
+        /// <summary>
+        /// Gets or sets the MaterialDesignMediumGray color value.
+        /// </summary>
+        public Color MaterialDesignMediumGray { get => GetColor("MaterialDesignMediumGray"); set => SetColor("MaterialDesignMediumGray", value); }
+
+        /// <summary>
+        /// Gets or sets the MaterialDesignLightGray color value.
+        /// </summary>
+        public Color MaterialDesignLightGray { get => GetColor("MaterialDesignLightGray"); set => SetColor("MaterialDesignLightGray", value); }
     }
 }

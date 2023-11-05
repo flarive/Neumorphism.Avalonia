@@ -27,18 +27,18 @@
   <SolidColorBrush x:Key="MenuFlyoutItemForeground" Color="{DynamicResource SystemBaseHighColor}" />
   <SolidColorBrush x:Key="MenuFlyoutItemForegroundPointerOver" Color="{DynamicResource SystemBaseHighColor}" />
   <SolidColorBrush x:Key="MenuFlyoutItemForegroundPressed" Color="{DynamicResource SystemBaseHighColor}" />
-  <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparencyColor}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparency}" />
   <SolidColorBrush x:Key="MenuFlyoutSubItemChevron" Color="{DynamicResource SystemBaseMediumColor}" />
   <SolidColorBrush x:Key="MenuFlyoutSubItemChevronPointerOver" Color="{DynamicResource SystemBaseMediumColor}" />
   <SolidColorBrush x:Key="MenuFlyoutSubItemChevronPressed" Color="{DynamicResource SystemBaseMediumColor}" />
   <SolidColorBrush x:Key="MenuFlyoutSubItemChevronSubMenuOpened" Color="{DynamicResource SystemBaseMediumColor}" />
-  <SolidColorBrush x:Key="MenuFlyoutSubItemChevronDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparencyColor}" />
+  <SolidColorBrush x:Key="MenuFlyoutSubItemChevronDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparency}" />
   <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForeground" Color="{DynamicResource SystemBaseHighColor}" />
   <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver" Color="{DynamicResource SystemBaseHighColor}" />
   <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed" Color="{DynamicResource SystemBaseHighColor}" />
-  <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparencyColor}" />
+  <SolidColorBrush x:Key="MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled" Color="{DynamicResource MaterialDesignDisabledNoTransparency}" />
   <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{DynamicResource MaterialDesignPaper}" />
-  <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="{DynamicResource MaterialDesignSilverGrayColor}" />
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush" Color="{DynamicResource MaterialDesignSilverGray}" />
   <SolidColorBrush x:Key="MenuFlyoutSeparatorColor" Color="{DynamicResource SystemBaseLowColor}" />
   <Thickness x:Key="MenuFlyoutItemThemePadding">11,9,11,10</Thickness>
   <Thickness x:Key="MenuFlyoutItemThemePaddingNarrow">11,4,11,7</Thickness>
@@ -114,7 +114,7 @@
                               HorizontalAlignment="Center"
                               KeyboardNavigation.TabNavigation="Continue" />
             </Border>
-            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="{DynamicResource MaterialDesignBorderShadowColor}"/>
+            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="{DynamicResource MaterialDesignBorderShadow}"/>
         </Panel>
       </ControlTemplate>
     </Setter>
@@ -144,7 +144,7 @@
     <Setter Property="Background" Value="Transparent"/>
     <Setter Property="Height" Value="48"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
-    <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBorderShadowColor}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBorderShadow}"/>
     <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarFlatMenuItem}" />
   </ControlTheme>
@@ -168,8 +168,8 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -193,8 +193,8 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLightColor" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDarkColor" />
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
           </MultiBinding>
         </Setter.Value>
       </Setter>

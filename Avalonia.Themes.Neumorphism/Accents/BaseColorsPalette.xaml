@@ -65,12 +65,15 @@
 			<Color x:Key="MaterialDesignTextAreaBorder">#BC000000</Color>
 			<Color x:Key="MaterialDesignTextAreaInactiveBorder">#0F000000</Color>
 			<Color x:Key="MaterialDesignDataGridRowHoverBackground">#0A000000</Color>
-			<Color x:Key="MaterialDesignShadowLightColor">#CCFFFFFF</Color>
-			<Color x:Key="MaterialDesignShadowDarkColor">#33000000</Color>
-			<Color x:Key="MaterialDesignBorderShadowColor">#FFC4C7CB</Color>
-			<Color x:Key="MaterialDesignDisabledNoTransparencyColor">#FFD3D8DE</Color>
-			<Color x:Key="MaterialDesignTransparentColor">#00FFFFFF</Color>
-			<Color x:Key="MaterialDesignSilverGrayColor">#CCCCCCCC</Color>
+			<Color x:Key="MaterialDesignShadowLight">#CCFFFFFF</Color>
+			<Color x:Key="MaterialDesignShadowDark">#33000000</Color>
+			<Color x:Key="MaterialDesignBorderShadow">#FFC4C7CB</Color>
+			<Color x:Key="MaterialDesignDisabledNoTransparency">#FFD3D8DE</Color>
+			<Color x:Key="MaterialDesignTransparent">#00FFFFFF</Color>
+			<Color x:Key="MaterialDesignSilverGray">#CCCCCCCC</Color>
+      <Color x:Key="MaterialDesignDarkGray">#FF333333</Color>
+      <Color x:Key="MaterialDesignMediumGray">#FF888888</Color>
+      <Color x:Key="MaterialDesignLightGray">#FFCCCCCC</Color>
     </ResourceDictionary>
     
 		<ResourceDictionary x:Key="Dark">
@@ -136,12 +139,15 @@
 			<Color x:Key="MaterialDesignTextAreaBorder">#BCFFFFFF</Color>
 			<Color x:Key="MaterialDesignTextAreaInactiveBorder">#1AFFFFFF</Color>
 			<Color x:Key="MaterialDesignDataGridRowHoverBackground">#14FFFFFF</Color>
-			<Color x:Key="MaterialDesignShadowLightColor">#22FFFFFF</Color>
-			<Color x:Key="MaterialDesignShadowDarkColor">#88000000</Color>
-			<Color x:Key="MaterialDesignBorderShadowColor">#FF404548</Color>
-			<Color x:Key="MaterialDesignDisabledNoTransparencyColor">#FF42464A</Color>
-			<Color x:Key="MaterialDesignTransparentColor">#00FFFFFF</Color>
-			<Color x:Key="MaterialDesignSilverGrayColor">#44333333</Color>
+			<Color x:Key="MaterialDesignShadowLight">#22FFFFFF</Color>
+			<Color x:Key="MaterialDesignShadowDark">#88000000</Color>
+			<Color x:Key="MaterialDesignBorderShadow">#FF404548</Color>
+			<Color x:Key="MaterialDesignDisabledNoTransparency">#FF42464A</Color>
+			<Color x:Key="MaterialDesignTransparent">#00FFFFFF</Color>
+			<Color x:Key="MaterialDesignSilverGray">#44333333</Color>
+      <Color x:Key="MaterialDesignDarkGray">#FFCCCCCC</Color>
+      <Color x:Key="MaterialDesignMediumGray">#FF888888</Color>
+      <Color x:Key="MaterialDesignLightGray">#FF333333</Color>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

@@ -30,7 +30,7 @@
 
         <controls:ColorZone Grid.Row="0" Mode="Standard" Padding="8" assist:ShadowAssist.ShadowDepth="Depth2">
           <StackPanel Margin="16,8,16,0">
-            <TextBlock Classes="Headline4" Text="Icons" />
+            <TextBlock Classes="Headline4" Text="Icons" Foreground="{DynamicResource MaterialDesignDarkGray}" />
             <TextBlock Classes="Subtitle1 Subheadline" TextWrapping="Wrap" Text="Neumorphism.Avalonia.Demo using Material.Icons.Avalonia packages to provide icons for Neumorphic design. You can always use them freely in your application with Neumorphism.Avalonia !" />
           </StackPanel>
         </controls:ColorZone>

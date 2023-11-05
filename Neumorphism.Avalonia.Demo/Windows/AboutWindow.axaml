@@ -18,7 +18,7 @@
 
   <Window.Resources>
     <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
-    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLightColor}, 5 5 20 {MaterialDesignShadowDarkColor}</system:String>
+    <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLight}, 5 5 20 {MaterialDesignShadowDark}</system:String>
   </Window.Resources>
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">

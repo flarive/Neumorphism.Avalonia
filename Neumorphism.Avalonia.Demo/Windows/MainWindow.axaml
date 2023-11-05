@@ -10,7 +10,7 @@
 				xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 				xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
 				xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
-				xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+				xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
 				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 				Width="1280" Height="720" MinWidth="720"
 				WindowStartupLocation="CenterScreen"
@@ -37,8 +37,9 @@
 
 
 
-  <!--OpenDialogWithModel-->
+
   <Window.DataTemplates>
+    <!--OpenDialogWithModel-->
     <DataTemplate DataType="models:DialogSampleModel">
       <StackPanel Margin="10">
         <TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
@@ -46,7 +47,7 @@
 						   TextAlignment="Center"
 						   Text="{Binding Number}" />
         <Button Margin="0 8 0 0" Height="32" Width="NaN"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHostAvalonia:DialogHost}, Path=CloseDialogCommand}">
+						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
           OK
         </Button>
       </StackPanel>
@@ -54,9 +55,27 @@
   </Window.DataTemplates>
 
 
+  <Window.Resources>
+    <!-- OpenDialogWithView -->
+    <StackPanel x:Key="DialogSampleView">
+      <TextBlock FontSize="18" Margin="15,15,15,0" Text="Open dialog from view" TextAlignment="Center" Foreground="{DynamicResource MaterialDesignDarkGray}"/>
+      <TextBlock FontSize="16" Margin="15,0,15,10" Text='Hello, I am view "DialogSampleView" !' TextAlignment="Center" Foreground="{DynamicResource MaterialDesignMediumGray}"/>
+      <ProgressBar Classes="Circle" Margin="15,20,15,20" IsIndeterminate="True" />
+      <Grid ColumnDefinitions="*,*" Margin="15">
+        <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+          Cancel
+        </Button>
+        <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+          OK
+        </Button>
+      </Grid>
+    </StackPanel>
+  </Window.Resources>
 
 
-  <dialogHostAvalonia:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
+
+
+  <dialogHost:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
     <Grid>
       <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
 							   assist:SnackbarHostAssist.SnackbarWidth="600">
@@ -284,5 +303,5 @@
       <!--Child window dark overlay-->
       <Border Name="PART_DialogDarkOverlay" IsVisible="{Binding IsDialogOpened}" Background="Black" Opacity="0.6"/>
     </Grid>
-  </dialogHostAvalonia:DialogHost>
+  </dialogHost:DialogHost>
 </Window>

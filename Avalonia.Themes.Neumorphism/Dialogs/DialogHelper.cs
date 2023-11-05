@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using Avalonia.Themes.Neumorphism.Dialogs.Bases;
@@ -85,8 +86,14 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
 
             ApplyBaseParams(context, @params);
 
-            context.DialogButtons ??= new ObservableCollection<DialogButtonViewModel>(
-                CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtonsEnum.Ok)));
+            if ((@params.LeftDialogButtons == null || @params.LeftDialogButtons.Length == 0) 
+                && (@params.CenterDialogButtons == null || @params.CenterDialogButtons.Length == 0)
+                && (@params.RightDialogButtons == null || @params.RightDialogButtons.Length == 0))
+            {
+                context.CenterDialogButtons = new ObservableCollection<DialogButtonViewModel>(
+                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtonsEnum.Ok)));
+            }
+
 
             window.DataContext = context;
             SetupWindowParameters(window, @params);
@@ -103,7 +110,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             ApplyBaseParams(context, @params);
 
             var positiveButtonApplied = false;
-            var buttons = CreateObsoleteButtonArray(context, @params.DialogButtons);
+            var buttons = CreateObsoleteButtonArray(context, @params.RightDialogButtons);
 
             foreach (var button in buttons)
             {
@@ -114,7 +121,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 positiveButtonApplied = true;
             }
 
-            context.DialogButtons = new ObservableCollection<DialogButtonViewModel>(buttons);
+            context.RightDialogButtons = new ObservableCollection<DialogButtonViewModel>(buttons);
 
             // TODO: Remove compatibility API with PositiveButton and NegativeButton on future update.
             if (!positiveButtonApplied)
@@ -122,7 +129,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 var positiveButton = @params.PositiveButton;
                 if (positiveButton != null)
                 {
-                    context.DialogButtons.Add(
+                    context.RightDialogButtons.Add(
                         new ObsoleteDialogButtonViewModel(context, positiveButton.Content, positiveButton.Result)
                         {
                             Command = context.SubmitCommand
@@ -153,7 +160,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             };
             ApplyBaseParams(context, @params);
 
-            context.DialogButtons =
+            context.RightDialogButtons =
                 new ObservableCollection<DialogButtonViewModel>(CreateObsoleteButtonArray(context,
                     @params.NegativeButton,
                     @params.PositiveButton));
@@ -183,7 +190,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             };
             ApplyBaseParams(context, @params);
 
-            context.DialogButtons =
+            context.RightDialogButtons =
                 new ObservableCollection<DialogButtonViewModel>(CreateObsoleteButtonArray(context,
                     @params.NegativeButton,
                     @params.PositiveButton));
@@ -276,15 +283,20 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 }
             }
 
-            if (@params.DialogButtons != null)
-                input.DialogButtons =
+            if (@params.RightDialogButtons != null)
+                input.RightDialogButtons =
                     new ObservableCollection<DialogButtonViewModel>(
-                        CreateObsoleteButtonArray(input, @params.DialogButtons));
+                        CreateObsoleteButtonArray(input, @params.RightDialogButtons));
 
-            if (@params.NeutralDialogButtons != null)
-                input.NeutralDialogButton =
+            if (@params.CenterDialogButtons != null)
+                input.CenterDialogButtons =
                     new ObservableCollection<DialogButtonViewModel>(
-                        CreateObsoleteButtonArray(input, @params.NeutralDialogButtons));
+                        CreateObsoleteButtonArray(input, @params.CenterDialogButtons));
+
+            if (@params.LeftDialogButtons != null)
+                input.LeftDialogButtons =
+                    new ObservableCollection<DialogButtonViewModel>(
+                        CreateObsoleteButtonArray(input, @params.LeftDialogButtons));
 
             input.ButtonsStackOrientation = @params.ButtonsOrientation;
         }
