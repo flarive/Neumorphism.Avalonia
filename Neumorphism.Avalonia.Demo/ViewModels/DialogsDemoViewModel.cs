@@ -423,7 +423,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         private void OpenDialogWithViewClose(object sender, DialogClosingEventArgs eventArgs)
         {
-            OpenDialogWithViewResult = "Result : lllll";
+            OpenDialogWithViewResult = $"Result: {eventArgs.Parameter}";
         }
 
 
@@ -436,7 +436,11 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         private void OpenDialogWithModelClose(object sender, DialogClosingEventArgs eventArgs)
         {
-            OpenDialogWithModelResult = "Result : xxxx";
+            var model = ((DialogHost)sender).DialogContent as DialogSampleModel;
+            if (model != null)
+            {
+                OpenDialogWithModelResult = $"Result: {eventArgs.Parameter} / {model.Number}";
+            }
         }
     }
 }

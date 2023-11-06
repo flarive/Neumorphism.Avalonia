@@ -41,15 +41,23 @@
   <Window.DataTemplates>
     <!--OpenDialogWithModel-->
     <DataTemplate DataType="models:DialogSampleModel">
-      <StackPanel Margin="10">
-        <TextBlock TextAlignment="Center">Your lucky number:</TextBlock>
-        <TextBlock Classes="Body1"
-						   TextAlignment="Center"
-						   Text="{Binding Number}" />
-        <Button Margin="0 8 0 0" Height="32" Width="NaN"
-						Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+      <StackPanel Orientation="Vertical">
+      <TextBlock FontSize="18" Margin="15,15,15,0" Text="Open dialog from model" TextAlignment="Center" Foreground="{DynamicResource MaterialDesignDarkGray}"/>
+      <TextBlock FontSize="16" Margin="15,0,15,10" Text='Hello, I am model "DialogSampleModel" !' TextAlignment="Center" Foreground="{DynamicResource MaterialDesignMediumGray}"/>
+
+      <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
+      <TextBlock Classes="Body1"
+             TextAlignment="Center"
+             Text="{Binding Number}" />
+
+      <Grid ColumnDefinitions="*,*" Margin="15">
+        <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="cancel">
+          Cancel
+        </Button>
+        <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="ok">
           OK
         </Button>
+      </Grid>
       </StackPanel>
     </DataTemplate>
   </Window.DataTemplates>
@@ -62,10 +70,10 @@
       <TextBlock FontSize="16" Margin="15,0,15,10" Text='Hello, I am view "DialogSampleView" !' TextAlignment="Center" Foreground="{DynamicResource MaterialDesignMediumGray}"/>
       <ProgressBar Classes="Circle" Margin="15,20,15,20" IsIndeterminate="True" />
       <Grid ColumnDefinitions="*,*" Margin="15">
-        <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+        <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="cancel">
           Cancel
         </Button>
-        <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+        <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="ok">
           OK
         </Button>
       </Grid>
