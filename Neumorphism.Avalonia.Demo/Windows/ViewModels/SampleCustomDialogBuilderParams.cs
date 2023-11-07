@@ -1,9 +1,9 @@
 ﻿using Avalonia.Controls.Templates;
 using Avalonia.Themes.Neumorphism.Dialogs.Bases;
 
-namespace Avalonia.Themes.Neumorphism.Dialogs
+namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 {
-    public sealed class CustomDialogBuilderParams : DialogWindowBuilderParamsBase
+    public sealed class SampleCustomDialogBuilderParams : DialogWindowBuilderParamsBase
     {
         public object Content = null;
         public IDataTemplate ContentTemplate = null;

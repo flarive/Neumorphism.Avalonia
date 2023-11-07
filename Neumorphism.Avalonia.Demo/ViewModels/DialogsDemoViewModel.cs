@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
 using DialogHostAvalonia;
+using Neumorphism.Avalonia.Demo.Helpers;
 using Neumorphism.Avalonia.Demo.Models;
 using Neumorphism.Avalonia.Demo.Windows;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
@@ -31,9 +32,9 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public DialogViewModel ImageDialog { get; }
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
+        public DialogViewModel CustomDialog { get; }
 
 
-        
 
         private string _openDialogWithViewResult;
         public string OpenDialogWithViewResult
@@ -78,6 +79,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
             LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
             FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
+            CustomDialog = new DialogViewModel("Custom dialog", CreateCustomDialog);
         }
 
 
@@ -442,5 +444,41 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 OpenDialogWithModelResult = $"Result: {eventArgs.Parameter} / {model.Number}";
             }
         }
+
+
+        private async IAsyncEnumerable<string> CreateCustomDialog()
+        {
+            var dialog = CustomDialogHelper.CreateCustomDialog(new SampleCustomDialogBuilderParams
+            {
+                ContentHeader = "Welcome to custom !",
+                SupportingText = "Enjoy Neumorphism Design in AvaloniaUI !",
+                WindowTitle = "Info dialog",
+                DialogHeaderIcon = DialogIconKind.Info,
+                DialogIcon = DialogIconKind.Info,
+                StartupLocation = WindowStartupLocation.CenterOwner,
+                ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
+                Width = 480,
+                Borderless = true,
+                CenterDialogButtons = new[]
+                {
+                    new DialogButton
+                    {
+                        Content = "OK",
+                        Result = "ok"
+                    }
+                }
+            });
+
+
+            _appModelBase.IsDialogOpened = true;
+
+            var result = await dialog.ShowDialog(_window);
+
+            _appModelBase.IsDialogOpened = false;
+
+            yield return $"Result: {result.GetResult}";
+        }
+
+
     }
 }

@@ -1,9 +1,9 @@
 ﻿using Avalonia.Controls.Templates;
-using Avalonia.Themes.Neumorphism.Dialogs.Views;
+using Avalonia.Themes.Neumorphism.Dialogs.ViewModels;
 
-namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
+namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 {
-    public sealed class CustomDialogViewModel : DialogWindowViewModel
+    public sealed class SampleCustomDialogViewModel : DialogWindowViewModel
     {
         private object _content;
 
@@ -29,7 +29,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
             }
         }
 
-        public CustomDialogViewModel(CustomDialog dialog) : base(dialog)
+        public SampleCustomDialogViewModel(SampleCustomDialog dialog) : base(dialog)
         {
         }
     }

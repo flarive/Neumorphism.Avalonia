@@ -63,6 +63,7 @@
   </Window.DataTemplates>
 
 
+
   <Window.Resources>
     <!-- OpenDialogWithView -->
     <StackPanel x:Key="DialogSampleView">
@@ -78,6 +79,13 @@
         </Button>
       </Grid>
     </StackPanel>
+
+
+    <DataTemplate x:Key="TestCustomWindow">
+      <TextBlock Text="wwwwwwwwww" Background="Red"/>
+    </DataTemplate>
+
+
   </Window.Resources>
 
 

@@ -1,12 +1,12 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
-        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
-        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.CustomDialog"
-        x:DataType="viewModels:CustomDialogViewModel">
-  
-  
-    <Window.Styles>
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls;assembly=Avalonia.Themes.Neumorphism"
+        x:Class="Neumorphism.Avalonia.Demo.Windows.SampleCustomDialog"
+        x:DataType="viewModels:SampleCustomDialogViewModel">
+
+
+  <Window.Styles>
         <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />

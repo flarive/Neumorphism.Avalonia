@@ -127,7 +127,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
         public ObservableCollection<DialogButtonViewModel> LeftDialogButtons
         {
             get => _leftDialogButtons;
-            internal set
+            set
             {
                 _leftDialogButtons = value;
                 OnPropertyChanged();
@@ -141,7 +141,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
         public ObservableCollection<DialogButtonViewModel> CenterDialogButtons
         {
             get => _centerDialogButtons;
-            internal set
+            set
             {
                 _centerDialogButtons = value;
                 OnPropertyChanged();
@@ -154,7 +154,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
         public ObservableCollection<DialogButtonViewModel> RightDialogButtons
         {
             get => _rightDialogButtons;
-            internal set
+            set
             {
                 _rightDialogButtons = value;
                 OnPropertyChanged();
@@ -167,7 +167,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
         public Orientation ButtonsStackOrientation
         {
             get => _buttonsStackOrientation;
-            internal set
+            set
             {
                 _buttonsStackOrientation = value;
                 OnPropertyChanged();
@@ -179,7 +179,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
         public DialogResult DialogResult
         {
             get => _dialogResult;
-            internal set
+            set
             {
                 _dialogResult = value;
                 OnPropertyChanged();

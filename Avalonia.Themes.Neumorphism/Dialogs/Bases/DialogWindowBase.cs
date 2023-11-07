@@ -6,7 +6,7 @@ using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 
 namespace Avalonia.Themes.Neumorphism.Dialogs.Bases
 {
-    internal class DialogWindowBase<TWindow, TResult> : IDialogWindow<TResult>
+    public class DialogWindowBase<TWindow, TResult> : IDialogWindow<TResult>
         where TWindow : Window, IDialogWindowResult<TResult>
     {
         private readonly TWindow _window;

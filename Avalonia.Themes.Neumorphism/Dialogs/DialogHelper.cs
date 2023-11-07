@@ -14,7 +14,7 @@ using Avalonia.Themes.Neumorphism.Dialogs.Views;
 
 namespace Avalonia.Themes.Neumorphism.Dialogs
 {
-    public sealed class DialogHelper
+    public class DialogHelper
     {
         public const string DIALOG_RESULT_OK = "ok";
         public const string DIALOG_RESULT_CANCEL = "cancel";
@@ -203,28 +203,28 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             return new DialogWindowBase<DatePickerDialog, DateTimePickerDialogResult>(window);
         }
 
-        /// <summary>
-        /// Create an dialog with custom content or dummy dialog.
-        /// </summary>
-        /// <param name="params">Parameters of building dialog</param>
-        /// <returns>Instance of dialog.</returns>
-        public static IDialogWindow<DialogResult> CreateCustomDialog(CustomDialogBuilderParams @params)
-        {
-            var window = new CustomDialog();
-            var context = new CustomDialogViewModel(window)
-            {
-                Content = @params.Content,
-                ContentTemplate = @params.ContentTemplate
-            };
+        ///// <summary>
+        ///// Create an dialog with custom content or dummy dialog.
+        ///// </summary>
+        ///// <param name="params">Parameters of building dialog</param>
+        ///// <returns>Instance of dialog.</returns>
+        //public static IDialogWindow<DialogResult> CreateCustomDialog(CustomDialogBuilderParams @params)
+        //{
+        //    var window = new CustomDialog();
+        //    var context = new CustomDialogViewModel(window)
+        //    {
+        //        Content = @params.Content,
+        //        ContentTemplate = @params.ContentTemplate
+        //    };
 
-            ApplyBaseParams(context, @params);
+        //    ApplyBaseParams(context, @params);
 
-            window.DataContext = context;
-            SetupWindowParameters(window, @params);
-            return new DialogWindowBase<CustomDialog, DialogResult>(window);
-        }
+        //    window.DataContext = context;
+        //    SetupWindowParameters(window, @params);
+        //    return new DialogWindowBase<CustomDialog, DialogResult>(window);
+        //}
 
-        private static void ApplyBaseParams<T>(T input, DialogWindowBuilderParamsBase @params)
+        public static void ApplyBaseParams<T>(T input, DialogWindowBuilderParamsBase @params)
             where T : DialogWindowViewModel
         {
             input.MaxWidth = @params.MaxWidth;
@@ -301,7 +301,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             input.ButtonsStackOrientation = @params.ButtonsOrientation;
         }
 
-        private static void SetupWindowParameters(Window window, DialogWindowBuilderParamsBase @params)
+        public static void SetupWindowParameters(Window window, DialogWindowBuilderParamsBase @params)
         {
             window.SystemDecorations = @params.Borderless ? SystemDecorations.None : SystemDecorations.Full;
             (window as IHasNegativeResult)?.SetNegativeResult(@params.NegativeResult);

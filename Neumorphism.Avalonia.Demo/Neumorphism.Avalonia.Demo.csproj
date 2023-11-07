@@ -70,7 +70,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.Themes.Neumorphism\Avalonia.Themes.Neumorphism.csproj" />
   </ItemGroup>
-
+    
+  <ItemGroup>
+    <Compile Update="Windows\SampleCustomDialog.axaml.cs">
+      <DependentUpon>SampleCustomDialog.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+    
 
     
 
