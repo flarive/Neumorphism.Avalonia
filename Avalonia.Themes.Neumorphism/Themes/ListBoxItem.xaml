@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
 			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
 			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
@@ -44,11 +44,7 @@
 						<ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"
-											 ContentTemplate="{TemplateBinding ContentTemplate}"
-											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											 Padding="{TemplateBinding Padding}">
-							<ContentPresenter Name="PART_ContentPresenter"
+											 
 											  Background="{TemplateBinding Background}"
 											  BorderBrush="{TemplateBinding BorderBrush}"
 											  BorderThickness="{TemplateBinding BorderThickness}"
@@ -56,7 +52,7 @@
 											  Content="{TemplateBinding Content}"
 											  Padding="{TemplateBinding Padding}"
 											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
 						</ripple:RippleEffect>
 					</Grid>
 				</Border>
@@ -112,11 +108,6 @@
 												 RippleFill="White"
 												 RippleOpacity="0.4"
 												 Focusable="False"
-												 ContentTemplate="{TemplateBinding ContentTemplate}"
-												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												 Padding="{TemplateBinding Padding}">
-								<ContentPresenter Name="PART_ContentPresenter" CornerRadius="100"
 												  Background="{TemplateBinding Background}"
 												  BorderBrush="{TemplateBinding BorderBrush}"
 												  BorderThickness="{TemplateBinding BorderThickness}"
@@ -124,7 +115,7 @@
 												  Content="{TemplateBinding Content}"
 												  Padding="{TemplateBinding Padding}"
 												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
 							</ripple:RippleEffect>
 						</Grid>
 					</Border>
@@ -199,19 +190,14 @@
 												 RippleFill="White"
 												 RippleOpacity="0.4"
 												 Focusable="False"
-												 ContentTemplate="{TemplateBinding ContentTemplate}"
-												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												 Padding="{TemplateBinding Padding}">
-								<ContentPresenter Name="PART_ContentPresenter"
-												  Background="{TemplateBinding Background}"
+												 Background="{TemplateBinding Background}"
 												  BorderBrush="{TemplateBinding BorderBrush}"
 												  BorderThickness="{TemplateBinding BorderThickness}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
 												  Content="{TemplateBinding Content}"
 												  Padding="{TemplateBinding Padding}"
 												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
 							</ripple:RippleEffect>
 						</Grid>
 					</Border>
@@ -260,23 +246,18 @@
           <Grid>
             <Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
             <Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
-            <ripple:RippleEffect Name="Ripple"
-											 RippleFill="White"
-											 Focusable="False"
-											 ContentTemplate="{TemplateBinding ContentTemplate}"
-											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											 Padding="{TemplateBinding Padding}">
-              <ContentPresenter Name="PART_ContentPresenter"
-											  Background="{TemplateBinding Background}"
-											  BorderBrush="Transparent"
-											  BorderThickness="0"
-											  ContentTemplate="{TemplateBinding ContentTemplate}"
-											  Content="{TemplateBinding Content}"
-											  Padding="{TemplateBinding Padding}"
-											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-            </ripple:RippleEffect>
+			  <ripple:RippleEffect Name="Ripple"
+											   RippleFill="White"
+											   Focusable="False"
+											   Background="{TemplateBinding Background}"
+												BorderBrush="Transparent"
+												BorderThickness="0"
+												ContentTemplate="{TemplateBinding ContentTemplate}"
+												Content="{TemplateBinding Content}"
+												Padding="{TemplateBinding Padding}"
+												VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}">
+			  </ripple:RippleEffect>
           </Grid>
         </Border>
       </ControlTemplate>
@@ -330,7 +311,7 @@
 			<Setter Property="Background" Value="{TemplateBinding assist:SelectionControlAssist.Background}" />
 		</Style>
 
-		<Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+		<Style Selector="^:selected /template/ Grid#Ripple">
 			<Setter Property="TextBlock.Foreground" Value="{TemplateBinding assist:SelectionControlAssist.Foreground}" />
 		</Style>
 
