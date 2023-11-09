@@ -81,9 +81,22 @@
     </StackPanel>
 
 
-    <DataTemplate x:Key="TestCustomWindow">
-      <TextBlock Text="wwwwwwwwww" Background="Red"/>
-    </DataTemplate>
+    <!--<DataTemplate x:Key="TestCustomWindow" DataType="models:DialogSampleModel">
+      <StackPanel Orientation="Vertical">
+        <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
+        <TextBlock Classes="Body1"
+               TextAlignment="Center"
+               Text="{Binding Number}"/>
+      </StackPanel>
+    </DataTemplate>-->
+
+    <StackPanel x:Key="TestCustomWindow" Orientation="Vertical">
+      <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
+      <TextBlock Classes="Body1"
+             TextAlignment="Center"
+             Text="{Binding CurrentPageIndex}"/>
+    </StackPanel>
+    
 
 
   </Window.Resources>

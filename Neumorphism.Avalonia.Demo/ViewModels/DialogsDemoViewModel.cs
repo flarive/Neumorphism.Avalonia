@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Templates;
 using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
@@ -450,13 +451,13 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         {
             var dialog = CustomDialogHelper.CreateCustomDialog(new SampleCustomDialogBuilderParams
             {
-                ContentHeader = "Welcome to custom !",
-                SupportingText = "Enjoy Neumorphism Design in AvaloniaUI !",
+                ContentHeader = "Welcome to this custom dialog !",
+                SupportingText = "Following contant is coming from a custom template...",
                 WindowTitle = "Info dialog",
                 DialogHeaderIcon = DialogIconKind.Info,
                 DialogIcon = DialogIconKind.Info,
-                StartupLocation = WindowStartupLocation.CenterOwner,
-                ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
+                Content = _window.Resources["TestCustomWindow"],
+                //ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
                 Width = 480,
                 Borderless = true,
                 CenterDialogButtons = new[]
@@ -468,6 +469,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     }
                 }
             });
+
 
 
             _appModelBase.IsDialogOpened = true;
