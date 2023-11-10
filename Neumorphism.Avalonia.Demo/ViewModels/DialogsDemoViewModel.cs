@@ -452,13 +452,13 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             var dialog = CustomDialogHelper.CreateCustomDialog(new SampleCustomDialogBuilderParams
             {
                 ContentHeader = "Welcome to this custom dialog !",
-                SupportingText = "Following contant is coming from a custom template...",
+                SupportingText = "Following content is coming from a custom template...",
                 WindowTitle = "Info dialog",
                 DialogHeaderIcon = DialogIconKind.Info,
                 DialogIcon = DialogIconKind.Info,
-                Content = _window.Resources["TestCustomWindow"],
-                //ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
-                Width = 480,
+                //Content = _window.Resources["TestCustomWindow"],
+                ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
+                Width = 880,
                 Borderless = true,
                 CenterDialogButtons = new[]
                 {

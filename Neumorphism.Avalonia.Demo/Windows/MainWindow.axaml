@@ -2,8 +2,9 @@
 				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-				xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
-				xmlns:viewModels1="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+		        xmlns:local="clr-namespace:Neumorphism.Avalonia.Demo.Windows"
+		        xmlns:localcontrols="clr-namespace:Neumorphism.Avalonia.Demo.Controls"
+				xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
 				xmlns:pages="clr-namespace:Neumorphism.Avalonia.Demo.Pages"
 				xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
 				xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
@@ -17,7 +18,8 @@
 				Title="Neumorphism.Avalonia.Demo"
 				Icon="avares://Neumorphism.Avalonia.Demo/Assets/app.ico"
 				x:CompileBindings="True"
-				x:DataType="viewModels1:ApplicationModelBase"
+		        Name="zzz"
+				x:DataType="viewModels:ApplicationModelBase"
 				x:Class="Neumorphism.Avalonia.Demo.Windows.MainWindow">
 
 
@@ -81,21 +83,21 @@
     </StackPanel>
 
 
-    <!--<DataTemplate x:Key="TestCustomWindow" DataType="models:DialogSampleModel">
-      <StackPanel Orientation="Vertical">
+    <DataTemplate x:Key="TestCustomWindow">
+      <StackPanel Orientation="Vertical" DataContext="">
         <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
-        <TextBlock Classes="Body1"
+        <TextBlock Classes="Body1" Background="Yellow"
                TextAlignment="Center"
-               Text="{Binding Number}"/>
+               Text="{Binding $self.Number, RelativeSource={RelativeSource AncestorType={local:MainWindow}}, FallbackValue=none}"/>
       </StackPanel>
-    </DataTemplate>-->
+    </DataTemplate>
 
-    <StackPanel x:Key="TestCustomWindow" Orientation="Vertical">
+    <!--<StackPanel x:Key="TestCustomWindow2" Orientation="Vertical">
       <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
-      <TextBlock Classes="Body1"
+      <TextBlock Classes="Body1" Background="Yellow"
              TextAlignment="Center"
-             Text="{Binding CurrentPageIndex}"/>
-    </StackPanel>
+             Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=viewModels:ApplicationModelBase}, Path=Number, FallbackValue=none}"/>
+    </StackPanel>-->
     
 
 

@@ -9,6 +9,22 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
     {
         private readonly TWindow _window;
 
+
+        private int _number = 0;
+        public int Number
+        {
+            get { return _number; }
+            set
+            {
+                _number = value;
+                OnPropertyChanged(nameof(Number));
+            }
+        }
+
+
+
+
+
         public MainViewModel(TWindow window)
             : base(window.ThemeSwitch)
         {

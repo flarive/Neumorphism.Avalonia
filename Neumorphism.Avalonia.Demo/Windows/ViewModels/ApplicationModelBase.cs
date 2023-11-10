@@ -64,6 +64,8 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels
 
 
 
+
+
         public ApplicationModelBase(IThemeSwitch themeSwitch)
         {
             AboutEnabled = true;
