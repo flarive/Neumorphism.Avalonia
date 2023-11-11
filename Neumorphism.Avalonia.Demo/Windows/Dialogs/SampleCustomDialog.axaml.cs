@@ -1,9 +1,9 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
-using Neumorphism.Avalonia.Demo.Windows.ViewModels;
+using Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs;
 
-namespace Neumorphism.Avalonia.Demo.Windows
+namespace Neumorphism.Avalonia.Demo.Windows.Dialogs
 {
     public partial class SampleCustomDialog : Window, IDialogWindowResult<DialogResult>, IHasNegativeResult
     {

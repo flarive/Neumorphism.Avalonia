@@ -1,8 +1,8 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels"
+        xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs"
         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls;assembly=Avalonia.Themes.Neumorphism"
-        x:Class="Neumorphism.Avalonia.Demo.Windows.SampleCustomDialog"
+        x:Class="Neumorphism.Avalonia.Demo.Windows.Dialogs.SampleCustomDialog"
         x:DataType="viewModels:SampleCustomDialogViewModel">
 
 
@@ -16,13 +16,12 @@
         <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
             <StackPanel Name="PART_ContentPanel">
                 <TextBlock Name="PART_SupportingText"
-                           Classes="Body1"
+                           Classes="Body1" Margin="0,15,0,0"
                            IsVisible="{CompiledBinding !!ContentMessage.Length}"
-                           Text="{CompiledBinding ContentMessage, FallbackValue='DIALOG_SUPPORTING_TEXT'}"/>
-            
-                <ContentPresenter Name="PART_ContentPresenter"
-                                  Content="{CompiledBinding Content}"
-                                  ContentTemplate="{CompiledBinding ContentTemplate}"/>
+                           Text="{CompiledBinding ContentMessage, FallbackValue=''}"/>
+
+                <TextBlock Text="Your lucky magic number:" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+                <TextBox Text="{CompiledBinding Number, FallbackValue=0}" TextAlignment="Center" Width="80" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
             </StackPanel>
         </ScrollViewer>
     </controls:EmbeddedDialogControl>

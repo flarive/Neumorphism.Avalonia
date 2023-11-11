@@ -20,7 +20,7 @@
                 <TextBlock Grid.Row="0" Classes="Headline6 Subheadline2" Text="DialogHost (fake popup window)" Foreground="{DynamicResource MaterialDesignMediumGray}" />
                 <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
                   <Grid RowDefinitions="*,28">
-                    <Button Grid.Row="0" Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Command="{CompiledBinding OpenDialogWithViewCommand}">Open dialog from view</Button>
+                    <Button Grid.Row="0" Width="220" Height="44" Margin="20" VerticalAlignment="Center" Command="{CompiledBinding OpenDialogWithViewCommand}">Open dialog from view</Button>
                     <TextBlock Grid.Row="1"
                                    HorizontalAlignment="Center"
                                    TextWrapping="Wrap"
@@ -29,7 +29,7 @@
                   </Grid>
 
                   <Grid RowDefinitions="*,28">
-                    <Button Grid.Row="0" Width="NaN" Margin="20" VerticalAlignment="Center" Height="32" Command="{CompiledBinding OpenDialogWithModelCommand}">Open dialog from model</Button>
+                    <Button Grid.Row="0" Width="220" Height="44" Margin="20" VerticalAlignment="Center" Command="{CompiledBinding OpenDialogWithModelCommand}">Open dialog from model</Button>
                     <TextBlock Grid.Row="1"
                                    HorizontalAlignment="Center"
                                    TextWrapping="Wrap"
@@ -42,11 +42,11 @@
             <StackPanel Grid.Column="1">
               <TextBlock Classes="Headline6 Subheadline2" Text="Builder dialogs (real child windows)" Foreground="{DynamicResource MaterialDesignMediumGray}" />
               
-              <Grid RowDefinitions="*,*,*,*" ColumnDefinitions="*,*" HorizontalAlignment="Center">
+              <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*" HorizontalAlignment="Center">
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="0" UniqueId="BuilderDialog1">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding InfoDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding InfoDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                                HorizontalAlignment="Center"
                                TextWrapping="Wrap"
@@ -56,8 +56,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="1" Grid.Row="0" UniqueId="BuilderDialog2">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ConfirmDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding ConfirmDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                                HorizontalAlignment="Center"
                                TextWrapping="Wrap"
@@ -67,8 +67,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="1" UniqueId="BuilderDialog3">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ConfirmSequenceDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding ConfirmSequenceDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
                           TextWrapping="Wrap"
@@ -78,8 +78,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="1" Grid.Row="1" UniqueId="BuilderDialog4">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding ImageDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding ImageDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
                           TextWrapping="Wrap"
@@ -89,8 +89,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="2" UniqueId="BuilderDialog5">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding LoginDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding LoginDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
                           TextWrapping="Wrap"
@@ -100,8 +100,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="1" Grid.Row="2" UniqueId="BuilderDialog6">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding FolderNameDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding FolderNameDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
                           TextWrapping="Wrap"
@@ -111,8 +111,8 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="3" UniqueId="BuilderDialog7">
-                  <Grid RowDefinitions="*,28" Margin="8" DataContext="{CompiledBinding CustomDialog}">
-                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="NaN" Height="38" />
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding DatePickerDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
                           TextWrapping="Wrap"
@@ -120,6 +120,29 @@
                           IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
                   </Grid>
                 </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
+                <showMeTheXaml:XamlDisplay Grid.Column="1" Grid.Row="3" UniqueId="BuilderDialog8">
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding TimePickerDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
+                    <TextBlock Grid.Row="1" Margin="8"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Text="{CompiledBinding Result}"
+                          IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </Grid>
+                </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
+                <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="4" UniqueId="BuilderDialog9">
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding CustomDialog}">
+                    <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
+                    <TextBlock Grid.Row="1" Margin="8"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Text="{CompiledBinding Result}"
+                          IsVisible="{CompiledBinding Result, Converter={x:Static StringConverters.IsNotNullOrEmpty}, FallbackValue=False}" />
+                  </Grid>
+                </showMeTheXaml:XamlDisplay>
+                <!--****************************************************************-->
               </Grid>
          </StackPanel>
         </Grid>

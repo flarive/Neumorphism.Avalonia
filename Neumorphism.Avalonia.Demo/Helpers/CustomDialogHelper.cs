@@ -1,8 +1,8 @@
 ﻿using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Bases;
 using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
-using Neumorphism.Avalonia.Demo.Windows;
-using Neumorphism.Avalonia.Demo.Windows.ViewModels;
+using Neumorphism.Avalonia.Demo.Windows.Dialogs;
+using Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs;
 
 namespace Neumorphism.Avalonia.Demo.Helpers
 {
@@ -18,8 +18,7 @@ namespace Neumorphism.Avalonia.Demo.Helpers
             var window = new SampleCustomDialog();
             var context = new SampleCustomDialogViewModel(window)
             {
-                Content = @params.Content,
-                ContentTemplate = @params.ContentTemplate
+                Number = @params.Number
             };
 
             ApplyBaseParams(context, @params);

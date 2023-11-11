@@ -93,6 +93,7 @@
 		<Setter Property="HorizontalAlignment" Value="Left" />
 		<Setter Property="VerticalAlignment" Value="Center" />
 		<Setter Property="CornerRadius" Value="10" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">
@@ -127,7 +128,7 @@
 								<Grid Name="PART_Grid" ColumnDefinitions="Auto,*,Auto" Margin="0" VerticalAlignment="Stretch" Height="{TemplateBinding Height}">
 									<ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}" />
 									<Panel Grid.Column="1" Name="PART_TextRoot" VerticalAlignment="Top" HorizontalAlignment="Stretch">
-										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="15,0,15,0"
+										<ScrollViewer Name="PART_Scroller" VerticalAlignment="Stretch" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="15,0,15,0"
 													  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 													  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
 											<Panel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">

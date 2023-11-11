@@ -18,7 +18,6 @@
         Title="Neumorphism.Avalonia.Demo"
         Icon="avares://Neumorphism.Avalonia.Demo/Assets/app.ico"
         x:CompileBindings="True"
-        Name="zzz"
         x:DataType="viewModels:ApplicationModelBase"
         x:Class="Neumorphism.Avalonia.Demo.Windows.MainWindow">
 
@@ -81,26 +80,6 @@
         </Button>
       </Grid>
     </StackPanel>
-
-
-    <DataTemplate x:Key="TestCustomWindow">
-      <StackPanel Orientation="Vertical" DataContext="">
-        <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
-        <!--<TextBlock Classes="Body1" Background="Yellow"
-               TextAlignment="Center"
-               Text="{Binding $self.Number, RelativeSource={RelativeSource AncestorType={local:MainWindow}}, FallbackValue=none}"/>-->
-      </StackPanel>
-    </DataTemplate>
-
-    <!--<StackPanel x:Key="TestCustomWindow2" Orientation="Vertical">
-      <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
-      <TextBlock Classes="Body1" Background="Yellow"
-             TextAlignment="Center"
-             Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=viewModels:ApplicationModelBase}, Path=Number, FallbackValue=none}"/>
-    </StackPanel>-->
-    
-
-
   </Window.Resources>
 
 

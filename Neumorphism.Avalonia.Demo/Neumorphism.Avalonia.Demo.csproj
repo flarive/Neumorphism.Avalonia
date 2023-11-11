@@ -72,7 +72,7 @@
   </ItemGroup>
     
   <ItemGroup>
-    <Compile Update="Windows\SampleCustomDialog.axaml.cs">
+    <Compile Update="Windows\Dialogs\SampleCustomDialog.axaml.cs">
       <DependentUpon>SampleCustomDialog.axaml</DependentUpon>
     </Compile>
   </ItemGroup>

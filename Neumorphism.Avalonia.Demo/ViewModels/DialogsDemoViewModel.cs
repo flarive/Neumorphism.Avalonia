@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Templates;
-using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Themes.Neumorphism.Dialogs;
@@ -14,6 +11,7 @@ using Neumorphism.Avalonia.Demo.Helpers;
 using Neumorphism.Avalonia.Demo.Models;
 using Neumorphism.Avalonia.Demo.Windows;
 using Neumorphism.Avalonia.Demo.Windows.ViewModels;
+using Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels
 {
@@ -34,6 +32,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
         public DialogViewModel CustomDialog { get; }
+        public DialogViewModel TimePickerDialog { get; }
+        public DialogViewModel DatePickerDialog { get; }
 
 
 
@@ -80,6 +80,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
             LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
             FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
+            DatePickerDialog = new DialogViewModel("DatePicker dialog", CreateDatePickerDialog);
+            TimePickerDialog = new DialogViewModel("TimePicker dialog", CreateTimePickerDialog);
             CustomDialog = new DialogViewModel("Custom dialog", CreateCustomDialog);
         }
 
@@ -348,7 +350,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             }
         }
 
-        private async IAsyncEnumerable<string> TimePickerDialog()
+        private async IAsyncEnumerable<string> CreateTimePickerDialog()
         {
             _appModelBase.IsDialogOpened = true;
 
@@ -380,7 +382,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             _previousTimePickerResult = r;
         }
 
-        private async IAsyncEnumerable<string> DatePickerDialog()
+        private async IAsyncEnumerable<string> CreateDatePickerDialog()
         {
             _appModelBase.IsDialogOpened = true;
 
@@ -452,16 +454,20 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             var dialog = CustomDialogHelper.CreateCustomDialog(new SampleCustomDialogBuilderParams
             {
                 ContentHeader = "Welcome to this custom dialog !",
-                SupportingText = "Following content is coming from a custom template...",
+                SupportingText = "Following content is coming from a fully custom dialog...",
                 WindowTitle = "Info dialog",
                 DialogHeaderIcon = DialogIconKind.Info,
                 DialogIcon = DialogIconKind.Info,
-                //Content = _window.Resources["TestCustomWindow"],
-                ContentTemplate = _window.Resources["TestCustomWindow"] as DataTemplate,
-                Width = 880,
+                Number = new Random().Next(0, 100),
+                Width = 520,
                 Borderless = true,
                 CenterDialogButtons = new[]
                 {
+                    new DialogButton
+                    {
+                        Content = "CANCEL",
+                        Result = "cancel"
+                    },
                     new DialogButton
                     {
                         Content = "OK",
@@ -471,16 +477,15 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             });
 
 
-
             _appModelBase.IsDialogOpened = true;
+
+            var context = dialog.GetWindow().DataContext as SampleCustomDialogViewModel;
 
             var result = await dialog.ShowDialog(_window);
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result.GetResult} / {context?.Number}";
         }
-
-
     }
 }
