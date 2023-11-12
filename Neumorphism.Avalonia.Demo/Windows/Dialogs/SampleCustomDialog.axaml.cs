@@ -7,13 +7,15 @@ namespace Neumorphism.Avalonia.Demo.Windows.Dialogs
 {
     public partial class SampleCustomDialog : Window, IDialogWindowResult<DialogResult>, IHasNegativeResult
     {
-        public SampleCustomDialog() {
+        public SampleCustomDialog()
+        {
             InitializeComponent();
         }
 
         public DialogResult GetResult() => (DataContext as SampleCustomDialogViewModel)?.DialogResult;
 
-        public void SetNegativeResult(DialogResult result) {
+        public void SetNegativeResult(DialogResult result)
+        {
             if (DataContext is SampleCustomDialogViewModel viewModel)
                 viewModel.DialogResult = result;
         }

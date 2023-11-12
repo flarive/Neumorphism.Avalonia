@@ -10,8 +10,6 @@ namespace Avalonia.Themes.Neumorphism.Assist
 {
     public static class ShadowProvider
     {
-        // ReSharper disable once MemberCanBePrivate.Global
-        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Global
         public static Color MaterialShadowColor { get; set; } = Color.FromArgb(76, 0, 0, 0);
 
         public static BoxShadows ToBoxShadows(this ShadowDepth shadowDepth, Color? overrideColor = null)

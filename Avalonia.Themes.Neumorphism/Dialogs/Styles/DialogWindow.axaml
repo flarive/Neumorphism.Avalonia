@@ -3,6 +3,7 @@
         xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels" >
   
     <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/EmbeddedDialogControl.axaml"/>
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/CustomDialogControl.axaml"/>
 
     <Style Selector="Window" x:DataType="viewModels:DialogWindowViewModel">
         <Setter Property="Title" Value="{CompiledBinding WindowTitle}" />

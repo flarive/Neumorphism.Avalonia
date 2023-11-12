@@ -1,28 +1,83 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs"
-        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:dialogcontrols="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         x:Class="Neumorphism.Avalonia.Demo.Windows.Dialogs.SampleCustomDialog"
         x:DataType="viewModels:SampleCustomDialogViewModel">
 
 
   <Window.Styles>
-        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml"/>
-        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml"/>
-        <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml" />
-    </Window.Styles>
-    
-    <controls:EmbeddedDialogControl>
-        <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
-            <StackPanel Name="PART_ContentPanel">
-                <TextBlock Name="PART_SupportingText"
-                           Classes="Body1" Margin="0,15,0,0"
-                           IsVisible="{CompiledBinding !!ContentMessage.Length}"
-                           Text="{CompiledBinding ContentMessage, FallbackValue=''}"/>
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml"/>
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml"/>
+    <StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Icons/DialogIconStyle.axaml"/>
+  </Window.Styles>
 
-                <TextBlock Text="Your lucky magic number:" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-                <TextBox Text="{CompiledBinding Number, FallbackValue=0}" TextAlignment="Center" Width="80" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-            </StackPanel>
-        </ScrollViewer>
-    </controls:EmbeddedDialogControl>
+  <dialogcontrols:CustomDialogControl>
+    <StackPanel Name="PART_RootPanel" Orientation="Vertical" Background="Transparent"
+                             Width="500"
+                             MaxWidth="500">
+
+      <controls:ColorZone VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="56"
+            assist:ShadowAssist.ShadowDepth="Depth1"
+            Mode="Standard" Background="Transparent">
+
+          <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, 3">
+            <TextBlock Grid.Row="0" Grid.Column="0" Foreground="{DynamicResource MaterialDesignDarkGray}" Padding="40,0,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{CompiledBinding ContentHeader, FallbackValue=''}" />
+            <Button Grid.Row="0" Grid.Column="1" Margin="0,0,15,0" Theme="{StaticResource ButtonNoMaterial}" Command="{Binding CloseWindow}">
+              <icons:MaterialIcon Kind="Close" Width="22" Height="22" VerticalAlignment="Center" Opacity="0.6" Foreground="{DynamicResource MaterialDesignMediumGray}" />
+            </Button>
+            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Stretch" Height="3"/>
+          </Grid>
+        
+        </controls:ColorZone>
+
+      <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
+        <StackPanel Name="PART_ContentPanel">
+          <TextBlock Name="PART_SupportingText"
+                     Classes="Body1" Margin="0,15,0,0"
+                     IsVisible="{CompiledBinding !!ContentMessage.Length}"
+                     Text="{CompiledBinding ContentMessage, FallbackValue=''}"/>
+
+          <TextBlock Text="Your lucky magic number:" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+          <TextBox Text="{CompiledBinding Number, FallbackValue=0}" TextAlignment="Center" Width="80" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+          <TextBox Text="aaaaaaaaaa"/>
+          <TextBox Text="aaaaaaaaaa"/>
+          <TextBox Text="aaaaaaaaaa"/>
+          <TextBox Text="aaaaaaaaaa"/>
+          <TextBox Text="aaaaaaaaaa"/>
+        </StackPanel>
+      </ScrollViewer>
+
+      <controls:ColorZone VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                  assist:ShadowAssist.ShadowDepth="Depth5"
+                  Mode="Standard" Background="Transparent">
+
+        <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
+
+          <ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        ItemsSource="{CompiledBinding LeftDialogButtons}"
+                        ItemTemplate="{StaticResource DialogButtonTemplate}"
+                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
+
+          <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        ItemsSource="{CompiledBinding CenterDialogButtons}"
+                        ItemTemplate="{StaticResource DialogButtonTemplate}"
+                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
+
+          <ItemsControl Name="{x:Static naming:PartNames.PartRightButtonPlacement}" Grid.Column="2"
+                        HorizontalAlignment="Right"
+                        ItemsSource="{CompiledBinding RightDialogButtons}"
+                        ItemTemplate="{StaticResource DialogButtonTemplate}"
+                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
+
+        </Grid>
+      </controls:ColorZone>
+    </StackPanel>
+  </dialogcontrols:CustomDialogControl>
 </Window>

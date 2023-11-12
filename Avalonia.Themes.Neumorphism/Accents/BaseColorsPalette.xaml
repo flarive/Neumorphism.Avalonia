@@ -67,7 +67,7 @@
 			<Color x:Key="MaterialDesignDataGridRowHoverBackground">#0A000000</Color>
 			<Color x:Key="MaterialDesignShadowLight">#CCFFFFFF</Color>
 			<Color x:Key="MaterialDesignShadowDark">#33000000</Color>
-			<Color x:Key="MaterialDesignBorderShadow">#FFC4C7CB</Color>
+			<Color x:Key="MaterialDesignBorderShadow">#66C4C7CB</Color>
 			<Color x:Key="MaterialDesignDisabledNoTransparency">#FFD3D8DE</Color>
 			<Color x:Key="MaterialDesignTransparent">#00FFFFFF</Color>
 			<Color x:Key="MaterialDesignSilverGray">#CCCCCCCC</Color>

@@ -17,8 +17,6 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 {
     public sealed class DialogsDemoViewModel : ViewModelBase
     {
-        private TimeSpan _previousTimePickerResult = TimeSpan.Zero;
-        private DateTime _previousDatePickerResult = DateTime.Now;
         private readonly MainWindow _window;
 
         private ApplicationModelBase _appModelBase;
@@ -26,14 +24,17 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
 
         public DialogViewModel InfoDialog { get; }
+        public DialogViewModel WarningDialog { get; }
+        public DialogViewModel ErrorDialog { get; }
+
         public DialogViewModel ConfirmDialog { get; }
         public DialogViewModel ConfirmSequenceDialog { get; }
+
         public DialogViewModel ImageDialog { get; }
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
         public DialogViewModel CustomDialog { get; }
-        public DialogViewModel TimePickerDialog { get; }
-        public DialogViewModel DatePickerDialog { get; }
+
 
 
 
@@ -74,14 +75,16 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 _appModelBase = _window.DataContext as ApplicationModelBase;
             }
 
-            InfoDialog = new DialogViewModel("Alert dialog", CreateInfoDialog);
+            InfoDialog = new DialogViewModel("Info dialog", CreateInfoDialog);
+            WarningDialog = new DialogViewModel("Warning dialog", CreateWarningDialog);
+            ErrorDialog = new DialogViewModel("Error dialog", CreateErrorDialog);
+
             ConfirmDialog = new DialogViewModel("Confirm dialog", CreateConfirmDialog);
             ConfirmSequenceDialog = new DialogViewModel("Confirm dialog sequence", CreateConfirmSequenceDialog);
+
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
             LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
             FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
-            DatePickerDialog = new DialogViewModel("DatePicker dialog", CreateDatePickerDialog);
-            TimePickerDialog = new DialogViewModel("TimePicker dialog", CreateTimePickerDialog);
             CustomDialog = new DialogViewModel("Custom dialog", CreateCustomDialog);
         }
 
@@ -92,17 +95,65 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         {
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
-                ContentHeader = "Welcome to Neumorphism design !",
-                SupportingText = "Enjoy Neumorphism Design in AvaloniaUI !",
+                ContentHeader = "Welcome !",
+                SupportingText = "This just a warm welcome info message !",
                 WindowTitle = "Info dialog",
                 DialogHeaderIcon = DialogIconKind.Info,
                 DialogIcon = DialogIconKind.Info,
                 StartupLocation = WindowStartupLocation.CenterOwner,
+                Width = 480
             });
 
 
             _appModelBase.IsDialogOpened = true;
             
+            var result = await dialog.ShowDialog(_window);
+
+            _appModelBase.IsDialogOpened = false;
+
+            yield return $"Result: {result.GetResult}";
+        }
+
+
+        private async IAsyncEnumerable<string> CreateWarningDialog()
+        {
+            var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
+            {
+                ContentHeader = "Warning !",
+                SupportingText = "You are about to do a quite dangerous action !",
+                WindowTitle = "Warning dialog",
+                DialogHeaderIcon = DialogIconKind.Warning,
+                DialogIcon = DialogIconKind.Warning,
+                StartupLocation = WindowStartupLocation.CenterOwner,
+                Width = 480
+            });
+
+
+            _appModelBase.IsDialogOpened = true;
+
+            var result = await dialog.ShowDialog(_window);
+
+            _appModelBase.IsDialogOpened = false;
+
+            yield return $"Result: {result.GetResult}";
+        }
+
+        private async IAsyncEnumerable<string> CreateErrorDialog()
+        {
+            var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
+            {
+                ContentHeader = "Error !",
+                SupportingText = "An error occured !",
+                WindowTitle = "Error dialog",
+                DialogHeaderIcon = DialogIconKind.Error,
+                DialogIcon = DialogIconKind.Error,
+                StartupLocation = WindowStartupLocation.CenterOwner,
+                Width = 480
+            });
+
+
+            _appModelBase.IsDialogOpened = true;
+
             var result = await dialog.ShowDialog(_window);
 
             _appModelBase.IsDialogOpened = false;
@@ -246,29 +297,30 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     new TextFieldBuilderParams
                     {
                         HelperText = "* Required",
-                        Classes = "outline",
                         Label = "Account",
                         MaxCountChars = 24,
-                        Validater = ValidateAccount,
+                        Validator = ValidateAccount,
                     },
                     new TextFieldBuilderParams
                     {
                         HelperText = "* Required",
-                        Classes = "outline",
                         Label = "Password",
                         MaxCountChars = 64,
                         FieldKind = TextFieldKind.Masked,
-                        Validater = ValidatePassword
+                        Validator = ValidatePassword
                     }
                 },
-                RightDialogButtons = new[]
+                LeftDialogButtons = new[]
                 {
                     new DialogButton
                     {
                         Content = "CANCEL",
                         Result = "cancel",
                         IsNegative = true
-                    },
+                    }
+                },
+                RightDialogButtons = new[]
+                {
                     new DialogButton
                     {
                         Content = "LOGIN",
@@ -318,7 +370,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     {
                         Label = "Folder name",
                         MaxCountChars = 256,
-                        Validater = ValidatePassword,
+                        Validator = ValidatePassword,
                         DefaultText = "Folder1",
                         HelperText = "* Required"
                     }
@@ -347,104 +399,6 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             if (result.GetResult == "rename")
             {
                 yield return $"Folder name: {result.GetFieldsResult()[0].Text}";
-            }
-        }
-
-        private async IAsyncEnumerable<string> CreateTimePickerDialog()
-        {
-            _appModelBase.IsDialogOpened = true;
-
-            var result = await DialogHelper.CreateTimePicker(new TimePickerDialogBuilderParams
-            {
-                Borderless = true,
-                StartupLocation = WindowStartupLocation.CenterOwner,
-                ImplicitValue = _previousTimePickerResult,
-                RightDialogButtons = new[]
-                {
-                    new DialogButton
-                    {
-                        Content = "CONFIRM",
-                        Result = "confirm",
-                        IsPositive = true
-                    }
-                }
-            }).ShowDialog(_window);
-
-            _appModelBase.IsDialogOpened = false;
-
-            yield return $"Result: {result.GetResult}";
-
-            if (result.GetResult != "confirm")
-                yield break;
-
-            var r = result.GetTimeSpan();
-            yield return $"TimeSpan: {r.ToString()}";
-            _previousTimePickerResult = r;
-        }
-
-        private async IAsyncEnumerable<string> CreateDatePickerDialog()
-        {
-            _appModelBase.IsDialogOpened = true;
-
-            var result = await DialogHelper.CreateDatePicker(new DatePickerDialogBuilderParams
-            {
-                Borderless = true,
-                StartupLocation = WindowStartupLocation.CenterOwner,
-                ImplicitValue = _previousDatePickerResult,
-                RightDialogButtons = new[]
-                {
-                    new DialogButton
-                    {
-                        Content = "CONFIRM",
-                        Result = "confirm",
-                        IsPositive = true
-                    }
-                }
-            }).ShowDialog(_window);
-
-            _appModelBase.IsDialogOpened = false;
-
-            yield return $"Result: {result.GetResult}";
-
-            if (result.GetResult != "confirm")
-                yield break;
-
-            var r = result.GetDate();
-            // ReSharper disable once SimplifyStringInterpolation
-            yield return $"TimeSpan: {r.ToString("d")}";
-            _previousDatePickerResult = r;
-        }
-
-
-        public void OpenDialogWithViewCommand()
-        {
-            // View DialogSampleView is defined in <UserControl.Resources> in DialogsDemo.axaml
-            var view = _window.Resources["DialogSampleView"]!;
-            if (view != null)
-            {
-                DialogHost.Show(view, "MainDialogHost", OpenDialogWithViewClose);
-            }
-        }
-
-        private void OpenDialogWithViewClose(object sender, DialogClosingEventArgs eventArgs)
-        {
-            OpenDialogWithViewResult = $"Result: {eventArgs.Parameter}";
-        }
-
-
-        public void OpenDialogWithModelCommand()
-        {
-            // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
-            var model = new DialogSampleModel(new Random().Next(0, 100));
-            DialogHost.Show(model, "MainDialogHost", OpenDialogWithModelClose);
-        }
-
-        private void OpenDialogWithModelClose(object sender, DialogClosingEventArgs eventArgs)
-        {
-            var model = ((DialogHost)sender).DialogContent as DialogSampleModel;
-            if (model != null)
-            {
-                OpenDialogWithModelResult = $"Result: {eventArgs.Parameter} / {model.Number}";
             }
         }
 
@@ -481,11 +435,47 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             var context = dialog.GetWindow().DataContext as SampleCustomDialogViewModel;
 
-            var result = await dialog.ShowDialog(_window);
+            DialogResult result = await dialog.ShowDialog(_window);
 
             _appModelBase.IsDialogOpened = false;
 
             yield return $"Result: {result.GetResult} / {context?.Number}";
         }
+
+
+        public void OpenDialogWithViewCommand()
+        {
+            // View DialogSampleView is defined in <UserControl.Resources> in DialogsDemo.axaml
+            var view = _window.Resources["DialogSampleView"]!;
+            if (view != null)
+            {
+                DialogHost.Show(view, "MainDialogHost", OpenDialogWithViewClose);
+            }
+        }
+
+        private void OpenDialogWithViewClose(object sender, DialogClosingEventArgs eventArgs)
+        {
+            OpenDialogWithViewResult = $"Result: {eventArgs.Parameter}";
+        }
+
+
+        public void OpenDialogWithModelCommand()
+        {
+            // View that associated with this model defined in <Window.DataTemplates> in MainWindow.axaml
+            var model = new DialogSampleModel(new Random().Next(0, 100));
+            DialogHost.Show(model, "MainDialogHost", OpenDialogWithModelClose);
+        }
+
+        private void OpenDialogWithModelClose(object sender, DialogClosingEventArgs eventArgs)
+        {
+            var model = ((DialogHost)sender).DialogContent as DialogSampleModel;
+            if (model != null)
+            {
+                OpenDialogWithModelResult = $"Result: {eventArgs.Parameter} / {model.Number}";
+            }
+        }
+
+
+        
     }
 }

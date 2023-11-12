@@ -24,7 +24,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         /// <br/><seealso cref="Tuple{Boolean,String}.Item2"/> is information about invalid field, should be string.
         /// </list>
         /// </summary>
-        public Func<string, Tuple<bool, string>> Validater;
+        public Func<string, Tuple<bool, string>> Validator;
 
         public string PlaceholderText = null;
         public string DefaultText = "";

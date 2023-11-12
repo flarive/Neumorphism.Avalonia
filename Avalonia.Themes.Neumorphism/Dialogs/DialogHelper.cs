@@ -143,87 +143,6 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             return new DialogWindowBase<TextFieldDialog, TextFieldDialogResult>(window);
         }
 
-        /// <summary>
-        /// Create time picker dialog.
-        /// </summary>
-        /// <param name="params">Parameters of building dialog</param>
-        /// <returns>Instance of picker.</returns>
-        public static IDialogWindow<DateTimePickerDialogResult> CreateTimePicker(TimePickerDialogBuilderParams @params)
-        {
-            var window = new TimePickerDialog();
-            var context = new TimePickerDialogViewModel(window)
-            {
-                PositiveButton = @params.PositiveButton,
-                NegativeButton = @params.NegativeButton,
-                FirstField = (ushort) @params.ImplicitValue.Hours,
-                SecondField = (ushort) @params.ImplicitValue.Minutes,
-            };
-            ApplyBaseParams(context, @params);
-
-            context.RightDialogButtons =
-                new ObservableCollection<DialogButtonViewModel>(CreateObsoleteButtonArray(context,
-                    @params.NegativeButton,
-                    @params.PositiveButton));
-
-            if (context.Width is null || context.Width < 320)
-                context.Width = 320;
-
-            window.AttachViewModel(context);
-            SetupWindowParameters(window, @params);
-            return new DialogWindowBase<TimePickerDialog, DateTimePickerDialogResult>(window);
-        }
-
-        /// <summary>
-        /// Create date picker dialog.
-        /// </summary>
-        /// <param name="params">Parameters of building dialog</param>
-        /// <returns>Instance of picker.</returns>
-        //[Obsolete("This feature is still not ready for use! Please come back later!")]
-        public static IDialogWindow<DateTimePickerDialogResult> CreateDatePicker(DatePickerDialogBuilderParams @params)
-        {
-            var window = new DatePickerDialog();
-            var context = new DatePickerDialogViewModel(window)
-            {
-                PositiveButton = @params.PositiveButton,
-                NegativeButton = @params.NegativeButton,
-                DateTime = @params.ImplicitValue
-            };
-            ApplyBaseParams(context, @params);
-
-            context.RightDialogButtons =
-                new ObservableCollection<DialogButtonViewModel>(CreateObsoleteButtonArray(context,
-                    @params.NegativeButton,
-                    @params.PositiveButton));
-
-            if (context.Width is null || context.Width < 320)
-                context.Width = 320;
-
-            window.AttachViewModel(context);
-            SetupWindowParameters(window, @params);
-            return new DialogWindowBase<DatePickerDialog, DateTimePickerDialogResult>(window);
-        }
-
-        ///// <summary>
-        ///// Create an dialog with custom content or dummy dialog.
-        ///// </summary>
-        ///// <param name="params">Parameters of building dialog</param>
-        ///// <returns>Instance of dialog.</returns>
-        //public static IDialogWindow<DialogResult> CreateCustomDialog(CustomDialogBuilderParams @params)
-        //{
-        //    var window = new CustomDialog();
-        //    var context = new CustomDialogViewModel(window)
-        //    {
-        //        Content = @params.Content,
-        //        ContentTemplate = @params.ContentTemplate
-        //    };
-
-        //    ApplyBaseParams(context, @params);
-
-        //    window.DataContext = context;
-        //    SetupWindowParameters(window, @params);
-        //    return new DialogWindowBase<CustomDialog, DialogResult>(window);
-        //}
-
         public static void ApplyBaseParams<T>(T input, DialogWindowBuilderParamsBase @params)
             where T : DialogWindowViewModel
         {
@@ -340,7 +259,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
 
                 try
                 {
-                    var model = new TextFieldViewModel(parent, param.DefaultText, param.Validater)
+                    var model = new TextFieldViewModel(parent, param.DefaultText, param.Validator)
                     {
                         // but... I implemented an setter to TextFieldDialog for apply classes when showing dialog.
                         // Currently AvaloniaUI are not supported to binding classes.

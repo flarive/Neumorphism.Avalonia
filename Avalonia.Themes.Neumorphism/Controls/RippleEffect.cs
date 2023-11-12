@@ -19,7 +19,6 @@ namespace Avalonia.Themes.Neumorphism.Controls.Ripple
         public static readonly StyledProperty<bool> UseTransitionsProperty =
             AvaloniaProperty.Register<RippleEffect, bool>(nameof(UseTransitions));
         
-        // ReSharper disable once InconsistentNaming
         private Canvas PART_RippleCanvasRoot;
 
         private Ripple _last;

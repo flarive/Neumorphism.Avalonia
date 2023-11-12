@@ -246,7 +246,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
             drawer.UpdateContentMargin();
         }
 
-        // ReSharper disable once InconsistentNaming
         private Border PART_Scrim;
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)

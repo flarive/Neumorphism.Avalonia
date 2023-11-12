@@ -1,0 +1,48 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels" 
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
+        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+        xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
+  
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Resources/TemplateResources.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <Style Selector="controls|CustomDialogControl" x:DataType="viewModels:DialogWindowViewModel" >
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource MaterialDesignPaper}"
+                        ClipToBounds="{TemplateBinding ClipToBounds}">
+                  <Border.BoxShadow>
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                      <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                      <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                    </MultiBinding>
+                  </Border.BoxShadow>
+
+                  <ContentPresenter Name="PART_ContentPresenter"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="controls|CustomDialogControl[CornerRadius=0] /template/ Border#PART_RootBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
+  
+    <Style Selector="controls|CustomDialogControl /template/ Border#PART_RootBorder">
+        <Setter Property="assist:ShadowAssist.ShadowDepth" Value="CenterDepth3"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Margin" Value="32"/>
+    </Style>
+</Styles>

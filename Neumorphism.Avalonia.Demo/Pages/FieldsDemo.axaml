@@ -291,7 +291,7 @@
             <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadow}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
                      Watermark="Enter your email"
                      Text="{Binding Email}"
-					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left custom header'
+					           ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left custom header'
                      CornerRadius="32" assist:TextFieldAssist.InnerLeftBackground="#22666666" assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
               <TextBox.InnerLeftContent>
                 <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">

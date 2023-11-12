@@ -5,10 +5,8 @@ using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements.Header.Icons;
 
 namespace Avalonia.Themes.Neumorphism.Dialogs.Resources
 {
-    // ReSharper disable once UnusedType.Global
     public sealed class TemplateResources : ResourceDictionary
     {
-        // ReSharper disable UnusedMember.Local
         private void DialogButtonTemplate_OnSelectTemplateKey(object sender, SelectTemplateEventArgs e)
         {
             e.TemplateKey = e.DataContext switch
@@ -28,7 +26,5 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Resources
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
-
-        // ReSharper restore UnusedMember.Local
     }
 }

@@ -25,7 +25,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Views
 
             return viewModel.DialogResult switch {
                 TextFieldDialogResult vm => vm,
-                // ReSharper disable once ConvertTypeCheckPatternToNullCheck
+
                 DialogResult basicViewModel => new TextFieldDialogResult(basicViewModel.GetResult,
                     Array.Empty<TextFieldResult>()),
                 _ => null

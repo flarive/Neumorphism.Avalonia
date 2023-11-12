@@ -242,12 +242,6 @@
 			<Setter Property="Opacity" Value="0.3" />
 			<Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
 		</Style>
-
-
-
-
-
-		
 	</ControlTheme>
 
 

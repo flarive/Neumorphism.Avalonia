@@ -47,7 +47,7 @@
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
                                           ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
 
-                          <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" IsVisible="{Binding !!CenterDialogButtons.Count}"
+                            <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" IsVisible="{Binding !!CenterDialogButtons.Count}"
                                           DockPanel.Dock="Bottom" HorizontalAlignment="Center"
                                           ItemsSource="{CompiledBinding CenterDialogButtons}"
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
