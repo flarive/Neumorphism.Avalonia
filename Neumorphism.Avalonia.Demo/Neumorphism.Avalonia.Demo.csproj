@@ -4,12 +4,14 @@
     <!-- if you want to check exceptions, change this to "Exe" and start your app from the console -->
     <OutputType Condition="'$(Configuration.toUpper())' != 'DEBUG'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration.toUpper())' == 'DEBUG'">WinExe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ApplicationIcon>Assets/app.ico</ApplicationIcon>
     <InvariantGlobalization>false</InvariantGlobalization>
     <Nullable>disable</Nullable>
     <PublishAot>true</PublishAot>
     <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>full</TrimMode>
+    <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
     <SelfContained>true</SelfContained>
     <AvaloniaNameGenerator>false</AvaloniaNameGenerator>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
