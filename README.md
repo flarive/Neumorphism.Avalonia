@@ -97,7 +97,8 @@ More controls should be themed soon.
 - Can be used with .net Core 3.x, .net5, .net6, .net7, .net8...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
 - Built upon the latest version of Avalonia UI
-- .Net 7 demo application project
+- .Net 8 demo application project
+- Support Native AOT compilation (publish with dotnet publish -c release --framework net8.0 -r win-x64)
 
 
 # <img src="favicon.png" width="32" height="32"> How to start ?
