@@ -9,6 +9,7 @@
     <InvariantGlobalization>false</InvariantGlobalization>
     <Nullable>disable</Nullable>
     <PublishAot>true</PublishAot>
+    <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>full</TrimMode>
     <BuiltInComInteropSupport>false</BuiltInComInteropSupport>

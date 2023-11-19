@@ -62,6 +62,8 @@
 		<Setter Property="assist:ComboBoxAssist.InnerRightBackground" Value="#22444444"/>
 		<Setter Property="assist:ComboBoxAssist.InnerLeftPadding" Value="0"/>
 		<Setter Property="assist:ComboBoxAssist.InnerRightPadding" Value="0"/>
+    
+    
 
     <!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
 			<Setter.Value>
@@ -76,7 +78,7 @@
 									  FontStyle="{TemplateBinding FontStyle}"
 									  Text="{TemplateBinding PlaceholderText}"
 									  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
-									  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+									  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToHalfDoubleConverter}, ConverterParameter=1}" />
 				</Template>
 			</Setter.Value>
 		</Setter>-->
@@ -102,11 +104,11 @@
 									FontWeight="{TemplateBinding FontWeight}"
 									FontStyle="{TemplateBinding FontStyle}"
 									Text="{TemplateBinding PlaceholderText}"
-									Opacity="1"
+									Opacity="0.5"
 									IsVisible="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark}"
 									RenderTransformOrigin="0, 0" />
 
-							<TextBlock Name="watermark" Grid.Column="1"
+							<TextBlock Name="watermark" Grid.Column="1" 
 									  HorizontalAlignment="Stretch"
 									  VerticalAlignment="Center"
 									  Foreground="{TemplateBinding Foreground}"
@@ -116,7 +118,7 @@
 									  FontStyle="{TemplateBinding FontStyle}"
 									  Text="{TemplateBinding PlaceholderText}"
 									  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
-									  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+									  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToHalfDoubleConverter}, ConverterParameter=1}" />
 
 							<!--<ContentPresenter Name="PART_Watermark" Grid.Column="1" Background="Transparent" Content="{TemplateBinding assist:ComboBoxAssist.WatermarkContent}" />-->
 
@@ -246,7 +248,7 @@
 		</Style>
 
 
-		<!--floating wartermark-->
+		<!--floating watermark-->
 		<Style Selector="^:not(.Outline):not(^[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
 			<Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
 			<Setter Property="RenderTransform" Value="scale(0.75)"/>
@@ -354,7 +356,7 @@
 								FontStyle="{TemplateBinding FontStyle}"
 								Text="{TemplateBinding PlaceholderText}"
 								Padding="5,0,5,0"
-								Opacity="1"
+								Opacity="0.5"
 								IsVisible="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark}"
 								RenderTransformOrigin="0, 0" />
 
@@ -370,7 +372,7 @@
 							  Text="{TemplateBinding PlaceholderText}"
 							  Margin="15,10,80,10"
 							  Padding="5,0,5,0"
-							  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToDoubleConverter}, ConverterParameter=1}" />
+							  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToHalfDoubleConverter}, ConverterParameter=1}" />
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
 							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"

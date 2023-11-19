@@ -30,9 +30,17 @@
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
-						<ComboBox Width="500" PlaceholderText="Please select a user" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True"
+						<ComboBox Width="500" PlaceholderText="Please select your favorite Beatles" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True"
 								  ToolTip.Tip='Floating label watermarked comboBox with default theme applied and custom inner left content'
+                      ItemsSource="{CompiledBinding AllBeatles}"
+											SelectedValueBinding="{CompiledBinding Key}"
+											SelectedItem="{CompiledBinding MyFavoriteBeatle1}"
 								  SelectionChanged="ClassicComboBoxes1SelectionChanged">
+              <ComboBox.ItemTemplate>
+                <DataTemplate>
+                  <TextBlock Text="{CompiledBinding Value}" VerticalAlignment="Center"/>
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
 							<ComboBox.Styles>
 								<Style Selector="ComboBox">
 									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
@@ -46,21 +54,6 @@
 									</Setter>
 								</Style>
 							</ComboBox.Styles>
-							<ComboBoxItem Tag="0">
-								<TextBlock Text="John" />
-							</ComboBoxItem>
-							<ComboBoxItem Tag="1">
-								<TextBlock Text="Paul" />
-							</ComboBoxItem>
-							<ComboBoxItem Tag="2">
-								<TextBlock Text="Ringo" />
-							</ComboBoxItem>
-							<ComboBoxItem Tag="3">
-								<TextBlock Text="Georges" />
-							</ComboBoxItem>
-							<ComboBoxItem Tag="-1">
-								<TextBlock Text="None" />
-							</ComboBoxItem>
 						</ComboBox>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
@@ -130,7 +123,15 @@
 							  ToolTip.Tip='Floating label comboBox with theme "ComboBoxOutset" applied and custom left and right inner content'
 							  assist:ComboBoxAssist.InnerLeftBackground="{DynamicResource PrimaryHueMidBrush}"
 							  assist:ComboBoxAssist.InnerRightBackground="{DynamicResource SecondaryHueMidBrush}"
+  							ItemsSource="{CompiledBinding AllBeatles}"
+								SelectedValueBinding="{CompiledBinding Key}"
+								SelectedItem="{CompiledBinding MyFavoriteBeatle2}"
 							  assist:ComboBoxAssist.UseFloatingWatermark="True">
+              <ComboBox.ItemTemplate>
+                <DataTemplate>
+                  <TextBlock Text="{CompiledBinding Value}" VerticalAlignment="Center"/>
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
 							<ComboBox.Styles>
 								<Style Selector="ComboBox">
 									<Setter Property="assist:ComboBoxAssist.InnerLeftContent">
@@ -153,18 +154,18 @@
 									</Setter>
 								</Style>
 							</ComboBox.Styles>
-							<ComboBoxItem>
+							<!--<ComboBoxItem>
 								<TextBlock Text="John" />
 							</ComboBoxItem>
 							<ComboBoxItem>
 								<TextBlock Text="Paul" />
 							</ComboBoxItem>
 							<ComboBoxItem>
-								<TextBlock Text="Ringo" />
+								<TextBlock Text="Ringo2" />
 							</ComboBoxItem>
 							<ComboBoxItem>
 								<TextBlock Text="Georges" />
-							</ComboBoxItem>
+							</ComboBoxItem>-->
 						</ComboBox>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->

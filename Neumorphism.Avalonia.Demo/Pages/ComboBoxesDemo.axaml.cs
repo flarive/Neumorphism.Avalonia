@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
 using Neumorphism.Avalonia.Demo.ViewModels;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
@@ -14,15 +16,15 @@ namespace Neumorphism.Avalonia.Demo.Pages
 
         private void ClassicComboBoxes1SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
+            if (sender is ComboBox && e.AddedItems != null && e.AddedItems.Count > 0)
             {
-                var item = e.AddedItems[0] as ComboBoxItem;
-                if (item != null && item.Tag is string)
+                if (e.AddedItems[0] is KeyValuePair<int, string> pair)
                 {
-                    if ((string)item.Tag == "-1")
+                    var item = (KeyValuePair<int, string>)e.AddedItems[0];
+                    if (item.Key < 0)
                     {
                         // deselect item
-                        ((ComboBox)sender).SelectedIndex = -1;
+                        ((ComboBox)sender).SelectedItem = null;
                     }
                 }
             }

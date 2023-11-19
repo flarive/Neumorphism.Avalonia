@@ -17,6 +17,7 @@
             <converters:RectangleHollowGeometryConverter x:Key="RectangleHollowGeometry" />
             <converters:GetPlatformHotkeyConfigServiceConverter x:Key="GetPlatformHotkeyConfig" />
             <converters:BooleanValueToDoubleConverter x:Key="BooleanValueToDoubleConverter" />
+            <converters:BooleanValueToHalfDoubleConverter x:Key="BooleanValueToHalfDoubleConverter" />
             <converters:ComboboxHeightToFloatingWatermarkMarginConverter x:Key="ComboboxHeightToFloatingWatermarkMarginConverter" />
             <converters:HeightToMarginConverter x:Key="HeightToMarginConverter" />
             <converters:WidthToCustomValueConverter x:Key="WidthToCustomValueConverter" />

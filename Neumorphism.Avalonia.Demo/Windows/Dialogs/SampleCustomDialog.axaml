@@ -36,7 +36,7 @@
         </controls:ColorZone>
 
       <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
-        <StackPanel Name="PART_ContentPanel">
+        <StackPanel Name="PART_ContentPanel" Spacing="10">
           <TextBlock Name="PART_SupportingText"
                      Classes="Body1" Margin="0,15,0,0"
                      IsVisible="{CompiledBinding !!ContentMessage.Length}"
@@ -44,11 +44,19 @@
 
           <TextBlock Text="Your lucky magic number:" Margin="0,20,0,0" HorizontalAlignment="Center"/>
           <TextBox Text="{CompiledBinding Number, FallbackValue=0}" TextAlignment="Center" Width="80" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
-          <TextBox Text="aaaaaaaaaa"/>
-          <TextBox Text="aaaaaaaaaa"/>
-          <TextBox Text="aaaaaaaaaa"/>
-          <TextBox Text="aaaaaaaaaa"/>
-          <TextBox Text="aaaaaaaaaa"/>
+          <ComboBox ItemsSource="{CompiledBinding Civilities}" Width="160" HorizontalAlignment="Left" assist:ComboBoxAssist.UseFloatingWatermark="True" PlaceholderText="Civility"
+                    SelectedValueBinding="{CompiledBinding Key}"
+                    SelectedItem="{CompiledBinding Civility}">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{CompiledBinding Value}" VerticalAlignment="Center"/>
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+            </ComboBox>
+          <TextBox Text="{CompiledBinding FirstName}" Width="180" UseFloatingWatermark="True" assist:TextFieldAssist.Label="Firstname"/>
+          <TextBox Text="{CompiledBinding LastName}" Width="180" UseFloatingWatermark="True" assist:TextFieldAssist.Label="Lastname"/>
+          <controls:ExtendedCalendarDatePicker Width="180" Watermark="Birthdate" SelectedDate="{Binding BirthDate}" SelectedDateFormat="Short" IsTodayHighlighted="True"/>
+
         </StackPanel>
       </ScrollViewer>
 
