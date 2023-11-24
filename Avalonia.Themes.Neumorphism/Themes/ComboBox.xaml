@@ -43,7 +43,8 @@
 	<ControlTheme x:Key="{x:Type ComboBox}" TargetType="ComboBox">
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="Padding" Value="8,4" />
@@ -62,8 +63,7 @@
 		<Setter Property="assist:ComboBoxAssist.InnerRightBackground" Value="#22444444"/>
 		<Setter Property="assist:ComboBoxAssist.InnerLeftPadding" Value="0"/>
 		<Setter Property="assist:ComboBoxAssist.InnerRightPadding" Value="0"/>
-    
-    
+
 
     <!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
 			<Setter.Value>
@@ -83,7 +83,13 @@
 			</Setter.Value>
 		</Setter>-->
 
-		<Setter Property="Template">
+
+
+
+
+
+
+    <Setter Property="Template">
 			<ControlTemplate>
 				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
 
@@ -141,17 +147,22 @@
 									  Padding="0">
 
 								<Grid ColumnDefinitions="*,Auto" HorizontalAlignment="Stretch" Width="{Binding ElementName=watermark, Path=Width}">
+                  
 									<!--Selected item-->
 									<ContentPresenter Grid.Column="0" Name="contentPresenter"
 													  BorderThickness="0" BorderBrush="Transparent"
 													  HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Left"
-													  VerticalAlignment="Center"
-													  Height="{TemplateBinding Height}"
+													  VerticalAlignment="Stretch"
+                            VerticalContentAlignment="Center"
 													  Content="{TemplateBinding SelectionBoxItem}"
 													  ContentTemplate="{TemplateBinding ItemTemplate}"
 													  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=0%|0%|0%|0%}"
 													  Padding="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=35%|0%|35%|0%}"/>
+
+
+                  
+                  
 									<Border Name="splitBorder"
 											Grid.Column="1"
 											Width="10" Height="10"
@@ -218,6 +229,9 @@
 				</Grid>
 			</ControlTemplate>
 		</Setter>
+
+
+
 
     <Style Selector="^ /template/ Border#PART_Border">
       <Setter Property="BoxShadow">
@@ -323,6 +337,8 @@
 			</Setter>
 		</Style>
 	</ControlTheme>
+
+
 
 	<!-- Outline combobox theme -->
 	<ControlTheme x:Key="ComboBoxOutline" BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="ComboBox">
