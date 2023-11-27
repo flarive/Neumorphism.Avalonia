@@ -1,6 +1,4 @@
-﻿using Avalonia.Themes.Neumorphism.Dialogs;
-
-namespace Avalonia.Themes.Neumorphism.Dialogs
+﻿namespace Avalonia.Themes.Neumorphism.Dialogs
 {
     public sealed class TextFieldDialogResult : DialogResult
     {
@@ -15,7 +13,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         }
 
         internal string result;
-        public string GetResult => result;
+        public new string GetResult => result;
 
         internal TextFieldResult[] fieldsResult;
         public TextFieldResult[] GetFieldsResult() => fieldsResult;

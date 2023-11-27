@@ -35,7 +35,6 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         /// </summary>
         public string HelperText = null;
 
-        //[Obsolete("Currently AvaloniaUI are not supported to binding classes, do not use this before they fixed this.")]
         public string Classes;
 
         /// <summary>
