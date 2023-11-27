@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using Avalonia.Controls;
+using Avalonia.Media;
+using System.Windows.Input;
 
 namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
 {
@@ -54,6 +56,31 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
             set
             {
                 _command = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private Brush _backgroundColorBrush;
+
+        public Brush BackgroundColorBrush
+        {
+            get => _backgroundColorBrush;
+            set
+            {
+                _backgroundColorBrush = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Brush _foregroundColorBrush;
+
+        public Brush ForegroundColorBrush
+        {
+            get => _foregroundColorBrush;
+            set
+            {
+                _foregroundColorBrush = value;
                 OnPropertyChanged();
             }
         }

@@ -22,10 +22,14 @@
     </RecyclingElementFactory>
     
     <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
+        <!--<Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" Background="{CompiledBinding BackgroundColorBrush}" Foreground="{CompiledBinding ForegroundColorBrush}"
+                Content="{CompiledBinding Content, FallbackValue='NULL'}"
+                Command="{CompiledBinding Command}"
+                CommandParameter="{CompiledBinding }"/>-->
+
         <Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" Background="{DynamicResource MaterialDesignPaper}"
                 Content="{CompiledBinding Content, FallbackValue='NULL'}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding }"/>
     </DataTemplate>
-
 </ResourceDictionary>

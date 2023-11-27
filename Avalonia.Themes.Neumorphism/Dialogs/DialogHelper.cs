@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Themes.Neumorphism.Dialogs.Bases;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
@@ -241,7 +242,9 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
 
                 result[i] = new ObsoleteDialogButtonViewModel(parent, button.Content, button.Result)
                 {
-                    IsPositiveButton = button.IsPositive
+                    IsPositiveButton = button.IsPositive,
+                    BackgroundColorBrush = button.BackgroundColorBrush,
+                    ForegroundColorBrush = button.ForegroundColorBrush,
                 };
             }
 

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
@@ -420,12 +422,14 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     new DialogButton
                     {
                         Content = "CANCEL",
-                        Result = "cancel"
+                        Result = "cancel",
+                        BackgroundColorBrush = new SolidColorBrush(Colors.Aqua),
+                        ForegroundColorBrush = new SolidColorBrush(Colors.Red),
                     },
                     new DialogButton
                     {
                         Content = "OK",
-                        Result = "ok"
+                        Result = "ok",
                     }
                 }
             });
