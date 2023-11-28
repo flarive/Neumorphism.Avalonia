@@ -65,34 +65,24 @@
                   Mode="Standard" Background="Transparent">
 
         <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
-
-          <!--<ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" Grid.Column="0"
-                        HorizontalAlignment="Left"
-                        ItemsSource="{CompiledBinding LeftDialogButtons}"
-                        ItemTemplate="{StaticResource DialogButtonTemplate}"
-                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
-
-          <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" Grid.Column="1"
-                        HorizontalAlignment="Center"
-                        ItemsSource="{CompiledBinding CenterDialogButtons}"
-                        ItemTemplate="{StaticResource DialogButtonTemplate}"
-                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
-
-          <ItemsControl Name="{x:Static naming:PartNames.PartRightButtonPlacement}" Grid.Column="2"
-                        HorizontalAlignment="Right"
-                        ItemsSource="{CompiledBinding RightDialogButtons}"
-                        ItemTemplate="{StaticResource DialogButtonTemplate}"
-                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />-->
-
-			<Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" Background="{DynamicResource MaterialDesignPaper}"
-                Content="Cancel"
-			    Command="{CompiledBinding OkCommand}" CommandParameter="{Binding $parent[Window]}"/>
-
-			<!--<Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource MaterialDesignPaper}"
-                Content="{CompiledBinding Content, FallbackValue='NULL'}"
+          
+          <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
                 Command="{CompiledBinding Command}"
-                CommandParameter="{CompiledBinding}"/>-->
+                CommandParameter="{CompiledBinding}">
+              <StackPanel Orientation="Horizontal" Spacing="10">
+                <icons:MaterialIcon Kind="Cancel"/>
+                <TextBlock Text="{CompiledBinding Content}"/>
+              </StackPanel>
+            </Button>
 
+			    <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
+                    Command="{CompiledBinding Command}"
+                      CommandParameter="{CompiledBinding}">
+              <StackPanel Orientation="Horizontal" Spacing="10">
+                <icons:MaterialIcon Kind="OkRu"/>
+                <TextBlock Text="{CompiledBinding Content}"/>
+              </StackPanel>
+            </Button>
         </Grid>
       </controls:ColorZone>
     </StackPanel>

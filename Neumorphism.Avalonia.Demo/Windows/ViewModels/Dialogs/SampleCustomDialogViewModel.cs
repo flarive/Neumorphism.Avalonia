@@ -1,7 +1,6 @@
-﻿using Avalonia.Controls;
-using Avalonia.Data;
-using Avalonia.Themes.Neumorphism.Dialogs;
+﻿using Avalonia.Data;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels;
+using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements;
 using Neumorphism.Avalonia.Demo.Windows.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -66,22 +65,6 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
             }
         }
 
-
-        private DialogButton _buttonOk;
-        public DialogButton ButtonOk
-        {
-            get { return _buttonOk; }
-            set
-            {
-                _buttonOk = value;
-                OnPropertyChanged(nameof(ButtonOk));
-            }
-        }
-
-
-        
-
-
         private DateTime? _birthDate;
         public DateTime? BirthDate
         {
@@ -104,21 +87,30 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
         }
 
 
-        public void OkCommand(Window window)
+
+        private ObsoleteDialogButtonViewModel _buttonOk;
+        public ObsoleteDialogButtonViewModel ButtonOk
         {
-            if (window != null)
+            get { return _buttonOk; }
+            set
             {
-                window.Close(0);
+                _buttonOk = value;
+                OnPropertyChanged(nameof(ButtonOk));
             }
         }
 
-        public void CancelCommand(Window window)
+        private ObsoleteDialogButtonViewModel _buttonCancel;
+        public ObsoleteDialogButtonViewModel ButtonCancel
         {
-            if (window != null)
+            get { return _buttonCancel; }
+            set
             {
-                window.Close(1);
+                _buttonCancel = value;
+                OnPropertyChanged(nameof(ButtonCancel));
             }
         }
+
+
 
 
         public SampleCustomDialogViewModel(SampleCustomDialog dialog) : base(dialog)
@@ -130,10 +122,8 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
                 new KeyValuePair<int, string>(3, "Melle"),
             ];
 
-            //ButtonOk = new DialogButton()
-            //{
-                
-            //}
+            ButtonOk = new ObsoleteDialogButtonViewModel(this, "Ok", "ok");
+            ButtonCancel = new ObsoleteDialogButtonViewModel(this, "Cancel", "cancel");
         }
     }
 }
