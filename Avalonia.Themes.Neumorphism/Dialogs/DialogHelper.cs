@@ -243,8 +243,8 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 result[i] = new ObsoleteDialogButtonViewModel(parent, button.Content, button.Result)
                 {
                     IsPositiveButton = button.IsPositive,
-                    BackgroundColorBrush = button.BackgroundColorBrush,
-                    ForegroundColorBrush = button.ForegroundColorBrush,
+                    //BackgroundColorBrush = button.BackgroundColorBrush,
+                    //ForegroundColorBrush = button.ForegroundColorBrush,
                 };
             }
 

@@ -61,28 +61,28 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
         }
 
 
-        private Brush _backgroundColorBrush;
+        //private Brush _backgroundColorBrush;
 
-        public Brush BackgroundColorBrush
-        {
-            get => _backgroundColorBrush;
-            set
-            {
-                _backgroundColorBrush = value;
-                OnPropertyChanged();
-            }
-        }
+        //public Brush BackgroundColorBrush
+        //{
+        //    get => _backgroundColorBrush;
+        //    set
+        //    {
+        //        _backgroundColorBrush = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private Brush _foregroundColorBrush;
+        //private Brush _foregroundColorBrush;
 
-        public Brush ForegroundColorBrush
-        {
-            get => _foregroundColorBrush;
-            set
-            {
-                _foregroundColorBrush = value;
-                OnPropertyChanged();
-            }
-        }
+        //public Brush ForegroundColorBrush
+        //{
+        //    get => _foregroundColorBrush;
+        //    set
+        //    {
+        //        _foregroundColorBrush = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
     }
 }

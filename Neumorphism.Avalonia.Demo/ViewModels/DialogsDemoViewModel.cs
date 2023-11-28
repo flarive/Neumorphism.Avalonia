@@ -422,14 +422,12 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     new DialogButton
                     {
                         Content = "CANCEL",
-                        Result = "cancel",
-                        BackgroundColorBrush = new SolidColorBrush(Colors.Aqua),
-                        ForegroundColorBrush = new SolidColorBrush(Colors.Red),
+                        Result = "cancel"
                     },
                     new DialogButton
                     {
                         Content = "OK",
-                        Result = "ok",
+                        Result = "ok"
                     }
                 }
             });

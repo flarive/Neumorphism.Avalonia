@@ -1,9 +1,10 @@
-﻿using Avalonia.Data;
+﻿using Avalonia.Controls;
+using Avalonia.Data;
+using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels;
 using Neumorphism.Avalonia.Demo.Windows.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
 {
@@ -66,6 +67,21 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
         }
 
 
+        private DialogButton _buttonOk;
+        public DialogButton ButtonOk
+        {
+            get { return _buttonOk; }
+            set
+            {
+                _buttonOk = value;
+                OnPropertyChanged(nameof(ButtonOk));
+            }
+        }
+
+
+        
+
+
         private DateTime? _birthDate;
         public DateTime? BirthDate
         {
@@ -88,6 +104,23 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
         }
 
 
+        public void OkCommand(Window window)
+        {
+            if (window != null)
+            {
+                window.Close(0);
+            }
+        }
+
+        public void CancelCommand(Window window)
+        {
+            if (window != null)
+            {
+                window.Close(1);
+            }
+        }
+
+
         public SampleCustomDialogViewModel(SampleCustomDialog dialog) : base(dialog)
         {
             Civilities =
@@ -96,6 +129,11 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
                 new KeyValuePair<int, string>(2, "Mme"),
                 new KeyValuePair<int, string>(3, "Melle"),
             ];
+
+            //ButtonOk = new DialogButton()
+            //{
+                
+            //}
         }
     }
 }

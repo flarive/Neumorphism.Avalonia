@@ -66,7 +66,7 @@
 
         <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
 
-          <ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" Grid.Column="0"
+          <!--<ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" Grid.Column="0"
                         HorizontalAlignment="Left"
                         ItemsSource="{CompiledBinding LeftDialogButtons}"
                         ItemTemplate="{StaticResource DialogButtonTemplate}"
@@ -82,7 +82,16 @@
                         HorizontalAlignment="Right"
                         ItemsSource="{CompiledBinding RightDialogButtons}"
                         ItemTemplate="{StaticResource DialogButtonTemplate}"
-                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
+                        ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />-->
+
+			<Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" Background="{DynamicResource MaterialDesignPaper}"
+                Content="Cancel"
+			    Command="{CompiledBinding OkCommand}" CommandParameter="{Binding $parent[Window]}"/>
+
+			<!--<Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource MaterialDesignPaper}"
+                Content="{CompiledBinding Content, FallbackValue='NULL'}"
+                Command="{CompiledBinding Command}"
+                CommandParameter="{CompiledBinding}"/>-->
 
         </Grid>
       </controls:ColorZone>
