@@ -38,12 +38,11 @@
       <ScrollViewer Name="PART_ScrollView" Padding="24, 0">
         <StackPanel Name="PART_ContentPanel" Spacing="10">
           <TextBlock Name="PART_SupportingText"
-                     Classes="Body1" Margin="0,15,0,0"
+                     Classes="Body1" Margin="0,15,0,30"
+					 FontSize="14"
                      IsVisible="{CompiledBinding !!ContentMessage.Length}"
                      Text="{CompiledBinding ContentMessage, FallbackValue=''}"/>
 
-          <TextBlock Text="Your lucky magic number:" Margin="0,20,0,0" HorizontalAlignment="Center"/>
-          <TextBox Text="{CompiledBinding Number, FallbackValue=0}" TextAlignment="Center" Width="80" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
           <ComboBox ItemsSource="{CompiledBinding Civilities}" Width="160" HorizontalAlignment="Left" assist:ComboBoxAssist.UseFloatingWatermark="True" PlaceholderText="Civility"
                     SelectedValueBinding="{CompiledBinding Key}"
                     SelectedItem="{CompiledBinding Civility}">
@@ -65,22 +64,21 @@
                   Mode="Standard" Background="Transparent">
 
         <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
-          
-          <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
+            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding}">
-              <StackPanel Orientation="Horizontal" Spacing="10">
-                <icons:MaterialIcon Kind="Cancel"/>
-                <TextBlock Text="{CompiledBinding Content}"/>
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <icons:MaterialIcon Kind="Cancel" Margin="0,0,3,0"/>
+                <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
               </StackPanel>
             </Button>
 
-			    <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
+            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
                     Command="{CompiledBinding Command}"
-                      CommandParameter="{CompiledBinding}">
-              <StackPanel Orientation="Horizontal" Spacing="10">
-                <icons:MaterialIcon Kind="OkRu"/>
-                <TextBlock Text="{CompiledBinding Content}"/>
+                    CommandParameter="{CompiledBinding}">
+              <StackPanel Orientation="Horizontal" Spacing="4">
+                <icons:MaterialIcon Kind="CheckBold" Margin="0,0,3,0"/>
+                <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
               </StackPanel>
             </Button>
         </Grid>

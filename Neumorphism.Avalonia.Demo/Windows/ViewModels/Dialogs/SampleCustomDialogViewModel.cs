@@ -1,9 +1,9 @@
-﻿using Avalonia.Data;
+﻿using System;
+using System.Collections.Generic;
+using Avalonia.Data;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements;
 using Neumorphism.Avalonia.Demo.Windows.Dialogs;
-using System;
-using System.Collections.Generic;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
 {
@@ -86,8 +86,6 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
             }
         }
 
-
-
         private ObsoleteDialogButtonViewModel _buttonOk;
         public ObsoleteDialogButtonViewModel ButtonOk
         {
@@ -122,7 +120,7 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
                 new KeyValuePair<int, string>(3, "Melle"),
             ];
 
-            ButtonOk = new ObsoleteDialogButtonViewModel(this, "Ok", "ok");
+            ButtonOk = new ObsoleteDialogButtonViewModel(this, "OK", "ok");
             ButtonCancel = new ObsoleteDialogButtonViewModel(this, "Cancel", "cancel");
         }
     }

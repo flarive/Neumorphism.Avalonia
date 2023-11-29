@@ -414,22 +414,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 WindowTitle = "Info dialog",
                 DialogHeaderIcon = DialogIconKind.Info,
                 DialogIcon = DialogIconKind.Info,
-                Number = new Random().Next(0, 100),
                 Width = 520,
-                Borderless = true,
-                CenterDialogButtons = new[]
-                {
-                    new DialogButton
-                    {
-                        Content = "CANCEL",
-                        Result = "cancel"
-                    },
-                    new DialogButton
-                    {
-                        Content = "OK",
-                        Result = "ok"
-                    }
-                }
+                Borderless = true
             });
 
 
@@ -441,7 +427,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult} / {context?.Number}";
+            yield return $"Result: {result.GetResult} / {context?.Civility?.Value} {context?.FirstName} {context?.LastName}";
         }
 
 
@@ -476,8 +462,5 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 OpenDialogWithModelResult = $"Result: {eventArgs.Parameter} / {model.Number}";
             }
         }
-
-
-        
     }
 }

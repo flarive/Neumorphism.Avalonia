@@ -18,7 +18,6 @@ namespace Neumorphism.Avalonia.Demo.Helpers
             var window = new SampleCustomDialog();
             var context = new SampleCustomDialogViewModel(window)
             {
-                Number = @params.Number
             };
 
             ApplyBaseParams(context, @params);
