@@ -113,7 +113,7 @@ More controls should be themed soon.
 
       ```xaml
       <Application ...
-          xmlns:themes="clr-namespace:Neumorphism.Avalonia.Styles.Themes;assembly=Neumorphism.Avalonia"
+          xmlns:themes="clr-namespace:Avalonia.Themes.Neumorphism;assembly=Avalonia.Themes.Neumorphism"
           ...>
           <Application.Styles>
               <themes:NeumorphismTheme BaseTheme="Light" PrimaryColor="Purple" SecondaryColor="Lime" />
