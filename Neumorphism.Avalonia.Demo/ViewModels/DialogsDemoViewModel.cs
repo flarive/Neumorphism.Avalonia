@@ -427,7 +427,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult} / {context?.Civility?.Value} {context?.FirstName} {context?.LastName}";
+            yield return $"Result: {result.GetResult} / {context?.Civility.Value} {context?.FirstName} {context?.LastName}";
         }
 
 
