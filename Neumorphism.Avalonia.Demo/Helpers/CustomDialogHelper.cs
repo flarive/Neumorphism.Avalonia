@@ -13,7 +13,27 @@ namespace Neumorphism.Avalonia.Demo.Helpers
         /// </summary>
         /// <param name="params">Parameters of building dialog</param>
         /// <returns>Instance of dialog.</returns>
-        public static IDialogWindow<DialogResult> CreateCustomDialog(SampleCustomDialogBuilderParams @params)
+        public static IDialogWindow<DialogResult> CreateCustomFormDialog(SampleCustomDialogBuilderParams @params)
+        {
+            var window = new SampleCustomDialog();
+            var context = new SampleCustomDialogViewModel(window)
+            {
+            };
+
+            ApplyBaseParams(context, @params);
+
+            window.DataContext = context;
+            SetupWindowParameters(window, @params);
+            return new DialogWindowBase<SampleCustomDialog, DialogResult>(window);
+        }
+
+
+        /// <summary>
+        /// Create an dialog with custom content or dummy dialog.
+        /// </summary>
+        /// <param name="params">Parameters of building dialog</param>
+        /// <returns>Instance of dialog.</returns>
+        public static IDialogWindow<DialogResult> CreateCustomSettingsDialog(SampleCustomDialogBuilderParams @params)
         {
             var window = new SampleCustomDialog();
             var context = new SampleCustomDialogViewModel(window)

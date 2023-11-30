@@ -35,7 +35,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public DialogViewModel ImageDialog { get; }
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
-        public DialogViewModel CustomDialog { get; }
+        public DialogViewModel CustomDialog1 { get; }
+        public DialogViewModel CustomDialog2 { get; }
 
 
 
@@ -87,7 +88,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
             LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
             FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
-            CustomDialog = new DialogViewModel("Custom dialog", CreateCustomDialog);
+            CustomDialog1 = new DialogViewModel("Custom form dialog", CreateCustomFormDialog);
+            CustomDialog2 = new DialogViewModel("Custom settings dialog", CreateCustomSettingsDialog);
         }
 
 
@@ -405,9 +407,34 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         }
 
 
-        private async IAsyncEnumerable<string> CreateCustomDialog()
+        private async IAsyncEnumerable<string> CreateCustomFormDialog()
         {
-            var dialog = CustomDialogHelper.CreateCustomDialog(new SampleCustomDialogBuilderParams
+            var dialog = CustomDialogHelper.CreateCustomFormDialog(new SampleCustomDialogBuilderParams
+            {
+                ContentHeader = "Welcome to this custom dialog !",
+                SupportingText = "Following content is coming from a fully custom dialog...",
+                WindowTitle = "Info dialog",
+                DialogHeaderIcon = DialogIconKind.Info,
+                DialogIcon = DialogIconKind.Info,
+                Width = 520,
+                Borderless = true
+            });
+
+
+            _appModelBase.IsDialogOpened = true;
+
+            var context = dialog.GetWindow().DataContext as SampleCustomDialogViewModel;
+
+            DialogResult result = await dialog.ShowDialog(_window);
+
+            _appModelBase.IsDialogOpened = false;
+
+            yield return $"Result: {result.GetResult} / {context?.Civility.Value} {context?.FirstName} {context?.LastName}";
+        }
+
+        private async IAsyncEnumerable<string> CreateCustomSettingsDialog()
+        {
+            var dialog = CustomDialogHelper.CreateCustomSettingsDialog(new SampleCustomDialogBuilderParams
             {
                 ContentHeader = "Welcome to this custom dialog !",
                 SupportingText = "Following content is coming from a fully custom dialog...",
