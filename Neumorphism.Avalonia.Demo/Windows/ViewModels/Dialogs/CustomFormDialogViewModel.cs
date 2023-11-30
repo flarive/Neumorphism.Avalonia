@@ -7,7 +7,7 @@ using Neumorphism.Avalonia.Demo.Windows.Dialogs;
 
 namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
 {
-    public sealed class SampleCustomDialogViewModel : DialogWindowViewModel
+    public sealed class CustomFormDialogViewModel : DialogWindowViewModel
     {
         private int? _number = 0;
         public int? Number
@@ -111,7 +111,7 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
 
 
 
-        public SampleCustomDialogViewModel(SampleCustomDialog dialog) : base(dialog)
+        public CustomFormDialogViewModel(CustomFormDialog dialog) : base(dialog)
         {
             Civilities =
             [

@@ -409,7 +409,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         private async IAsyncEnumerable<string> CreateCustomFormDialog()
         {
-            var dialog = CustomDialogHelper.CreateCustomFormDialog(new SampleCustomDialogBuilderParams
+            var dialog = CustomDialogHelper.CreateCustomFormDialog(new CustomFormDialogBuilderParams
             {
                 ContentHeader = "Welcome to this custom dialog !",
                 SupportingText = "Following content is coming from a fully custom dialog...",
@@ -423,7 +423,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = true;
 
-            var context = dialog.GetWindow().DataContext as SampleCustomDialogViewModel;
+            var context = dialog.GetWindow().DataContext as CustomFormDialogViewModel;
 
             DialogResult result = await dialog.ShowDialog(_window);
 
@@ -434,7 +434,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
         private async IAsyncEnumerable<string> CreateCustomSettingsDialog()
         {
-            var dialog = CustomDialogHelper.CreateCustomSettingsDialog(new SampleCustomDialogBuilderParams
+            var dialog = CustomDialogHelper.CreateCustomSettingsDialog(new CustomSettingsDialogBuilderParams
             {
                 ContentHeader = "Welcome to this custom dialog !",
                 SupportingText = "Following content is coming from a fully custom dialog...",
@@ -448,13 +448,13 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = true;
 
-            var context = dialog.GetWindow().DataContext as SampleCustomDialogViewModel;
+            var context = dialog.GetWindow().DataContext as CustomSettingsDialogViewModel;
 
             DialogResult result = await dialog.ShowDialog(_window);
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult} / {context?.Civility.Value} {context?.FirstName} {context?.LastName}";
+            yield return $"Result: {result.GetResult} / {context?.SelectedLanguage}";
         }
 
 

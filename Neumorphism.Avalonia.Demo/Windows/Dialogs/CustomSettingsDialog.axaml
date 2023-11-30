@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:i="using:Avalonia.Xaml.Interactivity"
+				xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
+				xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs"
+				xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming;assembly=Avalonia.Themes.Neumorphism"
+        xmlns:dialogcontrols="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls;assembly=Avalonia.Themes.Neumorphism"
+				xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+				xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+				xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"	
+				mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+				Width="500" Height="250"
+				WindowStartupLocation="CenterScreen"
+				ShowInTaskbar="False"
+				x:CompileBindings="True"
+				x:DataType="viewModels:CustomSettingsDialogViewModel"
+				x:Name="MyAppSettingsDialog"
+				x:Class="Neumorphism.Avalonia.Demo.Windows.Dialogs.CustomSettingsDialog">
+
+	<Window.Styles>
+		<StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/DialogWindow.axaml"/>
+		<StyleInclude Source="avares://Avalonia.Themes.Neumorphism/Dialogs/Styles/StyleInclude.axaml"/>
+	</Window.Styles>
+
+  
+  <dialogcontrols:CustomDialogControl>
+		<Border Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="20">
+      <Grid RowDefinitions="*,Auto" Margin="20">
+				<StackPanel Orientation="Vertical" Grid.Row="0" Spacing="20">
+
+					<ToggleSwitch IsThreeState="False" IsChecked="{Binding UseDarkTheme}" OnContent="DarkTheme" OffContent="LightTheme" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}" Content="aaaaaaaaaaaaaa"/>
+
+					<ComboBox x:Name="cboCulture" PlaceholderText="Select a language" Width="200" HorizontalAlignment="Center" ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}">
+						<ComboBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{CompiledBinding Value}" Tag="{CompiledBinding Key}"/>
+							</DataTemplate>
+						</ComboBox.ItemTemplate>
+					</ComboBox>
+
+          <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
+            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
+								Command="{CompiledBinding Command}"
+								CommandParameter="{CompiledBinding}">
+              <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
+            </Button>
+
+            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
+										Command="{CompiledBinding Command}"
+										CommandParameter="{CompiledBinding}">
+              <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
+            </Button>
+          </Grid>
+
+					
+			
+				</StackPanel>
+
+
+
+          
+
+      </Grid>
+		</Border>
+
+	</dialogcontrols:CustomDialogControl>
+</Window>

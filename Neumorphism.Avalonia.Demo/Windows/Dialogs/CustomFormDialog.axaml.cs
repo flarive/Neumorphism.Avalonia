@@ -5,18 +5,18 @@ using Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs;
 
 namespace Neumorphism.Avalonia.Demo.Windows.Dialogs
 {
-    public partial class SampleCustomDialog : Window, IDialogWindowResult<DialogResult>, IHasNegativeResult
+    public partial class CustomFormDialog : Window, IDialogWindowResult<DialogResult>, IHasNegativeResult
     {
-        public SampleCustomDialog()
+        public CustomFormDialog()
         {
             InitializeComponent();
         }
 
-        public DialogResult GetResult() => (DataContext as SampleCustomDialogViewModel)?.DialogResult;
+        public DialogResult GetResult() => (DataContext as CustomFormDialogViewModel)?.DialogResult;
 
         public void SetNegativeResult(DialogResult result)
         {
-            if (DataContext is SampleCustomDialogViewModel viewModel)
+            if (DataContext is CustomFormDialogViewModel viewModel)
                 viewModel.DialogResult = result;
         }
     }

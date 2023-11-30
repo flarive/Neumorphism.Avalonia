@@ -13,10 +13,10 @@ namespace Neumorphism.Avalonia.Demo.Helpers
         /// </summary>
         /// <param name="params">Parameters of building dialog</param>
         /// <returns>Instance of dialog.</returns>
-        public static IDialogWindow<DialogResult> CreateCustomFormDialog(SampleCustomDialogBuilderParams @params)
+        public static IDialogWindow<DialogResult> CreateCustomFormDialog(CustomFormDialogBuilderParams @params)
         {
-            var window = new SampleCustomDialog();
-            var context = new SampleCustomDialogViewModel(window)
+            var window = new CustomFormDialog();
+            var context = new CustomFormDialogViewModel(window)
             {
             };
 
@@ -24,7 +24,7 @@ namespace Neumorphism.Avalonia.Demo.Helpers
 
             window.DataContext = context;
             SetupWindowParameters(window, @params);
-            return new DialogWindowBase<SampleCustomDialog, DialogResult>(window);
+            return new DialogWindowBase<CustomFormDialog, DialogResult>(window);
         }
 
 
@@ -33,10 +33,10 @@ namespace Neumorphism.Avalonia.Demo.Helpers
         /// </summary>
         /// <param name="params">Parameters of building dialog</param>
         /// <returns>Instance of dialog.</returns>
-        public static IDialogWindow<DialogResult> CreateCustomSettingsDialog(SampleCustomDialogBuilderParams @params)
+        public static IDialogWindow<DialogResult> CreateCustomSettingsDialog(CustomSettingsDialogBuilderParams @params)
         {
-            var window = new SampleCustomDialog();
-            var context = new SampleCustomDialogViewModel(window)
+            var window = new CustomSettingsDialog();
+            var context = new CustomSettingsDialogViewModel(window)
             {
             };
 
@@ -44,7 +44,7 @@ namespace Neumorphism.Avalonia.Demo.Helpers
 
             window.DataContext = context;
             SetupWindowParameters(window, @params);
-            return new DialogWindowBase<SampleCustomDialog, DialogResult>(window);
+            return new DialogWindowBase<CustomSettingsDialog, DialogResult>(window);
         }
     }
 }

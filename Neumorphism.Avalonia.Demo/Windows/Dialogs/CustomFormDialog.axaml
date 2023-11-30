@@ -6,8 +6,8 @@
         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
         xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-        x:Class="Neumorphism.Avalonia.Demo.Windows.Dialogs.SampleCustomDialog"
-        x:DataType="viewModels:SampleCustomDialogViewModel">
+        x:Class="Neumorphism.Avalonia.Demo.Windows.Dialogs.CustomFormDialog"
+        x:DataType="viewModels:CustomFormDialogViewModel">
 
 
   <Window.Styles>
@@ -64,7 +64,7 @@
                   Mode="Standard" Background="Transparent">
 
         <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
-            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
+            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignCheckBoxDisabled}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding}">
               <StackPanel Orientation="Horizontal" Spacing="4">
