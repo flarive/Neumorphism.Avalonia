@@ -41,13 +41,11 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static AvaloniaProperty<IBrush> SwitchTrackOnForegroundProperty = AvaloniaProperty.RegisterAttached<ToggleSwitch, IBrush>(
             "SwitchTrackOnForeground", typeof(ToggleSwitchAssist));
 
-        public static void SetSwitchTrackOnForeground(AvaloniaObject element, IBrush value)
-        {
+        public static void SetSwitchTrackOnForeground(AvaloniaObject element, IBrush value) {
             element.SetValue(SwitchTrackOnForegroundProperty, value);
         }
 
-        public static IBrush GetSwitchTrackOnForeground(AvaloniaObject element)
-        {
+        public static IBrush GetSwitchTrackOnForeground(AvaloniaObject element) {
             return (IBrush)element.GetValue(SwitchTrackOnForegroundProperty);
         }
 
@@ -58,13 +56,11 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static AvaloniaProperty<IBrush> SwitchTrackOffForegroundProperty = AvaloniaProperty.RegisterAttached<ToggleSwitch, IBrush>(
             "SwitchTrackOffForeground", typeof(ToggleSwitchAssist));
 
-        public static void SetSwitchTrackOffForeground(AvaloniaObject element, IBrush value)
-        {
+        public static void SetSwitchTrackOffForeground(AvaloniaObject element, IBrush value) {
             element.SetValue(SwitchTrackOffForegroundProperty, value);
         }
 
-        public static IBrush GetSwitchTrackOffForeground(AvaloniaObject element)
-        {
+        public static IBrush GetSwitchTrackOffForeground(AvaloniaObject element) {
             return (IBrush)element.GetValue(SwitchTrackOffForegroundProperty);
         }
 
@@ -74,13 +70,11 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static AvaloniaProperty<IBrush> SwitchTrackOverForegroundProperty = AvaloniaProperty.RegisterAttached<ToggleSwitch, IBrush>(
             "SwitchTrackOverForeground", typeof(ToggleSwitchAssist));
 
-        public static void SetSwitchTrackOverForeground(AvaloniaObject element, IBrush value)
-        {
+        public static void SetSwitchTrackOverForeground(AvaloniaObject element, IBrush value) {
             element.SetValue(SwitchTrackOverForegroundProperty, value);
         }
 
-        public static IBrush GetSwitchTrackOverForeground(AvaloniaObject element)
-        {
+        public static IBrush GetSwitchTrackOverForeground(AvaloniaObject element) {
             return (IBrush)element.GetValue(SwitchTrackOverForegroundProperty);
         }
 

@@ -30,7 +30,11 @@
       <Grid RowDefinitions="*,Auto" Margin="20">
 				<StackPanel Orientation="Vertical" Grid.Row="0" Spacing="20">
 
-					<ToggleSwitch IsThreeState="False" IsChecked="{Binding UseDarkTheme}" OnContent="DarkTheme" OffContent="LightTheme" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}" Content="aaaaaaaaaaaaaa"/>
+					<ToggleSwitch IsThreeState="False" IsChecked="{Binding UseDarkTheme}" OnContent="Dark" OffContent="Light" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"
+								  assist:ToggleSwitchAssist.SwitchTrackOffForeground="{DynamicResource SecondaryHueDarkBrush}"
+								  assist:ToggleSwitchAssist.SwitchTrackOnForeground="{DynamicResource SecondaryHueMidBrush}"
+								  assist:ToggleSwitchAssist.SwitchTrackOverForeground="{DynamicResource SecondaryHueDarkBrush}"
+								  Content="Dark"/>
 
 					<ComboBox x:Name="cboCulture" PlaceholderText="Select a language" Width="200" HorizontalAlignment="Center" ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}">
 						<ComboBox.ItemTemplate>
@@ -47,7 +51,7 @@
               <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
             </Button>
 
-            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
+            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource SecondaryHueMidBrush}" Foreground="White"
 										Command="{CompiledBinding Command}"
 										CommandParameter="{CompiledBinding}">
               <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
