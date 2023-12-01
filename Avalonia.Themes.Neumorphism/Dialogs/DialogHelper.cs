@@ -80,6 +80,27 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             }
         }
 
+        public static IDialogWindow<DialogResult> CreateCommonDialog(CommonDialogBuilderParams @params)
+        {
+            var window = new CommonDialog();
+            var context = new CommonDialogViewModel(window);
+
+            ApplyBaseParams(context, @params);
+
+            if ((@params.LeftDialogButtons == null || @params.LeftDialogButtons.Length == 0)
+                && (@params.CenterDialogButtons == null || @params.CenterDialogButtons.Length == 0)
+                && (@params.RightDialogButtons == null || @params.RightDialogButtons.Length == 0))
+            {
+                context.CenterDialogButtons = new ObservableCollection<DialogButtonViewModel>(
+                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtonsEnum.Ok)));
+            }
+
+
+            window.DataContext = context;
+            SetupWindowParameters(window, @params);
+            return new DialogWindowBase<CommonDialog, DialogResult>(window);
+        }
+
         public static IDialogWindow<DialogResult> CreateAlertDialog(AlertDialogBuilderParams @params)
         {
             var window = new AlertDialog();

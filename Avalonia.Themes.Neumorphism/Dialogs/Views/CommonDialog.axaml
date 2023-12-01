@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels"
         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
-        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.AlertDialog"
+        x:Class="Avalonia.Themes.Neumorphism.Dialogs.Views.CommonDialog"
         x:DataType="viewModels:AlertDialogViewModel">
   
     <Window.Styles>
