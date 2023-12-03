@@ -133,7 +133,7 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
                 <showMeTheXaml:XamlDisplay Grid.Column="0" Grid.Row="4" UniqueId="BuilderDialog9">
-                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding CustomDialog1}">
+                  <Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding CustomFormDialog}">
                     <Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
                     <TextBlock Grid.Row="1" Margin="8"
                           HorizontalAlignment="Center"
@@ -144,7 +144,7 @@
                 </showMeTheXaml:XamlDisplay>
                 <!--****************************************************************-->
 				<showMeTheXaml:XamlDisplay Grid.Column="1" Grid.Row="4" UniqueId="BuilderDialog10">
-					<Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding CustomDialog2}">
+					<Grid RowDefinitions="*,24" Margin="5" DataContext="{CompiledBinding CustomSettingsDialog}">
 						<Button Grid.Row="0" Content="{CompiledBinding Header}" Command="{CompiledBinding Command}" Width="220" Height="44" />
 						<TextBlock Grid.Row="1" Margin="8"
 							HorizontalAlignment="Center"

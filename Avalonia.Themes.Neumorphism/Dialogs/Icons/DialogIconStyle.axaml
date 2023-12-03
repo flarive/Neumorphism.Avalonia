@@ -1,19 +1,40 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:icons="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Icons">
+        xmlns:icons="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Icons"
+        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime">
 	
     <Style Selector="icons|DialogIcon">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Viewbox Stretch="Uniform"
-                             ClipToBounds="False"
+                    <!--<Viewbox Stretch="Uniform" StretchDirection="Both"
+                             ClipToBounds="True"
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Stretch">
                         <Path Name="PATH_DialogIconVectorPath"
                               Data="{TemplateBinding Data}"
                               Fill="{TemplateBinding Foreground}" />
-                    </Viewbox>
+                    </Viewbox>-->
+                  
+                      <controls:SkiaGeometry HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"
+                               Stretch="Uniform"
+                               Path="{TemplateBinding DataPath}"
+                               ClipToBounds="True"
+                               Fill="{TemplateBinding Foreground}">
+                        <!--<controls:SkiaGeometry.Resources>
+                          <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
+                          <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLight}, 5 5 20 {MaterialDesignShadowDark}</system:String>
+                        </controls:SkiaGeometry.Resources>
+                        <controls:SkiaGeometry.BoxShadow>
+                          <MultiBinding Converter="{StaticResource CustomBoxShadowsConverter}">
+                            <DynamicResource ResourceKey="BoxShadowsTemplate" />
+                            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                          </MultiBinding>
+                        </controls:SkiaGeometry.BoxShadow>-->
+                      </controls:SkiaGeometry>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

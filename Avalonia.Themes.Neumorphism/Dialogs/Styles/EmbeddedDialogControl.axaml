@@ -70,7 +70,6 @@
         </Setter>
     </Style>
 
-    <!--??????????????????????-->
     <Style Selector="controls|EmbeddedDialogControl[CornerRadius=0] /template/ Border#PART_RootBorder">
       <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
     </Style>

@@ -80,6 +80,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             }
         }
 
+        /// <summary>
+        /// Most common dialog template containing a title with an icon and a subtitle, then the custom content
+        /// </summary>
+        /// <param name="params"></param>
+        /// <returns></returns>
         public static IDialogWindow<DialogResult> CreateCommonDialog(CommonDialogBuilderParams @params)
         {
             var window = new CommonDialog();
@@ -101,6 +106,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             return new DialogWindowBase<CommonDialog, DialogResult>(window);
         }
 
+        /// <summary>
+        /// Dialog template for info, alert, error dialogs with a big icon, a title, a subtitle then the content
+        /// </summary>
+        /// <param name="params"></param>
+        /// <returns></returns>
         public static IDialogWindow<DialogResult> CreateAlertDialog(AlertDialogBuilderParams @params)
         {
             var window = new AlertDialog();
@@ -122,6 +132,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             return new DialogWindowBase<AlertDialog, DialogResult>(window);
         }
 
+        /// <summary>
+        /// Dialog template for textboxes based dialogs
+        /// </summary>
+        /// <param name="params"></param>
+        /// <returns></returns>
         public static IDialogWindow<TextFieldDialogResult> CreateTextFieldDialog(TextFieldDialogBuilderParams @params)
         {
             var window = new TextFieldDialog();

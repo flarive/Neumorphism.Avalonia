@@ -14,7 +14,7 @@
             <DataTemplate DataType="icons:DialogIconViewModel" x:Key="DialogIcon">
                 <icons1:DialogIcon Kind="{CompiledBinding Kind}"/>
             </DataTemplate>
-            
+
             <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
                 <Image Source="{CompiledBinding Bitmap}" Stretch="{CompiledBinding Stretch}"/>
             </DataTemplate>

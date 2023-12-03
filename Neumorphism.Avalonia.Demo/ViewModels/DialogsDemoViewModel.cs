@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Avalonia.Controls;
-using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
-using Avalonia.Styling;
 using Avalonia.Themes.Neumorphism.Dialogs;
 using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Models.Dialogs;
@@ -35,8 +33,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         public DialogViewModel ImageDialog { get; }
         public DialogViewModel LoginDialog { get; }
         public DialogViewModel FolderNameDialog { get; }
-        public DialogViewModel CustomDialog1 { get; }
-        public DialogViewModel CustomDialog2 { get; }
+        public DialogViewModel CustomFormDialog { get; }
+        public DialogViewModel CustomSettingsDialog { get; }
 
 
 
@@ -88,8 +86,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             ImageDialog = new DialogViewModel("Image dialog", CreateImageDialog);
             LoginDialog = new DialogViewModel("Login dialog", CreateLoginDialog);
             FolderNameDialog = new DialogViewModel("Create folder name dialog", CreateFolderNameDialog);
-            CustomDialog1 = new DialogViewModel("Custom form dialog", CreateCustomFormDialog);
-            CustomDialog2 = new DialogViewModel("Custom settings dialog", CreateCustomSettingsDialog);
+            CustomFormDialog = new DialogViewModel("Custom form dialog", CreateCustomFormDialog);
+            CustomSettingsDialog = new DialogViewModel("Custom settings dialog", CreateCustomSettingsDialog);
         }
 
 
@@ -115,7 +113,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
         }
 
 
@@ -139,7 +137,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
         }
 
         private async IAsyncEnumerable<string> CreateErrorDialog()
@@ -162,14 +160,14 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
         }
 
         private async IAsyncEnumerable<string> CreateConfirmDialog()
         {
             _appModelBase.IsDialogOpened = true;
 
-            var result = await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams()
+            var result = await DialogHelper.CreateCommonDialog(new CommonDialogBuilderParams()
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure to perform this action ?",
@@ -198,14 +196,14 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
         }
 
         private async IAsyncEnumerable<string> CreateConfirmSequenceDialog()
         {
             _appModelBase.IsDialogOpened = true;
 
-            var result = await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
+            var result = await DialogHelper.CreateCommonDialog(new CommonDialogBuilderParams
             {
                 ContentHeader = "Confirm action",
                 SupportingText = "Are you sure you want to do that ?",
@@ -235,13 +233,13 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
 
-            if (result.GetResult == "delete")
+            if (result?.GetResult == "delete")
             {
                 _appModelBase.IsDialogOpened = true;
 
-                await DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
+                await DialogHelper.CreateCommonDialog(new CommonDialogBuilderParams
                 {
                     ContentHeader = "Result",
                     SupportingText = "You have done it ! Congrats !",
@@ -261,7 +259,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = true;
 
-            var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
+            var dialog = DialogHelper.CreateCommonDialog(new CommonDialogBuilderParams
             {
                 ContentHeader = "Welcome to use Material.Avalonia",
                 SupportingText = "Enjoy Material Design in AvaloniaUI!",
@@ -281,7 +279,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
         }
 
         private async IAsyncEnumerable<string> CreateLoginDialog()
@@ -336,7 +334,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
 
             if (result.GetResult != "login")
                 yield break;
@@ -398,7 +396,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult}";
+            yield return $"Result: {result?.GetResult}";
 
             if (result.GetResult == "rename")
             {
@@ -429,7 +427,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult} / {context?.Civility.Value} {context?.FirstName} {context?.LastName}";
+            yield return $"Result: {result?.GetResult} / {context?.Civility.Value} {context?.FirstName} {context?.LastName}";
         }
 
         private async IAsyncEnumerable<string> CreateCustomSettingsDialog()
@@ -454,7 +452,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result.GetResult} / {context?.SelectedLanguage}";
+            yield return $"Result: {result?.GetResult} / {context?.SelectedLanguage}";
         }
 
 

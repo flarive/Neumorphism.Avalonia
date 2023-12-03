@@ -13,11 +13,13 @@
         </ResourceDictionary>
     </Styles.Resources>
 
-    <Style Selector="controls|AlertDialogControl" x:DataType="viewModels:DialogWindowViewModel" >
+
+
+    <Style Selector="controls|AlertDialogControl" x:DataType="viewModels:AlertDialogViewModel">
         <Setter Property="CornerRadius" Value="20"/>
         <Setter Property="Template">
             <ControlTemplate>
-                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="Red" BorderThickness="2" Background="{DynamicResource MaterialDesignPaper}">
+                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource MaterialDesignPaper}">
                   <Border.BoxShadow>
                     <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -27,17 +29,27 @@
                   </Border.BoxShadow>
                     <DockPanel Name="PART_RootPanel"
                                Width="{CompiledBinding Width}"
-                               MaxWidth="{CompiledBinding MaxWidth}" >
+                               MaxWidth="{CompiledBinding MaxWidth}">
+                      
                         <DockPanel Name="{x:Static naming:PartNames.PartHeaderPanel}">
-                            <ContentPresenter Name="{x:Static naming:PartNames.PartHeaderIcon}" Width="128" Height="128"
+
+                          <Button Theme="{StaticResource ButtonIcon}" Width="90" Height="90" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                            <ContentPresenter Name="{x:Static naming:PartNames.PartHeaderIcon}"
                                               Content="{CompiledBinding DialogIcon}"
                                               ContentTemplate="{StaticResource DialogHeaderIconTemplate}"
-                                              IsVisible="{CompiledBinding !!DialogIcon}" />
+                                              IsVisible="{CompiledBinding !!DialogIcon}"/>
+                          </Button>
 
+                          <StackPanel Orientation="Vertical">
                             <TextBlock Name="{x:Static naming:PartNames.PartHeaderText}" Foreground="{DynamicResource MaterialDesignDarkGray}"
-                                       Classes="Headline6"
+                                       Classes="Headline5" Margin="20,15,0,0" TextWrapping="Wrap"
                                        IsVisible="{CompiledBinding !!ContentHeader.Length}"
-                                       Text="{CompiledBinding ContentHeader, FallbackValue='DIALOG_HEADER_NULL'}" />
+                                       Text="{CompiledBinding ContentHeader}" />
+
+                            <ContentPresenter Name="PART_ContentPresenter" Margin="20,10,0,0" TextWrapping="Wrap"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
+                          </StackPanel>
                         </DockPanel>
 
                         <DockPanel Name="{x:Static naming:PartNames.PartButtonsPanel}">
@@ -59,18 +71,12 @@
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
                                           ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
                         </DockPanel>
-
-                        <ContentPresenter Name="PART_ContentPresenter"
-                                          DockPanel.Dock="Left"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
                     </DockPanel>
                 </Border>
             </ControlTemplate>
         </Setter>
     </Style>
 
-    <!--??????????????????????-->
     <Style Selector="controls|AlertDialogControl[CornerRadius=0] /template/ Border#PART_RootBorder">
       <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
     </Style>
@@ -88,9 +94,9 @@
     </Style>
     
     <Style Selector="controls|AlertDialogControl /template/ ContentPresenter#PART_HeaderIcon">
-        <Setter Property="Width" Value="32"/>
-        <Setter Property="Height" Value="32"/>
-        <Setter Property="Margin" Value="0,0,8,0"/>
+        <Setter Property="Width" Value="68"/>
+        <Setter Property="Height" Value="68"/>
+        <Setter Property="Margin" Value="0"/>
     </Style>
     
     <Style Selector="controls|AlertDialogControl /template/ TextBlock#PART_HeaderText">
@@ -121,14 +127,8 @@
     
     
     <Style Selector="controls|AlertDialogControl > ScrollViewer#PART_ScrollViewer > StackPanel#PART_ContentPanel > TextBlock#PART_SupportingText">
-        <Setter Property="Margin" Value="24,0"/>
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-    </Style>
-    
-    <!-- For TextField dialog -->
-    <Style Selector="controls|AlertDialogControl > ScrollViewer#PART_ScrollViewer > StackPanel#PART_ContentPanel > ItemsControl#PART_TextFields">
-        <Setter Property="Margin" Value="24,4"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
     </Style>
     
     <!-- Origin contribution by dojo90

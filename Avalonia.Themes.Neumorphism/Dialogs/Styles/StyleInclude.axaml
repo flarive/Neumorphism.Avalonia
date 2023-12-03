@@ -14,7 +14,9 @@
         <Setter Property="TransparencyLevelHint" Value="Transparent" />
     </Style>
     
-    <Style Selector="Window[SystemDecorations=Full] controls|EmbeddedDialogControl /template/ Border#PART_RootBorder">
+    <Style Selector="Window[SystemDecorations=Full] controls|EmbeddedDialogControl /template/ Border#PART_RootBorder,
+           Window[SystemDecorations=Full] controls|AlertDialogControl /template/ Border#PART_RootBorder,
+           Window[SystemDecorations=Full] controls|CustomDialogControl /template/ Border#PART_RootBorder">
         <Setter Property="assist:ShadowAssist.ShadowDepth" Value="Depth0"/>
         <Setter Property="CornerRadius" Value="0"/>
         <Setter Property="Margin" Value="0"/>
