@@ -9,10 +9,10 @@
         <WrapPanel Orientation="Horizontal"/>
     </ItemsPanelTemplate>
     
-    <RecyclingElementFactory x:Key="DialogHeaderIconTemplate" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
+    <RecyclingElementFactory x:Key="DialogHeaderIconTemplateIcon" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
         <RecyclingElementFactory.Templates>
             <DataTemplate DataType="icons:DialogIconViewModel" x:Key="DialogIcon">
-                <icons1:DialogIcon Kind="{CompiledBinding Kind}"/>
+                <icons1:DialogIcon Kind="{CompiledBinding Kind}" Margin="-1.4,-1.4,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </DataTemplate>
 
             <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
@@ -20,6 +20,18 @@
             </DataTemplate>
         </RecyclingElementFactory.Templates>
     </RecyclingElementFactory>
+
+  <RecyclingElementFactory x:Key="DialogHeaderIconTemplate" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
+    <RecyclingElementFactory.Templates>
+      <DataTemplate DataType="icons:DialogIconViewModel" x:Key="DialogIcon">
+        <icons1:DialogIcon Kind="{CompiledBinding Kind}" UseRecommendColor="True" />
+      </DataTemplate>
+
+      <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
+        <Image Source="{CompiledBinding Bitmap}" Stretch="{CompiledBinding Stretch}"/>
+      </DataTemplate>
+    </RecyclingElementFactory.Templates>
+  </RecyclingElementFactory>
     
     <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
         <Button Height="32" Width="NaN" Margin="20" FontWeight="Normal" Background="{DynamicResource MaterialDesignPaper}"

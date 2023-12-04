@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModels="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels" 
         xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Controls"
+        xmlns:controls2="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
         xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
         xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
   
@@ -34,11 +35,15 @@
                         <DockPanel Name="{x:Static naming:PartNames.PartHeaderPanel}">
 
                           <Button Theme="{StaticResource ButtonIcon}" Width="90" Height="90" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+
                             <ContentPresenter Name="{x:Static naming:PartNames.PartHeaderIcon}"
                                               Content="{CompiledBinding DialogIcon}"
-                                              ContentTemplate="{StaticResource DialogHeaderIconTemplate}"
+                                              ContentTemplate="{StaticResource DialogHeaderIconTemplateIcon}"
                                               IsVisible="{CompiledBinding !!DialogIcon}"/>
+
+
                           </Button>
+               
 
                           <StackPanel Orientation="Vertical">
                             <TextBlock Name="{x:Static naming:PartNames.PartHeaderText}" Foreground="{DynamicResource MaterialDesignDarkGray}"
@@ -52,7 +57,13 @@
                           </StackPanel>
                         </DockPanel>
 
-                        <DockPanel Name="{x:Static naming:PartNames.PartButtonsPanel}">
+                        
+                          <controls2:ColorZone VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0,15,0,0"
+                            assist:ShadowAssist.ShadowDepth="Depth5" Padding="0"
+                            Mode="Standard" Background="Transparent">
+
+                            <DockPanel Name="{x:Static naming:PartNames.PartButtonsPanel}" Margin="0">
+                              
                             <ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" IsVisible="{Binding !!LeftDialogButtons.Count}"
                                           DockPanel.Dock="Left" HorizontalAlignment="Left"
                                           ItemsSource="{CompiledBinding LeftDialogButtons}"
@@ -70,7 +81,10 @@
                                           ItemsSource="{CompiledBinding RightDialogButtons}"
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
                                           ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
-                        </DockPanel>
+
+                            </DockPanel>
+                          </controls2:ColorZone>
+                        
                     </DockPanel>
                 </Border>
             </ControlTemplate>

@@ -9,20 +9,21 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <!--<Viewbox Stretch="Uniform" StretchDirection="Both"
+                    <Viewbox Stretch="Uniform"
                              ClipToBounds="True"
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Stretch">
-                        <Path Name="PATH_DialogIconVectorPath"
+                          <Path Name="PATH_DialogIconVectorPath" Margin="{TemplateBinding Margin}"
                               Data="{TemplateBinding Data}"
                               Fill="{TemplateBinding Foreground}" />
-                    </Viewbox>-->
-                  
-                      <controls:SkiaGeometry HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"
+                    </Viewbox>
+
+
+                  <!--<controls:SkiaGeometry HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"
                                Stretch="Uniform"
                                Path="{TemplateBinding DataPath}"
                                ClipToBounds="True"
-                               Fill="{TemplateBinding Foreground}">
+                               Fill="{TemplateBinding Foreground}">-->
                         <!--<controls:SkiaGeometry.Resources>
                           <converters:CustomBoxShadowsConverter x:Key="CustomBoxShadowsConverter"/>
                           <system:String x:Key="BoxShadowsTemplate">-5 -5 20 {MaterialDesignShadowLight}, 5 5 20 {MaterialDesignShadowDark}</system:String>
@@ -34,7 +35,7 @@
                             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                           </MultiBinding>
                         </controls:SkiaGeometry.BoxShadow>-->
-                      </controls:SkiaGeometry>
+                      <!--</controls:SkiaGeometry>-->
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
