@@ -9,6 +9,15 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+
+# <img src="favicon.png" width="32" height="32"> Dialogs added in 0.9.0 !
+- DialogHost based fake child window dialogs
+- Real child window based dialogs (with or without chrome)
+- Dialog builder to help create dialogs easily
+- A lot of dialogs examples (alert, warning, error, confirm, dialogs sequence, fully custom dialog....)
+
+![Screenshot](Screenshots/dialogs.png)
+
 # <img src="favicon.png" width="32" height="32"> Menus added in 0.8.0 !
 - 6 different possible themes
 - Icon support
