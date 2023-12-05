@@ -205,12 +205,12 @@
                   </StackPanel>
                 </ListBoxItem>
 
-                <!--<ListBoxItem IsEnabled="True">
+                <ListBoxItem IsEnabled="True">
                   <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon Kind="WindowMaximize" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
                     <TextBlock Text="Dialogs" VerticalAlignment="Center" Margin="8,0,0,0" />
                   </StackPanel>
-                </ListBoxItem>-->
+                </ListBoxItem>
 
               </ListBox>
             </Grid>
@@ -302,7 +302,7 @@
                   <!--Menus-->
                   <pages:MenusDemo/>
                   <!--Dialogs-->
-                  <!--<pages:DialogsDemo/>-->
+                  <pages:DialogsDemo/>
                 </Carousel>
               </Border>
             </ScrollViewer>

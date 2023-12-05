@@ -1,6 +1,8 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Presenters;
+using Avalonia.Media.Imaging;
+using Avalonia.Media;
 using Avalonia.Themes.Neumorphism.Dialogs.Interfaces;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels;
 using Avalonia.Threading;
@@ -13,6 +15,8 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Views
             Result = new TextFieldDialogResult();
 
             InitializeComponent();
+
+            RenderOptions.SetBitmapInterpolationMode(this, BitmapInterpolationMode.HighQuality);
 
             Closed += TextFieldDialog_Closed;
             Opened += TextFieldDialog_Opened;

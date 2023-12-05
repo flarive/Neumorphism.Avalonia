@@ -4,15 +4,15 @@ using Avalonia.Controls;
 using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
 
-namespace Avalonia.Themes.Neumorphism
+namespace Avalonia.Themes.Neumorphism.Converters
 {
     internal class IBitmapToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null && value is Bitmap bm)
-                return new Image { Source=bm };
-                
+                return new Image { Source = bm };
+
             return null;
         }
 

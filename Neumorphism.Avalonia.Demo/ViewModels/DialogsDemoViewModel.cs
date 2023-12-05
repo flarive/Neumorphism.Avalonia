@@ -145,7 +145,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
             var dialog = DialogHelper.CreateAlertDialog(new AlertDialogBuilderParams
             {
                 ContentHeader = "Error !",
-                SupportingText = "An error occured !",
+                SupportingText = "A strange unexpected error occured !",
                 WindowTitle = "Error dialog",
                 DialogHeaderIcon = DialogIconKind.Error,
                 DialogIcon = DialogIconKind.Error,
@@ -246,6 +246,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     StartupLocation = WindowStartupLocation.CenterOwner,
                     DialogHeaderIcon = DialogIconKind.Success,
                     Borderless = true,
+                    Width = 480,
                 }).ShowDialog(_window);
 
                 _appModelBase.IsDialogOpened = false;
