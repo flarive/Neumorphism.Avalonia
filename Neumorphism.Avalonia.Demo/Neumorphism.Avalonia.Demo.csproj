@@ -56,12 +56,12 @@
   </ItemGroup>
     
   <ItemGroup>
-	  <PackageReference Include="Avalonia" Version="11.0.5" />
-	  <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.5" />
-	  <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
-	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.5" />
+	  <PackageReference Include="Avalonia" Version="11.0.6" />
+	  <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.6" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.0.6" />
+	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.6" />
 	  <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-	  <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5" />
+	  <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6" />
 	  <PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
 	  <!--Condition below is needed to generate macOS App only.-->
 	  <PackageReference Include="Dotnet.Bundle" Version="0.9.13" Condition="$(RuntimeIdentifier.StartsWith('osx'))" />
