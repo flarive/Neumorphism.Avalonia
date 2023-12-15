@@ -87,8 +87,11 @@
 
   <dialogHost:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
     <Grid>
-      <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied" SnackbarHorizontalAlignment="Center"
-							   assist:SnackbarHostAssist.SnackbarWidth="600">
+      <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied"
+                             SnackbarHorizontalAlignment="Center"
+                             SnackbarVerticalAlignment="Bottom"
+                             assist:SnackbarHostAssist.SnackbarHeight="50"
+							               assist:SnackbarHostAssist.SnackbarWidth="600">
         <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
              LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch2, Path=IsChecked, Mode=TwoWay}" LeftDrawerWidth="320"
              RightDrawerOpened="False" RightDrawerWidth="0">

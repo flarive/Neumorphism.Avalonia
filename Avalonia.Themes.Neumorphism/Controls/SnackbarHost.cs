@@ -57,6 +57,8 @@ namespace Avalonia.Themes.Neumorphism.Controls
         public static readonly StyledProperty<string> HostNameProperty =
             AvaloniaProperty.Register<SnackbarHost, string>(nameof(HostName));
 
+
+
         public HorizontalAlignment SnackbarHorizontalAlignment
         {
             get => GetValue(SnackbarHorizontalAlignmentProperty);
@@ -67,6 +69,9 @@ namespace Avalonia.Themes.Neumorphism.Controls
             AvaloniaProperty.Register<SnackbarHost, HorizontalAlignment>(nameof(SnackbarHorizontalAlignment),
                 HorizontalAlignment.Left);
 
+
+
+
         public VerticalAlignment SnackbarVerticalAlignment
         {
             get => GetValue(SnackbarVerticalAlignmentProperty);
@@ -76,12 +81,16 @@ namespace Avalonia.Themes.Neumorphism.Controls
         public static readonly StyledProperty<VerticalAlignment> SnackbarVerticalAlignmentProperty =
             AvaloniaProperty.Register<SnackbarHost, VerticalAlignment>(nameof(SnackbarVerticalAlignment),
                 VerticalAlignment.Bottom);
+
+
+
         
         public int SnackbarMaxCounts
         {
             get => GetValue(SnackbarMaxCountsProperty);
             set => SetValue(SnackbarMaxCountsProperty, value);
         }
+
 
         public static readonly StyledProperty<int> SnackbarMaxCountsProperty =
             AvaloniaProperty.Register<SnackbarHost, int>(nameof(SnackbarMaxCounts), 1);
@@ -100,10 +109,6 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
         private static string GetFirstHostName()
         {
-            if (SnackbarHostDictionary is null)
-                // THIS IS IMPOSSIBLE TO HAPPEN! But I kept this for any reasons.
-                throw new NullReferenceException("Snackbar hosts pool is not initialized!");
-
             return SnackbarHostDictionary.First().Key;
         }
 

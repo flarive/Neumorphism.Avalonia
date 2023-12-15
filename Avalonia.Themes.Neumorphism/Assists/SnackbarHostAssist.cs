@@ -9,9 +9,12 @@ namespace Avalonia.Themes.Neumorphism.Assist
         private static readonly IBrush DefaultSnackbarBackground = new SolidColorBrush(Brushes.Transparent.Color);
         private static readonly double DefaultSnackbarWidth = 344;
         private static readonly double DefaultSnackbarHeight = 200;
+        private static readonly double DefaultSnackbarVerticalOffset = 50;
+        private static readonly bool DefaultSnackbarIsAnimated = false;
+        
 
 
-        #region AttachedProperty : SnackbarCornerRadiusProperty
+        #region AttachedProperty
 
         /// <summary>
         /// Controls the corner radius of the snackbar.
@@ -84,6 +87,40 @@ namespace Avalonia.Themes.Neumorphism.Assist
 
 
 
+
+        /// <summary>
+        /// Controls the vertical offet of the snackbar.
+        /// </summary>
+        public static readonly AvaloniaProperty<double> SnackbarVerticalOffsetProperty = AvaloniaProperty.RegisterAttached<SnackbarHost, double>(
+            "SnackbarVerticalOffset", typeof(SnackbarHostAssist), DefaultSnackbarVerticalOffset, true);
+
+        public static double GetSnackbarVerticalOffset(AvaloniaObject element)
+        {
+            return (double)element.GetValue(SnackbarVerticalOffsetProperty);
+        }
+
+        public static void SetSnackbarVerticalOffset(AvaloniaObject element, double value)
+        {
+            element.SetValue(SnackbarVerticalOffsetProperty, value);
+        }
+
+
+
+        /// <summary>
+        /// Controls if snackbar notifications are animated or not.
+        /// </summary>
+        public static readonly AvaloniaProperty<bool> SnackbarIsAnimatedProperty = AvaloniaProperty.RegisterAttached<SnackbarHost, bool>(
+            "SnackbarIsAnimated", typeof(SnackbarHostAssist), DefaultSnackbarIsAnimated, true);
+
+        public static bool GetSnackbarIsAnimated(AvaloniaObject element)
+        {
+            return (bool)element.GetValue(SnackbarIsAnimatedProperty);
+        }
+
+        public static void SetSnackbarIsAnimated(AvaloniaObject element, bool value)
+        {
+            element.SetValue(SnackbarIsAnimatedProperty, value);
+        }
 
         #endregion
     }
