@@ -74,6 +74,7 @@
       <Color x:Key="MaterialDesignDarkGray">#FF333333</Color>
       <Color x:Key="MaterialDesignMediumGray">#FF888888</Color>
       <Color x:Key="MaterialDesignLightGray">#FFCCCCCC</Color>
+      <Color x:Key="MaterialDesignFocus">#DDCCCCCC</Color>
     </ResourceDictionary>
     
 		<ResourceDictionary x:Key="Dark">
@@ -148,6 +149,7 @@
       <Color x:Key="MaterialDesignDarkGray">#FFCCCCCC</Color>
       <Color x:Key="MaterialDesignMediumGray">#FF888888</Color>
       <Color x:Key="MaterialDesignLightGray">#FF333333</Color>
+      <Color x:Key="MaterialDesignFocus">#DD666666</Color>
 		</ResourceDictionary>
 	</ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

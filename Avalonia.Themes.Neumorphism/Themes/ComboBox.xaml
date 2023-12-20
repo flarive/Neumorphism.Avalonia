@@ -317,6 +317,15 @@
     <Style Selector="^.Filled /template/ Border#PART_Border">
       <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
     </Style>
+
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}}"
+                  BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
 	</ControlTheme>
 
 	<!-- Inset combobox theme -->

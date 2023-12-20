@@ -15,6 +15,8 @@
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>
+  
+  
 
 
 
@@ -46,9 +48,9 @@
 		<Setter Property="BorderBrush" Value="Transparent"/>
 		<Setter Property="BorderThickness" Value="0"/>
 		<Setter Property="CornerRadius" Value="0"/>
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
 						Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
 						VerticalAlignment="Center" HorizontalAlignment="Center"
 						Background="{TemplateBinding Background}"
@@ -57,10 +59,10 @@
 						CornerRadius="{TemplateBinding CornerRadius}">
 					<Panel>
 						<!--Outline-->
-						<Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+            <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
 							  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
 							  Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+							  CornerRadius="{TemplateBinding CornerRadius}"/>
 
 						<ContentPresenter Name="PART_ContentPresenter"
 										  Content="{TemplateBinding Content}"
@@ -78,10 +80,34 @@
 			</ControlTemplate>
 		</Setter>
 
+
+
+    <Style Selector="^[CornerRadius=0]">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}}"
+                  BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
+
+
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.CornerRadius)}"
+                  BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
+
 		<Style Selector="^[CornerRadius=0] /template/ Border#PART_ButtonRootBorder">
 			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
 
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_HoverIndicator">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
 		<!-- Default Transitions -->
 		<Style Selector="^:not(.notransitions) /template/ Border#PART_HoverIndicator">
@@ -515,7 +541,6 @@
 						<Style Selector="TextBlock:pointerover">
               <Setter Property="TextDecorations" Value="Underline"/>
 						</Style>
-
           </ContentPresenter.Styles>
 				</ContentPresenter>
 			</ControlTemplate>

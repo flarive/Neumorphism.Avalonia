@@ -364,5 +364,10 @@ namespace Avalonia.Themes.Neumorphism
         /// Gets or sets the MaterialDesignLightGray color value.
         /// </summary>
         public Color MaterialDesignLightGray { get => GetColor("MaterialDesignLightGray"); set => SetColor("MaterialDesignLightGray", value); }
+
+        /// <summary>
+        /// Gets or sets the MaterialDesignFocus color value.
+        /// </summary>
+        public Color MaterialDesignFocus { get => GetColor("MaterialDesignFocus"); set => SetColor("MaterialDesignFocus", value); }
     }
 }

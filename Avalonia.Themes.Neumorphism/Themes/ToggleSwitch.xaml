@@ -45,6 +45,7 @@
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="FontStyle" Value="Normal"/>
     <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch">
@@ -57,24 +58,23 @@
                               IsVisible="False" IsHitTestVisible="False"
                               Width="0" Height="0" />
           </Canvas>
-			<ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
-                            Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
-                            FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
-                            FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
-                            FontWeight="{Binding FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
-                            FontStyle="{Binding FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
-                            Content="{TemplateBinding Content}"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Center">
+			    <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
+                                Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                                FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                FontWeight="{Binding FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                FontStyle="{Binding FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                Content="{TemplateBinding Content}"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center">
 
-				<ContentPresenter.ContentTemplate>
-					<DataTemplate>
-						<TextBlock Text="{Binding}"/>
-					</DataTemplate>
-				</ContentPresenter.ContentTemplate>
-				
-			</ContentPresenter>
+				    <ContentPresenter.ContentTemplate>
+					    <DataTemplate>
+						    <TextBlock Text="{Binding}"/>
+					    </DataTemplate>
+				    </ContentPresenter.ContentTemplate>
+			    </ContentPresenter>
 			  
           <Grid Grid.Column="1" ClipToBounds="False">
             <!--Background-->
@@ -172,30 +172,6 @@
     </Style>
     <Style Selector="^:pressed:not(.notransitions) /template/ Ellipse#RippleThumb">
       <Setter Property="Opacity" Value="0.28" />
-      <Style.Animations>
-          <!--<Animation Duration="0:0:0.2" FillMode="Both">
-            <KeyFrame Cue="0%">
-              <Setter Property="ScaleTransform.ScaleX" Value="1" />
-              <Setter Property="ScaleTransform.ScaleY" Value="1" />
-            </KeyFrame>
-            <KeyFrame Cue="100%">
-              <Setter Property="ScaleTransform.ScaleX" Value="2.5" />
-              <Setter Property="ScaleTransform.ScaleY" Value="2.5" />
-            </KeyFrame>
-          </Animation>-->
-        <!--<animations:BeginAnimation>
-          <Animation Duration="0:0:0.2" FillMode="Both">
-            <KeyFrame Cue="0%">
-              <Setter Property="ScaleTransform.ScaleX" Value="1" />
-              <Setter Property="ScaleTransform.ScaleY" Value="1" />
-            </KeyFrame>
-            <KeyFrame Cue="100%">
-              <Setter Property="ScaleTransform.ScaleX" Value="2.5" />
-              <Setter Property="ScaleTransform.ScaleY" Value="2.5" />
-            </KeyFrame>
-          </Animation>
-        </animations:BeginAnimation>-->
-      </Style.Animations>
     </Style>
 
     <Style Selector="^:not(.notransitions) /template/ Grid#ThumbHolder">
@@ -207,7 +183,7 @@
     </Style>
 
     <Style Selector="^:not(:checked,.Outline) /template/ Grid#ThumbHolder">
-      <Setter Property="RenderTransform" Value="translate(0px,0px)" />
+      <Setter Property="RenderTransform" Value="translate(1px,0px)" />
     </Style>
 
     <Style Selector="^:checked /template/ Grid#ThumbHolder">
@@ -364,6 +340,15 @@
     <Style Selector="^:disabled">
       <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
     </Style>
+
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#Track">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style> 
   </ControlTheme>
 
 
@@ -388,6 +373,7 @@
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontWeight" Value="Normal"/>
     <Setter Property="FontStyle" Value="Normal"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="Auto, Auto, Auto" ClipToBounds="False" HorizontalAlignment="Stretch">
@@ -418,17 +404,16 @@
           </ContentPresenter>
 
           <Grid Grid.Column="1" ClipToBounds="False">
-            <!--Outline-->
-            <Border Name="Outline"
-                            Opacity="1"
-                            HorizontalAlignment="Left"
-                            Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=-12}"
-                            VerticalAlignment="Center"
-                            BorderBrush="Transparent"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="{TemplateBinding BorderBrush}"
-                            Width="{TemplateBinding MinWidth}"
-                            CornerRadius="100">
+            <!--OutlineFocus-->
+            <Border Name="OutlineFocus" Opacity="1"
+                              HorizontalAlignment="Left"
+                              Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=-6}"
+                              VerticalAlignment="Center"
+                              BorderBrush="Transparent"
+                              BorderThickness="1"
+                              Background="Transparent"
+                              Width="{TemplateBinding MinWidth, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=6}"
+                              CornerRadius="100">
               <Border.BoxShadow>
                 <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
                   <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -436,22 +421,35 @@
                   <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                 </MultiBinding>
               </Border.BoxShadow>
-              <!--Background-->
-              <Border Name="Track"
-								Opacity="1"
-								BorderBrush="Transparent"
-								BorderThickness="0"
-								HorizontalAlignment="Stretch"
-								Background="{TemplateBinding Background}"
-								VerticalAlignment="Stretch"
-								CornerRadius="100">
-                <Border.BoxShadow>
-                  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-                    <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                    <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-                    <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-                  </MultiBinding>
-                </Border.BoxShadow>
+              <!--Outline-->
+              <Border Name="Outline"
+                              Opacity="1"
+                              HorizontalAlignment="Center"
+                              Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=-12}"
+                              VerticalAlignment="Center"
+                              BorderBrush="Transparent"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              Background="{TemplateBinding BorderBrush}"
+                              Width="{TemplateBinding MinWidth, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=2}}"
+                              CornerRadius="100">
+                
+                <!--Background-->
+                <Border Name="Track"
+								  Opacity="1"
+								  BorderBrush="Transparent"
+								  BorderThickness="0"
+								  HorizontalAlignment="Stretch"
+								  Background="{TemplateBinding Background}"
+								  VerticalAlignment="Stretch"
+								  CornerRadius="100">
+                  <Border.BoxShadow>
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                      <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                      <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                    </MultiBinding>
+                  </Border.BoxShadow>
+                </Border>
               </Border>
             </Border>
             <Grid Name="ThumbHolder" ClipToBounds="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Height}"
@@ -470,12 +468,11 @@
               <AdornerLayer>
                 <!--Circle-->
                 <Border Name="Thumb"
-                                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6"
-                                        CornerRadius="100"
-                                        
-                                        Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
-                                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
-                                        ClipToBounds="False">
+                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="6"
+                        CornerRadius="100"
+                        Width="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
+                        Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
+                        ClipToBounds="False">
                   <Border.BoxShadow>
                     <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -509,20 +506,33 @@
     </Setter>
 
     <Style Selector="^:not(:checked) /template/ Grid#ThumbHolder">
-      <Setter Property="RenderTransform" Value="translate(7px,0px)" />
+      <Setter Property="RenderTransform" Value="translate(4px,0px)" />
     </Style>
 
     <Style Selector="^:checked /template/ Grid#ThumbHolder">
       <Setter Property="RenderTransform">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource WidthToRenderTransformConverter}">
-            <Binding Path="MinWidth" Converter="{StaticResource WidthMinusValueConverter}" ConverterParameter="7" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <Binding Path="MinWidth" Converter="{StaticResource WidthMinusValueConverter}" ConverterParameter="9" RelativeSource="{RelativeSource TemplatedParent}"/>
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
           </MultiBinding>
         </Setter.Value>
       </Setter>
     </Style>
-    
-  </ControlTheme>
 
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#Track">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+      </Style>
+    </Style>
+
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#OutlineFocus">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

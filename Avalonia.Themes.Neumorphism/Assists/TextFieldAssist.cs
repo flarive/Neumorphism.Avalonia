@@ -43,6 +43,15 @@ namespace Avalonia.Themes.Neumorphism.Assist
 
 
 
+        public static AvaloniaProperty<double> InnerLeftWidthProperty = AvaloniaProperty.RegisterAttached<TextBox, double>(
+            "InnerLeftWidth", typeof(TextBox));
+
+        public static void SetInnerLeftWidth(AvaloniaObject element, double value) => element.SetValue(InnerLeftWidthProperty, value);
+
+        public static double GetInnerLeftWidth(AvaloniaObject element) => (double)element.GetValue(InnerLeftWidthProperty);
+
+
+
 
         public static AvaloniaProperty<IBrush> InnerRightBackgroundProperty = AvaloniaProperty.RegisterAttached<TextBox, IBrush>(
             "InnerRightBackground", typeof(TextBox));
@@ -60,6 +69,15 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static void SetInnerRightPadding(AvaloniaObject element, Thickness value) => element.SetValue(InnerRightPaddingProperty, value);
 
         public static Thickness GetInnerRightPadding(AvaloniaObject element) => (Thickness)element.GetValue(InnerRightPaddingProperty);
+
+
+
+        public static AvaloniaProperty<double> InnerRightWidthProperty = AvaloniaProperty.RegisterAttached<TextBox, double>(
+            "InnerRightWidth", typeof(TextBox));
+
+        public static void SetInnerRigthWidth(AvaloniaObject element, double value) => element.SetValue(InnerRightWidthProperty, value);
+
+        public static double GetInnerRigthWidth(AvaloniaObject element) => (double)element.GetValue(InnerRightWidthProperty);
 
     }
 }

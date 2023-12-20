@@ -16,7 +16,7 @@
 	<!-- Neumorphism theme ok -->
 
 
-  <CornerRadius x:Key="FloatingButtonRoundCorner">32</CornerRadius>
+  <CornerRadius x:Key="FloatingButtonRoundCorner">100</CornerRadius>
 
 
   <!--Default FloatingButton theme-->
@@ -62,6 +62,16 @@
         </Border>
       </ControlTemplate>
     </Setter>
+
+
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{DynamicResource FloatingButtonRoundCorner}"
+                  BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
 
     <!-- Transitions -->
     <Style Selector="^[IsVisible=true].notransitions /template/ Border#PART_ButtonRootBorder">

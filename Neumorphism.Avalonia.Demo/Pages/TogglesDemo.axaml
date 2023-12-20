@@ -221,10 +221,10 @@
 		    <showMeTheXaml:XamlDisplay UniqueId="RadioButtonsCard2">
           <controls:Card Padding="0" InsideClipping="True" Margin="0,16,0,0" Height="38" ToolTip.Tip='RadioButtons group with theme "RadioButtonButton" applied and with custom colors'>
 				    <StackPanel Orientation="Horizontal">
-					    <RadioButton Theme="{StaticResource RadioButtonButton}" Classes="Left" GroupName="4" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchMinus, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" IsChecked="True" />
-					    <RadioButton Theme="{StaticResource RadioButtonButton}" GroupName="4" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchPlus, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
-					    <RadioButton Theme="{StaticResource RadioButtonButton}" GroupName="4" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchRefresh, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
-					    <RadioButton Theme="{StaticResource RadioButtonButton}" Classes="Right" GroupName="4" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchSync, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
+					    <RadioButton Theme="{StaticResource RadioButtonButton}" Width="50" Classes="Left" GroupName="5" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchMinus, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" IsChecked="True" />
+					    <RadioButton Theme="{StaticResource RadioButtonButton}" Width="50" GroupName="5" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchPlus, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
+					    <RadioButton Theme="{StaticResource RadioButtonButton}" Width="50" GroupName="5" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchRefresh, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
+					    <RadioButton Theme="{StaticResource RadioButtonButton}" Width="50" Classes="Right" GroupName="5" Height="38" Content="{icons:MaterialIconExt Kind=SourceBranchSync, Size=20}" assist:RadioButtonAssist.CheckedBackground="#FF77dbf0" assist:RadioButtonAssist.CheckedForeground="White" />
 				    </StackPanel>
 			    </controls:Card>
 		    </showMeTheXaml:XamlDisplay>
@@ -339,7 +339,7 @@
 
     <!--Custom toggles-->
     <TextBlock Classes="Headline6 Subheadline2" Text="Custom ToggleButtons" Margin="0,20,0,10" Foreground="{DynamicResource MaterialDesignMediumGray}" />
-    <StackPanel Orientation="Horizontal"  Margin="0,0,0,50">
+    <StackPanel Orientation="Horizontal" Margin="0,0,0,50">
       <StackPanel>
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="CustomToggles0">
@@ -441,10 +441,10 @@
               <ColumnDefinition Width="*"/>
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <RadioButton Grid.Column="0" Theme="{StaticResource RadioButtonButton}" Classes="Left" GroupName="5" Height="26" Content="1" Foreground="Gray" Margin="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
-            <RadioButton Grid.Column="1" Theme="{StaticResource RadioButtonButton}" GroupName="5" Height="26" Content="2" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
-            <RadioButton Grid.Column="2" Theme="{StaticResource RadioButtonButton}" GroupName="5" Height="26" Content="3" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
-            <RadioButton Grid.Column="3" Theme="{StaticResource RadioButtonButton}" Classes="Right" GroupName="5" Height="26" Content="4" Foreground="Gray" Margin="0,0,1,0" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
+            <RadioButton Grid.Column="0" Theme="{StaticResource RadioButtonButton}" Width="50" Classes="Left" GroupName="6" Height="26" Content="1" Foreground="Gray" Margin="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
+            <RadioButton Grid.Column="1" Theme="{StaticResource RadioButtonButton}" Width="50" GroupName="6" Height="26" Content="2" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
+            <RadioButton Grid.Column="2" Theme="{StaticResource RadioButtonButton}" Width="50" GroupName="6" Height="26" Content="3" Foreground="Gray" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
+            <RadioButton Grid.Column="3" Theme="{StaticResource RadioButtonButton}" Width="50" Classes="Right" GroupName="6" Height="26" Content="4" Foreground="Gray" Margin="0,0,1,0" BorderBrush="White" BorderThickness="1,0,0,0" assist:ToggleButtonAssist.CheckedBackground="{DynamicResource PrimaryHueLightBrush}" assist:ToggleButtonAssist.CheckedForeground="White" />
           </Grid>
         </controls:Card>
       </showMeTheXaml:XamlDisplay>

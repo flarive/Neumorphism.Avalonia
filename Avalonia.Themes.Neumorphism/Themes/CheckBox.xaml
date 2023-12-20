@@ -36,6 +36,7 @@
 		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -148,5 +149,13 @@
 			<Setter Property="Data" Value="M6,13L6,11L18,11L18,13M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
 			<Setter Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background}" />
 		</Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#OuterGraphicBorder">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
 	</ControlTheme>
 </ResourceDictionary>

@@ -44,6 +44,7 @@
 		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -143,6 +144,14 @@
 			<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource SecondaryHueMidBrush}" />
 			<Setter Property="assist:SelectionControlAssist.InnerForeground" Value="{DynamicResource SecondaryHueMidBrush}" />
 		</Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#OuterGraphicBorder">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
 	</ControlTheme>
 
 
@@ -165,6 +174,7 @@
 		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate>
@@ -231,11 +241,16 @@
 			<Setter Property="Foreground" Value="{DynamicResource SecondaryHueDarkBrush}"/>
 		</Style>
 
-    
-
     <Style Selector="^:disabled">
       <Setter Property="Opacity" Value="0.1" />
     </Style>
 
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_SelectedIndicator">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
 	</ControlTheme>
 </ResourceDictionary>
