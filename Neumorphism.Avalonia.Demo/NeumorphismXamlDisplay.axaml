@@ -4,7 +4,11 @@
         xmlns:styles="clr-namespace:Neumorphism.Avalonia.Styles;assembly=Neumorphism.Avalonia">
   
     <Style Selector="showMeTheXaml|XamlDisplay">
-        <Setter Property="Template">
+		<Setter Property="ClipToBounds" Value="False"></Setter>
+		<Setter Property="VerticalAlignment" Value="Top"></Setter>
+		<Setter Property="Margin" Value="8" />
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="Template">
             <ControlTemplate>
                 <Grid ColumnDefinitions="*, Auto">
                     <Grid.Resources>

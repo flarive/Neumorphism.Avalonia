@@ -9,7 +9,7 @@
       <FocusAdornerTemplate>
         <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.CornerRadius)}"
                 BorderBrush="{DynamicResource MaterialDesignFocus}" Margin="0">
-        </Border>
+		</Border>
       </FocusAdornerTemplate>
     </Setter>
   </ControlTheme>

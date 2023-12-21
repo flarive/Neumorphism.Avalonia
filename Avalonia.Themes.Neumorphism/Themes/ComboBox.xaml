@@ -8,34 +8,34 @@
 				xmlns:sys="using:System">
 
 	<!-- Neumorphism theme ok -->
-	
-	
-  <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel Spacing="10">
-        <ComboBox PlaceholderText="Select an item">
-          <ComboBoxItem>Item 1</ComboBoxItem>
-          <ComboBoxItem>Item 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox IsEnabled="False"
-                  Width="200"
-                  SelectedIndex="1"
-                  HorizontalContentAlignment="Center">
-          <ComboBoxItem>Item 1</ComboBoxItem>
-          <ComboBoxItem>Item 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox PlaceholderText="Error">
-          <DataValidationErrors.Error>
-            <sys:Exception>
-              <x:Arguments>
-                <x:String>Error</x:String>
-              </x:Arguments>
-            </sys:Exception>
-          </DataValidationErrors.Error>
-        </ComboBox>
-      </StackPanel>
-    </Border>
-  </Design.PreviewWith>
+
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="10">
+				<ComboBox PlaceholderText="Select an item">
+					<ComboBoxItem>Item 1</ComboBoxItem>
+					<ComboBoxItem>Item 2</ComboBoxItem>
+				</ComboBox>
+				<ComboBox IsEnabled="False"
+						  Width="200"
+						  SelectedIndex="1"
+						  HorizontalContentAlignment="Center">
+					<ComboBoxItem>Item 1</ComboBoxItem>
+					<ComboBoxItem>Item 2</ComboBoxItem>
+				</ComboBox>
+				<ComboBox PlaceholderText="Error">
+					<DataValidationErrors.Error>
+						<sys:Exception>
+							<x:Arguments>
+								<x:String>Error</x:String>
+							</x:Arguments>
+						</sys:Exception>
+					</DataValidationErrors.Error>
+				</ComboBox>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
 
 
 
@@ -44,7 +44,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
-    <Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="Padding" Value="8,4" />
@@ -54,7 +54,7 @@
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="FontFamily" Value="{DynamicResource NeumorphismFont2}"/>
-    <Setter Property="FontSize" Value="14"/>
+		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="FontWeight" Value="Normal"/>
 		<Setter Property="FontStyle" Value="Normal"/>
 		<Setter Property="Cursor" Value="Hand"/>
@@ -65,7 +65,7 @@
 		<Setter Property="assist:ComboBoxAssist.InnerRightPadding" Value="0"/>
 
 
-    <!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
+		<!--<Setter Property="assist:ComboBoxAssist.WatermarkContent">
 			<Setter.Value>
 				<Template>
 					<TextBlock Name="watermark" Background="Red"
@@ -89,15 +89,15 @@
 
 
 
-    <Setter Property="Template">
+		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False">
+				<Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" ClipToBounds="False" Focusable="False">
 
 					<Border Name="PART_Border" Height="{TemplateBinding Height}" HorizontalAlignment="Stretch"
-							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-							  Background="{TemplateBinding Background}"
-							  BorderBrush="{TemplateBinding BorderBrush}"
-							  BorderThickness="{TemplateBinding BorderThickness}">
+								CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}">
 
 						<Grid ColumnDefinitions="Auto, *, Auto" HorizontalAlignment="Stretch">
 
@@ -114,55 +114,55 @@
 									IsVisible="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark}"
 									RenderTransformOrigin="0, 0" />
 
-							<TextBlock Name="watermark" Grid.Column="1" 
-									  HorizontalAlignment="Stretch"
-									  VerticalAlignment="Center"
-									  Foreground="{TemplateBinding Foreground}"
-									  FontFamily="{TemplateBinding FontFamily}"
-									  FontSize="{TemplateBinding FontSize}"
-									  FontWeight="{TemplateBinding FontWeight}"
-									  FontStyle="{TemplateBinding FontStyle}"
-									  Text="{TemplateBinding PlaceholderText}"
-									  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
-									  Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToHalfDoubleConverter}, ConverterParameter=1}" />
+							<TextBlock Name="watermark" Grid.Column="1"
+										HorizontalAlignment="Stretch"
+										VerticalAlignment="Center"
+										Foreground="{TemplateBinding Foreground}"
+										FontFamily="{TemplateBinding FontFamily}"
+										FontSize="{TemplateBinding FontSize}"
+										FontWeight="{TemplateBinding FontWeight}"
+										FontStyle="{TemplateBinding FontStyle}"
+										Text="{TemplateBinding PlaceholderText}"
+										Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=30%|10%|100%|10%}"
+										Opacity="{TemplateBinding assist:ComboBoxAssist.UseFloatingWatermark, Converter={StaticResource BooleanValueToHalfDoubleConverter}, ConverterParameter=1}" />
 
 							<!--<ContentPresenter Name="PART_Watermark" Grid.Column="1" Background="Transparent" Content="{TemplateBinding assist:ComboBoxAssist.WatermarkContent}" />-->
 
 							<!--Left container-->
 							<Border Grid.Column="0" Background="{TemplateBinding assist:ComboBoxAssist.InnerLeftBackground}" Width="{Binding ElementName=PART_InnerLeft, Path=Width}"
-						   	  CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
+								CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=0}"
 									VerticalAlignment="Stretch">
 								<ContentPresenter Name="PART_InnerLeft" Background="Transparent" Content="{TemplateBinding assist:ComboBoxAssist.InnerLeftContent}" Padding="{TemplateBinding assist:ComboBoxAssist.InnerLeftPadding}" HorizontalContentAlignment="Left" />
 							</Border>
 
 							<!--Middle-->
-							<ToggleButton Name="PART_Toggle" Grid.Column="1" Theme="{StaticResource ToggleButtonNoFeedback}"
-									  Height="{TemplateBinding Height}" Width="{Binding ElementName=watermark, Path=Width}"
-									  BorderThickness="0"
-									  Background="Transparent"
-									  HorizontalContentAlignment="Stretch"
-									  IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-									  Margin="0"
-									  CornerRadius="0"
-									  Padding="0">
+							<ToggleButton Name="PART_Toggle" Grid.Column="1" Theme="{StaticResource ToggleButtonNoFeedback}" Focusable="False"
+										Height="{TemplateBinding Height}" Width="{Binding ElementName=watermark, Path=Width}"
+										BorderThickness="0"
+										Background="Transparent"
+										HorizontalContentAlignment="Stretch"
+										IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+										Margin="0"
+										CornerRadius="0"
+										Padding="0">
 
 								<Grid ColumnDefinitions="*,Auto" HorizontalAlignment="Stretch" Width="{Binding ElementName=watermark, Path=Width}">
-                  
+
 									<!--Selected item-->
 									<ContentPresenter Grid.Column="0" Name="contentPresenter"
-													  BorderThickness="0" BorderBrush="Transparent"
-													  HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Left"
-													  VerticalAlignment="Stretch"
-                            VerticalContentAlignment="Center"
-													  Content="{TemplateBinding SelectionBoxItem}"
-													  ContentTemplate="{TemplateBinding ItemTemplate}"
-													  Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=0%|0%|0%|0%}"
-													  Padding="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=35%|0%|35%|0%}"/>
+														BorderThickness="0" BorderBrush="Transparent"
+														HorizontalAlignment="Stretch"
+														HorizontalContentAlignment="Left"
+														VerticalAlignment="Stretch"
+														VerticalContentAlignment="Center"
+														Content="{TemplateBinding SelectionBoxItem}"
+														ContentTemplate="{TemplateBinding ItemTemplate}"
+														Margin="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=0%|0%|0%|0%}"
+														Padding="{TemplateBinding Height, Converter={StaticResource HeightToMarginConverter}, ConverterParameter=35%|0%|35%|0%}"/>
 
 
-                  
-                  
+
+
 									<Border Name="splitBorder"
 											Grid.Column="1"
 											Width="10" Height="10"
@@ -172,13 +172,13 @@
 											BorderBrush="Transparent"
 											BorderThickness="0">
 										<Path Name="arrow"
-											  Width="8" Height="8"
-											  Margin="0,4,0,0"
-											  Stretch="Uniform"
-											  HorizontalAlignment="Right"
-											  VerticalAlignment="Center"
-											  Data="M7,10L12,15L17,10H7Z"
-											  Fill="{DynamicResource MaterialDesignTextBoxBorder}" />
+												Width="8" Height="8"
+												Margin="0,4,0,0"
+												Stretch="Uniform"
+												HorizontalAlignment="Right"
+												VerticalAlignment="Center"
+												Data="M7,10L12,15L17,10H7Z"
+												Fill="{DynamicResource MaterialDesignTextBoxBorder}" />
 									</Border>
 								</Grid>
 
@@ -187,8 +187,8 @@
 
 							<!--Right container-->
 							<Border Grid.Column="2" Background="{TemplateBinding assist:ComboBoxAssist.InnerRightBackground}" Width="{Binding ElementName=PART_InnerRight, Path=Width}"
-							  CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
-							  VerticalAlignment="Stretch">
+								CornerRadius="{Binding ElementName=PART_Border, Path=CornerRadius, Converter={StaticResource DoubleToLeftRightCornerRadiusConverter}, ConverterParameter=1}"
+								VerticalAlignment="Stretch">
 								<ContentPresenter Name="PART_InnerRight" Background="Transparent" Content="{TemplateBinding assist:ComboBoxAssist.InnerRightContent}" Padding="{TemplateBinding assist:ComboBoxAssist.InnerRightPadding}" HorizontalContentAlignment="Left" />
 							</Border>
 						</Grid>
@@ -196,20 +196,20 @@
 
 					<!--Combobox items container-->
 					<Popup Name="PART_Popup"
-						   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-						   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
-						   VerticalOffset="-5"
-						   HorizontalOffset="-10"
-						   Margin="-8"
-						   WindowManagerAddShadowHint="False"
-						   PlacementTarget="{Binding ElementName=templateRoot}"
-						   IsLightDismissEnabled="True"
-						   UseLayoutRounding="True"
-						   ClipToBounds="False" >
+							IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+							MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							VerticalOffset="-5"
+							HorizontalOffset="-10"
+							Margin="-8"
+							WindowManagerAddShadowHint="False"
+							PlacementTarget="{Binding ElementName=templateRoot}"
+							IsLightDismissEnabled="True"
+							UseLayoutRounding="True"
+							ClipToBounds="False" >
 						<Border Name="PART_PopupBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
-														  Margin="10"
-														  Background="{TemplateBinding Background}"
-														  CornerRadius="5">
+															Margin="10"
+															Background="{TemplateBinding Background}"
+															CornerRadius="5">
 							<Border.BoxShadow>
 								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 									<Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -219,8 +219,8 @@
 							</Border.BoxShadow>
 
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
-										  MaxHeight="{TemplateBinding MaxDropDownHeight}"
-										  MinHeight="1" >
+											MaxHeight="{TemplateBinding MaxDropDownHeight}"
+											MinHeight="1" >
 								<ItemsPresenter Name="PART_ItemsPresenter"
 										ItemsPanel="{TemplateBinding ItemsPanel}" />
 							</ScrollViewer>
@@ -233,20 +233,20 @@
 
 
 
-    <Style Selector="^ /template/ Border#PART_Border">
-      <Setter Property="BoxShadow">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    
-    
-    
+		<Style Selector="^ /template/ Border#PART_Border">
+			<Setter Property="BoxShadow">
+				<Setter.Value>
+					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+					</MultiBinding>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+
+
 
 		<Style Selector="^[IsEnabled=false] /template/ TextBlock#watermark">
 			<Setter Property="Opacity" Value="0.4"/>
@@ -266,7 +266,7 @@
 		<Style Selector="^:not(.Outline):not(^[SelectedIndex=-1]) /template/ TextBlock#floatingWatermark">
 			<Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-16}"/>
 			<Setter Property="RenderTransform" Value="scale(0.75)"/>
-      <Setter Property="Opacity" Value="0.5"/>
+			<Setter Property="Opacity" Value="0.5"/>
 		</Style>
 
 
@@ -310,22 +310,22 @@
 		</Style>
 
 		<!--Filled-->
-    <Style Selector="^.Filled[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
-      <Setter Property="Background" Value="{DynamicResource MaterialDesignDisabledNoTransparency}"/>
-    </Style>
+		<Style Selector="^.Filled[IsDropDownOpen=true] /template/ Border#PART_PopupBorder">
+			<Setter Property="Background" Value="{DynamicResource MaterialDesignDisabledNoTransparency}"/>
+		</Style>
 
-    <Style Selector="^.Filled /template/ Border#PART_Border">
-      <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-    </Style>
+		<Style Selector="^.Filled /template/ Border#PART_Border">
+			<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+		</Style>
 
-    <Style Selector="^">
-      <Setter Property="FocusAdorner">
-        <FocusAdornerTemplate>
-          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}}"
-                  BorderBrush="{DynamicResource MaterialDesignFocus}"/>
-        </FocusAdornerTemplate>
-      </Setter>
-    </Style>
+		<Style Selector="^">
+			<Setter Property="FocusAdorner">
+				<FocusAdornerTemplate>
+					<Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}}"
+							BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+				</FocusAdornerTemplate>
+			</Setter>
+		</Style>
 	</ControlTheme>
 
 	<!-- Inset combobox theme -->
@@ -404,26 +404,26 @@
 							  Background="{TemplateBinding Background}"
 							  BorderBrush="{TemplateBinding BorderBrush}"
 							  BorderThickness="{TemplateBinding BorderThickness}">
-							<Border.BoxShadow>
-							  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+						<Border.BoxShadow>
+							<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
 								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 								<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 								<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-							  </MultiBinding>
-							</Border.BoxShadow>
+							</MultiBinding>
+						</Border.BoxShadow>
 
 						<Border Name="PART_InnerBorder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
 							  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
 							  Background="Transparent"
 							  BorderBrush="Transparent"
 							  BorderThickness="8">
-								<Border.BoxShadow>
-									<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-										<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-										<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-										<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-									</MultiBinding>
-								</Border.BoxShadow>
+							<Border.BoxShadow>
+								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+									<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+									<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+								</MultiBinding>
+							</Border.BoxShadow>
 
 
 
@@ -484,17 +484,17 @@
 														  Margin="10"
 														  Background="{TemplateBinding Background}" Opacity="1"
 														  CornerRadius="5">
-              <Border.BoxShadow>
-                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-                  <Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-                  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-                </MultiBinding>
-              </Border.BoxShadow>
+							<Border.BoxShadow>
+								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+									<Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+									<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+								</MultiBinding>
+							</Border.BoxShadow>
 							<ScrollViewer Background="{Binding Background, ElementName=PART_Popup}"
 										  MaxHeight="{TemplateBinding MaxDropDownHeight}"
 										  MinHeight="1" >
-								
+
 								<ItemsPresenter Name="PART_ItemsPresenter"
 										ItemsPanel="{TemplateBinding ItemsPanel}" />
 							</ScrollViewer>
@@ -512,6 +512,6 @@
 			<Setter Property="Margin" Value="{TemplateBinding Height, Converter={StaticResource ComboboxHeightToFloatingWatermarkMarginConverter}, ConverterParameter=-18}"/>
 			<Setter Property="RenderTransform" Value="scale(0.75)"/>
 		</Style>
-		
+
 	</ControlTheme>
 </ResourceDictionary>
