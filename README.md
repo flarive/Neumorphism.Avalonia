@@ -9,6 +9,8 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> Tab navigation focus added in 0.10.0 !
+- All controls now have a nice looking focus adorner
 
 # <img src="favicon.png" width="32" height="32"> Dialogs added in 0.9.0 !
 - DialogHost based fake child window dialogs
