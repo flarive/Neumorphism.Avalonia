@@ -30,6 +30,8 @@
     <Setter Property="FontSize" Value="8" />
 		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
 		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="ClipToBounds" Value="True" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="PART_RootBorder" Cursor="{TemplateBinding Cursor}"
@@ -62,13 +64,14 @@
 				</Border>
 			</ControlTemplate>
 		</Setter>
-	</ControlTheme>
+  </ControlTheme>
 
 	<!--Class Outset-->
 	<ControlTheme x:Key="ListBoxItemOutset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
 		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="Padding" Value="16,0,16,0" />
 		<Setter Property="CornerRadius" Value="0"/>
 		<Setter Property="Width" Value="NaN"/>
@@ -81,6 +84,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
 		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="PART_RootBorder"
@@ -147,6 +151,13 @@
 		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
 			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_RootBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
 	</ControlTheme>
   
 
@@ -154,7 +165,8 @@
 	<ControlTheme x:Key="ListBoxItemInset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
 		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
 		<Setter Property="Padding" Value="16,0,16,0" />
 		<Setter Property="CornerRadius" Value="0"/>
 		<Setter Property="Width" Value="NaN"/>
@@ -167,6 +179,7 @@
 		<Setter Property="ClipToBounds" Value="False" />
 		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
 		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="PART_RootBorder"
@@ -234,6 +247,13 @@
 		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
 			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
 		</Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_RootBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
 	</ControlTheme>
 
 
@@ -338,5 +358,4 @@
 			<Setter Property="Opacity" Value="0" />
 		</Style>
 	</ControlTheme>
-  
 </ResourceDictionary>

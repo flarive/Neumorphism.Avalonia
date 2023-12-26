@@ -213,9 +213,9 @@ namespace Avalonia.Themes.Neumorphism
         public Color MaterialDesignCheckBoxOff { get => GetColor("MaterialDesignCheckBoxOff"); set => SetColor("MaterialDesignCheckBoxOff", value); }
 
         /// <summary>
-        /// Gets or sets the MaterialDesignCheckBoxDisabled color value.
+        /// Gets or sets the MaterialDesignDisabled color value.
         /// </summary>
-        public Color MaterialDesignCheckBoxDisabled { get => GetColor("MaterialDesignCheckBoxDisabled"); set => SetColor("MaterialDesignCheckBoxDisabled", value); }
+        public Color MaterialDesignDisabled { get => GetColor("MaterialDesignDisabled"); set => SetColor("MaterialDesignDisabled", value); }
 
         /// <summary>
         /// Gets or sets the MaterialDesignTextBoxBorder color value.

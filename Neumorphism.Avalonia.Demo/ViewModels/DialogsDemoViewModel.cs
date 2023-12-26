@@ -262,17 +262,18 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
 
             var dialog = DialogHelper.CreateCommonDialog(new CommonDialogBuilderParams
             {
-                ContentHeader = "Welcome to use Material.Avalonia",
-                SupportingText = "Enjoy Material Design in AvaloniaUI!",
+                ContentHeader = "Sample title with image icon",
+                SupportingText = "Sample sub title, choose what you want...",
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 Borderless = true,
+                Width = 500,
                 DialogIcon = new Bitmap(icon),
                 CenterDialogButtons = new[]
                 {
                     new DialogButton
                     {
-                        Content = "READ MORE",
-                        Result = "read_more"
+                        Content = "OK",
+                        Result = "ok"
                     }
                 }
             });

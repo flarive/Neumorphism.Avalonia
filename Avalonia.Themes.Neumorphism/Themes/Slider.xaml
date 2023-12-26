@@ -121,6 +121,15 @@
       <Setter Property="MinWidth" Value="0"/>
       <Setter Property="MinHeight" Value="0"/>
     </Style>
+
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource HeightToCornerRadiusConverter}}"
+							BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
   </ControlTheme>
 
   
@@ -201,6 +210,15 @@
       <Setter Property="MinWidth" Value="0"/>
       <Setter Property="MinHeight" Value="0"/>
     </Style>
+
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Width), Converter={StaticResource HeightToCornerRadiusConverter}}"
+              BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
   </ControlTheme>
   
 
@@ -276,6 +294,14 @@
       </ControlTemplate>
     </Setter>
 
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Height), Converter={StaticResource HeightToCornerRadiusConverter}}"
+              BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
   </ControlTheme>
 
   <!-- Vertical class Outset -->
@@ -350,6 +376,14 @@
         </Grid>
       </ControlTemplate>
     </Setter>
+    <Style Selector="^">
+      <Setter Property="FocusAdorner">
+        <FocusAdornerTemplate>
+          <Border BorderThickness="1" CornerRadius="{Binding $self.(AdornerLayer.AdornedElement).(Border.Width), Converter={StaticResource HeightToCornerRadiusConverter}}"
+              BorderBrush="{DynamicResource MaterialDesignFocus}"/>
+        </FocusAdornerTemplate>
+      </Setter>
+    </Style>
   </ControlTheme>
 
 
@@ -365,7 +399,7 @@
 
     <!-- Shared styles -->
     <Style Selector="^:disabled">
-      <Setter Property="Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
+      <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDisabled}" />
     </Style>
 
     <Style Selector="^[TickPlacement=None] /template/ TickBar#TopTick">
@@ -478,8 +512,8 @@
 
   <ControlTheme x:Key="ThumbSliderBase" TargetType="Thumb">
     <Style Selector="^.SliderThumb:disabled /template/ Ellipse#grip">
-      <Setter Property="Fill" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
-      <Setter Property="Stroke" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
+      <Setter Property="Fill" Value="{DynamicResource MaterialDesignDisabled}" />
+      <Setter Property="Stroke" Value="{DynamicResource MaterialDesignDisabled}" />
     </Style>
     <Style Selector="^.SliderThumb /template/ Ellipse#shadow">
       <Setter Property="Opacity" Value="0" />
@@ -501,8 +535,8 @@
       <Setter Property="Fill" Value="{DynamicResource Foreground}" />
     </Style>
     <Style Selector="^:disabled /template/ Ellipse#grip">
-      <Setter Property="Fill" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
-      <Setter Property="Stroke" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
+      <Setter Property="Fill" Value="{DynamicResource MaterialDesignDisabled}" />
+      <Setter Property="Stroke" Value="{DynamicResource MaterialDesignDisabled}" />
     </Style>
     <Style Selector="^:pointerover /template/ Ellipse#shadow">
       <Setter Property="Opacity" Value="0.26" />
@@ -515,8 +549,8 @@
     </Style>
 
     <Style Selector="^[IsEnabled=False] /template/ Border#grip">
-      <Setter Property="Background" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
-      <Setter Property="assist:SliderAssist.ThumbForeground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}"/>
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignDisabled}" />
+      <Setter Property="assist:SliderAssist.ThumbForeground" Value="{DynamicResource MaterialDesignDisabled}"/>
     </Style>
 
     <!--Discrete thumb definitions and styles-->

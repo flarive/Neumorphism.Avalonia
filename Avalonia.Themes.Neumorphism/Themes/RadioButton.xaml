@@ -124,8 +124,8 @@
 
 
 		<Style Selector="^:disabled">
-			<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
-			<Setter Property="assist:SelectionControlAssist.InnerForeground" Value="{DynamicResource MaterialDesignCheckBoxDisabled}" />
+			<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignDisabled}" />
+			<Setter Property="assist:SelectionControlAssist.InnerForeground" Value="{DynamicResource MaterialDesignDisabled}" />
 			<Setter Property="Opacity" Value="0.26" />
 		</Style>
 
@@ -160,8 +160,8 @@
 	<ControlTheme x:Key="RadioButtonButton" TargetType="RadioButton">
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="BorderThickness" Value="0"/>
-		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignPaper}" />
 		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
 		<Setter Property="assist:RadioButtonAssist.CheckedBackground" Value="{DynamicResource MaterialDesignTextFieldBoxDisabledBackground}"/>
 		<Setter Property="assist:RadioButtonAssist.CheckedForeground" Value="{DynamicResource PrimaryHueMidBrush}"/>
@@ -179,11 +179,16 @@
 			<Setter.Value>
 				<ControlTemplate>
 					<Grid Name="templateRoot" Background="Transparent">
-						<Border Name="PART_SelectedIndicator" Margin="0" Padding="0" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}" Cursor="{TemplateBinding Cursor}">
+						<Border Name="PART_SelectedIndicator" Margin="0" Padding="0" 
+                    BorderBrush="{TemplateBinding BorderBrush}"
+										BorderThickness="{TemplateBinding BorderThickness}" 
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Background="{TemplateBinding Background}"
+                    Cursor="{TemplateBinding Cursor}">
 							<ripple:RippleEffect RippleFill="{DynamicResource MaterialDesignFlatButtonRipple}">
 								<ContentPresenter Name="PART_ContentPresenter"
-												  BorderBrush="{TemplateBinding BorderBrush}"
-												  BorderThickness="{TemplateBinding BorderThickness}"
+												  BorderBrush="Transparent"
+												  BorderThickness="0"
 												  Background="Transparent"
 												  ContentTemplate="{TemplateBinding ContentTemplate}"
 												  Content="{TemplateBinding Content}"
@@ -224,6 +229,7 @@
 		</Style>
 		<Style Selector="^:checked /template/ Border#PART_SelectedIndicator">
 			<Setter Property="Background" Value="{TemplateBinding assist:RadioButtonAssist.CheckedBackground}"/>
+      <Setter Property="BorderBrush" Value="{TemplateBinding assist:RadioButtonAssist.CheckedBackground}"/>
 		</Style>
 
 		<Style Selector="^:not(.Accent):checked /template/ ContentPresenter#PART_ContentPresenter">
@@ -234,11 +240,11 @@
 		<!-- Accent -->
 		<Style Selector="^.Accent">
 			<Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}" />
-			<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}" />
 		</Style>
 
 		<Style Selector="^.Accent:checked">
 			<Setter Property="Foreground" Value="{DynamicResource SecondaryHueDarkBrush}"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}" />
 		</Style>
 
     <Style Selector="^:disabled">

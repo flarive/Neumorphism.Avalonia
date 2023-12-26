@@ -41,7 +41,7 @@ namespace Avalonia.Themes.Neumorphism.Accents
         public const string MaterialDesignBodyLightKey = "MaterialDesignBodyLight";
         public const string MaterialDesignColumnHeaderKey = "MaterialDesignColumnHeader";
         public const string MaterialDesignCheckBoxOffKey = "MaterialDesignCheckBoxOff";
-        public const string MaterialDesignCheckBoxDisabledKey = "MaterialDesignCheckBoxDisabled";
+        public const string MaterialDesignDisabledKey = "MaterialDesignDisabled";
         public const string MaterialDesignTextBoxBorderKey = "MaterialDesignTextBoxBorder";
         public const string MaterialDesignDividerKey = "MaterialDesignDivider";
         public const string MaterialDesignSelectionKey = "MaterialDesignSelection";

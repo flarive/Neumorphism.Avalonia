@@ -53,7 +53,6 @@
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextAreaBorder}" />
-
 		<Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
 			<Setter Property="Content">
 				<Template>
@@ -84,6 +83,7 @@
 
 		<Style Selector="^:right">
 			<Setter Property="Margin" Value="10,0,0,0"/>
+      <Setter Property="Focusable" Value="False" />
 			<Setter Property="Template">
 				<ControlTemplate>
 					<Border Name="border"
@@ -103,12 +103,12 @@
 											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 											  Padding="{TemplateBinding Padding}" />
 							<Grid Grid.Column="1" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}" Width="30">
-								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}" Focusable="{TemplateBinding Focusable}"
 											  Background="Transparent"
 											  assist:ShadowAssist.ShadowDepth="Depth0"
 											  Grid.Row="0"
 											  Name="PART_IncreaseButton" />
-								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}" Focusable="{TemplateBinding Focusable}"
 											  assist:ShadowAssist.ShadowDepth="Depth0"
 											  Background="Transparent"
 											  Grid.Row="1"
@@ -122,6 +122,7 @@
 
 		<Style Selector="^:left">
 			<Setter Property="Margin" Value="0,0,10,0"/>
+      <Setter Property="Focusable" Value="False" />
 			<Setter Property="Template">
 				<ControlTemplate>
 					<Border Name="border"
@@ -133,12 +134,12 @@
 							VerticalAlignment="{TemplateBinding VerticalAlignment}">
 						<Grid ColumnDefinitions="Auto,*">
 							<Grid Grid.Column="0" RowDefinitions="*,*" IsVisible="{TemplateBinding ShowButtonSpinner}" Width="30">
-								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}" Focusable="{TemplateBinding Focusable}"
 											  assist:ShadowAssist.ShadowDepth="Depth0"
 											  Background="Transparent"
 											  Grid.Row="0"
 											  Name="PART_IncreaseButton" />
-								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}"
+								<RepeatButton assist:ButtonAssist.CornerRadius="0" Theme="{StaticResource RepeatButtonMaterial}" Focusable="{TemplateBinding Focusable}"
 											  assist:ShadowAssist.ShadowDepth="Depth0"
 											  Background="Transparent"
 											  Grid.Row="1"
@@ -156,6 +157,5 @@
 				</ControlTemplate>
 			</Setter>
 		</Style>
-		
 	</ControlTheme>
 </ResourceDictionary>

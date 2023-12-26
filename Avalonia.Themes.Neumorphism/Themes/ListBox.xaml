@@ -1,10 +1,11 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism">
 
 
-	<!-- Neumorphism theme ok -->
-	
-	
+  <!-- Neumorphism theme ok -->
+
+
   <Design.PreviewWith>
     <Border Padding="20">
       <ListBox>
@@ -18,47 +19,94 @@
 
 
 
-	<!--Default ListBox theme-->
-	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
-		<Setter Property="Padding" Value="0"/>
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderBrush" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
-		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border BorderBrush="{TemplateBinding BorderBrush}"
+  <!--Default ListBox theme-->
+  <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+    <Setter Property="Padding" Value="0"/>
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						Background="{TemplateBinding Background}">
-					<ScrollViewer Name="PART_ScrollViewer"
+          <ScrollViewer Name="PART_ScrollViewer"
 								  Focusable="False"
 								  Padding="{TemplateBinding Padding}"
 								  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
 								  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-						<ItemsPresenter Name="PART_ItemsPresenter"
+            <ItemsPresenter Name="PART_ItemsPresenter"
 										ItemsPanel="{TemplateBinding ItemsPanel}"
 										Margin="0" />
-					</ScrollViewer>
-				</Border>
-			</ControlTemplate>
-		</Setter>
-	</ControlTheme>
-	
+          </ScrollViewer>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
 
-	<!--Class NoScroll-->
-	<ControlTheme x:Key="ListBoxNoScroll" TargetType="ListBox">
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border BorderBrush="{TemplateBinding BorderBrush}"
+
+  <!--ListBoxCard theme-->
+  <ControlTheme x:Key="ListBoxCard" TargetType="ListBox">
+    <Setter Property="Padding" Value="0"/>
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="CornerRadius" Value="10" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <controls:Card Name="PART_Card" Padding="0" CornerRadius="{TemplateBinding CornerRadius}" Focusable="{TemplateBinding Focusable}" Margin="{TemplateBinding Margin}">
+          <Border BorderBrush="{TemplateBinding BorderBrush}" ClipToBounds="{TemplateBinding ClipToBounds}" Focusable="False"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Background="{TemplateBinding Background}">
+            <ScrollViewer Name="PART_ScrollViewer"
+										Focusable="False"
+										Padding="{TemplateBinding Padding}"
+										HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+										VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+              <ItemsPresenter Name="PART_ItemsPresenter" Focusable="False"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Margin="0">
+              </ItemsPresenter>
+            </ScrollViewer>
+          </Border>
+        </controls:Card>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ controls|Card#PART_Card">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
+  </ControlTheme>
+
+
+  <!--ListBoxNoScroll theme-->
+  <ControlTheme x:Key="ListBoxNoScroll" TargetType="ListBox">
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						Background="{TemplateBinding Background}">
-					<ItemsPresenter Name="PART_ItemsPresenter"
+          <ItemsPresenter Name="PART_ItemsPresenter"
 									ItemsPanel="{TemplateBinding ItemsPanel}"
 									Margin="{TemplateBinding Padding}" />
-				</Border>
-			</ControlTemplate>
-		</Setter>
-	</ControlTheme>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
 </ResourceDictionary>

@@ -68,7 +68,6 @@
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Padding" Value="{DynamicResource MenuFlyoutItemThemePaddingNarrow}" />
     <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}" />
-
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopRight" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="RightEdgeAlignedTop" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
@@ -79,6 +78,9 @@
     <Setter Property="Cursor" Value="Hand" />
     <Setter Property="CornerRadius" Value="10" />
     <Setter Property="Margin" Value="2" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>
@@ -241,6 +243,11 @@
         </ControlTemplate>
       </Setter>
     </Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus /template/ Border#PART_LayoutRoot">
+      <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+    </Style>
   </ControlTheme>
 
 
@@ -259,7 +266,6 @@
     <Setter Property="assist:MenuAssist.PopupVerticalOffset" Value="0" />
     <Setter Property="assist:MenuAssist.PopupBorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
     <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_LayoutRoot"

@@ -82,7 +82,7 @@
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
-    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderThickness" Value="1" />
     <Setter Property="assist:TimePickerAssist.InnerRightBackground" Value="#22444444"/>
     <Setter Property="assist:TimePickerAssist.InnerRightPadding" Value="0"/>
     <Setter Property="HorizontalAlignment" Value="Left" />
@@ -98,13 +98,14 @@
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="ClockIdentifier" Value="24HourClock"/>
     <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">
+        <!--<Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">-->
           <Border x:Name="PART_RootBorder"
 							CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-							BorderThickness="0"
-							BorderBrush="Transparent"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							BorderBrush="{TemplateBinding BorderBrush}"
 							Background="{TemplateBinding Background}">
             <Border.BoxShadow>
               <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
@@ -183,7 +184,7 @@
               </Popup>
             </Grid>
           </Border>
-				</Grid>
+				<!--</Grid>-->
       </ControlTemplate>
     </Setter>
     
@@ -193,6 +194,11 @@
 
     <Style Selector="^:error /template/ Button#PART_FlyoutButton">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}"/>
+    </Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus-within /template/ Border#PART_RootBorder">
+      <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
     </Style>
 
    

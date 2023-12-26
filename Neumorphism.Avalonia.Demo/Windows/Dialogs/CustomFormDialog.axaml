@@ -27,7 +27,7 @@
 
           <Grid ColumnDefinitions="*, Auto" RowDefinitions="*, 3">
             <TextBlock Grid.Row="0" Grid.Column="0" Foreground="{DynamicResource MaterialDesignDarkGray}" Padding="40,0,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Text="{CompiledBinding ContentHeader, FallbackValue=''}" />
-            <Button Grid.Row="0" Grid.Column="1" Margin="0,0,15,0" Theme="{StaticResource ButtonNoMaterial}" Command="{Binding CloseWindow}">
+            <Button Grid.Row="0" Grid.Column="1" Width="24" Height="24" Margin="0,0,15,0" CornerRadius="5" Theme="{StaticResource ButtonNoMaterial}" Command="{Binding CloseWindow}">
               <icons:MaterialIcon Kind="Close" Width="22" Height="22" VerticalAlignment="Center" Opacity="0.6" Foreground="{DynamicResource MaterialDesignMediumGray}" />
             </Button>
             <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Stretch" Height="3"/>
@@ -63,17 +63,17 @@
                   assist:ShadowAssist.ShadowDepth="Depth5"
                   Mode="Standard" Background="Transparent">
 
-        <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
-            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignCheckBoxDisabled}"
+        <Grid ColumnDefinitions="20,Auto,*,Auto,20" Background="Transparent" Margin="20">
+            <Button Grid.Column="1" Height="36" Width="NaN" Margin="0" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
                 Command="{CompiledBinding Command}"
                 CommandParameter="{CompiledBinding}">
               <StackPanel Orientation="Horizontal" Spacing="4">
-                <icons:MaterialIcon Kind="Cancel" Margin="0,0,3,0"/>
+                <icons:MaterialIcon Kind="CancelBold" Margin="0,0,3,0"/>
                 <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
               </StackPanel>
             </Button>
 
-            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
+            <Button Grid.Column="3" Height="36" Width="NaN" Margin="0" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource PrimaryHueMidBrush}" Foreground="White"
                     Command="{CompiledBinding Command}"
                     CommandParameter="{CompiledBinding}">
               <StackPanel Orientation="Horizontal" Spacing="4">

@@ -236,7 +236,7 @@
 					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied and right custom header'
 					 Watermark="Header field with right icon" Width="300">
               <TextBox.InnerRightContent>
-                <Button Classes="no-material" Margin="10,0,10,0" Width="48" Height="38" Cursor="Arrow"
+                <Button Classes="no-material" Margin="10,0,10,0" Width="48" Height="38" Cursor="Arrow" Focusable="False"
                         Command="{Binding ButtonSearchClick}" CommandParameter="{Binding ElementName=SearchTextbox}">
                   <icons:MaterialIcon Kind="Search" Width="24" Height="24" />
                 </Button>
@@ -271,14 +271,14 @@
                 </Style>
               </TextBox.Styles>
               <TextBox.InnerLeftContent>
-                <Button Classes="no-material" Height="38" Width="60" Cursor="Arrow">
+                <Button Classes="no-material" Height="38" Width="60" Cursor="Arrow" Focusable="False">
                   <Button.Content>
                     <icons:MaterialIcon Kind="Search" Width="24" Height="24" />
                   </Button.Content>
                 </Button>
               </TextBox.InnerLeftContent>
               <TextBox.InnerRightContent>
-                <Button Classes="no-material" Height="38" Width="80" Cursor="Hand">
+                <Button Classes="no-material" Height="38" Width="80" Cursor="Hand" Focusable="False">
                   <Button.Content>
                     <icons:MaterialIcon Kind="Settings" Width="24" Height="24" Foreground="DarkGray" />
                   </Button.Content>
@@ -302,22 +302,24 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HeaderFields4">
-            <TextBox BorderBrush="{DynamicResource MaterialDesignBorderShadow}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
-                     Watermark="Enter your email"
-                     Text="{Binding Email}"
-					 ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left and right custom header'
-                     CornerRadius="32" assist:TextFieldAssist.InnerLeftBackground="#22666666" assist:TextFieldAssist.InnerLeftPadding="10,0,0,0">
-              <TextBox.InnerLeftContent>
-                <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
-                  <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
-                </Border>
-              </TextBox.InnerLeftContent>
-              <TextBox.InnerRightContent>
-                <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
-                  <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
-                </Border>
-              </TextBox.InnerRightContent>
-            </TextBox>
+              <TextBox Name="zzz" BorderBrush="{DynamicResource MaterialDesignBorderShadow}" BorderThickness="1" Theme="{StaticResource TextBoxHeader}" Width="350"
+                       Watermark="Enter your email"
+                       Text="{Binding Email}"
+					             ToolTip.Tip='Watermarked textbox with theme "TextBoxHeader" applied with validation and left and right custom header'
+                       CornerRadius="32"
+                       assist:TextFieldAssist.InnerLeftBackground="#22666666" assist:TextFieldAssist.InnerLeftPadding="10,0,0,0"
+                       assist:TextFieldAssist.InnerRightBackground="#22666666" assist:TextFieldAssist.InnerRightPadding="0,0,10,0">
+                <TextBox.InnerLeftContent>
+                  <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
+                    <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Email" Width="20" Height="20" Opacity="0.7" />
+                  </Border>
+                </TextBox.InnerLeftContent>
+                <TextBox.InnerRightContent>
+                  <Border Height="{Binding $parent[TextBox].Height}" Width="{Binding $self.Bounds.Height}">
+                    <icons:MaterialIcon HorizontalAlignment="Center" VerticalAlignment="Center" Kind="QuestionAnswer" Width="20" Height="20" Opacity="0.7" />
+                  </Border>
+                </TextBox.InnerRightContent>
+              </TextBox>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
         </StackPanel>
@@ -341,6 +343,11 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown2">
+            <NumericUpDown ButtonSpinnerLocation="Right" Minimum="0" Maximum="100" Width="90" Increment="1" CornerRadius="100" Watermark="%"
+						   ToolTip.Tip="Custom percent NumericUpDown with default theme applied"/>
+          </showMeTheXaml:XamlDisplay>
+          <!--****************************************************************-->
+          <showMeTheXaml:XamlDisplay UniqueId="NumericUpDown3">
             <NumericUpDown ButtonSpinnerLocation="Left" Minimum="-100" Maximum="100" Increment="10" IsEnabled="False"
 						   ToolTip.Tip="Regular disabled NumericUpDown with default theme applied"/>
           </showMeTheXaml:XamlDisplay>

@@ -30,13 +30,16 @@
       <Grid RowDefinitions="*,Auto" Margin="20">
 				<StackPanel Orientation="Vertical" Grid.Row="0" Spacing="20">
 
-					<ToggleSwitch IsThreeState="False" IsChecked="{Binding UseDarkTheme}" OnContent="Dark" OffContent="Light" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"
+          <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+            <TextBlock Text="Theme" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignForeground}" Opacity="0.5" Margin="0,0,15,0"/>
+            <ToggleSwitch IsThreeState="False" IsChecked="{Binding UseDarkTheme}" OnContent="Dark" OffContent="Light" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"
 								  assist:ToggleSwitchAssist.SwitchTrackOffForeground="{DynamicResource SecondaryHueDarkBrush}"
 								  assist:ToggleSwitchAssist.SwitchTrackOnForeground="{DynamicResource SecondaryHueMidBrush}"
 								  assist:ToggleSwitchAssist.SwitchTrackOverForeground="{DynamicResource SecondaryHueDarkBrush}"
 								  Content="Dark"/>
+          </StackPanel>
 
-					<ComboBox x:Name="cboCulture" PlaceholderText="Select a language" Width="200" HorizontalAlignment="Center" ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}">
+					<ComboBox x:Name="cboCulture" PlaceholderText="Select a language" Width="200" CornerRadius="100" HorizontalAlignment="Center" ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}">
 						<ComboBox.ItemTemplate>
 							<DataTemplate>
 								<TextBlock Text="{CompiledBinding Value}" Tag="{CompiledBinding Key}"/>
@@ -44,28 +47,20 @@
 						</ComboBox.ItemTemplate>
 					</ComboBox>
 
-          <Grid ColumnDefinitions="Auto,*,Auto" Background="Transparent">
-            <Button Grid.Column="0" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
+          <Grid ColumnDefinitions="10,Auto,*,Auto,10" Margin="0,15,0,0" Background="Transparent">
+            <Button Grid.Column="1" Height="32" Width="NaN" Margin="0" FontWeight="Normal" DataContext="{CompiledBinding ButtonCancel}" Background="{DynamicResource MaterialDesignPaper}"
 								Command="{CompiledBinding Command}"
 								CommandParameter="{CompiledBinding}">
               <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
             </Button>
 
-            <Button Grid.Column="2" Height="32" Width="NaN" Margin="20" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource SecondaryHueMidBrush}" Foreground="White"
+            <Button Grid.Column="3" Height="32" Width="NaN" Margin="0" FontWeight="Normal" DataContext="{CompiledBinding ButtonOk}" Background="{DynamicResource SecondaryHueMidBrush}" Foreground="White"
 										Command="{CompiledBinding Command}"
 										CommandParameter="{CompiledBinding}">
               <TextBlock Text="{CompiledBinding Content}" Margin="0,0,3,0"/>
             </Button>
           </Grid>
-
-					
-			
 				</StackPanel>
-
-
-
-          
-
       </Grid>
 		</Border>
 

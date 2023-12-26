@@ -269,28 +269,32 @@
 			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="380" Height="150"
                                  ToolTip.Tip='Fully custom image menu with default theme applied and custom template'>
 			  <Menu Padding="0" Margin="0" HorizontalAlignment="Center">
-				  <MenuItem Height="64" Width="64"
+				  <MenuItem Height="68" Width="68"
+            FocusAdorner="{x:Null}"
             assist:MenuAssist.PopupCornerRadius="10"
 					  assist:MenuAssist.PopupAnchor="TopRight"
 					  assist:MenuAssist.PopupHorizontalOffset="-140"
 					  assist:MenuAssist.PopupVerticalOffset="10">
 
+            <!--Fully redefined menu item template-->
 					  <MenuItem.Template>
 						  <ControlTemplate>
 							  <Panel Width="100" Height="100">
-								  <Border Width="64" Height="64" Margin="20" Cursor="Hand" CornerRadius="100" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="3" ClipToBounds="False">
-									  <Border.BoxShadow>
-										  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="6">
+                  <Border Name="PART_RootBorder" Width="68" Height="68" Margin="20" Cursor="Hand" BorderBrush="Transparent" BorderThickness="1" CornerRadius="100">
+                    <Border.BoxShadow>
+                      <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="6">
                         <DynamicResource ResourceKey="CustomBoxShadowRadius"/>
-											  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-											  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-										  </MultiBinding>
-									  </Border.BoxShadow>
+                        <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                        <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                      </MultiBinding>
+                    </Border.BoxShadow>
+								  <Border Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="100" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="4" ClipToBounds="False">
 									  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100" ClipToBounds="True">
 										  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
 													  Source="avares://Neumorphism.Avalonia.Demo/Assets/300.jpg" Stretch="Uniform" Width="64" Height="64" />
 									  </Border>
 								  </Border>
+                  </Border>
 								  <Popup Name="PART_Popup"
 						   WindowManagerAddShadowHint="False"
 						   Placement="RightEdgeAlignedTop"
@@ -316,6 +320,12 @@
 							  </Panel>
 						  </ControlTemplate>
 					  </MenuItem.Template>
+
+            <MenuItem.Styles>
+                <Style Selector="MenuItem:focus /template/ Border#PART_RootBorder">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+              </Style>
+            </MenuItem.Styles>
 
 				    <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=22}" Command="{Binding MenuItemClickMethod}" CommandParameter="{Binding $self.Header}"/>
             <Separator />
@@ -351,7 +361,7 @@
 			<!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150"
                                  ToolTip.Tip='Custom icons based menu with theme "NoMaterialMenu" applied'>
-        <Menu Height="48" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}" VerticalAlignment="Bottom">
+        <Menu Height="48" Padding="0" Margin="0" HorizontalAlignment="Center" Theme="{StaticResource NoMaterialMenu}" VerticalAlignment="Center">
           <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt RocketLaunchOutline, Size=34}" Foreground="{DynamicResource MaterialDesignBodyLight}" Margin="10,0,10,0"
 											assist:MenuAssist.PopupAnchor="TopLeft"
 											assist:MenuAssist.PopupPlacement="Top"

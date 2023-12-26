@@ -23,19 +23,16 @@
 				<StackPanel Orientation="Vertical">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List1">
-						<controls:Card Padding="0" CornerRadius="10">
-							<ListBox Width="300" ToolTip.Tip="List box with just text blocks">
+							<ListBox Width="300" Theme="{StaticResource ListBoxCard}" ToolTip.Tip='List box with theme "ListBoxCard" applied and simple text blocks'>
                 <TextBlock Text="Text 1"/>
-								<TextBlock Text="Text 2" />
-								<TextBlock Text="Text 3" />
-								<TextBlock Text="Text 4" />
+								<TextBlock Text="Text 2"/>
+								<TextBlock Text="Text 3"/>
+								<TextBlock Text="Text 4"/>
 							</ListBox>
-						</controls:Card>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List2">
-						<controls:Card Padding="0" CornerRadius="10">
-							<ListBox Width="300" ToolTip.Tip='List box with ListBoxitems theme "ListBoxItemBorder" applied'>
+							<ListBox Width="300" Theme="{StaticResource ListBoxCard}" ToolTip.Tip='List box with theme "ListBoxCard" applied and with ListBoxitems theme "ListBoxItemBorder" applied'>
 								<ListBox.Styles>
 									<Style Selector="ListBoxItem > TextBlock">
 										<Setter Property="TextAlignment" Value="Center"/>
@@ -56,14 +53,12 @@
 									</ListBoxItem>
 								</ListBox.Items>
 							</ListBox>
-						</controls:Card>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<TextBlock Classes="Headline6 Subheadline2" Margin="15,15,0,0" Text="Horizontal" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List3">
-						<controls:Card Padding="0" CornerRadius="10">
-							<ListBox Width="300" ToolTip.Tip='List box with wrapped text blocks'>
+							<ListBox Theme="{StaticResource ListBoxCard}" Width="300" ToolTip.Tip='List box theme "ListBoxCard" applied and with wrapped text blocks'>
 								<ListBox.ItemsPanel>
 									<ItemsPanelTemplate>
 										<WrapPanel />
@@ -78,7 +73,6 @@
 									<TextBlock Text="Text 6" />
 								</ListBox.Items>
 							</ListBox>
-						</controls:Card>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 				</StackPanel>

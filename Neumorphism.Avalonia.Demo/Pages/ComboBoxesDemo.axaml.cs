@@ -1,7 +1,6 @@
 ﻿using Avalonia.Controls;
 using Neumorphism.Avalonia.Demo.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
@@ -14,7 +13,7 @@ namespace Neumorphism.Avalonia.Demo.Pages
             DataContext = new ComboBoxesDemoViewModel();
         }
 
-        private void ClassicComboBoxes1SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ClassicComboBoxesSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (sender is ComboBox && e.AddedItems != null && e.AddedItems.Count > 0)
             {

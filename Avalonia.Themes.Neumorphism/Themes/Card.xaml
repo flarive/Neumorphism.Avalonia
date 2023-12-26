@@ -30,7 +30,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Panel VerticalAlignment="Stretch" Margin="{TemplateBinding Margin}" Height="{TemplateBinding Height}">
-          <Border Name="PART_BackgroundBorder" Margin="0" VerticalAlignment="Stretch"
+          <Border Name="PART_BackgroundBorder" Margin="0" VerticalAlignment="Stretch" Focusable="{TemplateBinding Focusable}"
                   Background="{TemplateBinding Background}"
                   BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}"

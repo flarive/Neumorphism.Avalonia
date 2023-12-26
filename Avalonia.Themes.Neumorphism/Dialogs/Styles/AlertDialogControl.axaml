@@ -34,7 +34,10 @@
                       
                         <DockPanel Name="{x:Static naming:PartNames.PartHeaderPanel}">
 
-                          <Button Theme="{StaticResource ButtonIcon}" Width="90" Height="90" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                          <Button Theme="{StaticResource ButtonIcon}" Width="90" Height="90" IsHitTestVisible="False"
+                                  Focusable="False"
+                                  HorizontalContentAlignment="Center"
+                                  VerticalContentAlignment="Center">
 
                             <ContentPresenter Name="{x:Static naming:PartNames.PartHeaderIcon}"
                                               Content="{CompiledBinding DialogIcon}"

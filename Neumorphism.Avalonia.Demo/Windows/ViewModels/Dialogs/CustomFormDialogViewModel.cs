@@ -115,9 +115,9 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
         {
             Civilities =
             [
-                new KeyValuePair<int, string>(1, "Mr"),
-                new KeyValuePair<int, string>(2, "Mme"),
-                new KeyValuePair<int, string>(3, "Melle"),
+                new KeyValuePair<int, string>(1, "Mr."),
+                new KeyValuePair<int, string>(2, "Ms."),
+                new KeyValuePair<int, string>(3, "Miss")
             ];
 
             ButtonOk = new ObsoleteDialogButtonViewModel(this, "OK", "ok");

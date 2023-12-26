@@ -30,12 +30,12 @@
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="ClassicComboBoxes1">
-						<ComboBox Width="500" PlaceholderText="Please select your favorite Beatles" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True"
+						<ComboBox Width="500" CornerRadius="100" PlaceholderText="Please select your favorite Beatles" Height="42" assist:ComboBoxAssist.UseFloatingWatermark="True"
 								  ToolTip.Tip='Floating label watermarked comboBox with default theme applied and custom inner left content'
                       ItemsSource="{CompiledBinding AllBeatles}"
 											SelectedValueBinding="{CompiledBinding Key}"
 											SelectedItem="{CompiledBinding MyFavoriteBeatle1}"
-								  SelectionChanged="ClassicComboBoxes1SelectionChanged">
+											SelectionChanged="ClassicComboBoxesSelectionChanged">
               <ComboBox.ItemTemplate>
                 <DataTemplate>
                   <TextBlock Text="{CompiledBinding Value}" VerticalAlignment="Center"/>
@@ -110,7 +110,7 @@
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes0">
-						<ComboBox Theme="{StaticResource ComboBoxOutset}" PlaceholderText="Select an item" ToolTip.Tip='Disabled comboBox with theme "ComboBoxOutset" applied'>
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" PlaceholderText="Select an item" ToolTip.Tip='Regular comboBox with theme "ComboBoxOutset" applied'>
 							<TextBlock Text="Item 1" />
 							<TextBlock Text="Item 2" />
 							<TextBlock Text="Item 3" />
@@ -119,13 +119,14 @@
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="OutsetComboBoxes1">
-						<ComboBox Theme="{StaticResource ComboBoxOutset}" Width="500" PlaceholderText="Please select a user" Height="42"
+						<ComboBox Theme="{StaticResource ComboBoxOutset}" Width="500" PlaceholderText="Choose the Beatles you like least" Height="42" CornerRadius="100"
 							  ToolTip.Tip='Floating label comboBox with theme "ComboBoxOutset" applied and custom left and right inner content'
 							  assist:ComboBoxAssist.InnerLeftBackground="{DynamicResource PrimaryHueMidBrush}"
 							  assist:ComboBoxAssist.InnerRightBackground="{DynamicResource SecondaryHueMidBrush}"
   							ItemsSource="{CompiledBinding AllBeatles}"
 								SelectedValueBinding="{CompiledBinding Key}"
 								SelectedItem="{CompiledBinding MyFavoriteBeatle2}"
+ 								SelectionChanged="ClassicComboBoxesSelectionChanged"
 							  assist:ComboBoxAssist.UseFloatingWatermark="True">
               <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -222,13 +223,13 @@
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="FilledComboBoxes1">
-						<ComboBox Classes="Filled" PlaceholderText="Please select a user"
+						<ComboBox Classes="Filled" PlaceholderText="Please select a user" CornerRadius="100"
 								  ToolTip.Tip='Floating label watermarked comboBox with theme "Filled" applied'
 								  assist:ComboBoxAssist.UseFloatingWatermark="True">
-							<TextBlock Text="John" />
-							<TextBlock Text="Paul" />
-							<TextBlock Text="Ringo" />
-							<TextBlock Text="Georges" />
+							<TextBlock Text="Raoul" />
+							<TextBlock Text="Bob" />
+							<TextBlock Text="Lindon" />
+							<TextBlock Text="Markus" />
 						</ComboBox>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
@@ -304,13 +305,13 @@
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="OutlinedComboBoxes1">
-						<ComboBox Theme="{StaticResource ComboBoxOutline}" PlaceholderText="Please select a user"
+						<ComboBox Theme="{StaticResource ComboBoxOutline}" PlaceholderText="Please select a user" CornerRadius="100"
 								  ToolTip.Tip='Floating label watermarked comboBox with theme "ComboBoxOutline" applied'
 								  assist:ComboBoxAssist.UseFloatingWatermark="True">
-							<TextBlock Text="John" />
-							<TextBlock Text="Paul" />
-							<TextBlock Text="Ringo" />
-							<TextBlock Text="Georges" />
+							<TextBlock Text="Raoul" />
+							<TextBlock Text="Bob" />
+							<TextBlock Text="Lindon" />
+							<TextBlock Text="Markus" />
 						</ComboBox>
 					</showMeTheXaml:XamlDisplay>
 					<!--****************************************************************-->

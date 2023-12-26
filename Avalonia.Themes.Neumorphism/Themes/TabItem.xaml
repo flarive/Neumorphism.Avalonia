@@ -38,6 +38,8 @@
     <Setter Property="FontWeight" Value="Normal" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="Padding" Value="0" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Height" Value="NaN" />
@@ -49,8 +51,7 @@
     <Setter Property="assist:TabControlAssist.UseHighlightStroke" Value="False" />
     <Setter Property="assist:TabControlAssist.HighlightStrokeSize" Value="4" />
     <Setter Property="assist:TabControlAssist.HighlightStrokeBrush" Value="{DynamicResource PrimaryHueLightBrush}" />
-    
-    
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
           <Border
@@ -268,6 +269,12 @@
       <Setter Property="Margin" Value="10"/>
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=100%|100%|100%|100%}" />
     </Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_LayoutRoot">
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
   </ControlTheme>
 </ResourceDictionary>
-

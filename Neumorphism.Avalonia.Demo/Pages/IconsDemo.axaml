@@ -83,7 +83,7 @@
                   <TextBox Grid.Column="0" KeyDown="Search_OnKeyDown" Watermark="Search" Name="SearchBox" 
                             Width="300" Classes="Header" Text="{Binding SearchText}" Margin="0">
                       <TextBox.InnerRightContent>
-                          <Button Width="60"
+                          <Button Width="60" Focusable="False"
                                   Name="SearchButton" Foreground="{DynamicResource MaterialDesignCardBackground}"
                                   Classes="no-material" Command="{Binding SearchCommand}"
                                   CommandParameter="{Binding ElementName=SearchBox, Path=Text}">
@@ -100,7 +100,7 @@
                             Text="{Binding SelectedGroup.KindToCopy, FallbackValue='&lt;icons:MaterialIcon Kind=&quot;&quot; \/>'}">
                       <TextBox.InnerRightContent>
                           <Button Width="60" Foreground="{DynamicResource MaterialDesignCardBackground}" Click="CopyToClipboardAsync" Tag="{Binding SelectedGroup.Kind}"
-                                  Classes="no-material">
+                                  Classes="no-material" Focusable="False">
                               <icons:MaterialIcon Kind="ContentCopy" Width="24" Height="24" Foreground="Gray"/>
                           </Button>
                       </TextBox.InnerRightContent>
