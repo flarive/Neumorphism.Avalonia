@@ -13,6 +13,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Bases
         public string SupportingText = null;
         public bool Borderless = false;
         public WindowStartupLocation StartupLocation = WindowStartupLocation.CenterScreen;
+        public DialogShadowKind ShadowKind = DialogShadowKind.Default;
 
         /// <summary>
         /// Specify kind of internal dialog icon. <br/>
@@ -28,19 +29,19 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Bases
 
         /// <summary>
         /// Build dialog buttons stack (left side). 
-        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
+        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtons)"/> for create buttons stack in easy way.
         /// </summary>
         public DialogButton[] LeftDialogButtons;
 
         /// <summary>
         /// Build dialog buttons stack (middle).
-        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
+        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtons)"/> for create buttons stack in easy way.
         /// </summary>
         public DialogButton[] CenterDialogButtons;
 
         /// <summary>
         /// Build dialog buttons stack (right side).
-        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtonsEnum)"/> for create buttons stack in easy way.
+        /// <br/>You can use <seealso cref="DialogHelper.CreateSimpleDialogButtons(Enums.DialogButtons)"/> for create buttons stack in easy way.
         /// </summary>
         public DialogButton[] RightDialogButtons;
 

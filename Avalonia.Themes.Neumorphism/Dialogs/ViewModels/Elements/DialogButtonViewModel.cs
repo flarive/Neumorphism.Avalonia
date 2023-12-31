@@ -4,7 +4,12 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
 {
     public class DialogButtonViewModel : DialogViewModelBase
     {
-        internal DialogButtonViewModel(DialogWindowViewModel parent, object content)
+        private readonly DialogWindowViewModel _parent;
+
+        public DialogWindowViewModel Parent => _parent;
+
+
+        public DialogButtonViewModel(DialogWindowViewModel parent, object content)
         {
             _parent = parent;
             _content = content;
@@ -17,9 +22,9 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
             _command = command;
         }
 
-        private readonly DialogWindowViewModel _parent;
 
-        public DialogWindowViewModel Parent => _parent;
+
+        
 
 
         private bool _isPositiveButton;
@@ -54,6 +59,18 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
             set
             {
                 _command = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DialogButtonStyle _dialogButtonStyle;
+
+        public DialogButtonStyle DialogButtonStyle
+        {
+            get => _dialogButtonStyle;
+            set
+            {
+                _dialogButtonStyle = value;
                 OnPropertyChanged();
             }
         }

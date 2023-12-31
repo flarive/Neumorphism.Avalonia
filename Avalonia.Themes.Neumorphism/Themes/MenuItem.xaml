@@ -1,11 +1,12 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:conv="using:Avalonia.Controls.Converters"
-                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist">
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
   <!-- Neumorphism theme ok -->
-  
-	
+
+
   <Design.PreviewWith>
     <Border Padding="20" Width="320">
       <StackPanel Spacing="20" HorizontalAlignment="Left">
@@ -52,8 +53,8 @@
       </StackPanel>
     </Border>
   </Design.PreviewWith>
-	
-	
+
+
 
   <conv:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
   <x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">-16</x:Double>
@@ -199,26 +200,26 @@
     </Style>
 
     <Style Selector="^:disabled">
-		  <Style Selector="^ /template/ Border#PART_LayoutRoot">
-		    <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
-	    </Style>
-	  
       <Style Selector="^ /template/ Border#PART_LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
       </Style>
-      
+
+      <Style Selector="^ /template/ Border#PART_LayoutRoot">
+        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
+      </Style>
+
       <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
       </Style>
-      
+
       <Style Selector="^ /template/ TextBlock#PART_InputGestureText">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled}" />
       </Style>
-      
+
       <Style Selector="^ /template/ ContentPresenter#PART_Icon">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
       </Style>
-		
+
       <Style Selector="^ /template/ Path#PART_ChevronPath">
         <Setter Property="Fill" Value="{DynamicResource MenuFlyoutSubItemChevronDisabled}" />
       </Style>
@@ -353,10 +354,10 @@
     <Setter Property="assist:MenuAssist.PopupBorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
   </ControlTheme>
 
-  
-  
-  
-  
+
+
+
+
 
   <!--Popup NoMaterialTopLevelMenuItemStroked level 0 theme-->
   <ControlTheme x:Key="NoMaterialTopLevelMenuItemStroked0" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
@@ -393,11 +394,11 @@
   </ControlTheme>
 
 
-  
-  
 
-  
-  
+
+
+
+
 
   <!--Popup MenuFlatTopLevelMenuItem level 0 theme-->
   <ControlTheme x:Key="MenuFlatTopLevelMenuItem0" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
@@ -423,7 +424,7 @@
     <Style Selector="^ /template/ Border#PART_LayoutRoot">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -459,8 +460,8 @@
   </ControlTheme>
 
 
-  
-  
+
+
 
   <!--Popup MenuCapsuleBarOutsetMenuItem level 0 theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem0" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
@@ -476,7 +477,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -501,7 +502,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -526,7 +527,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -541,7 +542,7 @@
 
 
 
-  
+
 
   <!--Popup MenuCapsuleBarInsetMenuItem level 0 theme-->
   <ControlTheme x:Key="MenuCapsuleBarInsetMenuItem0" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
@@ -556,7 +557,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -580,7 +581,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -603,7 +604,7 @@
     <Style Selector="^ /template/ Border#PART_PopupBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />

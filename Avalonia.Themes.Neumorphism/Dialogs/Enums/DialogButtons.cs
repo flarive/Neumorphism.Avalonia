@@ -1,6 +1,6 @@
 ﻿namespace Avalonia.Themes.Neumorphism.Dialogs.Enums
 {
-    public enum DialogButtonsEnum
+    public enum DialogButtons
     {
         Ok,
         YesNo,

@@ -3,23 +3,24 @@
                     xmlns:elements="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements"
                     xmlns:icons="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements.Header.Icons"
                     xmlns:icons1="clr-namespace:Avalonia.Themes.Neumorphism.Dialogs.Icons"
-                    x:Class="Avalonia.Themes.Neumorphism.Dialogs.Resources.TemplateResources">
-  
-    <ItemsPanelTemplate x:Key="DialogButtonPlacementPanel">
-        <StackPanel Orientation="Horizontal" Spacing="20"/>
-    </ItemsPanelTemplate>
-    
-    <RecyclingElementFactory x:Key="DialogHeaderIconTemplateIcon" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
-        <RecyclingElementFactory.Templates>
-            <DataTemplate DataType="icons:DialogIconViewModel" x:Key="DialogIcon">
-                <icons1:DialogIcon Kind="{CompiledBinding Kind}" Margin="-1.4,-1.4,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </DataTemplate>
+                    x:Class="Avalonia.Themes.Neumorphism.Dialogs.Resources.TemplateResources"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
 
-            <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
-                <Image Source="{CompiledBinding Bitmap}" Stretch="{CompiledBinding Stretch}"/>
-            </DataTemplate>
-        </RecyclingElementFactory.Templates>
-    </RecyclingElementFactory>
+  <ItemsPanelTemplate x:Key="DialogButtonPlacementPanel">
+    <StackPanel Orientation="Horizontal" Spacing="20"/>
+  </ItemsPanelTemplate>
+
+  <RecyclingElementFactory x:Key="DialogHeaderIconTemplateIcon" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
+    <RecyclingElementFactory.Templates>
+      <DataTemplate DataType="icons:DialogIconViewModel" x:Key="DialogIcon">
+        <icons1:DialogIcon Kind="{CompiledBinding Kind}" Margin="-1.4,-1.4,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      </DataTemplate>
+
+      <DataTemplate DataType="icons:ImageIconViewModel" x:Key="DialogImageIcon">
+        <Image Source="{CompiledBinding Bitmap}" Stretch="{CompiledBinding Stretch}"/>
+      </DataTemplate>
+    </RecyclingElementFactory.Templates>
+  </RecyclingElementFactory>
 
   <RecyclingElementFactory x:Key="DialogHeaderIconTemplate" SelectTemplateKey="DialogHeaderIconTemplate_OnSelectTemplateKey">
     <RecyclingElementFactory.Templates>
@@ -32,11 +33,47 @@
       </DataTemplate>
     </RecyclingElementFactory.Templates>
   </RecyclingElementFactory>
-    
-    <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
-      <Button Height="32" Margin="10" FontWeight="Normal" Background="{DynamicResource MaterialDesignPaper}"
-              Content="{CompiledBinding Content, FallbackValue='NULL'}"
+
+
+
+  <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
+    <Panel Tag="{CompiledBinding DialogButtonStyle.BackgroundButtonColor}" Margin="10">
+      
+      <Panel.Styles>
+        <Style Selector="Panel[Tag=0] Button">
+          <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+        </Style>
+        <Style Selector="Panel[Tag=1] Button">
+          <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+        </Style>
+        <Style Selector="Panel[Tag=2] Button">
+          <Setter Property="Background" Value="{DynamicResource SecondaryHueLightBrush}"/>
+        </Style>
+      </Panel.Styles>
+      
+      <Button Name="aaa" Height="32" Width="NaN" Margin="0" FontWeight="Normal"
+              Tag="{CompiledBinding DialogButtonStyle.ForegroundButtonColor}"
+              Content="{CompiledBinding Content, FallbackValue=''}"
               Command="{CompiledBinding Command}"
-              CommandParameter="{CompiledBinding}"/>
-    </DataTemplate>
+              CommandParameter="{CompiledBinding}">
+              <Button.Styles>
+                <Style Selector="Button[Tag=0]">
+                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+                </Style>
+                <Style Selector="Button[Tag=1]">
+                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+                </Style>
+                <Style Selector="Button[Tag=2]">
+                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBackground}"/>
+                </Style>
+                <Style Selector="Button[Tag=3]">
+                  <Setter Property="Foreground" Value="White"/>
+                </Style>
+                <Style Selector="Button[Tag=4]">
+                  <Setter Property="Foreground" Value="Black"/>
+                </Style>
+              </Button.Styles>
+      </Button>
+    </Panel>
+  </DataTemplate>
 </ResourceDictionary>

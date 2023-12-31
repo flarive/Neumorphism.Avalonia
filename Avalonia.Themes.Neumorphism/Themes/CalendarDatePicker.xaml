@@ -3,7 +3,8 @@
                     xmlns:sys="using:System"
                     xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
                     xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
-                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
   <!-- Neumorphism theme ok -->
 
@@ -75,99 +76,99 @@
       <ControlTemplate>
         <!--<Grid RowDefinitions="*" Margin="0" VerticalAlignment="Top">-->
 
-          <Border x:Name="PART_RootBorder"
-                    CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
-                    Height="{TemplateBinding Height}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    Background="{TemplateBinding Background}">
+        <Border x:Name="PART_RootBorder"
+                  CornerRadius="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"
+                  Height="{TemplateBinding Height}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  Background="{TemplateBinding Background}">
 
 
-            <Border.BoxShadow>
-              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-                <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-                <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-              </MultiBinding>
-            </Border.BoxShadow>
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+            </MultiBinding>
+          </Border.BoxShadow>
 
-            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-              <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
-                        MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
-                        IsVisible="{TemplateBinding UseFloatingWatermark}"
-                        FontFamily="{TemplateBinding FontFamily}"
-                        FontSize="{TemplateBinding FontSize}"
-                        FontWeight="{TemplateBinding FontWeight}"
-                        FontStyle="{TemplateBinding FontStyle}"
-                        TextWrapping="NoWrap"
-                        TextTrimming="CharacterEllipsis"
-                        Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
-                        Foreground="{TemplateBinding Foreground}" Opacity="0.5"
-                        RenderTransformOrigin="0, 0" />
-
-
-
-              <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
-                <!--Main container-->
-                <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                  <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
-                    <TextBox Name="PART_TextBox"
-                   Theme="{StaticResource TextBoxNoMaterial2}"
-                   Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
-                   Foreground="{TemplateBinding Foreground}"
-                   Background="Transparent"
-                   BorderBrush="Transparent"
-                   BorderThickness="0"
-                   Padding="0"
-                   Margin="0"
-                   FontSize="{TemplateBinding FontSize}"
-                   UseFloatingWatermark="False"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Stretch"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left"/>
-                  </DataValidationErrors>
-                </Panel>
-
-                <!--Right container-->
-                <Border Grid.Column="1" Margin="0" Padding="0"
-                    Height="{TemplateBinding Height}"
-                    Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
-                    CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|100%|100%|0%}"
-                    VerticalAlignment="Stretch">
-                  <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
-                  Theme="{StaticResource CustomCalendarDatePickerButton}"
-                  Focusable="False" />
-                </Border>
-              </Grid>
+          <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Name="floatingWatermark" VerticalAlignment="Top" HorizontalAlignment="Left"
+                      MaxWidth="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=60}"
+                      IsVisible="{TemplateBinding UseFloatingWatermark}"
+                      FontFamily="{TemplateBinding FontFamily}"
+                      FontSize="{TemplateBinding FontSize}"
+                      FontWeight="{TemplateBinding FontWeight}"
+                      FontStyle="{TemplateBinding FontStyle}"
+                      TextWrapping="NoWrap"
+                      TextTrimming="CharacterEllipsis"
+                      Text="{TemplateBinding (assist:DatePickerAssist.Label)}"
+                      Foreground="{TemplateBinding Foreground}" Opacity="0.5"
+                      RenderTransformOrigin="0, 0" />
 
 
 
-              <Popup Name="PART_Popup"
-                     PlacementTarget="{TemplateBinding}"
-                     IsLightDismissEnabled="True">
+            <Grid Name="PART_Grid" ColumnDefinitions="*,Auto" Margin="0" VerticalAlignment="Center">
+              <!--Main container-->
+              <Panel Grid.Column="0" Name="PART_TextRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <DataValidationErrors Name="DataValidation" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Margin="0">
+                  <TextBox Name="PART_TextBox"
+                 Theme="{StaticResource TextBoxNoMaterial2}"
+                 Width="{TemplateBinding Width, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=50}"
+                 Foreground="{TemplateBinding Foreground}"
+                 Background="Transparent"
+                 BorderBrush="Transparent"
+                 BorderThickness="0"
+                 Padding="0"
+                 Margin="0"
+                 FontSize="{TemplateBinding FontSize}"
+                 UseFloatingWatermark="False"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Stretch"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Left"/>
+                </DataValidationErrors>
+              </Panel>
 
-                <Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
-                  <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                      <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-                      <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-                    </MultiBinding>
-                  </Border.BoxShadow>
-
-                  <Calendar Name="PART_Calendar"
-                          FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
-                          IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
-                          SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
-                          DisplayDate="{TemplateBinding DisplayDate}"
-                          DisplayDateStart="{TemplateBinding DisplayDateStart}"
-                          DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
-                </Border>
-              </Popup>
-
+              <!--Right container-->
+              <Border Grid.Column="1" Margin="0" Padding="0"
+                  Height="{TemplateBinding Height}"
+                  Background="{TemplateBinding assist:DatePickerAssist.InnerRightBackground}"
+                  CornerRadius="{TemplateBinding CornerRadius, Converter={StaticResource CustomCornerRadiusConverter}, ConverterParameter=0%|100%|100%|0%}"
+                  VerticalAlignment="Stretch">
+                <Button Name="PART_Button" Width="40" Padding="{TemplateBinding assist:DatePickerAssist.InnerRightPadding}"
+                Theme="{StaticResource CustomCalendarDatePickerButton}"
+                Focusable="False" />
+              </Border>
             </Grid>
-          </Border>
+
+
+
+            <Popup Name="PART_Popup"
+                   PlacementTarget="{TemplateBinding}"
+                   IsLightDismissEnabled="True">
+
+              <Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
+                <Border.BoxShadow>
+                  <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+                    <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                    <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                    <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                  </MultiBinding>
+                </Border.BoxShadow>
+
+                <Calendar Name="PART_Calendar"
+                        FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                        IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                        SelectedDate="{TemplateBinding SelectedDate, Mode=TwoWay}"
+                        DisplayDate="{TemplateBinding DisplayDate}"
+                        DisplayDateStart="{TemplateBinding DisplayDateStart}"
+                        DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+              </Border>
+            </Popup>
+
+          </Grid>
+        </Border>
         <!--</Grid>-->
       </ControlTemplate>
     </Setter>

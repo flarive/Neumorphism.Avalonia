@@ -3,51 +3,52 @@
                     xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
                     xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
                     xmlns:system="clr-namespace:System;assembly=netstandard"
-                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
-	<!-- Neumorphism theme ok -->
+  <!-- Neumorphism theme ok -->
 
-	<Design.PreviewWith>
-		<Border Padding="20">
-			<StackPanel Spacing="20">
-				<Button Content="Click Me!" />
-				<Button Classes="Accent" Content="Click Me!" />
-			</StackPanel>
-		</Border>
-	</Design.PreviewWith>
-  
-  
-
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20">
+        <Button Content="Click Me!" />
+        <Button Classes="Accent" Content="Click Me!" />
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
 
 
 
-	<system:Double x:Key="ButtonHoveredOpacity">0.26</system:Double>
-	<system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
-	<system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
 
-	<LinearGradientBrush x:Key="BackgroundGradient">
-		<GradientStop Offset="0" Color="#FF00FF00" />
-		<GradientStop Offset="1" Color="#FFFF0000" />
-	</LinearGradientBrush>
 
-	<!--Default Button theme-->
-	<ControlTheme x:Key="{x:Type Button}" TargetType="Button">
-		<Setter Property="HorizontalContentAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="Padding" Value="16 8" />
-		<Setter Property="Margin" Value="0" />
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
-		<Setter Property="FontSize" Value="14" />
-		<Setter Property="FontWeight" Value="Normal"/>
-		<Setter Property="FontStyle" Value="Normal"/>
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="Width" Value="90" />
-		<Setter Property="Height" Value="90" />
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="BorderThickness" Value="0"/>
-		<Setter Property="CornerRadius" Value="0"/>
+
+  <system:Double x:Key="ButtonHoveredOpacity">0.26</system:Double>
+  <system:Double x:Key="ButtonDisabledOpacity">0.38</system:Double>
+  <system:Double x:Key="ButtonPressedOpacity">0.26</system:Double>
+
+  <LinearGradientBrush x:Key="BackgroundGradient">
+    <GradientStop Offset="0" Color="#FF00FF00" />
+    <GradientStop Offset="1" Color="#FFFF0000" />
+  </LinearGradientBrush>
+
+  <!--Default Button theme-->
+  <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Padding" Value="16 8" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="FontWeight" Value="Normal"/>
+    <Setter Property="FontStyle" Value="Normal"/>
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Width" Value="90" />
+    <Setter Property="Height" Value="90" />
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="CornerRadius" Value="0"/>
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
@@ -57,14 +58,14 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					<Panel>
-						<!--Outline-->
+          <Panel>
+            <!--Outline-->
             <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
 							  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
 							  Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
 							  CornerRadius="{TemplateBinding CornerRadius}"/>
 
-						<ContentPresenter Name="PART_ContentPresenter"
+            <ContentPresenter Name="PART_ContentPresenter"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
 										  Padding="{TemplateBinding Padding}"
@@ -75,10 +76,10 @@
 										  FontStyle="{TemplateBinding FontStyle}"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-					</Panel>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+          </Panel>
+        </Border>
+      </ControlTemplate>
+    </Setter>
 
 
 
@@ -101,449 +102,450 @@
       </Setter>
     </Style>
 
-		<Style Selector="^[CornerRadius=0] /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
     <Style Selector="^[CornerRadius=0] /template/ Border#PART_HoverIndicator">
       <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
     </Style>
 
-		<!-- Default Transitions -->
-		<Style Selector="^:not(.notransitions) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Transitions">
-				<Transitions>
-					<DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing"/>
-				</Transitions>
-			</Setter>
-		</Style>
+    <!-- Default Transitions -->
+    <Style Selector="^:not(.notransitions) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Transitions">
+        <Transitions>
+          <DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing"/>
+        </Transitions>
+      </Setter>
+    </Style>
 
-		<!-- Default state -->
-		<Style Selector="^.DrawerItem">
-			<Setter Property="Height" Value="48"/>
-		</Style>
+    <!-- Default state -->
+    <Style Selector="^.DrawerItem">
+      <Setter Property="Height" Value="48"/>
+    </Style>
 
-		<!-- Default state -->
-		<Style Selector="^ /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0" />
-		</Style>
+    <!-- Default state -->
+    <Style Selector="^ /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
 
-		<!-- Disabled state -->
-		<Style Selector="^:disabled:not(.no-material)">
-			<Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />
-		</Style>
+    <!-- Disabled state -->
+    <Style Selector="^:disabled:not(.no-material)">
+      <Setter Property="Opacity" Value="{StaticResource ButtonDisabledOpacity}" />
+    </Style>
 
-		<!--Pointer leave state-->
-		<Style Selector="^:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="BoxShadow">
-				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-					</MultiBinding>
-				</Setter.Value>
-			</Setter>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
+    <!--Pointer leave state-->
+    <Style Selector="^:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
 
-		<!--Pointer enter state -->
-		<Style Selector="^:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="BoxShadow">
-				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-					</MultiBinding>
-				</Setter.Value>
-			</Setter>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
 
-		<!-- Pressed state -->
-		<Style Selector="^:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
+    <!--Pointer enter state -->
+    <Style Selector="^:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
 
-		<!--Class Light-->
-		<Style Selector="^.Light">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-		</Style>
+    <!-- Pressed state -->
+    <Style Selector="^:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
 
-		<Style Selector="^.Light /template/ Border#PART_HoverIndicator">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		</Style>
+    <!--Class Light-->
+    <Style Selector="^.Light">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    </Style>
 
-		<!---Class Light pointer enter state -->
-		<Style Selector="^.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.2"/>
-		</Style>
+    <Style Selector="^.Light /template/ Border#PART_HoverIndicator">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    </Style>
 
-		<!---Class Light pressed state -->
-		<Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.4"/>
-		</Style>
-		<Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		</Style>
-		<Style Selector="^.Light:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
+    <!---Class Light pointer enter state -->
+    <Style Selector="^.Light:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.2"/>
+    </Style>
 
-
-		<!--Class Dark-->
-		<Style Selector="^.Dark">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-		</Style>
-
-		<Style Selector="^.Dark /template/ Border#PART_HoverIndicator">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-		</Style>
-
-		<!---Class Dark pointer enter state -->
-		<Style Selector="^.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.2"/>
-		</Style>
-
-		<!--Class Dark pressed state-->
-		<Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.4"/>
-		</Style>
-		<Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
-		</Style>
-		<Style Selector="^.Dark:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
+    <!---Class Light pressed state -->
+    <Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.4"/>
+    </Style>
+    <Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    </Style>
+    <Style Selector="^.Light:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
 
 
+    <!--Class Dark-->
+    <Style Selector="^.Dark">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    </Style>
 
-		<!--Class Accent-->
-		<Style Selector="^.Accent">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
-		</Style>
+    <Style Selector="^.Dark /template/ Border#PART_HoverIndicator">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+    </Style>
 
-		<Style Selector="^.Accent /template/ Border#PART_HoverIndicator">
-			<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
-		</Style>
+    <!---Class Dark pointer enter state -->
+    <Style Selector="^.Dark:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.2"/>
+    </Style>
 
-		<Style Selector="^.Accent">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderBrush" Value="Transparent"/>
-		</Style>
-
-		<!---Class Accent pointer enter state -->
-		<Style Selector="^.Accent:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.2"/>
-		</Style>
-
-		<!---Class Accent pressed state -->
-		<Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.4"/>
-		</Style>
-		<Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
-		</Style>
-		<Style Selector="^.Accent:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
-
-		<!--Class Gradient-->
-		<Style Selector="^.Gradient">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
-		</Style>
-
-		<Style Selector="^.Gradient /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.2" />
-			<Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
-		</Style>
-
-		<Style Selector="^.Gradient:pressed /template/ Border#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0.3" />
-			<Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
-		</Style>
-	</ControlTheme>
+    <!--Class Dark pressed state-->
+    <Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.4"/>
+    </Style>
+    <Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+    </Style>
+    <Style Selector="^.Dark:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
 
 
-	<!--No Material theme-->
-	<ControlTheme x:Key="ButtonNoMaterial" TargetType="Button">
-		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Background="Transparent" BorderBrush="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Margin="0" BorderThickness="0" Cursor="{TemplateBinding Cursor}">
-					<ContentPresenter Name="PART_ContentPresenter"
+
+    <!--Class Accent-->
+    <Style Selector="^.Accent">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
+    </Style>
+
+    <Style Selector="^.Accent /template/ Border#PART_HoverIndicator">
+      <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    </Style>
+
+    <Style Selector="^.Accent">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+
+    <!---Class Accent pointer enter state -->
+    <Style Selector="^.Accent:pointerover:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.2"/>
+    </Style>
+
+    <!---Class Accent pressed state -->
+    <Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.4"/>
+    </Style>
+    <Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    </Style>
+    <Style Selector="^.Accent:pressed:not(.no-material) /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
+
+    <!--Class Gradient-->
+    <Style Selector="^.Gradient">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
+    </Style>
+
+    <Style Selector="^.Gradient /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.2" />
+      <Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
+    </Style>
+
+    <Style Selector="^.Gradient:pressed /template/ Border#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0.3" />
+      <Setter Property="Background" Value="{DynamicResource BackgroundGradient}"/>
+    </Style>
+  </ControlTheme>
+
+
+  <!--No Material theme-->
+  <ControlTheme x:Key="ButtonNoMaterial" TargetType="Button">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Background="Transparent" BorderBrush="Transparent" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Margin="0" BorderThickness="0" Cursor="{TemplateBinding Cursor}">
+          <ContentPresenter Name="PART_ContentPresenter"
 					Content="{TemplateBinding Content}"
 					ContentTemplate="{TemplateBinding ContentTemplate}"
 					Padding="{TemplateBinding Padding}"
 					TextBlock.Foreground="{TemplateBinding Foreground}"
 					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-				</Border>
-			</ControlTemplate>
-		</Setter>
-	</ControlTheme>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
 
 
-	<!--Flat theme-->
-	<ControlTheme x:Key="ButtonFlat" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
-		<Setter Property="HorizontalContentAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
-		<Setter Property="Padding" Value="16 6" />
-	</ControlTheme>
+  <!--Flat theme-->
+  <ControlTheme x:Key="ButtonFlat" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+    <Setter Property="Padding" Value="16 6" />
+  </ControlTheme>
 
 
-	<!--Button icon theme-->
-	<ControlTheme x:Key="ButtonIcon" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
-		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
-		<Setter Property="VerticalContentAlignment" Value="Stretch" />
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
-		<Setter Property="Padding" Value="16 16 16 16" />
-		<Setter Property="Height" Value="48" />
-		<Setter Property="Width" Value="48" />
-		<Setter Property="CornerRadius" Value="100" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
+  <!--Button icon theme-->
+  <ControlTheme x:Key="ButtonIcon" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+    <Setter Property="Padding" Value="16 16 16 16" />
+    <Setter Property="Height" Value="48" />
+    <Setter Property="Width" Value="48" />
+    <Setter Property="CornerRadius" Value="100" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_ButtonRootBorder" Margin="{TemplateBinding Margin}" Padding="0"
 						  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Cursor="{TemplateBinding Cursor}"
 						  VerticalAlignment="Center" HorizontalAlignment="Center"
 						  Background="{TemplateBinding Background}"
 						  BorderBrush="{TemplateBinding BorderBrush}"
 						  BorderThickness="{TemplateBinding BorderThickness}"
 						  CornerRadius="100">
-					<Panel>
-						<!--Outline-->
-						<Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+          <Panel>
+            <!--Outline-->
+            <Border Name="PART_HoverIndicator" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
 						  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
 						  Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
 						  CornerRadius="100"/>
 
-						<ContentPresenter Name="PART_ContentPresenter"
+            <ContentPresenter Name="PART_ContentPresenter"
 								  Content="{TemplateBinding Content}"
 								  ContentTemplate="{TemplateBinding ContentTemplate}"
 								  Padding="{TemplateBinding Padding}"
 								  TextBlock.Foreground="{TemplateBinding Foreground}"
 								  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 								  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-					</Panel>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+          </Panel>
+        </Border>
+      </ControlTemplate>
+    </Setter>
 
-		<!-- Icon Transitions -->
-		<Style Selector="^:not(.notransitions) /template/ Ellipse#PART_HoverIndicator">
-			<Setter Property="Transitions">
-				<Transitions>
-					<DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing"/>
-				</Transitions>
-			</Setter>
-		</Style>
+    <!-- Icon Transitions -->
+    <Style Selector="^:not(.notransitions) /template/ Ellipse#PART_HoverIndicator">
+      <Setter Property="Transitions">
+        <Transitions>
+          <DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing"/>
+        </Transitions>
+      </Setter>
+    </Style>
 
-		<!--Class icon-->
-		<Style Selector="^ /template/ Ellipse#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="0" />
-		</Style>
+    <!--Class icon-->
+    <Style Selector="^ /template/ Ellipse#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
 
-		<!--Class Icon pointer over state -->
-		<Style Selector="^:not(:disabled):pointerover /template/ Ellipse#PART_HoverIndicator">
-			<Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
-		</Style>
+    <!--Class Icon pointer over state -->
+    <Style Selector="^:not(:disabled):pointerover /template/ Ellipse#PART_HoverIndicator">
+      <Setter Property="Opacity" Value="{StaticResource ButtonHoveredOpacity}" />
+    </Style>
 
-		<!-- Icon pointer leave state-->
-		<Style Selector="^:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="BoxShadow">
-				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-					</MultiBinding>
-				</Setter.Value>
-			</Setter>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
+    <!-- Icon pointer leave state-->
+    <Style Selector="^:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
 
-		<!--Icon pointer enter state -->
-		<Style Selector="^:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="BoxShadow">
-				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-					</MultiBinding>
-				</Setter.Value>
-			</Setter>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
+    <!--Icon pointer enter state -->
+    <Style Selector="^:pointerover:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
 
-		<!-- Icon pressed state -->
-		<Style Selector="^:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
-		</Style>
+    <!-- Icon pressed state -->
+    <Style Selector="^:pressed:not(.no-material,.Light,.Dark,.Accent) /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
+    </Style>
 
-		<!--Class Icon Light default state-->
-		<Style Selector="^.Light">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		</Style>
+    <!--Class Icon Light default state-->
+    <Style Selector="^.Light">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    </Style>
 
-		<Style Selector="^.Light /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
+    <Style Selector="^.Light /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
 
-		<!---Class Icon Light pressed state -->
-		<Style Selector="^.Light:pressed /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
-		</Style>
+    <!---Class Icon Light pressed state -->
+    <Style Selector="^.Light:pressed /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+    </Style>
 
-		<!--Class Icon Dark default state-->
-		<Style Selector="^.Dark">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-		</Style>
+    <!--Class Icon Dark default state-->
+    <Style Selector="^.Dark">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+    </Style>
 
-		<Style Selector="^.Dark /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
+    <Style Selector="^.Dark /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
 
-		<!---Class Icon Light pressed state -->
-		<Style Selector="^.Dark:pressed /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
-		</Style>
+    <!---Class Icon Light pressed state -->
+    <Style Selector="^.Dark:pressed /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+    </Style>
 
-		<!--Class Icon Accent default state-->
-		<Style Selector="^.Accent">
-			<Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
-		</Style>
+    <!--Class Icon Accent default state-->
+    <Style Selector="^.Accent">
+      <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    </Style>
 
-		<Style Selector="^.Accent /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="White"/>
-		</Style>
+    <Style Selector="^.Accent /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="White"/>
+    </Style>
 
-		<!---Class Icon Accent pressed state -->
-		<Style Selector="^.Accent:pressed /template/ Border#PART_ButtonRootBorder">
-			<Setter Property="Background" Value="{DynamicResource SecondaryHueDarkBrush}"/>
-		</Style>
-	</ControlTheme>
-
-
-	<!-- Outlined button theme -->
-	<ControlTheme x:Key="ButtonOutline" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
-		<Setter Property="HorizontalContentAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-
-		<Style Selector="^:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="BorderBrush" Value="Transparent" />
-			<Setter Property="BorderThickness" Value="8" />
-			<Setter Property="Background" Value="Transparent" />
-			<Setter Property="Opacity" Value="1" />
-			<Setter Property="BoxShadow">
-				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-					</MultiBinding>
-				</Setter.Value>
-			</Setter>
-		</Style>
-
-		<!-- Pressed state -->
-		<Style Selector="^:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
-			<Setter Property="Opacity" Value="1"/>
-		</Style>
-
-		<!--Outline Accent-->
-		<Style Selector="^.Accent">
-			<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
-			<Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
-		</Style>
-
-		<!-- Outline Accent pressed state -->
-		<Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="BorderThickness" Value="5"/>
-			<Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
-			<Setter Property="Opacity" Value="0.5"/>
-		</Style>
+    <!---Class Icon Accent pressed state -->
+    <Style Selector="^.Accent:pressed /template/ Border#PART_ButtonRootBorder">
+      <Setter Property="Background" Value="{DynamicResource SecondaryHueDarkBrush}"/>
+    </Style>
+  </ControlTheme>
 
 
-		<!--Outline Light-->
-		<Style Selector="^.Light">
-			<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
-			<Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
-		</Style>
+  <!-- Outlined button theme -->
+  <ControlTheme x:Key="ButtonOutline" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
 
-		<!-- Outline Light pressed state -->
-		<Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="BorderThickness" Value="5"/>
-			<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
-			<Setter Property="Opacity" Value="0.5"/>
-		</Style>
+    <Style Selector="^:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="8" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Pressed state -->
+    <Style Selector="^:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxHoverBackground}"/>
+      <Setter Property="Opacity" Value="1"/>
+    </Style>
+
+    <!--Outline Accent-->
+    <Style Selector="^.Accent">
+      <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidBrush}"/>
+    </Style>
+
+    <!-- Outline Accent pressed state -->
+    <Style Selector="^.Accent:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="BorderThickness" Value="5"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+      <Setter Property="Opacity" Value="0.5"/>
+    </Style>
 
 
-		<!--Outline Dark-->
-		<Style Selector="^.Dark">
-			<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-			<Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-		</Style>
+    <!--Outline Light-->
+    <Style Selector="^.Light">
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    </Style>
 
-		<!-- Outline Dark pressed state -->
-		<Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
-			<Setter Property="BorderThickness" Value="5"/>
-			<Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
-			<Setter Property="Opacity" Value="0.5"/>
-		</Style>
-	</ControlTheme>
+    <!-- Outline Light pressed state -->
+    <Style Selector="^.Light:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="BorderThickness" Value="5"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueLightBrush}"/>
+      <Setter Property="Opacity" Value="0.5"/>
+    </Style>
 
 
-	<!-- Link button theme -->
-	<ControlTheme x:Key="ButtonLink" TargetType="Button">
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="Foreground" Value="Blue" />
-		<Setter Property="Padding" Value="0" />
-		<Setter Property="Margin" Value="0" />
-		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="HorizontalAlignment" Value="Left" />
-		<Setter Property="HorizontalContentAlignment" Value="Left" />
-		<Setter Property="VerticalAlignment" Value="Center" />
-		<Setter Property="VerticalContentAlignment" Value="Center" />
-		<Setter Property="Width" Value="NaN" />
-		<Setter Property="Height" Value="NaN" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Margin}"
+    <!--Outline Dark-->
+    <Style Selector="^.Dark">
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+      <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+    </Style>
+
+    <!-- Outline Dark pressed state -->
+    <Style Selector="^.Dark:pressed:not(.no-material) /template/ Border#PART_HoverIndicator">
+      <Setter Property="BorderThickness" Value="5"/>
+      <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+      <Setter Property="Opacity" Value="0.5"/>
+    </Style>
+  </ControlTheme>
+
+
+  <!-- Link button theme -->
+  <ControlTheme x:Key="ButtonLink" TargetType="Button">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Foreground" Value="Blue" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Width" Value="NaN" />
+    <Setter Property="Height" Value="NaN" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Margin}"
 									HorizontalAlignment="{TemplateBinding HorizontalAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 									VerticalAlignment="{TemplateBinding VerticalAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
-					<ContentPresenter.Styles>
-						<Style Selector="TextBlock">
-							<Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
-							<Setter Property="Background" Value="{TemplateBinding Background}"/>
-							<Setter Property="Width" Value="{TemplateBinding Width}"/>
-							<Setter Property="Height" Value="{TemplateBinding Height}"/>
-							<Setter Property="FontSize" Value="{TemplateBinding FontSize}"/>
-						</Style>
+          <ContentPresenter.Styles>
+            <Style Selector="TextBlock">
+              <Setter Property="Foreground" Value="{TemplateBinding Foreground}"/>
+              <Setter Property="Background" Value="{TemplateBinding Background}"/>
+              <Setter Property="Width" Value="{TemplateBinding Width}"/>
+              <Setter Property="Height" Value="{TemplateBinding Height}"/>
+              <Setter Property="FontSize" Value="{TemplateBinding FontSize}"/>
+            </Style>
 
-						<Style Selector="TextBlock:pointerover">
+            <Style Selector="TextBlock:pointerover">
               <Setter Property="TextDecorations" Value="Underline"/>
-						</Style>
+            </Style>
           </ContentPresenter.Styles>
-				</ContentPresenter>
-			</ControlTemplate>
-		</Setter>
-	</ControlTheme>
+        </ContentPresenter>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
 </ResourceDictionary>

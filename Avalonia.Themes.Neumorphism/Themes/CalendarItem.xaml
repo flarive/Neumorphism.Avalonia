@@ -75,14 +75,7 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 CornerRadius="10">
-			<!--<Border.BoxShadow>
-				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-					<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-				</MultiBinding>
-			</Border.BoxShadow>-->
-			<!-- To keep calendar from resizing when switching DisplayMode
+			           <!-- To keep calendar from resizing when switching DisplayMode
                  In WinUI Min-Width from TemplateSettings
                  basically...MinWidth of DayItem = 40, 40 * 7 = 280 + margins/padding = ~294
                  Viewport height is set from # of rows displayed (2-8) in Month mode, = ~290 for 6 weeks (+ day names)

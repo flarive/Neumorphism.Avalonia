@@ -18,15 +18,17 @@
 
     <Style Selector="controls|AlertDialogControl" x:DataType="viewModels:AlertDialogViewModel">
         <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
         <Setter Property="Template">
             <ControlTemplate>
-                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource MaterialDesignPaper}">
+                <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-                      <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-                      <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-                    </MultiBinding>
+                        <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}">
+                          <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                          <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                          <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                          <CompiledBinding Path="DialogShadowKind"/>
+                        </MultiBinding>
                   </Border.BoxShadow>
                     <DockPanel Name="PART_RootPanel"
                                Width="{CompiledBinding Width}"

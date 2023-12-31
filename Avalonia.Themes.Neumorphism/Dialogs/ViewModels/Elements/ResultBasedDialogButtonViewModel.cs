@@ -2,10 +2,10 @@
 
 namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
 {
-    public sealed class ObsoleteDialogButtonViewModel : DialogButtonViewModel
+    public class ResultBasedDialogButtonViewModel : DialogButtonViewModel
     {
-        public ObsoleteDialogButtonViewModel(DialogWindowViewModel parent, object content, string result) : base(parent,
-            content)
+        public ResultBasedDialogButtonViewModel(DialogWindowViewModel parent, object content, string result)
+            : base(parent, content)
         {
             _result = result;
             Command = new MaterialDialogRelayCommand(OnExecuteCommandHandler, CanExecuteCommandHandler);
@@ -21,7 +21,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
             if (Parent is null)
                 return;
 
-            if (obj is ObsoleteDialogButtonViewModel vm)
+            if (obj is ResultBasedDialogButtonViewModel vm)
             {
                 Parent.DialogResult = new DialogResult(vm.Result);
             }
@@ -31,9 +31,6 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements
 
         private string _result;
 
-        /// <summary>
-        /// This property is used for compat deprecated dialog library.
-        /// </summary>
         public string Result
         {
             get => _result;

@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist">
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
   <!-- Neumorphism theme ok -->
 
@@ -16,7 +17,7 @@
 
 
 
-  
+
   <!-- Resources for Menu, ContextMenu, Separator, etc -->
   <!-- Only values coming from BaseColorsPalette.xaml are allowed ! -->
   <!-- All this resources can be overrided easily -->
@@ -49,7 +50,7 @@
   <Thickness x:Key="MenuFlyoutSeparatorThemePadding">12,2,12,2</Thickness>
   <x:Double x:Key="MenuFlyoutSeparatorThemeHeight">1</x:Double>
   <x:Double x:Key="MenuFlyoutThemeMinHeight">32</x:Double>
-  
+
 
   <!--Begin Default Menu theme-->
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
@@ -79,8 +80,8 @@
       </ControlTemplate>
     </Setter>
   </ControlTheme>
-  
-  
+
+
   <!--Menu outset theme-->
   <ControlTheme x:Key="MenuOutset" TargetType="Menu" BasedOn="{StaticResource {x:Type Menu}}">
   </ControlTheme>
@@ -108,13 +109,13 @@
                   Margin="{TemplateBinding Margin}"
                   Padding="{TemplateBinding Padding}">
 
-              <ItemsPresenter Name="PART_ItemsPresenter"
-                              ItemsPanel="{TemplateBinding ItemsPanel}"
-                              VerticalAlignment="Stretch"
-                              HorizontalAlignment="Center"
-                              KeyboardNavigation.TabNavigation="Continue" />
-            </Border>
-            <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="{DynamicResource MaterialDesignBorderShadow}"/>
+            <ItemsPresenter Name="PART_ItemsPresenter"
+                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                            VerticalAlignment="Stretch"
+                            HorizontalAlignment="Center"
+                            KeyboardNavigation.TabNavigation="Continue" />
+          </Border>
+          <Rectangle Name="PART_Stroke" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="1" Fill="{DynamicResource MaterialDesignBorderShadow}"/>
         </Panel>
       </ControlTemplate>
     </Setter>
@@ -136,7 +137,7 @@
   </ControlTheme>
 
 
-  
+
 
 
   <!--MenuCapsuleBarFlat theme-->
@@ -149,9 +150,9 @@
     <Setter Property="ItemContainerTheme" Value="{StaticResource MenuCapsuleBarFlatMenuItem}" />
   </ControlTheme>
 
-  
 
-  
+
+
 
   <!--MenuCapsuleBarOutset theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutset" TargetType="Menu" BasedOn="{StaticResource NoMaterialMenu}">
@@ -166,7 +167,7 @@
     <Style Selector="^ /template/ Border#PART_BorderLayout">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -191,7 +192,7 @@
     <Style Selector="^ /template/ Border#PART_BorderLayout">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -207,6 +208,6 @@
   <!-- ************************** -->
 
 
-  
-  
+
+
 </ResourceDictionary>

@@ -19,10 +19,11 @@
             <ControlTemplate>
                 <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource MaterialDesignPaper}">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                      <CompiledBinding Path="DialogShadowKind"/>
                     </MultiBinding>
                   </Border.BoxShadow>
                     <DockPanel Name="PART_RootPanel"

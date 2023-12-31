@@ -11,7 +11,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Resources
         {
             e.TemplateKey = e.DataContext switch
             {
-                ObsoleteDialogButtonViewModel _ => "ObsoleteButton",
+                ResultBasedDialogButtonViewModel _ => "ObsoleteButton",
                 DialogButtonViewModel _ => "StandardButton",
                 _ => throw new ArgumentOutOfRangeException()
             };

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Layout;
+using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements.Header.Icons;
 using Avalonia.Threading;
@@ -104,6 +105,19 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
             set
             {
                 _windowStartupLocation = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private int _dialogShadowKind;
+
+        public int DialogShadowKind
+        {
+            get => _dialogShadowKind;
+            set
+            {
+                _dialogShadowKind = value;
                 OnPropertyChanged();
             }
         }

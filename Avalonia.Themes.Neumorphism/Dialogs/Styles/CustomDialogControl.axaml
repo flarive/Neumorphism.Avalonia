@@ -21,7 +21,7 @@
                 <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{DynamicResource MaterialDesignPaper}"
                         ClipToBounds="{TemplateBinding ClipToBounds}">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />

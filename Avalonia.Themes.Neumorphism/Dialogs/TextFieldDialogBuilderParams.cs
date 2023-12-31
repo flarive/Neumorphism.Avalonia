@@ -14,11 +14,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         /// <summary>
         /// Define a positive action button.
         /// </summary>
-        public DialogButton PositiveButton = DialogHelper.CreateSimpleDialogButtons(DialogButtonsEnum.Ok)[0];
+        public DialogButton PositiveButton = DialogHelper.CreateSimpleDialogButtons(DialogButtons.Ok)[0];
 
         /// <summary>
         /// Define a negative action button.
         /// </summary>
-        public DialogButton NegativeButton = DialogHelper.CreateSimpleDialogButtons(DialogButtonsEnum.OkCancel)[0];
+        public DialogButton NegativeButton = DialogHelper.CreateSimpleDialogButtons(DialogButtons.OkCancel)[0];
     }
 }

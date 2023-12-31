@@ -189,7 +189,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     new DialogButton
                     {
                         Content = "DELETE",
-                        Result = "delete"
+                        Result = "delete",
+                        DialogButtonStyle = new DialogButtonStyle(DialogButtonBackgroundColor.PrimaryColor, DialogButtonForegroundColor.White)
                     }
                 }
             }).ShowDialog(_window);
@@ -226,7 +227,8 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     new DialogButton
                     {
                         Content = "DELETE",
-                        Result = "delete"
+                        Result = "delete",
+                        DialogButtonStyle = new DialogButtonStyle(DialogButtonBackgroundColor.PrimaryColor, DialogButtonForegroundColor.White)
                     }
                 }
             }).ShowDialog(_window);
@@ -267,6 +269,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 StartupLocation = WindowStartupLocation.CenterOwner,
                 Borderless = true,
                 Width = 500,
+                ShadowKind = DialogShadowKind.Inset,
                 DialogIcon = new Bitmap(icon),
                 CenterDialogButtons = new[]
                 {
@@ -391,19 +394,20 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     {
                         Content = "RENAME",
                         Result = "rename",
-                        IsPositive = true
+                        IsPositive = true,
+                        DialogButtonStyle = new DialogButtonStyle(DialogButtonBackgroundColor.PrimaryColor, DialogButtonForegroundColor.White)
                     }
                 },
             }).ShowDialog(_window);
 
             _appModelBase.IsDialogOpened = false;
 
-            yield return $"Result: {result?.GetResult}";
-
             if (result.GetResult == "rename")
             {
-                yield return $"Folder name: {result.GetFieldsResult()[0].Text}";
+                yield return $"Result: {result.GetFieldsResult()[0].Text}";
             }
+
+            yield return $"Result: {result?.GetResult}";
         }
 
 

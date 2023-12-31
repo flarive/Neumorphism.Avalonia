@@ -1,11 +1,12 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
-				xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
-				xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
-				xmlns:system="clr-namespace:System;assembly=netstandard"
-				xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
-				xmlns:sys="using:System">
+										xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+										xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+										xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+										xmlns:system="clr-namespace:System;assembly=netstandard"
+										xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+										xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming"
+										xmlns:sys="using:System">
 
 	<!-- Neumorphism theme ok -->
 
@@ -212,7 +213,7 @@
 															Background="{TemplateBinding Background}"
 															CornerRadius="5">
 							<Border.BoxShadow>
-								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
 									<Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 									<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -240,7 +241,7 @@
 		<Style Selector="^ /template/ Border#PART_Border">
 			<Setter Property="BoxShadow">
 				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -291,7 +292,7 @@
 		<Style Selector="^[IsDropDownOpen=true] /template/ Border#PART_Border">
 			<Setter Property="BoxShadow">
 				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -349,7 +350,7 @@
 		<Style Selector="^ /template/ Border#PART_Border">
 			<Setter Property="BoxShadow">
 				<Setter.Value>
-					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+					<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
 						<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 						<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 						<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -418,7 +419,7 @@
 							  BorderBrush="{TemplateBinding BorderBrush}"
 							  BorderThickness="{TemplateBinding BorderThickness}">
 						<Border.BoxShadow>
-							<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+							<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
 								<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 								<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 								<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -431,7 +432,7 @@
 							  BorderBrush="Transparent"
 							  BorderThickness="8">
 							<Border.BoxShadow>
-								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
 									<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 									<DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -498,7 +499,7 @@
 														  Background="{TemplateBinding Background}" Opacity="1"
 														  CornerRadius="5">
 							<Border.BoxShadow>
-								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+								<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
 									<Binding ElementName="PART_Popup" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
 									<DynamicResource ResourceKey="MaterialDesignShadowLight" />
 									<DynamicResource ResourceKey="MaterialDesignShadowDark" />

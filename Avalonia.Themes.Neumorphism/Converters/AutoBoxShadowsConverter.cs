@@ -12,7 +12,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
         {
             var b = new BoxShadows();
 
-            if (values != null && values.Count == 3
+            if (values != null && values.Count >= 3
             && values[0] != AvaloniaProperty.UnsetValue
             && values[1] != AvaloniaProperty.UnsetValue
             && values[2] != AvaloniaProperty.UnsetValue)
@@ -21,13 +21,19 @@ namespace Avalonia.Themes.Neumorphism.Converters
                 Color shadowLightColor = (Color)values[1];
                 Color shadowDarkColor = (Color)values[2];
 
+                // in some few cases shadow type can't come from converter parameter
+                if (values.Count == 4 && values[3] != AvaloniaProperty.UnsetValue)
+                {
+                    parameter = values[3].ToString();
+                }
+
+
                 bool inset = parameter != null && parameter.Equals("1");
                 bool isFixedInset = parameter != null && parameter.Equals("2");
                 bool isFixedOutset = parameter != null && parameter.Equals("3");
                 bool insetAndOutset = parameter != null && parameter.Equals("4");
                 bool smallerOutset = parameter != null && parameter.Equals("5");
                 bool outset = parameter != null && parameter.Equals("6");
-
 
                 BoxShadow main = new BoxShadow();
                 BoxShadow rest1 = new BoxShadow();

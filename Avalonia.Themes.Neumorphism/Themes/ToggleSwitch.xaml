@@ -8,9 +8,9 @@
     xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
 
 
-	<!-- Neumorphism theme ok -->
-  
-  
+  <!-- Neumorphism theme ok -->
+
+
   <Design.PreviewWith>
     <StackPanel Margin="20" Width="250" Spacing="24">
       <StackPanel Spacing="12" >
@@ -23,7 +23,7 @@
   </Design.PreviewWith>
 
 
-	<!--Default ToggleSwitch theme-->
+  <!--Default ToggleSwitch theme-->
   <ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch">
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
     <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}" />
@@ -58,7 +58,7 @@
                               IsVisible="False" IsHitTestVisible="False"
                               Width="0" Height="0" />
           </Canvas>
-			    <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
+          <ContentPresenter Grid.Column="0" Name="PART_ContentPresenterLeft"
                                 Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
                                 FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
                                 FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
@@ -69,13 +69,13 @@
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Center">
 
-				    <ContentPresenter.ContentTemplate>
-					    <DataTemplate>
-						    <TextBlock Text="{Binding}"/>
-					    </DataTemplate>
-				    </ContentPresenter.ContentTemplate>
-			    </ContentPresenter>
-			  
+            <ContentPresenter.ContentTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding}"/>
+              </DataTemplate>
+            </ContentPresenter.ContentTemplate>
+          </ContentPresenter>
+
           <Grid Grid.Column="1" ClipToBounds="False">
             <!--Background-->
             <Border Name="Track"
@@ -88,7 +88,7 @@
                     Width="{TemplateBinding MinWidth}"
                     CornerRadius="100">
               <Border.BoxShadow>
-                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
                   <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                   <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                   <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -117,7 +117,7 @@
                         Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
                         ClipToBounds="False">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -127,24 +127,24 @@
               </AdornerLayer>
             </Grid>
           </Grid>
-			<ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
-						  Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
-						  FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
-						  FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
-						  FontWeight="{Binding FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
-						  FontStyle="{Binding FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
-						  Content="{TemplateBinding Content}"
-						  Margin="{TemplateBinding Padding}"
-						  HorizontalAlignment="Stretch"
-						  VerticalAlignment="Center">
+          <ContentPresenter Grid.Column="2" Name="PART_ContentPresenterRight"
+                  Foreground="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}"
+                  FontFamily="{Binding FontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                  FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                  FontWeight="{Binding FontWeight, RelativeSource={RelativeSource TemplatedParent}}"
+                  FontStyle="{Binding FontStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                  Content="{TemplateBinding Content}"
+                  Margin="{TemplateBinding Padding}"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Center">
 
-				<ContentPresenter.ContentTemplate>
-					<DataTemplate>
-						<TextBlock Text="{Binding}"/>
-					</DataTemplate>
-				</ContentPresenter.ContentTemplate>
-				
-			</ContentPresenter>
+            <ContentPresenter.ContentTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding}"/>
+              </DataTemplate>
+            </ContentPresenter.ContentTemplate>
+
+          </ContentPresenter>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -191,7 +191,7 @@
         <Setter.Value>
           <MultiBinding Converter="{StaticResource WidthToRenderTransformConverter}">
             <Binding Path="MinWidth" RelativeSource="{RelativeSource TemplatedParent}"/>
-			      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -238,64 +238,64 @@
 
     <!--LeftHeader content label-->
     <Style Selector="^.LeftHeader:not(:checked) /template/ ContentPresenter#PART_ContentPresenterLeft">
-    <Setter Property="Content">
-      <Setter.Value>
-        <MultiBinding Converter="{StaticResource StringReplaceConverter}">
-          <Binding Path="OffContent" RelativeSource="{RelativeSource TemplatedParent}"/>
-          <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
-        </MultiBinding>
-      </Setter.Value>
-    </Setter>
-  </Style>
+      <Setter Property="Content">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource StringReplaceConverter}">
+            <Binding Path="OffContent" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
 
-  <Style Selector="^.LeftHeader:not(:checked) /template/ ContentPresenter#PART_ContentPresenterRight">
-    <Setter Property="IsVisible" Value="False"/>
-  </Style>
+    <Style Selector="^.LeftHeader:not(:checked) /template/ ContentPresenter#PART_ContentPresenterRight">
+      <Setter Property="IsVisible" Value="False"/>
+    </Style>
 
-  <Style Selector="^.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterLeft">
-    <Setter Property="Content">
-      <Setter.Value>
-        <MultiBinding Converter="{StaticResource StringReplaceConverter}">
-          <Binding Path="OnContent" RelativeSource="{RelativeSource TemplatedParent}"/>
-          <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
-        </MultiBinding>
-      </Setter.Value>
-    </Setter>
-  </Style>
+    <Style Selector="^.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterLeft">
+      <Setter Property="Content">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource StringReplaceConverter}">
+            <Binding Path="OnContent" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}"/>
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
 
-  <Style Selector="^.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterRight">
-    <Setter Property="IsVisible" Value="False"/>
-  </Style>
+    <Style Selector="^.LeftHeader:checked /template/ ContentPresenter#PART_ContentPresenterRight">
+      <Setter Property="IsVisible" Value="False"/>
+    </Style>
 
 
-  <Style Selector="^:not(.notransitions) /template/ Border#Thumb">
-    <Setter Property="Transitions">
-      <Transitions>
-        <BrushTransition Property="Background" Duration="0:0:0.25" Easing="LinearEasing"/>
-      </Transitions>
-    </Setter>
-  </Style>
+    <Style Selector="^:not(.notransitions) /template/ Border#Thumb">
+      <Setter Property="Transitions">
+        <Transitions>
+          <BrushTransition Property="Background" Duration="0:0:0.25" Easing="LinearEasing"/>
+        </Transitions>
+      </Setter>
+    </Style>
 
-  <Style Selector="^:not(:checked) /template/ Border#Thumb">
-    <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
-  </Style>
+    <Style Selector="^:not(:checked) /template/ Border#Thumb">
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+    </Style>
 
-  <!--Default-->
-  <Style Selector="^:not(:checked):not(.Accent) /template/ Border#Thumb">
-    <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffForeground}" />
-  </Style>
+    <!--Default-->
+    <Style Selector="^:not(:checked):not(.Accent) /template/ Border#Thumb">
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffForeground}" />
+    </Style>
 
-  <Style Selector="^:checked:not(.Accent) /template/ Border#Thumb">
-    <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnForeground}" />
-  </Style>
+    <Style Selector="^:checked:not(.Accent) /template/ Border#Thumb">
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnForeground}" />
+    </Style>
 
-  <Style Selector="^:not(:checked):pointerover:not(.Accent) /template/ Border#Thumb">
-    <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOverForeground}"/>
-  </Style>
+    <Style Selector="^:not(:checked):pointerover:not(.Accent) /template/ Border#Thumb">
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOverForeground}"/>
+    </Style>
 
-  <Style Selector="^:checked:pointerover:not(.Accent) /template/ Border#Thumb">
-    <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOverForeground}"/>
-  </Style>
+    <Style Selector="^:checked:pointerover:not(.Accent) /template/ Border#Thumb">
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOverForeground}"/>
+    </Style>
 
     <!--Accent-->
     <Style Selector="^.Accent">
@@ -322,19 +322,19 @@
 
 
     <Style Selector="^:not(.Outline) /template/ Border#Track">
-		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
     </Style>
 
     <Style Selector="^:checked:not(.Outline) /template/ Border#Track">
-		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
     </Style>
 
     <Style Selector="^.Outline /template/ Border#Track">
-		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOffBackground}"/>
     </Style>
 
     <Style Selector="^.Outline:checked /template/ Border#Track">
-		  <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
+      <Setter Property="Background" Value="{TemplateBinding assist:ToggleSwitchAssist.SwitchTrackOnBackground}"/>
     </Style>
 
     <Style Selector="^:disabled">
@@ -348,7 +348,7 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
       </Style>
-    </Style> 
+    </Style>
   </ControlTheme>
 
 
@@ -415,7 +415,7 @@
                               Width="{TemplateBinding MinWidth, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=6}"
                               CornerRadius="100">
               <Border.BoxShadow>
-                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                   <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                   <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                   <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -432,7 +432,7 @@
                               Background="{TemplateBinding BorderBrush}"
                               Width="{TemplateBinding MinWidth, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=2}}"
                               CornerRadius="100">
-                
+
                 <!--Background-->
                 <Border Name="Track"
 								  Opacity="1"
@@ -443,7 +443,7 @@
 								  VerticalAlignment="Stretch"
 								  CornerRadius="100">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -474,7 +474,7 @@
                         Height="{TemplateBinding Height, Converter={StaticResource WidthMinusValueConverter}, ConverterParameter=40%}"
                         ClipToBounds="False">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />

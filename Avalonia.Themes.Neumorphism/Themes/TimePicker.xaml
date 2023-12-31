@@ -1,9 +1,10 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
-        xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
-        xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
-        xmlns:sys="using:System">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming"
+                    xmlns:sys="using:System">
 
 	<!-- Neumorphism theme ok -->
 
@@ -108,7 +109,7 @@
 							BorderBrush="{TemplateBinding BorderBrush}"
 							Background="{TemplateBinding Background}">
             <Border.BoxShadow>
-              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
+              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
                 <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                 <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                 <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -173,7 +174,7 @@
                                    Placement="Bottom">
                 <Border Background="{TemplateBinding Background}" CornerRadius="10" Margin="10">
                   <Border.BoxShadow>
-                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                    <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                       <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />

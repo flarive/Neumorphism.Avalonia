@@ -1,9 +1,10 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
 
-	<!-- Neumorphism theme ok -->
-	
+  <!-- Neumorphism theme ok -->
+
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -22,25 +23,25 @@
     </Border>
   </Design.PreviewWith>
 
-	<!--Default NumericUpDown theme-->
-	<ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
-		<Setter Property="BorderBrush" Value="Transparent"/>
-		<Setter Property="BorderThickness" Value="1"/>
+  <!--Default NumericUpDown theme-->
+  <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="1"/>
     <Setter Property="CornerRadius" Value="10"/>
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="HorizontalAlignment" Value="Left"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="Height" Value="40"/>
-		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="MinWidth" Value="80"/>
-		<Setter Property="Margin" Value="0"/>
-		<Setter Property="Padding" Value="0"/>
-		<Setter Property="Foreground" Value="Black"/>
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="Height" Value="40"/>
+    <Setter Property="Width" Value="NaN"/>
+    <Setter Property="MinWidth" Value="80"/>
+    <Setter Property="Margin" Value="0"/>
+    <Setter Property="Padding" Value="0"/>
+    <Setter Property="Foreground" Value="Black"/>
     <Setter Property="Focusable" Value="True" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_RootBorder"
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder"
                           Margin="{TemplateBinding Margin}"
                           Width="{TemplateBinding Width}"
                           ClipToBounds="True" IsEnabled="{TemplateBinding IsEnabled}"
@@ -48,17 +49,17 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
                           CornerRadius="{TemplateBinding CornerRadius}">
-					        <Border.BoxShadow>
-						        <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="2">
-							        <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-							        <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-							        <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-						        </MultiBinding>
-					        </Border.BoxShadow>
-					
-					<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
-						<Border Name="focusBorder" Background="{TemplateBinding Background}" Margin="0" />
-						<ButtonSpinner Name="PART_Spinner" Focusable="False"
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedInset}">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+            </MultiBinding>
+          </Border.BoxShadow>
+
+          <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+            <Border Name="focusBorder" Background="{TemplateBinding Background}" Margin="0" />
+            <ButtonSpinner Name="PART_Spinner" Focusable="False"
                                       BorderThickness="0"
                                       BorderBrush="Transparent"
                                       IsEnabled="{TemplateBinding IsEnabled}"
@@ -69,7 +70,7 @@
                                       AllowSpin="{TemplateBinding AllowSpin}"
                                       ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
                                       ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
-							<TextBox Name="PART_TextBox" Focusable="False"
+              <TextBox Name="PART_TextBox" Focusable="False"
                                     Theme="{StaticResource TextBoxNoMaterial}"
                                     IsEnabled="{TemplateBinding IsEnabled}"
                                     Background="Transparent"
@@ -83,11 +84,11 @@
                                     Text="{TemplateBinding Text}"
                                     AcceptsReturn="False"
                                     TextWrapping="NoWrap" />
-						</ButtonSpinner>
-					</Grid>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+            </ButtonSpinner>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
 
     <Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
       <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
@@ -98,8 +99,8 @@
       <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
     </Style>
 
-		<Style Selector="^.Filled">
-			<Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-		</Style>
-	</ControlTheme>
+    <Style Selector="^.Filled">
+      <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

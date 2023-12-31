@@ -92,7 +92,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
             await Dispatcher.UIThread.InvokeAsync(() =>
             {
                 var resultButtonId = "submit";
-                if (args is ObsoleteDialogButtonViewModel vm)
+                if (args is ResultBasedDialogButtonViewModel vm)
                     resultButtonId = vm.Result;
 
                 var result = new TextFieldDialogResult

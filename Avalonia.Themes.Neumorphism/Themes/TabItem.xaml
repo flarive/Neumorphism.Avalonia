@@ -4,11 +4,12 @@
       xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
       xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
       xmlns:system="clr-namespace:System;assembly=netstandard"
-      xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+      xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+      xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
   <!-- Neumorphism theme ok -->
-  
-  
+
+
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -31,8 +32,8 @@
   <SolidColorBrush x:Key="TabItemHeaderForegroundSelectedPressed" Color="Black"/>
   <SolidColorBrush x:Key="TabItemHeaderBackgroundDisabled" Color="Transparent"/>
   <SolidColorBrush x:Key="TabItemHeaderForegroundDisabled" Color="#FFCCCCCC"/>
-  
-  
+
+
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontWeight" Value="Normal" />
@@ -54,28 +55,28 @@
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
-          <Border
-              Name="PART_LayoutRoot"
-              Background="{TemplateBinding Background}"
-              BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              Height="{TemplateBinding assist:TabControlAssist.TabHeight}"
-              VerticalAlignment="Bottom"
-              Padding="{TemplateBinding Padding}">
-            <Panel>
-              <ContentPresenter
-                  Name="PART_ContentPresenter"
-                  Margin="0"
-                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                  Content="{TemplateBinding Header}"
-                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-                  FontFamily="{TemplateBinding FontFamily}"
-                  FontSize="{TemplateBinding FontSize}"
-                  FontWeight="{TemplateBinding FontWeight}" />
-              <Border Name="PART_SelectedPipe" Margin="0" CornerRadius="0"/>
-            </Panel>
-          </Border>
+        <Border
+            Name="PART_LayoutRoot"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            Height="{TemplateBinding assist:TabControlAssist.TabHeight}"
+            VerticalAlignment="Bottom"
+            Padding="{TemplateBinding Padding}">
+          <Panel>
+            <ContentPresenter
+                Name="PART_ContentPresenter"
+                Margin="0"
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Header}"
+                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                FontFamily="{TemplateBinding FontFamily}"
+                FontSize="{TemplateBinding FontSize}"
+                FontWeight="{TemplateBinding FontWeight}" />
+            <Border Name="PART_SelectedPipe" Margin="0" CornerRadius="0"/>
+          </Panel>
+        </Border>
       </ControlTemplate>
     </Setter>
 
@@ -83,7 +84,7 @@
     <Style Selector="^ /template/ Border#PART_LayoutRoot">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -98,19 +99,19 @@
       <Setter Property="Background" Value="{DynamicResource TabItemHeaderBackgroundSelected}" />
       <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderForegroundSelected}" />
     </Style>
-    
+
     <Style Selector="^:selected /template/ Border#PART_SelectedPipe">
       <Setter Property="IsVisible" Value="{TemplateBinding assist:TabControlAssist.UseHighlightStroke}" />
       <Setter Property="Background" Value="{TemplateBinding assist:TabControlAssist.HighlightStrokeBrush}" />
     </Style>
-    
-    
-    
+
+
+
     <!--  Selected state  -->
     <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -130,7 +131,7 @@
       <Setter Property="TextElement.Foreground" Value="{DynamicResource TabItemHeaderForegroundUnselectedPointerOver}" />
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -150,8 +151,8 @@
       <Setter Property="Background" Value="{DynamicResource TabItemHeaderBackgroundUnselectedPressed}" />
       <Setter Property="TextElement.Foreground" Value="{DynamicResource TabItemHeaderForegroundUnselectedPressed}" />
     </Style>
-    
-    
+
+
 
 
     <!--  Selected Pressed state  -->
@@ -165,8 +166,8 @@
       <Setter Property="Background" Value="{DynamicResource TabItemHeaderBackgroundDisabled}" />
       <Setter Property="TextElement.Foreground" Value="{DynamicResource TabItemHeaderForegroundDisabled}" />
     </Style>
-    
-    
+
+
 
     <!--  TabStripPlacement Top  -->
     <Style Selector="^[TabStripPlacement=Top] /template/ Border#PART_SelectedPipe">
@@ -224,7 +225,7 @@
       <Setter Property="HorizontalAlignment" Value="Right" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
-    
+
     <Style Selector="^[TabStripPlacement=Left] /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Margin" Value="20,0,20,0" />
     </Style>
@@ -254,7 +255,7 @@
       <Setter Property="HorizontalAlignment" Value="Left" />
       <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
-    
+
     <Style Selector="^[TabStripPlacement=Right] /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Margin" Value="20,0,20,0" />
     </Style>

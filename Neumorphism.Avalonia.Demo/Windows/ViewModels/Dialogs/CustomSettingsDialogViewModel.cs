@@ -70,8 +70,8 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
         #endregion
 
 
-        private ObsoleteDialogButtonViewModel _buttonOk;
-        public ObsoleteDialogButtonViewModel ButtonOk
+        private ResultBasedDialogButtonViewModel _buttonOk;
+        public ResultBasedDialogButtonViewModel ButtonOk
         {
             get { return _buttonOk; }
             set
@@ -81,8 +81,8 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
             }
         }
 
-        private ObsoleteDialogButtonViewModel _buttonCancel;
-        public ObsoleteDialogButtonViewModel ButtonCancel
+        private ResultBasedDialogButtonViewModel _buttonCancel;
+        public ResultBasedDialogButtonViewModel ButtonCancel
         {
             get { return _buttonCancel; }
             set
@@ -102,8 +102,8 @@ namespace Neumorphism.Avalonia.Demo.Windows.ViewModels.Dialogs
                 new KeyValuePair<string, string>("fr-FR", "French")
             ];
 
-            ButtonOk = new ObsoleteDialogButtonViewModel(this, "OK", "ok");
-            ButtonCancel = new ObsoleteDialogButtonViewModel(this, "Cancel", "cancel");
+            ButtonOk = new ResultBasedDialogButtonViewModel(this, "OK", "ok");
+            ButtonCancel = new ResultBasedDialogButtonViewModel(this, "Cancel", "cancel");
 
             LoadAppSettings();
         }

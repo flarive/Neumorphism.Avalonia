@@ -35,42 +35,42 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         /// Create some dialog buttons for use.
         /// </summary>
         /// <param name="cases">Which dialog buttons group case you need.</param> 
-        public static DialogButton[] CreateSimpleDialogButtons(DialogButtonsEnum cases)
+        public static DialogButton[] CreateSimpleDialogButtons(DialogButtons cases)
         {
             switch (cases)
             {
                 default:
-                case DialogButtonsEnum.Ok:
+                case DialogButtons.Ok:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_OK, Content = "OK"}
                     };
-                case DialogButtonsEnum.OkAbort:
+                case DialogButtons.OkAbort:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_ABORT, Content = "ABORT"},
                         new DialogButton {Result = DIALOG_RESULT_OK, Content = "OK"}
                     };
-                case DialogButtonsEnum.OkCancel:
+                case DialogButtons.OkCancel:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_CANCEL, Content = "CANCEL"},
                         new DialogButton {Result = DIALOG_RESULT_OK, Content = "OK"}
                     };
-                case DialogButtonsEnum.YesNo:
+                case DialogButtons.YesNo:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_NO, Content = "NO"},
                         new DialogButton {Result = DIALOG_RESULT_YES, Content = "YES"}
                     };
-                case DialogButtonsEnum.YesNoAbort:
+                case DialogButtons.YesNoAbort:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_ABORT, Content = "ABORT"},
                         new DialogButton {Result = DIALOG_RESULT_NO, Content = "NO"},
                         new DialogButton {Result = DIALOG_RESULT_YES, Content = "YES"}
                     };
-                case DialogButtonsEnum.YesNoCancel:
+                case DialogButtons.YesNoCancel:
                     return new[]
                     {
                         new DialogButton {Result = DIALOG_RESULT_CANCEL, Content = "CANCEL"},
@@ -97,7 +97,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 && (@params.RightDialogButtons == null || @params.RightDialogButtons.Length == 0))
             {
                 context.CenterDialogButtons = new ObservableCollection<DialogButtonViewModel>(
-                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtonsEnum.Ok)));
+                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtons.Ok)));
             }
 
 
@@ -123,7 +123,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 && (@params.RightDialogButtons == null || @params.RightDialogButtons.Length == 0))
             {
                 context.CenterDialogButtons = new ObservableCollection<DialogButtonViewModel>(
-                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtonsEnum.Ok)));
+                    CreateObsoleteButtonArray(context, CreateSimpleDialogButtons(DialogButtons.Ok)));
             }
 
 
@@ -167,7 +167,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 if (positiveButton != null)
                 {
                     context.RightDialogButtons.Add(
-                        new ObsoleteDialogButtonViewModel(context, positiveButton.Content, positiveButton.Result)
+                        new ResultBasedDialogButtonViewModel(context, positiveButton.Content, positiveButton.Result)
                         {
                             Command = context.SubmitCommand
                         });
@@ -190,6 +190,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             input.ContentMessage = @params.SupportingText;
             input.Borderless = @params.Borderless;
             input.WindowStartupLocation = @params.StartupLocation;
+            input.DialogShadowKind = (int)@params.ShadowKind;
 
             switch (@params.DialogIcon)
             {
@@ -263,8 +264,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             (window as IHasNegativeResult)?.SetNegativeResult(@params.NegativeResult);
         }
 
-        private static DialogButtonViewModel[] CreateObsoleteButtonArray(DialogWindowViewModel parent,
-            params DialogButton[] buttons)
+        private static DialogButtonViewModel[] CreateObsoleteButtonArray(DialogWindowViewModel parent, params DialogButton[] buttons)
         {
             var len = buttons.Length;
             var result = new DialogButtonViewModel[buttons.Length];
@@ -276,9 +276,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 if (button is null)
                     continue;
 
-                result[i] = new ObsoleteDialogButtonViewModel(parent, button.Content, button.Result)
+
+                result[i] = new ResultBasedDialogButtonViewModel(parent, button.Content, button.Result)
                 {
-                    IsPositiveButton = button.IsPositive
+                    IsPositiveButton = button.IsPositive,
+                    DialogButtonStyle = button.DialogButtonStyle,
                 };
             }
 

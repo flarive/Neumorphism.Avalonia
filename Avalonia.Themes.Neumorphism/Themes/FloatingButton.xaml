@@ -4,6 +4,7 @@
                     xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
                     xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
                     xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming"
                     xmlns:system="clr-namespace:System;assembly=netstandard">
 
   <Design.PreviewWith>
@@ -136,7 +137,7 @@
     <Style Selector="^:not(.no-material) /template/ Border#PART_ButtonRootBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="3">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.FixedOutset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -149,7 +150,7 @@
     <Style Selector="^:pointerover:not(.no-material) /template/ Border#PART_ButtonRootBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
             <DynamicResource ResourceKey="MaterialDesignShadowDark" />

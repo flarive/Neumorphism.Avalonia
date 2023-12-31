@@ -5,6 +5,7 @@
                     xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
                     xmlns:system="clr-namespace:System;assembly=netstandard"
                     xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming"
                     xmlns:sys="using:System">
 
 
@@ -75,7 +76,7 @@
 						CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
 						BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
             <Border.BoxShadow>
-              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
                 <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                 <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                 <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -163,7 +164,7 @@
 					   CornerRadius="{TemplateBinding Width, Converter={StaticResource HeightToCornerRadiusConverter}}"
 					   BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
             <Border.BoxShadow>
-              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+              <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
                 <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
                 <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                 <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -250,7 +251,7 @@
 								CornerRadius="{TemplateBinding Height, Converter={StaticResource HeightToCornerRadiusConverter}}"
 								BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
               <Border.BoxShadow>
-                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                   <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                   <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                   <DynamicResource ResourceKey="MaterialDesignShadowDark" />
@@ -332,7 +333,7 @@
 								CornerRadius="{TemplateBinding Width, Converter={StaticResource HeightToCornerRadiusConverter}}"
 								BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
               <Border.BoxShadow>
-                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
+                <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
                   <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
                   <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                   <DynamicResource ResourceKey="MaterialDesignShadowDark" />

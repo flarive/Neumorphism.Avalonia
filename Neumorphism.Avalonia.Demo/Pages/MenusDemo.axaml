@@ -5,6 +5,7 @@
               xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
               xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
               xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+              xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming;assembly=Avalonia.Themes.Neumorphism"
 							xmlns:sys="using:System"
               x:CompileBindings="True"
               x:DataType="viewModels:MenusDemoViewModel"
@@ -282,7 +283,7 @@
 							  <Panel Width="100" Height="100">
                   <Border Name="PART_RootBorder" Width="68" Height="68" Margin="20" Cursor="Hand" BorderBrush="Transparent" BorderThickness="1" CornerRadius="100">
                     <Border.BoxShadow>
-                      <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="6">
+                      <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Outset}">
                         <DynamicResource ResourceKey="CustomBoxShadowRadius"/>
                         <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                         <DynamicResource ResourceKey="MaterialDesignShadowDark" />

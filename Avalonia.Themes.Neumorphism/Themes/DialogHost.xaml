@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming"
                     xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia">
 
 
@@ -67,7 +68,7 @@
                 ClipToBounds="True"
                 Background="{DynamicResource MaterialDesignPaper}">
           <Border.BoxShadow>
-            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
               <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
               <DynamicResource ResourceKey="MaterialDesignShadowLight" />
               <DynamicResource ResourceKey="MaterialDesignShadowDark" />

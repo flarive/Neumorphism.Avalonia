@@ -1,13 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
-			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
-			xmlns:system="clr-namespace:System;assembly=netstandard"
-			xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ripple="clr-namespace:Avalonia.Themes.Neumorphism.Controls.Ripple"
+                    xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist"
+                    xmlns:system="clr-namespace:System;assembly=netstandard"
+                    xmlns:converters="clr-namespace:Avalonia.Themes.Neumorphism.Converters"
+                    xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming">
 
+  <!-- Neumorphism theme ok -->
 
-	<!-- Neumorphism theme ok -->
-	
   <Design.PreviewWith>
     <Border Padding="0">
       <ListBox>
@@ -21,36 +21,36 @@
 
 
   <!--Default ListBoxItem theme-->
-	<ControlTheme x:Key="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="Cursor" Value="Hand" />
-		<Setter Property="BorderThickness" Value="0" />
-		<Setter Property="Padding" Value="8" />
+  <ControlTheme x:Key="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="8" />
     <Setter Property="FontSize" Value="8" />
-		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
-		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
+    <Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
     <Setter Property="ClipToBounds" Value="True" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_RootBorder" Cursor="{TemplateBinding Cursor}"
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder" Cursor="{TemplateBinding Cursor}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						Margin="{TemplateBinding Margin}"
 						ClipToBounds="{TemplateBinding ClipToBounds}">
-					<Grid>
-						<Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
-						<Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
-						<ripple:RippleEffect Name="Ripple"
+          <Grid>
+            <Border Name="selectedBorder"	Background="{TemplateBinding Foreground}"/>
+            <Border Name="pointerOverBorder" Background="{TemplateBinding Foreground}"/>
+            <ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"
 											 ContentTemplate="{TemplateBinding ContentTemplate}"
 											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 											 Padding="{TemplateBinding Padding}">
-							<ContentPresenter Name="PART_ContentPresenter"
+              <ContentPresenter Name="PART_ContentPresenter"
 											  Background="{TemplateBinding Background}"
 											  BorderBrush="{TemplateBinding BorderBrush}"
 											  BorderThickness="{TemplateBinding BorderThickness}"
@@ -59,130 +59,35 @@
 											  Padding="{TemplateBinding Padding}"
 											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-						</ripple:RippleEffect>
-					</Grid>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+            </ripple:RippleEffect>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
   </ControlTheme>
 
-	<!--Class Outset-->
-	<ControlTheme x:Key="ListBoxItemOutset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="BorderThickness" Value="1" />
-    <Setter Property="BorderBrush" Value="Transparent" />
-		<Setter Property="Padding" Value="16,0,16,0" />
-		<Setter Property="CornerRadius" Value="0"/>
-		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="NaN"/>
-		<Setter Property="Margin" Value="10"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="HorizontalContentAlignment" Value="Left"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
-		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-    <Setter Property="FocusAdorner" Value="{x:Null}" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_RootBorder"
-						Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-						VerticalAlignment="{TemplateBinding VerticalAlignment}"
-						Height="{TemplateBinding Height}"
-						Width="{TemplateBinding Width}"
-						Margin="{TemplateBinding Margin}"
-						ClipToBounds="False"
-						CornerRadius="{TemplateBinding CornerRadius}">
-					<Border.BoxShadow>
-						<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="0">
-							<Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-							<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-							<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-						</MultiBinding>
-					</Border.BoxShadow>
-					
-					<Border Name="PART_InnerBorder" ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
-						<Grid>
-							<Border Name="selectedBorder"
-									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" />
-							<Border Name="pointerOverBorder"
-									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}"/>
-							<ripple:RippleEffect Name="Ripple" CornerRadius="100"
-												 RippleFill="White"
-												 RippleOpacity="0.4"
-												 Focusable="False"
-												 ContentTemplate="{TemplateBinding ContentTemplate}"
-												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												 Padding="{TemplateBinding Padding}">
-								<ContentPresenter Name="PART_ContentPresenter" CornerRadius="100"
-												  Background="{TemplateBinding Background}"
-												  BorderBrush="{TemplateBinding BorderBrush}"
-												  BorderThickness="{TemplateBinding BorderThickness}"
-												  ContentTemplate="{TemplateBinding ContentTemplate}"
-												  Content="{TemplateBinding Content}"
-												  Padding="{TemplateBinding Padding}"
-												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-							</ripple:RippleEffect>
-						</Grid>
-					</Border>
-				</Border>
-			</ControlTemplate>
-		</Setter>
-
-		<Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
-
-		<Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
-
-		<Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
-
-		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
-
-    <!-- Focused State (custom FocusAdorner) -->
-    <Style Selector="^:focus">
-      <Style Selector="^ /template/ Border#PART_RootBorder">
-        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
-      </Style>
-    </Style>
-	</ControlTheme>
-  
-
-	<!--Class Inset-->
-	<ControlTheme x:Key="ListBoxItemInset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
-		<Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
-		<Setter Property="Background" Value="Transparent" />
+  <!--Class Outset-->
+  <ControlTheme x:Key="ListBoxItemOutset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
+    <Setter Property="Background" Value="Transparent" />
     <Setter Property="BorderThickness" Value="1" />
     <Setter Property="BorderBrush" Value="Transparent" />
-		<Setter Property="Padding" Value="16,0,16,0" />
-		<Setter Property="CornerRadius" Value="0"/>
-		<Setter Property="Width" Value="NaN"/>
-		<Setter Property="Height" Value="NaN"/>
-		<Setter Property="Margin" Value="10"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="HorizontalContentAlignment" Value="Left"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="ClipToBounds" Value="False" />
-		<Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
-		<Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="Padding" Value="16,0,16,0" />
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Width" Value="NaN"/>
+    <Setter Property="Height" Value="NaN"/>
+    <Setter Property="Margin" Value="10"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
+    <Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
     <Setter Property="FocusAdorner" Value="{x:Null}" />
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_RootBorder"
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}"
@@ -193,22 +98,21 @@
 						Margin="{TemplateBinding Margin}"
 						ClipToBounds="False"
 						CornerRadius="{TemplateBinding CornerRadius}">
-					<Border.BoxShadow>
-						<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="1">
-						  <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-						  <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-						  <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-						</MultiBinding>
-					</Border.BoxShadow>
-					
-					
-					<Border Name="PART_InnerBorder" ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
-						<Grid>
-							<Border Name="selectedBorder"
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+            </MultiBinding>
+          </Border.BoxShadow>
+
+          <Border Name="PART_InnerBorder" ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+            <Grid>
+              <Border Name="selectedBorder"
 									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" />
-							<Border Name="pointerOverBorder"
-									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" />
-							<ripple:RippleEffect Name="Ripple"
+              <Border Name="pointerOverBorder"
+									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}"/>
+              <ripple:RippleEffect Name="Ripple" CornerRadius="100"
 												 RippleFill="White"
 												 RippleOpacity="0.4"
 												 Focusable="False"
@@ -216,7 +120,7 @@
 												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 												 Padding="{TemplateBinding Padding}">
-								<ContentPresenter Name="PART_ContentPresenter"
+                <ContentPresenter Name="PART_ContentPresenter" CornerRadius="100"
 												  Background="{TemplateBinding Background}"
 												  BorderBrush="{TemplateBinding BorderBrush}"
 												  BorderThickness="{TemplateBinding BorderThickness}"
@@ -225,28 +129,28 @@
 												  Padding="{TemplateBinding Padding}"
 												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
-							</ripple:RippleEffect>
-						</Grid>
-					</Border>
-				</Border>
-			</ControlTemplate>
-		</Setter>
+              </ripple:RippleEffect>
+            </Grid>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
 
-		<Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
-		<Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
-		<Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
+    <Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
-		<Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
-			<Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
-		</Style>
+    <Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
 
     <!-- Focused State (custom FocusAdorner) -->
     <Style Selector="^:focus">
@@ -254,7 +158,103 @@
         <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
       </Style>
     </Style>
-	</ControlTheme>
+  </ControlTheme>
+
+
+  <!--Class Inset-->
+  <ControlTheme x:Key="ListBoxItemInset" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Padding" Value="16,0,16,0" />
+    <Setter Property="CornerRadius" Value="0"/>
+    <Setter Property="Width" Value="NaN"/>
+    <Setter Property="Height" Value="NaN"/>
+    <Setter Property="Margin" Value="10"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="assist:SelectionControlAssist.Background" Value="{DynamicResource MaterialDesignSelection}"/>
+    <Setter Property="assist:SelectionControlAssist.Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Height="{TemplateBinding Height}"
+						Width="{TemplateBinding Width}"
+						Margin="{TemplateBinding Margin}"
+						ClipToBounds="False"
+						CornerRadius="{TemplateBinding CornerRadius}">
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+            </MultiBinding>
+          </Border.BoxShadow>
+
+
+          <Border Name="PART_InnerBorder" ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+            <Grid>
+              <Border Name="selectedBorder"
+									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" />
+              <Border Name="pointerOverBorder"
+									Background="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CornerRadius}" />
+              <ripple:RippleEffect Name="Ripple"
+												 RippleFill="White"
+												 RippleOpacity="0.4"
+												 Focusable="False"
+												 ContentTemplate="{TemplateBinding ContentTemplate}"
+												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												 Padding="{TemplateBinding Padding}">
+                <ContentPresenter Name="PART_ContentPresenter"
+												  Background="{TemplateBinding Background}"
+												  BorderBrush="{TemplateBinding BorderBrush}"
+												  BorderThickness="{TemplateBinding BorderThickness}"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Content="{TemplateBinding Content}"
+												  Padding="{TemplateBinding Padding}"
+												  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+              </ripple:RippleEffect>
+            </Grid>
+          </Border>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_RootBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
+
+    <Style Selector="^[CornerRadius=0] /template/ Border#PART_InnerBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
+
+    <Style Selector="^[CornerRadius=0] /template/ Border#selectedBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
+
+    <Style Selector="^[CornerRadius=0] /template/ Border#pointerOverBorder">
+      <Setter Property="CornerRadius" Value="{TemplateBinding Height, Converter={StaticResource ControlHeightToCornerRadiusConverter}, ConverterParameter=0}"/>
+    </Style>
+
+    <!-- Focused State (custom FocusAdorner) -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_RootBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+      </Style>
+    </Style>
+  </ControlTheme>
 
 
   <!-- Class Border -->
@@ -302,7 +302,7 @@
       </ControlTemplate>
     </Setter>
 
-		<!--All-->
+    <!--All-->
     <Style Selector="^">
       <Setter Property="BorderThickness" Value="1,1,1,0"/>
       <Setter Property="CornerRadius" Value="0"/>
@@ -312,7 +312,7 @@
     <!--Only first one-->
     <Style Selector="^:nth-child(1)">
       <Setter Property="BorderThickness" Value="1,1,1,0"/>
-      <Setter Property="CornerRadius" Value="10,10,0,0"/>    
+      <Setter Property="CornerRadius" Value="10,10,0,0"/>
     </Style>
 
     <!--Only last one-->
@@ -320,42 +320,42 @@
       <Setter Property="BorderThickness" Value="1,1,1,1"/>
       <Setter Property="CornerRadius" Value="0,0,10,10"/>
     </Style>
-	</ControlTheme>
+  </ControlTheme>
 
 
 
 
-	<!--Shared theme-->
-	<ControlTheme x:Key="ListBoxItemShared" TargetType="ListBoxItem">
-		<!-- Transitions -->
-		<Style Selector="^:not(.notransitions) /template/ Border#selectedBorder,
+  <!--Shared theme-->
+  <ControlTheme x:Key="ListBoxItemShared" TargetType="ListBoxItem">
+    <!-- Transitions -->
+    <Style Selector="^:not(.notransitions) /template/ Border#selectedBorder,
 					   ^:not(.notransitions) /template/ Border#pointerOverBorder">
-			<Setter Property="Transitions">
-				<Transitions>
-					<DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing" />
-				</Transitions>
-			</Setter>
-		</Style>
-    
-		<Style Selector="^:disabled">
-			<Setter Property="Opacity" Value="0.56" />
-			<Setter Property="Cursor" Value="Hand" />
+      <Setter Property="Transitions">
+        <Transitions>
+          <DoubleTransition Duration="0:0:0.25" Property="Opacity" Easing="LinearEasing" />
+        </Transitions>
+      </Setter>
     </Style>
-    
-		<Style Selector="^:not(:disabled):pointerover /template/ Border#pointerOverBorder">
-			<Setter Property="Opacity" Value="0.06" />
-		</Style>
-    
-		<Style Selector="^:selected /template/ Border#selectedBorder">
-			<Setter Property="Background" Value="{TemplateBinding assist:SelectionControlAssist.Background}" />
-		</Style>
 
-		<Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
-			<Setter Property="TextBlock.Foreground" Value="{TemplateBinding assist:SelectionControlAssist.Foreground}" />
-		</Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.56" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
 
-		<Style Selector="^:not(:pointerover) /template/ Border#pointerOverBorder, ^:not(:selected) /template/ Border#selectedBorder">
-			<Setter Property="Opacity" Value="0" />
-		</Style>
-	</ControlTheme>
+    <Style Selector="^:not(:disabled):pointerover /template/ Border#pointerOverBorder">
+      <Setter Property="Opacity" Value="0.06" />
+    </Style>
+
+    <Style Selector="^:selected /template/ Border#selectedBorder">
+      <Setter Property="Background" Value="{TemplateBinding assist:SelectionControlAssist.Background}" />
+    </Style>
+
+    <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="TextBlock.Foreground" Value="{TemplateBinding assist:SelectionControlAssist.Foreground}" />
+    </Style>
+
+    <Style Selector="^:not(:pointerover) /template/ Border#pointerOverBorder, ^:not(:selected) /template/ Border#selectedBorder">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

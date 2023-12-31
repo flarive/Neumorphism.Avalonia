@@ -1,4 +1,6 @@
-﻿namespace Avalonia.Themes.Neumorphism.Resources.Naming
+﻿using System.Data.Common;
+
+namespace Avalonia.Themes.Neumorphism.Resources.Naming
 {
     /// <summary>
     /// Constant naming collections of templated elements in control. 
@@ -24,7 +26,7 @@
         public static string PartContentPanel => "PART_ContentPanel";
 
         public static string PartInnerBorder => "PART_InnerBorder";
-        
+
         /// <summary>
         /// General use.
         /// Please use this name on templated border of controls that have feedback on hovered by cursor
@@ -179,17 +181,7 @@
 
         #region For Dialog
 
-        //public static string PartRootBorder => "PART_RootBorder";
-
-        //public static string PartRootPanel => "PART_RootPanel";
-
-        //public static string PartScrollViewer => "PART_ScrollViewer";
-
-        //public static string PartContentPanel => "PART_ContentPanel";
-
         public static string PartSupportingText => "PART_SupportingText";
-
-        //public static string PartContentPresenter => "PART_ContentPresenter";
 
         public static string PartTextFieldsContainer => "PART_TextFields";
 
@@ -235,5 +227,16 @@
         /// Use this name on primary separator of any control template.
         /// </summary>
         public static string PartSeparator => "PART_Separator";
+    }
+
+    public static class BoxShadowsStyle
+    {
+        public static string Default => "0";
+        public static string Inset => "1";
+        public static string FixedInset => "2";
+        public static string FixedOutset => "3";
+        public static string InsetAndOutset => "4";
+        public static string SmallerOutset => "5";
+        public static string Outset => "6";
     }
 }
