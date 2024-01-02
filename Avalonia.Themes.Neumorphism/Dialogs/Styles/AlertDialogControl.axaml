@@ -24,7 +24,7 @@
                 <Border Name="PART_RootBorder" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}">
                   <Border.BoxShadow>
                         <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}">
-                          <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                          <CompiledBinding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                           <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                           <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                           <CompiledBinding Path="DialogShadowKind"/>
@@ -69,19 +69,19 @@
 
                             <DockPanel Name="{x:Static naming:PartNames.PartButtonsPanel}" Margin="0">
                               
-                            <ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" IsVisible="{Binding !!LeftDialogButtons.Count}"
+                            <ItemsControl Name="{x:Static naming:PartNames.PartLeftButtonPlacement}" IsVisible="{CompiledBinding !!LeftDialogButtons.Count}"
                                           DockPanel.Dock="Left" HorizontalAlignment="Left"
                                           ItemsSource="{CompiledBinding LeftDialogButtons}"
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
                                           ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
 
-                            <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" IsVisible="{Binding !!CenterDialogButtons.Count}"
+                            <ItemsControl Name="{x:Static naming:PartNames.PartCenterButtonPlacement}" IsVisible="{CompiledBinding !!CenterDialogButtons.Count}"
                                           DockPanel.Dock="Bottom" HorizontalAlignment="Center"
                                           ItemsSource="{CompiledBinding CenterDialogButtons}"
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"
                                           ItemsPanel="{StaticResource DialogButtonPlacementPanel}" />
 
-                            <ItemsControl Name="{x:Static naming:PartNames.PartRightButtonPlacement}" IsVisible="{Binding !!RightDialogButtons.Count}"
+                            <ItemsControl Name="{x:Static naming:PartNames.PartRightButtonPlacement}" IsVisible="{CompiledBinding !!RightDialogButtons.Count}"
                                           DockPanel.Dock="Right" HorizontalAlignment="Right"
                                           ItemsSource="{CompiledBinding RightDialogButtons}"
                                           ItemTemplate="{StaticResource DialogButtonTemplate}"

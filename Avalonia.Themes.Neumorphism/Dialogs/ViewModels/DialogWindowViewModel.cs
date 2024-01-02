@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Layout;
-using Avalonia.Themes.Neumorphism.Dialogs.Enums;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements.Header.Icons;
 using Avalonia.Threading;

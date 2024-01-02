@@ -22,7 +22,7 @@
                         ClipToBounds="{TemplateBinding ClipToBounds}">
                   <Border.BoxShadow>
                     <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
-                      <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+                      <CompiledBinding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
                       <DynamicResource ResourceKey="MaterialDesignShadowLight" />
                       <DynamicResource ResourceKey="MaterialDesignShadowDark" />
                     </MultiBinding>
