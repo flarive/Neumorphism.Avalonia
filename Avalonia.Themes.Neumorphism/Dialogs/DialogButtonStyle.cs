@@ -12,7 +12,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             set { _backgroundButtonColor = value; }
         }
 
-        private DialogButtonForegroundColor _foregroundButtonColor = DialogButtonForegroundColor.Black;
+        private DialogButtonForegroundColor _foregroundButtonColor = DialogButtonForegroundColor.Default;
 
         public DialogButtonForegroundColor ForegroundButtonColor
         {

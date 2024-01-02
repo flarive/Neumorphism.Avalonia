@@ -13,7 +13,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
 
         public DialogButton()
         {
-            DialogButtonStyle = new DialogButtonStyle(DialogButtonBackgroundColor.Default, DialogButtonForegroundColor.Black);
+            DialogButtonStyle = new DialogButtonStyle(DialogButtonBackgroundColor.Default, DialogButtonForegroundColor.Default);
         }
     }
 }

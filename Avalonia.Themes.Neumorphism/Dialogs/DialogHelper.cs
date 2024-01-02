@@ -280,7 +280,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
                 result[i] = new ResultBasedDialogButtonViewModel(parent, button.Content, button.Result)
                 {
                     IsPositiveButton = button.IsPositive,
-                    DialogButtonStyle = button.DialogButtonStyle,
+                    DialogButtonStyle = button.DialogButtonStyle
                 };
             }
 
