@@ -287,8 +287,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             return result;
         }
 
-        private static TextFieldViewModel[] TextFieldsBuilder(TextFieldDialogViewModel parent,
-            params TextFieldBuilderParams[] @params)
+        private static TextFieldViewModel[] TextFieldsBuilder(TextFieldDialogViewModel parent, params TextFieldBuilderParams[] @params)
         {
             var len = @params.Length;
             var result = new TextFieldViewModel[len];

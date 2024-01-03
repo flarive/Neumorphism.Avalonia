@@ -38,7 +38,6 @@
 
   <DataTemplate x:Key="DialogButtonTemplate" DataType="elements:DialogButtonViewModel">
     <Panel Tag="{CompiledBinding DialogButtonStyle.BackgroundButtonColor}" Margin="10">
-      
       <Panel.Styles>
         <Style Selector="Panel[Tag=0] Button">
           <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
@@ -51,28 +50,28 @@
         </Style>
       </Panel.Styles>
       
-      <Button Name="aaa" Height="32" Width="NaN" Margin="0" FontWeight="Normal"
+      <Button Height="32" Width="NaN" Margin="0" FontWeight="Normal"
               Tag="{CompiledBinding DialogButtonStyle.ForegroundButtonColor}"
               Content="{CompiledBinding Content, FallbackValue=''}"
               Command="{CompiledBinding Command}"
               CommandParameter="{CompiledBinding}">
-              <Button.Styles>
-                <Style Selector="Button[Tag=0]">
-                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-                </Style>
-                <Style Selector="Button[Tag=1]">
-                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
-                </Style>
-                <Style Selector="Button[Tag=2]">
-                  <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBackground}"/>
-                </Style>
-                <Style Selector="Button[Tag=3]">
-                  <Setter Property="Foreground" Value="White"/>
-                </Style>
-                <Style Selector="Button[Tag=4]">
-                  <Setter Property="Foreground" Value="Black"/>
-                </Style>
-              </Button.Styles>
+        <Button.Styles>
+            <Style Selector="Button[Tag=0]">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+            </Style>
+            <Style Selector="Button[Tag=1]">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}"/>
+            </Style>
+            <Style Selector="Button[Tag=2]">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBackground}"/>
+            </Style>
+            <Style Selector="Button[Tag=3]">
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+            <Style Selector="Button[Tag=4]">
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
+        </Button.Styles>
       </Button>
     </Panel>
   </DataTemplate>
