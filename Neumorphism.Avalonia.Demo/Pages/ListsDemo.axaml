@@ -24,7 +24,7 @@
 					<!--****************************************************************-->
 					<showMeTheXaml:XamlDisplay UniqueId="List1">
 							<ListBox Width="300" Theme="{StaticResource ListBoxCard}" ToolTip.Tip='List box with theme "ListBoxCard" applied and simple text blocks'>
-                <TextBlock Text="Text 1"/>
+								<TextBlock Text="Text 1"/>
 								<TextBlock Text="Text 2"/>
 								<TextBlock Text="Text 3"/>
 								<TextBlock Text="Text 4"/>
