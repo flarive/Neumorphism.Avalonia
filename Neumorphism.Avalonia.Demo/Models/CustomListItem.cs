@@ -26,5 +26,16 @@ namespace Neumorphism.Avalonia.Demo.Models
                 OnPropertyChanged(nameof(Icon));
             }
         }
+
+        private bool _enabled = true;
+        public bool Enabled
+        {
+            get { return _enabled; }
+            set
+            {
+                _enabled = value;
+                OnPropertyChanged(nameof(Enabled));
+            }
+        }
     }
 }

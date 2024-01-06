@@ -204,10 +204,6 @@
         <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
       </Style>
 
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundDisabled}" />
-      </Style>
-
       <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
       </Style>
@@ -448,7 +444,6 @@
 
   <!--Popup MenuFlatTopLevelMenuItem level 2 theme-->
   <ControlTheme x:Key="MenuFlatTopLevelMenuItem2" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
-    <!--<Setter Property="Background" Value="Transparent" />-->
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopRight" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="RightEdgeAlignedTop" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
@@ -465,7 +460,6 @@
 
   <!--Popup MenuCapsuleBarOutsetMenuItem level 0 theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem0" TargetType="MenuItem" BasedOn="{StaticResource NoMaterialTopLevelMenuItem}">
-    <!--<Setter Property="Background" Value="Transparent" />-->
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopLeft" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="Bottom" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
@@ -490,7 +484,6 @@
 
   <!--Popup MenuCapsuleBarOutsetMenuItem level 1 theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem1" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
-    <!--<Setter Property="Background" Value="Transparent" />-->
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopRight" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="RightEdgeAlignedTop" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />
@@ -515,7 +508,6 @@
 
   <!--Popup MenuCapsuleBarOutsetMenuItem level 2 theme-->
   <ControlTheme x:Key="MenuCapsuleBarOutsetMenuItem2" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
-    <!--<Setter Property="Background" Value="Transparent" />-->
     <Setter Property="assist:MenuAssist.PopupAnchor" Value="TopRight" />
     <Setter Property="assist:MenuAssist.PopupPlacement" Value="RightEdgeAlignedTop" />
     <Setter Property="assist:MenuAssist.PopupHorizontalOffset" Value="0" />

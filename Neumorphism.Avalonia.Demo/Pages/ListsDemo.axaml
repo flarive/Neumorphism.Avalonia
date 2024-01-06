@@ -6,6 +6,7 @@
 			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
 			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
 			xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+      xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
 			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
 			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			xmlns:system="clr-namespace:System;assembly=System.Runtime"
@@ -145,6 +146,7 @@
                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 <Setter Property="Margin" Value="8,3,8,3"/>
                 <Setter Property="Padding" Value="10,0,5,0"/>
+                <Setter Property="IsEnabled" Value="{Binding $self.((models:CustomListItem)DataContext).Enabled}" />
               </Style>
             </ListBox.Styles>
             <ListBox.ItemsPanel>
@@ -154,7 +156,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-									<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" PointerPressed="Grid_PointerPressed">
+									<Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" Background="Transparent" PointerPressed="Grid_PointerPressed">
 										<icons:MaterialIcon Grid.Column="0" Kind="{CompiledBinding Icon}" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
 										<TextBlock Grid.Column="1" Text="{CompiledBinding Title}" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
 										<icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />
@@ -186,7 +188,7 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
               <DataTemplate>
-                <Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" PointerPressed="Grid_PointerPressed">
+                <Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" Background="Transparent" PointerPressed="Grid_PointerPressed">
                   <icons:MaterialIcon Grid.Column="0" Kind="{CompiledBinding Icon}" Width="24" Height="24" Margin="0,0,8,0" Foreground="Gray" />
                   <TextBlock Grid.Column="1" Text="{CompiledBinding Title}" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignToolForeground}" />
                   <icons:MaterialIcon Grid.Column="2" Kind="ChevronRight" Width="24" Height="24" HorizontalAlignment="Right" Foreground="Gray" />

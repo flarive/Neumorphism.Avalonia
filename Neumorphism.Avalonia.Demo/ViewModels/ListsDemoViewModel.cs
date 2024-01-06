@@ -57,7 +57,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                 new CustomListItem() { Title = "List Item 1", Icon = MaterialIconKind.Heart },
                 new CustomListItem() { Title = "List Item 2", Icon = MaterialIconKind.Heart },
                 new CustomListItem() { Title = "List Item 3", Icon = MaterialIconKind.Heart },
-                new CustomListItem() { Title = "List Item 4", Icon = MaterialIconKind.Heart }
+                new CustomListItem() { Title = "List Item 4 (disabled)", Icon = MaterialIconKind.Heart, Enabled = false }
             };
 
             return listItems;

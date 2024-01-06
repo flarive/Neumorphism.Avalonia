@@ -55,13 +55,12 @@
                                    <Grid>
                                         <Grid RowDefinitions="*, Auto" Margin="21" Height="68">
                                           <Button Grid.Row="0" Theme="{StaticResource ButtonIcon}">
-                                            <icons:MaterialIcon 
-                                                                     Kind="{Binding Kind}"
-                                                                     VerticalAlignment="Center"
-                                                                     HorizontalAlignment="Center"
-                                                                     Foreground="DarkGray"
-                                                                     Width="28"
-                                                                     Height="28" />
+                                            <icons:MaterialIcon Kind="{Binding Kind}"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Foreground="DarkGray"
+                                                                Width="28"
+                                                                Height="28" />
                                           </Button>
                                           <TextBlock Grid.Row="1" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" FontSize="12" FontWeight="Regular" MaxWidth="64"
                                                        Text="{Binding Kind}"
