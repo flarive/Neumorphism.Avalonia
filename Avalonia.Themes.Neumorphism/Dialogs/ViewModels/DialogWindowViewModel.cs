@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Reactive.Linq;
+﻿using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Themes.Neumorphism.Dialogs.ViewModels.Elements;

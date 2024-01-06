@@ -1,5 +1,5 @@
 ﻿using Avalonia.Themes.Neumorphism.Models;
-using System.Collections.ObjectModel;
+using Material.Icons;
 
 namespace Neumorphism.Avalonia.Demo.Models
 {
@@ -16,8 +16,8 @@ namespace Neumorphism.Avalonia.Demo.Models
             }
         }
 
-        private string _icon;
-        public string Icon
+        private MaterialIconKind _icon;
+        public MaterialIconKind Icon
         {
             get { return _icon; }
             set

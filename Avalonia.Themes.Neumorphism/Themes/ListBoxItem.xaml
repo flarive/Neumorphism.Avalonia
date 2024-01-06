@@ -24,7 +24,6 @@
   <ControlTheme x:Key="{x:Type ListBoxItem}" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Cursor" Value="Hand" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="Padding" Value="8" />
     <Setter Property="FontSize" Value="8" />
@@ -46,7 +45,6 @@
             <ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"
-											 ContentTemplate="{TemplateBinding ContentTemplate}"
 											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 											 Padding="{TemplateBinding Padding}">
@@ -116,7 +114,6 @@
 												 RippleFill="White"
 												 RippleOpacity="0.4"
 												 Focusable="False"
-												 ContentTemplate="{TemplateBinding ContentTemplate}"
 												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 												 Padding="{TemplateBinding Padding}">
@@ -212,7 +209,6 @@
 												 RippleFill="White"
 												 RippleOpacity="0.4"
 												 Focusable="False"
-												 ContentTemplate="{TemplateBinding ContentTemplate}"
 												 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 												 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 												 Padding="{TemplateBinding Padding}">
@@ -283,7 +279,6 @@
             <ripple:RippleEffect Name="Ripple"
 											 RippleFill="White"
 											 Focusable="False"
-											 ContentTemplate="{TemplateBinding ContentTemplate}"
 											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 											 Padding="{TemplateBinding Padding}">
@@ -327,6 +322,7 @@
 
   <!--Shared theme-->
   <ControlTheme x:Key="ListBoxItemShared" TargetType="ListBoxItem">
+    <Setter Property="Cursor" Value="Hand" />
     <!-- Transitions -->
     <Style Selector="^:not(.notransitions) /template/ Border#selectedBorder,
 					   ^:not(.notransitions) /template/ Border#pointerOverBorder">
