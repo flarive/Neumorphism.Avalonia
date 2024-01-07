@@ -13,7 +13,8 @@ namespace Avalonia.Themes.Neumorphism.Colors.ColorManipulation
 
         public static Lab ToLab(this Xyz xyz)
         {
-            double XyzLab(double v) {
+            double XyzLab(double v)
+            {
                 if (v > LabConstants.E)
                     return Math.Pow(v, 1 / 3.0);
                 return (v * LabConstants.K + 16) / 116;

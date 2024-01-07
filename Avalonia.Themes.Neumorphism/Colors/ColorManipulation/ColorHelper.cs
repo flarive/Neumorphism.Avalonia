@@ -1,12 +1,14 @@
 ﻿using System;
-using AvaloniaMedia=Avalonia.Media;
+using AvaloniaMedia = Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Colors.ColorManipulation
 {
     public static class ColorHelper
     {
-        public static AvaloniaMedia.Color ContrastingForegroundColor(this AvaloniaMedia.Color color) {
-            double RgbSrgb(double d) {
+        public static AvaloniaMedia.Color ContrastingForegroundColor(this AvaloniaMedia.Color color)
+        {
+            double RgbSrgb(double d)
+            {
                 d = d / 255.0;
                 return d > 0.03928
                     ? d = Math.Pow((d + 0.055) / 1.055, 2.4)
@@ -21,17 +23,20 @@ namespace Avalonia.Themes.Neumorphism.Colors.ColorManipulation
             return luminance > 0.179 ? AvaloniaMedia.Colors.Black : AvaloniaMedia.Colors.White;
         }
 
-        public static AvaloniaMedia.Color ShiftLightness(this AvaloniaMedia.Color color, int amount = 1) {
+        public static AvaloniaMedia.Color ShiftLightness(this AvaloniaMedia.Color color, int amount = 1)
+        {
             var lab = color.ToLab();
             var shifted = new Lab(lab.L - LabConstants.Kn * amount, lab.A, lab.B);
             return shifted.ToColor();
         }
 
-        public static AvaloniaMedia.Color Darken(this AvaloniaMedia.Color color, int amount = 1) {
+        public static AvaloniaMedia.Color Darken(this AvaloniaMedia.Color color, int amount = 1)
+        {
             return color.ShiftLightness(amount);
         }
 
-        public static AvaloniaMedia.Color Lighten(this AvaloniaMedia.Color color, int amount = 1) {
+        public static AvaloniaMedia.Color Lighten(this AvaloniaMedia.Color color, int amount = 1)
+        {
             return color.ShiftLightness(-amount);
         }
 
@@ -41,13 +46,14 @@ namespace Avalonia.Themes.Neumorphism.Colors.ColorManipulation
         /// <param name="color"></param>
         /// <param name="other"></param>
         /// <returns></returns>
-        public static double Difference(this AvaloniaMedia.Color color, AvaloniaMedia.Color other) {
-            var lab1 = color.ToLab();
-            var lab2 = color.ToLab();
+        //public static double Difference(this AvaloniaMedia.Color color, AvaloniaMedia.Color other)
+        //{
+        //    var lab1 = color.ToLab();
+        //    var lab2 = color.ToLab();
 
-            return Math.Sqrt(Math.Pow(lab2.L - lab1.L, 2) +
-                             Math.Pow(lab2.A - lab1.A, 2) +
-                             Math.Pow(lab2.B - lab1.B, 2));
-        }
+        //    return Math.Sqrt(Math.Pow(lab2.L - lab1.L, 2) +
+        //                     Math.Pow(lab2.A - lab1.A, 2) +
+        //                     Math.Pow(lab2.B - lab1.B, 2));
+        //}
     }
 }
