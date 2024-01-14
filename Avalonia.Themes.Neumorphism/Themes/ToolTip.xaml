@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="using:System">
+  
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -18,6 +19,8 @@
 
   <sys:Double x:Key="ToolTipContentMaxWidth">320</sys:Double>
 
+
+  <!--Default Button theme-->
   <ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">
     <Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
     <Setter Property="Background" Value="{DynamicResource ToolTipBackground}" />
@@ -54,4 +57,59 @@
       <Setter Property="Opacity" Value="1" />
     </Style>
   </ControlTheme>
+
+
+
+  <!--No Material theme-->
+  <ControlTheme x:Key="TooltipNoMaterial" TargetType="ToolTip">
+    <Setter Property="Foreground" Value="{DynamicResource ToolTipForeground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="FontSize" Value="{DynamicResource ToolTipContentThemeFontSize}" />
+    <Setter Property="Padding" Value="{DynamicResource ToolTipBorderThemePadding}" />
+    <Setter Property="MaxWidth" Value="{DynamicResource ToolTipContentMaxWidth}" />
+    <Setter Property="Opacity" Value="0" />
+    <Setter Property="Transitions">
+      <Transitions>
+        <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
+        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+      </Transitions>
+    </Setter>
+
+    <Style Selector="^ /template/ Border#PART_LayoutRoot">
+      <Style.Animations>
+        <Animation Duration="0:0:0.2" FillMode="Forward" Easing="LinearEasing">
+          <KeyFrame Cue="0%">
+            <Setter Property="TranslateTransform.Y" Value="10" />
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="TranslateTransform.Y" Value="0" />
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+    
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_LayoutRoot"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                Padding="{TemplateBinding Padding}"
+                CornerRadius="{TemplateBinding CornerRadius}">
+          <ContentPresenter Name="PART_ContentPresenter"
+                            MaxWidth="{TemplateBinding MaxWidth}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            TextBlock.TextWrapping="Wrap"/>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:open">
+      <Setter Property="Opacity" Value="1" />
+    </Style>
+  </ControlTheme>
+  
 </ResourceDictionary>
