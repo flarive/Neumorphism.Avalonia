@@ -189,6 +189,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
             input.ContentHeader = @params.ContentHeader;
             input.ContentMessage = @params.SupportingText;
             input.Borderless = @params.Borderless;
+            input.ShowInTaskbar = @params.ShowInTaskbar;
             input.WindowStartupLocation = @params.StartupLocation;
             input.DialogShadowKind = (int)@params.ShadowKind;
 
@@ -261,6 +262,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs
         public static void SetupWindowParameters(Window window, DialogWindowBuilderParamsBase @params)
         {
             window.SystemDecorations = @params.Borderless ? SystemDecorations.None : SystemDecorations.Full;
+            window.ShowInTaskbar = @params.ShowInTaskbar;
             (window as IHasNegativeResult)?.SetNegativeResult(@params.NegativeResult);
         }
 

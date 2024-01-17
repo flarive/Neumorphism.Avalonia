@@ -12,6 +12,7 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Bases
         public string ContentHeader = null;
         public string SupportingText = null;
         public bool Borderless = false;
+        public bool ShowInTaskbar = false;
         public WindowStartupLocation StartupLocation = WindowStartupLocation.CenterScreen;
         public DialogShadowKind ShadowKind = DialogShadowKind.Default;
 

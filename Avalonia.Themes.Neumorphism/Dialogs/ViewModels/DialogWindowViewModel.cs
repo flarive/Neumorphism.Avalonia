@@ -72,6 +72,20 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.ViewModels
             }
         }
 
+
+        private bool _showInTaskbar;
+
+        public bool ShowInTaskbar
+        {
+            get => _showInTaskbar;
+            set
+            {
+                _showInTaskbar = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private double? _maxWidth;
 
         public double? MaxWidth
