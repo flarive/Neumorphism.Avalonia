@@ -20,6 +20,7 @@
   <ControlTheme x:Key="{x:Type controls:Card}" TargetType="controls:Card">
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Opacity" Value="1" />
     <Setter Property="Focusable" Value="False" />
     <Setter Property="Padding" Value="20" />
     <Setter Property="Margin" Value="0" />
@@ -30,18 +31,18 @@
     <Setter Property="CornerRadius" Value="0" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Panel VerticalAlignment="Stretch" Margin="{TemplateBinding Margin}" Height="{TemplateBinding Height}">
+        <Panel VerticalAlignment="Stretch" Margin="{TemplateBinding Margin}" Height="{TemplateBinding Height}" Opacity="1">
           <Border Name="PART_BackgroundBorder" Margin="0" VerticalAlignment="Stretch" Focusable="{TemplateBinding Focusable}"
-                  Background="{TemplateBinding Background}"
+                  Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}"
                   BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}"
                   CornerRadius="{TemplateBinding CornerRadius}"/>
 
-          <Border Name="PART_ContentBorder" Margin="0"
+          <Border Name="PART_ContentBorder" Margin="0" Opacity="1"
                   CornerRadius="{TemplateBinding CornerRadius}"
                   ClipToBounds="{TemplateBinding InsideClipping}"
                   UseLayoutRounding="True">
-            <ContentPresenter Name="ContentPresenter"
+            <ContentPresenter Name="ContentPresenter" Opacity="1"
                               Margin="{TemplateBinding Padding}"
                               Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}" />
