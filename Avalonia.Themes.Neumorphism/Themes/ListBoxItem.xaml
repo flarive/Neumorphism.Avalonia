@@ -319,6 +319,49 @@
 
 
 
+  <!-- Class NoMaterial -->
+  <ControlTheme x:Key="ListBoxItemNoMaterial" BasedOn="{StaticResource ListBoxItemShared}" TargetType="ListBoxItem">
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignToolForeground}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_RootBorder" Cursor="{TemplateBinding Cursor}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}"
+						Margin="{TemplateBinding Margin}"
+						ClipToBounds="{TemplateBinding ClipToBounds}">
+          <Grid>
+            <ripple:RippleEffect Name="Ripple"
+											 RippleFill="White"
+											 Focusable="False"
+											 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											 Padding="{TemplateBinding Padding}">
+              <ContentPresenter Name="PART_ContentPresenter"
+											  Background="{TemplateBinding Background}"
+											  BorderBrush="Transparent"
+											  BorderThickness="0"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
+											  Content="{TemplateBinding Content}"
+											  Padding="{TemplateBinding Padding}"
+											  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+            </ripple:RippleEffect>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+
+
 
   <!--Shared theme-->
   <ControlTheme x:Key="ListBoxItemShared" TargetType="ListBoxItem">
