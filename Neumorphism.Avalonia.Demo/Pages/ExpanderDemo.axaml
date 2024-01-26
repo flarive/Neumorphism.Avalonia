@@ -1,0 +1,51 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+      xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+      xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+      xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+      xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+      xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
+      x:CompileBindings="True"
+      x:DataType="viewModels:ExpanderDemoViewModel"
+      x:Class="Neumorphism.Avalonia.Demo.Pages.ExpanderDemo">
+
+
+
+	<StackPanel Margin="20">
+		<TextBlock Classes="Headline4 Subheadline" Text="Expanders" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+
+		<TextBlock Classes="Headline6 Subheadline2" Text="Vertical expander" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+		<StackPanel Orientation="Horizontal">
+			<!--****************************************************************-->
+			<showMeTheXaml:XamlDisplay UniqueId="Expander0">
+				<Expander Width="320" Height="32" ExpandDirection="Down">
+					<Expander.Header>
+						Hidden Search
+					</Expander.Header>
+					<Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
+						<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
+						<TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
+						<TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
+						<CheckBox Grid.Row="1" Grid.Column="1" />
+					</Grid>
+				</Expander>
+			</showMeTheXaml:XamlDisplay>
+			<!--****************************************************************-->
+			<showMeTheXaml:XamlDisplay UniqueId="Expander1">
+				<Expander Height="320" Width="32" ExpandDirection="Right">
+					<Expander.Header>
+						aaaaa
+					</Expander.Header>
+					<StackPanel Orientation="Vertical">
+						<TextBlock Text="aaaaaaaaaaaaa"/>
+					</StackPanel>
+				</Expander>
+			</showMeTheXaml:XamlDisplay>
+		<!--****************************************************************-->
+		</StackPanel>
+
+	</StackPanel>
+</UserControl>

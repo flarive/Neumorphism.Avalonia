@@ -215,6 +215,13 @@
                   </StackPanel>
                 </ListBoxItem>
 
+				<!--<ListBoxItem IsEnabled="True">
+					<StackPanel Orientation="Horizontal">
+						<icons:MaterialIcon Kind="ExpandAll" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+						<TextBlock Text="Expanders" VerticalAlignment="Center" Margin="8,0,0,0" />
+					</StackPanel>
+				</ListBoxItem>-->
+
               </ListBox>
             </Grid>
           </controls:NavigationDrawer.LeftDrawerContent>
@@ -306,6 +313,8 @@
                   <pages:MenusDemo/>
                   <!--Dialogs-->
                   <pages:DialogsDemo/>
+			      <!--Expanders-->
+				  <!--<pages:ExpanderDemo/>-->
                 </Carousel>
               </Border>
             </ScrollViewer>
