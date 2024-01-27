@@ -1,12 +1,9 @@
-﻿using Avalonia.Media;
-using Avalonia.Themes.Neumorphism.Controls;
+﻿using Avalonia.Themes.Neumorphism.Controls;
 using Avalonia.Themes.Neumorphism.Models;
 using Material.Icons;
 using Material.Icons.Avalonia;
 using Neumorphism.Avalonia.Demo.Models;
 using System.Collections.ObjectModel;
-using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Neumorphism.Avalonia.Demo.ViewModels

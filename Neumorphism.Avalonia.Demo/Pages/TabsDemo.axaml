@@ -6,12 +6,14 @@
 			xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
 			xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
 			xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+      xmlns:models="clr-namespace:Neumorphism.Avalonia.Demo.Models"
 			xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
 			xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			xmlns:system="clr-namespace:System;assembly=System.Runtime"
 			x:CompileBindings="True"
 			x:DataType="viewModels:TabsDemoViewModel"
 			x:Class="Neumorphism.Avalonia.Demo.Pages.TabsDemo">
+
 
 	<StackPanel Margin="20">
 		<TextBlock Classes="Headline4 Subheadline" Text="Tabs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
@@ -97,33 +99,36 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab3">
-            <TabControl TabStripPlacement="Top" SelectedIndex="1" Width="440" Height="250" ToolTip.Tip='Top tabControl with default theme applied and customized selection stroke'>
-              <TabControl.Items>
-                <TabItem Header="Home" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                    <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-                </TabItem>
-                <TabItem Header="Settings" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
-                </TabItem>
-                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
-                </TabItem>
-              </TabControl.Items>
+            <TabControl TabStripPlacement="Top" Width="440" Height="250"
+                        ItemsSource="{CompiledBinding TabItems}"
+                        SelectedItem="{CompiledBinding SelectedTabItemTop}"
+                        ToolTip.Tip='Top tabControl with default theme applied and customized selection stroke'>
+
+              <TabControl.ItemContainerTheme>
+                <ControlTheme TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}" x:DataType="models:CustomTabItem">
+                  <Setter Property="Height" Value="50"/>
+                  <Setter Property="assist:TabControlAssist.TabHeight" Value="32"/>
+                  <Setter Property="assist:TabControlAssist.SelectedTabHeight" Value="40"/>
+                  <Setter Property="assist:TabControlAssist.UseHighlightStroke" Value="true"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeSize" Value="5"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+                  <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}" />
+                  <Setter Property="Header" Value="{CompiledBinding .}"/>
+                  <Setter Property="HeaderTemplate">
+                    <DataTemplate DataType="models:CustomTabItem">
+                      <TextBlock Text="{CompiledBinding Header}"/>
+                    </DataTemplate>
+                  </Setter>
+                  <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                      <DataTemplate DataType="models:CustomTabItem">
+                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                      </DataTemplate>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="Content" Value="{CompiledBinding}"/>
+                </ControlTheme>
+              </TabControl.ItemContainerTheme>
             </TabControl>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
@@ -211,33 +216,36 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab6">
-            <TabControl TabStripPlacement="Bottom" Width="440" Height="250" ToolTip.Tip='Bottom tabControl with default theme applied and customized selection stroke'>
-              <TabControl.Items>
-                <TabItem Header="Home" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-                </TabItem>
-                <TabItem Header="Settings" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
-                </TabItem>
-                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="5"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource SecondaryHueMidBrush}">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
-                </TabItem>
-              </TabControl.Items>
+            <TabControl TabStripPlacement="Bottom" Width="440" Height="250"
+                        ItemsSource="{CompiledBinding TabItems}"
+                        SelectedItem="{CompiledBinding SelectedTabItemBottom}"
+                        ToolTip.Tip='Bottom tabControl with default theme applied and customized selection stroke'>
+
+              <TabControl.ItemContainerTheme>
+                <ControlTheme TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}" x:DataType="models:CustomTabItem">
+                  <Setter Property="Height" Value="50"/>
+                  <Setter Property="assist:TabControlAssist.TabHeight" Value="32"/>
+                  <Setter Property="assist:TabControlAssist.SelectedTabHeight" Value="40"/>
+                  <Setter Property="assist:TabControlAssist.UseHighlightStroke" Value="true"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeSize" Value="5"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+                  <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}" />
+                  <Setter Property="Header" Value="{CompiledBinding .}"/>
+                  <Setter Property="HeaderTemplate">
+                    <DataTemplate DataType="models:CustomTabItem">
+                      <TextBlock Text="{CompiledBinding Header}"/>
+                    </DataTemplate>
+                  </Setter>
+                  <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                      <DataTemplate DataType="models:CustomTabItem">
+                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                      </DataTemplate>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="Content" Value="{CompiledBinding}"/>
+                </ControlTheme>
+              </TabControl.ItemContainerTheme>
             </TabControl>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
@@ -324,33 +332,36 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab3">
-            <TabControl TabStripPlacement="Left" Width="440" Height="250" ToolTip.Tip='Left tabControl with default theme applied and customized selection stroke'>
-              <TabControl.Items>
-                <TabItem Header="Home" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-                </TabItem>
-                <TabItem Header="Settings" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
-                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
-                </TabItem>
-                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="#FF77dbf0">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
-                </TabItem>
-              </TabControl.Items>
+            <TabControl TabStripPlacement="Left" Width="440" Height="250"
+                        ItemsSource="{CompiledBinding TabItems}"
+                        SelectedItem="{CompiledBinding SelectedTabItemLeft}"
+                        ToolTip.Tip='Left tabControl with default theme applied and customized selection stroke'>
+
+              <TabControl.ItemContainerTheme>
+                <ControlTheme TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}" x:DataType="models:CustomTabItem">
+                  <Setter Property="Height" Value="50"/>
+                  <Setter Property="assist:TabControlAssist.TabHeight" Value="32"/>
+                  <Setter Property="assist:TabControlAssist.SelectedTabHeight" Value="40"/>
+                  <Setter Property="assist:TabControlAssist.UseHighlightStroke" Value="true"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeSize" Value="5"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+                  <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}" />
+                  <Setter Property="Header" Value="{CompiledBinding .}"/>
+                  <Setter Property="HeaderTemplate">
+                    <DataTemplate DataType="models:CustomTabItem">
+                      <TextBlock Text="{CompiledBinding Header}"/>
+                    </DataTemplate>
+                  </Setter>
+                  <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                      <DataTemplate DataType="models:CustomTabItem">
+                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                      </DataTemplate>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="Content" Value="{CompiledBinding}"/>
+                </ControlTheme>
+              </TabControl.ItemContainerTheme>
             </TabControl>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
@@ -437,33 +448,36 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab6">
-            <TabControl TabStripPlacement="Right" Width="440" Height="250" ToolTip.Tip='Right tabControl with default theme applied and customized selection stroke'>
-              <TabControl.Items>
-                <TabItem Header="Home" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource PrimaryHueLightBrush}">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-                </TabItem>
-                <TabItem Header="Settings" Height="50" FontSize="14"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource PrimaryHueLightBrush}">
-                    <TextBlock TextWrapping="WrapWithOverflow" Text="Amet volutpat consequat mauris nunc congue nisi. Quam viverra orci sagittis eu volutpat odio facilisis. Leo vel fringilla est ullamcorper. Nec feugiat in fermentum posuere urna nec tincidunt. Lectus quam id leo in vitae turpis massa sed elementum."/>
-                </TabItem>
-                <TabItem Header="Disabled" Height="50" FontSize="14" IsEnabled="False"
-                         assist:TabControlAssist.TabHeight="32"
-                         assist:TabControlAssist.SelectedTabHeight="40"
-                         assist:TabControlAssist.UseHighlightStroke="True"
-                         assist:TabControlAssist.HighlightStrokeSize="8"
-                         assist:TabControlAssist.HighlightStrokeBrush="{DynamicResource PrimaryHueLightBrush}">
-                  <TextBlock TextWrapping="WrapWithOverflow" Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi."/>
-                </TabItem>
-              </TabControl.Items>
+            <TabControl TabStripPlacement="Right" Width="440" Height="250"
+                        ItemsSource="{CompiledBinding TabItems}"
+                        SelectedItem="{CompiledBinding SelectedTabItemRight}"
+                        ToolTip.Tip='Right tabControl with default theme applied and customized selection stroke'>
+
+              <TabControl.ItemContainerTheme>
+                <ControlTheme TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}" x:DataType="models:CustomTabItem">
+                  <Setter Property="Height" Value="50"/>
+                  <Setter Property="assist:TabControlAssist.TabHeight" Value="32"/>
+                  <Setter Property="assist:TabControlAssist.SelectedTabHeight" Value="40"/>
+                  <Setter Property="assist:TabControlAssist.UseHighlightStroke" Value="true"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeSize" Value="5"/>
+                  <Setter Property="assist:TabControlAssist.HighlightStrokeBrush" Value="{DynamicResource SecondaryHueMidBrush}"/>
+                  <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}" />
+                  <Setter Property="Header" Value="{CompiledBinding .}"/>
+                  <Setter Property="HeaderTemplate">
+                    <DataTemplate DataType="models:CustomTabItem">
+                      <TextBlock Text="{CompiledBinding Header}"/>
+                    </DataTemplate>
+                  </Setter>
+                  <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                      <DataTemplate DataType="models:CustomTabItem">
+                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                      </DataTemplate>
+                    </Setter.Value>
+                  </Setter>
+                  <Setter Property="Content" Value="{CompiledBinding}"/>
+                </ControlTheme>
+              </TabControl.ItemContainerTheme>
             </TabControl>
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->

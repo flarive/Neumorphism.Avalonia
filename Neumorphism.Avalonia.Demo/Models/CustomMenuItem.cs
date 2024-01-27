@@ -73,6 +73,5 @@ namespace Neumorphism.Avalonia.Demo.Models
                 OnPropertyChanged(nameof(Items));
             }
         }
-        
     }
 }
