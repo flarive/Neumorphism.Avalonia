@@ -95,6 +95,8 @@ For the moment only the following controls are fully themed :
 - Tabs
 - DateTime pickers
 - Menus
+- Dialogs
+- Expanders (in progress)
 
 More controls should be themed soon.
 
