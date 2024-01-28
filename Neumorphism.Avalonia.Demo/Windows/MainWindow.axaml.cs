@@ -46,6 +46,13 @@ namespace Neumorphism.Avalonia.Demo.Windows
         {
             AvaloniaXamlLoader.Load(this);
 
+            #if DEBUG
+            if (true)
+            {
+                this.AttachDevTools();
+            }
+            #endif
+
             var vm = new MainViewModel<MainWindow>(this);
             vm.PropertyChanged += (s, e) =>
             {

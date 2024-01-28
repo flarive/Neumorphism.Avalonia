@@ -17,11 +17,11 @@
 	<StackPanel Margin="20">
 		<TextBlock Classes="Headline4 Subheadline" Text="Expanders" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
-		<TextBlock Classes="Headline6 Subheadline2" Text="Vertical expander" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+		<TextBlock Classes="Headline6 Subheadline2" Text="Vertical expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
 			<showMeTheXaml:XamlDisplay UniqueId="Expander0">
-				<Expander Width="320" Height="32" ExpandDirection="Down">
+				<Expander Width="320" ExpandDirection="Down" assist:ExpanderAssist.ToggleHeight="50">
 					<Expander.Header>
 						Hidden Search
 					</Expander.Header>
@@ -33,19 +33,70 @@
 					</Grid>
 				</Expander>
 			</showMeTheXaml:XamlDisplay>
-			<!--****************************************************************-->
-			<showMeTheXaml:XamlDisplay UniqueId="Expander1">
-				<Expander Height="320" Width="32" ExpandDirection="Right">
-					<Expander.Header>
-						aaaaa
-					</Expander.Header>
-					<StackPanel Orientation="Vertical">
-						<TextBlock Text="aaaaaaaaaaaaa"/>
-					</StackPanel>
-				</Expander>
-			</showMeTheXaml:XamlDisplay>
-		<!--****************************************************************-->
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Expander3">
+        <Expander Width="320" ExpandDirection="Up" assist:ExpanderAssist.ToggleHeight="50">
+          <Expander.Header>
+            Hidden Search
+          </Expander.Header>
+          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
+            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
+            <CheckBox Grid.Row="1" Grid.Column="1" />
+          </Grid>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
 		</StackPanel>
+
+
+    <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+    <StackPanel Orientation="Horizontal">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Expander1">
+        <Expander Height="320" ExpandDirection="Right" assist:ExpanderAssist.ToggleWidth="50">
+          <Expander.Header>
+            <TextBlock Text="Hidden search">
+              <TextBlock.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="-90"/>
+                  <TranslateTransform Y="20"/>
+                </TransformGroup>
+              </TextBlock.RenderTransform>
+            </TextBlock>
+          </Expander.Header>
+          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
+            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
+            <CheckBox Grid.Row="1" Grid.Column="1" />
+          </Grid>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Expander2">
+        <Expander Height="320" ExpandDirection="Left" assist:ExpanderAssist.ToggleWidth="50">
+          <Expander.Header>
+            <TextBlock Text="Hidden search">
+              <TextBlock.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                  <TranslateTransform Y="20"/>
+                </TransformGroup>
+              </TextBlock.RenderTransform>
+            </TextBlock>
+          </Expander.Header>
+          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
+            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
+            <CheckBox Grid.Row="1" Grid.Column="1" />
+          </Grid>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
 
 	</StackPanel>
 </UserControl>
