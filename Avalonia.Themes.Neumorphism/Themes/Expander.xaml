@@ -200,6 +200,7 @@
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Cursor" Value="Hand" />
     <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="Padding" Value="0" />
     <Setter Property="Margin" Value="0" />
@@ -285,13 +286,15 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 7 L 7 0 L 14 7" />
     </Style>
-    <Setter Property="Padding" Value="10" />
+    <Setter Property="Padding" Value="15,0,10,0" />
     <Setter Property="Margin" Value="0" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-                        Height="{TemplateBinding Tag}"
-                        Margin="20"
+            Height="{TemplateBinding Tag}"
+            Margin="20"
+            Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
@@ -304,11 +307,11 @@
             </MultiBinding>
           </Border.BoxShadow>
 
-          <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto">
+          <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      HorizontalAlignment="Stretch"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
@@ -318,11 +321,11 @@
 								Grid.Column="1"
 								Width="{DynamicResource ExpanderChevronButtonSize}"
 								Height="{DynamicResource ExpanderChevronButtonSize}"
-								Margin="{DynamicResource ExpanderChevronMargin}"
-								CornerRadius="{DynamicResource ControlCornerRadius}"
-								BorderBrush="{DynamicResource ExpanderChevronBorderBrush}"
-								BorderThickness="{DynamicResource ExpanderChevronBorderThickness}"
-								Background="{DynamicResource ExpanderChevronBackground}">
+								Margin="{TemplateBinding Padding}"
+								CornerRadius="0"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								Background="Transparent">
               <Path x:Name="ExpandCollapseChevron"
 								  HorizontalAlignment="Center"
 								  VerticalAlignment="Center"
@@ -346,13 +349,15 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 0 L 7 7 L 14 0" />
     </Style>
-    <Setter Property="Padding" Value="10" />
+    <Setter Property="Padding" Value="15,0,10,0" />
     <Setter Property="Margin" Value="0" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-				        Height="{TemplateBinding Tag}"
-				        Margin="20"
+				    Height="{TemplateBinding Tag}"
+				    Margin="20"
+            Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
@@ -365,12 +370,12 @@
 				</MultiBinding>
 			</Border.BoxShadow>
 
-          <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto">
+          <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
 										  Grid.Column="0"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      HorizontalAlignment="Stretch"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Center"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
@@ -380,11 +385,11 @@
 								Grid.Column="1"
 								Width="{DynamicResource ExpanderChevronButtonSize}"
 								Height="{DynamicResource ExpanderChevronButtonSize}"
-								Margin="{DynamicResource ExpanderChevronMargin}"
-								CornerRadius="{DynamicResource ControlCornerRadius}"
-								BorderBrush="{DynamicResource ExpanderChevronBorderBrush}"
-								BorderThickness="{DynamicResource ExpanderChevronBorderThickness}"
-								Background="{DynamicResource ExpanderChevronBackground}">
+								Margin="{TemplateBinding Padding}"
+								CornerRadius="0"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								Background="Transparent">
               <Path x:Name="ExpandCollapseChevron"
 								  HorizontalAlignment="Center"
 								  VerticalAlignment="Center"
@@ -408,13 +413,15 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 7 0 L 0 7 L 7 14" />
     </Style>
-	<Setter Property="Padding" Value="10" />
-	<Setter Property="Margin" Value="0" />
+    <Setter Property="Padding" Value="0,15,0,10" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-				        Margin="20"
-				        Width="{TemplateBinding Tag}"
+            Width="{TemplateBinding Tag}"
+            Margin="20"
+            Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
@@ -427,25 +434,26 @@
 				</MultiBinding>
 			</Border.BoxShadow>
 
-          <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto">
+          <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      VerticalAlignment="Stretch"
-										  HorizontalContentAlignment="Left"
-										  VerticalContentAlignment="Top"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Center"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
-										  Margin="{TemplateBinding Padding}"/>
+										  Padding="{TemplateBinding Padding}"
+										  Margin="{TemplateBinding Margin}"/>
             <Border x:Name="ExpandCollapseChevronBorder"
 								Grid.Row="1"
-								Width="{DynamicResource ExpanderChevronButtonSize}"
+                Width="{DynamicResource ExpanderChevronButtonSize}"
 								Height="{DynamicResource ExpanderChevronButtonSize}"
-								Margin="{DynamicResource ExpanderChevronMargin}"
-								CornerRadius="{DynamicResource ControlCornerRadius}"
-								BorderBrush="{DynamicResource ExpanderChevronBorderBrush}"
-								BorderThickness="{DynamicResource ExpanderChevronBorderThickness}"
-								Background="{DynamicResource ExpanderChevronBackground}">
+								Margin="{TemplateBinding Padding}"
+								CornerRadius="0"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								Background="Transparent">
               <Path x:Name="ExpandCollapseChevron"
 								  HorizontalAlignment="Center"
 								  VerticalAlignment="Center"
@@ -469,13 +477,15 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 0 L 7 7 L 0 14" />
     </Style>
-	<Setter Property="Padding" Value="10" />
-	<Setter Property="Margin" Value="0" />
+    <Setter Property="Padding" Value="0,15,0,10" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-                        Width="{TemplateBinding Tag}"
-				        Margin="20"
+            Width="{TemplateBinding Tag}"
+				    Margin="20"
+            Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
@@ -488,25 +498,26 @@
 				</MultiBinding>
 			</Border.BoxShadow>
 
-          <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto">
+          <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
 										  Grid.Row="0"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      VerticalAlignment="Stretch"
-										  HorizontalContentAlignment="Left"
-										  VerticalContentAlignment="Top"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Center"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
-										  Margin="{TemplateBinding Padding}"/>
+										  Padding="{TemplateBinding Padding}"
+										  Margin="{TemplateBinding Margin}"/>
             <Border x:Name="ExpandCollapseChevronBorder"
 								Grid.Row="1"
-								Width="{DynamicResource ExpanderChevronButtonSize}"
+                Width="{DynamicResource ExpanderChevronButtonSize}"
 								Height="{DynamicResource ExpanderChevronButtonSize}"
-								Margin="{DynamicResource ExpanderChevronMargin}"
-								CornerRadius="{DynamicResource ControlCornerRadius}"
-								BorderBrush="{DynamicResource ExpanderChevronBorderBrush}"
-								BorderThickness="{DynamicResource ExpanderChevronBorderThickness}"
-								Background="{DynamicResource ExpanderChevronBackground}">
+								Margin="{TemplateBinding Padding}"
+								CornerRadius="0"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								Background="Transparent">
 
               <Path x:Name="ExpandCollapseChevron"
 								  HorizontalAlignment="Center"

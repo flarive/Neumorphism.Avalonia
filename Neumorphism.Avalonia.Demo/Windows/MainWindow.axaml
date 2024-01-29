@@ -314,7 +314,7 @@
                   <!--Dialogs-->
                   <pages:DialogsDemo/>
 			            <!--Expanders-->
-				          <!--<pages:ExpanderDemo/>-->
+				          <!--<pages:ExpandersDemo/>-->
                 </Carousel>
               </Border>
             </ScrollViewer>
