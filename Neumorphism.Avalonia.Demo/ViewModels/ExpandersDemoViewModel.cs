@@ -1,6 +1,6 @@
 ﻿namespace Neumorphism.Avalonia.Demo.ViewModels
 {
-    public class ExpanderDemoViewModel : ViewModelBase
+    public class ExpandersDemoViewModel : ViewModelBase
     {
     }
 }

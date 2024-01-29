@@ -3,13 +3,13 @@ using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages
 {
-    public partial class ExpanderDemo : UserControl
+    public partial class ExpandersDemo : UserControl
     {
-        public ExpanderDemo()
+        public ExpandersDemo()
         {
             InitializeComponent();
 
-            DataContext = new ExpanderDemoViewModel();
+            DataContext = new ExpandersDemoViewModel();
         }
     }
 }

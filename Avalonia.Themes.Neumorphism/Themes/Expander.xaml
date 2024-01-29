@@ -74,15 +74,15 @@
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-    <Setter Property="BorderBrush" Value="Transparent" />
-    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderBrush" Value="Red" />
+    <Setter Property="BorderThickness" Value="1" />
     <Setter Property="FontSize" Value="14" />
     <Setter Property="Padding" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="CornerRadius" Value="10" />
-    <Setter Property="assist:ExpanderAssist.ToggleWidth" Value="NaN" />
-    <Setter Property="assist:ExpanderAssist.ToggleHeight" Value="NaN" />
+    <Setter Property="assist:ExpanderAssist.ToggleWidth" Value="40" />
+    <Setter Property="assist:ExpanderAssist.ToggleHeight" Value="40" />
     <Setter Property="Template">
       <ControlTemplate>
         <DockPanel MinWidth="{TemplateBinding MinWidth}"
@@ -278,22 +278,20 @@
     <Style Selector="^:disabled /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundDisabled}" />
     </Style>
-
   </ControlTheme>
 
+  <!--Up-->
   <ControlTheme x:Key="FluentExpanderToggleButtonUpTheme" TargetType="ToggleButton" BasedOn="{StaticResource FluentExpanderToggleButtonTheme}">
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 7 L 7 0 L 14 7" />
     </Style>
-
-
     <Setter Property="Padding" Value="10" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-            Height="{TemplateBinding Tag}"
-            Margin="20"
+                        Height="{TemplateBinding Tag}"
+                        Margin="20"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
@@ -305,9 +303,6 @@
               <DynamicResource ResourceKey="MaterialDesignShadowDark" />
             </MultiBinding>
           </Border.BoxShadow>
-
-
-
 
           <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto">
             <ContentPresenter x:Name="PART_ContentPresenter"
@@ -346,22 +341,29 @@
     </Setter>
   </ControlTheme>
 
+  <!--Down-->
   <ControlTheme x:Key="FluentExpanderToggleButtonDownTheme" TargetType="ToggleButton" BasedOn="{StaticResource FluentExpanderToggleButtonTheme}">
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 0 L 7 7 L 14 0" />
     </Style>
-
-
     <Setter Property="Padding" Value="10" />
     <Setter Property="Margin" Value="0" />
-
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="ToggleButtonBackground" Height="{TemplateBinding Tag}"
+        <Border x:Name="ToggleButtonBackground"
+				        Height="{TemplateBinding Tag}"
+				        Margin="20"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
+			<Border.BoxShadow>
+				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+				</MultiBinding>
+			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto">
             <ContentPresenter x:Name="PART_ContentPresenter"
@@ -401,18 +403,29 @@
     </Setter>
   </ControlTheme>
 
+  <!--Left-->
   <ControlTheme x:Key="FluentExpanderToggleButtonLeftTheme" TargetType="ToggleButton" BasedOn="{StaticResource FluentExpanderToggleButtonTheme}">
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 7 0 L 0 7 L 7 14" />
     </Style>
-
+	<Setter Property="Padding" Value="10" />
+	<Setter Property="Margin" Value="0" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="ToggleButtonBackground" Width="{TemplateBinding Tag}"
+        <Border x:Name="ToggleButtonBackground"
+				        Margin="20"
+				        Width="{TemplateBinding Tag}"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
+			<Border.BoxShadow>
+				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+				</MultiBinding>
+			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto">
             <ContentPresenter x:Name="PART_ContentPresenter"
@@ -451,18 +464,29 @@
     </Setter>
   </ControlTheme>
 
+  <!--Right-->
   <ControlTheme x:Key="FluentExpanderToggleButtonRightTheme" TargetType="ToggleButton" BasedOn="{StaticResource FluentExpanderToggleButtonTheme}">
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="M 0 0 L 7 7 L 0 14" />
     </Style>
+	<Setter Property="Padding" Value="10" />
+	<Setter Property="Margin" Value="0" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
-            Width="{TemplateBinding Tag}"
+                        Width="{TemplateBinding Tag}"
+				        Margin="20"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
+			<Border.BoxShadow>
+				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
+					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
+				</MultiBinding>
+			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto">
             <ContentPresenter x:Name="PART_ContentPresenter"

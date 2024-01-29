@@ -9,8 +9,8 @@
       xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
       xmlns:viewModels="clr-namespace:Neumorphism.Avalonia.Demo.ViewModels"
       x:CompileBindings="True"
-      x:DataType="viewModels:ExpanderDemoViewModel"
-      x:Class="Neumorphism.Avalonia.Demo.Pages.ExpanderDemo">
+      x:DataType="viewModels:ExpandersDemoViewModel"
+      x:Class="Neumorphism.Avalonia.Demo.Pages.ExpandersDemo">
 
 
 
@@ -21,7 +21,7 @@
 		<StackPanel Orientation="Horizontal">
 			<!--****************************************************************-->
 			<showMeTheXaml:XamlDisplay UniqueId="Expander0">
-				<Expander Width="320" ExpandDirection="Down" assist:ExpanderAssist.ToggleHeight="50">
+				<Expander Width="320" ExpandDirection="Down" assist:ExpanderAssist.ToggleHeight="40">
 					<Expander.Header>
 						Hidden Search
 					</Expander.Header>
@@ -35,7 +35,7 @@
 			</showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Expander3">
-        <Expander Width="320" ExpandDirection="Up" assist:ExpanderAssist.ToggleHeight="50">
+        <Expander Width="320" ExpandDirection="Up" assist:ExpanderAssist.ToggleHeight="40">
           <Expander.Header>
             Hidden Search
           </Expander.Header>
@@ -55,7 +55,7 @@
     <StackPanel Orientation="Horizontal">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Expander1">
-        <Expander Height="320" ExpandDirection="Right" assist:ExpanderAssist.ToggleWidth="50">
+        <Expander Height="320" ExpandDirection="Right" assist:ExpanderAssist.ToggleWidth="40">
           <Expander.Header>
             <TextBlock Text="Hidden search">
               <TextBlock.RenderTransform>
@@ -76,7 +76,7 @@
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="Expander2">
-        <Expander Height="320" ExpandDirection="Left" assist:ExpanderAssist.ToggleWidth="50">
+        <Expander Height="320" ExpandDirection="Left" assist:ExpanderAssist.ToggleWidth="40">
           <Expander.Header>
             <TextBlock Text="Hidden search">
               <TextBlock.RenderTransform>
