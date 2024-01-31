@@ -49,24 +49,17 @@
     </Border>
   </Design.PreviewWith>
 
-  <!-- Shared header/content -->
-  <x:Double x:Key="ExpanderMinHeight">48</x:Double>
 
-  <!-- Header -->
-  <HorizontalAlignment x:Key="ExpanderHeaderHorizontalContentAlignment">Stretch</HorizontalAlignment>
-  <VerticalAlignment x:Key="ExpanderHeaderVerticalContentAlignment">Center</VerticalAlignment>
-  <Thickness x:Key="ExpanderHeaderPadding">16</Thickness>
-  <Thickness x:Key="ExpanderHeaderBorderThickness">1</Thickness>
-  <Thickness x:Key="ExpanderChevronBorderThickness">0</Thickness>
-  <Thickness x:Key="ExpanderChevronMargin">8</Thickness>
+
+
+
   <x:Double x:Key="ExpanderChevronButtonSize">32</x:Double>
-
-  <!-- Content -->
-  <Thickness x:Key="ExpanderContentPadding">16</Thickness>
   <Thickness x:Key="ExpanderContentLeftBorderThickness">1,1,0,1</Thickness>
   <Thickness x:Key="ExpanderContentUpBorderThickness">1,1,1,0</Thickness>
   <Thickness x:Key="ExpanderContentRightBorderThickness">0,1,1,1</Thickness>
   <Thickness x:Key="ExpanderContentDownBorderThickness">1,0,1,1</Thickness>
+  
+  
 
   <!--Default Expander theme-->
   <ControlTheme x:Key="{x:Type Expander}" TargetType="Expander">
@@ -74,10 +67,11 @@
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
-    <Setter Property="BorderBrush" Value="Red" />
-    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
-    <Setter Property="Padding" Value="0" />
+    <Setter Property="Padding" Value="15" />
+    <Setter Property="Margin" Value="10" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="CornerRadius" Value="10" />
@@ -85,9 +79,11 @@
     <Setter Property="assist:ExpanderAssist.ToggleHeight" Value="40" />
     <Setter Property="Template">
       <ControlTemplate>
+        <Border x:Name="BorderRoot" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}">
         <DockPanel MinWidth="{TemplateBinding MinWidth}"
 							MaxWidth="{TemplateBinding MaxWidth}">
           <ToggleButton x:Name="ExpanderHeader"
+                  Background="Transparent"
 									MinHeight="{TemplateBinding MinHeight}"
 									CornerRadius="{TemplateBinding CornerRadius}"
 									IsEnabled="{TemplateBinding IsEnabled}"
@@ -96,7 +92,7 @@
 									IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
           <Border x:Name="ExpanderContent"
 							IsVisible="{TemplateBinding IsExpanded, Mode=TwoWay}"
-							Background="{TemplateBinding Background}"
+							Background="Transparent"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
 							MinHeight="{TemplateBinding MinHeight}"
@@ -111,8 +107,208 @@
 											VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
           </Border>
         </DockPanel>
+        </Border>
       </ControlTemplate>
     </Setter>
+
+
+    <!-- Normal -->
+    <Style Selector="^:left /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:right /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:up /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:down /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+
+    <!-- Pointerover -->
+    <Style Selector="^:left:pointerover /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:right:pointerover /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:up:pointerover /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:down:pointerover /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Pressed -->
+    <Style Selector="^:left:pressed /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:right:pressed /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:up:pressed /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:down:pressed /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Checked -->
+    <Style Selector="^:left:checked /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:right:checked /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:up:checked /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:down:checked /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    
 
     <Style Selector="^ /template/ ToggleButton#ExpanderHeader:pressed">
       <Setter Property="RenderTransform" Value="{x:Null}" />
@@ -206,8 +402,8 @@
     <Setter Property="Margin" Value="0" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="VerticalAlignment" Value="Stretch" />
-    <Setter Property="HorizontalContentAlignment" Value="{StaticResource ExpanderHeaderHorizontalContentAlignment}" />
-    <Setter Property="VerticalContentAlignment" Value="{StaticResource ExpanderHeaderVerticalContentAlignment}" />
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
 
     <Style Selector="^:checked /template/ Path#ExpandCollapseChevron">
       <Style.Animations>
@@ -232,33 +428,20 @@
       </Style.Animations>
     </Style>
 
+
+
+
     <!-- PointerOver -->
-    <Style Selector="^:pointerover /template/ Border#ToggleButtonBackground">
-      <Setter Property="Background" Value="{DynamicResource ExpanderHeaderBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ExpanderHeaderBorderBrushPointerOver}" />
-    </Style>
     <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPointerOver}" />
-    </Style>
-    <Style Selector="^:pointerover /template/ Border#ExpandCollapseChevronBorder">
-      <Setter Property="Background" Value="{DynamicResource ExpanderChevronBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ExpanderChevronBorderBrushPointerOver}" />
     </Style>
     <Style Selector="^:pointerover /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPointerOver}" />
     </Style>
 
     <!-- Pressed -->
-    <Style Selector="^:pressed /template/ Border#ToggleButtonBackground">
-      <Setter Property="Background" Value="{DynamicResource ExpanderHeaderBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ExpanderHeaderBorderBrushPressed}" />
-    </Style>
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPressed}" />
-    </Style>
-    <Style Selector="^:pressed /template/ Border#ExpandCollapseChevronBorder">
-      <Setter Property="Background" Value="{DynamicResource ExpanderChevronBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ExpanderChevronBorderBrushPressed}" />
     </Style>
     <Style Selector="^:pressed /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPressed}" />
@@ -293,19 +476,12 @@
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
             Height="{TemplateBinding Tag}"
-            Margin="20"
+            Margin="{TemplateBinding Margin}"
             Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
-          <Border.BoxShadow>
-            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
-              <Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-            </MultiBinding>
-          </Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
@@ -356,19 +532,12 @@
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
 				    Height="{TemplateBinding Tag}"
-				    Margin="20"
+				    Margin="{TemplateBinding Margin}"
             Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
-			<Border.BoxShadow>
-				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
-					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-				</MultiBinding>
-			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
@@ -420,31 +589,25 @@
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
             Width="{TemplateBinding Tag}"
-            Margin="20"
+            Margin="{TemplateBinding Margin}"
             Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
-			<Border.BoxShadow>
-				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
-					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-				</MultiBinding>
-			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                      VerticalAlignment="Top" HorizontalAlignment="Center"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
 										  Padding="{TemplateBinding Padding}"
 										  Margin="{TemplateBinding Margin}"/>
+            
             <Border x:Name="ExpandCollapseChevronBorder"
 								Grid.Row="1"
                 Width="{DynamicResource ExpanderChevronButtonSize}"
@@ -484,31 +647,25 @@
       <ControlTemplate>
         <Border x:Name="ToggleButtonBackground"
             Width="{TemplateBinding Tag}"
-				    Margin="20"
+				    Margin="{TemplateBinding Margin}"
             Padding="0"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						BorderThickness="{TemplateBinding BorderThickness}">
-			<Border.BoxShadow>
-				<MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
-					<Binding ElementName="ToggleButtonBackground" Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-					<DynamicResource ResourceKey="MaterialDesignShadowLight" />
-					<DynamicResource ResourceKey="MaterialDesignShadowDark" />
-				</MultiBinding>
-			</Border.BoxShadow>
 
           <Grid x:Name="ToggleButtonGrid" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
 										  Grid.Row="0"
 										  Content="{TemplateBinding Content}"
 										  ContentTemplate="{TemplateBinding ContentTemplate}"
-                      VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                      VerticalAlignment="Top" HorizontalAlignment="Center"
 										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 										  Foreground="{TemplateBinding Foreground}"
 										  Padding="{TemplateBinding Padding}"
 										  Margin="{TemplateBinding Margin}"/>
+            
             <Border x:Name="ExpandCollapseChevronBorder"
 								Grid.Row="1"
                 Width="{DynamicResource ExpanderChevronButtonSize}"
@@ -518,7 +675,6 @@
 								BorderBrush="Transparent"
 								BorderThickness="0"
 								Background="Transparent">
-
               <Path x:Name="ExpandCollapseChevron"
 								  HorizontalAlignment="Center"
 								  VerticalAlignment="Center"
@@ -535,9 +691,11 @@
         </Border>
       </ControlTemplate>
     </Setter>
-
-
   </ControlTheme>
 
 
+  <!--Test theme-->
+  <ControlTheme x:Key="Test" BasedOn="{StaticResource {x:Type Expander}}" TargetType="Expander">
+  </ControlTheme>
+    
 </ResourceDictionary>
