@@ -1,4 +1,6 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
+using Avalonia.Media;
 using Neumorphism.Avalonia.Demo.ViewModels;
 
 namespace Neumorphism.Avalonia.Demo.Pages

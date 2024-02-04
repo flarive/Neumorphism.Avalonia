@@ -34,6 +34,7 @@
   <SolidColorBrush x:Key="TabItemHeaderForegroundDisabled" Color="#FFCCCCCC"/>
 
 
+  <!--Default TabItem theme-->
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontWeight" Value="Normal" />

@@ -8,7 +8,7 @@ namespace Avalonia.Themes.Neumorphism.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return null;
+            return AvaloniaProperty.UnsetValue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

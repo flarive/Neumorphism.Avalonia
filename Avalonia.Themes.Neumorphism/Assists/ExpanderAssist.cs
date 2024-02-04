@@ -1,40 +1,58 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Assist
 {
     public static class ExpanderAssist
     {
         /// <summary>
-        /// ToggleWidth
+        /// ExpanderWidth
         /// </summary>
-        public static AvaloniaProperty<double> ToggleWidthProperty = AvaloniaProperty.RegisterAttached<Expander, double>(
-            "ToggleWidth", typeof(ExpanderAssist));
+        public static AvaloniaProperty<double> ExpanderWidthProperty = AvaloniaProperty.RegisterAttached<Expander, double>(
+            "ExpanderWidth", typeof(ExpanderAssist));
 
-        public static void SetToggleWidth(AvaloniaObject element, double value) {
-            element.SetValue(ToggleWidthProperty, value);
+        public static void SetExpanderWidth(AvaloniaObject element, double value) {
+            element.SetValue(ExpanderWidthProperty, value);
         }
 
-        public static double GetToggleWidth(AvaloniaObject element) {
-            return (double) element.GetValue(ToggleWidthProperty);
+        public static double GetExpanderWidth(AvaloniaObject element) {
+            return (double) element.GetValue(ExpanderWidthProperty);
         }
 
 
 
         /// <summary>
-        /// ToggleHeight
+        /// ExpanderHeight
         /// </summary>
-        public static AvaloniaProperty<double> ToggleHeightProperty = AvaloniaProperty.RegisterAttached<Expander, double>(
-            "ToggleHeight", typeof(ExpanderAssist));
+        public static AvaloniaProperty<double> ExpanderHeightProperty = AvaloniaProperty.RegisterAttached<Expander, double>(
+            "ExpanderHeight", typeof(ExpanderAssist));
 
-        public static void SetToggleHeight(AvaloniaObject element, double value)
+        public static void SetExpanderHeight(AvaloniaObject element, double value)
         {
-            element.SetValue(ToggleHeightProperty, value);
+            element.SetValue(ExpanderHeightProperty, value);
         }
 
-        public static double GetToggleHeight(AvaloniaObject element)
+        public static double GetExpanderHeight(AvaloniaObject element)
         {
-            return (double)element.GetValue(ToggleHeightProperty);
+            return (double)element.GetValue(ExpanderHeightProperty);
         }
 
+
+
+        /// <summary>
+        /// IconPath
+        /// </summary>
+        public static AvaloniaProperty<StreamGeometry> IconPathProperty = AvaloniaProperty.RegisterAttached<Expander, StreamGeometry>(
+            "IconPath", typeof(ExpanderAssist));
+
+        public static void SetIconPath(AvaloniaObject element, StreamGeometry value)
+        {
+            element.SetValue(IconPathProperty, value);
+        }
+
+        public static StreamGeometry GetIconPath(AvaloniaObject element)
+        {
+            return (StreamGeometry)element.GetValue(IconPathProperty);
+        }
     }
 }

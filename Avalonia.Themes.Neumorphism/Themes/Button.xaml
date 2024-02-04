@@ -138,7 +138,6 @@
     <Style Selector="^:not(.no-material,.NoFeedback) /template/ Border#PART_ButtonRootBorder">
       <Setter Property="BoxShadow">
         <Setter.Value>
-
           <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Default}">
             <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
             <DynamicResource ResourceKey="MaterialDesignShadowLight" />
