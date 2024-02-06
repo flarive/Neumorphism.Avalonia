@@ -1167,44 +1167,56 @@
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
     <Setter Property="Padding" Value="15" />
+    <Setter Property="CornerRadius" Value="10" />
     <Setter Property="Margin" Value="10" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="CornerRadius" Value="10" />
     <Setter Property="assist:ExpanderAssist.ExpanderWidth" Value="40" />
     <Setter Property="assist:ExpanderAssist.ExpanderHeight" Value="40" />
     <Setter Property="Template">
       <ControlTemplate>
-          <DockPanel MinWidth="{TemplateBinding MinWidth}"
-                MaxWidth="{TemplateBinding MaxWidth}">
-            <ToggleButton x:Name="ExpanderHeader"
-                    Background="Transparent"
-                    MinHeight="{TemplateBinding MinHeight}"
-                    CornerRadius="{TemplateBinding CornerRadius}"
-                    IsEnabled="{TemplateBinding IsEnabled}"
-                    Content="{TemplateBinding Header}"
-                    ContentTemplate="{TemplateBinding HeaderTemplate}"
-                    IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
+        <Border x:Name="BorderRoot"
+                Background="{TemplateBinding Background}"
+                Margin="{TemplateBinding Margin}">
+          <Border.BoxShadow>
+            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+            </MultiBinding>
+          </Border.BoxShadow>
+            <DockPanel MinWidth="{TemplateBinding MinWidth}"
+                  MaxWidth="{TemplateBinding MaxWidth}">
+              <ToggleButton x:Name="ExpanderHeader"
+                      Background="Transparent"
+                      MinHeight="{TemplateBinding MinHeight}"
+                      CornerRadius="{TemplateBinding CornerRadius}"
+                      IsEnabled="{TemplateBinding IsEnabled}"
+                      Content="{TemplateBinding Header}"
+                      ContentTemplate="{TemplateBinding HeaderTemplate}"
+                      IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"/>
             
-            <Border x:Name="ExpanderContent"
-                IsVisible="{TemplateBinding IsExpanded, Mode=TwoWay}"
-                Background="Transparent"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                MinHeight="{TemplateBinding MinHeight}"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Stretch"
-                Padding="{TemplateBinding Padding}">
-              <ContentPresenter x:Name="PART_ContentPresenter"
-                        Content="{TemplateBinding Content}"
-                        ContentTemplate="{TemplateBinding ContentTemplate}"
-                        Foreground="{TemplateBinding Foreground}"
-                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-            </Border>
-          </DockPanel>
+              <Border x:Name="ExpanderContent"
+                  IsVisible="{TemplateBinding IsExpanded, Mode=TwoWay}"
+                  Background="Transparent"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  MinHeight="{TemplateBinding MinHeight}"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Padding="{TemplateBinding Padding}">
+                <ContentPresenter x:Name="PART_ContentPresenter"
+                          Content="{TemplateBinding Content}"
+                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Foreground="{TemplateBinding Foreground}"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+              </Border>
+            </DockPanel>
+          </Border>
       </ControlTemplate>
     </Setter>
+
 
 
     <Style Selector="^ /template/ ToggleButton#ExpanderHeader:pressed">
@@ -1215,31 +1227,37 @@
       <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
 
-    <!--<Style Selector="^:not(:expanded) /template/ ToggleButton#ExpanderHeader">
+    <Style Selector="^:not(:expanded) /template/ ToggleButton#BorderRoot">
       <Setter Property="CornerRadius" Value="{Binding $parent[Expander].CornerRadius}" />
     </Style>
-    <Style Selector="^:expanded:up /template/ ToggleButton#ExpanderHeader">
+
+
+    <Style Selector="^:up /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource BottomCornerRadiusFilterConverter}}" />
     </Style>
-    <Style Selector="^:expanded:up /template/ Border#ExpanderContent">
+    <Style Selector="^:expanded:up /template/ Border#BorderRoot">
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius}" />
+    </Style>
+
+
+    <Style Selector="^:down /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}" />
     </Style>
-    <Style Selector="^:expanded:down /template/ ToggleButton#ExpanderHeader">
-      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}" />
+    <Style Selector="^:expanded:down /template/ Border#BorderRoot">
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius}" />
     </Style>
-    <Style Selector="^:expanded:down /template/ Border#ExpanderContent">
-      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource BottomCornerRadiusFilterConverter}}" />
-    </Style>
-    <Style Selector="^:expanded:left /template/ ToggleButton#ExpanderHeader">
+    
+    
+    <!--<Style Selector="^:expanded:left /template/ ToggleButton#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
     </Style>
-    <Style Selector="^:expanded:left /template/ Border#ExpanderContent">
+    <Style Selector="^:expanded:left /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
     </Style>
-    <Style Selector="^:expanded:right /template/ ToggleButton#ExpanderHeader">
+    <Style Selector="^:expanded:right /template/ ToggleButton#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
     </Style>
-    <Style Selector="^:expanded:right /template/ Border#ExpanderContent">
+    <Style Selector="^:expanded:right /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
     </Style>-->
 
@@ -1403,7 +1421,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Row="1" Fill="Red" Height="3" HorizontalAlignment="Stretch"/>
+          <Rectangle Grid.Row="1" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1416,7 +1434,7 @@
       <Setter Property="Data" Value="{StaticResource ChevronDownPath}" />
     </Style>
     <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="10" />
+    <Setter Property="Margin" Value="0" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="Template">
@@ -1456,7 +1474,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Row="1" Fill="Red" Height="3" HorizontalAlignment="Stretch"/>
+          <Rectangle Grid.Row="1" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1509,7 +1527,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Column="1" Fill="Red" VerticalAlignment="Stretch" Width="3"/>
+          <Rectangle Grid.Column="1" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1562,7 +1580,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Column="1" Fill="Red" VerticalAlignment="Stretch" Width="3"/>
+          <Rectangle Grid.Column="1" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
         </Grid>
       </ControlTemplate>
     </Setter>

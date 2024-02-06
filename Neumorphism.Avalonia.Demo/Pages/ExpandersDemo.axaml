@@ -18,7 +18,7 @@
 		<TextBlock Classes="Headline4 Subheadline" Text="Expanders" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 
 		<TextBlock Classes="Headline6 Subheadline2" Text="Vertical expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
-		<StackPanel Orientation="Horizontal" Height="220">
+		<StackPanel Orientation="Horizontal" MinHeight="220">
 
       <StackPanel Orientation="Vertical">
 			<!--****************************************************************-->
@@ -99,8 +99,8 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander5" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
-                    Margin="0" ExpandDirection="Down"
-                    assist:ExpanderAssist.ExpanderHeight="38">
+                              Margin="0" ExpandDirection="Down"
+                              assist:ExpanderAssist.ExpanderHeight="38">
             <Expander.Header>
               <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
                 <TextBlock VerticalAlignment="Center" Text="Expand me"/>
@@ -114,11 +114,11 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander6" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
-                    Margin="-10" ExpandDirection="Up"
+                    Margin="0" ExpandDirection="Up"
                     assist:ExpanderAssist.ExpanderHeight="38">
             <Expander.Header>
               <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
-                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+                <TextBlock VerticalAlignment="Center" Text="Expand me2"/>
               </Border>
             </Expander.Header>
             <ScrollViewer Height="104" Padding="0,0,10,0">
@@ -132,7 +132,7 @@
 
 
     <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
-    <StackPanel Orientation="Horizontal" Height="220">
+    <StackPanel Orientation="Horizontal" MinHeight="220">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander1" Margin="0" Padding="0">
         <Expander Height="210" ExpandDirection="Right"
