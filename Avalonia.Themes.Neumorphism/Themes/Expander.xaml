@@ -85,7 +85,8 @@
     <Setter Property="assist:ExpanderAssist.ExpanderHeight" Value="40" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="BorderRoot" CornerRadius="{TemplateBinding CornerRadius}"
+        <Border x:Name="BorderRoot"
+                CornerRadius="{TemplateBinding CornerRadius}"
                 Background="{TemplateBinding Background}"
                 Margin="{TemplateBinding Margin}">
         <DockPanel MinWidth="{TemplateBinding MinWidth}"
@@ -1167,8 +1168,8 @@
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
     <Setter Property="Padding" Value="15" />
-    <Setter Property="CornerRadius" Value="10" />
     <Setter Property="Margin" Value="10" />
+    <Setter Property="CornerRadius" Value="10" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="assist:ExpanderAssist.ExpanderWidth" Value="40" />
@@ -1178,13 +1179,6 @@
         <Border x:Name="BorderRoot"
                 Background="{TemplateBinding Background}"
                 Margin="{TemplateBinding Margin}">
-          <Border.BoxShadow>
-            <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
-              <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
-              <DynamicResource ResourceKey="MaterialDesignShadowLight" />
-              <DynamicResource ResourceKey="MaterialDesignShadowDark" />
-            </MultiBinding>
-          </Border.BoxShadow>
             <DockPanel MinWidth="{TemplateBinding MinWidth}"
                   MaxWidth="{TemplateBinding MaxWidth}">
               <ToggleButton x:Name="ExpanderHeader"
@@ -1218,6 +1212,32 @@
     </Setter>
 
 
+    
+    <Style Selector="^:up /template/ Border#BorderRoot, ^:down /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Height" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style Selector="^:left /template/ Border#BorderRoot, ^:right /template/ Border#BorderRoot">
+      <Setter Property="BoxShadow">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Inset}">
+            <Binding Path="Width" RelativeSource="{RelativeSource TemplatedParent}"/>
+            <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+            <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+
 
     <Style Selector="^ /template/ ToggleButton#ExpanderHeader:pressed">
       <Setter Property="RenderTransform" Value="{x:Null}" />
@@ -1248,18 +1268,20 @@
     </Style>
     
     
-    <!--<Style Selector="^:expanded:left /template/ ToggleButton#BorderRoot">
+    <Style Selector="^:left /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
     </Style>
     <Style Selector="^:expanded:left /template/ Border#BorderRoot">
-      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius}" />
     </Style>
-    <Style Selector="^:expanded:right /template/ ToggleButton#BorderRoot">
+    
+    
+    <Style Selector="^:right /template/ Border#BorderRoot">
       <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource LeftCornerRadiusFilterConverter}}" />
     </Style>
     <Style Selector="^:expanded:right /template/ Border#BorderRoot">
-      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius, Converter={StaticResource RightCornerRadiusFilterConverter}}" />
-    </Style>-->
+      <Setter Property="CornerRadius" Value="{TemplateBinding CornerRadius}" />
+    </Style>
 
     <Style Selector="^:left /template/ ToggleButton#ExpanderHeader">
       <Setter Property="DockPanel.Dock" Value="Right" />
@@ -1347,20 +1369,20 @@
 
 
     <!--Pointerover-->
-    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <!--<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="Green" />
     </Style>
     <Style Selector="^:pointerover /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPointerOver}" />
     </Style>
 
-    <!--Pressed-->
+    --><!--Pressed--><!--
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="Red" />
     </Style>
     <Style Selector="^:pressed /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPressed}" />
-    </Style>
+    </Style>-->
 
     <!-- Disabled -->
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -1374,6 +1396,7 @@
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundDisabled}" />
     </Style>
   </ControlTheme>
+  
 
   <!--ExpanderStrokeUp-->
   <ControlTheme x:Key="StrokeExpanderToggleButtonUpTheme" TargetType="ToggleButton" BasedOn="{StaticResource StrokeExpanderToggleButtonTheme}">
@@ -1381,13 +1404,14 @@
       <Setter Property="Data" Value="{StaticResource ChevronUpPath}" />
     </Style>
     <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="10" />
+    <Setter Property="Margin" Value="0" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="pppp" RowDefinitions="*, Auto" HorizontalAlignment="Stretch">
-          <Grid x:Name="ToggleButtonGrid" Grid.Row="0" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
+        <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
+          <Rectangle Grid.Row="0" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
+          <Grid x:Name="ToggleButtonGrid" Grid.Row="1" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Column="0"
                       Content="{TemplateBinding Content}"
@@ -1421,7 +1445,6 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Row="1" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1439,7 +1462,7 @@
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="pppp" RowDefinitions="*, Auto" HorizontalAlignment="Stretch">
+        <Grid RowDefinitions="*, Auto" HorizontalAlignment="Stretch">
           <Grid x:Name="ToggleButtonGrid" Grid.Row="0" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Column="0"
@@ -1486,14 +1509,15 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="{StaticResource ChevronLeftPath}" />
     </Style>
-    <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="10" />
+    <Setter Property="Padding" Value="0,15,0,10" />
+    <Setter Property="Margin" Value="0" />
     <Setter Property="VerticalContentAlignment" Value="Top" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="pppp" ColumnDefinitions="*, Auto" HorizontalAlignment="Stretch">
-          <Grid x:Name="ToggleButtonGrid" Grid.Column="0" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
+        <Grid ColumnDefinitions="Auto,*" VerticalAlignment="Stretch" Width="{TemplateBinding Tag}">
+          <Rectangle Grid.Column="0" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
+          <Grid x:Name="ToggleButtonGrid" Grid.Column="1" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"
                       Content="{TemplateBinding Content}"
@@ -1527,7 +1551,6 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Column="1" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1539,13 +1562,13 @@
     <Style Selector="^ /template/ Path#ExpandCollapseChevron">
       <Setter Property="Data" Value="{StaticResource ChevronRightPath}" />
     </Style>
-    <Setter Property="Padding" Value="0" />
-    <Setter Property="Margin" Value="10" />
+    <Setter Property="Padding" Value="0,15,0,10" />
+    <Setter Property="Margin" Value="0" />
     <Setter Property="VerticalContentAlignment" Value="Top" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="pppp" ColumnDefinitions="*, Auto" HorizontalAlignment="Stretch">
+        <Grid ColumnDefinitions="*, Auto" VerticalAlignment="Stretch" Width="{TemplateBinding Tag}">
           <Grid x:Name="ToggleButtonGrid" Grid.Column="0" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"

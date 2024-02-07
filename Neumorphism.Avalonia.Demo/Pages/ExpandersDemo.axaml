@@ -99,10 +99,10 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander5" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
-                              Margin="0" ExpandDirection="Down"
-                              assist:ExpanderAssist.ExpanderHeight="38">
+                              ExpandDirection="Down"
+                              assist:ExpanderAssist.ExpanderHeight="42">
             <Expander.Header>
-              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+              <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
                 <TextBlock VerticalAlignment="Center" Text="Expand me"/>
               </Border>
             </Expander.Header>
@@ -114,11 +114,11 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander6" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
-                    Margin="0" ExpandDirection="Up"
-                    assist:ExpanderAssist.ExpanderHeight="38">
+                    ExpandDirection="Up"
+                    assist:ExpanderAssist.ExpanderHeight="42">
             <Expander.Header>
-              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
-                <TextBlock VerticalAlignment="Center" Text="Expand me2"/>
+              <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
               </Border>
             </Expander.Header>
             <ScrollViewer Height="104" Padding="0,0,10,0">
@@ -232,7 +232,8 @@
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander5" Margin="0" Padding="0">
-        <Expander Height="210" Theme="{StaticResource ExpanderStroke}" ExpandDirection="Right"
+        <Expander Height="210" Theme="{StaticResource ExpanderStroke}"
+                  ExpandDirection="Right"
                   assist:ExpanderAssist.ExpanderWidth="38">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -241,23 +242,21 @@
                   <RotateTransform Angle="90"/>
                 </TransformGroup>
               </StackPanel.RenderTransform>
-              <Border Margin="70,0,0,0" VerticalAlignment="Stretch">
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
                 <TextBlock VerticalAlignment="Center" Text="Expand me"/>
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander6" Margin="0" Padding="0">
-        <Expander Height="210" Theme="{StaticResource ExpanderStroke}" ExpandDirection="Left"
-                  assist:ExpanderAssist.ExpanderWidth="50">
+        <Expander Height="210" Theme="{StaticResource ExpanderStroke}"
+                  ExpandDirection="Left"
+                  assist:ExpanderAssist.ExpanderWidth="38">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
               <StackPanel.RenderTransform>
@@ -265,17 +264,14 @@
                   <RotateTransform Angle="90"/>
                 </TransformGroup>
               </StackPanel.RenderTransform>
-              <Border Margin="70,0,0,0" VerticalAlignment="Stretch">
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
                 <TextBlock VerticalAlignment="Center" Text="Expand me"/>
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
