@@ -296,12 +296,9 @@
               </Style>
             </Style>
           </Expander.Styles>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
     </StackPanel>

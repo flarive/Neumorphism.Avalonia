@@ -928,7 +928,7 @@
 
     <!--Pointerover-->
     <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Foreground" Value="Green" />
+      <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPointerOver}" />
     </Style>
     <Style Selector="^:pointerover /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPointerOver}" />
@@ -936,7 +936,7 @@
 
      <!--Pressed--> 
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Foreground" Value="Red" />
+      <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPressed}" />
     </Style>
     <Style Selector="^:pressed /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPressed}" />
@@ -1367,22 +1367,6 @@
     </Style>
 
 
-
-    <!--Pointerover-->
-    <!--<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Foreground" Value="Green" />
-    </Style>
-    <Style Selector="^:pointerover /template/ Path#ExpandCollapseChevron">
-      <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPointerOver}" />
-    </Style>
-
-    --><!--Pressed--><!--
-    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Foreground" Value="Red" />
-    </Style>
-    <Style Selector="^:pressed /template/ Path#ExpandCollapseChevron">
-      <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPressed}" />
-    </Style>-->
 
     <!-- Disabled -->
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
