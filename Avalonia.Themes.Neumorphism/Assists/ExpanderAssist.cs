@@ -40,19 +40,19 @@ namespace Avalonia.Themes.Neumorphism.Assist
 
 
         /// <summary>
-        /// IconPath
+        /// ExpanderStrokeBrush
         /// </summary>
-        public static AvaloniaProperty<StreamGeometry> IconPathProperty = AvaloniaProperty.RegisterAttached<Expander, StreamGeometry>(
-            "IconPath", typeof(ExpanderAssist));
+        public static AvaloniaProperty<IBrush> ExpanderStrokeBrushProperty = AvaloniaProperty.RegisterAttached<Expander, IBrush>(
+            "ExpanderStrokeBrush", typeof(ExpanderAssist));
 
-        public static void SetIconPath(AvaloniaObject element, StreamGeometry value)
+        public static void SetExpanderStrokeBrush(AvaloniaObject element, IBrush value)
         {
-            element.SetValue(IconPathProperty, value);
+            element.SetValue(ExpanderStrokeBrushProperty, value);
         }
 
-        public static StreamGeometry GetIconPath(AvaloniaObject element)
+        public static IBrush GetExpanderStrokeBrush(AvaloniaObject element)
         {
-            return (StreamGeometry)element.GetValue(IconPathProperty);
+            return (IBrush)element.GetValue(ExpanderStrokeBrushProperty);
         }
     }
 }

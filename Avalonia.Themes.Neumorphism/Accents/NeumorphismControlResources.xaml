@@ -306,7 +306,7 @@
 
       <!-- Resources for Expander.xaml -->
       <!-- Expander:Header -->
-      <StaticResource x:Key="ExpanderHeaderBackground" ResourceKey="SystemAltMediumHighColor" />
+      <!--<StaticResource x:Key="ExpanderHeaderBackground" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundPointerOver" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundPressed" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundDisabled" ResourceKey="SystemAltMediumHighColor" />
@@ -332,9 +332,9 @@
       <SolidColorBrush x:Key="ExpanderChevronBorderBrushPressed" Color="Transparent" />
       <SolidColorBrush x:Key="ExpanderChevronBorderBrushDisabled" Color="Transparent" />
 
-      <!-- Expander:Content -->
+      --><!-- Expander:Content --><!--
       <StaticResource x:Key="ExpanderContentBackground" ResourceKey="SystemChromeMediumLowColor" />
-      <StaticResource x:Key="ExpanderContentBorderBrush" ResourceKey="SystemBaseLowColor" />
+      <StaticResource x:Key="ExpanderContentBorderBrush" ResourceKey="SystemBaseLowColor" />-->
 
       <!--Resources for NotificationCard.xaml -->
       <SolidColorBrush x:Key="NotificationCardBackgroundBrush" Color="White" />
@@ -693,7 +693,7 @@
     </ResourceDictionary>
     <ResourceDictionary x:Key="Dark">
       <!-- Resources for Button.xaml -->
-      <StaticResource x:Key="AccentButtonBackground" ResourceKey="SystemControlBackgroundAccentBrush" />
+      <!--<StaticResource x:Key="AccentButtonBackground" ResourceKey="SystemControlBackgroundAccentBrush" />
       <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="{DynamicResource SystemAccentColorLight1}" />
       <SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="{DynamicResource SystemAccentColorDark1}" />
       <StaticResource x:Key="AccentButtonBackgroundDisabled" ResourceKey="SystemControlBackgroundBaseLowBrush" />
@@ -717,10 +717,10 @@
       <StaticResource x:Key="ButtonBorderBrush" ResourceKey="SystemControlForegroundTransparentBrush" />
       <StaticResource x:Key="ButtonBorderBrushPointerOver" ResourceKey="SystemControlForegroundTransparentBrush" />
       <StaticResource x:Key="ButtonBorderBrushPressed" ResourceKey="SystemControlHighlightTransparentBrush" />
-      <StaticResource x:Key="ButtonBorderBrushDisabled" ResourceKey="SystemControlDisabledTransparentBrush" />
+      <StaticResource x:Key="ButtonBorderBrushDisabled" ResourceKey="SystemControlDisabledTransparentBrush" />-->
 
       <!-- Resources for RepeatButton.xaml -->
-      <StaticResource x:Key="RepeatButtonBackground" ResourceKey="SystemControlBackgroundBaseLowBrush" />
+      <!--<StaticResource x:Key="RepeatButtonBackground" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <SolidColorBrush x:Key="RepeatButtonBackgroundPointerOver" Color="{StaticResource SystemBaseHighColor}"
 							 Opacity="0.1" />
       <StaticResource x:Key="RepeatButtonBackgroundPressed" ResourceKey="SystemControlBackgroundBaseMediumLowBrush" />
@@ -734,7 +734,7 @@
       <StaticResource x:Key="RepeatButtonBorderBrushPressed" ResourceKey="SystemControlHighlightTransparentBrush" />
       <StaticResource x:Key="RepeatButtonBorderBrushDisabled" ResourceKey="SystemControlDisabledTransparentBrush" />
 
-      <!-- Resources for ToggleButton.xaml -->
+      --><!-- Resources for ToggleButton.xaml --><!--
       <Thickness x:Key="ToggleButtonBorderThemeThickness">1</Thickness>
       <StaticResource x:Key="ToggleButtonBackground" ResourceKey="SystemControlBackgroundBaseLowBrush" />
       <SolidColorBrush x:Key="ToggleButtonBackgroundPointerOver" Color="{StaticResource SystemBaseHighColor}"
@@ -789,10 +789,10 @@
       <StaticResource x:Key="ToggleButtonBorderBrushIndeterminatePressed"
 							ResourceKey="SystemControlHighlightTransparentBrush" />
       <StaticResource x:Key="ToggleButtonBorderBrushIndeterminateDisabled"
-							ResourceKey="SystemControlDisabledTransparentBrush" />
+							ResourceKey="SystemControlDisabledTransparentBrush" />-->
 
       <!-- Resources for ComboBox.xaml -->
-      <x:Double x:Key="ComboBoxThemeMinWidth">64</x:Double>
+      <!--<x:Double x:Key="ComboBoxThemeMinWidth">64</x:Double>
       <Thickness x:Key="ComboBoxBorderThemeThickness">1</Thickness>
       <Thickness x:Key="ComboBoxDropdownBorderThickness">1</Thickness>
       <Thickness x:Key="ComboBoxItemThemePadding">11,5,11,7</Thickness>
@@ -857,15 +857,15 @@
       <Thickness x:Key="ComboBoxDropdownBorderPadding">0</Thickness>
       <Thickness x:Key="ComboBoxDropdownContentMargin">0,4,0,4</Thickness>
 
-      <!-- Resources for ListBox.xaml -->
+      --><!-- Resources for ListBox.xaml --><!--
       <Thickness x:Key="ListBoxBorderThemeThickness">0</Thickness>
 
-      <!-- Resources for ProgressBar.xaml -->
+      --><!-- Resources for ProgressBar.xaml --><!--
       <x:Double x:Key="ProgressBarThemeMinHeight">4</x:Double>
-      <Thickness x:Key="ProgressBarBorderThemeThickness">0</Thickness>
+      <Thickness x:Key="ProgressBarBorderThemeThickness">0</Thickness>-->
 
       <!-- Resources for MenuFlyout.xaml (Menu, ContextMenu, etc) -->
-      <x:Double x:Key="MenuFlyoutSeparatorThemeHeight">1</x:Double>
+      <!--<x:Double x:Key="MenuFlyoutSeparatorThemeHeight">1</x:Double>
       <x:Double x:Key="MenuFlyoutThemeMinHeight">32</x:Double>
       <Thickness x:Key="MenuFlyoutPresenterThemePadding">0,0</Thickness>
       <Thickness x:Key="MenuFlyoutItemChevronMargin">12,0,0,0</Thickness>
@@ -896,11 +896,11 @@
       <Thickness x:Key="MenuFlyoutItemThemePaddingNarrow">11,4,11,7</Thickness>
       <StaticResource x:Key="MenuFlyoutPresenterBackground" ResourceKey="SystemControlTransientBackgroundBrush" />
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
-      <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>
+      <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">1</Thickness>-->
 
       <!-- Resources for TextBox.xaml -->
       <!-- Copied from FluentBaseDark.xaml -->
-      <StaticResource x:Key="TextControlForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
+      <!--<StaticResource x:Key="TextControlForeground" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="TextControlForegroundPointerOver" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="TextControlForegroundDisabled" ResourceKey="SystemControlDisabledChromeDisabledLowBrush" />
       <StaticResource x:Key="TextControlBackground" ResourceKey="SystemControlBackgroundAltMediumLowBrush" />
@@ -929,7 +929,7 @@
       <StaticResource x:Key="TextControlButtonForeground" ResourceKey="SystemControlForegroundBaseMediumHighBrush" />
       <StaticResource x:Key="TextControlForegroundFocused" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="TextControlPlaceholderForegroundFocused"
-							ResourceKey="SystemControlForegroundBaseMediumLowBrush" />
+							ResourceKey="SystemControlForegroundBaseMediumLowBrush" />-->
 
 
       <!-- Resources for AutoCompleteBox.xaml -->
@@ -938,7 +938,7 @@
       <StaticResource x:Key="AutoCompleteBoxSuggestionsListBorderBrush" ResourceKey="SystemControlTransientBorderBrush" />
 
       <!-- Resources for Checkbox.xaml -->
-      <Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
+      <!--<Thickness x:Key="CheckBoxBorderThemeThickness">1</Thickness>
       <StaticResource x:Key="CheckBoxForegroundUnchecked" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="CheckBoxForegroundUncheckedPointerOver" ResourceKey="SystemControlForegroundBaseHighBrush" />
       <StaticResource x:Key="CheckBoxForegroundUncheckedPressed" ResourceKey="SystemControlForegroundBaseHighBrush" />
@@ -1041,7 +1041,7 @@
       <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminatePressed"
 							ResourceKey="SystemControlHighlightAltChromeWhiteBrush" />
       <StaticResource x:Key="CheckBoxCheckGlyphForegroundIndeterminateDisabled"
-							ResourceKey="SystemControlHighlightAltChromeWhiteBrush" />
+							ResourceKey="SystemControlHighlightAltChromeWhiteBrush" />-->
 
       <!-- Resources for Calendar.xaml, CalendarButton.xaml, CalendarDayButton.xaml, CalendarItem.xaml -->
       <StaticResource x:Key="CalendarViewSelectedHoverBorderBrush"
@@ -1076,7 +1076,7 @@
 
       <!-- Resources for Expander.xaml -->
       <!-- Expander:Header -->
-      <StaticResource x:Key="ExpanderHeaderBackground" ResourceKey="SystemAltMediumHighColor" />
+      <!--<StaticResource x:Key="ExpanderHeaderBackground" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundPointerOver" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundPressed" ResourceKey="SystemAltMediumHighColor" />
       <StaticResource x:Key="ExpanderHeaderBackgroundDisabled" ResourceKey="SystemAltMediumHighColor" />
@@ -1103,9 +1103,9 @@
       <SolidColorBrush x:Key="ExpanderChevronBorderBrushPressed" Color="Transparent" />
       <SolidColorBrush x:Key="ExpanderChevronBorderBrushDisabled" Color="Transparent" />
 
-      <!-- Expander:Content -->
+      --><!-- Expander:Content --><!--
       <StaticResource x:Key="ExpanderContentBackground" ResourceKey="SystemChromeMediumLowColor" />
-      <StaticResource x:Key="ExpanderContentBorderBrush" ResourceKey="SystemBaseLowColor" />
+      <StaticResource x:Key="ExpanderContentBorderBrush" ResourceKey="SystemBaseLowColor" />-->
 
       <!--Resources for NotificationCard.xaml -->
       <SolidColorBrush x:Key="NotificationCardBackgroundBrush" Color="#444444" />

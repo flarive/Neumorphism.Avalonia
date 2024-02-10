@@ -64,6 +64,24 @@
   <Thickness x:Key="ExpanderContentUpBorderThickness">1,1,1,0</Thickness>
   <Thickness x:Key="ExpanderContentRightBorderThickness">0,1,1,1</Thickness>
   <Thickness x:Key="ExpanderContentDownBorderThickness">1,0,1,1</Thickness>
+
+  <SolidColorBrush x:Key="ExpanderHeaderForegroundPointerOver" Color="{DynamicResource MaterialDesignDarkGray}"/>
+  <SolidColorBrush x:Key="ExpanderHeaderForegroundPressed" Color="{DynamicResource MaterialDesignDarkGray}"/>
+  <SolidColorBrush x:Key="ExpanderHeaderForegroundDisabled" Color="{DynamicResource MaterialDesignDisabled}"/>
+  <SolidColorBrush x:Key="ExpanderHeaderBorderBrushDisabled" Color="{DynamicResource MaterialDesignDisabled}"/>
+
+
+  <SolidColorBrush x:Key="ExpanderChevronForeground" Color="{DynamicResource MaterialDesignForeground}" />
+  <SolidColorBrush x:Key="ExpanderChevronForegroundPointerOver" Color="{DynamicResource MaterialDesignDarkGray}" />
+  <SolidColorBrush x:Key="ExpanderChevronForegroundPressed" Color="{DynamicResource MaterialDesignDarkGray}" />
+  <SolidColorBrush x:Key="ExpanderChevronForegroundDisabled" Color="{DynamicResource MaterialDesignDisabled}" />
+  
+  <SolidColorBrush x:Key="ExpanderChevronBorderBrush" Color="Transparent" />
+  <SolidColorBrush x:Key="ExpanderChevronBorderBrushPointerOver" Color="Transparent" />
+  <SolidColorBrush x:Key="ExpanderChevronBorderBrushPressed" Color="Transparent" />
+  <SolidColorBrush x:Key="ExpanderChevronBorderBrushDisabled" Color="Transparent" />
+
+
   
   
 
@@ -73,6 +91,7 @@
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
@@ -462,14 +481,12 @@
 
     <!-- Disabled -->
     <Style Selector="^:disabled /template/ Border#ToggleButtonBackground">
-      <Setter Property="Background" Value="{DynamicResource ExpanderHeaderBackgroundDisabled}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ExpanderHeaderBorderBrushDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Border#ExpandCollapseChevronBorder">
-      <Setter Property="Background" Value="{DynamicResource ExpanderChevronBackgroundDisabled}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ExpanderChevronBorderBrushDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Path#ExpandCollapseChevron">
@@ -713,6 +730,7 @@
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
@@ -947,7 +965,6 @@
       <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Border#ExpandCollapseChevronBorder">
-      <Setter Property="Background" Value="{DynamicResource ExpanderChevronBackgroundDisabled}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ExpanderChevronBorderBrushDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Path#ExpandCollapseChevron">
@@ -1164,6 +1181,7 @@
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
+    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignForeground}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
     <Setter Property="FontSize" Value="14" />
@@ -1174,6 +1192,7 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="assist:ExpanderAssist.ExpanderWidth" Value="40" />
     <Setter Property="assist:ExpanderAssist.ExpanderHeight" Value="40" />
+    <Setter Property="assist:ExpanderAssist.ExpanderStrokeBrush" Value="{DynamicResource PrimaryHueLightBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border x:Name="BorderRoot"
@@ -1342,6 +1361,7 @@
     <Setter Property="VerticalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="assist:ExpanderAssist.ExpanderStrokeBrush" Value="{TemplateBinding assist:ExpanderAssist.ExpanderStrokeBrush}" />
 
     <Style Selector="^:checked /template/ Path#ExpandCollapseChevron">
       <Style.Animations>
@@ -1366,6 +1386,23 @@
       </Style.Animations>
     </Style>
 
+    <!--Pointerover-->
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPointerOver}" />
+    </Style>
+    <Style Selector="^:pointerover /template/ Path#ExpandCollapseChevron">
+      <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPointerOver}" />
+    </Style>
+
+    <!--Pressed-->
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundPressed}" />
+    </Style>
+    <Style Selector="^:pressed /template/ Path#ExpandCollapseChevron">
+      <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundPressed}" />
+    </Style>
+
+
 
 
     <!-- Disabled -->
@@ -1373,11 +1410,13 @@
       <Setter Property="Foreground" Value="{DynamicResource ExpanderHeaderForegroundDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Border#ExpandCollapseChevronBorder">
-      <Setter Property="Background" Value="{DynamicResource ExpanderChevronBackgroundDisabled}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ExpanderChevronBorderBrushDisabled}" />
     </Style>
     <Style Selector="^:disabled /template/ Path#ExpandCollapseChevron">
       <Setter Property="Stroke" Value="{DynamicResource ExpanderChevronForegroundDisabled}" />
+    </Style>
+    <Style Selector="^:disabled /template/ Rectangle#ToggleButtonStroke">
+      <Setter Property="Opacity" Value="0.2" />
     </Style>
   </ControlTheme>
   
@@ -1394,8 +1433,8 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
-          <Rectangle Grid.Row="0" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
-          <Grid x:Name="ToggleButtonGrid" Grid.Row="1" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
+          <Rectangle x:Name="ToggleButtonStroke" Grid.Row="0" Fill="{TemplateBinding assist:ExpanderAssist.ExpanderStrokeBrush}" Height="3" HorizontalAlignment="Stretch"/>
+          <Grid x:Name="ToggleButtonGrid" Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,0,10,0" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Column="0"
                       Content="{TemplateBinding Content}"
@@ -1447,7 +1486,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*, Auto" HorizontalAlignment="Stretch">
-          <Grid x:Name="ToggleButtonGrid" Grid.Row="0" ColumnDefinitions="*,Auto" VerticalAlignment="Stretch">
+          <Grid x:Name="ToggleButtonGrid" Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,10,0" VerticalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Column="0"
                       Content="{TemplateBinding Content}"
@@ -1481,7 +1520,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Row="1" Fill="{DynamicResource PrimaryHueLightBrush}" Height="3" HorizontalAlignment="Stretch"/>
+          <Rectangle x:Name="ToggleButtonStroke" Grid.Row="1" Fill="{TemplateBinding assist:ExpanderAssist.ExpanderStrokeBrush}" Height="3" HorizontalAlignment="Stretch"/>
         </Grid>
       </ControlTemplate>
     </Setter>
@@ -1500,8 +1539,8 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="Auto,*" VerticalAlignment="Stretch" Width="{TemplateBinding Tag}">
-          <Rectangle Grid.Column="0" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
-          <Grid x:Name="ToggleButtonGrid" Grid.Column="1" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
+          <Rectangle x:Name="ToggleButtonStroke" Grid.Column="0" Fill="{TemplateBinding assist:ExpanderAssist.ExpanderStrokeBrush}" VerticalAlignment="Stretch" Width="3"/>
+          <Grid x:Name="ToggleButtonGrid" Grid.Column="1" RowDefinitions="*,Auto" Margin="0,0,0,10" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"
                       Content="{TemplateBinding Content}"
@@ -1553,7 +1592,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="*, Auto" VerticalAlignment="Stretch" Width="{TemplateBinding Tag}">
-          <Grid x:Name="ToggleButtonGrid" Grid.Column="0" RowDefinitions="*,Auto" HorizontalAlignment="Stretch">
+          <Grid x:Name="ToggleButtonGrid" Grid.Column="0" RowDefinitions="*,Auto" Margin="0,0,0,10" HorizontalAlignment="Stretch">
             <ContentPresenter x:Name="PART_ContentPresenter"
                       Grid.Row="0"
                       Content="{TemplateBinding Content}"
@@ -1587,7 +1626,7 @@
               </Path>
             </Border>
           </Grid>
-          <Rectangle Grid.Column="1" Fill="{DynamicResource PrimaryHueLightBrush}" VerticalAlignment="Stretch" Width="3"/>
+          <Rectangle x:Name="ToggleButtonStroke" Grid.Column="1" Fill="{TemplateBinding assist:ExpanderAssist.ExpanderStrokeBrush}" VerticalAlignment="Stretch" Width="3"/>
         </Grid>
       </ControlTemplate>
     </Setter>

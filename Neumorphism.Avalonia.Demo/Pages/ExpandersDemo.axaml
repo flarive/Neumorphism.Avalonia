@@ -24,6 +24,7 @@
 			<!--****************************************************************-->
 			<showMeTheXaml:XamlDisplay UniqueId="HExpander1" Margin="5" Padding="0">
         <Expander Width="300" ExpandDirection="Down"
+                  ToolTip.Tip='Regular down side expander with default theme applied'
                   assist:ExpanderAssist.ExpanderHeight="34">
           <Expander.Header>
             Expand me
@@ -43,7 +44,8 @@
 			</showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="HExpander2" Margin="5" Padding="0">
-        <Expander Width="300" ExpandDirection="Up"
+        <Expander Width="300" ExpandDirection="Up" CornerRadius="20"
+                  ToolTip.Tip='Regular up side expander with default theme applied'
                   assist:ExpanderAssist.ExpanderHeight="40">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -65,6 +67,7 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander3" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderCircle}"
+                    ToolTip.Tip='Down side circle expander with theme "ExpanderCircle" applied'
                     Margin="0" ExpandDirection="Down"
                     assist:ExpanderAssist.ExpanderHeight="38">
             <Expander.Header>
@@ -80,7 +83,8 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander4" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderCircle}"
-                    Margin="-10" ExpandDirection="Up"
+                    Margin="-5,-10" ExpandDirection="Up"
+                    ToolTip.Tip='Up side circle expander with theme "ExpanderCircle" applied'
                     assist:ExpanderAssist.ExpanderHeight="50">
             <Expander.Header>
               <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
@@ -100,6 +104,7 @@
         <showMeTheXaml:XamlDisplay UniqueId="HExpander5" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
                               ExpandDirection="Down"
+                              ToolTip.Tip='Down side stroke expander with theme "ExpanderStroke" applied'
                               assist:ExpanderAssist.ExpanderHeight="42">
             <Expander.Header>
               <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
@@ -114,7 +119,8 @@
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="HExpander6" Margin="5" Padding="0">
           <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
-                    ExpandDirection="Up"
+                    ExpandDirection="Up" CornerRadius="21"
+                    ToolTip.Tip='Up side stroke expander with theme "ExpanderStroke" applied'
                     assist:ExpanderAssist.ExpanderHeight="42">
             <Expander.Header>
               <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
@@ -135,7 +141,8 @@
     <StackPanel Orientation="Horizontal" MinHeight="220">
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander1" Margin="0" Padding="0">
-        <Expander Height="210" ExpandDirection="Right"
+        <Expander Height="210" ExpandDirection="Right" IsEnabled="False"
+                  ToolTip.Tip='Regular right side expander with default theme applied'
                   assist:ExpanderAssist.ExpanderWidth="40">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -149,17 +156,15 @@
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander2" Margin="0" Padding="0">
         <Expander Height="210" ExpandDirection="Left"
+                  ToolTip.Tip='Regular left side expander with default theme applied'
                   assist:ExpanderAssist.ExpanderWidth="40">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -174,17 +179,15 @@
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander3" Margin="0" Padding="0">
-        <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Right"
+        <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Right" IsEnabled="False"
+                  ToolTip.Tip='Right side circle expander with theme "ExpanderCircle" applied'
                   assist:ExpanderAssist.ExpanderWidth="38">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -198,17 +201,15 @@
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander4" Margin="0" Padding="0">
         <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Left"
+                  ToolTip.Tip='Left side circle expander with theme "ExpanderCircle" applied'
                   assist:ExpanderAssist.ExpanderWidth="50">
           <Expander.Header>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
@@ -222,17 +223,15 @@
               </Border>
             </StackPanel>
           </Expander.Header>
-          <Grid RowDefinitions="*,*" ColumnDefinitions="150,*">
-            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Watermark="Search text" Width="200" />
-            <TextBlock Grid.Row="1" Grid.Column="0"	VerticalAlignment="Center">Case sensitive?</TextBlock>
-            <CheckBox Grid.Row="1" Grid.Column="1" />
-          </Grid>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
         </Expander>
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander5" Margin="0" Padding="0">
         <Expander Height="210" Theme="{StaticResource ExpanderStroke}"
+                  ToolTip.Tip='Right side stroke expander with theme "ExpanderStroke" applied'
                   ExpandDirection="Right"
                   assist:ExpanderAssist.ExpanderWidth="38">
           <Expander.Header>
@@ -254,7 +253,8 @@
       </showMeTheXaml:XamlDisplay>
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="VExpander6" Margin="0" Padding="0">
-        <Expander Height="210" Theme="{StaticResource ExpanderStroke}"
+        <Expander Height="210" Theme="{StaticResource ExpanderStroke}" IsEnabled="False"
+                  ToolTip.Tip='Left side stroke expander with theme "ExpanderStroke" applied'
                   ExpandDirection="Left"
                   assist:ExpanderAssist.ExpanderWidth="38">
           <Expander.Header>
@@ -283,16 +283,24 @@
       <!--****************************************************************-->
       <showMeTheXaml:XamlDisplay UniqueId="CExpander1" Margin="0" Padding="0">
         <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Right"
+                  ToolTip.Tip='Customized circle expander with theme "ExpanderStroke" applied'
                   assist:ExpanderAssist.ExpanderWidth="40">
           <Expander.Header>
-            Plug me
+            Open me
           </Expander.Header>
           <Expander.Styles>
             <Style Selector="Expander:right /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Open me"/>
               <Style Selector="^ /template/ Path#ExpandCollapseChevron">
                 <Setter Property="Fill" Value="{DynamicResource MaterialDesignMediumGray}"/>
                 <Setter Property="StrokeThickness" Value="0"/>
                 <Setter Property="Data" Value="M19 3L13 9L15 11L22 4V3M12 12.5A0.5 0.5 0 0 1 11.5 12A0.5 0.5 0 0 1 12 11.5A0.5 0.5 0 0 1 12.5 12A0.5 0.5 0 0 1 12 12.5M6 20A2 2 0 0 1 4 18C4 16.89 4.9 16 6 16A2 2 0 0 1 8 18C8 19.11 7.1 20 6 20M6 8A2 2 0 0 1 4 6C4 4.89 4.9 4 6 4A2 2 0 0 1 8 6C8 7.11 7.1 8 6 8M9.64 7.64C9.87 7.14 10 6.59 10 6A4 4 0 0 0 6 2A4 4 0 0 0 2 6A4 4 0 0 0 6 10C6.59 10 7.14 9.87 7.64 9.64L10 12L7.64 14.36C7.14 14.13 6.59 14 6 14A4 4 0 0 0 2 18A4 4 0 0 0 6 22A4 4 0 0 0 10 18C10 17.41 9.87 16.86 9.64 16.36L12 14L19 21H22V20L9.64 7.64Z"/>
+              </Style>
+            </Style>
+            <Style Selector="Expander:right:expanded /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Close me"/>
+              <Style Selector="^ /template/ Path#ExpandCollapseChevron">
+                <Setter Property="Fill" Value="{DynamicResource PrimaryHueLightBrush}"/>
               </Style>
             </Style>
           </Expander.Styles>
@@ -302,7 +310,5 @@
         </Expander>
       </showMeTheXaml:XamlDisplay>
     </StackPanel>
-    
-
 	</StackPanel>
 </UserControl>

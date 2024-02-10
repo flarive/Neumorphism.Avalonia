@@ -301,7 +301,6 @@
     <Setter Property="Padding" Value="16 6" />
   </ControlTheme>
 
-
   <!--Button icon theme-->
   <ControlTheme x:Key="ButtonIcon" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
