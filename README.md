@@ -102,7 +102,7 @@ For the moment only the following controls are fully themed :
 - DateTime pickers
 - Menus
 - Dialogs
-- Expanders (in progress)
+- Expanders
 
 More controls should be themed soon.
 
