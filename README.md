@@ -9,6 +9,12 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> Expanders added in 0.11.0 !
+- 3 different possible themes
+- Can be customized
+
+![Screenshot](Screenshots/expanders.png)
+
 # <img src="favicon.png" width="32" height="32"> Tab navigation focus added in 0.10.0 !
 - All controls now have a nice looking focus adorner
 
@@ -96,7 +102,7 @@ For the moment only the following controls are fully themed :
 - DateTime pickers
 - Menus
 - Dialogs
-- Expanders (in progress)
+- Expanders
 
 More controls should be themed soon.
 
