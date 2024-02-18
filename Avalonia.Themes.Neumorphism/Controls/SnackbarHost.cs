@@ -124,7 +124,7 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
 
         /// <summary>
-        /// Post an snackbar with message text.
+        /// Post an snackbar with message.
         /// </summary>
         /// <param name="text">message text.</param>
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
@@ -136,21 +136,57 @@ namespace Avalonia.Themes.Neumorphism.Controls
 
 
         /// <summary>
-        /// Post an snackbar with message text.
+        /// Post an snackbar with message.
         /// </summary>
         /// <param name="text">message text.</param>
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
         /// <param name="priority">the priority of current task.</param>
-        public static void Post(string text, Action action)
+        public static void Post(string text, double width, double height)
         {
-            var button = new SnackbarButtonModel(text, action);
+            Post(new SnackbarModel(text, width, height), null, DispatcherPriority.Normal);
+        }
+
+
+        /// <summary>
+        /// Post an snackbar with message.
+        /// </summary>
+        /// <param name="text">message text.</param>
+        /// <param name="targetHost">the snackbar host that you wanted to use.</param>
+        /// <param name="priority">the priority of current task.</param>
+        public static void Post(string text, double width, double height, TimeSpan duration)
+        {
+            Post(new SnackbarModel(text, width, height, duration), null, DispatcherPriority.Normal);
+        }
+
+
+        /// <summary>
+        /// Post an snackbar with message and button
+        /// </summary>
+        /// <param name="text">message text.</param>
+        /// <param name="targetHost">the snackbar host that you wanted to use.</param>
+        /// <param name="priority">the priority of current task.</param>
+        public static void Post(string text, string buttonText, Action<object> buttonAction)
+        {
+            var button = new SnackbarButtonModel(buttonText, buttonAction);
             Post(new SnackbarModel(text, TimeSpan.Zero, button), null, DispatcherPriority.Normal);
+        }
+
+        /// <summary>
+        /// Post an snackbar with message and button
+        /// </summary>
+        /// <param name="text">message text.</param>
+        /// <param name="targetHost">the snackbar host that you wanted to use.</param>
+        /// <param name="priority">the priority of current task.</param>
+        public static void Post(string text, double width, double height, string buttonText, Action<object> buttonAction)
+        {
+            var button = new SnackbarButtonModel(buttonText, buttonAction);
+            Post(new SnackbarModel(text, width, height, TimeSpan.Zero, button), null, DispatcherPriority.Normal);
         }
 
 
 
         /// <summary>
-        /// Post an snackbar with message text.
+        /// Post an snackbar with message, target and priority.
         /// </summary>
         /// <param name="text">message text.</param>
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
@@ -159,6 +195,20 @@ namespace Avalonia.Themes.Neumorphism.Controls
         {
             Post(new SnackbarModel(text), targetHost, priority);
         }
+
+
+        /// <summary>
+        /// Post an snackbar with message.
+        /// </summary>
+        /// <param name="text">message text.</param>
+        /// <param name="targetHost">the snackbar host that you wanted to use.</param>
+        /// <param name="priority">the priority of current task.</param>
+        public static void Post(SnackbarModel model)
+        {
+            Post(model, null, DispatcherPriority.Normal);
+        }
+
+
 
         /// <summary>
         /// Post an snackbar with custom content and button (only one).

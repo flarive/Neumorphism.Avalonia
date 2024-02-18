@@ -43,25 +43,27 @@
     <!--OpenDialogWithModel-->
     <DataTemplate DataType="models:DialogSampleModel">
       <StackPanel Orientation="Vertical">
-      <TextBlock FontSize="18" Margin="15,15,15,0" Text="Open dialog from model" TextAlignment="Center" Foreground="{DynamicResource MaterialDesignDarkGray}"/>
-      <TextBlock FontSize="16" Margin="15,0,15,10" Text='Hello, I am model "DialogSampleModel" !' TextAlignment="Center" Foreground="{DynamicResource MaterialDesignMediumGray}"/>
+        <TextBlock FontSize="18" Margin="15,15,15,0" Text="Open dialog from model" TextAlignment="Center" Foreground="{DynamicResource MaterialDesignDarkGray}"/>
+        <TextBlock FontSize="16" Margin="15,0,15,10" Text='Hello, I am model "DialogSampleModel" !' TextAlignment="Center" Foreground="{DynamicResource MaterialDesignMediumGray}"/>
 
-      <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
-      <TextBlock Classes="Body1"
-             TextAlignment="Center"
-             Text="{Binding Number}" />
+        <TextBlock Margin="0,15,0,0" TextAlignment="Center">Your lucky number:</TextBlock>
+        <TextBlock Classes="Body1"
+               TextAlignment="Center"
+               Text="{Binding Number}" />
 
-      <Grid ColumnDefinitions="*,*" Margin="15">
-        <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="cancel">
-          Cancel
-        </Button>
-        <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="ok">
-          OK
-        </Button>
-      </Grid>
+        <Grid ColumnDefinitions="*,*" Margin="15">
+          <Button Grid.Column="0" HorizontalAlignment="Left" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="cancel">
+            Cancel
+          </Button>
+          <Button Grid.Column="1" HorizontalAlignment="Right" Height="38" Width="NaN" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}" CommandParameter="ok">
+            OK
+          </Button>
+        </Grid>
       </StackPanel>
     </DataTemplate>
   </Window.DataTemplates>
+
+
 
 
 
@@ -80,6 +82,10 @@
         </Button>
       </Grid>
     </StackPanel>
+
+    <StackPanel x:Key="CustomSnackbarTemplate" HorizontalAlignment="Stretch" Background="Yellow">
+      <TextBlock Text="mmmmmmmmmmmmmmmmmmmmmm" TextAlignment="Center"/>
+    </StackPanel>
   </Window.Resources>
 
 
@@ -88,10 +94,10 @@
   <dialogHost:DialogHost Identifier="MainDialogHost" Theme="{DynamicResource DialogHostTheme}">
     <Grid>
       <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied"
-                             SnackbarHorizontalAlignment="Center"
-                             SnackbarVerticalAlignment="Bottom"
-                             assist:SnackbarHostAssist.SnackbarHeight="50"
-							               assist:SnackbarHostAssist.SnackbarWidth="600">
+                                              SnackbarVerticalAlignment="Bottom"
+                                              SnackbarHorizontalAlignment="Center"
+                                              assist:SnackbarHostAssist.SnackbarVerticalOffset="0"
+                                              assist:SnackbarHostAssist.SnackbarCornerRadius="10">
         <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent" LeftDrawerExpandThresholdWidth="2000"
              LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch2, Path=IsChecked, Mode=TwoWay}" LeftDrawerWidth="320"
              RightDrawerOpened="False" RightDrawerWidth="0">
@@ -165,7 +171,6 @@
                   </StackPanel>
                 </ListBoxItem>
 
-
                 <ListBoxItem IsEnabled="True">
                   <StackPanel Orientation="Horizontal">
                     <icons:MaterialIcon Kind="Drawing" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
@@ -221,6 +226,13 @@
 						        <TextBlock Text="Expanders" VerticalAlignment="Center" Margin="8,0,0,0" />
 					        </StackPanel>
 				        </ListBoxItem>
+
+                <!--<ListBoxItem IsEnabled="True">
+                  <StackPanel Orientation="Horizontal">
+                    <icons:MaterialIcon Kind="MessageOutline" Width="24" Height="24" VerticalAlignment="Center" Foreground="Gray" />
+                    <TextBlock Text="Snackbars" VerticalAlignment="Center" Margin="8,0,0,0" />
+                  </StackPanel>
+                </ListBoxItem>-->
 
               </ListBox>
             </Grid>
@@ -315,6 +327,8 @@
                   <pages:DialogsDemo/>
 			            <!--Expanders-->
 				          <pages:ExpandersDemo/>
+                  <!--Snackbars-->
+                  <!--<pages:SnackbarsDemo/>-->
                 </Carousel>
               </Border>
             </ScrollViewer>

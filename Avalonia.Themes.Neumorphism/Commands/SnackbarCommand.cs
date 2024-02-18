@@ -25,7 +25,7 @@ namespace Avalonia.Themes.Neumorphism.Commands
         {
             try
             {
-                _model.Button?.Action?.Invoke();
+                _model.Button?.Action?.Invoke(parameter);
                 _host.SnackbarModels.Remove(_model);
             }
             catch

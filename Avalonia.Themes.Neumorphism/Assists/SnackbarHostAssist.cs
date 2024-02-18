@@ -7,10 +7,8 @@ namespace Avalonia.Themes.Neumorphism.Assist
     {
         private static readonly CornerRadius DefaultSnackbarCornerRadius = new CornerRadius(10);
         private static readonly IBrush DefaultSnackbarBackground = new SolidColorBrush(Brushes.Transparent.Color);
-        private static readonly double DefaultSnackbarWidth = 344;
-        private static readonly double DefaultSnackbarHeight = 200;
         private static readonly double DefaultSnackbarVerticalOffset = 50;
-        private static readonly bool DefaultSnackbarIsAnimated = false;
+
         
 
 
@@ -51,42 +49,6 @@ namespace Avalonia.Themes.Neumorphism.Assist
 
 
 
-        /// <summary>
-        /// Controls the width of the snackbar.
-        /// </summary>
-        public static readonly AvaloniaProperty<double> SnackbarWidthProperty = AvaloniaProperty.RegisterAttached<SnackbarHost, double>(
-            "SnackbarWidth", typeof(SnackbarHostAssist), DefaultSnackbarWidth, true);
-
-        public static double GetSnackbarWidth(AvaloniaObject element)
-        {
-            return (double)element.GetValue(SnackbarWidthProperty);
-        }
-
-        public static void SetSnackbarWidth(AvaloniaObject element, double value)
-        {
-            element.SetValue(SnackbarWidthProperty, value);
-        }
-
-
-
-        /// <summary>
-        /// Controls the height of the snackbar.
-        /// </summary>
-        public static readonly AvaloniaProperty<double> SnackbarHeightProperty = AvaloniaProperty.RegisterAttached<SnackbarHost, double>(
-            "SnackbarHeight", typeof(SnackbarHostAssist), DefaultSnackbarHeight, true);
-
-        public static double GetSnackbarHeight(AvaloniaObject element)
-        {
-            return (double)element.GetValue(SnackbarHeightProperty);
-        }
-
-        public static void SetSnackbarHeight(AvaloniaObject element, double value)
-        {
-            element.SetValue(SnackbarHeightProperty, value);
-        }
-
-
-
 
         /// <summary>
         /// Controls the vertical offet of the snackbar.
@@ -102,24 +64,6 @@ namespace Avalonia.Themes.Neumorphism.Assist
         public static void SetSnackbarVerticalOffset(AvaloniaObject element, double value)
         {
             element.SetValue(SnackbarVerticalOffsetProperty, value);
-        }
-
-
-
-        /// <summary>
-        /// Controls if snackbar notifications are animated or not.
-        /// </summary>
-        public static readonly AvaloniaProperty<bool> SnackbarIsAnimatedProperty = AvaloniaProperty.RegisterAttached<SnackbarHost, bool>(
-            "SnackbarIsAnimated", typeof(SnackbarHostAssist), DefaultSnackbarIsAnimated, true);
-
-        public static bool GetSnackbarIsAnimated(AvaloniaObject element)
-        {
-            return (bool)element.GetValue(SnackbarIsAnimatedProperty);
-        }
-
-        public static void SetSnackbarIsAnimated(AvaloniaObject element, bool value)
-        {
-            element.SetValue(SnackbarIsAnimatedProperty, value);
         }
 
         #endregion

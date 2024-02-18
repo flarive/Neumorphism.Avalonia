@@ -15,19 +15,15 @@
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="assist:SnackbarHostAssist.SnackbarCornerRadius" Value="10" />
     <Setter Property="assist:SnackbarHostAssist.SnackbarBackground" Value="{DynamicResource MaterialDesignPaper}" />
-    <Setter Property="assist:SnackbarHostAssist.SnackbarWidth" Value="344" />
-    <Setter Property="assist:SnackbarHostAssist.SnackbarHeight" Value="100" />
     <Setter Property="assist:SnackbarHostAssist.SnackbarVerticalOffset" Value="50" />
-    <Setter Property="assist:SnackbarHostAssist.SnackbarIsAnimated" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
           <Panel>
             <Border Name="PART_SnackbarHostHiddenBorder" IsVisible="False"
                    CornerRadius="{TemplateBinding assist:SnackbarHostAssist.SnackbarCornerRadius}"
                    Background="{TemplateBinding assist:SnackbarHostAssist.SnackbarBackground}"
-                   Width="{TemplateBinding assist:SnackbarHostAssist.SnackbarWidth}"
-                   Height="{TemplateBinding assist:SnackbarHostAssist.SnackbarHeight}"
-                   IsEnabled="{TemplateBinding assist:SnackbarHostAssist.SnackbarIsAnimated}"
+                   Width="NaN"
+                   Height="NaN"
                    Tag="{TemplateBinding assist:SnackbarHostAssist.SnackbarVerticalOffset}"/>
             <ContentPresenter Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}" />
@@ -45,18 +41,19 @@
               
               <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="models:SnackbarModel">
-                  <controls:Card Name="PART_SnackbarCard" Padding="0" Margin="8"
-                                 Tag="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=IsEnabled}"
+                  <controls:Card Name="PART_SnackbarCard" Padding="0" Margin="8" Theme="{StaticResource CardInset}"
+                                 Tag="{CompiledBinding IsAnimated}"
                                  CornerRadius="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=CornerRadius}"
                                  Background="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Background}"
-                                 Width="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Width}"
-                                 Height="{Binding ElementName=PART_SnackbarHostHiddenBorder, Path=Height}" MinHeight="200" MaxHeight="200">
+                                 Width="{CompiledBinding Width}"
+                                 Height="{CompiledBinding Height}"
+                                 MinHeight="20" MaxHeight="800">
 
                     <controls:Card.Styles>
                       <Style Selector="controls|Card[Tag=True]">
                         <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
                         <Style.Animations>
-                          <Animation Duration="0:0:0.75" Easing="QuadraticEaseOut" FillMode="Forward">
+                          <Animation Duration="0:0:0.75" Delay="0:0:0.0" Easing="QuadraticEaseOut" FillMode="Forward">
                             <KeyFrame Cue="0%">
                               <Setter Property="TranslateTransform.Y" Value="100"/>
                             </KeyFrame>
@@ -81,8 +78,8 @@
                       </Style>
                     </controls:Card.Styles>
                   
-                    <Grid ColumnDefinitions="16,*,8,Auto,8" RowDefinitions="6,Auto,6" Margin="0, 8">
-                      <ContentPresenter Grid.Column="1" Grid.Row="1"
+                    <Grid ColumnDefinitions="*" RowDefinitions="*,Auto" Margin="10">
+                      <ContentPresenter Grid.Column="0" Grid.Row="0" Margin="0" VerticalContentAlignment="Center"
                                         Content="{CompiledBinding Content,
                                           Converter={x:Static converters:WrapContentIntoContentPresenterConverter.Instance}}">
                         <ContentPresenter.DataTemplates>
@@ -92,9 +89,9 @@
                         </ContentPresenter.DataTemplates>
                       </ContentPresenter>
 
-                      <Button Grid.Column="3" Grid.Row="1"
-                              Content="{Binding Button}"
-                              Theme="{StaticResource ButtonFlat}"
+                      <Button Grid.Column="0" Grid.Row="1" Margin="0,5,0,0" VerticalAlignment="Center"
+                              Content="{Binding Button}" Width="NaN" Height="40"
+                              Theme="{StaticResource ButtonFlat}" Background="{DynamicResource PrimaryHueLightBrush}" Foreground="White"
                               Command="{Binding Command}"
                               IsVisible="{CompiledBinding !!Command}"/>
                     </Grid>
