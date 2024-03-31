@@ -15,11 +15,14 @@
 			x:Class="Neumorphism.Avalonia.Demo.Pages.TabsDemo">
 
 
-	<StackPanel Margin="20">
-		<TextBlock Classes="Headline4 Subheadline" Text="Tabs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
-
-		<WrapPanel Orientation="Vertical">
-
+	<Grid Margin="20" HorizontalAlignment="Stretch">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+		<TextBlock Grid.Row="0" Classes="Headline4 Subheadline" Text="Tabs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+		<WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Stretch">
 			<StackPanel Orientation="Vertical">
 				<TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal top" Foreground="{DynamicResource MaterialDesignMediumGray}" />
 				<StackPanel Orientation="Horizontal">
@@ -136,7 +139,6 @@
       </StackPanel>
 
 
-
       <StackPanel Orientation="Vertical">
         <TextBlock Classes="Headline6 Subheadline2" Margin="15,0,0,0" Text="Horizontal bottom" Foreground="{DynamicResource MaterialDesignMediumGray}" />
         <StackPanel Orientation="Horizontal">
@@ -216,7 +218,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab6">
-            <TabControl TabStripPlacement="Bottom" Width="440" Height="250"
+            <TabControl TabStripPlacement="Bottom" Width="440"
                         ItemsSource="{CompiledBinding TabItems}"
                         SelectedItem="{CompiledBinding SelectedTabItemBottom}"
                         ToolTip.Tip='Bottom tabControl with default theme applied and customized selection stroke'>
@@ -483,7 +485,53 @@
           <!--****************************************************************-->
         </StackPanel>
       </StackPanel>
-
 		</WrapPanel>
-	</StackPanel>
+
+    <Grid Grid.Row="2" HorizontalAlignment="Stretch" Margin="0,0,0,20">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock Grid.Row="0" Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Stretchable" Foreground="{DynamicResource MaterialDesignMediumGray}" />
+      <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+        <!--****************************************************************-->
+        <!--https://stackoverflow.com/questions/1967013/tabcontrol-verticalalignment-stretch-doesnt-do-anything-->
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="StrechTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+          <TabControl TabStripPlacement="Top" HorizontalAlignment="Stretch" Height="280" ToolTip.Tip='Stretchable TabControl inside a Grid'>
+            <TabControl.Items>
+              <TabItem Header="TAB 1">
+                <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
+                      <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
+                      <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
+                               Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                  </Grid>
+                </ScrollViewer>
+              </TabItem>
+              <TabItem Header="TAB 2">
+                <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
+                      <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
+                      <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
+                               Text="At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc."/>
+                  </Grid>
+                </ScrollViewer>
+              </TabItem>
+              <TabItem Header="TAB 3">
+                <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
+                      <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
+                      <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
+                               Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis."/>
+                  </Grid>
+                </ScrollViewer>
+              </TabItem>
+            </TabControl.Items>
+          </TabControl>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+      </Grid>
+    </Grid>
+	</Grid>
 </UserControl>

@@ -45,11 +45,13 @@
                 Margin="0"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
-          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                             DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
             <Border Name="PART_SelectedContentBorder"
+                    HorizontalAlignment="Stretch"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -58,6 +60,7 @@
               <ContentPresenter Name="PART_SelectedContentHost"
                                 Margin="{TemplateBinding Margin}"
                                 Padding="{TemplateBinding Padding}"
+                                HorizontalAlignment="Stretch"
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Content="{TemplateBinding SelectedContent}"
