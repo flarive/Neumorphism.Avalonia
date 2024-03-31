@@ -19,7 +19,7 @@
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
-      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="440"/>
     </Grid.RowDefinitions>
 		<TextBlock Grid.Row="0" Classes="Headline4 Subheadline" Text="Tabs" Foreground="{DynamicResource MaterialDesignDarkGray}" />
 		<WrapPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Stretch">
@@ -28,7 +28,7 @@
 				<StackPanel Orientation="Horizontal">
 					<!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab1">
-            <TabControl TabStripPlacement="Top" ToolTip.Tip='Regular top tabControl with default theme applied'>
+            <TabControl TabStripPlacement="Top" Height="200" ToolTip.Tip='Regular top tabControl with default theme applied'>
               <TabControl.Items>
                 <TabItem Header="TAB 1">
                   <TextBlock Text="Hey, I'm content 1" Margin="0,30,0,0" HorizontalAlignment="Stretch" TextAlignment="Center"/>
@@ -44,7 +44,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab2">
-            <TabControl TabStripPlacement="Top" Classes="Bordered" Padding="0" ToolTip.Tip='Top tabControl with default theme applied and classes "Bordered"/"Button"'>
+            <TabControl TabStripPlacement="Top" Height="200" Classes="Bordered" Padding="0" ToolTip.Tip='Top tabControl with default theme applied and classes "Bordered"/"Button"'>
               <TabControl.Items>
                 <TabItem Classes="Button">
                   <TabItem.Header>
@@ -102,7 +102,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab3">
-            <TabControl TabStripPlacement="Top" Width="440" Height="250"
+            <TabControl TabStripPlacement="Top" Width="440" Height="250" VerticalAlignment="Top"
                         ItemsSource="{CompiledBinding TabItems}"
                         SelectedItem="{CompiledBinding SelectedTabItemTop}"
                         ToolTip.Tip='Top tabControl with default theme applied and customized selection stroke'>
@@ -125,7 +125,7 @@
                   <Setter Property="ContentTemplate">
                     <Setter.Value>
                       <DataTemplate DataType="models:CustomTabItem">
-                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="{CompiledBinding Text}" MinHeight="110" TextWrapping="WrapWithOverflow"/>
                       </DataTemplate>
                     </Setter.Value>
                   </Setter>
@@ -144,7 +144,7 @@
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab4">
-            <TabControl TabStripPlacement="Bottom" ToolTip.Tip='Regular bottom tabControl with default theme applied'>
+            <TabControl TabStripPlacement="Bottom" Height="200" ToolTip.Tip='Regular bottom tabControl with default theme applied'>
               <TabControl.Items>
                 <TabItem Header="TAB 1">
                   <TextBlock Text="Hey, I'm content 1" Margin="0,0,0,30" HorizontalAlignment="Stretch" TextAlignment="Center"/>
@@ -160,7 +160,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab5">
-            <TabControl TabStripPlacement="Bottom" Classes="Bordered" Padding="0" ToolTip.Tip='Bottom tabControl with default theme applied and classes "Bordered"/"Button"'>
+            <TabControl TabStripPlacement="Bottom" Height="200" Classes="Bordered" Padding="0" ToolTip.Tip='Bottom tabControl with default theme applied and classes "Bordered"/"Button"'>
               <TabControl.Items>
                 <TabItem Classes="Button">
                   <TabItem.Header>
@@ -218,7 +218,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="HorizontalTab6">
-            <TabControl TabStripPlacement="Bottom" Width="440"
+            <TabControl TabStripPlacement="Bottom" Width="440"  Height="250" VerticalAlignment="Top"
                         ItemsSource="{CompiledBinding TabItems}"
                         SelectedItem="{CompiledBinding SelectedTabItemBottom}"
                         ToolTip.Tip='Bottom tabControl with default theme applied and customized selection stroke'>
@@ -241,7 +241,7 @@
                   <Setter Property="ContentTemplate">
                     <Setter.Value>
                       <DataTemplate DataType="models:CustomTabItem">
-                        <TextBlock Text="{CompiledBinding Text}" TextWrapping="WrapWithOverflow"/>
+                        <TextBlock Text="{CompiledBinding Text}" MinHeight="110" TextWrapping="WrapWithOverflow"/>
                       </DataTemplate>
                     </Setter.Value>
                   </Setter>
@@ -260,7 +260,7 @@
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab1">
-            <TabControl TabStripPlacement="Left" Width="300" ToolTip.Tip='Regular left tabControl with default theme applied'>
+            <TabControl TabStripPlacement="Left" Width="300" Height="200" ToolTip.Tip='Regular left tabControl with default theme applied'>
               <TabControl.Items>
                 <TabItem Header="TAB 1">
                   <TextBlock Text="Hey, I'm content 1" VerticalAlignment="Center" />
@@ -276,7 +276,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab2">
-            <TabControl TabStripPlacement="Left" Classes="Bordered" Padding="0" ToolTip.Tip='Left tabControl with default theme applied and classes "Bordered"/"Button"'>
+            <TabControl TabStripPlacement="Left" Height="200" Classes="Bordered" Padding="0" ToolTip.Tip='Left tabControl with default theme applied and classes "Bordered"/"Button"'>
               <TabControl.Items>
                 <TabItem Classes="Button">
                   <TabItem.Header>
@@ -376,7 +376,7 @@
         <StackPanel Orientation="Horizontal">
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab4">
-            <TabControl TabStripPlacement="Right" Width="300" ToolTip.Tip='Regular right tabControl with default theme applied'>
+            <TabControl TabStripPlacement="Right" Width="300" Height="200" ToolTip.Tip='Regular right tabControl with default theme applied'>
               <TabControl.Items>
                 <TabItem Header="TAB 1">
                   <TextBlock Text="Hey, I'm content 1" VerticalAlignment="Center" />
@@ -392,7 +392,7 @@
           </showMeTheXaml:XamlDisplay>
           <!--****************************************************************-->
           <showMeTheXaml:XamlDisplay UniqueId="VerticalTab5">
-            <TabControl TabStripPlacement="Right" Classes="Bordered" Padding="0" ToolTip.Tip='Right tabControl with default theme applied and classes "Bordered"/"Button"'>
+            <TabControl TabStripPlacement="Right" Height="200" Classes="Bordered" Padding="0" ToolTip.Tip='Right tabControl with default theme applied and classes "Bordered"/"Button"'>
               <TabControl.Items>
                 <TabItem Classes="Button">
                   <TabItem.Header>
@@ -493,25 +493,25 @@
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
       <TextBlock Grid.Row="0" Classes="Headline6 Subheadline2" Margin="15,30,0,0" Text="Stretchable" Foreground="{DynamicResource MaterialDesignMediumGray}" />
-      <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+      <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <!--****************************************************************-->
         <!--https://stackoverflow.com/questions/1967013/tabcontrol-verticalalignment-stretch-doesnt-do-anything-->
         <!--****************************************************************-->
         <showMeTheXaml:XamlDisplay UniqueId="StrechTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-          <TabControl TabStripPlacement="Top" HorizontalAlignment="Stretch" Height="280" ToolTip.Tip='Stretchable TabControl inside a Grid'>
+          <TabControl TabStripPlacement="Top" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ToolTip.Tip='Stretchable TabControl inside a Grid'>
             <TabControl.Items>
               <TabItem Header="TAB 1">
-                <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
-                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
-                      <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
-                      <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
-                               Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-                  </Grid>
-                </ScrollViewer>
+                  <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                    <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+                        <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
+                        <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
+                                 Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+                    </Grid>
+                  </ScrollViewer>
               </TabItem>
               <TabItem Header="TAB 2">
                 <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
-                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
+                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
                       <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
                       <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
                                Text="At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Dolor sit amet consectetur adipiscing. Mauris vitae ultricies leo integer malesuada. Mus mauris vitae ultricies leo integer malesuada nunc. Bibendum arcu vitae elementum curabitur vitae nunc."/>
@@ -520,7 +520,7 @@
               </TabItem>
               <TabItem Header="TAB 3">
                 <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
-                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
+                  <Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
                       <icons:MaterialIcon Grid.Row="0" Kind="UserAccessControl" Width="48" Height="48" Foreground="Gray" Margin="15" />
                       <TextBlock Grid.Row="1" TextWrapping="WrapWithOverflow" VerticalAlignment="Stretch" Padding="0" TextAlignment="Center"
                                Text="Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Risus viverra adipiscing at in tellus integer feugiat. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus quam. Molestie at elementum eu facilisis. Faucibus nisl tincidunt eget nullam non nisi. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis."/>

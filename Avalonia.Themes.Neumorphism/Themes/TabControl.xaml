@@ -30,7 +30,6 @@
   <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl">
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="20" />
-    <Setter Property="Height" Value="200" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Top" />
     <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
@@ -45,24 +44,27 @@
                 Margin="0"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
-          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="Bottom" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+          <DockPanel Name="PART_TabControlDockPanel" VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
                             HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
                             DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
             <Border Name="PART_SelectedContentBorder"
                     HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     CornerRadius="{TemplateBinding CornerRadius}"
                     assist:ShadowAssist.ShadowDepth="{TemplateBinding assist:ShadowAssist.ShadowDepth}">
-              <ContentPresenter Name="PART_SelectedContentHost"
+              <ContentPresenter Name="PART_SelectedContentHost" Background="{TemplateBinding Background}"
                                 Margin="{TemplateBinding Margin}"
                                 Padding="{TemplateBinding Padding}"
                                 HorizontalAlignment="Stretch"
-                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                VerticalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
                                 Content="{TemplateBinding SelectedContent}"
                                 ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
             </Border>
@@ -72,14 +74,13 @@
     </Setter>
 
 
-    
 
     <Style Selector="^[TabStripPlacement=Top]">
       <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
 
     <Style Selector="^[TabStripPlacement=Top] /template/ DockPanel#PART_TabControlDockPanel">
-      <Setter Property="VerticalAlignment" Value="Bottom" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
 
     <Style Selector="^[TabStripPlacement=Bottom]">
@@ -87,7 +88,7 @@
     </Style>
 
     <Style Selector="^[TabStripPlacement=Bottom] /template/ DockPanel#PART_TabControlDockPanel">
-      <Setter Property="VerticalAlignment" Value="Top" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
     </Style>
 
     <Style Selector="^[TabStripPlacement=Left]">
