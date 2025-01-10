@@ -5,6 +5,9 @@ namespace Avalonia.Themes.Neumorphism.Assist
 {
     public static class ExpanderAssist
     {
+        public static readonly SolidColorBrush DefaultExpanderStrokeBrushProperty = new SolidColorBrush();
+
+
         /// <summary>
         /// ExpanderWidth
         /// </summary>
@@ -43,7 +46,7 @@ namespace Avalonia.Themes.Neumorphism.Assist
         /// ExpanderStrokeBrush
         /// </summary>
         public static AvaloniaProperty<IBrush> ExpanderStrokeBrushProperty = AvaloniaProperty.RegisterAttached<Expander, IBrush>(
-            "ExpanderStrokeBrush", typeof(ExpanderAssist));
+            "ExpanderStrokeBrush", typeof(ExpanderAssist), DefaultExpanderStrokeBrushProperty, true);
 
         public static void SetExpanderStrokeBrush(AvaloniaObject element, IBrush value)
         {

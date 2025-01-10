@@ -15,8 +15,7 @@ namespace Neumorphism.Avalonia.Demo
         // yet and stuff might break.
         public static void Main(string[] args)
         {
-            //dotnet publish -c release --framework net7.0 -r win-x64
-            //dotnet publish -c release --framework net8.0 -r win-x64
+            //dotnet publish -c release --framework net9.0 -r win-x64
 
             // how to debug a native aot crash :
             // https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/docs/debugging.md

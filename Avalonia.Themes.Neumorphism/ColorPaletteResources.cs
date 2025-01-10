@@ -13,13 +13,13 @@ namespace Avalonia.Themes.Neumorphism
     /// <remarks>
     /// This class can only be used in <see cref="FluentTheme.Palettes"/>.
     /// </remarks>
-    public partial class ColorPaletteResources : AvaloniaObject, IResourceNode
+    public partial class ColorPaletteResources : ResourceProvider
     {
         private readonly Dictionary<string, Color> _colors = new(StringComparer.InvariantCulture);
 
-        public bool HasResources => _hasAccentColor || _colors.Count > 0;
+        public override bool HasResources => _hasAccentColor || _colors.Count > 0;
 
-        public bool TryGetResource(object key, ThemeVariant theme, out object value)
+        public override bool TryGetResource(object key, ThemeVariant theme, out object value)
         {
             if (key is string strKey)
             {

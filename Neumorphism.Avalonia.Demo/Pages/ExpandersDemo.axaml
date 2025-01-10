@@ -108,7 +108,7 @@
                               assist:ExpanderAssist.ExpanderHeight="42">
             <Expander.Header>
               <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
-                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+                <TextBlock VerticalAlignment="Center" Text="Expand me2"/>
               </Border>
             </Expander.Header>
             <ScrollViewer Height="104" Padding="0,0,10,0">

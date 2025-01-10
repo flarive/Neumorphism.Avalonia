@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Controls.Shapes;
 using Avalonia.Media;
 
 namespace Avalonia.Themes.Neumorphism.Controls

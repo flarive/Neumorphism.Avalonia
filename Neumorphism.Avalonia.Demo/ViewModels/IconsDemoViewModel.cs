@@ -25,7 +25,7 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
                     .OrderBy(x => x.Kind)
                     .ToList());
 
-            
+            SelectedGroup = _materialIconKinds?.Value?.First();
 
             SearchCommand = new RelayCommand(DoSearchAsync);
         }

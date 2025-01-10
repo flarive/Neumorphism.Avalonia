@@ -11,6 +11,9 @@ namespace Neumorphism.Avalonia.Demo.Pages
         public DialogsDemo()
         {
             InitializeComponent();
+
+            // to avoid binding errors when app start
+            DataContext = new DialogsDemoViewModel();
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)

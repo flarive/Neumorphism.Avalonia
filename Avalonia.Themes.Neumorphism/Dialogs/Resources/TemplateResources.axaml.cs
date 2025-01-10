@@ -9,6 +9,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Resources
     {
         private void DialogButtonTemplate_OnSelectTemplateKey(object sender, SelectTemplateEventArgs e)
         {
+            if (e.DataContext == null)
+            {
+                return;
+            }
+
             e.TemplateKey = e.DataContext switch
             {
                 ResultBasedDialogButtonViewModel _ => "ObsoleteButton",
@@ -19,6 +24,11 @@ namespace Avalonia.Themes.Neumorphism.Dialogs.Resources
 
         private void DialogHeaderIconTemplate_OnSelectTemplateKey(object sender, SelectTemplateEventArgs e)
         {
+            if (e.DataContext == null)
+            {
+                return;
+            }
+            
             e.TemplateKey = e.DataContext switch
             {
                 DialogIconViewModel _ => "DialogIcon",

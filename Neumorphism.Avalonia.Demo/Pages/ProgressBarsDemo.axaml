@@ -212,7 +212,7 @@
                     <Setter Property="assist:ProgressBarAssist.CircularInnerContent">
                       <Setter.Value>
                         <Template>
-                          <TextBlock Name="PART_InnerContentTextBlock" Width="100" Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0}%}"
+                          <!--<TextBlock Name="PART_InnerContentTextBlock" Width="100" Text="{Binding $parent[ProgressBar].Value, StringFormat={}{0}%}"
 									 Foreground="{TemplateBinding Foreground}" TextAlignment="Center" FontSize="40">
                             <TextBlock.Styles>
                               <Style Selector="TextBlock">
@@ -232,7 +232,7 @@
                                 </Style.Animations>
                               </Style>
                             </TextBlock.Styles>
-                          </TextBlock>
+                          </TextBlock>-->
                         </Template>
                       </Setter.Value>
                     </Setter>

@@ -62,9 +62,11 @@ namespace Neumorphism.Avalonia.Demo.ViewModels
         }
 
 
-
-
-
+        public DialogsDemoViewModel()
+        {
+            OpenDialogWithViewResult = string.Empty;
+            OpenDialogWithModelResult = string.Empty;
+        }
 
         public DialogsDemoViewModel(Window window)
         {

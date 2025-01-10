@@ -4,7 +4,7 @@
     <!-- if you want to check exceptions, change this to "Exe" and start your app from the console -->
     <OutputType Condition="'$(Configuration.toUpper())' != 'DEBUG'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration.toUpper())' == 'DEBUG'">WinExe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ApplicationIcon>Assets/app.ico</ApplicationIcon>
     <InvariantGlobalization>false</InvariantGlobalization>
     <Nullable>disable</Nullable>
@@ -48,8 +48,6 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets/**" />
     <AvaloniaResource Include="Images/**" />
-    <AdditionalFiles Remove="Pages\SnackbarsDemo.axaml" />
-    <AvaloniaXaml Remove="Pages\TogglesDemo - Copier.axaml" />
     <AvaloniaResource Include="NeumorphismXamlDisplay.axaml" />	  
     <None Update="Assets/app.icns" CopyToPublishDirectory="PreserveNewest" Condition="$(RuntimeIdentifier.StartsWith('osx'))">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -58,18 +56,18 @@
   </ItemGroup>
     
   <ItemGroup>
-	  <PackageReference Include="Avalonia" Version="11.0.9" />
-	  <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.9" />
-	  <PackageReference Include="Avalonia.Desktop" Version="11.0.9" />
-	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.9" />
+	  <PackageReference Include="Avalonia" Version="11.2.3" />
+	  <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.1.5" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.2.3" />
+	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.3" />
 	  <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-	  <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
-	  <PackageReference Include="DialogHost.Avalonia" Version="0.7.7" />
+	  <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.3" />
+	  <PackageReference Include="DialogHost.Avalonia" Version="0.9.1" />
 	  <!--Condition below is needed to generate macOS App only.-->
 	  <PackageReference Include="Dotnet.Bundle" Version="0.9.13" Condition="$(RuntimeIdentifier.StartsWith('osx'))" />
-	  <PackageReference Include="Material.Icons.Avalonia" Version="2.1.0" />
-	  <PackageReference Include="ShowMeTheXaml.Avalonia" Version="1.4.1" />
-	  <PackageReference Include="ShowMeTheXaml.Avalonia.Generator" Version="1.4.1" />
+	  <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
+	  <PackageReference Include="ShowMeTheXaml.Avalonia" Version="1.5.1" />
+	  <PackageReference Include="ShowMeTheXaml.Avalonia.Generator" Version="1.5.1" />
   </ItemGroup>
     
   <ItemGroup>

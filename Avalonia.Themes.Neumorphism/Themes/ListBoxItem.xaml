@@ -301,7 +301,6 @@
     <Style Selector="^">
       <Setter Property="BorderThickness" Value="1,1,1,0"/>
       <Setter Property="CornerRadius" Value="0"/>
-      <Setter Property="BorderBrush" Value="{TemplateBinding BorderBrush}"/>
     </Style>
 
     <!--Only first one-->
