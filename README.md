@@ -9,6 +9,12 @@ Easy to use and customizable Neumorphism Design implementation for [AvaloniaUI](
 
 ![Screenshot](Avalonia.Neumorphism.Demo.gif)
 
+# <img src="favicon.png" width="32" height="32"> Avalonia 11.2.3 now supported in 0.11.2 !
+- Quite a lot of small changes to support latest Avalonia (11.2.3)
+- Updated all dependencies to latest versions
+- Demo project switched to .net9
+- Demo project startup binding errors fixed
+
 # <img src="favicon.png" width="32" height="32"> Expanders added in 0.11.0 !
 - 3 different possible themes
 - Can be customized
@@ -113,11 +119,11 @@ More controls should be themed soon.
 # <img src="favicon.png" width="32" height="32"> Technical info
 
 - Single .net Standard Library DLL (Avalonia.Themes.Neumorphism.dll)
-- Can be used with .net Core 3.x, .net5, .net6, .net7, .net8...
+- Can be used with .net Core 3.x, .net5, .net6, .net7, .net8, .net9...
 - Lightweight (DLL is 1.5Mo when compiled in release mode)
-- Built upon the latest version of Avalonia UI
-- .Net 8 demo application project
-- Support Native AOT compilation (publish with dotnet publish -c release --framework net8.0 -r win-x64)
+- Built upon the latest version of Avalonia UI (11.2.3 today)
+- .Net 9 demo application project
+- Support Native AOT compilation (publish with dotnet publish -c release --framework net9.0 -r win-x64)
 
 
 # <img src="favicon.png" width="32" height="32"> How to start ?
